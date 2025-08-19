@@ -10,7 +10,7 @@ In deze module raak je vertrouwd met het begrip AI en de kernbegrippen rondom AI
 ---
 **Inhoud**
 - Definitie van AI
-- De geschiedenis van AI in vogelvlucht
+- De ontwikkeling van AI - de drijvende krachten
 
 ---
 ### Definitie van AI
@@ -34,13 +34,14 @@ Bij artificiële intelligentie (AI), oftewel kunstmatige intelligentie, lopen we
 - **AI Washing**: Bedrijven overdrijven of zijn misleidend over het gebruik van AI in hun producten om aantrekkelijker of innovatiever over te komen dan het werkelijk is. Dit staat ook wel bekend als [AI washing](https://en.wikipedia.org/wiki/AI_washing?utm_source=chatgpt.com). Hierdoor vervaagt de technische betekenis van AI, wordt AI zowel onder- als overhyped, verandert het in een leeg buzzword en daalt uiteindelijk het vertrouwen in echte toepassingen.
   > In september 2023 lanceerde Coca‑Cola de “Y3000”, een drankje dat volgens de marketing “co‑created with human and artificial intelligence” zou zijn. Kritiek kwam omdat Coca‑Cola nooit duidelijk maakte wat de rol van AI precies was—de bewering lijkt vooral bedoeld om de innovatiegerichte aantrekkingskracht te verhogen. Bron: [CTO Magazine](https://ctomagazine.com/what-is-ai-washing-why-it-is-a-problem/?utm_source=chatgpt.com)
 
+
 Geen gemakkelijke start, dat zeker. Maar toch is een duidelijke definitie nodig – of in ieder geval een poging daartoe.
 
 Waarom? Zonder gedeeld begrip van wat AI precies is, kunnen we er niet helder over praten. En zonder die helderheid wordt het bijna onmogelijk om AI goed te reguleren. Dat kan leiden tot maatschappelijke problemen, of juist innovatie in de weg zitten.
 > Volgens de huidige EU AI Act is de definitie van AI bewust breed. Zo’n veelomvattende omschrijving betekent dat zelfs software die in feite heel simpel is—bijvoorbeeld puur gebaseerd op vaste regels—onder de noemer ‘AI-systeem’ kan vallen. Dat kan duiden op extra verplichtingen: meer documentatie, risicobeheer, audits, toezicht… en dus extra kosten. Kosten die uiteindelijk vaak bij de consument terechtkomen.
 
 **Een poging tot een definitie**
-Na het onderzoeken van bestaande AI-definities en zijn kritiek daarop, probeert Weitzel in [zijn artikel](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5154389&utm_source=chatgpt.co) een betere omschrijving te geven, al benadrukt hij dat AI nooit volledig in één perfecte definitie te vangen is. De volgende definitie ziet hij dan ook als een verbetering ten opzichte van de meeste: 
+Na het onderzoeken van bestaande AI-definities en zijn kritiek daarop, probeert Weitzel in zijn artikel ['Defining Artificial Intelligence'](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5154389&utm_source=chatgpt.co) een betere omschrijving te geven, al benadrukt hij dat AI nooit volledig in één perfecte definitie te vangen is. De volgende definitie ziet hij dan ook als een verbetering ten opzichte van de definities die hij heeft geanalyseerd: 
 - **Een computerprogramma** dat gebruikmaakt van 
 - **machine learning-technieken** om 
 - **complexe doelen** te bereiken die normaal gesproken 
@@ -51,7 +52,7 @@ Door te zeggen dat het om *machine-learning* gaat, worden minder krachtige logic
 Weitzel erkent dat het idee dat de doelen "menselijke intelligentie" vereisen, wat vaag blijft, maar het helpt om simpele programma's uit te sluiten.  
 
 Nu zal niet iedere expert het eens zijn met de definitie van Weitzel want AI-systemen van vóór de jaren '90 (beter bekend als [*GOFAI*](https://en.wikipedia.org/wiki/GOFAI)) worden uitgesloten. Er was nog geen sprake van machine learning maar door het toepassen van de combinatie van regels (conditional statements), een kennisbank, een redeneermachine, een werkgeheugen en een gebruikersinterface lieten deze [regelgebaseerde modellen](https://www.geeksforgeeks.org/artificial-intelligence/rule-based-system-in-ai/) toch een bepaalde mate van intelligent gedrag zien.
-  > [*MYCIN*](referentie/begrippenlijst.md) (begin jaren ’70, Stanford) was een regelgebaseerd expertsysteem dat artsen hielp bij het diagnosticeren van bacteriële infecties en het aanbevelen van antibiotica. Het werkte met een kennisbank van ~600 regels en redeneerde via backward chaining (terugredeneren vanuit een mogelijke conclusie). 
+  > [*MYCIN*](referentie/begrippenlijst.md) (begin jaren ’70, Stanford) was een regelgebaseerd expertsysteem dat artsen hielp bij het diagnosticeren van bacteriële infecties en het aanbevelen van antibiotica. Het werkte met een kennisbank van ongeveer 600 regels en redeneerde via [backward chaining](referentie/begrippenlijst.md#backward-chaining) (terugredeneren vanuit een mogelijke conclusie). 
   Het gebruikte geen machine learning: alle kennis kwam rechtstreeks van menselijke experts en werd vastgelegd als regels. Toch gold het destijds als kunstmatige intelligentie, omdat het beslissingen nam, zijn redenering kon uitleggen en vaak even goed presteerde als menselijke artsen.
 
 Aan de andere kant zijn AI-modellen die alleen regelgebaseerde technieken gebruiken, tegenwoordig zeldzaam. In dat geval is het meestal een combinatie van regelgebaseerde technieken en machine learning ook wel bekend als hybride AI.
@@ -68,101 +69,60 @@ In de introductiecursus [*Elements of AI*](https://www.elementsofai.nl/) wordt b
 
 ---
 
-### De geschiedenis van AI in vogelvlucht. 
+### De ontwikkeling van AI - de drijvende krachten. 
 
-Het woord machine learning heeft nu al een aantal keer de revue gepasseerd. Maar wat houdt dat in? Dat gaan we in dit gedeelte verder uitleggen. Maar er zijn ook nog een aantal andere kernbegrippen die de aandacht verdienen. 
+Het woord machine learning is nu al een aantal keer de revue gepasseerd en misschien heb je jezelf afgevraagd wat dat betekent. Dat gaan we in dit gedeelte verder uitleggen. Maar er zijn ook nog een aantal andere kernbegrippen die de aandacht verdienen. 
 
-AI is eigenlijk te groot om in één verhaal te vangen. Toch helpt het om een reis door de tijd te maken. Door de begrippen in hun historische context te plaatsen, zie je beter wat ze betekenen, hoe ze zich tot elkaar verhouden en waarom sommige ideeën steeds opnieuw terugkomen.
+AI is eigenlijk te groot om in één verhaal te vangen. Toch helpt het om een reis door de tijd te maken in de ontwikkeling van AI en de drijvende krachten die dit mogelijk hebben gemaakt. Door de begrippen in deze ontwikkeling te plaatsen, zie je beter wat ze betekenen, hoe ze zich tot elkaar verhouden en waarom sommige ideeën steeds opnieuw terugkomen. Let op: dit is geen beschrijving van de geschiedenis van AI maar hierin wordt gefocust op belangrijke drijvende krachten die de ontwikkeling van AI heeft mogelijk gemaakt tot wat het vandaag de dag is. 
 
-Stap in de tijdmachine en laten we teruggaan naar de jaren '40 van de vorige eeuw. 
+**1950–1970**
 
-**De geboorte van het idee (1950–1970)**
+- **Symbolische logica**
+In deze periode werd AI vooral gezien als symbolische logica. In symbolische logica (ook wel formele logica genoemd) worden redeneringen weergegeven met symbolen en formele regels. Computers konden hierdoor 'redeneren' met regels die door mensen waren ingevoerd. Grofweg gezegd: als je genoeg regels opschrijft, kan een machine intelligent gedrag vertonen.
+  > AI dat gebseerd is op symbolische logica noemen we symbolische AI (ook wel klassieke AI of logisch-gebaseerde AI). In die tijd werkten AI-modellen alleen op basis van deze manier. Later werden deze modellen GOFAI ("Good Old-Fashioned AI") genoemd.  
 
-De wortels van kunstmatige intelligentie liggen in de jaren ’50. Alan Turing stelde in 1950 de beroemde vraag: “Kunnen machines denken?” Hij bedacht de Turingtest als criterium: als een mens in een gesprek niet kan onderscheiden of hij met een machine of een mens praat, is de machine intelligent.
+- **Het idee van neurale netwerken**
+In die tijd was er de wens om het menselijk brein na te bootsen. Ons brein bestaat uit miljarden neuronen (zenuwcellen) die signalen doorgeven via verbindingen (synapsen). Elk neuron "vuurt" alleen wanneer het voldoende input krijgt van andere neuronen. Dit simpele principe inspireerde onderzoekers: als je dit in een computer kon nabouwen, zou de machine misschien ook kunnen leren. Later werd dit idee neurale netwerk genoemd. 
+Een neuraal netwerk in de AI-context is daarom een systeem van “kunstmatige neuronen” die onderling verbonden zijn. Elke verbinding heeft een gewicht: een getal dat aangeeft hoe sterk een input meetelt. Door de gewichten aan te passen op basis van voorbeelden, kan een netwerk patronen herkennen – zoals letters, geluiden of afbeeldingen.
+<br/>
 
-In 1956 kreeg het veld officieel een naam: tijdens de Dartmouth-conferentie werd de term Artificial Intelligence geïntroduceerd. Onderzoekers geloofden dat menselijke intelligentie in principe volledig te beschrijven was in regels en logica.
+- **De (single-layer) perceptron (1958)**
+  In 1958 ontwierp Frank Rosenblatt de (single-layer) perceptron, het eerste werkende neurale netwerk. Het bestond uit één laag artificiele neuronen en kon simpele patronen herkennen. Rosenblatt was optimistisch en voorspelde dat zulke netwerken in de toekomst zouden kunnen leren, beslissingen nemen en zelfs talen vertalen. 
 
-Dit leidde tot wat later GOFAI (Good Old-Fashioned AI) genoemd werd. Het draaide om symbolische systemen: kennis werd vastgelegd in regels (als A, dan B), en de computer volgde deze stap voor stap. In de jaren ’70 en ’80 werden deze systemen steeds groter en beter: zogenaamde expert systems konden bijvoorbeeld medische diagnoses stellen of technische problemen analyseren.
+**1970–1980**
 
-Maar GOFAI had duidelijke grenzen:
+- **Expert Systems**
+In de jaren ’80 kwamen de eerste Expert Systems: programma’s die kennisbanken met logische regels gebruikten om beslissingen te nemen. Ze werden zelfs gebruikt in de medische wereld, bijvoorbeeld om diagnoses te ondersteunen. Dit leek veelbelovend, maar de beperkingen werden snel duidelijk: systemen waren moeilijk te onderhouden en leerden niet zelf bij. 
+<br/>
 
-- Het was kwetsbaar: zodra een situatie buiten de regels viel, liep het systeem vast.
+- **AI-winter**
+ Verwachtingen  werden niet waargemaakt. Er brak een periode aan waarin investeringen en enthousiasme voor AI sterk afnam. Zo'n periode wordt ook wel AI-winter genoemd. 
 
-- Het was star: het leerde niet bij van ervaring, alles moest handmatig worden geprogrammeerd.
+**1980–2010** 
 
-**De eerste golf van leren: Machine Learning (1980–2000)**
+- **De opkomst van Machine Learning**
+  De symbolische AI liep vast op problemen zoals waarneming, leren en gezond verstand. Dit maakte duidelijk dat andere benaderingen nodig waren. Er waren een aantal doorbraken die leidden tot de heropleving van neurale netwerken en de bloei van Machine Learning: algoritmen die patronen leren uit data.  
 
-Onderzoekers beseften dat een systeem flexibeler zou moeten zijn: niet alles kan vooraf worden vastgelegd. Dit leidde tot de opkomst van Machine Learning (ML).
 
-In plaats van regels te programmeren, wordt een systeem gevoed met data. Het model leert daaruit patronen herkennen: van simpele regressie en beslisbomen tot complexere statistische modellen.
+**2010–2017**
 
-Belangrijke verschuivingen:
+- **Doorbraak van Deep Learning**
+De grote doorbraak kwam met Deep Learning. Dankzij krachtige GPU’s en enorme hoeveelheden data konden veel diepere neurale netwerken worden getraind. Dit maakte plotseling toepassingen zoals spraakherkenning, beeldherkenning en vertaling bruikbaar in de praktijk.
 
-- AI werd empirischer: niet meer alleen logica, maar ook wiskunde en kansberekening.
+**2017–nu** 
 
-- Er kwamen neurale netwerken (geïnspireerd door de werking van hersenen), maar deze bleven beperkt door rekenkracht en gebrek aan data.
+- **Generatieve AI en Foundation Models**
+Met de introductie van de Transformer-architectuur in 2017 werd een nieuwe stap gezet. Dit maakte het mogelijk om modellen te trainen op ongekende schaal, met miljarden parameters en gigantische hoeveelheden tekst en beeld. Dit leidde tot Large Language Models (LLM’s) zoals GPT-4, Claude en Gemini, en tot generatieve AI die tekst, beeld, audio en code kan maken.
 
-In deze periode ontstonden ook de eerste AI-winters. Verwachtingen waren hoog, maar de techniek leverde niet wat men hoopte. Toch werden in stilte de fundamenten gelegd voor de doorbraken van later.
+📌 Begrippen
 
-**Neurale netwerken en de terugkeer van een oud idee (2000–2010)**
+Transformer – Neurale netwerk-architectuur (2017) die de basis vormt van moderne AI.
 
-Neurale netwerken zijn eigenlijk een oud idee (al uit de jaren ’50), maar kregen rond de eeuwwisseling een tweede leven. Met snellere computers en grotere datasets bleek dat deze netwerken krachtiger waren dan gedacht.
+Large Language Model (LLM) – AI-model dat getraind is op enorme hoeveelheden tekst en in staat is om mensachtige taal te begrijpen en te genereren.
 
-Ze bestaan uit lagen van neuronen die signalen doorgeven en versterken of verzwakken.
+Generatieve AI – AI die nieuwe inhoud kan creëren (tekst, beeld, muziek, code) in plaats van alleen herkennen.
 
-Door training met data passen ze zich automatisch aan.
-
-In tegenstelling tot GOFAI konden ze leren van ervaring.
-
-Nog was hun schaal beperkt – tot rond 2010 een nieuwe doorbraak kwam: Deep Learning.
-
-**Deep Learning en de grote doorbraak (2010–2018)**
-
-Deep Learning is een vorm van machine learning die gebruikmaakt van neurale netwerken met veel lagen (deep neural networks). Dankzij GPU’s (grafische processors) en enorme hoeveelheden data werden ze ineens extreem krachtig.
-
-Doorbraken volgden elkaar snel op:
-
-- Beeldherkenning werd spectaculair beter (ImageNet-competitie, 2012).
-
-- Spraakassistenten als Siri en Google Assistant kwamen op de markt.
-
-- Vertaalmachines werden betrouwbaarder.
-
-- Voor het eerst begon AI door te dringen in het dagelijks leven. Dit was de start van de huidige revolutie.
-
-**Foundation Models, LLM’s en Generatieve AI (2018–nu)**
-
-Een echte gamechanger kwam met de introductie van transformers (2017). Deze architectuur maakte het mogelijk om modellen op ongekende schaal te trainen.
-
-Zo ontstonden de Foundation Models: enorme AI-systemen die op gigantische hoeveelheden tekst, beeld of code werden getraind. Voorbeelden: GPT (OpenAI), BERT (Google) en Stable Diffusion.
-
-Binnen deze categorie vallen de Large Language Models (LLM’s), die specifiek met tekst werken.
-
-Wat zijn LLM’s? Gigantische neurale netwerken die getraind zijn op enorme hoeveelheden tekst.
-
-Hoe werken ze? Ze voorspellen steeds het volgende woord in een zin en leren zo vloeiende, coherente taal produceren.
-
-Waarom belangrijk? Ze maken generatieve AI breed toegankelijk: van ChatGPT tot Gemini en Claude.
-
-Kenmerken van foundation models en LLM’s:
-
-- Ze zijn generiek: breed toepasbaar op allerlei taken.
-
-- Ze zijn generatief: ze kunnen zelf nieuwe tekst, beelden of muziek produceren.
-
-- Ze zijn fijn-afstelbaar: met beperkte extra training inzetbaar in specifieke domeinen.
-
-Dit maakte de weg vrij voor AI die voor iedereen toegankelijk is, niet alleen voor onderzoekers of techbedrijven.
-
-**Naar de toekomst: agents en AGI**
-
-Vandaag werken onderzoekers aan AI-agents: systemen die niet alleen antwoorden geven, maar ook zelfstandig acties ondernemen, tools gebruiken en informatiebronnen raadplegen. Een voorbeeld is RAG (Retrieval-Augmented Generation): een techniek waarbij AI actuele informatie ophaalt en combineert met eigen kennis.
-
-Toch bevinden we ons nog steeds in het tijdperk van narrow AI: systemen die uitblinken in specifieke taken, maar geen menselijk bewustzijn of algemene intelligentie hebben. De term AGI (Artificial General Intelligence) verwijst naar een toekomstig systeem dat wél over zulke brede capaciteiten beschikt.
-En de overtreffende trap is ASI (Artificial Super Intelligence). In dit geval kan het systeem zichzelf verbeteren, zelfstandig beslissingen maken en valt het denken buiten het begrip van de mens.  
-
-> "Superintelligentie kan onze grootste prestatie zijn, maar ook de laatste." – Stephen Hawking
-
+Foundation Model – Groot basismodel dat kan worden aangepast (gefine-tuned) voor allerlei specifieke taken.
 
 
 
