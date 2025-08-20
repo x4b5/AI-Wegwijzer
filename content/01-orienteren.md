@@ -1,4 +1,4 @@
-# 1. VERKENNEN - Introductie en kernbegrippen
+# 1. ORIËNTEREN - Introductie en kernbegrippen
 ---
 **Datum:** 2025-08-18
 **Laatste wijziging:** 2025-08-19
@@ -9,11 +9,15 @@ In deze module raak je vertrouwd met het begrip AI en de kernbegrippen rondom AI
 
 ---
 **Inhoud**
+- [Inleiding](#inleiding)
 - [Definitie van AI](#definitie-van-ai)
 - [De ontwikkeling van AI en de drijvende krachten](#de-ontwikkeling-van-ai-en-de-drijvende-krachten)
 - [Conclusie](#conclusie)
 
 ---
+### Inleiding
+In de volgende module Verkennen, gaan we een aantal AI-tools van deze tijd verkennen. Hoewel het niet noodzakelijk is om deze module te doorlopen om de de module Verkennen te begrijpen, biedt deze module waardevolle context. Het helpt je om de basisprincipes van AI te begrijpen en geeft je een fundament voor het verkennen van AI-tools in de volgende module.
+
 ### Definitie van AI
 
 **AI... niet te beschrijven!**
@@ -44,7 +48,8 @@ Waarom? Zonder gedeeld begrip van wat AI precies is, kunnen we er niet helder ov
 > De [EU AI Act](referentie/begrippenlijst.md#eu-ai-act) ziet AI ruim. Daardoor vallen soms ook simpele ‘regelsystemen’ onder de wet. Afhankelijk van het risico komen er extra eisen bij. Voor jou als klant betekent dit twee dingen. Je ziet wanneer AI wordt gebruikt (bijvoorbeeld een label bij een chatbot of AI‑beeld). En krijg je een besluit dat je raakt, zoals een kredietaanvraag, dan staat erbij welke gegevens zijn gebruikt en kun je een mens om herbeoordeling vragen. Die extra zekerheid kost organisaties geld en tijd, wat soms terugkomt in de prijs of premie.
 
 **Een poging tot een definitie**
-Na het onderzoeken van bestaande AI-definities en zijn kritiek daarop, probeert Weitzel in zijn artikel ['Defining Artificial Intelligence'](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5154389) een betere omschrijving te geven, al benadrukt hij dat AI nooit volledig in één perfecte definitie te vangen is. De volgende definitie ziet hij dan ook als een verbetering ten opzichte van de definities die hij heeft geanalyseerd: 
+
+In het artikel ['Defining Artificial Intelligence'](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5154389) van 2025 onderzoekt Weitzel bestaade definities en hun tekortkomingen. Op basis daarvan stelt hij een betere omschrijving voor, al benadrukt hij dat AI nooit volledig in één perfecte definitie te vangen is. De volgende definitie ziet hij dan ook als een verbetering ten opzichte van de definities die hij heeft geanalyseerd: 
 - **Een computerprogramma** dat gebruikmaakt van 
 - **machine learning-technieken** om 
 - **complexe doelen** te bereiken die normaal gesproken 
@@ -77,11 +82,11 @@ In de introductiecursus [*Elements of AI*](https://www.elementsofai.nl/) wordt b
   In de praktijk zijn deze termen verwarrend, omdat weak AI vaak ten onrechte wordt gelijkgesteld aan regelgebaseerde systemen of “simpele AI”. Ook moderne geavanceerde modellen zoals ChatGPT vallen nog steeds onder Searle’s weak AI, zolang ze geen bewustzijn hebben.
   Daarom gebruiken veel onderzoekers tegenwoordig liever de termen [narrow AI](referentie/begrippenlijst.md#narrow-ai) (AI die specifieke taken kan uitvoeren) en [general AI](referentie/begrippenlijst.md#general-ai) (AI die taken kan uitvoeren zoals een mens).
 
+In het volgende gedeelte gaan we een aantal kernbegrippen (verder) toelichten. Dit doen we door de kernbegrippen in de tijdlijn van de ontwikkeling van AI te bespreken. Dan wordt ook duidelijker waarom definities steeds verschuiven.  
+
 ---
 
 ### De ontwikkeling van AI en de drijvende krachten 
-
-In het volgende gedeelte gaan we een aantal kernbegrippen (verder) toelichten. Dit doen we door de kernbegrippen in de tijdlijn van de ontwikkeling van AI te bespreken.  
 
 Door de begrippen in deze ontwikkeling te plaatsen, zie je beter wat ze betekenen, hoe ze zich tot elkaar verhouden en waarom sommige ideeën steeds opnieuw terugkomen. Let op: dit is geen beschrijving van de geschiedenis van AI; de focus ligt op belangrijke drijvende krachten die de ontwikkeling van AI mogelijk hebben gemaakt tot wat het vandaag de dag is. 
 
@@ -125,38 +130,30 @@ De grote doorbraak kwam met [deep learning](referentie/begrippenlijst.md#deep-le
 
 **2017–nu** 
 
-- **Generatieve AI en Foundation Models**
-Met de introductie van de [Transformer](referentie/begrippenlijst.md#transformer)-architectuur in 2017 werd een nieuwe stap gezet. Dit maakte het mogelijk om modellen te trainen op ongekende schaal, met miljarden [parameters](referentie/begrippenlijst.md#parameters) en gigantische hoeveelheden tekst en beeld. Dit leidde tot [Large Language Models (LLM’s)](referentie/begrippenlijst.md#llm) zoals GPT-4, Claude en Gemini, en tot [generatieve AI](referentie/begrippenlijst.md#generatieve-ai) die tekst, beeld, audio en code kan maken.
+- **Generatieve AI en Foundation Models**  
+In 2017 werd een belangrijke stap gezet in de ontwikkeling van AI met de introductie van de [Transformer](referentie/begrippenlijst.md#transformer)-architectuur. Deze technologie maakte het mogelijk om AI-modellen te bouwen die veel groter en krachtiger zijn dan ooit tevoren. Deze modellen, met miljarden [parameters](referentie/begrippenlijst.md#parameters), kunnen enorme hoeveelheden tekst en afbeeldingen verwerken. Dit leidde tot de ontwikkeling van [Large Language Models (LLM’s)](referentie/begrippenlijst.md#llm) zoals GPT-4, Claude en Gemini, en tot [generatieve AI](referentie/begrippenlijst.md#generatieve-ai) die in staat is om tekst, afbeeldingen, audio en zelfs code te maken.
 
-📌 Begrippen
+Een belangrijk verschil met eerdere AI-modellen is dat deze nieuwe modellen niet alleen kunnen herkennen of classificeren, maar ook nieuwe dingen kunnen creëren. Dit verschil wordt vaak uitgelegd als het onderscheid tussen **discriminatieve AI** en **generatieve AI**:
 
-Transformer – zie [Transformer](referentie/begrippenlijst.md#transformer)
+- **Discriminatieve AI**: Dit type AI is ontworpen om onderscheid te maken tussen verschillende categorieën. Bijvoorbeeld: is deze afbeelding een kat of een hond? Het model leert van voorbeelden en probeert de juiste categorie te voorspellen. Dit soort AI wordt veel gebruikt in toepassingen zoals spamfilters, gezichtsherkenning en medische diagnoses.  
+- **Generatieve AI**: Dit type AI gaat een stap verder. Het leert niet alleen van voorbeelden, maar gebruikt die kennis ook om nieuwe inhoud te maken. Bijvoorbeeld: het schrijven van een verhaal, het genereren van een afbeelding of het componeren van muziek. Generatieve AI opent nieuwe mogelijkheden, zoals het maken van creatieve ontwerpen of het simuleren van realistische gesprekken.
 
-Large Language Model (LLM) – zie [LLM](referentie/begrippenlijst.md#llm)
+### Waarom is dit belangrijk?  
+Het verschil tussen discriminatieve en generatieve AI laat zien hoe AI zich heeft ontwikkeld. Waar discriminatieve AI vooral helpt bij het oplossen van specifieke problemen, zoals het herkennen van objecten of het voorspellen van trends, biedt generatieve AI de mogelijkheid om nieuwe ideeën en oplossingen te creëren. Dit maakt generatieve AI een krachtig hulpmiddel in veel verschillende domeinen, van kunst en entertainment tot wetenschap en technologie.
 
-Generatieve AI – zie [Generatieve AI](referentie/begrippenlijst.md#generatieve-ai)
-
-Foundation Model – zie [Foundation model](referentie/begrippenlijst.md#foundation-model)
-Fine-tuning – zie [Fine-tuning](referentie/begrippenlijst.md#fine-tuning)
-Algoritme – stapsgewijze procedure of reeks regels om een probleem op te lossen; in machine learning betreft dit het leeralgoritme dat een model traint. Zie [Algoritme](referentie/begrippenlijst.md#algoritme)
-Hybride AI – combinatie van symbolische en connectionistische benaderingen. Zie [Hybride AI](referentie/begrippenlijst.md#hybride-ai)
-GPU – zie [GPU](referentie/begrippenlijst.md#gpu)
-Parameters – zie [Parameters](referentie/begrippenlijst.md#parameters)
-Connectionistische AI – zie [Connectionistische AI](referentie/begrippenlijst.md#connectionistische-ai)
-Bottom-up AI – zie [Bottom-up AI](referentie/begrippenlijst.md#bottom-up-ai)
-Subsymbolische AI – zie [Subsymbolische AI](referentie/begrippenlijst.md#subsymbolische-ai)
-Data-gedreven AI – zie [Data-gedreven AI](referentie/begrippenlijst.md#data-gedreven-ai)
-Kennisbank – zie [Kennisbank](referentie/begrippenlijst.md#kennisbank)
+Door deze ontwikkelingen kunnen we AI niet alleen gebruiken om bestaande processen te verbeteren, maar ook om nieuwe mogelijkheden te ontdekken en te creëren. Dit maakt generatieve AI een van de meest opwindende gebieden binnen de moderne technologie.
 
 ---
 
 ### Conclusie
 
-- Een perfecte definitie van AI bestaat niet; context en doel zijn bepalend.
-- Denk in “mate van AI”: van regelgebaseerd (GOFAI) tot moderne, datagedreven modellen.
-- De tijdlijn helpt kernbegrippen te plaatsen en verbanden te zien tussen benaderingen en doorbraken.
+- Een heldere definitie van de term AI is onbegonnen werk. Een meer praktische manier is om te spreken over mate van AI.
+- AI kan vanuit verschillende invalshoeken bekeken worden: 
+  - Narrow vs general:
+  - Symbolisch vs connectionistisch: Tegenwoordig worden modellen die alleen op basis van symbolische AI werken, niet meer beschouwd als AI. Er moet minimaal een vorm van machine learning aanwezig zijn.
+  - Discriminatief vs generatief: 
 
-
+In de volgende module ontdek je hoe deze begrippen concreet terugkomen in AI-tools die je zelf kunt uitproberen.
 
 
 

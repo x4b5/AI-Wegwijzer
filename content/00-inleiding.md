@@ -30,3 +30,6 @@ Het doel is een leesbaar en aantrekkelijk document te bieden. Je kunt het in Ã©Ã
 Daarnaast vind je door de tekst heen blokken met voorbeelden, trivia of extra weetjes. Deze zijn bedoeld als verrijking en verdieping, maar niet verplicht om te lezen. Je kiest dus zelf of je die meeneemt in je leerreis.
 
 De AI Wegwijzer is een levend document. Er wordt gestreefd om de inhoud regelmatig te actualiseren, zodat deze meegaat met de snelle ontwikkelingen in AI.
+
+**Disclaimer**
+Voor het opstellen van deze Wegwijzer is gebruikt gemaakt van AI. 

@@ -12,7 +12,29 @@ Periode(s) waarin de verwachtingen rond AI niet werden waargemaakt en investerin
 ### Algoritme
 Stapsgewijze procedure of reeks regels om een probleem op te lossen of een berekening uit te voeren. In machine learning worden leeralgoritmen (zoals gradient descent) gebruikt om een model te trainen; het getrainde model voert daarna voorspellingen of beslissingen uit.
 
+<a id="ai-model"></a>
+### AI-model
+Een model is het concrete rekenkundige “brein” dat getraind is om een taak uit te voeren.
 
+Voorbeeld: GPT-5 is een taalmodel dat teksten kan begrijpen en genereren. Een beeldherkenningsmodel kan foto’s classificeren (bijv. kat of hond).
+
+Je kunt het zien als het getrainde netwerk zelf, met alle gewichten en parameters.
+
+<a id="ai-methode"></a>
+### AI-methode
+Een methode is de manier of techniek waarmee je een model bouwt of traint.
+
+Voorbeeld: deep learning, decision trees, reinforcement learning.
+
+Het is de aanpak of algoritmische strategie, niet het eindproduct.
+
+<a id="ai-tool"></a>
+### AI-tool
+Een tool is een praktische toepassing of software die gebruikmaakt van AI-modellen en methoden.
+
+Voorbeeld: ChatGPT, Grammarly, MidJourney, GitHub Copilot.
+
+Het is wat jij als gebruiker in handen hebt om iets mee te doen — een hulpmiddel gebaseerd op een of meer modellen en methoden.
 
 <a id="backward-chaining"></a>
 ### Backward chaining
@@ -34,6 +56,10 @@ Alternatieve term voor connectionistische AI, waarbij het systeem zijn kennis en
 <a id="deep-learning"></a>
 ### Deep learning
 Subset van machine learning dat gebruikmaakt van diepe neurale netwerken met meerdere lagen om complexe patronen te modelleren.
+
+<a id="discriminatieve-ai"></a>
+### Discriminatieve AI
+AI-modellen die zijn ontworpen om onderscheid te maken tussen verschillende klassen of categorieën. Ze voorspellen bijvoorbeeld of een afbeelding een kat of een hond bevat. Voorbeelden zijn logistieke regressie en convolutionele neurale netwerken (CNN's).
 
 <a id="eu-ai-act"></a>
 ### EU AI Act
@@ -58,7 +84,7 @@ AI die een breed scala aan taken op menselijk niveau kan uitvoeren; ook wel AGI 
 
 <a id="generatieve-ai"></a>
 ### Generatieve AI
-AI-technieken die nieuwe inhoud genereren (tekst, beeld, audio, code) in plaats van alleen classificeren of detecteren.
+AI-technieken die nieuwe inhoud genereren (tekst, beeld, audio, code) in plaats van alleen classificeren of detecteren. Generatieve AI leert de onderliggende patronen en structuren in data en gebruikt die kennis om nieuwe voorbeelden te creëren.
 
 <a id="gofai"></a>
 ### GOFAI (Good Old-Fashioned AI)
