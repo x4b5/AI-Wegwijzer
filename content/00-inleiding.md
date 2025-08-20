@@ -2,12 +2,14 @@
 
 Welkom bij deze AI Wegwijzer. Deze Wegwijzer wil geen dik naslagwerk en ook geen eindeloze cursus zijn. Het is eerder een gids in het snelgroeiende landschap van AI.
 
-Over AI wordt veel gezegd en geschreven: beloftes, zorgen, hype, handleidingen en meningen. Het probleem is niet dat er te weinig informatie is, maar dat er te veel is. Deze Wegwijzer probeert het kaf van het koren te scheiden en informatie en links te geven van gezaghebbende en kwalitatieve bronnen. 
-
+Over AI wordt veel gezegd en geschreven: beloftes, zorgen, hype, handleidingen en meningen. Het probleem is niet dat er te weinig informatie is, maar dat er te veel is en niet altijd duidelijk is hoe betrouwbaar deze informatie is. Deze Wegwijzer probeert het kaf van het koren te scheiden en informatie en links te geven van gezaghebbende en kwalitatieve bronnen. 
+<br/>
 
 **Doel en doelgroep**
 
-Het doel van deze Wegwijzer is om je vertrouwd te maken met AI en je AI-geletterdheid te vergroten. AI-geletterdheid betekent dat je de basisbegrippen, toepassingen en gevolgen van AI begrijpt en kunt duiden. Dat is belangrijk omdat AI een steeds grotere rol speelt in werk, onderwijs en samenleving. Met AI-geletterdheid kun je beter meedenken, meepraten en keuzes maken over hoe AI wordt ingezet.
+Het doel van deze Wegwijzer is ten eerste om je vertrouwd te maken met AI en je AI-geletterdheid te vergroten. De eerste modules van deze Wegwijzer zijn hierop gericht. 
+AI-geletterdheid betekent dat je beter begrip hebt van de basisbegrippen, toepassingen en gevolgen van AI. Dat is belangrijk omdat AI een steeds grotere rol speelt in werk, onderwijs en samenleving. Met AI-geletterdheid kun je beter meedenken, meepraten en keuzes maken over hoe AI wordt ingezet.
+
 
 Deze Wegwijzer is bedoeld voor iedereen die AI beter wil leren kennen: professionals die AI in hun werk tegenkomen, studenten die zich willen voorbereiden op de toekomst, en nieuwsgierige lezers die overzicht zoeken in de overvloed aan informatie.
 

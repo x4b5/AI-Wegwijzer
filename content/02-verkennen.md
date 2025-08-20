@@ -5,7 +5,7 @@
 
 ---
 **Leerdoel**  
-In deze module raak je vertrouwd met een aantal [AI-tools](referentie/begrippenlijst.md#ai-tool) van deze tijd en leer je hoe ze worden toegepast in verschillende domeinen.  
+In deze module raak je vertrouwd met een aantal [AI-tools](referentie/begrippenlijst.md#ai-tool) van deze tijd door er zelf mee aan de slag te gaan.
 
 ---
 **Inhoud**  
@@ -19,19 +19,61 @@ In deze module raak je vertrouwd met een aantal [AI-tools](referentie/begrippenl
 ### Inleiding  
 [AI-tools](referentie/begrippenlijst.md#ai-tool) zijn tegenwoordig overal om ons heen. Van chatbots die klantenservice ondersteunen tot beeldherkenning in medische diagnostiek en van automatische vertalingen tot creatieve toepassingen zoals het genereren van kunst. In deze module gaan we enkele van deze tools verkennen en kijken hoe ze ons dagelijks leven en werk beïnvloeden.  
 
-In deze lijst bespreken we alleen AI-tools die minimaal een gratis basisversie aanbieden. Dit maakt ze toegankelijk voor een breed publiek en geschikt om zelf mee te experimenteren.  
+In deze lijst bespreken we alleen AI-tools die minimaal een gratis basisversie aanbieden. Dit maakt ze toegankelijk en geschikt om zelf mee te experimenteren.  
 
-### Het verschil tussen een AI-model, AI-methode en AI-tool?  
-Een **AI-model** is het "brein" achter een AI-toepassing. Het is een getraind algoritme dat patronen in data herkent en voorspellingen of beslissingen kan maken. Een AI-model is echter op zichzelf niet direct bruikbaar voor eindgebruikers. Het is een technisch component dat vaak wordt geïntegreerd in een toepassing.  
+Eerst zullen we nog een aantal begrippen bespreken zodat je weet wat het verschil is.
+<br/>
+
+### Aantal begrippen
+
+Een **AI-model** is het "brein" achter een AI-toepassing. Het is een getraind algoritme dat patronen in data herkent en voorspellingen of beslissingen kan maken. Een AI-model is echter op zichzelf niet direct bruikbaar voor eindgebruikers. Het is een technisch component dat vaak wordt geïntegreerd in een toepassing. Er zijn verschillende soorten zoals: 
+- Een **Foundation model** is 
+- Een **LLM (Large Language Model)** is
+- Een **MLLM (Multimodal Large Language Model)**
+
+**Modaliteiten**
+
 
 Een **AI-methode** is de techniek of strategie die wordt gebruikt om een AI-model te bouwen of te trainen. Voorbeelden hiervan zijn machine learning, deep learning en reinforcement learning. Het is de aanpak die bepaalt hoe een model leert en presteert.  
 
-Een **AI-tool** is een praktische toepassing die gebruikmaakt van een of meer AI-modellen. Het is ontworpen om een specifieke taak uit te voeren en is toegankelijk voor eindgebruikers. Een AI-tool combineert het AI-model met een gebruikersinterface en andere functionaliteiten om een bruikbare oplossing te bieden.  
+Een **AI-tool** is een praktische toepassing die gebruikmaakt van een of meer AI-modellen. Het is ontworpen om een specifieke taak uit te voeren en is toegankelijk voor eindgebruikers. Een AI-tool combineert het AI-model met een gebruikersinterface en andere functionaliteiten om een bruikbare oplossing te bieden. Je kunt de tools grofweg verdelen in:
+- Foundation model-tools
+- Praktische tools  
 
-### Foundation model-tools
-Foundation model-tools geven direct toegang tot een foundation model. Ze zijn niet altijd zonder inloggen beschikbaar, maar ze verdienen een plek omdat ze de basis vormen voor veel andere AI-tools.
+**Prompting**
 
-### Prompting
+Voordat je gaat experimenteren met de verschillende modellen neem de volgende vuistregels door: 
+
+### Vuistregels veilig gebruik AI-tools
+
+🔒 Deel geen gevoelige data (geen wachtwoorden, medische of financiële info).
+
+✅ Check altijd de output – AI kan fouten of verzinsels geven.
+
+📚 Bronvermelding nodig – AI vervangt geen bronnen.
+
+📜 Lees de voorwaarden – let op wat er met je data gebeurt.
+
+🙋 Jij blijft verantwoordelijk – AI is assistent, geen vervanger.
+
+⚖️ Let op bias – controleer of de output eerlijk en neutraal is.
+
+🛡️ Gebruik betrouwbare tools – vermijd dubieuze sites.
+
+📝 Houd rekening met auteursrecht bij gebruik van AI-content.
+
+💻 Werk veilig technisch – officiële sites, up-to-date software.
+
+👀 Wees transparant – geef aan wanneer AI is gebruikt.
+
+
+
+
+
+
+
+
+
 
 ### Voorbeelden
 - ChatGPT
@@ -123,27 +165,6 @@ Hier zijn 10 populaire [AI-tools](referentie/begrippenlijst.md#ai-tool) die mome
 ### Conclusie  
 [AI-tools](referentie/begrippenlijst.md#ai-tool) hebben een enorme impact op verschillende aspecten van ons leven en werk. Ze maken complexe taken eenvoudiger, verhogen de efficiëntie en openen nieuwe mogelijkheden in diverse domeinen. Door deze tools te verkennen, krijg je een beter begrip van hoe AI ons dagelijks ondersteunt en hoe je deze technologieën zelf kunt toepassen.
 
-### Vuistregels veilig gebruik AI-tools
-
-🔒 Deel geen gevoelige data (geen wachtwoorden, medische of financiële info).
-
-✅ Check altijd de output – AI kan fouten of verzinsels geven.
-
-📚 Bronvermelding nodig – AI vervangt geen bronnen.
-
-📜 Lees de voorwaarden – let op wat er met je data gebeurt.
-
-🙋 Jij blijft verantwoordelijk – AI is assistent, geen vervanger.
-
-⚖️ Let op bias – controleer of de output eerlijk en neutraal is.
-
-🛡️ Gebruik betrouwbare tools – vermijd dubieuze sites.
-
-📝 Houd rekening met auteursrecht bij gebruik van AI-content.
-
-💻 Werk veilig technisch – officiële sites, up-to-date software.
-
-👀 Wees transparant – geef aan wanneer AI is gebruikt.
 
 
 # Overzicht AI-tools (met laatste update)
