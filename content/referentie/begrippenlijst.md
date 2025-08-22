@@ -82,6 +82,10 @@ Machine learning algoritme dat beslissingen neemt door een boomstructuur van if-
 
 <a id="deep-learning"></a>
 ### Deep learning
+Deep learning is machine learning op steroïden. Het gebruikt enorme datasets, grote neurale netwerken en veel rekenkracht om machines een versterkt vermogen te geven om zelfs de kleinste patronen te vinden—en te versterken. En sommige van deze systemen kunnen patronen ontdekken zonder dat ze vooraf verteld wordt waar ze naar moeten zoeken.
+([MIT Intro to AI, 2025](https://forms.technologyreview.com/newsletters/intro-to-ai/))
+
+
 Subset van machine learning dat gebruikmaakt van diepe neurale netwerken met meerdere lagen om complexe patronen te modelleren. Volgens MIT Technology Review "heeft deep learning de AI-revolutie mogelijk gemaakt door het vermogen om automatisch features te leren uit ruwe data" ([MIT Technology Review, 2024](https://www.technologyreview.com/2024/01/04/1085094/state-of-ai-2024/)).
 
 <a id="discriminatieve-ai"></a>
@@ -130,6 +134,9 @@ AI die een breed scala aan taken op menselijk niveau kan uitvoeren; ook wel AGI 
 
 <a id="generatieve-ai"></a>
 ### Generatieve AI
+Generatieve AI is een populaire en krachtige vorm van AI die de afgelopen jaren is opgekomen. Beeldgenererende AI, ontwikkeld door Google, OpenAI en anderen, kan tegenwoordig verbluffende kunstwerken maken op basis van slechts een paar aanwijzingen. Typ een korte beschrijving van bijna alles in, en je krijgt er binnen enkele seconden een afbeelding van. ChatGPT doet hetzelfde, maar dan met tekst. Er bestaan ook engines die muziek, video’s en meer kunnen genereren. Deze tools hebben de kracht om de economie te revolutioneren en hele sectoren te transformeren. Zo trainen wetenschappers bijvoorbeeld modellen met gespecialiseerde data over chemische verbindingen om nieuwe medicijnen te ontdekken. (Spoiler: niemand weet echt waar de opkomst van generatieve AI ons uiteindelijk naartoe zal leiden.)
+([MIT Intro to AI, 2025](https://forms.technologyreview.com/newsletters/intro-to-ai/))
+
 AI-technieken die nieuwe inhoud genereren (tekst, beeld, audio, code) in plaats van alleen classificeren of detecteren. Volgens OpenAI "leert generatieve AI de onderliggende patronen en structuren in data en gebruikt die kennis om nieuwe, realistische voorbeelden te creëren" ([OpenAI, 2024](https://openai.com/research)). Generatieve AI leert de onderliggende patronen en structuren in data en gebruikt die kennis om nieuwe voorbeelden te creëren.
 
 <a id="gofai"></a>
@@ -162,10 +169,21 @@ Geavanceerd type recurrent neural network dat beter is in het onthouden van info
 
 <a id="llm"></a>
 ### Large Language Model (LLM)
+ChatGPT zei:
+
+Grote taalmodellen zijn een vorm van generatieve AI. Ze zijn gebouwd op deep-learning-algoritmen die getraind zijn met enorme hoeveelheden tekst. Dat betekent dat ze kunnen voorspellen welke woorden het meest waarschijnlijk samen voorkomen in een zin of alinea en zo teksten kunnen genereren die klinken alsof een mens ze heeft geschreven. ChatGPT is een chatbot die gebaseerd is op een groot taalmodel (GPT).
+([MIT Intro to AI, 2025](https://forms.technologyreview.com/newsletters/intro-to-ai/))
+
+(Even een kanttekening: je hebt misschien gehoord dat grote taalmodellen examens zoals het bar-examen of het Amerikaanse medisch licentie-examen hebben gehaald. Deze modellen doen het vaak goed op zulke toetsen, waarschijnlijk omdat er veel voorbeeldvragen en -antwoorden in hun trainingsdata zitten. Maar we weten opmerkelijk weinig over hoe deze modellen precies werken. Door ze zulke examens te laten maken, proberen we hun “intelligentie” te meten op basis van hun output, zonder dat we volledig begrijpen hoe ze functioneren.)
+
 Groot taalmodel getraind op omvangrijke tekstcorpora dat mensachtige taal kan begrijpen en genereren. Volgens OpenAI "leert een LLM de statistische patronen in taal door training op miljarden woorden, waardoor het context en betekenis kan begrijpen" ([OpenAI, 2024](https://openai.com/research)).
 
 <a id="machine-learning"></a>
 ### Machine learning
+Machine learning gebruikt statistiek om patronen te vinden in enorme hoeveelheden data. En data kan hier van alles betekenen—getallen, woorden, afbeeldingen, klikken, noem maar op. Als het digitaal opgeslagen kan worden, kan het ingevoerd worden in een machine-learning-algoritme. Machine learning drijft een deel van de AI die je waarschijnlijk zelf al hebt gebruikt. Aanbevelingsalgoritmen zoals die van Netflix, YouTube en Spotify maken er gebruik van, net als zoekmachines, sociale-mediafeeds en spraakassistenten zoals Siri en Alexa.
+([MIT Intro to AI, 2025](https://forms.technologyreview.com/newsletters/intro-to-ai/))
+
+
 Verzameling technieken waarbij modellen patronen leren uit data om voorspellingen of beslissingen te maken zonder expliciet te worden geprogrammeerd voor elke taak. Volgens Google Research "stelt machine learning computers in staat om te leren en te verbeteren door ervaring, zonder expliciete programmering" ([Google Research, 2024](https://research.google/)).
 
 <a id="meta-learning"></a>
@@ -174,6 +192,11 @@ AI-techniek waarbij modellen leren hoe ze snel nieuwe taken kunnen leren, ook we
 
 <a id="mllm"></a>
 ### MLLM (Multimodal Large Language Model)
+Multimodale AI verwijst naar generatieve AI die meerdere soorten data verwerkt, zoals audio, video, tekst en afbeeldingen, en resultaten kan teruggeven in elk van deze formaten. Op dit moment bestaan er een paar multimodale modellen, zoals Gemini en GPT-4.
+
+Onthoud wel: AI is niet perfect en maakt fouten. Het “weet” eigenlijk niets (voor zover wij weten), en er zitten serieuze gebreken in door AI aangestuurde zoekmachines. ChatGPT herinnert je er zelfs aan om belangrijke informatie altijd te dubbelchecken met een andere bron.
+([MIT Intro to AI, 2025](https://forms.technologyreview.com/newsletters/intro-to-ai/))
+
 Taalmodel dat niet alleen tekst kan verwerken, maar ook andere modaliteiten zoals afbeeldingen, video en audio. Volgens Stanford University "kunnen MLLM's informatie uit verschillende bronnen combineren en begrijpen, wat leidt tot rijkere en meer contextuele AI-interacties" ([Stanford University, 2024](https://aiindex.stanford.edu/report/)). Deze modellen kunnen informatie uit verschillende bronnen combineren en begrijpen.
 
 <a id="mlops"></a>
@@ -198,6 +221,10 @@ NLP-techniek die specifieke entiteiten (personen, plaatsen, organisaties) in tek
 
 <a id="neuraal-netwerk"></a>
 ### Neuraal netwerk
+ChatGPT zei:
+
+Neurale netwerken zijn de computerprogramma’s waarop deep learning is gebouwd. Heel grofweg gebaseerd op het brein bestaan neurale netwerken uit veel kunstmatige neuronen die met elkaar verbonden zijn via complexe wiskundige vergelijkingen, zogenaamde algoritmen. Wanneer een nieuw stukje data (bijvoorbeeld een foto van een kat) in het systeem wordt ingevoerd, stroomt het door die algoritmen heen totdat er andere data (zoals het woord “kat”) aan de andere kant uitkomt. Een ongetraind neuraal netwerk levert onzin op. Een getraind neuraal netwerk, ook wel een model genoemd, is er één dat geleerd heeft patronen uit de trainingsdata te herkennen en te reproduceren om zo de juiste antwoorden te geven (meestal).
+([MIT Intro to AI, 2025](https://forms.technologyreview.com/newsletters/intro-to-ai/))
 Model opgebouwd uit lagen van knooppunten (neuronen) en gewichten, dat via training patronen in data leert herkennen. Volgens Google Research "simuleren neurale netwerken de werking van biologische hersenen door informatie door lagen van verbonden knooppunten te verwerken" ([Google Research, 2024](https://research.google/)).
 
 <a id="nlp"></a>

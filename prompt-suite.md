@@ -7,6 +7,9 @@ Toon: Behoud bestaande schrijfstijl en stemming
 Scope: Werk incrementeel - max 3-5 concrete suggesties per run
 Output: Markeer alle voorstellen duidelijk voor review
 
+... van de context van de hele repository
+
+
 PRIORITEIT 1: BRONNEN & BETROUWBAARHEID
 Doel: Verhoog de wetenschappelijke integriteit en geloofwaardigheid
 
@@ -25,7 +28,7 @@ Begrippenlijst: Identificeer kernbegrippen die definitie behoeven → link naar 
 PRIORITEIT 2: STRUCTUUR & LOGICA
 Doel: Verbeter de argumentatieve flow en coherentie
 
-Rode draad: Check logische opbouw (probleem → analyse → oplossing → reflectie) → stel verbeteringen voor
+Rode draad: Check logische opbouw (probleem → analyse → oplossing → reflectie) → stel vast wat de belangrijkste kleine verandering is om vervolgens iteratief te optimaliseren. 
 Overgangen: Zoek paragraaf zonder logische aansluiting → herschrijf overgangszin
 Redundantie: Identificeer dubbelingen in argumentatie → stel samenvoeging/schrapping voor
 Hoofdstukafsluitingen: Voeg samenvattingen of brugzinnen naar volgende sectie toe
@@ -54,6 +57,15 @@ Activering: Voeg retorische vraag of directe aanspreking toe op strategische mom
 Dynamiek: Identificeer vlakke passages → stel levendiger formulering voor
 Beeldspraak: Vervang saaie taal door krachtigere beeldende uitdrukkingen
 
+PRIORITEIT 6: LEREN EN ONTWIKKELEN
+
+- Geef aan wat de beste leerinterventie is om het leren te stimuleren
+- Stimuleer de nieuwsgierigheid.
+- Verhoog de leerbeleving
+
+
+- Zoek naar de kleinste verandering met de grootste verbetering. 
+- Beoordeel het document van op een schaal van 0 tot 10. Geef onderbouwing. Hoe kunnen we een punt omhoog gaan. 
 
 OUTPUT TEMPLATE
 Voor elk voorstel:

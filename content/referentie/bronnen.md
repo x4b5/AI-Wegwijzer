@@ -43,3 +43,9 @@
 
 Bron: 
 [https://www.aimyths.org/the-term-ai-has-a-clear-meaning]
+
+
+Cursussen:
+
+Machine Learning
+https://developers.google.com/machine-learning

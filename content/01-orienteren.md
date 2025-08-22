@@ -1,26 +1,63 @@
 # 1. ORIËNTEREN - Introductie en kernbegrippen
 ---
-**Datum:** 2025-08-18
-**Laatste wijziging:** 2025-08-19
+**Datum:** 18 januari 2025  
+**Laatste wijziging:** 22 januari 2025
 
 ---
 **Leerdoel**  
 In deze module raak je vertrouwd met het begrip AI en de kernbegrippen rondom AI.  
 
 ---
+**Voorkennis**
+Niet van toepassing
+
+---
 **Inhoud**
 - [Inleiding](#inleiding)
-- [Definitie van AI](#definitie-van-ai)
+- [AI definiëren](#ai-definiëren)
+- [Verschillende invalshoeken van AI](#verschillende-invalshoeken-van-ai)
 - [De ontwikkeling van AI en de drijvende krachten](#de-ontwikkeling-van-ai-en-de-drijvende-krachten)
+- [AI in de tegenwoordige tijd](#ai-in-de-tegenwoordige-tijd)
 - [Conclusie](#conclusie)
 
 ---
-### Inleiding
-In de volgende module Verkennen, gaan we een aantal AI-tools van deze tijd verkennen. Hoewel het niet noodzakelijk is om deze module te doorlopen om de de module Verkennen te begrijpen, biedt deze module waardevolle context. Het helpt je om de basisprincipes van AI te begrijpen en geeft je een fundament voor het verkennen van AI-tools in de volgende module.
+## Inleiding
 
-### Definitie van AI
+In deze module maak je kennis met het begrip AI en de basisprincipes. Zo begrijp je wat AI wel en niet is en is het een opstap naar de tools die we in de volgende module verkennen.
+Het is dus niet nodig om deze module volledig door te lopen om naar de volgende module te gaan maar het geeft je wel een goed fundament.
 
-**AI... niet te beschrijven!**
+Het begrip AI hoor je tegenwoordig (bijna) dagelijks. Maar wat betekent AI eigenlijk. Dat gaan we in het volgende deel uitzoeken.
+
+---
+## AI definiëren
+
+```
+Wat denk jij dat AI is? Welke van de onderstaande definities komt het dichtst bij wat jij denkt dat AI betekent?
+
+**A)** AI is een computer die kan denken en redeneren zoals een mens.
+
+**B)** AI is software die automatisch taken kan uitvoeren zonder menselijke tussenkomst.
+
+**C)** AI is een systeem dat leert van data en het herkennen van patronen. Het gebruik van logische regels is niet van toepassing.
+
+**D)** AI is een computerprogramma dat intelligent gedrag simuleert door regels te volgen.
+
+```
+
+**Wat denk jij?**
+Heb je een keuze gemaakt? Alle vier de opties zijn eigenlijk gedeeltelijk waar, maar ook gedeeltelijk onjuist. Dit laat precies zien waarom het definiëren van AI zo ingewikkeld is! 
+
+Optie A: AI kan inderdaad redeneren en bepaalde taken uitvoeren die we als "intelligent" beschouwen maar AI kan niet denken zoals een mens - het heeft geen bewustzijn, emoties of begrip. Het simuleert intelligent gedrag door patronen te herkennen.
+
+Optie B: AI kan inderdaad taken automatisch uitvoeren maar niet alle automatische software is AI. Een simpele timer of rekenmachine is geen AI - er moet sprake zijn van leren of patroonherkenning.
+
+Optie C: Dit beschrijft machine learning, een belangrijk onderdeel van moderne AI. Maar het is intern inconsistent - machine learning heeft juist logische regels nodig om te functioneren (algoritmes, trainingsprocessen). 
+
+Optie D: Dit beschrijft symbolische AI, die inderdaad met regels werkt. Maar dit sluit machine learning uit, terwijl moderne AI vooral daarop gebaseerd is.
+
+Laten we eens kijken waarom het zo moeilijk is om tot één heldere definitie van AI te komen.
+
+### AI... niet te beschrijven!
 Als je iets wilt begrijpen, begin je vaak met de vraag: *Wat is het?*  
 Je probeert het in te kaderen, te definiëren.  
 
@@ -47,7 +84,7 @@ Geen gemakkelijke start, dat zeker. Maar toch is een duidelijke definitie nodig 
 Waarom? Zonder gedeeld begrip van wat AI precies is, kunnen we er niet helder over praten. En zonder die helderheid wordt het bijna onmogelijk om AI goed te reguleren. Dat kan leiden tot maatschappelijke problemen, of juist innovatie in de weg zitten.
 > De [EU AI Act](referentie/begrippenlijst.md#eu-ai-act) ziet AI ruim. Daardoor vallen soms ook simpele ‘regelsystemen’ onder de wet. Afhankelijk van het risico komen er extra eisen bij. Voor jou als klant betekent dit twee dingen. Je ziet wanneer AI wordt gebruikt (bijvoorbeeld een label bij een chatbot of AI‑beeld). En krijg je een besluit dat je raakt, zoals een kredietaanvraag, dan staat erbij welke gegevens zijn gebruikt en kun je een mens om herbeoordeling vragen. Die extra zekerheid kost organisaties geld en tijd, wat soms terugkomt in de prijs of premie.
 
-**Een poging tot een definitie**
+### Een poging tot een definitie
 
 In het artikel ['Defining Artificial Intelligence'](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5154389) van 2025 onderzoekt Weitzel bestaade definities en hun tekortkomingen. Op basis daarvan stelt hij een betere omschrijving voor, al benadrukt hij dat AI nooit volledig in één perfecte definitie te vangen is. De volgende definitie ziet hij dan ook als een verbetering ten opzichte van de definities die hij heeft geanalyseerd: 
 - **Een computerprogramma** dat gebruikmaakt van 
@@ -57,38 +94,93 @@ In het artikel ['Defining Artificial Intelligence'](https://papers.ssrn.com/sol3
 
 Weitzel legt vervolgens uit dat door het woord *computerprogramma* te gebruiken, bredere woorden als *systeem* kunnen worden uitgesloten.
 Weitzel erkent dat het idee dat de doelen "menselijke intelligentie" vereisen, wat vaag blijft, maar het helpt om simpele programma's uit te sluiten.  
-Door te zeggen dat het om *[machine learning](referentie/begrippenlijst.md#machine-learning)* gaat, worden regelgebaseerde AI-modellen uitgesloten.
-Deze regelgebaseerde AI-modellen – vaak aangeduid als symbolische AI, logisch-gebaseerde AI, top-down AI, klassieke AI of GOFAI (Good Old-Fashioned AI) – lossen problemen op met vooraf vastgelegde regels en logica. In deze gids gebruiken we de term symbolische AI voor dit paradigma.
+Door te zeggen dat het om *[machine learning](referentie/begrippenlijst.md#machine-learning)* gaat, worden regelgebaseerde AI-modellen uitgesloten en niet iedere expert zal het daarom eens zijn met Weitzels definitie.
 
-Niet iedere expert is het eens met Weitzels definitie, omdat symbolische AI hiermee buiten de boot valt. Toch vertonen systemen die werken met een combinatie van regels, een kennisbank en een redeneermachine vaak intelligent gedrag. Een bekend voorbeeld is [*MYCIN*](referentie/begrippenlijst.md), een expertsysteem uit de jaren ’70 dat artsen ondersteunde bij diagnoses en antibiotica-adviezen. Het gebruikte zo’n 600 regels en redeneerde via [backward chaining](referentie/begrippenlijst.md#backward-chaining). Destijds gold het als AI, omdat het beslissingen nam, zijn redenering kon uitleggen en vaak net zo goed presteerde als menselijke artsen.
+Het lijkt dus onbegonnen werk om tot een heldere definitie te komen. Laten we AI eens bekijken vanuit verschillende invalshoeken. 
+
+---
+## Verschillende invalshoeken van AI
+
+Binnen AI worden verschillende modellen en methoden gebruikt. Hoewel onderzoekers en professionals in het AI-veld deze begrippen over het algemeen correct gebruiken, ontstaat er verwarring wanneer deze termen in populaire media, marketing en publieke discussies op één hoop worden gegooid. Dit kan leiden tot vaagheid en misinterpretatie, vooral voor mensen die nieuw zijn in het veld.
+
+Volgens het [Stanford AI Index Report (2024)](https://aiindex.stanford.edu/report/) is terminologische verwarring een erkend probleem dat de toegankelijkheid van AI-onderzoek belemmert. Het rapport benadrukt dat "inconsistent gebruik van AI-termen in publieke communicatie kan leiden tot misverstanden over AI-capaciteiten en -beperkingen."
+
+Daarnaast wijst [MIT Technology Review (2024)](https://www.technologyreview.com/2024/01/04/1085094/state-of-ai-2024/) op het fenomeen van "AI washing" - waarbij bedrijven AI-terminologie misbruiken voor marketingdoeleinden zonder daadwerkelijk AI-technologie te implementeren. Dit draagt bij aan de verwarring over wat AI wel en niet is.
+
+We zullen daarom eerst bespreken wat [AI-model](referentie/begrippenlijst.md#ai-model) en [AI-methode](referentie/begrippenlijst.md#ai-methode) betekent binnen AI om vervolgens verschillende invalshoeken te bespreken. 
+
+
+
+
+- **Methode**: [Symbolische AI](referentie/begrippenlijst.md#symbolische-ai) versus [connectionistische AI](referentie/begrippenlijst.md#connectionistische-ai)
+- **Reikwijdte van het model**: [Narrow AI](referentie/begrippenlijst.md#narrow-ai) versus [General AI](referentie/begrippenlijst.md#general-ai)  
+- **Type model**: Discriminatief versus [generatieve AI](referentie/begrippenlijst.md#generatieve-ai)
+
+We zullen de verschillende invalshoeken hieronder verder beschrijven.
+
+### Symbolisch versus connectionistisch: *regels versus leren*
+Het probleem van Weitzel's definitie is dat regelgebaseerde AI-modellen buiten de boot vallen. Deze regelgebaseerde AI-modellen – vaak aangeduid als symbolische AI, logisch-gebaseerde AI, top-down AI, klassieke AI of GOFAI (Good Old-Fashioned AI) – lossen problemen op met vooraf vastgelegde regels en logica. In deze gids gebruiken we de regelgebaseerde AI voor deze denkrichting.
+Toch vertonen systemen die werken met een combinatie van regels, een kennisbank en een redeneermachine vaak intelligent gedrag. Een bekend voorbeeld is [*MYCIN*](referentie/begrippenlijst.md), een expertsysteem uit de jaren ’70 dat artsen ondersteunde bij diagnoses en antibiotica-adviezen. Het gebruikte zo’n 600 regels en redeneerde via [backward chaining](referentie/begrippenlijst.md#backward-chaining). Destijds gold het als AI, omdat het beslissingen nam, zijn redenering kon uitleggen en vaak net zo goed presteerde als menselijke artsen.
 
 Machine learning-modellen daarentegen leren door patronen te herkennen in data, zonder vooraf ingestelde regels. Dit type AI wordt ook wel connectionistische, subsymbolische, bottom-up of data-gedreven AI genoemd.
-In het vervolg gebruiken we de term connectionistische AI. Machine learning is de techniek binnen dit paradigma. 
+In het vervolg gebruiken we de term lerende AI. Machine learning is de techniek binnen deze denkrichting. 
 
-Aan de andere kant zijn AI-modellen die alleen symbolische AI toepassen, tegenwoordig zeldzaam. In dat geval is het meestal een combinatie van symbolische en connectionistische AI. Deze combinatie wordt ook wel [hybride AI](referentie/begrippenlijst.md#hybride-ai) genoemd. In de praktijk werken veel systemen zo: regels en menselijk ontwerp bieden controle en uitlegbaarheid; leren uit data zorgt voor flexibiliteit en prestaties.
+Aan de andere kant zijn AI-modellen die alleen regelgebaseerde AI toepassen, tegenwoordig zeldzaam. In dat geval is het meestal een combinatie van regelgebaseerde en lerende AI. Deze combinatie wordt ook wel [hybride AI](referentie/begrippenlijst.md#hybride-ai) genoemd. In de praktijk werken veel systemen zo: regels en menselijk ontwerp bieden controle en uitlegbaarheid; leren uit data zorgt voor flexibiliteit en prestaties.
 > AlphaGo leerde op twee manieren: eerst keek het naar heel veel partijen van sterke spelers en nam het patronen over. Daarna werd het nog beter door duizenden keren tegen zichzelf te spelen. Tijdens het rekenen verkent het razendsnel veel mogelijke zetten en kiest het de meest kansrijke vervolgen.
 ![AlphaGo computer rack](../img/AlphaGo_computer_rack.jpg)
 *De hardware achter AlphaGo, waarmee het beroemde Go-programma zijn berekeningen uitvoerde.*
-In 2015 versloeg AlphaGo de Europese kampioen Fan Hui met 5–0, de eerste keer dat een programma onder wedstrijdvoorwaarden een professionele Go‑speler versloeg. AlphaGo is daarmee een duidelijk voorbeeld van [hybride AI](referentie/begrippenlijst.md#hybride-ai): het combineert wat het heeft geleerd met slim en systematisch doorrekenen.
-Bron: [Mastering the game of Go with deep neural networks and tree search (Silver et al., 2016, Nature)](https://www.nature.com/articles/nature16961)
+> In 2015 versloeg AlphaGo de Europese kampioen Fan Hui met 5–0, de eerste keer dat een programma onder wedstrijdvoorwaarden een professionele Go‑speler versloeg. AlphaGo is daarmee een duidelijk voorbeeld van [hybride AI](referentie/begrippenlijst.md#hybride-ai): het combineert wat het heeft geleerd met slim en systematisch doorrekenen. Bron: [Mastering the game of Go with deep neural networks and tree search (Silver et al., 2016, Nature)](https://www.nature.com/articles/nature16961)
 
-Het is dus onbegonnen werk om AI helder te definiëren. Zouden we dan op een andere, meer praktische manier naar AI kunnen kijken? 
+---
+```
+### Quizvraag: Regelgebaseerde vs lerende AI
+Een arts gebruikt een computerprogramma om te bepalen of een patiënt een bepaalde ziekte heeft. Het programma:
 
-**Mate van AI**
-In de introductiecursus [*Elements of AI*](https://www.elementsofai.nl/) wordt benoemd dat je AI niet als een zelfstandig naamwoord kunt gebruiken (één AI, twee AI's) maar beter kunt spreken over "mate van AI" met aan de ene kant van het spectrum GOFAI en aan de andere kant moderne cutting-edge AI. 
+1. Stelt vragen over symptomen (koorts, pijn, etc.)
+2. Gebruikt 500 medische regels zoals "ALS koorts > 38°C EN pijn in onderbuik DAN mogelijk blindedarmontsteking"
+3. Geeft een diagnose met uitleg waarom
+4. Leert NIET bij van nieuwe patiëntgegevens
+
+Is dit een voorbeeld van connectionistische AI of symbolische AI?
+
+A) Lerende AI  
+B) Regelgebaseerde AI  
+C) Een combinatie van beide  
+D) Geen van beide
+```
+**[Klik hier voor het antwoord](referentie/antwoorden-quizvragen.md#antwoord-b-symbolische-ai)**
+
+---
+### Narrow vs General: *smal versus breed*
+Een andere manier om naar AI te kijken is de mate waarin het beperkt is tot uitvoeren van specifieke taken (beter bekend als narrow AI) tot het idee dat AI in staat is om allerlei taken uit te voeren die het menselijk vermogen evernaren (dit noemt men Artificial General Intelligence (AGI)). Het idee dat AI het menselijk vermogen overstijgt wordt Artificial Super Intelligence (ASI) genoemd.   
   > In de jaren 1980 introduceerde de filosoof John Searle, de termen [*Weak AI*](referentie/begrippenlijst.md#weak-ai) en [*Strong AI*](referentie/begrippenlijst.md#strong-ai)
   Weak AI betekent hier niet dat AI “primitief” of “zwak” is, maar dat het alleen intelligent gedrag simuleert zonder echt bewustzijn of begrip.
   Strong AI verwijst naar het idee dat een AI in principe een echte geest of bewustzijn zou kunnen hebben.
   In de praktijk zijn deze termen verwarrend, omdat weak AI vaak ten onrechte wordt gelijkgesteld aan regelgebaseerde systemen of “simpele AI”. Ook moderne geavanceerde modellen zoals ChatGPT vallen nog steeds onder Searle’s weak AI, zolang ze geen bewustzijn hebben.
   Daarom gebruiken veel onderzoekers tegenwoordig liever de termen [narrow AI](referentie/begrippenlijst.md#narrow-ai) (AI die specifieke taken kan uitvoeren) en [general AI](referentie/begrippenlijst.md#general-ai) (AI die taken kan uitvoeren zoals een mens).
 
-In het volgende gedeelte gaan we een aantal kernbegrippen (verder) toelichten. Dit doen we door de kernbegrippen in de tijdlijn van de ontwikkeling van AI te bespreken. Dan wordt ook duidelijker waarom definities steeds verschuiven.  
+
+### Discriminatief vs Generatief: *herkennen versus creëren*
+
+Een belangrijk onderscheid in moderne AI is dat tussen discriminatieve en generatieve AI:
+
+- **Discriminatieve AI**: Dit type AI is ontworpen om onderscheid te maken tussen verschillende categorieën. Bijvoorbeeld: is deze afbeelding een kat of een hond? Het model leert van voorbeelden en probeert de juiste categorie te voorspellen. Dit soort AI wordt veel gebruikt in toepassingen zoals spamfilters, gezichtsherkenning en medische diagnoses.  
+
+- **Generatieve AI**: Dit type AI gaat een stap verder. Het leert niet alleen van voorbeelden, maar gebruikt die kennis ook om nieuwe inhoud te maken. Bijvoorbeeld: het schrijven van een verhaal, het genereren van een afbeelding of het componeren van muziek. Generatieve AI opent nieuwe mogelijkheden, zoals het maken van creatieve ontwerpen of het simuleren van realistische gesprekken.
+
+**Waarom is dit belangrijk?**  
+Het verschil tussen discriminatieve en generatieve AI laat zien hoe AI zich heeft ontwikkeld. Waar discriminatieve AI vooral helpt bij het oplossen van specifieke problemen, zoals het herkennen van objecten of het voorspellen van trends, biedt generatieve AI de mogelijkheid om nieuwe ideeën en oplossingen te creëren. Dit maakt generatieve AI een krachtig hulpmiddel in veel verschillende domeinen, van kunst en entertainment tot wetenschap en technologie.
+
+
+
+Nu we weten dat we AI vanuit verschillende invalshoeken kunnen bekijken kunnen we de kernbegrippen verder toelichten. Dit doen we door ze in de tijdlijn van de AI-ontwikkeling te plaatsen. 
+Door de begrippen in deze ontwikkeling te plaatsen, zie je beter wat ze betekenen, hoe ze zich tot elkaar verhouden en waarom sommige ideeën steeds opnieuw terugkomen. Dit helpt je begrijpen waarom AI-definities voortdurend verschuiven - wat vandaag als AI geldt, was dat gisteren misschien nog niet. Let op: dit is geen beschrijving van de geschiedenis van AI; de focus ligt op belangrijke drijvende krachten die de ontwikkeling van AI mogelijk hebben gemaakt tot wat het vandaag de dag is. 
+
+Het maakt ook duidelijk dat AI niet alleen van deze tijd is maar al een geschiedenis heeft van 70 jaar! 
 
 ---
+## De ontwikkeling van AI en de drijvende krachten 
 
-### De ontwikkeling van AI en de drijvende krachten 
-
-Door de begrippen in deze ontwikkeling te plaatsen, zie je beter wat ze betekenen, hoe ze zich tot elkaar verhouden en waarom sommige ideeën steeds opnieuw terugkomen. Let op: dit is geen beschrijving van de geschiedenis van AI; de focus ligt op belangrijke drijvende krachten die de ontwikkeling van AI mogelijk hebben gemaakt tot wat het vandaag de dag is. 
 
 **1950–1970**
 
@@ -128,30 +220,41 @@ Laat jaren ’70 en vooral in de jaren ’80 kwamen [expertsystemen](referentie/
 - **Doorbraak van Deep Learning**
 De grote doorbraak kwam met [deep learning](referentie/begrippenlijst.md#deep-learning). Dankzij krachtige GPU’s en enorme hoeveelheden data konden veel diepere [neurale netwerken](referentie/begrippenlijst.md#neuraal-netwerk) worden getraind. Dit maakte plotseling toepassingen zoals spraakherkenning, beeldherkenning en vertaling bruikbaar in de praktijk.
 
-**2017–nu** 
-
-- **Generatieve AI en Foundation Models**  
-In 2017 werd een belangrijke stap gezet in de ontwikkeling van AI met de introductie van de [Transformer](referentie/begrippenlijst.md#transformer)-architectuur. Deze technologie maakte het mogelijk om AI-modellen te bouwen die veel groter en krachtiger zijn dan ooit tevoren. Deze modellen, met miljarden [parameters](referentie/begrippenlijst.md#parameters), kunnen enorme hoeveelheden tekst en afbeeldingen verwerken. Dit leidde tot de ontwikkeling van [Large Language Models (LLM’s)](referentie/begrippenlijst.md#llm) zoals GPT-4, Claude en Gemini, en tot [generatieve AI](referentie/begrippenlijst.md#generatieve-ai) die in staat is om tekst, afbeeldingen, audio en zelfs code te maken.
-
-Een belangrijk verschil met eerdere AI-modellen is dat deze nieuwe modellen niet alleen kunnen herkennen of classificeren, maar ook nieuwe dingen kunnen creëren. Dit verschil wordt vaak uitgelegd als het onderscheid tussen **discriminatieve AI** en **generatieve AI**:
-
-- **Discriminatieve AI**: Dit type AI is ontworpen om onderscheid te maken tussen verschillende categorieën. Bijvoorbeeld: is deze afbeelding een kat of een hond? Het model leert van voorbeelden en probeert de juiste categorie te voorspellen. Dit soort AI wordt veel gebruikt in toepassingen zoals spamfilters, gezichtsherkenning en medische diagnoses.  
-- **Generatieve AI**: Dit type AI gaat een stap verder. Het leert niet alleen van voorbeelden, maar gebruikt die kennis ook om nieuwe inhoud te maken. Bijvoorbeeld: het schrijven van een verhaal, het genereren van een afbeelding of het componeren van muziek. Generatieve AI opent nieuwe mogelijkheden, zoals het maken van creatieve ontwerpen of het simuleren van realistische gesprekken.
-
-### Waarom is dit belangrijk?  
-Het verschil tussen discriminatieve en generatieve AI laat zien hoe AI zich heeft ontwikkeld. Waar discriminatieve AI vooral helpt bij het oplossen van specifieke problemen, zoals het herkennen van objecten of het voorspellen van trends, biedt generatieve AI de mogelijkheid om nieuwe ideeën en oplossingen te creëren. Dit maakt generatieve AI een krachtig hulpmiddel in veel verschillende domeinen, van kunst en entertainment tot wetenschap en technologie.
-
-Door deze ontwikkelingen kunnen we AI niet alleen gebruiken om bestaande processen te verbeteren, maar ook om nieuwe mogelijkheden te ontdekken en te creëren. Dit maakt generatieve AI een van de meest opwindende gebieden binnen de moderne technologie.
+In het volgende deel wordt toegelicht wat ervoor heeft gezorgd dat AI opeens in een stroomversnelling is gekomen. 
 
 ---
+## AI in de tegenwoordige tijd
 
-### Conclusie
+- **Transformers, LLM's, Generatieve AI en Foundation Models**  
+In 2017 werd een belangrijke stap gezet in de ontwikkeling van AI met de introductie van de [Transformer](referentie/begrippenlijst.md#transformer)-architectuur. Deze technologie maakte het mogelijk om AI-modellen te bouwen die veel groter en krachtiger zijn dan ooit tevoren. Deze modellen, met miljarden [parameters](referentie/begrippenlijst.md#parameters), kunnen enorme hoeveelheden tekst en afbeeldingen verwerken. 
+Dit leidde tot de ontwikkeling van Foundation Models en [Large Language Models (LLM’s)](referentie/begrippenlijst.md#llm) zoals GPT-4, Claude en Gemini, en tot [generatieve AI](referentie/begrippenlijst.md#generatieve-ai) die in staat is om tekst, afbeeldingen, audio en zelfs code te creëren.
 
-- Een heldere definitie van de term AI is onbegonnen werk. Een meer praktische manier is om te spreken over mate van AI.
-- AI kan vanuit verschillende invalshoeken bekeken worden: 
-  - Narrow vs general:
-  - Symbolisch vs connectionistisch: Tegenwoordig worden modellen die alleen op basis van symbolische AI werken, niet meer beschouwd als AI. Er moet minimaal een vorm van machine learning aanwezig zijn.
-  - Discriminatief vs generatief: 
+Een belangrijk verschil met eerdere AI-modellen is dat deze nieuwe modellen niet alleen kunnen herkennen of classificeren, maar ook nieuwe dingen kunnen creëren. Dit maakt generatieve AI een van de meest veelbelovende gebieden binnen de moderne technologie. Nu kunnen we terugkijken op wat we hebben geleerd.
+
+Naast foundation models en LLMs is er nog een belangrijke term die je tegenkomt: **MLLM** of **Multimodal Large Language Model**. Dit is eigenlijk de nieuwste generatie van AI-modellen.
+
+**Wat is een MLLM?**
+Een MLLM is een model dat kan werken met meerdere "modaliteiten" (soorten data) tegelijk. Het kan bijvoorbeeld:
+- Tekst lezen en begrijpen
+- Afbeeldingen analyseren en beschrijven
+- Audio verwerken en transcriberen
+- Video's begrijpen en samenvatten
+- Al deze informatie combineren om complexe vragen te beantwoorden
+
+---
+## Conclusie
+
+
+- Een heldere definitie van de term AI is onbegonnen werk. In ieder geval wordt tegenwoordig modellen die alleen op basis van symbolische AI werken, niet meer beschouwd als AI. Er moet minimaal een vorm van machine learning aanwezig zijn. 
+
+- Een meer praktische manier is om te spreken over **mate van AI**.
+- Daarnaast kun je AI vanuit verschillende invalshoeken bekijken: 
+  - **Narrow vs general**: AI die specifieke taken kan uitvoeren versus AI die taken kan uitvoeren zoals een mens.
+  - **Discriminatief vs generatief**: AI die onderscheid maakt/ categoriseert versus AI die nieuwe inhoud creëert.
+  - **Foundation Models vs LLMs**: Breed inzetbare basis-modellen versus specifieke taalmodellen.
+
+
+**Reflectie:** Deze complexiteit laat zien waarom het belangrijk is om AI niet als één ding te zien, maar als een spectrum van mogelijkheden die voortdurend evolueert. De ontwikkeling van LLMs naar Foundation Models naar MLLMs toont hoe AI steeds meer op menselijke intelligentie gaat lijken door verschillende soorten informatie te kunnen combineren.
 
 In de volgende module ontdek je hoe deze begrippen concreet terugkomen in AI-tools die je zelf kunt uitproberen.
 

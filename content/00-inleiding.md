@@ -1,37 +1,81 @@
 # INLEIDING
 
-Welkom bij deze AI Wegwijzer. Deze Wegwijzer wil geen dik naslagwerk en ook geen eindeloze cursus zijn. Het is eerder een gids in het snelgroeiende landschap van AI.
+**Datum:** 18 januari 2025  
+**Laatste wijziging:** 22 januari 2025
 
-Over AI wordt veel gezegd en geschreven: beloftes, zorgen, hype, handleidingen en meningen. Het probleem is niet dat er te weinig informatie is, maar dat er te veel is en niet altijd duidelijk is hoe betrouwbaar deze informatie is. Deze Wegwijzer probeert het kaf van het koren te scheiden en informatie en links te geven van gezaghebbende en kwalitatieve bronnen. 
-<br/>
+---
 
-**Doel en doelgroep**
+## Welkom bij de AI Wegwijzer
 
-Het doel van deze Wegwijzer is ten eerste om je vertrouwd te maken met AI en je AI-geletterdheid te vergroten. De eerste modules van deze Wegwijzer zijn hierop gericht. 
-AI-geletterdheid betekent dat je beter begrip hebt van de basisbegrippen, toepassingen en gevolgen van AI. Dat is belangrijk omdat AI een steeds grotere rol speelt in werk, onderwijs en samenleving. Met AI-geletterdheid kun je beter meedenken, meepraten en keuzes maken over hoe AI wordt ingezet.
+Misschien heb je het al eens meegemaakt: je solliciteert en krijgt een standaardafwijzing zonder uitleg. Of je vraagt een lening aan en de bank zegt 'nee', zonder dat duidelijk is waarom. Steeds vaker spelen AI-systemen een rol bij dit soort beslissingen – van personeelsselectie tot kredietbeoordeling.
+
+AI is ongemerkt onderdeel geworden van ons dagelijks leven. Het bepaalt welke berichten je ziet op sociale media, welke routes je navigatie-app kiest en welke producten online worden aanbevolen. Vaak merken we het niet eens.
+
+---
+
+## Waarom AI-geletterdheid belangrijk is
+
+Voor veel mensen blijft onduidelijk hoe AI werkt. Dat is begrijpelijk: AI raakt veel vakgebieden tegelijk – technologie, statistiek, informatica, programmeren, filosofie en ethiek. Zonder helder overzicht kun je je gemakkelijk verliezen in de overvloed aan informatie.
+
+AI-geletterdheid helpt je begrijpen wat AI wel en niet kan. Het laat zien hoe AI beslissingen beïnvloedt en welke vragen je erbij moet stellen. Onderzoekers benadrukken dat dit alleen lukt met een geordend kader dat technische, maatschappelijke en ethische aspecten met elkaar verbindt.
+
+Ook internationale organisaties wijzen op deze noodzaak. Volgens [UNESCO (2021)](https://unesdoc.unesco.org/ark:/48223/pf0000380455) biedt AI veel kansen voor onderwijs, gezondheidszorg en duurzaamheid. Maar het kan ook ongelijkheid en discriminatie versterken als we er niet zorgvuldig mee omgaan.
+
+Deze Wegwijzer helpt je om AI stap voor stap te verkennen, zonder jezelf te verliezen in allerlei thema's.
+
+---
+
+## Wat kun je verwachten?
+
+### Doelstellingen
+Deze Wegwijzer wil je:
+- Vertrouwd maken met AI en de basisbegrippen
+- Overzicht geven in een complex vakgebied  
+- Informatie verstrekken op basis van betrouwbare bronnen
+- Ondersteunen bij het ontwikkelen van AI-geletterdheid
+
+### Opbouw van de modules
+De Wegwijzer is geen dik naslagwerk of eindeloze cursus. Het is een praktische gids door het AI-landschap:
+
+1. **[Oriënteren](01-orienteren.md)** - Introductie en kernbegrippen
+2. **[Verkennen](02-verkennen.md)** - AI-tools van deze tijd
+3. **[Begrijpen](03-begrijpen.md)** - Machine learning
+4. **[Toepassen](04-toepassen.md)** - AI in de praktijk: de kunst van het prompten
+5. **[Waannemen](05-waanemen.md)** - AI in de tegenwoordige tijd
+5. **[Reflecteren](06-reflecteren.md)** - Maatschappelijke, ecologische en ethische impact
+6. **[Verdiepen](07-verdiepen.md)** - Theoretische verdieping - neurale netwerken
+7. **[Integreren](08-integreren.md)** - AI als co-piloot voor developers
+8. **[Bouwen](09-bouwen.md)** - AI-modellen en -tools ontwikkelen
+9. **[Vooruitkijken](10-vooruitkijken.md)** - Toekomst en trends
+
+---
+
+## Hoe gebruik je deze Wegwijzer?
+
+### Flexibel leren
+De modules zijn flexibel opgebouwd. Je kunt ze grotendeels onafhankelijk van elkaar doorlopen. Aan het begin van iedere module staat welke voorkennis je nodig hebt. 
+
+Soms wordt informatie herhaald die je al eerder bent tegengekomen. Dat is geen probleem - je kunt die delen overslaan, maar herhaling kan ook helpen om de stof beter te onthouden.
+
+### Verdieping en bronnen
+Voor wie meer verdieping zoekt, verwijzen we naar de bronnen. Deze zijn weergegeven met links, zodat je direct verder kunt lezen.
+
+Begrippen zijn aanklikbaar en verwijzen naar de begrippenlijst. Daar vind je voor elk begrip een definitie met eventueel een toelichting.
+
+### Interactief
+Door de tekst heen vind je quizvragen en opdrachten. Daarnaast kom je tekstblokken met voorbeelden, trivia of extra weetjes tegen. Deze zijn bedoeld als verrijking en verdieping, maar niet verplicht. Je kiest zelf of je die meeneemt in je leertraject.
+
+### Levend document
+De AI Wegwijzer wordt regelmatig geactualiseerd om mee te gaan met de snelle ontwikkelingen in AI. Bovenaan iedere module staat wanneer deze voor het laatst is gewijzigd.
 
 
-Deze Wegwijzer is bedoeld voor iedereen die AI beter wil leren kennen: professionals die AI in hun werk tegenkomen, studenten die zich willen voorbereiden op de toekomst, en nieuwsgierige lezers die overzicht zoeken in de overvloed aan informatie.
 
+## Contact
 
-**Opbouw**
+Heb je vragen of opmerkingen? Stuur een mail naar: (nader te bepalen)
 
-De Wegwijzer is opgebouwd in modules: van de basis van AI, tot toepassingen in je werk, reflectie op de impact en een blik vooruit.
+---
 
-Elke module biedt korte en heldere uitleg: kernbegrippen, voorbeelden en context.
+## Disclaimer
 
-Voor wie meer verdieping zoekt, verwijzen we steeds naar gezaghebbende en kwalitatieve bronnen  – universiteiten, erkende cursussen en toonaangevende publicaties. Deze worden weergegeven met links, zodat je direct verder kunt lezen.
-
-Begrippen zijn aanklikbaar en verwijzen naar de begrippenlijst achterin deze Wegwijzer. Daar vind je voor elk begrip een korte en heldere definitie.
-
-
-**Vorm**
-
-Het doel is een leesbaar en aantrekkelijk document te bieden. Je kunt het in één keer doorlopen, of er later op teruggrijpen als kapstok om je kennis te ordenen.
-
-Daarnaast vind je door de tekst heen blokken met voorbeelden, trivia of extra weetjes. Deze zijn bedoeld als verrijking en verdieping, maar niet verplicht om te lezen. Je kiest dus zelf of je die meeneemt in je leerreis.
-
-De AI Wegwijzer is een levend document. Er wordt gestreefd om de inhoud regelmatig te actualiseren, zodat deze meegaat met de snelle ontwikkelingen in AI.
-
-**Disclaimer**
-Voor het opstellen van deze Wegwijzer is gebruikt gemaakt van AI. 
+Voor het opstellen van deze Wegwijzer is AI gebruikt als ondersteunend hulpmiddel. De inhoud is geverifieerd en aangepast door de auteur.
