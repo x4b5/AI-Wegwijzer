@@ -180,6 +180,9 @@ Groot taalmodel getraind op omvangrijke tekstcorpora dat mensachtige taal kan be
 
 <a id="machine-learning"></a>
 ### Machine learning
+"ML is het proces waarbij je een stuk software, een model genoemd, traint om nuttige voorspellingen te doen of om inhoud te genereren (zoals tekst, afbeeldingen, audio of video) op basis van data.
+([Google Introduction to Machine Learning, 2025](https://developers.google.com/machine-learning/intro-to-ml/what-is-ml))
+
 Machine learning gebruikt statistiek om patronen te vinden in enorme hoeveelheden data. En data kan hier van alles betekenen—getallen, woorden, afbeeldingen, klikken, noem maar op. Als het digitaal opgeslagen kan worden, kan het ingevoerd worden in een machine-learning-algoritme. Machine learning drijft een deel van de AI die je waarschijnlijk zelf al hebt gebruikt. Aanbevelingsalgoritmen zoals die van Netflix, YouTube en Spotify maken er gebruik van, net als zoekmachines, sociale-mediafeeds en spraakassistenten zoals Siri en Alexa.
 ([MIT Intro to AI, 2025](https://forms.technologyreview.com/newsletters/intro-to-ai/))
 

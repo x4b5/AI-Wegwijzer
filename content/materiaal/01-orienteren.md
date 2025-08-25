@@ -152,7 +152,8 @@ D) Geen van beide
 
 ---
 ### Narrow vs General: *smal versus breed*
-Een andere manier om naar AI te kijken is de mate waarin het beperkt is tot uitvoeren van specifieke taken (beter bekend als narrow AI) tot het idee dat AI in staat is om allerlei taken uit te voeren die het menselijk vermogen evernaren (dit noemt men Artificial General Intelligence (AGI)). Het idee dat AI het menselijk vermogen overstijgt wordt Artificial Super Intelligence (ASI) genoemd.   
+Een andere manier om naar AI te kijken is de mate waarin het beperkt is tot uitvoeren van specifieke taken (beter bekend als Artificial Narrow Intelligence) tot het idee dat AI in staat is om allerlei taken uit te voeren die het menselijk vermogen evernaren (dit noemt men Artificial General Intelligence (AGI)). Het idee dat AI het menselijk vermogen overstijgt wordt Artificial Super Intelligence (ASI) genoemd.   
+Op dit moment wordt er veel vooruitgang geboekt op het gebied van ANI maar niet op het gebied van AGI. Doordat mensen niet het verschil zien tussen de vooruitgang die wordt geboekt op gebied van ANI en de hype rondom AGI kan er helaas de verwarring ontstaan dat er grote voortuitgang wordt geboekt op het gebied van AGI terwijl dat niet het geval is. 
   > In de jaren 1980 introduceerde de filosoof John Searle, de termen [*Weak AI*](referentie/begrippenlijst.md#weak-ai) en [*Strong AI*](referentie/begrippenlijst.md#strong-ai)
   Weak AI betekent hier niet dat AI “primitief” of “zwak” is, maar dat het alleen intelligent gedrag simuleert zonder echt bewustzijn of begrip.
   Strong AI verwijst naar het idee dat een AI in principe een echte geest of bewustzijn zou kunnen hebben.

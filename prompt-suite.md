@@ -82,3 +82,7 @@ Maximum 3-5 concrete suggesties per sessie
 Markeer alle wijzigingen voor handmatige review
 Bewaar originele tekst altijd als backup
 Test leesbaarheid na elke wijziging
+
+
+Uber-prompt
+Ik wil een gids maken voor mensen die hun AI-geletterdhied willen verbeteren. Maar ook voor developers die nog weinig kennis hebben van AI en Ai willen gebruiken als co-piloot in programmeren/ coderen. Ik wil verschillende modules met bepaalde thema's. De modules mogen qua inhoud overlap hebben. Ik denk bijvoorbeeld aan thema's als introductie op machine learning, introductie op prompt-engineering, introductie op gebruik van Ai-tools. Het is niet zozeer de bedoeling om een cursus te schrijven maar meer om de deelnemers wegwijs te maken in de vele informatie over AI. Dat de deelnemer weet voor welk thema welke cursussen en literatuur toonaangevend en actueel is. Het is dan wel mogelijk om een samenvatting van de cursus of literatuur te geven. Doe een suggesties voor een overzicht van verschillende modules met bepaalde thema's. Omdat er zoveel informnatie te vinden is over Ai is het goed om focus te geven door bepaalde thema's toe te passen. Ook bijvoorbeeld ehtiek. 

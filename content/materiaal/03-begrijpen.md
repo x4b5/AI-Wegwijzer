@@ -2,13 +2,38 @@
 
 ---
 
-**Datum:** 2025-08-18  
-**Laatste wijziging:** 2025-08-19
+**Laatste wijziging:** 23 augustus 2025
 
 ---
 
 **Leerdoel**  
 In deze module krijg je een introductie over Machine Learning zonder in complexe wiskunde of diepgaande details te duiken. In de module _6. Verdiepen_ zal de theorie verder worden verdiept.
+
+---
+## Inleiding
+In vorige module...
+
+
+
+**Waarom Machine Learning?**
+Om helder te krijgen waarom Machine Learning de tand des tijds heeft overleeft kun je de vraag stellen voor welk probleem dit een oplossing is. 
+Hieronder een voorbeeld om dit helder te maken.
+
+De inbox loopt vol met berichten — persoonlijke mails van vrienden, maar ook honderden ongewenste spamberichten (reclame, phishing, nepprijzen). Klassiek programmeren (met handgemaakte regels zoals “als het woord ‘lotto’ verschijnt, markeer dan als spam”) faalt, omdat spammers steeds van tactiek veranderen. Zo'n systeem is rigide en raakt al snel achterhaald.
+
+Met machine learning kun je een model trainen op basis van voorbeelden van spam en niet-spam. Het model leert patronen herkennen die veel complexer zijn dan wat je met regels kunt formuleren — zoals tekststructuur, afzendergedrag of woordkeuze. Nieuwe mails worden daardoor automatisch én adaptief gefilterd.
+En dat werkt: spamfilters bereiken vaak meer dan 90 % nauwkeurigheid
+Bron: [Wikipedia, Applications of artificial intelligence](https://en.wikipedia.org/wiki/Applications_of_artificial_intelligence?utm_source=chatgpt.com)
+
+**Wat is Machine Learning**
+
+
+**Hoe werkt Machine Learning**
+## Overzicht leeraanbod
+
+
+Een goede eerste stap om Machine Learning te leren is de micro-learning [Introduction to Machine Learning van Google](https://developers.google.com/machine-learning/intro-to-ml). Deze micro-learning duur niet meer dan een half uur.
+
 
 Machine Learning is.
 In het geval van ML draait het om het maken van voorspellingen op basis van data en het genereren van resultaat .
@@ -20,15 +45,44 @@ Om deze voorspellingen te maken zijn er vier manieren om te leren:
 - Generative AI
 
 - Supervised learning
-    - Regressie
-    - Classificatie
+    - Regressie: numerieke voorspelling (de prijs van een huis)
+        - lineaire regressie: de lijn die het beste past bij de gelablde waardes.
+        - logistieke regressie; genereert een waarschijnlijkhid tussen 0.0 en 0.1 dat een systeem dan mapt aan een klasse voorspelling. 
+    - Classificatie: voorspelkt in likelihood dat iets tot een bepaalde categorie hoort (bijv. spam of geen-spam)
+        - binary classificatie: bijv, regen of geen regen.
+        - multiclass classification: meer dan twee waardes: bij. regen, hagel, sneeuw of sleet. 
+
+    - regressie -> nummers
+    - classificatie -> labels
+
 
 - Unsupervised learning
+    - clustering
 
 - Reinforcement learning
 
 - Generative AI
+    - content creeren vanuit input:
+        - text to text
+        - text-to-image
+        - text-to-video
+        - text-to-code
+        - text-to-speech
+        - image ande text-to-iamge
 
+    - patronen in data worden geleerd met het doel om nieuwe met gelijkwaardige data te creeren.
+
+Supervised Learning
+
+gebaseerd io de volgende kernconcepten:
+- data: gerelateerde data wordt opgelsagen in datasets
+de features zijn de waardes dat een supervised moidel gebruikt om de label te voorspellen. De label is het antwoord dat we wikllen dat het model voorspelt
+Labeled examples: voorbeelden die zowel de kenmerken als de labels bevatten
+- datasets: size and diversity
+- model; he complex collection of numbers that define the mathematical relationship from specific input feature patterns to specific output label values. 
+- training: difference between predictes and actual value - defined as loss. Gradually update
+- evalueren
+- inferentie: using the model to make predictions on unlabeled examples.
 
 **MIT OpenCourseWare Leerdoelen**  
 Deze module volgt de bewezen structuur van MIT's Introduction to Deep Learning cursus:
