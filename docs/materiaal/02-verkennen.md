@@ -5,7 +5,7 @@
 
 ---
 **Leerdoel**  
-In deze module raak je vertrouwd met een aantal [AI-tools](referentie/begrippenlijst.md#ai-tool) van deze tijd door er zelf mee aan de slag te gaan.
+In deze module raak je vertrouwd met een aantal AI-tools van deze tijd door er zelf mee aan de slag te gaan.
 
 ---
 **Inhoud**  
@@ -17,7 +17,7 @@ In deze module raak je vertrouwd met een aantal [AI-tools](referentie/begrippenl
 
 ---
 ### Inleiding  
-[AI-tools](referentie/begrippenlijst.md#ai-tool) zijn tegenwoordig overal om ons heen. Van chatbots die klantenservice ondersteunen tot beeldherkenning in medische diagnostiek en van automatische vertalingen tot creatieve toepassingen zoals het genereren van kunst. In deze module gaan we enkele van deze tools verkennen en kijken hoe ze ons dagelijks leven en werk beïnvloeden.  
+AI-tools zijn tegenwoordig overal om ons heen. Van chatbots die klantenservice ondersteunen tot beeldherkenning in medische diagnostiek en van automatische vertalingen tot creatieve toepassingen zoals het genereren van kunst. In deze module gaan we enkele van deze tools verkennen en kijken hoe ze ons dagelijks leven en werk beïnvloeden.  
 
 In deze lijst bespreken we alleen AI-tools die minimaal een gratis basisversie aanbieden. Dit maakt ze toegankelijk en geschikt om zelf mee te experimenteren.  
 
@@ -91,16 +91,16 @@ Voordat je gaat experimenteren met de verschillende modellen neem de volgende vu
 Met andere woorden, een AI-tool is de praktische implementatie van een AI-model, vaak met extra functies en een gebruiksvriendelijke interface. Het stelt gebruikers in staat om de kracht van AI te benutten zonder technische kennis van de onderliggende modellen of methoden.
 
 ### AI-tools in de praktijk  
-[AI-tools](referentie/begrippenlijst.md#ai-tool) zijn ontworpen om specifieke problemen op te lossen of processen te verbeteren. Ze maken gebruik van AI-modellen en methoden om taken uit te voeren die anders moeilijk of tijdrovend zouden zijn. Hier zijn enkele domeinen waarin AI-tools een grote impact hebben:  
+AI-tools zijn ontworpen om specifieke problemen op te lossen of processen te verbeteren. Ze maken gebruik van AI-modellen en methoden om taken uit te voeren die anders moeilijk of tijdrovend zouden zijn. Hier zijn enkele domeinen waarin AI-tools een grote impact hebben:  
 
-- **Gezondheidszorg**: [AI-tools](referentie/begrippenlijst.md#ai-tool) worden gebruikt voor het analyseren van medische beelden, het voorspellen van ziektes en het ondersteunen van artsen bij diagnoses.  
+- **Gezondheidszorg**: AI-tools worden gebruikt voor het analyseren van medische beelden, het voorspellen van ziektes en het ondersteunen van artsen bij diagnoses.  
 - **Onderwijs**: Tools zoals gepersonaliseerde leerplatforms helpen studenten om op hun eigen tempo te leren.  
-- **Creatieve industrie**: [AI-tools](referentie/begrippenlijst.md#ai-tool) genereren muziek, kunst en teksten, en ondersteunen ontwerpers en kunstenaars.  
+- **Creatieve industrie**: AI-tools genereren muziek, kunst en teksten, en ondersteunen ontwerpers en kunstenaars.  
 - **Klantenservice**: Chatbots en virtuele assistenten verbeteren de efficiëntie en beschikbaarheid van klantenondersteuning.  
-- **Productiviteit**: [AI-tools](referentie/begrippenlijst.md#ai-tool) zoals tekstsuggesties en automatische vertalingen maken werkprocessen sneller en eenvoudiger.  
+- **Productiviteit**: AI-tools zoals tekstsuggesties en automatische vertalingen maken werkprocessen sneller en eenvoudiger.  
 
 ### Voorbeelden van AI-tools  
-Hier zijn 10 populaire [AI-tools](referentie/begrippenlijst.md#ai-tool) die momenteel veel worden gebruikt. Alle tools bieden minimaal een gratis basisversie zodat je ermee direct aan de slag kunt gaan:  
+Hier zijn 10 populaire AI-tools die momenteel veel worden gebruikt. Alle tools bieden minimaal een gratis basisversie zodat je ermee direct aan de slag kunt gaan:  
 
 1. **[ChatGPT](https://chat.openai.com/)**  
    - **Toepassing**: Een chatbot die natuurlijke taal begrijpt en genereert.  
@@ -163,7 +163,7 @@ Hier zijn 10 populaire [AI-tools](referentie/begrippenlijst.md#ai-tool) die mome
     - **Kosten**: Gratis basisversie, premium functies tegen betaling.  
 
 ### Conclusie  
-[AI-tools](referentie/begrippenlijst.md#ai-tool) hebben een enorme impact op verschillende aspecten van ons leven en werk. Ze maken complexe taken eenvoudiger, verhogen de efficiëntie en openen nieuwe mogelijkheden in diverse domeinen. Door deze tools te verkennen, krijg je een beter begrip van hoe AI ons dagelijks ondersteunt en hoe je deze technologieën zelf kunt toepassen.
+AI-tools hebben een enorme impact op verschillende aspecten van ons leven en werk. Ze maken complexe taken eenvoudiger, verhogen de efficiëntie en openen nieuwe mogelijkheden in diverse domeinen. Door deze tools te verkennen, krijg je een beter begrip van hoe AI ons dagelijks ondersteunt en hoe je deze technologieën zelf kunt toepassen.
 
 
 

@@ -31,22 +31,34 @@ Deze Wegwijzer helpt je om AI stap voor stap te verkennen, zonder jezelf te verl
 Deze Wegwijzer wil je:
 - Vertrouwd maken met AI en de basisbegrippen
 - Overzicht geven in een complex vakgebied  
-- Informatie verstrekken op basis van betrouwbare bronnen
+- Informatie verstrekken op basis van betrouwbare en actuele bronnen
 - Ondersteunen bij het ontwikkelen van AI-geletterdheid
 
-### Opbouw van de modules
-De Wegwijzer is geen dik naslagwerk of eindeloze cursus. Het is een praktische gids door het AI-landschap:
+### Opbouw van de Wegwijzer
+De Wegwijzer is geen dik naslagwerk of eindeloze cursus. Het is meer een praktische gids door het AI-landschap waarin het vooral suggesties geeft van toonaangevende artikelen en cursussen over een bepaald onderwerp (waarom het wiel opnieuw uitvinden) en hier en daar samenvattende tekst als overzicht.  
 
-1. **[Oriënteren](01-orienteren.md)** - Introductie en kernbegrippen
-2. **[Verkennen](02-verkennen.md)** - AI-tools van deze tijd
-3. **[Begrijpen](03-begrijpen.md)** - Machine learning
-4. **[Toepassen](04-toepassen.md)** - AI in de praktijk: de kunst van het prompten
-5. **[Waannemen](05-waanemen.md)** - AI in de tegenwoordige tijd
-5. **[Reflecteren](06-reflecteren.md)** - Maatschappelijke, ecologische en ethische impact
-6. **[Verdiepen](07-verdiepen.md)** - Theoretische verdieping - neurale netwerken
-7. **[Integreren](08-integreren.md)** - AI als co-piloot voor developers
-8. **[Bouwen](09-bouwen.md)** - AI-modellen en -tools ontwikkelen
-9. **[Vooruitkijken](10-vooruitkijken.md)** - Toekomst en trends
+De Wegwijzer bestaat uit deze inleiding, vier verschillende routes en uit het naslagwerk *Verder lezen*.
+
+De vier verschillende routes kunnen los van elkaar worden gelezen maar de route *Basis* is wel nodig om voorkennis te hebben. De routes bestaan uit verschillende artikelen die 
+
+Hieronder een korte uitleg van de verschillende routes:
+
+**B Basis** 
+Wat is AI eigenlijk, en welke woorden moet je kennen om mee te kunnen praten?
+In deze route leg je de fundamenten. Je ontdekt wat we bedoelen met AI, machine learning en grote taalmodellen. Je leert de belangrijkste begrippen en krijgt gevoel voor wat AI wél kan en wat (nog) niet.
+
+**C Werking**
+Hoe leren machines en hoe ziet AI er “onder de motorkap” uit?
+Deze route laat zien hoe AI-modellen gebouwd en getraind worden. Je leert over data, neurale netwerken en de mechanismen achter het voorspellen van tekst of herkennen van patronen. Geen wiskundige details, wel genoeg inzicht om te begrijpen waar de kracht én de beperkingen van AI liggen.
+
+**D Toepassen**
+Hoe gebruik je AI vandaag al in je werk of studie?
+Hier ontdek je de concrete toepassingen van AI. Van slimme tekst- en beeldtools tot copilots voor programmeurs. Je leert hoe je goede prompts maakt, hoe je AI kunt inzetten in je workflow en waar je op moet letten bij betrouwbaarheid en veiligheid.
+
+**E Impact**
+Wat betekent AI voor ons werk, ons samenleven en de toekomst?
+In deze route kijk je verder dan de techniek en tools. Je onderzoekt de gevolgen van AI: kansen, risico’s en keuzes. Van privacy en bias tot de impact op beroepen, onderwijs en creativiteit. Je leert ook over regels, verantwoord gebruik en de grote vragen rond de toekomst van mens–machine samenwerking.
+F Verder lezen
 
 ---
 
