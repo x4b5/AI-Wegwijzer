@@ -35,15 +35,15 @@ Deze Wegwijzer wil je:
 - Ondersteunen bij het ontwikkelen van AI-geletterdheid
 
 ### Opbouw van de Wegwijzer
-De Wegwijzer is geen dik naslagwerk of eindeloze cursus. Het is meer een praktische gids door het AI-landschap waarin het vooral suggesties geeft van toonaangevende artikelen en cursussen over een bepaald onderwerp (waarom het wiel opnieuw uitvinden) en hier en daar samenvattende tekst als overzicht.  
+De Wegwijzer is geen dik naslagwerk of eindeloze cursus. Het is meer een praktische gids door het AI-landschap waarin het vooral suggesties geeft van toonaangevende en actuele artikelen en cursussen over een bepaald onderwerp (waarom het wiel opnieuw uitvinden) en hier en daar samenvattende tekst als overzicht geeft of kort bespreekt wat in het artikel/ cursus wordt besproken. Bronnen zijn aanklikbaar mocht je hierover meer willen lezen.  
 
-De Wegwijzer bestaat uit deze inleiding, vier verschillende routes en uit het naslagwerk *Verder lezen*.
+Deze Wegwijzer bestaat naast deze inleiding en het naslagwerk *Verder lezen* uit vier routes.
 
-De vier verschillende routes kunnen los van elkaar worden gelezen maar de route *Basis* is wel nodig om voorkennis te hebben. De routes bestaan uit verschillende artikelen die 
+Deze vier routes kunnen los van elkaar worden gelezen. Mocht je nauwelijks tot geen kennis hebben over AI dan is het wel verstandig om te starten met de route *Basis*. 
 
 Hieronder een korte uitleg van de verschillende routes:
 
-**B Basis** 
+**B Basics** 
 Wat is AI eigenlijk, en welke woorden moet je kennen om mee te kunnen praten?
 In deze route leg je de fundamenten. Je ontdekt wat we bedoelen met AI, machine learning en grote taalmodellen. Je leert de belangrijkste begrippen en krijgt gevoel voor wat AI wél kan en wat (nog) niet.
 
@@ -58,27 +58,33 @@ Hier ontdek je de concrete toepassingen van AI. Van slimme tekst- en beeldtools 
 **E Impact**
 Wat betekent AI voor ons werk, ons samenleven en de toekomst?
 In deze route kijk je verder dan de techniek en tools. Je onderzoekt de gevolgen van AI: kansen, risico’s en keuzes. Van privacy en bias tot de impact op beroepen, onderwijs en creativiteit. Je leert ook over regels, verantwoord gebruik en de grote vragen rond de toekomst van mens–machine samenwerking.
-F Verder lezen
+
+**F Bouwen**
+
+
+### Opzet van de Wegwijzer
+
+- De routes bestaan uit artikelen die een bepaald thema bespreken. Aan het begin van ieder artikel wordt het leerdoel benoemd en welke basiskennis nodig is. Voor lezers die niet alle voorkennis hebben (of dit zijn vergeten) zijn er tekstblokken die verder toelichting geven.
+
+- De artikelen kunnen inhoudelijk overlap hebben maar herhaling van kennis kan nooit kwaad om iets te leren.   
+
+- De artikelen zijn zo opgesteld dat ze per artikel ongeveer 30 minuten leestijd vragen. 
+
+- Veel begrippen zijn aanklikbaar en verwijzen naar de begrippenlijst. Daar vind je voor elk begrip een definitie met eventueel een toelichting.
+
+- Voor wie meer verdieping zoekt, verwijzen we naar de bronnen. Deze zijn weergegeven met links, zodat je direct verder kunt lezen.
+
+- Door de tekst heen vind je quizvragen en opdrachten. Daarnaast kom je tekstblokken met voorbeelden, trivia of extra weetjes tegen. Deze zijn bedoeld als verrijking en verdieping, maar niet verplicht. Je kiest zelf of je die meeneemt in je leertraject.
+
+- De AI Wegwijzer wordt regelmatig geactualiseerd om mee te gaan met de snelle ontwikkelingen in AI. Bovenaan iedere module staat wanneer deze voor het laatst is gewijzigd.
 
 ---
 
-## Hoe gebruik je deze Wegwijzer?
 
-### Flexibel leren
-De modules zijn flexibel opgebouwd. Je kunt ze grotendeels onafhankelijk van elkaar doorlopen. Aan het begin van iedere module staat welke voorkennis je nodig hebt. 
 
-Soms wordt informatie herhaald die je al eerder bent tegengekomen. Dat is geen probleem - je kunt die delen overslaan, maar herhaling kan ook helpen om de stof beter te onthouden.
 
-### Verdieping en bronnen
-Voor wie meer verdieping zoekt, verwijzen we naar de bronnen. Deze zijn weergegeven met links, zodat je direct verder kunt lezen.
 
-Begrippen zijn aanklikbaar en verwijzen naar de begrippenlijst. Daar vind je voor elk begrip een definitie met eventueel een toelichting.
 
-### Interactief
-Door de tekst heen vind je quizvragen en opdrachten. Daarnaast kom je tekstblokken met voorbeelden, trivia of extra weetjes tegen. Deze zijn bedoeld als verrijking en verdieping, maar niet verplicht. Je kiest zelf of je die meeneemt in je leertraject.
-
-### Levend document
-De AI Wegwijzer wordt regelmatig geactualiseerd om mee te gaan met de snelle ontwikkelingen in AI. Bovenaan iedere module staat wanneer deze voor het laatst is gewijzigd.
 
 
 
