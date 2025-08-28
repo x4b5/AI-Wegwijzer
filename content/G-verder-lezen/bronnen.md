@@ -49,3 +49,6 @@ Cursussen:
 
 Machine Learning
 https://developers.google.com/machine-learning
+
+
+https://www.brynjolfsson.com/

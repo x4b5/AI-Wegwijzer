@@ -12,7 +12,7 @@
 
 **Voorkennis:** Niet nodig
 
-**Duur:** ongeveer 20 minuten
+**Leestijd:** ongeveer 20 minuten
 
 **Inhoud**
 - [Inleiding](#inleiding)
@@ -24,7 +24,7 @@
 
 ## Inleiding
 
-Het begrip AI hoor je tegenwoordig (bijna) dagelijks. Maar wat betekent AI eigenlijk? Dat gaan we in het volgende deel uitzoeken.
+Het begrip AI hoor je tegenwoordig (bijna) dagelijks. Maar wat betekent AI eigenlijk? Dat gaan we in dit artikel uitzoeken.
 
 In deze module maak je kennis met het begrip AI. Zo begrijp je wat AI wel en niet is en is het een opstap naar het bespreken van de kernbegrippen van AI.
 
