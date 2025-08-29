@@ -77,23 +77,22 @@ De Wegwijzer wil geen dik naslagwerk zijn of een cursus die geen einde lijkt te 
 
 Het is meer een praktische gids door het AI-landschap waarin het vooral suggesties geeft van toonaangevende en actuele artikelen en cursussen over een bepaald onderwerp. Waarom zou je het wiel opnieuw uitvinden als er al goede informatie en cursussen zijn? Hier en daar wordt samenvattende tekst gegeven of wordt kort besproken wat in het artikel/ cursus wordt besproken.
 
-Deze Wegwijzer bestaat (naast deze inleiding en het naslagwerk *Verder lezen*) uit vier <!--vijf--> routes die los van elkaar gelezen kunnen worden:
+Deze Wegwijzer bestaat (naast deze inleiding en het naslagwerk *Verder lezen*) uit vier <!--vijf--> delen die een bepaald thema vanuit een bepaald perspectief bespreken. Deze perspectieven kunnen los van elkaar worden gelezen:
 
-| Route | Titel | Beschrijving |
-|-------|-------|--------------|
+| Perspectief| Titel | Beschrijving |
+|------------|-------|--------------|
 | **B** | **Basis** | Wat is AI? Basisbegrippen en wat AI wel/niet kan |
 | **C** | **Werking** | Hoe leren machines? Technische achtergrond |
 | **D** | **Toepassen** | Praktisch gebruik van AI in werk en studie |
 | **E** | **Impact** | Maatschappelijke gevolgen en ethische vragen |
  <!--| **F** | **Bouwen** |nader te bepalen --> |
 
-Start met route **B (Basics)** als je weinig tot geen AI-kennis hebt.
 
 <br/>
 
 ### Opzet
 
-- **Artikelen:** iedere route bestaat uit artikelen die een bepaald thema bespreken. Aan het begin van ieder artikel wordt het leerdoel benoemd en welke basiskennis nodig is. 
+- **Artikelen:** ieder perspectief bestaat uit artikelen die een bepaald thema bespreken. Aan het begin van ieder artikel wordt het leerdoel benoemd en welke basiskennis nodig is. 
 
 - **💡Toelichting** soms zal voorkennis in de artikelen worden benoemd voor lezers die behoefte hebben om dit nog eens kort toegelicht te krijgen. Dit wordt weergegeven met tekstblokken en aangeduid met het symbool:💡
 

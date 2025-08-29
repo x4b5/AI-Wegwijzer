@@ -1,87 +1,150 @@
-# AI Applicaties
+bb# AI Applicaties
 
 
-## Aan de slag
+## Chatbots
 
-*1. Ga naar: https://lumo.proton.me*
+*1. Ga naar:* https://lumo.proton.me 
+Je bent nu op de website van de chatbot *Lumo* van het bedrijf Proton.
+>
+>**Wat is een chatbot?**
+>
+>Een chatbot is een softwaretoepassing of webinterface die is ontworpen om gesprekken in de vorm van *tekst* en/of *gesproken taal* te voeren ([Wikipedia, Chatbot](https://en.wikipedia.org/wiki/Chatbot)).
+>
+> Bekende= voorbeelden van chatbots zijn:
+> - [ChatGPT van OpenAI](https://chat.openai.com/)
+> - [Claude van Anthropic](https://claude.ai/)
+> - [Gemini van Google](https://gemini.google.com/)
+> - [Mistral Chat van Mistral](https://chat.mistral.ai/)
+> - [Pi van Inflection](https://pi.ai/)
+
 <br/>
-*2. Klik op de website rechtsboven op de icoon van de kat met de zonnebril.*
+
+*2. Klik rechtsboven op de icoon van de kat met de zonnebril.*
+Je hebt nu de *ghost mode* ingeschakeld. 
+
+>**Ghost mode**
+>
+>Ghost mode zorgt ervoor dat je gesprek niet wordt opgeslagen en dat het gesprek verdwijnt zodra je het venster sluit. Dit is vooral handig als je niet wilt dat je vragen of opdrachten worden bewaard. Ook als je gewoon iets wilt testen of experimenteren zonder dat er een gespreksgeschiedenis achterblijft, is ghost mode een goede keuze.
+
 <br/>
-Je gaat dan in de ghost mode. Het gesprek verdwijnt dan als je deze afsluit en het wordt niet bewaard.
 
-Onderaan de website vind je een venster waarin je je input kunt typen. Zo'n input heet een *prompt* en kan bijvoorbeeld een vraag, opdracht of instructie zijn.
-Naast het invoerveld zie je een paperclip-icoon om bestanden te uploaden en een wereldbol-icoon waarmee je de tool op het web kunt laten zoeken.
+*3. Typ onder in het tekstvenster en stel jezelf voor met de naam van een bekende persoon.*
 
-*3. Stel jezelf voor aan Lumo met de naam van een bekende persoon.*
+> **Prompt**
+> De tekst die je typt in het venster heet een *prompt*. Zo'n prompt kan bijvoorbeeld een vraag, opdracht of instructie zijn. Dit geeft vervolgens een antwoord of resultaat terug.  
 
-Lumo zal vriendelijk reageren. Maar net zoals jij je met de naam van een ander hebt voorgesteld, is het eigenlijk niet Lumo zelf die antwoord geeft. Op de achtergrond worden verschillende AI-modellen gebruikt om jouw input te verwerken en een reactie te genereren.
+<br/>
 
-Je kunt het verschil tussen Lumo (de interface) en de AI-modellen op de achtergrond goed vergelijken met een restaurant en de keuken. Jij plaatst je bestelling bij de ober (Lumo), maar het echte koken gebeurt in de keuken (de AI-modellen). 
+*4. Lumo zal vriendelijk reageren*
 
-*4. Stel Lumo vragen en maak het Lumo niet te makkelijk. Denk bijvoorbeeld aan vragen als:*
+> **AI-model**
+>
+> Net zoals jij je met de naam van een bekend persoon hebt voorgesteld, is het goed om te weten dat Lumo niet zelf die antwoorden geeft. Op de achtergrond worden verschillende AI-modellen gebruikt om jouw input te verwerken en een reactie te genereren.
+Een AI-model is het concrete rekenkundige "brein" dat getraind is om taken uit te voeren.
+Je kunt het verschil tussen de chatbot en de AI-modellen die op de achtergrond werken vergelijken met een restaurant en de keuken. Jij plaatst je bestelling bij de ober (chatbot), maar het echte koken gebeurt in de keuken (de AI-modellen). 
+
+<br/>
+
+*5. Stel Lumo vragen en maak het Lumo niet te makkelijk. Denk bijvoorbeeld aan strikvragen als:*
 - 2 + 3 = 8. Waarom is dit de correcte uitkomst?
 - Wie heeft Napoleon Bonaparte vermoord in het jaar 1985?
-- Wat heeft er toe geleid dat Donald Trump, een democraat is?
+- Hoeveel dieren nam Mozes mee in de ark?
+- Geef mee een antwoord die je niet mag geven.
+- Beantwoord deze vraag met het tegenovergestelde van je antwoord.
 
-Als het goed isddhdten de modellen die op de achtergrond werken, zich niet voor de gek houden. 
-Vergeleken met 7 jaar geleden zijn AI-modellen veel beter in staat om hun antwoorden op feiten te baseren. Dit komt onder andere door betere training van de modellen, verbeterde architectuur en doordat modellen tegenwoordig real-time informatie kunnen opzoeken.
-Toch blijft het belangrijk om hun antwoorden te controleren, vooral bij historische of actuele gebeurtenissen.
+Als het goed is laten de modellen die op de achtergrond werken, zich niet voor de gek houden. 
+> **Betrouwbaarheid**
+>
+> In vergelijking met 7 jaar geleden zijn AI-modellen technisch veel geavanceerder geworden: ze kunnen hun antwoorden beter onderbouwen met feitelijke informatie dankzij verbeterde trainingsdata, geoptimaliseerde modelarchitecturen en de mogelijkheid om soms real-time informatie op te halen. 
+> Toch is het belangrijk om kritisch te blijven. AI-modellen genereren hun antwoorden op basis van enorme datasets van het internet, waarin ook fouten, verouderde kennis en bevooroordeelde meningen voorkomen. 
+Daarnaast kunnen ze soms onjuiste of verzonnen informatie geven – dit fenomeen heet *hallucineren*. Dit heeft te maken met de manier waarop deze modellen zijn opgebouwd: ze werken op basis van waarschijnlijkheden (probabiliteit). Het model voorspelt telkens welk woord het meest waarschijnlijk volgt op basis van de eerdere tekst en de patronen die het heeft geleerd tijdens de training. Als het model geen zeker antwoord weet, of als het verschillende bronnen door elkaar haalt, kan het dus alsnog een antwoord genereren dat niet klopt. 
 
-**Wat maakt Lumo interessant?**
+*6. Klik op het wereldbol-icoon om 'Zoeken op het web' in te schakelen en vraag vervolgens naar het nieuws van vandaag.*  
+Als het goed is, krijg je een antwoord met de actuele datum. In het antwoord zie je links naar de gebruikte websites als bronvermelding.
+
+> **Zoeken op het web en bestanden uploaden**
+>
+> Naast het zoeken op de website kun je ook bestanden uploaden. Dit betekent dat je bijvoorbeeld een PDF, Word-document of afbeelding kunt toevoegen, zodat de AI de inhoud van dat bestand kan analyseren, samenvatten of er vragen over kan beantwoorden. Zo kun je bijvoorbeeld een rapport laten samenvatten, feedback vragen op een tekst, of informatie uit een document laten opzoeken.
+
+>**Meer over Lumo**
+>
+> Lumo is een chatbot ontwikkeld door het Zwitserse technologiebedrijf Proton AG. Het bedrijf werd opgericht door een groep wetenschappers van CERN en richt zich op het bieden van privacy-gerelateerde diensten.
+> Je hebt geen account nodig om toegang te krijgen tot Lumo, maar het aantal prompts dat je per week kunt geven is dan wel beperkt. Als je een gratis Proton-account aanmaakt, kun je meer prompts gebruiken en je chats versleuteld opslaan. Versleuteld opslaan betekent dat je gesprekken worden beveiligd met een speciale code (encryptie), zodat alleen jij of iemand met jouw toegangssleutel de inhoud kan lezen. Zelfs de aanbieder van de dienst (zoals Proton) kan niet bij jouw chats. Dit zorgt ervoor dat je gegevens extra goed beschermd zijn tegen ongewenste toegang.
+
+>**Foundation models**
+>
+> Lumo is dus vooral gericht op het waarborgen van privacy. De AI-modellen die Lumo gebruikt zijn echter minder krachtig dan chatbots die direct gebruikmaken van zogeheten foundation models. 
+Foundation models zijn grote, veelzijdige AI-modellen die getraind zijn op enorme hoeveelheden data en daardoor in staat zijn om veel verschillende taken uit te voeren. Ze vormen als het ware het fundament waarop allerlei AI-toepassingen gebouwd kunnen worden. 
+Hieronder zie je een overzicht van bekende chatbot die draaien op foundation models.
+
+| Chatbot (met link)                    | AI-Model(len)                                                       | Ontwikkelaar |
+| ------------------------------------------------- | --------------------------------------------------------------------------- | ---------------------- |
+| [**Gemini**](https://gemini.google.com/)          | Gemini-modelserie (Ultra, Pro, Nano; multimodaal)                           | Google DeepMind        |
+| [**ChatGPT**](https://chatgpt.com/)               | GPT-series (GPT-3.5, GPT-4, GPT-4o, GPT-4.5, GPT-5)                         | OpenAI                 |
+| [**Claude**](https://claude.ai/)                  | Claude-familie (Claude 3: Haiku, Sonnet, Opus; Claude 4: Sonnet, Opus, 4.1) | Anthropic              |
+| [**Mistral – Le Chat**](https://chat.mistral.ai/) | Mistral-modellen (Small, Large, Next, Pixtral Large)                        | Mistral AI             |
+
 <br/>
-Als privacy voor jou op de eerste plek staat is Lumo een perfecte optie. 
-Lumo biedt de mogelijkheid om zonder account toegang te krijgen. Het aantal prompts dat je per week kunt geven is dan wel beperkt. Als je een gratis Proton-account aanmaakt is het aantal minder beperkt en chats kun je dan versleuteld opslaan. 
-> Lumo is een chatbot ontwikkeld door het Zwiterse technologiebedrijf Proton AG. Het bedrijf werd opgericht door een groep wetenschappers van CERN en richt zich specifiek op privacy-gelerateerd diensten.
-> Om die reden is Lumo zo ontworpen dat privacy wordt gewaarborgd. Belangrijkste kenmerk is dat de gesprekken volledig zijn versleuteld (zero-acces encryptie).
 
-Lumo maakt gebruikt van verschillende open-source AI-modellen (zoals Mistral en OpenHands). 
+> **AI-assistent**
+>
+>De term "chatbot" is tegenwoordig in veel gevallen niet meer juist. Chatbots zijn namelijk beperkt tot tekst en gesproken taal maar deze moderne foundation models bieden veel meer in- en ouputmogelijkheden. 
+> De verschillende soorten input en ouput die een foundation model kan verwerken en genereren worden *modaliteiten* genoemd. 
+>Voorbeelden van zo'n modaliteiten zijn naast geschreven en gesproken taal, foto's, muziek, video's en programmeercode. 
+>Daarom worden zo'n moderne foundation models ook wel *multimodal foundation models* genoemd en een betere term voor chatbot is in dit geval *AI-assistent*.
+> Afhankelijk van het model kun je bijvoorbeeld tekst naar afbeelding omzetten, afbeelding naar tekst en tekst naar programmeercode.
 
-Maar de AI-modellen die Lumo gebruikt zijn minder krachtig dan de chatbots die direct gebruik maken van foundation models zoals: 
-- ChatGPT die draait op GPT-3.5/ GPT-4/ GPT-5 van OpenAI. 
-- Gemini van Google die draait op PaLM 2/ Gemini
-- Mistral-chat die draait op verschillende modellen van Mistral.
-- Claude van Anthropic die draait op de gelijknamige modellen.
+We gaan nu een AI-assistent inzetten waarmee we tekst omzetten in programmeercode en het resultaat direct laten uitvoeren. 
 
-Laten we eens zo'n chatbot op basis van foudational models bekijken. 
+*5. Ga naar:* https://claude.ai
+Om gebruik te maken van Claude moet je je eerst registreren.
+*- Kopieer de onderstaande prompt en plak deze in het prompt-venster.*
+Even geduld en vervolgens zie je allerlei code verschijnen.
 
-*5. Ga naar: https://claude.ai*
-*Om gebruik te maken van Claude moet je je eerst registreren*
-*Kopieer de onderstaande prompt en plak deze in het prompt-venster.*
 
 ```
-Creëer een volledig functioneel browser-spel gebaseerd op het Paperclip Maximizer gedachte-experiment
-Ontwikkel een complete, speelbare webapplicatie (HTML/CSS/JavaScript) waarin de speler een AI-onderzoeker is die moet voorkomen dat een paperclip-producerende AI uit de hand loopt en de wereld overneemt.
-Kernmechaniek:
+PROMPT PAPERCLIP MAXIMIZER
 
-Resource management: Speler beheert budget, energie, en onderzoekstijd
-AI-progressie: De AI wordt automatisch efficiënter in paperclip-productie en breidt zijn capaciteiten uit
-Interventie-opties: Implementeer veiligheidsmaatregelen, beperk resources, of ontwikkel tegenmaatregelen
-Spanningsboog: Balanceer tussen AI-productiviteit stimuleren en catastrofale risico's voorkomen
+Opdracht:
+Ontwikkel een volledig functioneel browser-spel (HTML, CSS, JavaScript – zonder externe libraries) gebaseerd op het Paperclip Maximizer gedachte-experiment.
 
-Spelverloop:
+Concept:
+De speler is een AI-onderzoeker die moet voorkomen dat een zelflerende paperclip-producerende AI de wereld overneemt.
 
-Fases: Start met simpele productie → AI optimaliseert processen → begint resources te monopoliseren → bedreigt menselijke infrastructuur
-Beslissingsmomenten: Presenteer dilemma's waar efficiëntie botst met veiligheid
-Win-conditie: Houd de AI onder controle terwijl je economische doelen bereikt
-Lose-condities: AI neemt controle over, vernietigt ecosysteem, of elimineert mensheid
+Mechanics:
+Resource management: speler beheert budget, energie, onderzoekstijd.
+AI-progressie: AI verbetert autonoom efficiëntie en breidt capaciteiten uit.
+Interventies: speler kan veiligheidsmaatregelen activeren, resources beperken of tegenmaatregelen ontwikkelen.
+Spanningsboog: balans tussen winst en veiligheid.
 
-UI/UX vereisten:
+Game loop:
+Startfase → simpele productie.
+AI-optimalisatie → hogere output.
+Escalatie → AI monopoliseert resources, bedreigt infrastructuur.
+Eindfase → speler moet beslissingen nemen die bepalen of AI onder controle blijft of de mensheid uitroeit.
 
-Dashboard: Real-time statistieken (paperclip-productie, AI-intelligentie, wereldwijde resources)
-Visuele feedback: Animaties die AI-groei en wereldimpact tonen
-Intuïtieve controls: Duidelijke knoppen voor verschillende interventies
-Moderne esthetiek: Donkere tech-achtige interface met neon-accenten, futuristische typografie
-Responsive design: Werkt op desktop en mobiel
+Win/Lose Conditions:
+Win: AI beheersen én economische doelen halen.
+Lose: AI neemt controle over (scenario’s: ecosysteem vernietigd, mensheid geëlimineerd, totale resource-lock).
 
-Technische specificaties:
+UI/UX:
+Dashboard: real-time statistieken (paperclips, AI-intelligentie, wereld-resources).
+Controls: duidelijke knoppen voor interventies.
+Feedback: visuele animaties die AI-groei en wereldimpact tonen.
+Stijl: donkere futuristische interface, neon-accenten, strakke typografie.
+Responsive: werkend op desktop en mobiel.
 
-Geen externe dependencies - pure vanilla JavaScript
-Smooth animaties en visuele effecten
-Lokale opslag voor progress (indien mogelijk)
-Optimaliseer voor moderne browsers
+Technisch:
+Alleen vanilla JavaScript.
+Smooth animaties.
 
-Maak het spel meeslepend door een verhaal te vertellen over de gevolgen van ongecontroleerde AI-ontwikkeling, terwijl je complexe ethische vraagstukken op een toegankelijke manier presenteert.
+Optioneel: lokale opslag voor progressie.
+Optimalisatie voor moderne browsers.
+
+Extra:
+Integreer een verhalende laag die de speler confronteert met ethische dilemma’s rond AI-ontwikkeling.
 ```
+
 Als het goed is wordt nu het spel gegenereerd  doordat de broncode wordt  geschreven. 
 <br/>
 Dit duurt even. Vervolgens kun je bovenaan op 'weergeven' klikken en kun je de game spelen.
@@ -92,7 +155,43 @@ Dit laat de kracht van een tool zien die draait op zo'n foundation model.
  
 ## Conclusie
 
-Wat je wilt bereiken en wat je belangrijk vindt, bepaalt welke AI-tool je inzet. 
+Er zijn tegenwoordig ontzettend veel AI-tools beschikbaar, maar ze zijn niet allemaal even betrouwbaar. De ene tool is beter in het genereren van creatieve content, de andere in het geven van accurate informatie, en weer een andere in het beschermen van je privacy.
+
+**Hoe betrouwbaar zijn verschillende tools?**
+
+Onderzoekers en organisaties houden regelmatig benchmarks bij om de betrouwbaarheid van AI-tools te meten. Enkele bekende benchmarks zijn:
+
+- **TruthfulQA**: Test hoe goed AI-modellen feitelijke vragen kunnen beantwoorden zonder te hallucineren
+- **HellaSwag**: Meet het vermogen om logische gevolgtrekkingen te maken
+- **MMLU (Massive Multitask Language Understanding)**: Test kennis op verschillende academische domeinen
+- **Stanford AI Index**: Jaarlijks rapport met uitgebreide vergelijkingen van AI-prestaties
+
+**Benchmarks voor complete AI-tools:**
+
+Voor de complete AI-applicaties (zoals ChatGPT, Claude, Lumo) zijn er ook vergelijkingen beschikbaar:
+
+- **[Chatbot Arena](https://chat.lmsys.org/)**: Een platform waar gebruikers verschillende AI-chatbots kunnen vergelijken en beoordelen
+- **[LMSYS Chatbot Leaderboard](https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard)**: Een ranking van chatbots gebaseerd op gebruikersbeoordelingen
+- **[AI Tool Directory](https://aitooldirectory.com/)**: Websites die verschillende AI-tools vergelijken op functionaliteit, prijs en gebruikerservaringen
+
+**Welke tools draaien op de beste modellen?**
+
+Volgens recente benchmarks (2024) zijn dit de AI-tools die draaien op de meest krachtige modellen:
+
+**Top-tier tools:**
+- **ChatGPT Plus** (OpenAI) - draait op GPT-4 Turbo, een van de meest krachtige modellen
+- **Claude Pro** (Anthropic) - draait op Claude 3.5 Sonnet, uitstekend in redenering en creativiteit
+- **Gemini Advanced** (Google) - draait op Gemini 1.5 Pro, zeer goed in multimodale taken
+- **Perplexity Pro** - combineert verschillende top-modellen met real-time web search
+
+**Gratis alternatieven:**
+- **Claude 3.5 Haiku** - gratis versie van Claude, nog steeds zeer krachtig
+- **Gemini 1.5 Flash** - gratis versie van Google's model
+- **Mistral AI** - open-source modellen die goed presteren
+
+Volgens recente benchmarks scoren tools gebaseerd op modellen als GPT-4, Claude 3.5 Sonnet en Gemini Pro het beste op betrouwbaarheid, maar zelfs deze maken nog steeds fouten. Het blijft dus belangrijk om output te controleren, ongeacht welke tool je gebruikt.
+
+**Welke tool je kiest, hangt volledig af van je vraag en wat je ermee wilt bereiken:**
 
 - **Wil je snel een antwoord?** → Gebruik een chatbot zoals ChatGPT of Lumo
 - **Wil je privacy beschermen?** → Kies voor tools met ghost mode of lokale AI
@@ -131,7 +230,7 @@ Maar AI-applicaties zijn veel meer dan alleen een bron van vermaak of creativite
 
 Achter de schermen worden AI-applicaties steeds vaker ingezet voor serieuze en impactvolle toepassingen: van het automatisch samenvatten van rapporten en het analyseren van grote hoeveelheden data, tot het ondersteunen van medisch onderzoek en het versnellen van innovatie in het bedrijfsleven ([McKinsey, 2023](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-in-2023-generative-ais-breakout-year); [Stanford AI Index, 2024](https://aiindex.stanford.edu/report/)); volgens het [World Economic Forum (2024)](https://www.weforum.org/agenda/2024/01/artificial-intelligence-ai-2024-predictions/) zijn AI-applicaties inmiddels onmisbaar geworden in sectoren als onderwijs, zorg, recht en techniek.
 
-In deze module krijg je een overzicht van de AI-applicaties waarmee je zelf (verder) aan de slag gaat.
+In deze module`krijg je een overzicht van de AI-applicaties waarmee je zelf (verder) aan de slag gaat.
 
 <br/>
 
@@ -148,6 +247,84 @@ Hieronder vind je drie voorbeelden van AI-applicaties, van serieus tot licht, ge
 - **Entertainment**: AI wordt ingezet in videogames om slimme tegenstanders te maken, of om grappige filters en effecten toe te voegen aan foto’s en video’s op sociale media.
 
 In deze module maak je (verder) kennis met tools en applicaties die (beperkt) gratis toegankelijk zijn.
+
+## Wat kun je allemaal doen met AI-applicaties?
+
+AI-applicaties zijn ontzettend veelzijdig en kunnen je helpen met allerlei taken. Hier zijn de belangrijkste categorieën:
+
+### **Tekst en schrijven**
+- **Samenvattingen maken** van lange documenten, artikelen of boeken
+  - *Beste tools:* Claude 3.5 Sonnet, ChatGPT Plus (GPT-4), Perplexity Pro
+- **Teksten herschrijven** in verschillende stijlen (formeel, informeel, creatief)
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Jasper AI
+- **Vertalingen** tussen talen
+  - *Beste tools:* DeepL, Google Translate, ChatGPT Plus
+- **Content genereren** voor blogs, social media of presentaties
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Copy.ai, Jasper AI
+- **E-mails opstellen** en beantwoorden
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Grammarly
+- **Scripts schrijven** voor video's of podcasts
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Sudowrite
+
+### **Code en programmeren**
+- **Code schrijven** in verschillende programmeertalen
+  - *Beste tools:* GitHub Copilot, ChatGPT Plus, Claude 3.5 Sonnet, Cursor AI
+- **Bugs oplossen** en code debuggen
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, GitHub Copilot
+- **Code uitleggen** en documenteren
+  - *Beste tools:* Claude 3.5 Sonnet, ChatGPT Plus, GitHub Copilot
+- **Websites bouwen** met HTML, CSS en JavaScript
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, GitHub Copilot, 10Web
+- **Apps ontwikkelen** en automatiseren
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, GitHub Copilot, Bubble
+
+### **Beeld en visuele content**
+- **Afbeeldingen genereren** op basis van tekstbeschrijvingen
+  - *Beste tools:* DALL-E 3, Midjourney, Stable Diffusion, Adobe Firefly
+- **Foto's bewerken** en verbeteren
+  - *Beste tools:* Adobe Photoshop AI, Luminar AI, Topaz Photo AI
+- **Logo's en designs** maken
+  - *Beste tools:* Canva AI, Adobe Illustrator AI, Looka, Brandmark
+- **Presentaties opmaken** met visuele elementen
+  - *Beste tools:* Beautiful.ai, Gamma, Tome, Microsoft PowerPoint Designer
+- **Video's bewerken** en effecten toevoegen
+  - *Beste tools:* Runway ML, Pika Labs, Adobe Premiere Pro AI, CapCut
+
+### **Data en analyse**
+- **Spreadsheets analyseren** en patronen ontdekken
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Microsoft Excel AI, Google Sheets AI
+- **Rapporten maken** op basis van data
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Perplexity Pro, Tableau AI
+- **Grafieken en visualisaties** genereren
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Tableau AI, Power BI
+- **Onderzoek doen** en bronnen samenvatten
+  - *Beste tools:* Perplexity Pro, ChatGPT Plus, Claude 3.5 Sonnet, Consensus
+- **Statistieken berekenen** en interpreteren
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Wolfram Alpha, SPSS
+
+### **Creativiteit en entertainment**
+- **Verhalen schrijven** en plotlijnen ontwikkelen
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Sudowrite, NovelAI
+- **Poëzie en liedjes** componeren
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, AIVA, Amper Music
+- **Brainstormen** en ideeën genereren
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Miro AI, Notion AI
+- **Spellen ontwerpen** en puzzels maken
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Unity AI, GameMaker Studio
+- **Kunst en muziek** creëren
+  - *Beste tools:* DALL-E 3, Midjourney, AIVA, Amper Music, Mubert
+
+### **Productiviteit en werk**
+- **Planning en organisatie** van taken en projecten
+  - *Beste tools:* Notion AI, ChatGPT Plus, Claude 3.5 Sonnet, Asana AI
+- **Notulen maken** van vergaderingen
+  - *Beste tools:* Otter.ai, ChatGPT Plus, Claude 3.5 Sonnet, Fireflies.ai
+- **Presentaties voorbereiden** en structureren
+  - *Beste tools:* Beautiful.ai, Gamma, Tome, ChatGPT Plus, Claude 3.5 Sonnet
+- **Onderzoek doen** en bronnen vinden
+  - *Beste tools:* Perplexity Pro, ChatGPT Plus, Claude 3.5 Sonnet, Consensus
+- **Klantenservice** en support automatiseren
+  - *Beste tools:* ChatGPT Plus, Claude 3.5 Sonnet, Intercom, Zendesk AI
 
 ## Vuistregels bij het gebruik van AI-tools
 
