@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego-Blokken Template - AI-Wegwijzer</title>
+    <link rel="stylesheet" href="../css/template-tekstblokken.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧱 Template Tekstblokken</h1>
+        <p>Dit document bevat alle herbruikbare content blokken voor AI-Wegwijzer.</p>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>1. [Titel van de opdracht]</strong><br>
+                [Beschrijving van wat de gebruiker moet doen]
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>[Titel van informatie]</strong><br>
+                [Uitgebreide uitleg van concepten, definities of achtergrondinformatie]
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <div class="trivia-toggle" onclick="toggleTrivia(this)">
+                    <strong>[Titel van de trivia]</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+                    <span class="trivia-toggle-icon">▶</span>
+                </div>
+                <div class="trivia-content">
+                    [Verborgen content die zichtbaar wordt na klikken]
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> [De quizvraag hier]<br><br>
+                
+                <div class="quiz-option" onclick="toggleQuizOption(this)">
+                    <strong>A)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om antwoord te zien)</span>
+                    <span class="quiz-option-icon">▶</span>
+                </div>
+                <div class="quiz-option-content">
+                    [Antwoord optie A]
+                </div>
+                
+                <div class="quiz-option" onclick="toggleQuizOption(this)">
+                    <strong>B)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om antwoord te zien)</span>
+                    <span class="quiz-option-icon">▶</span>
+                </div>
+                <div class="quiz-option-content">
+                    [Antwoord optie B]
+                </div>
+                
+                <div class="quiz-option" onclick="toggleQuizOption(this)">
+                    <strong>C)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om antwoord te zien)</span>
+                    <span class="quiz-option-icon">▶</span>
+                </div>
+                <div class="quiz-option-content">
+                    [Antwoord optie C]
+                </div>
+                
+                <div class="quiz-option" onclick="toggleQuizOption(this)">
+                    <strong>D)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om antwoord te zien)</span>
+                    <span class="quiz-option-icon">▶</span>
+                </div>
+                <div class="quiz-option-content">
+                    [Antwoord optie D]
+                </div>
+                
+                <br><em>[Denk-opdracht of hint]</em>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Trivia toggle functionaliteit
+        function toggleTrivia(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.trivia-toggle-icon');
+
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+                icon.classList.add('expanded');
+            }
+        }
+
+        // Quiz toggle functionaliteit
+        function toggleQuiz(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.quiz-toggle-icon');
+
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+                icon.classList.add('expanded');
+            }
+        }
+
+        // Quiz optie toggle functionaliteit
+        function toggleQuizOption(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.quiz-option-icon');
+
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                icon.classList.remove('expanded');
+            } else {
+                content.classList.add('expanded');
+                icon.classList.add('expanded');
+            }
+        }
+    </script>
+</body>
+</html>

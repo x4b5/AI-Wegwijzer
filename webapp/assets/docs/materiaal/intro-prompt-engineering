@@ -1,0 +1,19 @@
+# *Hoe stel je betere vragen aan AI?*
+### Introductie in prompt engineering
+
+## Wat is prompt engineering?
+Prompt engineering is het proces van het structureren of formuleren van een instructie om betere resultaten te verkrijgen van een generative AI-model [Wikipedia, prompt engineering, augustus 2025](https://en.wikipedia.org/wiki/Prompt_engineering).
+Deze AI-modellen leren de onderliggende patronen en structuren van hun trainingsdata en gebruiken dit om nieuwe data te produceren oftewel, genereren.
+De input voor het genereren van deze nieuwe data komt vaak in de vorm van natuurlijke taal prompts [Wikipedia, Generative artificial intelligence, augustus 2025](https://en.wikipedia.org/wiki/Generative_artificial_intelligence).
+
+https://www.promptingguide.ai/
+https://www.kaggle.com/whitepaper-prompt-engineering
+https://learnprompting.org/docs/basics/prompt_engineering
+
+## Waarom is prompt engineering belangrijk?
+
+**prompting vs. finetuning**
+https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview#prompting-vs-finetuning
+
+## Hoe pas je prompt engineering toe?
+

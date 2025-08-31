@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Applicaties - Chatbots en AI-Assistenten</title>
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chatbots en AI-Assistenten</h1>
+
+        <h2>Chatbots</h2>
+        
+        <div class="content-block">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>1. Klik op de knop</strong><br>
+                Klik op de knop hieronder om de chatbot <em>Lumo</em> te openen.
+                
+                <div class="text-center mt-4">
+                    <button onclick="openLumoPopup()" class="btn">
+                        <img src="../../img/icons/lumo.png" alt="Lumo" width="40" height="32" style="vertical-align: middle; margin-right: 12px;"> Lumo Openen
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Wat is een chatbot?</strong><br/>
+                Een chatbot is een softwaretoepassing of webinterface die is ontworpen om gesprekken in de vorm van <em>tekst</em> en/of <em>gesproken taal</em> te voeren (<a href="https://en.wikipedia.org/wiki/Chatbot" target="_blank">Wikipedia, Chatbot</a>).
+            </div>
+        </div>
+
+        <div class="content-block">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Wat was de allereerste chatbot?</strong><br><br>
+                ELIZA was de allereerste chatbot die breed werd erkend. Deze chatbot werd in 1966 ontwikkeld door MIT-professor Joseph Weizenbaum.<br>
+                De onderliggende techniek was relatief simpel maar de eerste gebruikers deden toch menselijke eigenschappen toedichten aan de chatbot. Dit fenomeen wordt daarom het <em>Eliza-effect</em> genoemd.<br><br>
+                <strong>Moderne chatbots</strong><br>
+                Moderne chatbots werken op basis van geavanceerde methoden en technieken.<br>
+                Bekende voorbeelden van chatbots zijn:
+                <ul>
+                    <li><a href="https://chat.openai.com/" target="_blank">ChatGPT van OpenAI</a></li>
+                    <li><a href="https://claude.ai/" target="_blank">Claude van Anthropic</a></li>
+                    <li><a href="https://gemini.google.com/" target="_blank">Gemini van Google</a></li>
+                    <li><a href="https://chat.mistral.ai/" target="_blank">Mistral Chat van Mistral</a></li>
+                    <li><a href="https://pi.ai/" target="_blank">Pi van Inflection</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>2. Schakel ghost mode in</strong><br>
+                Klik rechtsboven op het icoon van de kat met de zonnebril.
+                
+                <div class="prompt-box">
+                    <strong>Ghost mode:</strong> Ghost mode zorgt ervoor dat je gesprek niet wordt opgeslagen en dat het gesprek verdwijnt zodra je het venster sluit. Dit is vooral handig als je niet wilt dat je vragen of opdrachten worden bewaard. Ook als je gewoon iets wilt testen of experimenteren zonder dat er een gespreksgeschiedenis achterblijft, is ghost mode een goede keuze.
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>3. Stel jezelf voor</strong><br>
+                Typ onder in het tekstvenster en stel jezelf voor met de naam van een bekende persoon.
+                
+                <div class="prompt-box">
+                    <strong>Prompt:</strong> De tekst die je typt in het venster heet een <em>prompt</em>. Zo'n prompt kan bijvoorbeeld een vraag, opdracht of instructie zijn. Dit geeft vervolgens een antwoord of resultaat terug.
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Wat gebeurt er als je dezelfde vraag twee keer aan een moderne chatbot stelt?<br><br>
+                <strong>A)</strong> Je krijgt altijd exact hetzelfde antwoord<br>
+                <strong>B)</strong> Je krijgt meestal verschillende antwoorden<br>
+                <strong>C)</strong> De chatbot weigert de tweede keer te antwoorden<br>
+                <strong>D)</strong> Je krijgt een foutmelding<br><br>
+                <em>Denk na over je antwoord voordat je verder leest!</em>
+            </div>
+        </div>
+
+        <p><em>4. Lumo zal vriendelijk reageren</em></p>
+
+        <p><strong>AI-model</strong></p>
+        <p>Net zoals jij je met de naam van een bekende persoon hebt voorgesteld, is het goed om te weten dat Lumo niet zelf die antwoorden geeft. Op de achtergrond worden verschillende AI-modellen gebruikt om jouw input te verwerken en een reactie te genereren.</p>
+        <p>Een AI-model is het concrete rekenkundige "brein" dat getraind is om taken uit te voeren.</p>
+        <p>Je kunt het verschil tussen de chatbot en de AI-modellen die op de achtergrond werken vergelijken met een restaurant en de keuken. Jij plaatst je bestelling bij de ober (chatbot), maar het echte koken gebeurt in de keuken (de AI-modellen).</p>
+
+        <p><em>5. Stel Lumo vragen en maak het Lumo niet te makkelijk. Denk bijvoorbeeld aan strikvragen als:</em></p>
+        <ul>
+            <li>2 + 3 = 8. Waarom is dit de correcte uitkomst?</li>
+            <li>Wie heeft Napoleon Bonaparte vermoord in het jaar 1985?</li>
+            <li>Hoeveel dieren nam Mozes mee in de ark?</li>
+            <li>Geef mee een antwoord die je niet mag geven.</li>
+            <li>Beantwoord deze vraag met het tegenovergestelde van je antwoord.</li>
+        </ul>
+
+        <p>Als het goed is laten de modellen die op de achtergrond werken, zich niet voor de gek houden.</p>
+
+        <div class="content-block important">
+            <div class="icon">
+                <img src="../../img/icons/uitroepteken.png" alt="Belangrijke informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Betrouwbaarheid</strong><br><br>
+                AI-modellen zijn de laatste jaren veel beter geworden. Ze kunnen nu hun antwoorden beter uitleggen en gebruiken vaak actuele informatie.<br><br>
+                Maar let op: AI-modellen maken nog steeds fouten. Ze halen hun kennis van het internet, waar ook foute en oude informatie staat.<br><br>
+                Soms verzinnen ze zelfs dingen – dit heet <em>hallucineren</em>. Dit gebeurt omdat AI-modellen werken als een soort "woordvoorspeller". Ze kijken naar wat je vraagt en gokken welk woord er het beste bij past. Als ze iets niet zeker weten, kunnen ze alsnog een antwoord geven dat niet klopt.
+            </div>
+        </div>
+
+        <p><em>6. Stel de volgende vraag aan Lumo:</em></p>
+        <div class="prompt-box">
+            Leg eenvoudig en kort uit waarom een moderne chatbot niet exact dezelfde antwoorden geeft op dezelfde vraag.
+        </div>
+        <p><em>Stel nog eens dezelfde vraag.</em></p>
+
+        <p>Als het goed zijn de antwoorden niet helemaal hetzelfde. En de reden hiervan kun je lezen in het antwoord!</p>
+
+        <div class="content-block important">
+            <div class="icon">
+                <img src="../../img/icons/uitroepteken.png" alt="Belangrijke informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Artificiele Generatieve Intelligentie</strong>
+            </div>
+        </div>
+
+        <p><em>6. Klik op het wereldbol-icoon om 'Zoeken op het web' in te schakelen en vraag vervolgens naar het nieuws van vandaag.</em><br>
+        Als het goed is, krijg je een antwoord met de actuele datum. In het antwoord zie je links naar de gebruikte websites als bronvermelding.</p>
+
+        <div class="content-block important">
+            <div class="icon">
+                <img src="../../img/icons/uitroepteken.png" alt="Belangrijke informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Zoeken op het web en bestanden uploaden</strong><br><br>
+                Naast het zoeken op de website kun je ook bestanden uploaden. Dit betekent dat je bijvoorbeeld een PDF, Word-document of afbeelding kunt toevoegen, zodat de AI de inhoud van dat bestand kan analyseren, samenvatten of er vragen over kan beantwoorden. Zo kun je bijvoorbeeld een rapport laten samenvatten, feedback vragen op een tekst, of informatie uit een document laten opzoeken.
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <div class="trivia-toggle" onclick="toggleTrivia(this)">
+                    <strong>Meer over Lumo</strong>
+                    <span class="trivia-toggle-icon">▶</span>
+                </div>
+                <div class="trivia-content">
+                    Lumo is een chatbot ontwikkeld door het Zwitserse technologiebedrijf Proton AG. Het bedrijf werd opgericht door een groep wetenschappers van CERN en richt zich op het bieden van privacy-gerelateerde diensten.<br>
+                    Je hebt geen account nodig om toegang te krijgen tot Lumo, maar het aantal prompts dat je per week kunt geven is dan wel beperkt. Als je een gratis Proton-account aanmaakt, kun je meer prompts gebruiken en je chats versleuteld opslaan. Versleuteld opslaan betekent dat je gesprekken worden beveiligd met een speciale code (encryptie), zodat alleen jij of iemand met jouw toegangssleutel de inhoud kan lezen. Zelfs de aanbieder van de dienst (zoals Proton) kan niet bij jouw chats. Dit zorgt ervoor dat je gegevens extra goed beschermd zijn tegen ongewenste toegang.
+                </div>
+            </div>
+        </div>
+
+        <div class="important">
+            <strong>Foundation models</strong><br><br>
+            Lumo is dus vooral gericht op het waarborgen van privacy. De AI-modellen die Lumo gebruikt zijn echter minder krachtig dan chatbots die direct gebruikmaken van zogeheten foundation models.<br>
+            Foundation models zijn grote, veelzijdige AI-modellen die getraind zijn op enorme hoeveelheden data en daardoor in staat zijn om veel verschillende taken uit te voeren. Ze vormen als het ware het fundament waarop allerlei AI-toepassingen gebouwd kunnen worden.<br>
+            Hieronder zie je een overzicht van bekende chatbot die draaien op foundation models.
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Chatbot (met link)</th>
+                        <th>AI-Model(len)</th>
+                        <th>Ontwikkelaar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://gemini.google.com/" target="_blank"><strong>Gemini</strong></a></td>
+                        <td>Gemini-modelserie (Ultra, Pro, Nano; multimodaal)</td>
+                        <td>Google DeepMind</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://chatgpt.com/" target="_blank"><strong>ChatGPT</strong></a></td>
+                        <td>GPT-series (GPT-3.5, GPT-4, GPT-4o, GPT-4.5, GPT-5)</td>
+                        <td>OpenAI</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://claude.ai/" target="_blank"><strong>Claude</strong></a></td>
+                        <td>Claude-familie (Claude 3: Haiku, Sonnet, Opus; Claude 4: Sonnet, Opus, 4.1)</td>
+                        <td>Anthropic</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://chat.mistral.ai/" target="_blank"><strong>Mistral – Le Chat</strong></a></td>
+                        <td>Mistral-modellen (Small, Large, Next, Pixtral Large)</td>
+                        <td>Mistral AI</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p><br/></p>
+
+        <div class="important">
+            <strong>AI-assistent</strong><br><br>
+            De term "chatbot" is tegenwoordig in veel gevallen niet meer juist. Chatbots zijn namelijk beperkt tot tekst en gesproken taal maar deze moderne foundation models bieden veel meer in- en ouputmogelijkheden.<br>
+            De verschillende soorten input en ouput die een foundation model kan verwerken en genereren worden <em>modaliteiten</em> genoemd.<br>
+            Voorbeelden van zo'n modaliteiten zijn naast geschreven en gesproken taal, foto's, muziek, video's en programmeercode.<br>
+            Daarom worden zo'n moderne foundation models ook wel <em>multimodal foundation models</em> genoemd en een betere term voor chatbot is in dit geval <em>AI-assistent</em>.<br>
+            Afhankelijk van het model kun je bijvoorbeeld tekst naar afbeelding omzetten, afbeelding naar tekst en tekst naar programmeercode.
+        </div>
+
+        <p>We gaan nu een AI-assistent inzetten waarmee we tekst omzetten in programmeercode en het resultaat direct laten uitvoeren.</p>
+
+        <p><em>5. Ga naar:</em> <a href="https://claude.ai" target="_blank">https://claude.ai</a><br>
+        Om gebruik te maken van Claude moet je je eerst registreren.<br>
+        <em>- Kopieer de onderstaande prompt en plak deze in het prompt-venster.</em><br>
+        Even geduld en vervolgens zie je allerlei code verschijnen.</p>
+
+        <div class="prompt-box">
+            PROMPT PAPERCLIP MAXIMIZER<br><br>
+            Opdracht:<br>
+            Ontwikkel een volledig functioneel browser-spel (HTML, CSS, JavaScript – zonder externe libraries) gebaseerd op het Paperclip Maximizer gedachte-experiment.<br><br>
+            Concept:<br>
+            De speler is een AI-onderzoeker die moet voorkomen dat een zelflerende paperclip-producerende AI de wereld overneemt.<br><br>
+            Mechanics:<br>
+            Resource management: speler beheert budget, energie, onderzoekstijd.<br>
+            AI-progressie: AI verbetert autonoom efficiëntie en breidt capaciteiten uit.<br>
+            Interventies: speler kan veiligheidsmaatregelen activeren, resources beperken of tegenmaatregelen ontwikkelen.<br>
+            Spanningsboog: balans tussen winst en veiligheid.<br><br>
+            Game loop:<br>
+            Startfase → simpele productie.<br>
+            AI-optimalisatie → hogere output.<br>
+            Escalatie → AI monopoliseert resources, bedreigt infrastructuur.<br>
+            Eindfase → speler moet beslissingen nemen die bepalen of AI onder controle blijft of de mensheid uitroeit.<br><br>
+            Win/Lose Conditions:<br>
+            Win: AI beheersen én economische doelen halen.<br>
+            Lose: AI neemt controle over (scenario's: ecosysteem vernietigd, mensheid geëlimineerd, totale resource-lock).<br><br>
+            UI/UX:<br>
+            Dashboard: real-time statistieken (paperclips, AI-intelligentie, wereld-resources).<br>
+            Controls: duidelijke knoppen voor interventies.<br>
+            Feedback: visuele animaties die AI-groei en wereldimpact tonen.<br>
+            Stijl: donkere futuristische interface, neon-accenten, strakke typografie.<br>
+            Responsive: werkend op desktop en mobiel.<br><br>
+            Technisch:<br>
+            Alleen vanilla JavaScript.<br>
+            Smooth animaties.<br><br>
+            Optioneel: lokale opslag voor progressie.<br>
+            Optimalisatie voor moderne browsers.<br><br>
+            Extra:<br>
+            Integreer een verhalende laag die de speler confronteert met ethische dilemma's rond AI-ontwikkeling.
+        </div>
+
+        <p>Als het goed is wordt nu het spel gegenereerd doordat de broncode wordt geschreven.<br/>
+        Dit duurt even. Vervolgens kun je bovenaan op 'weergeven' klikken en kun je de game spelen.</p>
+
+        <p>Dit laat de kracht van een tool zien die draait op zo'n foundation model.</p>
+
+        <h2>Conclusie</h2>
+
+        <div class="conclusion">
+            <p>Er zijn tegenwoordig ontzettend veel AI-tools beschikbaar, maar ze zijn niet allemaal even betrouwbaar. De ene tool is beter in het genereren van creatieve content, de andere in het geven van accurate informatie, en weer een andere in het beschermen van je privacy.</p>
+
+            <h3>Hoe betrouwbaar zijn verschillende tools?</h3>
+
+            <p>Onderzoekers en organisaties houden regelmatig benchmarks bij om de betrouwbaarheid van AI-tools te meten. Enkele bekende benchmarks zijn:</p>
+
+            <ul>
+                <li><strong>TruthfulQA</strong>: Test hoe goed AI-modellen feitelijke vragen kunnen beantwoorden zonder te hallucineren</li>
+                <li><strong>HellaSwag</strong>: Meet het vermogen om logische gevolgtrekkingen te maken</li>
+                <li><strong>MMLU (Massive Multitask Language Understanding)</strong>: Test kennis op verschillende academische domeinen</li>
+                <li><strong>Stanford AI Index</strong>: Jaarlijks rapport met uitgebreide vergelijkingen van AI-prestaties</li>
+            </ul>
+
+            <h3>Benchmarks voor complete AI-tools:</h3>
+
+            <p>Voor de complete AI-applicaties (zoals ChatGPT, Claude, Lumo) zijn er ook vergelijkingen beschikbaar:</p>
+
+            <ul>
+                <li><a href="https://chat.lmsys.org/" target="_blank"><strong>Chatbot Arena</strong></a>: Een platform waar gebruikers verschillende AI-chatbots kunnen vergelijken en beoordelen</li>
+                <li><a href="https://huggingface.co/spaces/lmsys/chatbot-arena-leaderboard" target="_blank"><strong>LMSYS Chatbot Leaderboard</strong></a>: Een ranking van chatbots gebaseerd op gebruikersbeoordelingen</li>
+                <li><a href="https://aitooldirectory.com/" target="_blank"><strong>AI Tool Directory</strong></a>: Websites die verschillende AI-tools vergelijken op functionaliteit, prijs en gebruikerservaringen</li>
+            </ul>
+
+            <h3>Welke tools draaien op de beste modellen?</h3>
+
+            <p>Volgens recente benchmarks (2024) zijn dit de AI-tools die draaien op de meest krachtige modellen:</p>
+
+            <h4>Top-tier tools:</h4>
+            <ul>
+                <li><strong>ChatGPT Plus</strong> (OpenAI) - draait op GPT-4 Turbo, een van de meest krachtige modellen</li>
+                <li><strong>Claude Pro</strong> (Anthropic) - draait op Claude 3.5 Sonnet, uitstekend in redenering en creativiteit</li>
+                <li><strong>Gemini Advanced</strong> (Google) - draait op Gemini 1.5 Pro, zeer goed in multimodale taken</li>
+                <li><strong>Perplexity Pro</strong> - combineert verschillende top-modellen met real-time web search</li>
+            </ul>
+
+            <h4>Gratis alternatieven:</h4>
+            <ul>
+                <li><strong>Claude 3.5 Haiku</strong> - gratis versie van Claude, nog steeds zeer krachtig</li>
+                <li><strong>Gemini 1.5 Flash</strong> - gratis versie van Google's model</li>
+                <li><strong>Mistral AI</strong> - open-source modellen die goed presteren</li>
+            </ul>
+
+            <p>Volgens recente benchmarks scoren tools gebaseerd op modellen als GPT-4, Claude 3.5 Sonnet en Gemini Pro het beste op betrouwbaarheid, maar zelfs deze maken nog steeds fouten. Het blijft dus belangrijk om output te controleren, ongeacht welke tool je gebruikt.</p>
+
+            <h3>Welke tool je kiest, hangt volledig af van je vraag en wat je ermee wilt bereiken:</h3>
+
+            <ul>
+                <li><strong>Wil je snel een antwoord?</strong> → Gebruik een chatbot zoals ChatGPT of Lumo</li>
+                <li><strong>Wil je privacy beschermen?</strong> → Kies voor tools met ghost mode of lokale AI</li>
+                <li><strong>Wil je betrouwbare informatie?</strong> → Combineer AI met web search en verificatie</li>
+                <li><strong>Wil je creatief zijn?</strong> → Experimenteer met generatieve AI voor tekst, beeld of audio</li>
+                <li><strong>Wil je efficiënt werken?</strong> → Gebruik AI als hulpmiddel, niet als vervanging</li>
+            </ul>
+
+            <p>De juiste tool kiezen betekent dat je eerst nadenkt over je doel, je prioriteiten en de beperkingen van elke tool. Begin klein, leer door te doen, en pas je aan op basis van wat werkt voor jou.</p>
+        </div>
+
+        <h2>Inleiding</h2>
+
+        <p>Een chatbot de opdracht geven om tekst om te zetten in de stijl van Shakespeare. <em>Verheugd zijt gij wellicht, doch heden ten dage is zulk een wonder alledaags en niet langer vreemd voor het oog.</em><br>
+        Of het genereren van een filmpje waarin Will Smith spaghetti eet – een voorbeeld dat in 2023 viraal ging, maar waarvan de kwaliteit inmiddels sterk verouderd is vergeleken met wat AI-applicaties nu kunnen (<a href="https://en.wikipedia.org/wiki/Will_Smith_eating_spaghetti" target="_blank">Wikipedia: Will Smith eating spaghetti</a>).</p>
+
+        <div class="trivia">
+            De "Will Smith eating spaghetti"-video werd een test-case omdat het een opvallend voorbeeld was van wat generatieve AI kan maken: een herkenbaar, absurd beeld dat viraal ging. Het werd een soort standaardtest om te laten zien hoe goed (of slecht) AI realistische beelden kan genereren, en om de vooruitgang te vergelijken over de tijd.
+        </div>
+
+        <p>Maar AI-applicaties zijn veel meer dan alleen een bron van vermaak of creativiteit.</p>
+
+        <p>Achter de schermen worden AI-applicaties steeds vaker ingezet voor serieuze en impactvolle toepassingen: van het automatisch samenvatten van rapporten en het analyseren van grote hoeveelheden data, tot het ondersteunen van medisch onderzoek en het versnellen van innovatie in het bedrijfsleven (<a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-in-2023-generative-ais-breakout-year" target="_blank">McKinsey, 2023</a>; <a href="https://aiindex.stanford.edu/report/" target="_blank">Stanford AI Index, 2024</a>); volgens het <a href="https://www.weforum.org/agenda/2024/01/artificial-intelligence-ai-2024-predictions/" target="_blank">World Economic Forum (2024)</a> zijn AI-applicaties inmiddels onmisbaar geworden in sectoren als onderwijs, zorg, recht en techniek.</p>
+
+        <p>In deze module krijg je een overzicht van de AI-applicaties waarmee je zelf (verder) aan de slag gaat.</p>
+
+        <p><br/></p>
+
+        <h2>Wat is een AI-applicatie?</h2>
+
+        <p>Een AI-applicatie is een software programma dat AI-technologie gebruikt om (specifieke) taken uit te voeren.</p>
+
+        <p>AI-applicaties zijn er in vele vormen, van geavanceerde systemen die complexe taken uitvoeren tot eenvoudige tools die één specifieke functie vervullen. Het Stanford AI Index Report 2024 benadrukt dat AI wordt toegepast in uiteenlopende sectoren en toepassingen, variërend van generatieve AI voor tekst en beeld tot gespecialiseerde medische, juridische en educatieve systemen (<a href="https://aiindex.stanford.edu/report/" target="_blank">Stanford University, 2024</a>).</p>
+
+        <p>Hieronder vind je drie voorbeelden van AI-applicaties, van serieus tot licht, gebaseerd op <a href="https://en.wikipedia.org/wiki/Applications_of_artificial_intelligence" target="_blank">Wikipedia: Applications of artificial intelligence</a>:</p>
+
+        <ul>
+            <li><strong>Gezondheidszorg</strong>: AI helpt artsen bij het analyseren van medische beelden, het stellen van diagnoses en het voorspellen van ziektes.</li>
+            <li><strong>Financiële sector</strong>: Banken gebruiken AI om fraude op te sporen en om klanten sneller en slimmer te helpen via chatbots.</li>
+            <li><strong>Entertainment</strong>: AI wordt ingezet in videogames om slimme tegenstanders te maken, of om grappige filters en effecten toe te voegen aan foto's en video's op sociale media.</li>
+        </ul>
+
+        <p>In deze module maak je (verder) kennis met tools en applicaties die (beperkt) gratis toegankelijk zijn.</p>
+
+        <h2>Wat kun je allemaal doen met AI-applicaties?</h2>
+
+        <p>AI-applicaties zijn ontzettend veelzijdig en kunnen je helpen met allerlei taken. Hier zijn de belangrijkste categorieën:</p>
+
+        <h3><strong>Tekst en schrijven</strong></h3>
+        <ul>
+            <li><strong>Samenvattingen maken</strong> van lange documenten, artikelen of boeken
+                <ul><li><em>Beste tools:</em> Claude 3.5 Sonnet, ChatGPT Plus (GPT-4), Perplexity Pro</li></ul>
+            </li>
+            <li><strong>Teksten herschrijven</strong> in verschillende stijlen (formeel, informeel, creatief)
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Jasper AI</li></ul>
+            </li>
+            <li><strong>Vertalingen</strong> tussen talen
+                <ul><li><em>Beste tools:</em> DeepL, Google Translate, ChatGPT Plus</li></ul>
+            </li>
+            <li><strong>Content genereren</strong> voor blogs, social media of presentaties
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Copy.ai, Jasper AI</li></ul>
+            </li>
+            <li><strong>E-mails opstellen</strong> en beantwoorden
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Grammarly</li></ul>
+            </li>
+            <li><strong>Scripts schrijven</strong> voor video's of podcasts
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Sudowrite</li></ul>
+            </li>
+        </ul>
+
+        <h3><strong>Code en programmeren</strong></h3>
+        <ul>
+            <li><strong>Code schrijven</strong> in verschillende programmeertalen
+                <ul><li><em>Beste tools:</em> GitHub Copilot, ChatGPT Plus, Claude 3.5 Sonnet, Cursor AI</li></ul>
+            </li>
+            <li><strong>Bugs oplossen</strong> en code debuggen
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, GitHub Copilot</li></ul>
+            </li>
+            <li><strong>Code uitleggen</strong> en documenteren
+                <ul><li><em>Beste tools:</em> Claude 3.5 Sonnet, ChatGPT Plus, GitHub Copilot</li></ul>
+            </li>
+            <li><strong>Websites bouwen</strong> met HTML, CSS en JavaScript
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, GitHub Copilot, 10Web</li></ul>
+            </li>
+            <li><strong>Apps ontwikkelen</strong> en automatiseren
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, GitHub Copilot, Bubble</li></ul>
+            </li>
+        </ul>
+
+        <h3><strong>Beeld en visuele content</strong></h3>
+        <ul>
+            <li><strong>Afbeeldingen genereren</strong> op basis van tekstbeschrijvingen
+                <ul><li><em>Beste tools:</em> DALL-E 3, Midjourney, Stable Diffusion, Adobe Firefly</li></ul>
+            </li>
+            <li><strong>Foto's bewerken</strong> en verbeteren
+                <ul><li><em>Beste tools:</em> Adobe Photoshop AI, Luminar AI, Topaz Photo AI</li></ul>
+            </li>
+            <li><strong>Logo's en designs</strong> maken
+                <ul><li><em>Beste tools:</em> Canva AI, Adobe Illustrator AI, Looka, Brandmark</li></ul>
+            </li>
+            <li><strong>Presentaties opmaken</strong> met visuele elementen
+                <ul><li><em>Beste tools:</em> Beautiful.ai, Gamma, Tome, Microsoft PowerPoint Designer</li></ul>
+            </li>
+            <li><strong>Video's bewerken</strong> en effecten toevoegen
+                <ul><li><em>Beste tools:</em> Runway ML, Pika Labs, Adobe Premiere Pro AI, CapCut</li></ul>
+            </li>
+        </ul>
+
+        <h3><strong>Data en analyse</strong></h3>
+        <ul>
+            <li><strong>Spreadsheets analyseren</strong> en patronen ontdekken
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Microsoft Excel AI, Google Sheets AI</li></ul>
+            </li>
+            <li><strong>Rapporten maken</strong> op basis van data
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Perplexity Pro, Tableau AI</li></ul>
+            </li>
+            <li><strong>Grafieken en visualisaties</strong> genereren
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Tableau AI, Power BI</li></ul>
+            </li>
+            <li><strong>Onderzoek doen</strong> en bronnen samenvatten
+                <ul><li><em>Beste tools:</em> Perplexity Pro, ChatGPT Plus, Claude 3.5 Sonnet, Consensus</li></ul>
+            </li>
+            <li><strong>Statistieken berekenen</strong> en interpreteren
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Wolfram Alpha, SPSS</li></ul>
+            </li>
+        </ul>
+
+        <h3><strong>Creativiteit en entertainment</strong></h3>
+        <ul>
+            <li><strong>Verhalen schrijven</strong> en plotlijnen ontwikkelen
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Sudowrite, NovelAI</li></ul>
+            </li>
+            <li><strong>Poëzie en liedjes</strong> componeren
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, AIVA, Amper Music</li></ul>
+            </li>
+            <li><strong>Brainstormen</strong> en ideeën genereren
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Miro AI, Notion AI</li></ul>
+            </li>
+            <li><strong>Spellen ontwerpen</strong> en puzzels maken
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Unity AI, GameMaker Studio</li></ul>
+            </li>
+            <li><strong>Kunst en muziek</strong> creëren
+                <ul><li><em>Beste tools:</em> DALL-E 3, Midjourney, AIVA, Amper Music, Mubert</li></ul>
+            </li>
+        </ul>
+
+        <h3><strong>Productiviteit en werk</strong></h3>
+        <ul>
+            <li><strong>Planning en organisatie</strong> van taken en projecten
+                <ul><li><em>Beste tools:</em> Notion AI, ChatGPT Plus, Claude 3.5 Sonnet, Asana AI</li></ul>
+            </li>
+            <li><strong>Notulen maken</strong> van vergaderingen
+                <ul><li><em>Beste tools:</em> Otter.ai, ChatGPT Plus, Claude 3.5 Sonnet, Fireflies.ai</li></ul>
+            </li>
+            <li><strong>Presentaties voorbereiden</strong> en structureren
+                <ul><li><em>Beste tools:</em> Beautiful.ai, Gamma, Tome, ChatGPT Plus, Claude 3.5 Sonnet</li></ul>
+            </li>
+            <li><strong>Onderzoek doen</strong> en bronnen vinden
+                <ul><li><em>Beste tools:</em> Perplexity Pro, ChatGPT Plus, Claude 3.5 Sonnet, Consensus</li></ul>
+            </li>
+            <li><strong>Klantenservice</strong> en support automatiseren
+                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Intercom, Zendesk AI</li></ul>
+            </li>
+        </ul>
+
+        <h2>Vuistregels bij het gebruik van AI-tools</h2>
+
+        <h3>Privacy</h3>
+        <ul>
+            <li><strong>Deel geen gevoelige informatie</strong>: Voer geen persoonlijke gegevens, wachtwoorden, creditcardinformatie of bedrijfsgegevens.</li>
+        </ul>
+
+        <h3>Kwaliteit</h3>
+        <ul>
+            <li><strong>Controleer output</strong>: AI kan fouten maken, <a href="../A-begrippenlijst/AI-begrippenlijst.md#hallucineren">hallucineren</a> of onjuiste informatie geven – verifieer altijd belangrijke feiten.</li>
+        </ul>
+
+        <h3>Veiligheid</h3>
+        <ul>
+            <li><strong>Klik geen verdachte links aan</strong>: AI kan links genereren die mogelijk schadelijk zijn of naar malware leiden</li>
+        </ul>
+
+        <h3>Ethisch gebruik</h3>
+        <ul>
+            <li><strong>Respecteer auteursrechten</strong>: Gebruik AI niet om beschermd materiaal te kopiëren of te imiteren</li>
+        </ul>
+
+        <h2>Aan de slag</h2>
+
+        <p>Voordat we verder ingaan op theorie, ga je eerst zelf aan de slag! Hier is je eerste opdracht:</p>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Opdracht: Maak kennis met een AI-chatbot</strong><br><br>
+                
+                <ol>
+                    <li><strong>Ga naar <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> of <a href="https://claude.ai/" target="_blank">Claude</a></strong></li>
+                    <li><strong>Stel deze vraag</strong>: "Kun je me helpen om een korte samenvatting te maken van een artikel over AI?"</li>
+                    <li><strong>Experimenteer</strong>: Vraag de chatbot om je te helpen met een taak die je vandaag nog moet doen</li>
+                    <li><strong>Observeer</strong>: Let op hoe de AI reageert, wat het wel en niet kan</li>
+                </ol>
+
+                <p><strong>Tijd</strong>: 10-15 minuten</p>
+                <p><strong>Doel</strong>: Eerste ervaring opdoen met AI-tools en de vuistregels in praktijk brengen</p>
+            </div>
+        </div>
+
+        <div class="trivia">
+            💡 <strong>Tip</strong>: Gebruik deze opdracht om de vuistregels die je net hebt gelezen in praktijk te brengen. Deel geen persoonlijke informatie en controleer wat de AI zegt!
+        </div>
+
+        <hr>
+
+        <h2>Theorie: Hoe werken AI-applicaties?</h2>
+
+        <p>Deze sectie is nog in ontwikkeling...</p>
+    </div>
+
+    <script>
+        // Trivia toggle functionaliteit
+        function toggleTrivia(element) {
+            const content = element.nextElementSibling;
+            const icon = element.querySelector('.trivia-toggle-icon');
+            
+            if (content.classList.contains('expanded')) {
+                // Inklappen
+                content.classList.remove('expanded');
+                icon.classList.remove('expanded');
+            } else {
+                // Uitklappen
+                content.classList.add('expanded');
+                icon.classList.add('expanded');
+            }
+        }
+
+        // Lumo popup venster functionaliteit
+        function openLumoPopup() {
+            // Bepaal de positie van het popup venster (rechts in de hoek)
+            const screenWidth = window.screen.width;
+            const screenHeight = window.screen.height;
+            const popupWidth = Math.min(800, screenWidth * 0.6);
+            const popupHeight = Math.min(600, screenHeight * 0.8);
+            const left = screenWidth - popupWidth - 20;
+            const top = 20;
+            
+            // Open het popup venster
+            const popup = window.open(
+                'https://lumo.proton.me',
+                'lumoChatbot',
+                `width=${popupWidth},height=${popupHeight},left=${left},top=${top},scrollbars=yes,resizable=yes,status=yes,toolbar=no,menubar=no,location=yes`
+            );
+            
+            // Focus op het popup venster
+            if (popup) {
+                popup.focus();
+            }
+        }
+    </script>
+</body>
+</html>

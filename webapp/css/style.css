@@ -1,0 +1,840 @@
+/* ========================================
+   AI-WEGWIJZER STYLE.CSS
+   Alle styling in één bestand met verbeterde kleuren
+   ======================================== */
+
+/* ========================================
+   KLEUREN VARIABELEN
+   ======================================== */
+:root {
+    /* Primaire kleuren */
+    --primary-blue: #3b82f6;
+    --primary-green: #10b981;
+    --primary-purple: #8b5cf6;
+    --primary-orange: #f59e0b;
+    --primary-red: #ef4444;
+    --primary-indigo: #6366f1;
+    
+    /* Neutrale kleuren */
+    --white: #ffffff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    
+    /* Achtergrond kleuren */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-accent: #f1f5f9;
+    
+    /* Tekst kleuren */
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-light: #ffffff;
+    
+    /* Schaduw kleuren */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Border kleuren */
+    --border-light: #e2e8f0;
+    --border-medium: #cbd5e1;
+    --border-dark: #94a3b8;
+    
+    /* Overgangen */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ========================================
+   BASIS RESET EN TYPOGRAFIE
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.7;
+    color: var(--text-primary);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--bg-primary);
+}
+
+.container {
+    background: var(--bg-secondary);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-light);
+}
+
+h1 {
+    color: var(--gray-900);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 3px solid var(--primary-blue);
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+h2 {
+    color: var(--gray-800);
+    font-size: 1.8rem;
+    margin: 3rem 0 1.5rem 0;
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+h3 {
+    color: var(--gray-800);
+    font-size: 1.4rem;
+    margin: 2rem 0 1rem 0;
+    font-weight: 600;
+}
+
+h4 {
+    color: var(--gray-700);
+    font-size: 1.2rem;
+    margin: 1.5rem 0 0.8rem 0;
+    font-weight: 500;
+}
+
+/* ========================================
+   CONTENT BLOCKS - BASIS STYLING
+   ======================================== */
+.content-block {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    margin: 35px 0;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: var(--transition-normal);
+    border: none;
+}
+
+.content-block:hover {
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+    border-color: var(--border-medium);
+}
+
+/* ========================================
+   ICON STYLING
+   ======================================== */
+.icon {
+    font-size: 1.5em;
+    color: var(--text-light);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100px;
+    height: auto;
+    margin-right: 0;
+    flex-shrink: 0;
+    transition: var(--transition-normal);
+    cursor: pointer;
+    padding: 15px 10px;
+    border-radius: 0 0 16px;
+}
+
+.icon img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.icon:hover {
+    transform: scale(1.05);
+}
+
+/* ========================================
+   CONTENT TEXT STYLING
+   ======================================== */
+.content-text {
+    flex: 1;
+    line-height: 1.8;
+    background: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 0 16px 16px 0;
+    border: 2px solid;
+    width: 100%;
+    color: var(--text-primary);
+}
+
+/* ========================================
+   SPECIFIEKE BLOK TYPES MET RUSTIGE KLEUREN
+   ======================================== */
+.task .icon {
+    background: linear-gradient(135deg, #86efac, #bbf7d0, var(--white));
+    color: #16a34a;
+}
+
+.task .icon:hover {
+    color: #15803d;
+    transform: scale(1.1);
+}
+
+.task .content-text {
+    border-color: #86efac;
+}
+
+.quiz .icon {
+    background: linear-gradient(135deg, #fca5a5, #fecaca, var(--white));
+    color: #dc2626;
+}
+
+.quiz .icon:hover {
+    color: #b91c1c;
+    transform: scale(1.1);
+}
+
+.quiz .content-text {
+    border-color: #fca5a5;
+}
+
+.trivia .icon {
+    background: linear-gradient(135deg, #fde047, #fef3c7, var(--white));
+    color: #ca8a04;
+}
+
+.trivia .icon:hover {
+    color: #a16207;
+    transform: scale(1.1);
+}
+
+.trivia .content-text {
+    border-color: #fde047;
+}
+
+.important .icon {
+    background: linear-gradient(135deg, #fca5a5, #fecaca, var(--white));
+    color: #dc2626;
+}
+
+.important .icon:hover {
+    color: #b91c1c;
+    transform: scale(1.1);
+}
+
+.important .content-text {
+    border-color: #fca5a5;
+}
+
+.info .icon {
+    background: linear-gradient(135deg, #93c5fd, #bfdbfe, var(--white));
+    color: #2563eb;
+}
+
+.info .icon:hover {
+    color: #1d4ed8;
+    transform: scale(1.1);
+}
+
+.info .content-text {
+    border-color: #93c5fd;
+}
+
+/* ========================================
+   TOGGLE STYLING
+   ======================================== */
+.trivia-toggle, .quiz-toggle {
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    transition: var(--transition-fast);
+    margin: 8px 0;
+    background: var(--gray-50);
+    border: 1px solid var(--border-light);
+    color: var(--text-primary);
+}
+
+.trivia-toggle:hover {
+    background: var(--gray-100);
+    border-color: var(--border-medium);
+}
+
+.quiz-toggle:hover {
+    background: var(--gray-100);
+    border-color: var(--border-medium);
+}
+
+.trivia-toggle-icon, .quiz-toggle-icon {
+    float: right;
+    transition: var(--transition-normal);
+    color: var(--text-muted);
+}
+
+.trivia-toggle-icon.expanded, .quiz-toggle-icon.expanded {
+    transform: rotate(90deg);
+    color: var(--primary-blue);
+}
+
+.trivia-content, .quiz-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition-normal);
+    margin-top: 15px;
+}
+
+.trivia-content.expanded, .quiz-content.expanded {
+    max-height: 1000px;
+}
+
+/* ========================================
+   QUIZ OPTION STYLING
+   ======================================== */
+.quiz-option {
+    cursor: pointer;
+    padding: 12px;
+    border-radius: 8px;
+    transition: var(--transition-fast);
+    margin: 8px 0;
+    background: var(--gray-50);
+    border: 1px solid var(--border-light);
+}
+
+.quiz-option:hover {
+    background: var(--gray-100);
+    border-color: var(--border-medium);
+}
+
+.quiz-option-icon {
+    float: right;
+    transition: var(--transition-normal);
+    color: var(--text-muted);
+}
+
+.quiz-option-icon.expanded {
+    transform: rotate(90deg);
+    color: var(--primary-purple);
+}
+
+.quiz-option-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transition-normal);
+    padding-left: 25px;
+    margin: 8px 0;
+}
+
+.quiz-option-content.expanded {
+    max-height: 100px;
+}
+
+/* ========================================
+   PROMPT BOX STYLING
+   ======================================== */
+.prompt-box {
+    background: var(--gray-50);
+    color: var(--text-primary);
+    padding: 25px;
+    border-radius: 12px;
+    margin: 25px 0;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-sm);
+}
+
+.prompt-box a {
+    color: var(--primary-blue);
+    text-decoration: underline;
+}
+
+/* ========================================
+   BUTTON STYLING
+   ======================================== */
+.btn, .demo-button {
+    display: inline-block;
+    background: var(--primary-blue);
+    color: var(--white);
+    padding: 18px 35px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition-normal);
+    border: none;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.btn:hover, .demo-button:hover {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   TABEL STYLING
+   ======================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-light);
+}
+
+th {
+    background: var(--gray-50);
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+tr:hover {
+    background: var(--gray-50);
+}
+
+/* ========================================
+   LISTS STYLING
+   ======================================== */
+ul, ol {
+    margin: 15px 0;
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* ========================================
+   LINKS STYLING
+   ======================================== */
+a {
+    color: var(--primary-blue);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+a:hover {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+/* ========================================
+   CODE STYLING
+   ======================================== */
+code {
+    background: var(--gray-100);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    color: var(--primary-red);
+    border: 1px solid var(--border-light);
+}
+
+/* ========================================
+   BLOCKQUOTE STYLING
+   ======================================== */
+blockquote {
+    border-left: 4px solid var(--primary-blue);
+    padding-left: 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--text-muted);
+    background: var(--gray-50);
+    padding: 15px 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* ========================================
+   IMAGES STYLING
+   ======================================== */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-justify { text-align: justify; }
+
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 1rem; }
+.mb-4 { margin-bottom: 1.5rem; }
+.mb-5 { margin-bottom: 2rem; }
+
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 1rem; }
+.mt-4 { margin-top: 1.5rem; }
+.mt-5 { margin-top: 2rem; }
+
+.p-1 { padding: 0.25rem; }
+.p-2 { padding: 0.5rem; }
+.p-3 { padding: 1rem; }
+.p-4 { padding: 1.5rem; }
+.p-5 { padding: 2rem; }
+
+.rounded { border-radius: 8px; }
+.rounded-sm { border-radius: 4px; }
+.rounded-lg { border-radius: 16px; }
+
+.shadow { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+
+/* ========================================
+   SPECIALE ELEMENTEN
+   ======================================== */
+.important {
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+    border-left: 4px solid var(--primary-orange);
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+    color: #92400e;
+}
+
+.trivia {
+    background: var(--gray-50);
+    border: 1px solid var(--border-light);
+    border-left: 4px solid var(--primary-orange);
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+    color: var(--text-secondary);
+}
+
+.conclusion {
+    background: #dbeafe;
+    border: 1px solid #bfdbfe;
+    border-left: 4px solid var(--primary-blue);
+    padding: 25px;
+    margin: 30px 0;
+    border-radius: 12px;
+    color: #1e40af;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin: 25px 0;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    
+    .container {
+        padding: 30px;
+    }
+    
+    .content-block {
+        padding: 20px;
+        margin: 25px 0;
+        flex-direction: column;
+    }
+    
+    .icon {
+        width: 80px;
+        height: 80px;
+        margin-right: 0;
+        align-self: center;
+        border-radius: 16px;
+    }
+    
+    .icon img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .content-text {
+        border-radius: 16px;
+        border-top: 2px solid;
+        border-left: none;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========================================
+   SCROLLBAR VERBERGEN
+   ======================================== */
+html {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+    display: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* ========================================
+   ANIMATIES EN TRANSITIES
+   ======================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content-block {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* ========================================
+   FOCUS STATES
+   ======================================== */
+button:focus, .btn:focus, .demo-button:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+a:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* ========================================
+   PRINT STYLING
+   ======================================== */
+@media print {
+    body {
+        background: white;
+        color: black;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    
+    .icon {
+        background: var(--gray-100) !important;
+        color: var(--text-primary) !important;
+    }
+}
+
+/* ========================================
+   AUTOMATISCHE ICONEN VOOR CONTENT BLOCKS
+   ======================================== */
+
+/* Opdracht blokken - automatisch groen met opdracht icoon */
+.content-block:has(.icon img[src*="opdracht"]) .icon,
+.content-block[data-type="task"] .icon,
+.content-block.opdracht .icon {
+    background: linear-gradient(135deg, #86efac, #bbf7d0, var(--white));
+    color: #16a34a;
+}
+
+.content-block:has(.icon img[src*="opdracht"]) .icon:hover,
+.content-block[data-type="task"] .icon:hover,
+.content-block.opdracht .icon:hover {
+    color: #15803d;
+    transform: scale(1.1);
+}
+
+.content-block:has(.icon img[src*="opdracht"]) .content-text,
+.content-block[data-type="task"] .content-text,
+.content-block.opdracht .content-text {
+    border-color: #86efac;
+}
+
+/* Quiz blokken - automatisch rood met quiz icoon */
+.content-block:has(.icon img[src*="quizvraag"]) .icon,
+.content-block[data-type="quiz"] .icon,
+.content-block.quiz .icon {
+    background: linear-gradient(135deg, #fca5a5, #fecaca, var(--white));
+    color: #dc2626;
+}
+
+.content-block:has(.icon img[src*="quizvraag"]) .icon:hover,
+.content-block[data-type="quiz"] .icon:hover,
+.content-block.quiz .icon:hover {
+    color: #b91c1c;
+    transform: scale(1.1);
+}
+
+.content-block:has(.icon img[src*="quizvraag"]) .content-text,
+.content-block[data-type="quiz"] .content-text,
+.content-block.quiz .content-text {
+    border-color: #fca5a5;
+}
+
+/* Trivia blokken - automatisch geel met trivia icoon */
+.content-block:has(.icon img[src*="boekenwurm"]) .icon,
+.content-block[data-type="trivia"] .icon,
+.content-block.trivia .icon {
+    background: linear-gradient(135deg, #fde047, #fef3c7, var(--white));
+    color: #ca8a04;
+}
+
+.content-block:has(.icon img[src*="boekenwurm"]) .icon:hover,
+.content-block[data-type="trivia"] .icon:hover,
+.content-block.trivia .icon:hover {
+    color: #a16207;
+    transform: scale(1.1);
+}
+
+.content-block:has(.icon img[src*="boekenwurm"]) .content-text,
+.content-block[data-type="trivia"] .content-text,
+.content-block.trivia .content-text {
+    border-color: #fde047;
+}
+
+/* Belangrijke informatie - automatisch rood met uitroepteken icoon */
+.content-block:has(.icon img[src*="uitroepteken"]) .icon,
+.content-block[data-type="important"] .icon,
+.content-block.important .icon {
+    background: linear-gradient(135deg, #fca5a5, #fecaca, var(--white));
+    color: #dc2626;
+}
+
+.content-block:has(.icon img[src*="uitroepteken"]) .icon:hover,
+.content-block[data-type="important"] .icon:hover,
+.content-block.important .icon:hover {
+    color: #b91c1c;
+    transform: scale(1.1);
+}
+
+.content-block:has(.icon img[src*="uitroepteken"]) .content-text,
+.content-block[data-type="important"] .content-text,
+.content-block.important .content-text {
+    border-color: #fca5a5;
+}
+
+/* Informatie blokken - automatisch blauw met informatie icoon */
+.content-block:has(.icon img[src*="informatie"]) .icon,
+.content-block[data-type="info"] .icon,
+.content-block.info .icon {
+    background: linear-gradient(135deg, #93c5fd, #bfdbfe, var(--white));
+    color: #2563eb;
+}
+
+.content-block:has(.icon img[src*="informatie"]) .icon:hover,
+.content-block[data-type="info"] .icon:hover,
+.content-block.info .icon:hover {
+    color: #1d4ed8;
+    transform: scale(1.1);
+}
+
+.content-block:has(.icon img[src*="informatie"]) .content-text,
+.content-block[data-type="info"] .content-text,
+.content-block.info .content-text {
+    border-color: #93c5fd;
+}
+
+/* ========================================
+   AUTOMATISCHE ICONEN ZONDER IMG TAGS
+   ======================================== */
+
+/* Opdracht blokken - automatisch icoon */
+.content-block.opdracht .icon::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url('../../img/icons/opdracht.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+/* Quiz blokken - automatisch icoon */
+.content-block.quiz .icon::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url('../../img/icons/quizvraag.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+/* Trivia blokken - automatisch icoon */
+.content-block.trivia .icon::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url('../../img/icons/boekenwurm.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+/* Belangrijke informatie - automatisch icoon */
+.content-block.important .icon::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url('../../img/icons/uitroepteken.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
+
+/* Informatie blokken - automatisch icoon */
+.content-block.info .icon::before {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-image: url('../../img/icons/informatie.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto;
+}
