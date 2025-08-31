@@ -14,6 +14,10 @@
     --primary-orange: #f59e0b;
     --primary-red: #ef4444;
     --primary-indigo: #6366f1;
+    --primary-yellow: #fef3c7;
+    --primary-yellow-light: #f4f2dc;
+    --primary-gray: #6b7280;
+    --primary-gray-light: #d1d5db;
     
     /* Neutrale kleuren */
     --white: #ffffff;
@@ -121,20 +125,20 @@ h4 {
 .content-block {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
     background: var(--bg-secondary);
-    border-radius: 16px;
-    margin: 35px 0;
-    box-shadow: var(--shadow-md);
+    border-radius: 18px; /* Zachtere hoeken */
+    margin: 50px 0; /* Meer witruimte tussen blokken */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Verfijnde schaduw */
     overflow: hidden;
-    transition: var(--transition-normal);
+    transition: all 0.3s ease; /* Smooth transitions */
     border: none;
+    min-height: fit-content;
 }
 
 .content-block:hover {
-    box-shadow: var(--shadow-xl);
-    transform: translateY(-2px);
-    border-color: var(--border-medium);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Verfijnde hover schaduw */
+    transform: translateY(-3px); /* Subtiele lift effect */
 }
 
 /* ========================================
@@ -146,25 +150,28 @@ h4 {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    width: 100px;
-    height: auto;
+    width: 70px;
+    min-height: 100%;
     margin-right: 0;
     flex-shrink: 0;
-    transition: var(--transition-normal);
+    transition: all 0.3s ease; /* Smooth transitions */
     cursor: pointer;
-    padding: 15px 10px;
-    border-radius: 0 0 16px;
+    padding: 10px 8px;
+    border-radius: 0 0 18px; /* Zachtere hoeken */
+    align-self: stretch;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Zeer subtiele binnen schaduw */
 }
 
 .icon img {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
-    object-position: center;
+    object-position: start;
 }
 
 .icon:hover {
     transform: scale(1.05);
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08); /* Subtiele hover schaduw */
 }
 
 /* ========================================
@@ -172,132 +179,122 @@ h4 {
    ======================================== */
 .content-text {
     flex: 1;
-    line-height: 1.8;
-    background: var(--bg-secondary);
+    line-height: 1.9; /* Iets verfijnder line-height */
+    background: #f8f9fa; /* Lichtgrijze achtergrond */
     padding: 30px;
-    border-radius: 0 16px 16px 0;
-    border: 2px solid;
+    border-radius: 0 18px 18px 0; /* Zachtere hoeken */
+    border: none; /* Geen randen */
     width: 100%;
     color: var(--text-primary);
+    min-height: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Zeer subtiele schaduw */
+    transition: all 0.3s ease; /* Smooth transitions */
+    letter-spacing: 0.01em; /* Subtiele letter-spacing voor betere leesbaarheid */
 }
 
 /* ========================================
    SPECIFIEKE BLOK TYPES MET RUSTIGE KLEUREN
    ======================================== */
 .task .icon {
-    background: linear-gradient(135deg, #86efac, #bbf7d0, var(--white));
-    color: #16a34a;
+    background: linear-gradient(135deg, #d1f2d1 0%, rgba(209, 242, 209, 0.8) 50%, rgba(209, 242, 209, 0) 100%); /* Levendiger groen naar transparant */
+    color: #4b5563;
 }
 
 .task .icon:hover {
-    color: #15803d;
-    transform: scale(1.1);
+    color: #374151;
+    transform: scale(1.05);
 }
 
-.task .content-text {
-    border-color: #86efac;
-}
+/* Geen border-color meer nodig - rustigere layout */
 
 .quiz .icon {
-    background: linear-gradient(135deg, #fca5a5, #fecaca, var(--white));
-    color: #dc2626;
+    background: linear-gradient(135deg, #fecaca 0%, rgba(254, 202, 202, 0.8) 50%, rgba(254, 202, 202, 0) 100%); /* Levendiger rood naar transparant */
+    color: #4b5563;
 }
 
 .quiz .icon:hover {
-    color: #b91c1c;
-    transform: scale(1.1);
+    color: #374151;
+    transform: scale(1.05);
 }
 
-.quiz .content-text {
-    border-color: #fca5a5;
-}
+/* Geen border-color meer nodig - rustigere layout */
 
 .trivia .icon {
-    background: linear-gradient(135deg, #fde047, #fef3c7, var(--white));
-    color: #ca8a04;
+    background: linear-gradient(135deg, #fef3c7 0%, rgba(254, 243, 199, 0.8) 50%, rgba(254, 243, 199, 0) 100%); /* Levendiger geel naar transparant */
+    color: #4b5563;
 }
 
 .trivia .icon:hover {
-    color: #a16207;
-    transform: scale(1.1);
+    color: #374151;
+    transform: scale(1.05);
 }
 
-.trivia .content-text {
-    border-color: #fde047;
-}
+/* Geen border-color meer nodig - rustigere layout */
 
 .important .icon {
-    background: linear-gradient(135deg, #fca5a5, #fecaca, var(--white));
-    color: #dc2626;
+    background: linear-gradient(135deg, #fecaca 0%, rgba(254, 202, 202, 0.8) 50%, rgba(254, 202, 202, 0) 100%); /* Levendiger rood naar transparant */
+    color: #4b5563;
 }
 
 .important .icon:hover {
-    color: #b91c1c;
-    transform: scale(1.1);
+    color: #374151;
+    transform: scale(1.05);
 }
 
-.important .content-text {
-    border-color: #fca5a5;
-}
+/* Geen border-color meer nodig - rustigere layout */
 
 .info .icon {
-    background: linear-gradient(135deg, #93c5fd, #bfdbfe, var(--white));
-    color: #2563eb;
+    background: linear-gradient(135deg, #dbeafe 0%, rgba(219, 234, 254, 0.8) 50%, rgba(219, 234, 254, 0) 100%); /* Levendiger blauw naar transparant */
+    color: #4b5563;
 }
 
 .info .icon:hover {
-    color: #1d4ed8;
-    transform: scale(1.1);
+    color: #374151;
+    transform: scale(1.05);
 }
 
-.info .content-text {
-    border-color: #93c5fd;
-}
+/* Geen border-color meer nodig - rustigere layout */
+
+
 
 /* ========================================
-   TOGGLE STYLING
+   TRIVIA TOGGLE STYLING - MINIMAAL
    ======================================== */
-.trivia-toggle, .quiz-toggle {
+.content-block.trivia .content-text details {
+    width: 100%;
+}
+
+.content-block .content-text summary {
     cursor: pointer;
-    padding: 12px;
-    border-radius: 8px;
-    transition: var(--transition-fast);
-    margin: 8px 0;
-    background: var(--gray-50);
+    padding: 8px 12px;
+    border-radius: 6px;
+    background: var(--primary-yellow-light);
     border: 1px solid var(--border-light);
     color: var(--text-primary);
+    margin-bottom: 15px;
+    transition: var(--transition-fast);
+    list-style: none;
+    position: relative;
 }
 
-.trivia-toggle:hover {
+.content-block .content-text summary:hover {
     background: var(--gray-100);
     border-color: var(--border-medium);
 }
 
-.quiz-toggle:hover {
-    background: var(--gray-100);
-    border-color: var(--border-medium);
-}
-
-.trivia-toggle-icon, .quiz-toggle-icon {
-    float: right;
-    transition: var(--transition-normal);
+.content-block .content-text summary::after {
+    content: "▶";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
     color: var(--text-muted);
-}
-
-.trivia-toggle-icon.expanded, .quiz-toggle-icon.expanded {
-    transform: rotate(90deg);
-    color: var(--primary-blue);
-}
-
-.trivia-content, .quiz-content {
-    max-height: 0;
-    overflow: hidden;
     transition: var(--transition-normal);
-    margin-top: 15px;
 }
 
-.trivia-content.expanded, .quiz-content.expanded {
-    max-height: 1000px;
+.content-block .content-text details[open] summary::after {
+    transform: translateY(-50%) rotate(90deg);
+    color: var(--primary-blue);
 }
 
 /* ========================================
@@ -364,22 +361,22 @@ h4 {
    ======================================== */
 .btn, .demo-button {
     display: inline-block;
-    background: var(--primary-blue);
-    color: var(--white);
+    background: var(--white);
+    color: var(--gray-700);
     padding: 18px 35px;
     text-decoration: none;
     border-radius: 30px;
     font-weight: 600;
     font-size: 1.1rem;
     transition: var(--transition-normal);
-    border: none;
+    border: 1px solid var(--gray-700);
     box-shadow: var(--shadow-md);
     cursor: pointer;
     font-family: inherit;
 }
 
 .btn:hover, .demo-button:hover {
-    background: #2563eb;
+    background: var(--primary-gray-light);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -525,15 +522,6 @@ img {
     color: #92400e;
 }
 
-.trivia {
-    background: var(--gray-50);
-    border: 1px solid var(--border-light);
-    border-left: 4px solid var(--primary-orange);
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 8px;
-    color: var(--text-secondary);
-}
 
 .conclusion {
     background: #dbeafe;
@@ -624,6 +612,7 @@ body::-webkit-scrollbar {
 
 .content-block {
     animation: fadeIn 0.5s ease-out;
+    min-height: fit-content;
 }
 
 /* ========================================
@@ -668,107 +657,101 @@ a:focus {
 /* Opdracht blokken - automatisch groen met opdracht icoon */
 .content-block:has(.icon img[src*="opdracht"]) .icon,
 .content-block[data-type="task"] .icon,
-.content-block.opdracht .icon {
-    background: linear-gradient(135deg, #86efac, #bbf7d0, var(--white));
-    color: #16a34a;
+.content-block.opdracht .icon,
+.task .icon {
+    background: linear-gradient(135deg, #d1f2d1 0%, rgba(209, 242, 209, 0.8) 50%, rgba(209, 242, 209, 0) 100%); /* Levendiger groen naar transparant */
+    color: #4b5563;
 }
 
 .content-block:has(.icon img[src*="opdracht"]) .icon:hover,
 .content-block[data-type="task"] .icon:hover,
-.content-block.opdracht .icon:hover {
-    color: #15803d;
-    transform: scale(1.1);
+.content-block.opdracht .icon:hover,
+.task .icon:hover {
+    color: #374151;
+    transform: scale(1.05);
 }
 
 .content-block:has(.icon img[src*="opdracht"]) .content-text,
 .content-block[data-type="task"] .content-text,
-.content-block.opdracht .content-text {
+.content-block.opdracht .content-text,
+.task .content-text {
     border-color: #86efac;
+    background-color: #467255; /* Nog zachtere, rustigere donkergroen */
+    color: #f1fcf5; /* Lichtere groene tekst voor betere leesbaarheid */
 }
 
 /* Quiz blokken - automatisch rood met quiz icoon */
 .content-block:has(.icon img[src*="quizvraag"]) .icon,
 .content-block[data-type="quiz"] .icon,
 .content-block.quiz .icon {
-    background: linear-gradient(135deg, #fca5a5, #fecaca, var(--white));
-    color: #dc2626;
+    background: linear-gradient(135deg, #fecaca 0%, rgba(254, 202, 202, 0.8) 50%, rgba(254, 202, 202, 0) 100%); /* Levendiger rood naar transparant */
+    color: #4b5563;
 }
 
 .content-block:has(.icon img[src*="quizvraag"]) .icon:hover,
 .content-block[data-type="quiz"] .icon:hover,
 .content-block.quiz .icon:hover {
-    color: #b91c1c;
-    transform: scale(1.1);
+    color: #374151;
+    transform: scale(1.05);
 }
 
 .content-block:has(.icon img[src*="quizvraag"]) .content-text,
 .content-block[data-type="quiz"] .content-text,
 .content-block.quiz .content-text {
-    border-color: #fca5a5;
+    background-color: #a15656; /* Nog mattere, rustigere donkerrode achtergrond */
+    color: #fef2f2; /* Lichte rode tekst voor betere leesbaarheid */
 }
 
 /* Trivia blokken - automatisch geel met trivia icoon */
 .content-block:has(.icon img[src*="boekenwurm"]) .icon,
 .content-block[data-type="trivia"] .icon,
 .content-block.trivia .icon {
-    background: linear-gradient(135deg, #fde047, #fef3c7, var(--white));
-    color: #ca8a04;
+    background: linear-gradient(135deg, #fef3c7 0%, rgba(254, 243, 199, 0.8) 50%, rgba(254, 243, 199, 0) 100%); /* Levendiger geel naar transparant */
+    color: #4b5563;
 }
 
 .content-block:has(.icon img[src*="boekenwurm"]) .icon:hover,
 .content-block[data-type="trivia"] .icon:hover,
 .content-block.trivia .icon:hover {
-    color: #a16207;
-    transform: scale(1.1);
+    color: #374151;
+    transform: scale(1.05);
 }
 
-.content-block:has(.icon img[src*="boekenwurm"]) .content-text,
-.content-block[data-type="trivia"] .content-text,
-.content-block.trivia .content-text {
-    border-color: #fde047;
-}
+/* Geen border-color meer nodig - rustigere layout */
 
 /* Belangrijke informatie - automatisch rood met uitroepteken icoon */
 .content-block:has(.icon img[src*="uitroepteken"]) .icon,
 .content-block[data-type="important"] .icon,
 .content-block.important .icon {
-    background: linear-gradient(135deg, #fca5a5, #fecaca, var(--white));
-    color: #dc2626;
+    background: linear-gradient(135deg, #fecaca 0%, rgba(254, 202, 202, 0.8) 50%, rgba(254, 202, 202, 0) 100%); /* Levendiger rood naar transparant */
+    color: #4b5563;
 }
 
 .content-block:has(.icon img[src*="uitroepteken"]) .icon:hover,
 .content-block[data-type="important"] .icon:hover,
 .content-block.important .icon:hover {
-    color: #b91c1c;
-    transform: scale(1.1);
+    color: #374151;
+    transform: scale(1.05);
 }
 
-.content-block:has(.icon img[src*="uitroepteken"]) .content-text,
-.content-block[data-type="important"] .content-text,
-.content-block.important .content-text {
-    border-color: #fca5a5;
-}
+/* Geen border-color meer nodig - rustigere layout */
 
 /* Informatie blokken - automatisch blauw met informatie icoon */
 .content-block:has(.icon img[src*="informatie"]) .icon,
 .content-block[data-type="info"] .icon,
 .content-block.info .icon {
-    background: linear-gradient(135deg, #93c5fd, #bfdbfe, var(--white));
-    color: #2563eb;
+    background: linear-gradient(135deg, #dbeafe 0%, rgba(219, 234, 254, 0.8) 50%, rgba(219, 234, 254, 0) 100%); /* Levendiger blauw naar transparant */
+    color: #4b5563;
 }
 
 .content-block:has(.icon img[src*="informatie"]) .icon:hover,
 .content-block[data-type="info"] .icon:hover,
 .content-block.info .icon:hover {
-    color: #1d4ed8;
-    transform: scale(1.1);
+    color: #374151;
+    transform: scale(1.05);
 }
 
-.content-block:has(.icon img[src*="informatie"]) .content-text,
-.content-block[data-type="info"] .content-text,
-.content-block.info .content-text {
-    border-color: #93c5fd;
-}
+/* Geen border-color meer nodig - rustigere layout */
 
 /* ========================================
    AUTOMATISCHE ICONEN ZONDER IMG TAGS
