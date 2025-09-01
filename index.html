@@ -78,23 +78,7 @@
             line-height: 1.6;
         }
         
-        .nav-button {
-            display: inline-block;
-            background: var(--primary-blue);
-            color: var(--white);
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all var(--transition-normal);
-            border: none;
-            cursor: pointer;
-        }
-        
-        .nav-button:hover {
-            background: var(--primary-indigo);
-            transform: scale(1.05);
-        }
+
         
         .welcome-text {
             background: var(--bg-accent);
@@ -273,13 +257,52 @@
     <script>
         // Voeg wat interactiviteit toe
         document.addEventListener('DOMContentLoaded', function() {
+            // Voorkom dubbele clicks voor alle buttons
+            const allButtons = document.querySelectorAll('button, .btn, .demo-button, .nav-button');
+            allButtons.forEach(button => {
+                let isClicked = false;
+                
+                button.addEventListener('click', function(e) {
+                    if (isClicked) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        return;
+                    }
+                    
+                    isClicked = true;
+                    button.style.pointerEvents = 'none';
+                    button.style.opacity = '0.7';
+                    button.style.cursor = 'not-allowed';
+                    
+                    // Reset de button status na een bepaalde tijd
+                    setTimeout(() => {
+                        isClicked = false;
+                        button.style.pointerEvents = 'auto';
+                        button.style.opacity = '1';
+                        button.style.cursor = 'pointer';
+                    }, 1000);
+                });
+            });
+
             // Smooth scroll voor navigatie
             const navButtons = document.querySelectorAll('.nav-button');
             navButtons.forEach(button => {
+                let isClicked = false;
+                
                 button.addEventListener('click', function(e) {
+                    if (isClicked) {
+                        e.preventDefault();
+                        return;
+                    }
+                    
+                    isClicked = true;
+                    button.style.pointerEvents = 'none';
+                    button.style.opacity = '0.7';
+                    
                     // Voeg een kleine vertraging toe voor de hover effect
                     setTimeout(() => {
                         // Navigatie logica hier
+                        // De button wordt automatisch gereset bij page load
                     }, 200);
                 });
             });
@@ -294,6 +317,22 @@
                 heroSection.style.opacity = '1';
                 heroSection.style.transform = 'translateY(0)';
             }, 100);
+            
+            // Voeg hover effecten toe voor alle interactieve elementen
+            const interactiveElements = document.querySelectorAll('[onclick], [href], button, .btn, .demo-button, .nav-button, .icon, .quiz-option, summary');
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    if (!this.style.pointerEvents || this.style.pointerEvents !== 'none') {
+                        this.style.cursor = 'pointer';
+                    }
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    if (!this.style.pointerEvents || this.style.pointerEvents !== 'none') {
+                        this.style.cursor = 'pointer';
+                    }
+                });
+            });
         });
     </script>
 </body>

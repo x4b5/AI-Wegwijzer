@@ -80,24 +80,41 @@ body {
 }
 
 .container {
-    background: var(--bg-secondary);
-    padding: 50px;
+    background: transparent;
+    padding: 40px; /* Kleiner gemaakt voor bredere container */
     border-radius: 20px;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-light);
+    box-shadow: none;
+    border: none;
 }
 
 h1 {
-    color: var(--gray-900);
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 3px solid var(--primary-blue);
-    padding-bottom: 15px;
+    color: var(--white); /* Witte tekst op donkere achtergrond */
+    font-size: 2.6rem;
+    margin: 0;
+    padding: 8px 25px; /* Padding zoals bij chatbots titel */
     font-weight: 700;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #4a5568; /* Zelfde donkere achtergrondkleur als chatbots titel */
+    border-radius: 12px; /* Afgeronde hoeken zoals bij chatbots titel */
+    border: none;
+    box-shadow: none;
+    position: relative;
+    overflow: visible;
+    letter-spacing: 0.3px;
+}
+
+.header-section {
+    background: var(--gray-200);
+    border-radius: 16px;
+    border: none;
+    box-shadow: var(--shadow-sm);
+    padding: 30px 35px;
+    margin: 2.5rem 0 2.5rem 0;
 }
 
 h2 {
-    color: var(--gray-800);
+    color: #000000; /* Zwarte tekst */
     font-size: 1.8rem;
     margin: 3rem 0 1.5rem 0;
     border-left: 4px solid var(--primary-blue);
@@ -106,14 +123,14 @@ h2 {
 }
 
 h3 {
-    color: var(--gray-800);
+    color: #000000; /* Zwarte tekst */
     font-size: 1.4rem;
     margin: 2rem 0 1rem 0;
     font-weight: 600;
 }
 
 h4 {
-    color: var(--gray-700);
+    color: #000000; /* Zwarte tekst */
     font-size: 1.2rem;
     margin: 1.5rem 0 0.8rem 0;
     font-weight: 500;
@@ -127,8 +144,8 @@ h4 {
     flex-direction: row;
     align-items: stretch;
     background: var(--bg-secondary);
-    border-radius: 18px; /* Zachtere hoeken */
-    margin: 50px 0; /* Meer witruimte tussen blokken */
+    border-radius: 30px; /* Zachtere hoeken */
+    margin: 40px 0; /* Compacte scheiding tussen blokken */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Verfijnde schaduw */
     overflow: hidden;
     transition: all 0.3s ease; /* Smooth transitions */
@@ -155,11 +172,15 @@ h4 {
     margin-right: 0;
     flex-shrink: 0;
     transition: all 0.3s ease; /* Smooth transitions */
-    cursor: pointer;
+    cursor: pointer; /* Hand cursor voor alle icons */
     padding: 10px 8px;
     border-radius: 0 0 18px; /* Zachtere hoeken */
     align-self: stretch;
     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Zeer subtiele binnen schaduw */
+    user-select: none; /* Voorkom tekst selectie */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .icon img {
@@ -180,12 +201,12 @@ h4 {
 .content-text {
     flex: 1;
     line-height: 1.9; /* Iets verfijnder line-height */
-    background: #f8f9fa; /* Lichtgrijze achtergrond */
+    background: var(--bg-secondary); /* Terug naar originele achtergrond */
     padding: 30px;
     border-radius: 0 18px 18px 0; /* Zachtere hoeken */
     border: none; /* Geen randen */
     width: 100%;
-    color: var(--text-primary);
+    color: #000000; /* Zwarte tekst */
     min-height: 100%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Zeer subtiele schaduw */
     transition: all 0.3s ease; /* Smooth transitions */
@@ -265,7 +286,7 @@ h4 {
 }
 
 .content-block .content-text summary {
-    cursor: pointer;
+    cursor: pointer; /* Hand cursor voor summary elementen */
     padding: 8px 12px;
     border-radius: 6px;
     background: var(--primary-yellow-light);
@@ -275,6 +296,10 @@ h4 {
     transition: var(--transition-fast);
     list-style: none;
     position: relative;
+    user-select: none; /* Voorkom tekst selectie */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .content-block .content-text summary:hover {
@@ -301,13 +326,17 @@ h4 {
    QUIZ OPTION STYLING
    ======================================== */
 .quiz-option {
-    cursor: pointer;
+    cursor: pointer; /* Hand cursor voor quiz opties */
     padding: 12px;
     border-radius: 8px;
     transition: var(--transition-fast);
     margin: 8px 0;
     background: var(--gray-50);
     border: 1px solid var(--border-light);
+    user-select: none; /* Voorkom tekst selectie */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .quiz-option:hover {
@@ -357,9 +386,30 @@ h4 {
 }
 
 /* ========================================
+   INTERACTIEVE ELEMENTEN STYLING
+   ======================================== */
+/* Alle klikbare elementen krijgen hand cursor */
+[onclick], [href], button, .btn, .demo-button, .nav-button, .icon, .quiz-option, summary {
+    cursor: pointer;
+}
+
+/* Voorkom tekst selectie bij interactieve elementen */
+[onclick], [href], button, .btn, .demo-button, .nav-button, .icon, .quiz-option, summary {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Hover effecten voor alle interactieve elementen */
+[onclick]:hover, [href]:hover, button:hover, .btn:hover, .demo-button:hover, .nav-button:hover, .icon:hover, .quiz-option:hover, summary:hover {
+    cursor: pointer;
+}
+
+/* ========================================
    BUTTON STYLING
    ======================================== */
-.btn, .demo-button {
+.btn, .demo-button, .nav-button, button {
     display: inline-block;
     background: var(--white);
     color: var(--gray-700);
@@ -371,14 +421,92 @@ h4 {
     transition: var(--transition-normal);
     border: 1px solid var(--gray-700);
     box-shadow: var(--shadow-md);
-    cursor: pointer;
+    cursor: pointer; /* Hand cursor voor alle buttons */
     font-family: inherit;
+    user-select: none; /* Voorkom tekst selectie bij dubbelklikken */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-.btn:hover, .demo-button:hover {
+.btn:hover, .demo-button:hover, .nav-button:hover, button:hover {
     background: var(--primary-gray-light);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+    cursor: pointer; /* Zorg ervoor dat hand cursor blijft bij hover */
+}
+
+/* Specifieke styling voor nav-button */
+.nav-button {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+}
+
+.nav-button:hover {
+    background: var(--primary-indigo);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+/* Voorkom dat buttons meerdere keren worden geklikt */
+.btn:active, .demo-button:active, .nav-button:active, button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+}
+
+/* Focus states voor toegankelijkheid */
+.btn:focus, .demo-button:focus, .nav-button:focus, button:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+    cursor: pointer;
+}
+
+/* Disabled state voor buttons */
+.btn:disabled, .demo-button:disabled, .nav-button:disabled, button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* Vaste terug-knop aan zijkant */
+.back-floating {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.back-floating:hover {
+    /* Override standaard .btn hover transform zodat centrering blijft */
+    transform: translateY(-50%) scale(1.02);
+}
+
+.back-floating:active {
+    /* Override standaard .btn active transform */
+    transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+    .back-floating {
+        left: 16px;
+        bottom: 16px;
+        top: auto;
+        transform: none;
+    }
+    .back-floating:hover,
+    .back-floating:active {
+        transform: none;
+    }
+}
+
+@media print {
+    .back-floating {
+        display: none;
+    }
 }
 
 /* ========================================
@@ -432,6 +560,11 @@ a {
     color: var(--primary-blue);
     text-decoration: none;
     transition: var(--transition-fast);
+    cursor: pointer; /* Hand cursor voor alle links */
+    user-select: none; /* Voorkom tekst selectie */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 a:hover {
@@ -553,32 +686,36 @@ img {
     }
     
     .content-block {
-        padding: 20px;
-        margin: 25px 0;
-        flex-direction: column;
+        margin: 40px 0;
+        flex-direction: row; /* Blijf in rij-layout */
     }
     
     .icon {
-        width: 80px;
-        height: 80px;
+        width: 60px; /* Iets smaller op mobiel */
+        min-height: 100%;
         margin-right: 0;
-        align-self: center;
-        border-radius: 16px;
+        align-self: stretch;
+        border-radius: 0 0 16px 0;
+        flex-shrink: 0;
     }
     
     .icon img {
-        width: 50px;
-        height: 50px;
+        width: 40px; /* Iets kleiner icoon op mobiel */
+        height: 40px;
     }
     
     .content-text {
-        border-radius: 16px;
-        border-top: 2px solid;
+        border-radius: 0 16px 16px 0;
+        border-top: none;
         border-left: none;
+        padding: 20px; /* Minder padding op mobiel */
+        flex: 1; /* Neem beschikbare ruimte in */
     }
     
     h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        padding: 20px 25px;
+        margin: 1.5rem 0 1.5rem 0;
     }
     
     h2 {
@@ -717,6 +854,49 @@ a:focus {
     transform: scale(1.05);
 }
 
+/* Tekstkleur voor trivia blokken op zwart zetten */
+.content-block:has(.icon img[src*="boekenwurm"]) .content-text,
+.content-block[data-type="trivia"] .content-text,
+.content-block.trivia .content-text {
+    color: #000000; /* Zwarte tekst voor trivia blokken */
+}
+
+/* Vetgedrukte tekst in trivia blokken ook op zwart */
+.content-block:has(.icon img[src*="boekenwurm"]) .content-text strong,
+.content-block[data-type="trivia"] .content-text strong,
+.content-block.trivia .content-text strong {
+    color: #000000; /* Zwarte tekst voor vetgedrukte woorden */
+}
+
+/* Fellere, leesbare link kleuren */
+.content-text a {
+    color: #0088ff !important; /* Nog fellere blauwe kleur voor betere leesbaarheid */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.content-text a:hover {
+    color: #0066cc !important; /* Iets donkerder blauw bij hover */
+    text-decoration: underline;
+}
+
+.content-text a:visited {
+    color: #8800ff !important; /* Nog fellere paarse kleur voor bezochte links */
+}
+
+/* Ook algemene link styling toevoegen */
+a {
+    color: #0088ff !important; /* Nog fellere blauwe kleur voor alle links */
+}
+
+a:hover {
+    color: #0066cc !important; /* Iets donkerder blauw bij hover */
+}
+
+a:visited {
+    color: #8800ff !important; /* Nog fellere paarse kleur voor bezochte links */
+}
+
 /* Geen border-color meer nodig - rustigere layout */
 
 /* Belangrijke informatie - automatisch rood met uitroepteken icoon */
@@ -751,7 +931,90 @@ a:focus {
     transform: scale(1.05);
 }
 
+/* Tekstkleur voor informatie blokken op zwart zetten */
+.content-block:has(.icon img[src*="informatie"]) .content-text,
+.content-block[data-type="info"] .content-text,
+.content-block.info .content-text {
+    color: #000000; /* Zwarte tekst voor informatie blokken */
+}
+
+/* Vetgedrukte tekst in informatie blokken ook op zwart */
+.content-block:has(.icon img[src*="informatie"]) .content-text strong,
+.content-block[data-type="info"] .content-text strong,
+.content-block.info .content-text strong {
+    color: #000000; /* Zwarte tekst voor vetgedrukte woorden */
+}
+
 /* Geen border-color meer nodig - rustigere layout */
+
+/* ========================================
+   METADATA STYLING
+   ======================================== */
+.chatbots-section {
+    background: var(--gray-200); /* Terug naar originele kleur */
+    border-radius: 16px;
+    padding: 25px;
+    margin: 30px 0;
+    box-shadow: var(--shadow-md);
+}
+
+.chatbots-container {
+    margin: 0;
+}
+
+.chatbots-title {
+    color: var(--white);
+    background: #4a5568; /* Zelfde kleur als de sidebars */
+    padding: 8px 25px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Tekst in chatbots section aanpassen voor betere leesbaarheid */
+.chatbots-section .content-text {
+    color: #f7fafc; /* Lichte tekst voor donkere achtergrond */
+}
+
+.chatbots-section .content-text strong {
+    color: #ffffff; /* Witte tekst voor belangrijke woorden */
+}
+
+.chatbots-section .content-text a {
+    color: #90cdf4; /* Lichte blauwe links voor donkere achtergrond */
+}
+
+.chatbots-section .content-text a:hover {
+    color: #63b3ed; /* Donkerder blauw bij hover */
+}
+
+.spacing-block {
+    height: 120px;
+    margin: 0;
+    padding: 0;
+}
+.metadata {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    margin: 20px 0 0 0;
+    border: none;
+    box-shadow: none;
+}
+
+.metadata-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+.metadata-item {
+    width: 100%;
+}
 
 /* ========================================
    AUTOMATISCHE ICONEN ZONDER IMG TAGS
@@ -821,3 +1084,315 @@ a:focus {
     background-position: center;
     margin: 0 auto;
 }
+
+/* Quiz styling */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.quiz-option {
+    background: var(--white);
+    border: 2px solid var(--gray-300);
+    border-radius: 12px;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-option:hover {
+    border-color: var(--blue-500);
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+}
+
+.answer-feedback {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-top: 15px;
+    border-top: 1px solid var(--gray-200);
+    padding-top: 15px;
+}
+
+.answer-feedback.show {
+    max-height: 200px;
+}
+
+.feedback-content {
+    color: var(--gray-700);
+    line-height: 1.5;
+}
+
+.feedback-icon {
+    font-size: 1.2em;
+    margin-right: 8px;
+}
+
+.quiz-option.correct {
+    border-color: var(--green-500);
+    background: var(--green-50);
+}
+
+.quiz-option.incorrect {
+    border-color: var(--red-500);
+    background: var(--red-50);
+}
+
+/* Eenvoudige sidebar styling */
+.simple-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.sidebar-toggle-btn {
+    position: fixed;
+    left: 0; /* Op de linkerkant van het scherm */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--gray-200); /* Zelfde kleur als grijze container */
+    color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
+    border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+}
+
+.sidebar-toggle-btn:hover {
+    background: #2d3748; /* Donkere achtergrond bij hover zoals legenda sidebar */
+    transform: translateY(-50%) scale(1.5);
+}
+
+.sidebar-toggle-btn:hover {
+    background: #2d3748;
+    transform: translateY(-50%) scale(1.5);
+}
+
+.sidebar-content {
+    position: fixed;
+    left: -380px; /* Volledig verborgen met nieuwe breedte */
+    top: 20px; /* Hoger geplaatst, niet meer gecentreerd */
+    width: 380px; /* Nog breder gemaakt voor betere leesbaarheid */
+    max-height: 400px; /* Hoger gemaakt om alles te passen */
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+    z-index: 1000;
+    border-radius: 0 20px 20px 0; /* Afgeronde rechter hoeken */
+    overflow-y: hidden; /* Geen scrollbar meer */
+    pointer-events: none; /* Laat scrollen door wanneer gesloten */
+    transform: scale(1); /* Start grootte */
+}
+
+.simple-sidebar.open .sidebar-content {
+    left: 0; /* Volledig zichtbaar */
+    pointer-events: auto; /* Herstel interactie wanneer open */
+}
+
+/* Hover effect - maak sidebar groter */
+.simple-sidebar.open .sidebar-content:hover {
+    transform: scale(1); /* Geen vergroting bij hover */
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Normale schaduw */
+}
+
+/* Tweede sidebar - naar boven knop */
+.top-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.top-toggle-btn {
+    position: fixed;
+    left: 0; /* Op de linkerkant van het scherm */
+    top: calc(50% + 160px); /* Lager onder de home knop */
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--gray-200); /* Zelfde kleur als grijze container */
+    color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
+    border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+}
+
+.top-toggle-btn:hover {
+    background: #2d3748; /* Donkere achtergrond bij hover zoals legenda sidebar */
+    transform: translateY(-50%) scale(1.5);
+}
+
+/* Derde sidebar - naar home knop */
+.home-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.home-toggle-btn {
+    position: fixed;
+    left: 0; /* Op de linkerkant van het scherm */
+    top: calc(50% + 80px); /* Tussen legende en naar-boven knop */
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--gray-200); /* Zelfde kleur als grijze container */
+    color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
+    border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+}
+
+.home-toggle-btn:hover {
+    background: #2d3748; /* Donkere achtergrond bij hover zoals legenda sidebar */
+    transform: translateY(-50%) scale(1.5);
+}
+
+.simple-sidebar.open .sidebar-content {
+    left: 0; /* Volledig zichtbaar */
+}
+
+.sidebar-header {
+    background: #f7fafc;
+    padding: 8px; /* Veel kleiner gemaakt */
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    color: #2d3748;
+    font-size: 16px; /* Kleiner gemaakt */
+}
+
+.close-sidebar-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #718096;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-sidebar-btn:hover {
+    background: #e2e8f0;
+    color: #2d3748;
+}
+
+.sidebar-body {
+    padding: 8px; /* Veel kleiner gemaakt */
+}
+
+.sidebar-body p {
+    margin: 15px 0;
+    color: #4a5568;
+    line-height: 1.5;
+}
+
+/* Legend items styling */
+.legend-item {
+    display: grid;
+    grid-template-columns: 76px 1fr; /* Kolom voor icoon (76px) en kolom voor tekst (rest) */
+    gap: 8px; /* Kleinere ruimte tussen kolommen */
+    padding: 4px; /* Veel kleinere padding */
+    margin-bottom: 3px; /* Veel kleinere margin tussen items */
+    background: #f8fafc;
+    border-radius: 12px; /* Ronder gemaakt */
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+}
+
+.legend-item:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+    transform: translateX(5px);
+}
+
+.legend-item img {
+    justify-self: center; /* Centreer icoon in zijn kolom */
+    align-self: flex-start; /* Icoon bovenaan uitlijnen */
+    border-radius: 8px; /* Ronder gemaakt */
+    padding: 10px; /* Meer padding voor roter vlak */
+    background: #dbeafe; /* Standaard blauw voor informatie */
+}
+
+/* Specifieke achtergrondkleuren voor elk icoon type */
+.legend-item img[src*="informatie"] {
+    background: #dbeafe; /* Blauw - zelfde als informatie blokken */
+}
+
+.legend-item img[src*="boekenwurm"] {
+    background: #fef3c7; /* Geel - zelfde als trivia blokken */
+}
+
+.legend-item img[src*="quizvraag"] {
+    background: #fecaca; /* Rood - zelfde als quiz blokken */
+}
+
+.legend-item img[src*="opdracht"] {
+    background: #d1f2d1; /* Groen - zelfde als opdracht blokken */
+}
+
+.legend-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Tekst bovenaan uitlijnen */
+    gap: 0px; /* Geen ruimte tussen flex items */
+}
+
+.legend-title {
+    color: #1e293b;
+    font-size: 13px;
+    display: block;
+    margin: 0; /* Geen margin */
+    padding: 5px 0; /* Geen padding */
+    line-height: 1; /* Normale regelafstand */
+    font-weight: bold; /* Bold styling */
+}
+
+.legend-text small {
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1; /* Normale regelafstand */
+    margin: 0; /* Geen margin */
+    padding: 0; /* Geen padding */
+}
+
+

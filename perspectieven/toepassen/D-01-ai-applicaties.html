@@ -5,12 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI-Applicaties - Chatbots en AI-Assistenten</title>
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Chatbots en AI-Assistenten</h1>
+        <!-- Eenvoudige sidebar -->
+    <div class="simple-sidebar" id="simpleSidebar">
+        <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
+            <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40">
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3>Legenda van tekstblokken</h3>
+                <button class="close-sidebar-btn" onclick="toggleSimpleSidebar()">×</button>
+            </div>
+            <div class="sidebar-body">
+                <div class="legend-item">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Informatie</span>
+                        <small>Uitleg en achtergrondinformatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/boekenwurm.png" alt="Verder lezen" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Verder lezen</span>
+                        <small>Interessante feiten en verdiepende informatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/quizvraag.png" alt="Quiz" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Quiz</span>
+                        <small>Test je kennis met interactieve vragen</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/opdracht.png" alt="Opdracht" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Opdracht</span>
+                        <small>Praktische opdrachten om te oefenen</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        <h2>Chatbots</h2>
+    <!-- Tweede sidebar - naar begin van pagina -->
+    <div class="top-sidebar" id="topSidebar">
+        <div class="top-toggle-btn" onclick="goToTop()">
+            <img src="../../img/icons/naar-boven.png" alt="Naar boven" width="40" height="40">
+        </div>
+    </div>
+
+    <!-- Derde sidebar - naar index.html -->
+    <div class="home-sidebar" id="homeSidebar">
+        <div class="home-toggle-btn" onclick="goToHome()">
+            <img src="../../img/icons/home.png" alt="Naar home" width="40" height="40">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header-section">
+            <h1>Chatbots en AI-Assistenten</h1>
+            
+            <div class="metadata">
+                <div class="metadata-content">
+                    <div class="metadata-item"><strong> Laatste wijziging:</strong> 1 september 2025</div>
+                    <div class="metadata-item"><strong> Leerdoel:</strong> Begrijpen wat chatbots en AI-assistentenzijn en hoe je ze kunt gebruiken</div>
+                    <div class="metadata-item"><strong> Leestijd:</strong> 8-10 minuten</div>
+                    <div class="metadata-item"><strong> Inhoud:</strong> <a href="#chatbots">Chatbots</a></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        <div class="chatbots-section">
+            <h3 class="chatbots-title">Chatbots</h3>
         
         <div class="content-block task">
             <div class="icon">
@@ -21,7 +97,7 @@
                 
                 <div class="text-center mt-4">
                     <button onclick="openLumoPopup()" class="btn">
-                        <img src="../../img/icons/lumo.png" alt="Lumo" width="40" height="32" style="vertical-align: middle; margin-right: 12px;"> Lumo Openen
+                        <img src="../../img/icons/lumo.png" alt="Lumo" width="40" height="32" style="vertical-align: middle; margin-right: 12px;"> Lumo openen
                     </button>
                 </div>
             </div>
@@ -32,8 +108,14 @@
                 <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
             </div>
             <div class="content-text">
+                We hebben nu toegang tot de chatbot <em>Lumo</em>.<br><br>
                 <strong>Wat is een chatbot?</strong><br/>
-                Een chatbot is een softwaretoepassing of webinterface die is ontworpen om gesprekken in de vorm van <em>tekst</em> en/of <em>gesproken taal</em> te voeren (<a href="https://en.wikipedia.org/wiki/Chatbot" target="_blank">Wikipedia, Chatbot</a>).
+                Een <a href="../../naslag/begrippen.html">chatbot</a> is een softwaretoepassing of webinterface die is ontworpen om gesprekken in de vorm van <em>tekst</em> en/of <em>gesproken taal</em> te voeren.<br><br>
+                Door de <a href="../../naslag/begrippen.html#ai-boom">AI boom</a> die begon in de late jaren 2010 zijn chatbots steeds populairder geworden. <br>
+                <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a>, van <a href="../../naslag/begrippen.html#openai">OpenAI</a>, was een van de eerste moderne chatbots die op de markt kwam en steeds populairder werd. <br>
+                Daardoor denken veel mensen aan ChatGPT wanneer ze het woord artificiele intelligentie horen.<br>
+                Maar er zijn veel meer chatbots dan alleen ChatGPT en artificiele intelligentie is veel meer dan alleen chatbots.
+
             </div>
         </div>
 
@@ -44,8 +126,8 @@
             <div class="content-text">
                 <details>
                     <summary><strong>Wat was de allereerste chatbot?</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
-                    ELIZA was de allereerste chatbot die breed werd erkend. Deze chatbot werd in 1966 ontwikkeld door MIT-professor Joseph Weizenbaum.<br>
-                    De onderliggende techniek was relatief simpel maar de eerste gebruikers deden toch menselijke eigenschappen toedichten aan de chatbot. Dit fenomeen wordt daarom het <em>Eliza-effect</em> genoemd.<br><br>
+                    <a href="../../naslag/begrippen.html#eliza">ELIZA</a> was de allereerste chatbot die breed werd erkend. Deze chatbot werd in 1966 ontwikkeld door MIT-professor <a href="../../naslag/begrippen.html#joseph-weizenbaum">Joseph Weizenbaum</a>.<br>
+                    De onderliggende techniek was relatief simpel maar de eerste gebruikers deden toch menselijke eigenschappen toedichten aan de chatbot. Dit fenomeen wordt daarom het <em><a href="../../naslag/begrippen.html#eliza-effect">Eliza-effect</a></em> genoemd.<br><br>
                     <img src="../../img/eliza.png" alt="Eliza">
                     <br>
                     <em>ELIZA, een van de eerste chatbots, ontwikkeld in 1966</em><br>
@@ -54,14 +136,13 @@
                     Moderne chatbots werken op basis van geavanceerde methoden en technieken.<br>
                     Bekende voorbeelden van chatbots zijn:
                     <ul>
-                        <li><a href="https://chat.openai.com/" target="_blank">ChatGPT van OpenAI</a></li>
+                        <li><a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> van <a href="../../naslag/begrippen.html#openai">OpenAI</a> (<a href="https://chat.openai.com/" target="_blank">website</a>)</li>
                         <li><a href="https://claude.ai/" target="_blank">Claude van Anthropic</a></li>
                         <li><a href="https://gemini.google.com/" target="_blank">Gemini van Google</a></li>
                         <li><a href="https://chat.mistral.ai/" target="_blank">Mistral Chat van Mistral</a></li>
                         <li><a href="https://pi.ai/" target="_blank">Pi van Inflection</a></li>
                     </ul>
-                </details>
-            </div>
+                        </div>
         </div>
 
         <div class="content-block task">
@@ -79,7 +160,7 @@
                 <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
             </div>
             <div class="content-text">
-                <strong>Ghost mode</strong><br><br>
+                <strong>Ghost mode</strong><br>
                 Ghost mode zorgt ervoor dat je gesprek niet wordt opgeslagen en dat het gesprek verdwijnt zodra je het venster sluit. Dit is vooral handig als je niet wilt dat je vragen of opdrachten worden bewaard. Ook als je gewoon iets wilt testen of experimenteren zonder dat er een gespreksgeschiedenis achterblijft, is ghost mode een goede keuze.
             </div>
         </div>
@@ -101,8 +182,25 @@
                 <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
             </div>
             <div class="content-text">
-                <strong>Prompt</strong><br><br>
-                De tekst die je typt in het venster heet een <em>prompt</em>. Zo'n prompt kan bijvoorbeeld een vraag, opdracht of instructie zijn. Dit geeft vervolgens een antwoord of resultaat terug.
+                <strong>Prompt</strong><br>
+                De tekst die je typt in het venster heet een <em><a href="../../naslag/begrippen.html#prompt">prompt</a></em>. Zo'n prompt kan bijvoorbeeld een vraag, opdracht of instructie zijn. Dit geeft vervolgens een antwoord of resultaat terug.
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Regelgebaseerd en data-gedreven</strong><br>
+                Net zoals jij je met de naam van een bekende persoon hebt voorgesteld, is het goed om te weten dat de chatbot niet zelf die antwoorden geeft.<br>
+                Op de achtergrond kunnen verschillende technieken worden gebruikt om de input te verwerken en een reactie te geven.<br>
+                Deze technieken kunnen <a href="../../naslag/begrippen.html#regelgebaseerd">regelgebaseerd</a> of <a href="../../naslag/begrippen.html#data-gedreven">data-gedreven</a> zijn.<br><br>
+                <strong>Regelgebaseerd</strong> (zoals <a href="../../naslag/begrippen.html#eliza">ELIZA</a>) betekent dat de chatbot werkt met vaste regels en patronen die van tevoren zijn bedacht. Je krijgt dus altijd ongeveer hetzelfde antwoord op dezelfde vraag. Dit is makkelijk te begrijpen, maar daardoor kan zo'n chatbot niet zoveel verschillende dingen doen.
+                <br><br>
+                <strong>Data-gedreven</strong> (zoals moderne AI-chatbots) werken op de achtergrond met AI-modellen die gebruik maken van <a href="../../naslag/begrippen.html#machine-learning">machine learning</a>. 
+                Dit betekent dat de modellen leren van grote hoeveelheden data door automatisch patronen te herkennen en verbanden te leggen. 
+                In plaats van vooraf geprogrammeerde regels te volgen, leren ze door ervaring - net zoals een mens die veel leest en daardoor steeds beter wordt in het begrijpen van taal en het geven van passende antwoorden.
             </div>
         </div>
 
@@ -112,25 +210,55 @@
             </div>
             <div class="content-text">
                 <strong>Quizvraag</strong><br><br>
-                <strong>Vraag:</strong> Wat gebeurt er als je dezelfde vraag twee keer aan een moderne chatbot stelt?<br><br>
-                <strong>A)</strong> Je krijgt altijd exact hetzelfde antwoord<br>
-                <strong>B)</strong> Je krijgt meestal verschillende antwoorden<br>
-                <strong>C)</strong> De chatbot weigert de tweede keer te antwoorden<br>
-                <strong>D)</strong> Je krijgt een foutmelding<br><br>
-                <em>Denk na over je antwoord voordat je verder leest!</em>
-            </div>
-        </div>
-
-
-        <div class="content-block info">
-            <div class="icon">
-                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
-            </div>
-            <div class="content-text">
-                <strong>AI-model</strong><br><br>
-                Net zoals jij je met de naam van een bekende persoon hebt voorgesteld, is het goed om te weten dat Lumo niet zelf die antwoorden geeft. Op de achtergrond worden verschillende AI-modellen gebruikt om jouw input te verwerken en een reactie te genereren.<br><br>
-                Een AI-model is het concrete rekenkundige "brein" dat getraind is om taken uit te voeren.<br><br>
-                Je kunt het verschil tussen de chatbot en de AI-modellen die op de achtergrond werken vergelijken met een restaurant en de keuken. Jij plaatst je bestelling bij de ober (chatbot), maar het echte koken gebeurt in de keuken (de AI-modellen).
+                <strong>Vraag:</strong> Geven data-gedreven chatbots altijd dezelfde antwoorden op dezelfde vragen?<br><br>
+                
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A')">
+                        <strong>A)</strong> Ja, ze geven altijd exact hetzelfde antwoord
+                        <div class="answer-feedback" id="answer-A">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Fout!</strong><br>
+                                <em>Hint:</em> Denk aan hoe machine learning werkt. Data-gedreven chatbots leren van patronen in data, maar dit betekent niet dat ze altijd identieke antwoorden geven.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B')">
+                        <strong>B)</strong> Nee, ze kunnen verschillende antwoorden geven
+                        <div class="answer-feedback" id="answer-B">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                Data-gedreven chatbots gebruiken machine learning en kunnen verschillende antwoorden geven op dezelfde vraag. Dit komt omdat ze werken met waarschijnlijkheden en context, niet met vaste regels. Ze kunnen ook variëren in hun formulering en soms verschillende aspecten van een vraag benadrukken.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C')">
+                        <strong>C)</strong> Ze weigeren dezelfde vraag te beantwoorden
+                        <div class="answer-feedback" id="answer-C">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Fout!</strong><br>
+                                <em>Hint:</em> Chatbots zijn juist ontworpen om vragen te beantwoorden. Denk aan het doel van een chatbot - het is een hulpmiddel dat beschikbaar moet zijn voor gebruikers.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D')">
+                        <strong>D)</strong> Ze geven een foutmelding bij herhaling
+                        <div class="answer-feedback" id="answer-D">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Fout!</strong><br>
+                                <em>Hint:</em> Chatbots geven geen foutmeldingen bij herhaalde vragen. Ze zijn juist ontworpen om gebruiksvriendelijk te zijn en vragen te beantwoorden wanneer gebruikers dat willen.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <br><em>Klik op een antwoord om te zien of het correct is!</em>
             </div>
         </div>
 
@@ -255,9 +383,9 @@
                                 <td>Google DeepMind</td>
                             </tr>
                             <tr>
-                                <td><a href="https://chatgpt.com/" target="_blank"><strong>ChatGPT</strong></a></td>
+                                <td><a href="../../naslag/begrippen.html#chatgpt"><strong>ChatGPT</strong></a> (<a href="https://chatgpt.com/" target="_blank">website</a>)</td>
                                 <td>GPT-series (GPT-3.5, GPT-4, GPT-4o, GPT-4.5, GPT-5)</td>
-                                <td>OpenAI</td>
+                                <td><a href="../../naslag/begrippen.html#openai">OpenAI</a></td>
                             </tr>
                             <tr>
                                 <td><a href="https://claude.ai/" target="_blank"><strong>Claude</strong></a></td>
@@ -362,7 +490,7 @@
 
             <h3>Benchmarks voor complete AI-tools:</h3>
 
-            <p>Voor de complete AI-applicaties (zoals ChatGPT, Claude, Lumo) zijn er ook vergelijkingen beschikbaar:</p>
+            <p>Voor de complete AI-applicaties (zoals <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a>, Claude, Lumo) zijn er ook vergelijkingen beschikbaar:</p>
 
             <ul>
                 <li><a href="https://chat.lmsys.org/" target="_blank"><strong>Chatbot Arena</strong></a>: Een platform waar gebruikers verschillende AI-chatbots kunnen vergelijken en beoordelen</li>
@@ -376,7 +504,7 @@
 
             <h4>Top-tier tools:</h4>
             <ul>
-                <li><strong>ChatGPT Plus</strong> (OpenAI) - draait op GPT-4 Turbo, een van de meest krachtige modellen</li>
+                <li><strong><a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus</strong> (<a href="../../naslag/begrippen.html#openai">OpenAI</a>) - draait op GPT-4 Turbo, een van de meest krachtige modellen</li>
                 <li><strong>Claude Pro</strong> (Anthropic) - draait op Claude 3.5 Sonnet, uitstekend in redenering en creativiteit</li>
                 <li><strong>Gemini Advanced</strong> (Google) - draait op Gemini 1.5 Pro, zeer goed in multimodale taken</li>
                 <li><strong>Perplexity Pro</strong> - combineert verschillende top-modellen met real-time web search</li>
@@ -394,7 +522,7 @@
             <h3>Welke tool je kiest, hangt volledig af van je vraag en wat je ermee wilt bereiken:</h3>
 
             <ul>
-                <li><strong>Wil je snel een antwoord?</strong> → Gebruik een chatbot zoals ChatGPT of Lumo</li>
+                <li><strong>Wil je snel een antwoord?</strong> → Gebruik een chatbot zoals <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> of Lumo</li>
                 <li><strong>Wil je privacy beschermen?</strong> → Kies voor tools met ghost mode of lokale AI</li>
                 <li><strong>Wil je betrouwbare informatie?</strong> → Combineer AI met web search en verificatie</li>
                 <li><strong>Wil je creatief zijn?</strong> → Experimenteer met generatieve AI voor tekst, beeld of audio</li>
@@ -444,41 +572,41 @@
         <h3><strong>Tekst en schrijven</strong></h3>
         <ul>
             <li><strong>Samenvattingen maken</strong> van lange documenten, artikelen of boeken
-                <ul><li><em>Beste tools:</em> Claude 3.5 Sonnet, ChatGPT Plus (GPT-4), Perplexity Pro</li></ul>
+                <ul><li><em>Beste tools:</em> Claude 3.5 Sonnet, <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus (GPT-4), Perplexity Pro</li></ul>
             </li>
             <li><strong>Teksten herschrijven</strong> in verschillende stijlen (formeel, informeel, creatief)
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Jasper AI</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Jasper AI</li></ul>
             </li>
             <li><strong>Vertalingen</strong> tussen talen
-                <ul><li><em>Beste tools:</em> DeepL, Google Translate, ChatGPT Plus</li></ul>
+                <ul><li><em>Beste tools:</em> DeepL, Google Translate, <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus</li></ul>
             </li>
             <li><strong>Content genereren</strong> voor blogs, social media of presentaties
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Copy.ai, Jasper AI</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Copy.ai, Jasper AI</li></ul>
             </li>
             <li><strong>E-mails opstellen</strong> en beantwoorden
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Grammarly</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Grammarly</li></ul>
             </li>
             <li><strong>Scripts schrijven</strong> voor video's of podcasts
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Sudowrite</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Sudowrite</li></ul>
             </li>
         </ul>
 
         <h3><strong>Code en programmeren</strong></h3>
         <ul>
             <li><strong>Code schrijven</strong> in verschillende programmeertalen
-                <ul><li><em>Beste tools:</em> GitHub Copilot, ChatGPT Plus, Claude 3.5 Sonnet, Cursor AI</li></ul>
+                <ul><li><em>Beste tools:</em> GitHub Copilot, <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Cursor AI</li></ul>
             </li>
             <li><strong>Bugs oplossen</strong> en code debuggen
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, GitHub Copilot</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, GitHub Copilot</li></ul>
             </li>
             <li><strong>Code uitleggen</strong> en documenteren
-                <ul><li><em>Beste tools:</em> Claude 3.5 Sonnet, ChatGPT Plus, GitHub Copilot</li></ul>
+                <ul><li><em>Beste tools:</em> Claude 3.5 Sonnet, <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, GitHub Copilot</li></ul>
             </li>
             <li><strong>Websites bouwen</strong> met HTML, CSS en JavaScript
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, GitHub Copilot, 10Web</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, GitHub Copilot, 10Web</li></ul>
             </li>
             <li><strong>Apps ontwikkelen</strong> en automatiseren
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, GitHub Copilot, Bubble</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, GitHub Copilot, Bubble</li></ul>
             </li>
         </ul>
 
@@ -504,35 +632,35 @@
         <h3><strong>Data en analyse</strong></h3>
         <ul>
             <li><strong>Spreadsheets analyseren</strong> en patronen ontdekken
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Microsoft Excel AI, Google Sheets AI</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Microsoft Excel AI, Google Sheets AI</li></ul>
             </li>
             <li><strong>Rapporten maken</strong> op basis van data
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Perplexity Pro, Tableau AI</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Perplexity Pro, Tableau AI</li></ul>
             </li>
             <li><strong>Grafieken en visualisaties</strong> genereren
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Tableau AI, Power BI</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Tableau AI, Power BI</li></ul>
             </li>
             <li><strong>Onderzoek doen</strong> en bronnen samenvatten
-                <ul><li><em>Beste tools:</em> Perplexity Pro, ChatGPT Plus, Claude 3.5 Sonnet, Consensus</li></ul>
+                <ul><li><em>Beste tools:</em> Perplexity Pro, <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Consensus</li></ul>
             </li>
             <li><strong>Statistieken berekenen</strong> en interpreteren
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Wolfram Alpha, SPSS</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Wolfram Alpha, SPSS</li></ul>
             </li>
         </ul>
 
         <h3><strong>Creativiteit en entertainment</strong></h3>
         <ul>
             <li><strong>Verhalen schrijven</strong> en plotlijnen ontwikkelen
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Sudowrite, NovelAI</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Sudowrite, NovelAI</li></ul>
             </li>
             <li><strong>Poëzie en liedjes</strong> componeren
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, AIVA, Amper Music</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, AIVA, Amper Music</li></ul>
             </li>
             <li><strong>Brainstormen</strong> en ideeën genereren
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Miro AI, Notion AI</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Miro AI, Notion AI</li></ul>
             </li>
             <li><strong>Spellen ontwerpen</strong> en puzzels maken
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Unity AI, GameMaker Studio</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Unity AI, GameMaker Studio</li></ul>
             </li>
             <li><strong>Kunst en muziek</strong> creëren
                 <ul><li><em>Beste tools:</em> DALL-E 3, Midjourney, AIVA, Amper Music, Mubert</li></ul>
@@ -542,21 +670,24 @@
         <h3><strong>Productiviteit en werk</strong></h3>
         <ul>
             <li><strong>Planning en organisatie</strong> van taken en projecten
-                <ul><li><em>Beste tools:</em> Notion AI, ChatGPT Plus, Claude 3.5 Sonnet, Asana AI</li></ul>
+                <ul><li><em>Beste tools:</em> Notion AI, <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Asana AI</li></ul>
             </li>
             <li><strong>Notulen maken</strong> van vergaderingen
-                <ul><li><em>Beste tools:</em> Otter.ai, ChatGPT Plus, Claude 3.5 Sonnet, Fireflies.ai</li></ul>
+                <ul><li><em>Beste tools:</em> Otter.ai, <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Fireflies.ai</li></ul>
             </li>
             <li><strong>Presentaties voorbereiden</strong> en structureren
-                <ul><li><em>Beste tools:</em> Beautiful.ai, Gamma, Tome, ChatGPT Plus, Claude 3.5 Sonnet</li></ul>
+                <ul><li><em>Beste tools:</em> Beautiful.ai, Gamma, Tome, <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet</li></ul>
             </li>
             <li><strong>Onderzoek doen</strong> en bronnen vinden
-                <ul><li><em>Beste tools:</em> Perplexity Pro, ChatGPT Plus, Claude 3.5 Sonnet, Consensus</li></ul>
+                <ul><li><em>Beste tools:</em> Perplexity Pro, <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Consensus</li></ul>
             </li>
             <li><strong>Klantenservice</strong> en support automatiseren
-                <ul><li><em>Beste tools:</em> ChatGPT Plus, Claude 3.5 Sonnet, Intercom, Zendesk AI</li></ul>
+                <ul><li><em>Beste tools:</em> <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> Plus, Claude 3.5 Sonnet, Intercom, Zendesk AI</li></ul>
             </li>
         </ul>
+
+        </details>
+        </div>
 
         <h2>Vuistregels bij het gebruik van AI-tools</h2>
 
@@ -589,7 +720,7 @@
                 <strong>Opdracht: Maak kennis met een AI-chatbot</strong><br><br>
                 
                 <ol>
-                    <li><strong>Ga naar <a href="https://chat.openai.com/" target="_blank">ChatGPT</a> of <a href="https://claude.ai/" target="_blank">Claude</a></strong></li>
+                    <li><strong>Ga naar <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a> (<a href="https://chat.openai.com/" target="_blank">website</a>) of <a href="https://claude.ai/" target="_blank">Claude</a></strong></li>
                     <li><strong>Stel deze vraag</strong>: "Kun je me helpen om een korte samenvatting te maken van een artikel over AI?"</li>
                     <li><strong>Experimenteer</strong>: Vraag de chatbot om je te helpen met een taak die je vandaag nog moet doen</li>
                     <li><strong>Observeer</strong>: Let op hoe de AI reageert, wat het wel en niet kan</li>
@@ -611,29 +742,6 @@
         <p>Deze sectie is nog in ontwikkeling...</p>
     </div>
 
-    <script>
-        // Lumo popup venster functionaliteit
-        function openLumoPopup() {
-            // Bepaal de positie van het popup venster (rechts in de hoek)
-            const screenWidth = window.screen.width;
-            const screenHeight = window.screen.height;
-            const popupWidth = Math.min(800, screenWidth * 0.6);
-            const popupHeight = Math.min(600, screenHeight * 0.8);
-            const left = screenWidth - popupWidth - 20;
-            const top = 20;
-            
-            // Open het popup venster
-            const popup = window.open(
-                'https://lumo.proton.me',
-                'lumoChatbot',
-                `width=${popupWidth},height=${popupHeight},left=${left},top=${top},scrollbars=yes,resizable=yes,status=yes,toolbar=no,menubar=no,location=yes`
-            );
-            
-            // Focus op het popup venster
-            if (popup) {
-                popup.focus();
-            }
-        }
-    </script>
+    <script src="../../js/script.js"></script>
 </body>
 </html>
