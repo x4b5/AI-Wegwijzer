@@ -3,335 +3,378 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Wegwijzer - Welkom bij je reis door Kunstmatige Intelligentie</title>
+    <title>AI-Wegwijzer - Inleiding tot Kunstmatige Intelligentie</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .hero-section {
-            text-align: center;
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-purple));
-            color: var(--white);
-            border-radius: 20px;
-            margin-bottom: 40px;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-        }
-        
-        .hero-subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-        
-        .navigation-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
-        }
-        
-        .nav-card {
-            background: var(--bg-secondary);
-            border: 2px solid var(--border-light);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: all var(--transition-normal);
-            box-shadow: var(--shadow-md);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary-blue);
-        }
-        
-        .nav-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-blue), var(--primary-purple));
-        }
-        
-        .nav-card h3 {
-            color: var(--primary-blue);
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-        
-        .nav-card p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        
+    <script src="js/script.js"></script>
 
-        
-        .welcome-text {
-            background: var(--bg-accent);
-            padding: 30px;
-            border-radius: 15px;
-            margin: 40px 0;
-            border-left: 5px solid var(--primary-green);
-        }
-        
-        .welcome-text h2 {
-            color: var(--primary-green);
-            margin-bottom: 20px;
-        }
-        
-        .welcome-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--text-secondary);
-        }
-        
-        .features-section {
-            margin: 40px 0;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .feature-item {
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--primary-blue);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            color: var(--white);
-            font-size: 1.5rem;
-        }
-        
-        .feature-item h4 {
-            color: var(--gray-800);
-            margin-bottom: 10px;
-        }
-        
-        .feature-item p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .navigation-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .container {
-                padding: 30px 20px;
-            }
-        }
-    </style>
 </head>
 <body>
+        <!-- Eenvoudige sidebar -->
+    <div class="simple-sidebar" id="simpleSidebar">
+        <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
+            <img src="img/icons/legende.png" alt="Legenda" width="40" height="40">
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3>Legenda van tekstblokken</h3>
+                <button class="close-sidebar-btn" onclick="toggleSimpleSidebar()">×</button>
+            </div>
+            <div class="sidebar-body">
+                <div class="legend-item">
+                    <img src="img/icons/informatie.png" alt="Informatie" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Informatie</span>
+                        <small>Uitleg en achtergrondinformatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="img/icons/boekenwurm.png" alt="Verder lezen" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Verder lezen</span>
+                        <small>Interessante feiten en verdiepende informatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="img/icons/quizvraag.png" alt="Quiz" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Quiz</span>
+                        <small>Test je kennis met interactieve vragen</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="img/icons/opdracht.png" alt="Opdracht" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Opdracht</span>
+                        <small>Praktische opdrachten om te oefenen</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tweede sidebar - naar begin van pagina -->
+    <div class="top-sidebar" id="topSidebar">
+        <div class="top-toggle-btn" onclick="goToTop()">
+            <img src="img/icons/naar-boven.png" alt="Naar boven" width="40" height="40">
+        </div>
+    </div>
+
+    <!-- Derde sidebar - naar index.html -->
+    <div class="home-sidebar" id="homeSidebar">
+        <div class="home-toggle-btn" onclick="goToHome()">
+            <img src="img/icons/home.png" alt="Naar home" width="40" height="40">
+        </div>
+    </div>
+
     <div class="container">
         <!-- Hero Sectie -->
-        <div class="hero-section">
-            <h1 class="hero-title">🤖 AI-Wegwijzer</h1>
-            <p class="hero-subtitle">
-                Welkom bij je persoonlijke reis door de wereld van Kunstmatige Intelligentie. 
-                Ontdek, leer en begrijp hoe AI onze wereld verandert.
-            </p>
+        <div class="content-block">
+            <div class="icon">
+                <img src="img/icons/lumo.png" alt="AI Wegwijzer" width="50" height="50">
+            </div>
+            <div class="content-text">
+                <h1>🤖 AI-Wegwijzer</h1>
+                <p>
+                    <strong>Datum:</strong> augustus 2025<br>
+                    <strong>Laatste wijziging:</strong> 26 augustus 2025<br>
+                    <strong>Leestijd:</strong> ongeveer 10 minuten
+                </p>
+            </div>
         </div>
 
         <!-- Welkomsttekst -->
-        <div class="welcome-text">
-            <h2>🚀 Start je AI-avontuur</h2>
-            <p>
-                Deze wegwijzer is jouw gids door de fascinerende wereld van kunstmatige intelligentie. 
-                Of je nu een beginner bent of al wat ervaring hebt, hier vind je alles wat je nodig hebt 
-                om AI te begrijpen en toe te passen. We nemen je mee van de basisbegrippen tot praktische 
-                toepassingen en toekomstvisies.
-            </p>
+        <div class="content-block info">
+            <div class="icon">
+                <img src="img/icons/informatie.png" alt="Informatie" width="50" height="50">
+            </div>
+            <div class="content-text">
+                <h2>🚀 Welkom bij de AI Wegwijzer</h2>
+                <p>
+                    Misschien heb je het al eens meegemaakt: je solliciteert en krijgt een standaardafwijzing zonder uitleg. 
+                    Of je vraagt een lening aan en de bank zegt 'nee', zonder dat duidelijk is waarom. Steeds vaker speelt 
+                    AI een rol bij dit soort beslissingen – van personeelsselectie tot kredietbeoordeling.
+                </p>
+                <p>
+                    <strong>AI overschat</strong><br>
+                    AI is de afgelopen jaren flink gehypet. Toonaangevende instituten zoals Stanford signaleren dat de 
+                    verwachtingen rondom AI soms overdreven zijn. In het Stanford AI Index Report 2024 wordt bijvoorbeeld 
+                    benadrukt dat de publieke en media-aandacht voor AI vaak verder gaat dan wat de technologie op dit 
+                    moment daadwerkelijk kan waarmaken.
+                </p>
+                <p>
+                    <strong>AI onderschat</strong><br>
+                    Sommige experts vinden juist dat AI wordt onderschat: de impact op productiviteit en innovatie wordt 
+                    vaak pas na verloop van tijd zichtbaar, omdat organisaties zich eerst moeten aanpassen. Dit verschijnsel 
+                    staat bekend als de AI-productiviteitsparadox: ondanks snelle technologische vooruitgang blijven de 
+                    productiviteitswinsten aanvankelijk uit.
+                </p>
+                <p>
+                    In de tussentijd gebruiken we AI al dagelijks en zien dit niet meer echt als een vorm van AI. Dit wordt 
+                    ook wel AI effect genoemd. Denk hierbij aan Netflix-aanbevelingen, spamfilters, gezichtsherkenning op 
+                    je telefoon of de routeplanner van Google Maps.
+                </p>
+                <p>
+                    Omdat het lastig is om de waarde en impact van AI goed in te schatten, is het des te belangrijker om 
+                    te begrijpen wat AI precies is, hoe het werkt en wat de gevolgen ervan kunnen zijn voor jou en de samenleving.
+                </p>
+            </div>
+        </div>
+
+        <!-- AI-geletterdheid sectie -->
+        <div class="content-block info">
+            <div class="icon">
+                <img src="img/icons/boekenwurm.png" alt="AI-geletterdheid" width="50" height="50">
+            </div>
+            <div class="content-text">
+                <h2>📚 AI-geletterdheid</h2>
+                <p>
+                    AI-geletterdheid verwijst naar het vermogen om AI-systemen:
+                </p>
+                <ul>
+                    <li><strong>te begrijpen</strong>,</li>
+                    <li><strong>ermee om te gaan</strong> en</li>
+                    <li><strong>kritisch na te denken</strong> over hun impact op jou en de samenleving.</li>
+                </ul>
+                <div class="content-block info" style="margin-top: 20px; background-color: #f8f9fa; border-left: 4px solid #007bff;">
+                    <div class="content-text">
+                        <p>
+                            <strong>Definitie:</strong> Volgens Ng, Yuan en Harvard's AI Literacy project betekent AI-geletterdheid: 
+                            "het begrijpen van de basisprincipes van kunstmatige intelligentie, het herkennen van de mogelijkheden 
+                            en beperkingen ervan, en het kunnen beoordelen van de ethische, maatschappelijke en persoonlijke gevolgen 
+                            van AI-toepassingen".
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Waarom AI-geletterdheid belangrijk is -->
+        <div class="content-block info">
+            <div class="icon">
+                <img src="img/icons/uitroepteken.png" alt="Belangrijk" width="50" height="50">
+            </div>
+            <div class="content-text">
+                <h2>⚠️ Waarom AI-geletterdheid belangrijk is</h2>
+                <p>
+                    Voor veel mensen blijft onduidelijk hoe AI werkt. Dat is begrijpelijk: AI raakt veel vakgebieden tegelijk – 
+                    technologie, statistiek, informatica, programmeren, filosofie en ethiek. Zonder helder overzicht kun je je 
+                    gemakkelijk verliezen in de overvloed aan informatie.
+                </p>
+                <p>
+                    AI-geletterdheid helpt je begrijpen wat AI wel en niet kan. Het laat zien hoe AI beslissingen beïnvloedt 
+                    en welke vragen je erbij moet stellen. Het gaat niet alleen om technische kennis, maar ook om het kritisch 
+                    kunnen beoordelen van de impact van AI op individuen en organisaties.
+                </p>
+                <p>
+                    Ook internationale organisaties wijzen op deze noodzaak. Volgens UNESCO biedt AI veel kansen voor onderwijs, 
+                    gezondheidszorg en duurzaamheid. Maar het kan ook ongelijkheid en discriminatie versterken als we er niet 
+                    zorgvuldig mee omgaan.
+                </p>
+            </div>
         </div>
 
         <!-- Navigatie naar secties -->
-        <h2>📚 Ontdek de verschillende perspectieven</h2>
-        <div class="navigation-grid">
-            <div class="nav-card">
-                <h3>🔍 Basis</h3>
-                <p>
-                    Begin bij het begin! Leer de fundamenten van AI, machine learning en deep learning. 
-                    Perfect voor wie nog geen voorkennis heeft.
-                </p>
-                <a href="perspectieven/basis/" class="nav-button">Start hier</a>
+        <div class="content-block info">
+            <div class="icon">
+                <img src="img/icons/informatie.png" alt="Informatie" width="50" height="50">
             </div>
-
-            <div class="nav-card">
-                <h3>⚙️ Werking</h3>
+            <div class="content-text">
+                <h2>📚 De AI Wegwijzer</h2>
                 <p>
-                    Duik dieper in hoe AI-systemen werken. Ontdek de technologie achter de schermen 
-                    en begrijp de algoritmes die AI mogelijk maken.
+                    Deze Wegwijzer wil een helder kader bieden zodat je:
                 </p>
-                <a href="perspectieven/werking/" class="nav-button">Ontdek meer</a>
-            </div>
+                <ul>
+                    <li><strong>Vertrouwd raakt</strong> met AI en de basisbegrippen,</li>
+                    <li><strong>Overzicht houdt</strong> in een complex vakgebied,</li>
+                    <li><strong>Betrouwbare informatie</strong> krijgt op basis van actuele bronnen</li>
+                    <li><strong>AI-geletterdheid</strong> verder kunt ontwikkelen.</li>
+                </ul>
+                
+                <h3>Ontdek de verschillende perspectieven</h3>
+                <p>Deze Wegwijzer bestaat uit vier delen die een bepaald thema vanuit een bepaald perspectief bespreken. Deze perspectieven kunnen los van elkaar worden gelezen:</p>
+                
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="img/icons/lego.png" alt="Basis" width="50" height="50">
+                    </div>
+                    <div class="content-text">
+                        <h3>🔍 Basis (B)</h3>
+                        <p>
+                            Wat is AI? Basisbegrippen en wat AI wel/niet kan. Begin bij het begin! 
+                            Leer de fundamenten van AI, machine learning en deep learning. 
+                            Perfect voor wie nog geen voorkennis heeft.
+                        </p>
+                        <a href="perspectieven/basis/" class="nav-button">Start hier</a>
+                    </div>
+                </div>
 
-            <div class="nav-card">
-                <h3>🎯 Toepassen</h3>
-                <p>
-                    Zie AI in actie! Ontdek praktische toepassingen in verschillende sectoren 
-                    en leer hoe je AI kunt implementeren in je eigen projecten.
-                </p>
-                <a href="perspectieven/toepassen/" class="nav-button">Bekijk toepassingen</a>
-            </div>
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="img/icons/lego.png" alt="Werking" width="50" height="50">
+                    </div>
+                    <div class="content-text">
+                        <h3>⚙️ Werking (C)</h3>
+                        <p>
+                            Hoe leren machines? Technische achtergrond. Duik dieper in hoe AI-systemen werken. 
+                            Ontdek de technologie achter de schermen en begrijp de algoritmes die AI mogelijk maken.
+                        </p>
+                        <a href="perspectieven/werking/" class="nav-button">Ontdek meer</a>
+                    </div>
+                </div>
 
-            <div class="nav-card">
-                <h3>🌍 Impact</h3>
-                <p>
-                    Verken de maatschappelijke impact van AI. Van ethische overwegingen tot 
-                    toekomstvisies - ontdek hoe AI onze samenleving vormgeeft.
-                </p>
-                <a href="perspectieven/impact/" class="nav-button">Verken impact</a>
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="img/icons/lego.png" alt="Toepassen" width="50" height="50">
+                    </div>
+                    <div class="content-text">
+                        <h3>🎯 Toepassen (D)</h3>
+                        <p>
+                            Praktisch gebruik van AI in werk en studie. Zie AI in actie! Ontdek praktische 
+                            toepassingen in verschillende sectoren en leer hoe je AI kunt implementeren in je eigen projecten.
+                        </p>
+                        <a href="perspectieven/toepassen/" class="nav-button">Bekijk toepassingen</a>
+                    </div>
+                </div>
+
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="img/icons/lego.png" alt="Impact" width="50" height="50">
+                    </div>
+                    <div class="content-text">
+                        <h3>🌍 Impact (E)</h3>
+                        <p>
+                            Maatschappelijke gevolgen en ethische vragen. Verken de maatschappelijke impact van AI. 
+                            Van ethische overwegingen tot toekomstvisies - ontdek hoe AI onze samenleving vormgeeft.
+                        </p>
+                        <a href="perspectieven/impact/" class="nav-button">Verken impact</a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Features sectie -->
-        <div class="features-section">
-            <h2>✨ Wat maakt deze wegwijzer bijzonder?</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">📖</div>
-                    <h4>Stap-voor-stap</h4>
-                    <p>Leer in logische stappen, van basis naar geavanceerd</p>
+        <!-- Opzet sectie -->
+        <div class="content-block info">
+            <div class="icon">
+                <img src="img/icons/informatie.png" alt="Informatie" width="50" height="50">
+            </div>
+            <div class="content-text">
+                <h2>✨ Opzet van de Wegwijzer</h2>
+                <p>
+                    De Wegwijzer wil geen dik naslagwerk zijn of een cursus die geen einde lijkt te kennen en geen ruimte biedt 
+                    om zelf te kiezen wat je wilt lezen. Het is meer een praktische gids door het AI-landschap waarin het vooral 
+                    suggesties geeft van toonaangevende en actuele artikelen en cursussen over een bepaald onderwerp.
+                </p>
+                
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="img/icons/boekenwurm.png" alt="Artikelen" width="50" height="50">
+                    </div>
+                    <div class="content-text">
+                        <h4>📖 Artikelen</h4>
+                        <p>Ieder perspectief bestaat uit artikelen die een bepaald thema bespreken. Aan het begin van ieder artikel wordt het leerdoel benoemd en welke basiskennis nodig is.</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🎯</div>
-                    <h4>Praktisch gericht</h4>
-                    <p>Direct toepasbare kennis en concrete voorbeelden</p>
+                
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="img/icons/opdracht.png" alt="Leestijd" width="50" height="50">
+                    </div>
+                    <div class="content-text">
+                        <h4>⏱️ Leestijd</h4>
+                        <p>De artikelen zijn zo opgesteld dat je per artikel niet meer dan 30 minuten nodig hebt om te lezen. De geschatte leestijd wordt bovenaan ieder artikel benoemd.</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🔄</div>
-                    <h4>Interactief</h4>
-                    <p>Quizzen, opdrachten en lego-blokken voor actief leren</p>
+                
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="img/icons/quizvraag.png" alt="Interactief" width="50" height="50">
+                    </div>
+                    <div class="content-text">
+                        <h4>🔄 Quizvragen en opdrachten</h4>
+                        <p>Om het artikel wat leven in te blazen vind je in de tekst quizvragen en opdrachten.</p>
+                    </div>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🚀</div>
-                    <h4>Toekomstgericht</h4>
-                    <p>Blijf up-to-date met de laatste AI-ontwikkelingen</p>
+                
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="img/icons/uitroepteken.png" alt="Actueel" width="50" height="50">
+                    </div>
+                    <div class="content-text">
+                        <h4>🚀 Actueel</h4>
+                        <p>De AI Wegwijzer wordt regelmatig geactualiseerd om mee te gaan met de snelle ontwikkelingen in AI. Bovenaan iedere module staat wanneer deze voor het laatst is gewijzigd.</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Call-to-action -->
-        <div class="welcome-text" style="text-align: center; background: linear-gradient(135deg, var(--primary-green), var(--primary-blue)); color: var(--white);">
-            <h2 style="color: var(--white);">🎯 Klaar om te beginnen?</h2>
-            <p style="color: var(--white); margin-bottom: 25px;">
-                Kies een sectie die je interesseert en start je AI-leerreis vandaag nog!
-            </p>
-            <a href="perspectieven/basis/" class="nav-button" style="background: var(--white); color: var(--primary-blue);">
-                Start bij de basis →
-            </a>
+        <div class="content-block important">
+            <div class="icon">
+                <img src="img/icons/uitroepteken.png" alt="Belangrijk" width="50" height="50">
+            </div>
+            <div class="content-text text-center">
+                <h2>🎯 Klaar om te beginnen?</h2>
+                <p class="mb-4">
+                    Kies een sectie die je interesseert en start je AI-leerreis vandaag nog!
+                </p>
+                <a href="perspectieven/basis/" class="nav-button">
+                    Start bij de basis →
+                </a>
+            </div>
+        </div>
+
+        <!-- Disclaimer sectie -->
+        <div class="content-block info">
+            <div class="icon">
+                <img src="img/icons/uitroepteken.png" alt="Disclaimer" width="50" height="50">
+            </div>
+            <div class="content-text">
+                <h2>⚠️ Disclaimer</h2>
+                <p>
+                    Bij het samenstellen van deze Wegwijzer is AI als ondersteunend hulpmiddel ingezet. De gebruikte bronnen en 
+                    inhoud zijn zo zorgvuldig mogelijk gecontroleerd en waar nodig aangepast door de auteur. Desondanks kan niet 
+                    worden gegarandeerd dat alle informatie volledig, juist of actueel is.
+                </p>
+                <p>
+                    Daarnaast is er naar gestreefd om uitsluitend auteursvrije afbeeldingen te gebruiken. Toch kan ook hiervoor 
+                    niet volledig worden gegarandeerd dat alle gebruikte afbeeldingen daadwerkelijk vrij van auteursrechten zijn.
+                </p>
+                <p>
+                    Aan de inhoud van deze Wegwijzer kunnen geen rechten worden ontleend.
+                </p>
+            </div>
+        </div>
+
+        <!-- Contact sectie -->
+        <div class="content-block info">
+            <div class="icon">
+                <img src="img/icons/informatie.png" alt="Contact" width="50" height="50">
+            </div>
+            <div class="content-text">
+                <h2>📧 Contact</h2>
+                <p>
+                    Heb je vragen of opmerkingen? Stuur een mail naar: <!--nader te bepalen -->
+                </p>
+            </div>
         </div>
     </div>
 
     <script>
-        // Voeg wat interactiviteit toe
+        // Voeg een welkomst animatie toe
         document.addEventListener('DOMContentLoaded', function() {
-            // Voorkom dubbele clicks voor alle buttons
-            const allButtons = document.querySelectorAll('button, .btn, .demo-button, .nav-button');
-            allButtons.forEach(button => {
-                let isClicked = false;
+            const contentBlocks = document.querySelectorAll('.content-block');
+            contentBlocks.forEach((block, index) => {
+                block.style.opacity = '0';
+                block.style.transform = 'translateY(20px)';
                 
-                button.addEventListener('click', function(e) {
-                    if (isClicked) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        return;
-                    }
-                    
-                    isClicked = true;
-                    button.style.pointerEvents = 'none';
-                    button.style.opacity = '0.7';
-                    button.style.cursor = 'not-allowed';
-                    
-                    // Reset de button status na een bepaalde tijd
-                    setTimeout(() => {
-                        isClicked = false;
-                        button.style.pointerEvents = 'auto';
-                        button.style.opacity = '1';
-                        button.style.cursor = 'pointer';
-                    }, 1000);
-                });
-            });
-
-            // Smooth scroll voor navigatie
-            const navButtons = document.querySelectorAll('.nav-button');
-            navButtons.forEach(button => {
-                let isClicked = false;
-                
-                button.addEventListener('click', function(e) {
-                    if (isClicked) {
-                        e.preventDefault();
-                        return;
-                    }
-                    
-                    isClicked = true;
-                    button.style.pointerEvents = 'none';
-                    button.style.opacity = '0.7';
-                    
-                    // Voeg een kleine vertraging toe voor de hover effect
-                    setTimeout(() => {
-                        // Navigatie logica hier
-                        // De button wordt automatisch gereset bij page load
-                    }, 200);
-                });
-            });
-
-            // Voeg een welkomst animatie toe
-            const heroSection = document.querySelector('.hero-section');
-            heroSection.style.opacity = '0';
-            heroSection.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                heroSection.style.transition = 'all 0.8s ease';
-                heroSection.style.opacity = '1';
-                heroSection.style.transform = 'translateY(0)';
-            }, 100);
-            
-            // Voeg hover effecten toe voor alle interactieve elementen
-            const interactiveElements = document.querySelectorAll('[onclick], [href], button, .btn, .demo-button, .nav-button, .icon, .quiz-option, summary');
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    if (!this.style.pointerEvents || this.style.pointerEvents !== 'none') {
-                        this.style.cursor = 'pointer';
-                    }
-                });
-                
-                element.addEventListener('mouseleave', function() {
-                    if (!this.style.pointerEvents || this.style.pointerEvents !== 'none') {
-                        this.style.cursor = 'pointer';
-                    }
-                });
+                setTimeout(() => {
+                    block.style.transition = 'all 0.8s ease';
+                    block.style.opacity = '1';
+                    block.style.transform = 'translateY(0)';
+                }, 100 + (index * 200)); // Staggered animation
             });
         });
     </script>

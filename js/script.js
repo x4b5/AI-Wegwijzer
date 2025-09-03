@@ -70,3 +70,63 @@ function goToHome() {
     window.location.href = '../../index.html';
 }
 
+// Sidebar animatie bij pagina laden
+function animateSidebars() {
+    const sidebars = document.querySelectorAll('.simple-sidebar, .top-sidebar, .home-sidebar');
+    
+    // Voeg een kleine vertraging toe voor een mooiere animatie
+    setTimeout(() => {
+        sidebars.forEach((sidebar, index) => {
+            // Stagger de animaties voor een mooier effect
+            setTimeout(() => {
+                sidebar.classList.add('loaded');
+            }, index * 200); // 200ms vertraging tussen elke sidebar
+        });
+    }, 300); // 300ms vertraging na pagina laden
+}
+
+// Voer de animatie uit wanneer de pagina geladen is
+document.addEventListener('DOMContentLoaded', function() {
+    animateSidebars();
+});
+
+// Kopieer prompt functionaliteit
+function copyPrompt(button) {
+    const promptBox = button.closest('.prompt-box');
+    const promptContent = promptBox.querySelector('.prompt-content');
+    const textToCopy = promptContent.textContent || promptContent.innerText;
+    
+    // Kopieer naar klembord
+    navigator.clipboard.writeText(textToCopy).then(function() {
+        // Toon feedback
+        const originalText = button.innerHTML;
+        button.innerHTML = '✅';
+        button.style.background = 'var(--primary-green)';
+        
+        // Reset na 2 seconden naar originele donkergrijze kleur
+        setTimeout(function() {
+            button.innerHTML = originalText;
+            button.style.background = '#6b7280';
+        }, 2000);
+        
+    }).catch(function(err) {
+        // Fallback voor oudere browsers
+        const textArea = document.createElement('textarea');
+        textArea.value = textToCopy;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+        
+        // Toon feedback
+        const originalText = button.innerHTML;
+        button.innerHTML = '✅';
+        button.style.background = 'var(--primary-green)';
+        
+        setTimeout(function() {
+            button.innerHTML = originalText;
+            button.style.background = '#6b7280';
+        }, 2000);
+    });
+}
+

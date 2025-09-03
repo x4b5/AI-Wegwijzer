@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Engineering - De kunst van AI aansturen</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js"></script>
+</head>
+<body>
+        <!-- Eenvoudige sidebar -->
+    <div class="simple-sidebar" id="simpleSidebar">
+        <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
+            <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40">
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3>Legenda van tekstblokken</h3>
+                <button class="close-sidebar-btn" onclick="toggleSimpleSidebar()">×</button>
+            </div>
+            <div class="sidebar-body">
+                <div class="legend-item">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Informatie</span>
+                        <small>Uitleg en achtergrondinformatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/boekenwurm.png" alt="Verder lezen" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Verder lezen</span>
+                        <small>Interessante feiten en verdiepende informatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/quizvraag.png" alt="Quiz" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Quiz</span>
+                        <small>Test je kennis met interactieve vragen</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/opdracht.png" alt="Opdracht" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Opdracht</span>
+                        <small>Praktische opdrachten om te oefenen</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tweede sidebar - naar begin van pagina -->
+    <div class="top-sidebar" id="topSidebar">
+        <div class="top-toggle-btn" onclick="goToTop()">
+            <img src="../../img/icons/naar-boven.png" alt="Naar boven" width="40" height="40">
+        </div>
+    </div>
+
+    <!-- Derde sidebar - naar index.html -->
+    <div class="home-sidebar" id="homeSidebar">
+        <div class="home-toggle-btn" onclick="goToHome()">
+            <img src="../../img/icons/home.png" alt="Naar home" width="40" height="40">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header-section">
+            <h2 class="chatbots-title main-title">Prompt Engineering: De kunst van AI aansturen</h2>
+            
+            <div class="metadata">
+                <div class="metadata-content">
+                    <div class="metadata-item"><strong> Laatste wijziging:</strong> 1 september 2025</div>
+                    <div class="metadata-item"><strong> Leerdoel:</strong> Leren hoe je AI-systemen effectief kunt aansturen met goede prompts</div>
+                    <div class="metadata-item"><strong> Leestijd:</strong> 12-15 minuten</div>
+                    <div class="metadata-item"><strong> Inhoud:</strong> <a href="#wat-is-prompt-engineering">Wat is Prompt Engineering?</a> | <a href="#basis-technieken">Basis Technieken</a> | <a href="#geavanceerde-technieken">Geavanceerde Technieken</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="wat-is-prompt-engineering">
+            <h3 class="chatbots-title">Wat is Prompt Engineering?</h3>
+        
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Prompt Engineering: De nieuwe vaardigheid</strong><br><br>
+                <a href="../../naslag/begrippen.html#prompt-engineering">Prompt engineering</a> is de kunst en wetenschap van het schrijven van effectieve <a href="../../naslag/begrippen.html#prompt">prompts</a> om AI-systemen optimaal te laten presteren. Het is als het leren van een nieuwe taal - de taal die AI begrijpt.<br><br>
+                <strong>Waarom is dit belangrijk?</strong><br>
+                Dezelfde AI kan totaal verschillende resultaten geven afhankelijk van hoe je je vraag stelt. Een slechte prompt kan leiden tot vage, onbruikbare antwoorden, terwijl een goede prompt precies geeft wat je nodig hebt.<br><br>
+                <strong>Wat maakt een goede prompt?</strong><br>
+                • <strong>Duidelijkheid</strong> - De AI weet precies wat je wilt<br>
+                • <strong>Context</strong> - Je geeft genoeg achtergrondinformatie<br>
+                • <strong>Specificiteit</strong> - Je vraagt om concrete details<br>
+                • <strong>Structuur</strong> - Je organiseert je vraag logisch<br>
+                • <strong>Voorbeelden</strong> - Je toont wat je bedoelt<br><br>
+                <strong>Het resultaat:</strong> Betere, nauwkeurigere en bruikbaardere antwoorden van AI-systemen. Prompt engineering wordt steeds belangrijker naarmate AI-systemen krachtiger worden.
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>De geschiedenis van prompts</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    Het concept van prompts is niet nieuw. Al in de jaren '60 gebruikten programmeurs "command line interfaces" waar ze tekstuele commando's moesten typen om computers te besturen. Denk aan DOS-commando's zoals "dir" of "copy".<br><br>
+                    Wat nieuw is, is dat moderne AI-systemen natuurlijke taal begrijpen in plaats van vaste commando's. Dit betekent dat we kunnen "praten" met AI zoals we met mensen praten, maar de kunst is om te leren hoe AI "denkt" en hoe je het beste kunt communiceren.<br><br>
+                    Prompt engineering is eigenlijk een vorm van "AI-communicatie" - het leren van de beste manier om je intenties over te brengen aan een systeem dat anders denkt dan mensen.
+                </details>
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>1. Test je huidige prompt-vaardigheden</strong><br>
+                Probeer de volgende oefening met een AI-chatbot (zoals ChatGPT, Claude, of Lumo):<br><br>
+                <ul>
+                    <li>Vraag om een recept voor pasta</li>
+                    <li>Vraag om een recept voor pasta voor 4 personen</li>
+                    <li>Vraag om een vegetarisch recept voor pasta voor 4 personen</li>
+                    <li>Vraag om een vegetarisch recept voor pasta voor 4 personen, geschikt voor beginners</li>
+                </ul><br>
+                <span>Let op hoe de antwoorden veranderen naarmate je prompt specifieker wordt. Welke versie geeft het beste resultaat?</span>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>De psychologie van AI-communicatie</strong><br><br>
+                AI-systemen werken anders dan mensen, en begrijpen hoe ze "denken" helpt bij het schrijven van betere prompts:<br><br>
+                <strong>AI denkt in patronen:</strong><br>
+                AI-systemen zijn getraind op enorme hoeveelheden tekst en herkennen patronen. Ze voorspellen wat het volgende woord waarschijnlijk is op basis van wat ze hebben geleerd. Dit betekent dat context en voorbeelden cruciaal zijn.<br><br>
+                <strong>AI heeft geen "gezond verstand":</strong><br>
+                AI kan niet redeneren zoals mensen. Het kan wel logisch lijken, maar het is eigenlijk patroonherkenning. Je moet expliciet zijn over wat je wilt en wat je niet wilt.<br><br>
+                <strong>AI is gevoelig voor suggesties:</strong><br>
+                De woorden die je gebruikt kunnen de richting van het antwoord beïnvloeden. Als je vraagt om een "creatief" antwoord, krijg je iets anders dan bij een "praktisch" antwoord.<br><br>
+                <strong>AI heeft geen geheugen tussen sessies:</strong><br>
+                Tenzij je expliciet verwijst naar eerdere delen van het gesprek, "weet" AI niet wat je eerder hebt besproken. Je moet context opnieuw opbouwen.
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Wat is het belangrijkste verschil tussen hoe mensen en AI-systemen informatie verwerken?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A')">
+                        <strong>A)</strong> AI is sneller dan mensen
+                        <div class="answer-feedback" id="answer-A">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Snelheid is niet het belangrijkste verschil. Denk aan hoe AI informatie verwerkt versus hoe mensen dat doen.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B')">
+                        <strong>B)</strong> AI herkent patronen, mensen gebruiken logica en gezond verstand
+                        <div class="answer-feedback" id="answer-B">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                Precies! AI-systemen werken door patronen te herkennen in hun trainingsdata, terwijl mensen kunnen redeneren, logica gebruiken, en gezond verstand toepassen. Dit is waarom AI soms vreemde antwoorden kan geven die logisch lijken maar niet kloppen.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C')">
+                        <strong>C)</strong> AI heeft meer kennis dan mensen
+                        <div class="answer-feedback" id="answer-C">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> AI heeft toegang tot veel informatie, maar dat is niet het fundamentele verschil in hoe ze informatie verwerken.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D')">
+                        <strong>D)</strong> AI kan geen emoties voelen
+                        <div class="answer-feedback" id="answer-D">
+                            <div class="answer-feedback" id="answer-D">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Emoties zijn niet het belangrijkste verschil in informatieverwerking. Denk aan de fundamentele manier waarop AI en mensen denken.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+
+        <div class="chatbots-section" id="basis-technieken">
+            <h3 class="chatbots-title">Basis Technieken</h3>
+            <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px;">
+                Laten we beginnen met de fundamenten van effectieve prompt engineering.
+            </p>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>De 5 W's van Prompt Engineering</strong><br><br>
+                Net als bij journalistiek zijn de 5 W's cruciaal voor goede prompts:<br><br>
+                <strong>1. WHO (Wie)</strong><br>
+                Voor wie is het antwoord bedoeld? Een expert, beginner, kind, of algemeen publiek?<br>
+                Voorbeeld: "Leg uit voor een 10-jarige..." vs "Leg uit voor een universitair student..."<br><br>
+                <strong>2. WHAT (Wat)</strong><br>
+                Wat wil je precies? Wees specifiek over het gewenste resultaat.<br>
+                Voorbeeld: "Schrijf een verhaal" vs "Schrijf een kort verhaal van 200 woorden over een robot"<br><br>
+                <strong>3. WHEN (Wanneer)</strong><br>
+                In welke context of tijdperk? Historisch, modern, of futuristisch?<br>
+                Voorbeeld: "Hoe zouden mensen in 1950 reageren op..." vs "Hoe reageren mensen nu op..."<br><br>
+                <strong>4. WHERE (Waar)</strong><br>
+                In welke setting of omgeving? Online, offline, specifieke locatie?<br>
+                Voorbeeld: "Voor een presentatie op school..." vs "Voor een zakelijke vergadering..."<br><br>
+                <strong>5. WHY (Waarom)</strong><br>
+                Wat is het doel? Informeren, overtuigen, entertainen, of iets anders?<br>
+                Voorbeeld: "Om te overtuigen dat..." vs "Om uit te leggen waarom..."
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>2. Oefen de 5 W's</strong><br>
+                Kies een onderwerp (bijvoorbeeld "klimaatverandering") en schrijf prompts met verschillende 5 W's:<br><br>
+                <ul>
+                    <li>WHO: Voor een kind vs voor een wetenschapper</li>
+                    <li>WHAT: Een uitleg vs een oplossing vs een verhaal</li>
+                    <li>WHEN: Historisch vs modern vs toekomstig</li>
+                    <li>WHERE: Voor school vs voor werk vs voor sociale media</li>
+                    <li>WHY: Om te informeren vs om te overtuigen vs om te entertainen</li>
+                </ul><br>
+                <span>Test deze prompts met een AI-chatbot en vergelijk de resultaten. Welke verschillen zie je?</span>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Prompt Structuren die werken</strong><br><br>
+                Er zijn verschillende bewezen structuren voor effectieve prompts:<br><br>
+                <strong>1. De Context + Taak + Voorbeeld structuur</strong><br>
+                "Je bent een [rol]. Je taak is [taak]. Hier is een voorbeeld: [voorbeeld]. Nu doe hetzelfde voor [nieuwe situatie]."<br><br>
+                <strong>2. De Chain of Thought structuur</strong><br>
+                "Denk stap voor stap na over [probleem]. Eerst [stap 1], dan [stap 2], etc. Geef je redenering."<br><br>
+                <strong>3. De Persona + Context structuur</strong><br>
+                "Je bent [persoon/rol] met [kenmerken]. In de context van [situatie], [taak]."<br><br>
+                <strong>4. De Specificatie + Constraint structuur</strong><br>
+                "Maak [wat] dat [specifieke eigenschappen] heeft. Zorg ervoor dat het [constraints] respecteert."<br><br>
+                <strong>5. De Iteratieve structuur</strong><br>
+                "Maak een eerste versie van [wat]. Dan verbeter het door [verbetering 1]. Dan verbeter het verder door [verbetering 2]."<br><br>
+                <strong>Pro tip:</strong> Combineer deze structuren voor complexere taken. Bijvoorbeeld: Persona + Context + Chain of Thought.
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>De "Jailbreak" cultuur</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    Sommige gebruikers proberen AI-systemen te "jailbreaken" - ze proberen de veiligheidsbeperkingen te omzeilen door creatieve prompts te gebruiken. Dit kan variëren van onschuldige trucs tot het proberen om AI te laten doen wat het niet zou moeten doen.<br><br>
+                    Voorbeelden van jailbreak-technieken zijn:<br>
+                    • "Doe alsof je een personage bent dat geen beperkingen heeft"<br>
+                    • "Dit is voor een fictief verhaal"<br>
+                    • "Mijn leraar heeft me gevraagd om..."<br><br>
+                    Hoewel dit technisch interessant kan zijn, is het belangrijk om te onthouden dat veiligheidsbeperkingen er zijn om goede redenen. Echte prompt engineering gaat over het krijgen van betere, nuttigere resultaten binnen de grenzen van wat AI veilig en ethisch kan doen.
+                </details>
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Welke prompt structuur is het beste voor complexe redeneertaken?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A2')">
+                        <strong>A)</strong> De Persona + Context structuur
+                        <div class="answer-feedback" id="answer-A2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Persona + Context is goed voor creatieve taken, maar niet specifiek voor redeneertaken. Denk aan welke structuur AI helpt om stap voor stap na te denken.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B2')">
+                        <strong>B)</strong> De Chain of Thought structuur
+                        <div class="answer-feedback" id="answer-B2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                Precies! De Chain of Thought structuur is specifiek ontworpen voor redeneertaken. Door AI te vragen om stap voor stap na te denken en de redenering uit te leggen, krijg je betere resultaten voor complexe problemen die logisch denken vereisen.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C2')">
+                        <strong>C)</strong> De Specificatie + Constraint structuur
+                        <div class="answer-feedback" id="answer-C2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Specificatie + Constraint is goed voor creatieve taken met beperkingen, maar niet specifiek voor redeneertaken. Denk aan welke structuur AI helpt om systematisch na te denken.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D2')">
+                        <strong>D)</strong> De Iteratieve structuur
+                        <div class="answer-feedback" id="answer-D2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Iteratieve structuur is goed voor het verbeteren van resultaten, maar niet specifiek voor redeneertaken. Denk aan welke structuur AI helpt om de denkstappen te tonen.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+
+        <div class="chatbots-section" id="geavanceerde-technieken">
+            <h3 class="chatbots-title">Geavanceerde Technieken</h3>
+            <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px;">
+                Nu je de basis kent, laten we kijken naar geavanceerde technieken voor complexe taken.
+            </p>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Few-Shot Learning en Voorbeelden</strong><br><br>
+                AI-systemen leren snel van voorbeelden. Door goede voorbeelden te geven, kun je de kwaliteit van de output drastisch verbeteren:<br><br>
+                <strong>Hoe het werkt:</strong><br>
+                Geef 2-3 voorbeelden van wat je wilt, dan vraag je om hetzelfde te doen voor een nieuwe situatie. AI herkent het patroon en volgt het na.<br><br>
+                <strong>Voorbeeld voor e-mail schrijven:</strong><br>
+                "Schrijf professionele e-mails. Hier zijn voorbeelden:<br><br>
+                Voorbeeld 1: Onderwerp: Vergadering verplaatst<br>
+                Beste [Naam],<br>
+                Ik wil je laten weten dat de vergadering van morgen is verplaatst naar vrijdag 14:00.<br>
+                Met vriendelijke groet, [Naam]<br><br>
+                Voorbeeld 2: Onderwerp: Project update<br>
+                Beste [Naam],<br>
+                Hier is een update over het project: [details].<br>
+                Met vriendelijke groet, [Naam]<br><br>
+                Nu schrijf een e-mail over [nieuwe situatie]."<br><br>
+                <strong>Tips voor goede voorbeelden:</strong><br>
+                • Zorg voor variatie in je voorbeelden<br>
+                • Gebruik consistente structuur<br>
+                • Laat zien wat je wel en niet wilt
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>3. Oefen Few-Shot Learning</strong><br>
+                Kies een taak (bijvoorbeeld: productbeschrijvingen schrijven, verhalen schrijven, of problemen oplossen) en maak een few-shot prompt:<br><br>
+                <ul>
+                    <li>Geef 2-3 goede voorbeelden van wat je wilt</li>
+                    <li>Zorg dat de voorbeelden variëren maar consistent zijn</li>
+                    <li>Vraag dan om hetzelfde te doen voor een nieuwe situatie</li>
+                    <li>Test het met een AI-chatbot</li>
+                </ul><br>
+                <span>Vergelijk het resultaat met een prompt zonder voorbeelden. Welke is beter?</span>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Prompt Chaining en Iteratie</strong><br><br>
+                Voor complexe taken kun je prompts opdelen in stappen of iteratief verbeteren:<br><br>
+                <strong>Prompt Chaining:</strong><br>
+                Verdeel een complexe taak in kleinere stappen. Elke stap bouwt voort op de vorige.<br><br>
+                Voorbeeld voor een marketingcampagne:<br>
+                Stap 1: "Identificeer de doelgroep voor [product]"<br>
+                Stap 2: "Gebaseerd op deze doelgroep, maak een lijst van 5 marketingkanalen"<br>
+                Stap 3: "Voor elk kanaal, schrijf een korte boodschap"<br>
+                Stap 4: "Combineer alles tot een samenhangende campagne"<br><br>
+                <strong>Iteratieve verbetering:</strong><br>
+                Begin met een basisversie en verbeter stap voor stap.<br><br>
+                Voorbeeld voor een verhaal:<br>
+                Iteratie 1: "Schrijf een kort verhaal over een robot"<br>
+                Iteratie 2: "Maak het verhaal emotioneler en voeg dialoog toe"<br>
+                Iteratie 3: "Voeg meer details toe over de setting"<br>
+                Iteratie 4: "Verbeter de plot en voeg een twist toe"<br><br>
+                <strong>Voordelen:</strong><br>
+                • Betere controle over het resultaat<br>
+                • Mogelijkheid om bij te sturen<br>
+                • Complexere taken worden haalbaar
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>De "Temperature" van AI</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    AI-systemen hebben een "temperature" parameter die bepaalt hoe creatief of voorspelbaar ze zijn. Een lage temperature (0.1-0.3) maakt AI conservatief en voorspelbaar, terwijl een hoge temperature (0.7-1.0) het creatiever en verrassender maakt.<br><br>
+                    Dit is waarom dezelfde prompt verschillende resultaten kan geven. Sommige AI-tools laten je de temperature aanpassen, maar de meeste gebruiken een vaste waarde.<br><br>
+                    Als je merkt dat AI te saai of te wild is, kun je dit compenseren in je prompt door woorden te gebruiken zoals "creatief", "verrassend", "conservatief", of "voorspelbaar" om de gewenste stijl te beïnvloeden.
+                </details>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Geavanceerde Prompt Patronen</strong><br><br>
+                Er zijn verschillende geavanceerde patronen die experts gebruiken:<br><br>
+                <strong>1. De "Act as" patroon</strong><br>
+                "Act as a [expert/rol]. Your task is to [taak]. Consider [context]. Provide [specifieke output]."<br><br>
+                <strong>2. De "Before you answer" patroon</strong><br>
+                "Before you answer, think about [overwegingen]. Then provide your response."<br><br>
+                <strong>3. De "Critique and improve" patroon</strong><br>
+                "First, provide [basis antwoord]. Then critique it and suggest improvements. Finally, provide the improved version."<br><br>
+                <strong>4. De "Multiple perspectives" patroon</strong><br>
+                "Consider this from multiple perspectives: [perspectief 1], [perspectief 2], [perspectief 3]. Then provide a balanced view."<br><br>
+                <strong>5. De "Step-by-step breakdown" patroon</strong><br>
+                "Break this down into steps: 1) [stap 1], 2) [stap 2], etc. For each step, explain your reasoning."<br><br>
+                <strong>6. De "Constraints and requirements" patroon</strong><br>
+                "Create [wat] that meets these requirements: [lijst]. Ensure it doesn't [verboden]. Make sure it includes [verplicht]."
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Wat is het voordeel van prompt chaining voor complexe taken?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A3')">
+                        <strong>A)</strong> Het maakt prompts korter
+                        <div class="answer-feedback" id="answer-A3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Prompt chaining maakt prompts niet korter - het verdeelt ze juist in meerdere stappen. Denk aan de voordelen van het opdelen van complexe taken.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B3')">
+                        <strong>B)</strong> Het geeft betere controle en mogelijkheid om bij te sturen
+                        <div class="answer-feedback" id="answer-B3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                Precies! Prompt chaining geeft je betere controle over het resultaat omdat je elke stap kunt beoordelen en bijsturen. Het maakt complexe taken ook haalbaarder door ze op te delen in kleinere, beheersbare stappen.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C3')">
+                        <strong>C)</strong> Het werkt sneller dan één grote prompt
+                        <div class="answer-feedback" id="answer-C3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Prompt chaining is niet per se sneller - het kan zelfs langer duren omdat je meerdere stappen moet doorlopen. Denk aan de kwaliteitsvoordelen.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D3')">
+                        <strong>D)</strong> Het gebruikt minder AI-rekenkracht
+                        <div class="answer-feedback" id="answer-D3">
+                            <div class="answer-feedback" id="answer-D3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Prompt chaining gebruikt niet minder rekenkracht - het verdeelt de taak juist over meerdere AI-berekeningen. Denk aan de controle- en kwaliteitsvoordelen.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+
+        <div class="content-block conclusion">
+            <div class="icon">
+                <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Conclusie</strong><br><br>
+                Je hebt nu een solide basis in prompt engineering - een vaardigheid die steeds belangrijker wordt naarmate AI-systemen krachtiger worden.<br><br>
+                
+                <strong>Wat je hebt geleerd:</strong><br>
+                <strong>Prompt Engineering basis</strong> - Je begrijpt nu dat prompt engineering de kunst is van het effectief communiceren met AI-systemen. Je weet dat AI anders denkt dan mensen en hoe je daar rekening mee kunt houden.<br><br>
+                
+                <strong>Basis technieken</strong> - Je kent de 5 W's van prompt engineering en verschillende bewezen prompt structuren. Je weet hoe je prompts kunt structureren voor verschillende soorten taken.<br><br>
+                
+                <strong>Geavanceerde technieken</strong> - Je hebt geleerd over few-shot learning, prompt chaining, en geavanceerde prompt patronen. Je kunt complexe taken opdelen en iteratief verbeteren.<br><br>
+                
+                <strong>Belangrijke inzichten:</strong><br>
+                • De kwaliteit van je prompt bepaalt de kwaliteit van het AI-antwoord<br>
+                • AI denkt in patronen, niet in logica zoals mensen<br>
+                • Context, specificiteit en voorbeelden zijn cruciaal<br>
+                • Complexe taken kun je opdelen in kleinere stappen<br>
+                • Iteratie en verbetering leiden tot betere resultaten<br><br>
+                
+                <strong>Praktische tips:</strong><br>
+                • Begin altijd met de 5 W's<br>
+                • Gebruik voorbeelden om patronen te tonen<br>
+                • Verdeel complexe taken in stappen<br>
+                • Test en verbeter je prompts<br>
+                • Leer van wat wel en niet werkt<br><br>
+                
+                <strong>Volgende stappen:</strong><br>
+                Oefen regelmatig met verschillende AI-systemen. Experimenteer met verschillende prompt structuren en technieken. Houd bij wat werkt en wat niet. Prompt engineering is een vaardigheid die je ontwikkelt door te doen, niet door te lezen.<br><br>
+                
+                <strong>Onthoud:</strong> De beste prompt is de prompt die jou geeft wat je nodig hebt. Er is geen "perfecte" prompt - alleen prompts die goed werken voor jouw specifieke situatie.
+            </div>
+        </div>
+        </div>
+
+    </div>
+</body>
+</html>
+

@@ -88,14 +88,14 @@ body {
 }
 
 h1 {
-    color: var(--white); /* Witte tekst op donkere achtergrond */
+    color: var(--text-primary); /* Donkere tekst op lichte achtergrond */
     font-size: 2.6rem;
     margin: 0;
     padding: 8px 25px; /* Padding zoals bij chatbots titel */
     font-weight: 700;
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: #4a5568; /* Zelfde donkere achtergrondkleur als chatbots titel */
+    background: transparent; /* Geen achtergrond */
     border-radius: 12px; /* Afgeronde hoeken zoals bij chatbots titel */
     border: none;
     box-shadow: none;
@@ -155,7 +155,21 @@ h4 {
 
 .content-block:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Verfijnde hover schaduw */
-    transform: translateY(-3px); /* Subtiele lift effect */
+}
+
+/* Voorkom dat iconen meebewegen met content-block hover */
+.content-block:hover .icon {
+    transform: none;
+}
+
+/* Zorg dat iconen hun eigen hover effect behouden */
+.content-block .icon:hover {
+    transform: scale(1.05) !important;
+}
+
+/* Alleen de content-text beweegt omhoog bij hover */
+.content-block:hover .content-text {
+    transform: translateY(-3px);
 }
 
 /* ========================================
@@ -191,7 +205,7 @@ h4 {
 }
 
 .icon:hover {
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
     box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08); /* Subtiele hover schaduw */
 }
 
@@ -223,7 +237,7 @@ h4 {
 
 .task .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -235,7 +249,7 @@ h4 {
 
 .quiz .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -247,7 +261,7 @@ h4 {
 
 .trivia .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -259,7 +273,7 @@ h4 {
 
 .important .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -271,7 +285,7 @@ h4 {
 
 .info .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -378,7 +392,59 @@ h4 {
     margin: 25px 0;
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-sm);
+    font-family: 'Courier New', Courier, monospace;
 }
+
+.prompt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-light);
+}
+
+.prompt-header span {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--text-primary);
+}
+
+.copy-btn {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    background: var(--primary-indigo);
+    transform: scale(1.05) !important;
+}
+
+.copy-btn:active {
+    transform: scale(0.95);
+}
+
+.prompt-content {
+    line-height: 1.6;
+    color: #000000 !important; /* Zorg dat alle tekst in prompt-content zwart is */
+}
+
+/* Zorg dat alle tekst in prompt-box elementen zwart is, ook binnen opdracht blokken */
+.prompt-box {
+    color: #000000 !important; /* Basis tekstkleur voor prompt-box */
+}
+
+.prompt-box * {
+    color: #000000 !important; /* Alle elementen binnen prompt-box krijgen zwarte tekst */
+}
+
+
 
 .prompt-box a {
     color: var(--primary-blue);
@@ -447,7 +513,7 @@ h4 {
 
 .nav-button:hover {
     background: var(--primary-indigo);
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
     cursor: pointer;
 }
 
@@ -656,15 +722,7 @@ img {
 }
 
 
-.conclusion {
-    background: #dbeafe;
-    border: 1px solid #bfdbfe;
-    border-left: 4px solid var(--primary-blue);
-    padding: 25px;
-    margin: 30px 0;
-    border-radius: 12px;
-    color: #1e40af;
-}
+
 
 .table-container {
     overflow-x: auto;
@@ -805,7 +863,7 @@ a:focus {
 .content-block.opdracht .icon:hover,
 .task .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 .content-block:has(.icon img[src*="opdracht"]) .content-text,
@@ -814,7 +872,23 @@ a:focus {
 .task .content-text {
     border-color: #86efac;
     background-color: #467255; /* Nog zachtere, rustigere donkergroen */
-    color: #f1fcf5; /* Lichtere groene tekst voor betere leesbaarheid */
+    color: #f1fcf5 !important; /* Lichtere groene tekst voor betere leesbaarheid */
+}
+
+/* Zorg dat alle tekst in opdracht blokken wit is, inclusief lijsten en andere elementen */
+.content-block:has(.icon img[src*="opdracht"]) .content-text *,
+.content-block[data-type="task"] .content-text *,
+.content-block.opdracht .content-text *,
+.task .content-text * {
+    color: #f1fcf5 !important; /* Witte tekst voor alle tekst in opdrachten */
+}
+
+/* Maak de lijst items in opdracht blokken cursief */
+.content-block:has(.icon img[src*="opdracht"]) .content-text li,
+.content-block[data-type="task"] .content-text li,
+.content-block.opdracht .content-text li,
+.task .content-text li {
+    font-style: italic;
 }
 
 /* Quiz blokken - automatisch rood met quiz icoon */
@@ -829,7 +903,7 @@ a:focus {
 .content-block[data-type="quiz"] .icon:hover,
 .content-block.quiz .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 .content-block:has(.icon img[src*="quizvraag"]) .content-text,
@@ -837,6 +911,26 @@ a:focus {
 .content-block.quiz .content-text {
     background-color: #a15656; /* Nog mattere, rustigere donkerrode achtergrond */
     color: #fef2f2; /* Lichte rode tekst voor betere leesbaarheid */
+}
+
+/* Alleen de quiz-opties krijgen zwarte tekst, de rest blijft wit */
+.quiz-options .quiz-option strong {
+    color: #000000 !important; /* Zwarte tekst voor quiz-opties (A), B), C), D)) */
+}
+
+/* Alle andere tekst in quiz blokken blijft wit */
+.content-block:has(.icon img[src*="quizvraag"]) .content-text,
+.content-block[data-type="quiz"] .content-text,
+.content-block.quiz .content-text {
+    color: #fef2f2 !important; /* Witte tekst voor alle normale tekst in quiz */
+}
+
+/* Zorg dat alle tekst in opdracht blokken wit is, inclusief lijsten */
+.content-block:has(.icon img[src*="opdracht"]) .content-text,
+.content-block[data-type="task"] .content-text,
+.content-block.opdracht .content-text,
+.task .content-text {
+    color: #f1fcf5 !important; /* Witte tekst voor alle tekst in opdrachten */
 }
 
 /* Trivia blokken - automatisch geel met trivia icoon */
@@ -851,7 +945,7 @@ a:focus {
 .content-block[data-type="trivia"] .icon:hover,
 .content-block.trivia .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 /* Tekstkleur voor trivia blokken op zwart zetten */
@@ -911,7 +1005,7 @@ a:visited {
 .content-block[data-type="important"] .icon:hover,
 .content-block.important .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -924,11 +1018,41 @@ a:visited {
     color: #4b5563;
 }
 
+/* ========================================
+   CONCLUSIE CONTENT BLOCK
+   ======================================== */
+.content-block:has(.icon img[src*="conclusie"]) .icon,
+.content-block[data-type="conclusion"] .icon,
+.content-block.conclusion .icon {
+    background: linear-gradient(135deg, #e9d5ff 0%, rgba(233, 213, 255, 0.8) 50%, rgba(233, 213, 255, 0) 100%); /* Paarse gradient */
+    color: #4b5563;
+}
+
+.content-block:has(.icon img[src*="conclusie"]) .icon:hover,
+.content-block[data-type="conclusion"] .icon:hover,
+.content-block.conclusion .icon:hover {
+    color: #374151;
+    transform: scale(1.05) !important;
+}
+
+/* Zorg dat tekst in conclusie blokken zwart is */
+.content-block:has(.icon img[src*="conclusie"]) .content-text,
+.content-block[data-type="conclusion"] .content-text,
+.content-block.conclusion .content-text {
+    color: #000000 !important;
+}
+
+.content-block:has(.icon img[src*="conclusie"]) .content-text *,
+.content-block[data-type="conclusion"] .content-text *,
+.content-block.conclusion .content-text * {
+    color: #000000 !important;
+}
+
 .content-block:has(.icon img[src*="informatie"]) .icon:hover,
 .content-block[data-type="info"] .icon:hover,
 .content-block.info .icon:hover {
     color: #374151;
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 /* Tekstkleur voor informatie blokken op zwart zetten */
@@ -971,6 +1095,13 @@ a:visited {
     font-size: 1.1rem;
     font-weight: 600;
     text-align: center;
+    border-left: none !important; /* Verwijder blauwe rand links */
+}
+
+/* Aparte styling voor hoofdtitel */
+.chatbots-title.main-title {
+    font-size: 1.8rem;
+    padding: 12px 30px;
 }
 
 /* Tekst in chatbots section aanpassen voor betere leesbaarheid */
@@ -1097,26 +1228,32 @@ a:visited {
     background: var(--white);
     border: 2px solid var(--gray-300);
     border-radius: 12px;
-    padding: 15px 20px;
+    padding: 10px 15px; /* Kleinere padding voor compactere hoogte */
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    color: var(--text-primary); /* Expliciete tekstkleur voor leesbaarheid */
+}
+
+.quiz-option strong {
+    color: var(--text-primary); /* Zorg dat strong tekst ook zwart is */
 }
 
 .quiz-option:hover {
-    border-color: var(--blue-500);
+    border-color: var(--gray-300); /* Behoud de originele grijze rand */
     box-shadow: var(--shadow-sm);
     transform: translateY(-2px);
+    background: var(--gray-50); /* Subtiele achtergrondkleur bij hover */
 }
 
 .answer-feedback {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
-    margin-top: 15px;
+    margin-top: 10px; /* Kleinere margin voor compactere uitstraling */
     border-top: 1px solid var(--gray-200);
-    padding-top: 15px;
+    padding-top: 10px; /* Kleinere padding voor compactere uitstraling */
 }
 
 .answer-feedback.show {
@@ -1124,7 +1261,7 @@ a:visited {
 }
 
 .feedback-content {
-    color: var(--gray-700);
+    color: var(--text-primary); /* Donkere tekst voor betere leesbaarheid */
     line-height: 1.5;
 }
 
@@ -1134,13 +1271,13 @@ a:visited {
 }
 
 .quiz-option.correct {
-    border-color: var(--green-500);
-    background: var(--green-50);
+    border-color: var(--primary-green);
+    background: var(--primary-yellow-light);
 }
 
 .quiz-option.incorrect {
-    border-color: var(--red-500);
-    background: var(--red-50);
+    border-color: var(--primary-red);
+    background: #fef2f2; /* Lichte rode achtergrond */
 }
 
 /* Eenvoudige sidebar styling */
@@ -1150,6 +1287,14 @@ a:visited {
     top: 0;
     height: 100vh;
     z-index: 1000;
+    /* Start off-screen */
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Animate sidebar in on page load */
+.simple-sidebar.loaded {
+    transform: translateX(0);
 }
 
 .sidebar-toggle-btn {
@@ -1216,6 +1361,14 @@ a:visited {
     top: 0;
     height: 100vh;
     z-index: 1000;
+    /* Start off-screen */
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Animate top sidebar in on page load */
+.top-sidebar.loaded {
+    transform: translateX(0);
 }
 
 .top-toggle-btn {
@@ -1250,6 +1403,14 @@ a:visited {
     top: 0;
     height: 100vh;
     z-index: 1000;
+    /* Start off-screen */
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-in-out;
+}
+
+/* Animate home sidebar in on page load */
+.home-sidebar.loaded {
+    transform: translateX(0);
 }
 
 .home-toggle-btn {

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Beschrijven - Wat is AI en wat is het vooral niet?</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js"></script>
+</head>
+<body>
+    <!-- Eenvoudige sidebar -->
+    <div class="simple-sidebar" id="simpleSidebar">
+        <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
+            <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40">
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3>Legenda van tekstblokken</h3>
+                <button class="close-sidebar-btn" onclick="toggleSimpleSidebar()">×</button>
+            </div>
+            <div class="sidebar-body">
+                <div class="legend-item">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Informatie</span>
+                        <small>Uitleg en achtergrondinformatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/boekenwurm.png" alt="Verder lezen" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Verder lezen</span>
+                        <small>Interessante feiten en verdiepende informatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/quizvraag.png" alt="Quiz" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Quiz</span>
+                        <small>Test je kennis met interactieve vragen</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/opdracht.png" alt="Opdracht" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Opdracht</span>
+                        <small>Praktische opdrachten om te oefenen</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tweede sidebar - naar begin van pagina -->
+    <div class="top-sidebar" id="topSidebar">
+        <div class="top-toggle-btn" onclick="goToTop()">
+            <img src="../../img/icons/naar-boven.png" alt="Naar boven" width="40" height="40">
+        </div>
+    </div>
+
+    <!-- Derde sidebar - naar index.html -->
+    <div class="home-sidebar" id="homeSidebar">
+        <div class="home-toggle-btn" onclick="goToHome()">
+            <img src="../../img/icons/home.png" alt="Naar home" width="40" height="40">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header-section">
+            <h2 class="chatbots-title main-title">AI Beschrijven: Wat is AI... en wat is het vooral niet?</h2>
+            
+            <div class="metadata">
+                <div class="metadata-content">
+                    <div class="metadata-item"><strong>Datum:</strong> augustus 2025</div>
+                    <div class="metadata-item"><strong>Laatste wijziging:</strong> 26 augustus 2025</div>
+                    <div class="metadata-item"><strong>Leerdoel:</strong> Vertrouwd raken met het begrip AI en begrijpen wat AI wel en niet is</div>
+                    <div class="metadata-item"><strong>Voorkennis:</strong> Niet nodig</div>
+                    <div class="metadata-item"><strong>Leestijd:</strong> ongeveer 20 minuten</div>
+                    <div class="metadata-item"><strong>Inhoud:</strong> <a href="#inleiding">Inleiding</a> | <a href="#ai-definieren">AI definiëren</a> | <a href="#invalshoeken">Verschillende invalshoeken</a> | <a href="#conclusie">Conclusie</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="inleiding">
+            <h3 class="chatbots-title">Inleiding</h3>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Het begrip AI hoor je tegenwoordig (bijna) dagelijks. Maar wat betekent AI eigenlijk? Dat gaan we in dit artikel uitzoeken.<br><br>
+                    In deze module maak je kennis met het begrip AI. Zo begrijp je wat AI wel en niet is en is het een opstap naar het bespreken van de kernbegrippen van AI.
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="ai-definieren">
+            <h3 class="chatbots-title">AI definiëren</h3>
+            
+            <div class="content-block task">
+                <div class="icon">
+                    <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Wat denk jij dat AI is?</strong><br>
+                    Welke van de onderstaande omschrijvingen komt het dichtst bij wat jij denkt dat AI betekent?<br><br>
+                    
+                    <strong>Optie A:</strong> AI is een computer die kan denken en redeneren zoals een mens.<br><br>
+                    <strong>Optie B:</strong> AI is software die automatisch taken kan uitvoeren zonder menselijke tussenkomst.<br><br>
+                    <strong>Optie C:</strong> AI is een systeem dat leert van data en het herkennen van patronen en daarom is het gebruik van logische regels niet nodig.<br><br>
+                    
+                    <em>Heb je een keuze gemaakt?</em>
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Alle drie de opties zijn eigenlijk gedeeltelijk waar, maar ook gedeeltelijk onjuist.</strong><br>
+                    Dit laat precies zien waarom het omschrijven van AI zo ingewikkeld is.<br><br>
+                    
+                    <strong>Optie A:</strong> AI kan inderdaad redeneren en bepaalde taken uitvoeren die we als "intelligent" beschouwen maar AI kan niet denken zoals een mens - het heeft geen bewustzijn, emoties of begrip. Het bootst intelligent gedrag na door patronen te herkennen.<br><br>
+                    
+                    <strong>Optie B:</strong> AI kan inderdaad taken automatisch uitvoeren maar niet alle automatische software is AI. Een simpele timer of rekenmachine wordt niet gezien als AI - er moet tegenwoordig sprake zijn van leren of patroonherkenning.<br><br>
+                    
+                    <strong>Optie C:</strong> Dit beschrijft machine learning, een belangrijk onderdeel van de AI van tegenwoordig. Maar de uitspraak dat logische regels niet van toepassing zijn, is niet juist - machine learning heeft juist logische regels nodig om te functioneren (algoritmes, trainingsprocessen).<br><br>
+                    
+                    Laten we eens kijken waarom het zo moeilijk is om het begrip AI helder te beschrijven.
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section">
+            <h3 class="chatbots-title">AI... niet te beschrijven!</h3>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Er zijn verschillende redenen waarom het lastig is om AI eenduidig te omschrijven:
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>Het is al lastig om menselijke intelligentie duidelijk uit te leggen</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        Psycholoog Robert J. Sternberg legt in het artikel <a href="https://www.sciencedirect.com/science/article/abs/pii/S1041608024001614" target="_blank">'What is intelligence, really? The futile search for a Holy Grail' (2024)</a> uit waarom het zoeken naar een allesomvattende definitie van intelligentie onbegonnen werk is. Hij stelt dat onze energie beter besteed kan worden aan het onderzoeken <strong>hoe</strong> intelligentie wordt ingezet. Intelligent gedrag hangt namelijk niet alleen af van de persoon, maar ook van de taak en de situatie.<br><br>
+                        <em>"Velen van ons die zichzelf als intelligent beschouwen, zouden in een andere tijd waarschijnlijk het middagmaal van een prehistorisch dier zijn geweest."</em>, aldus Sternberg.
+                    </details>
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>De voorwaarden om iets 'intelligent' te noemen verschuiven voortdurend</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        In 1997 versloeg IBM's Deep Blue de wereldkampioen schaken Garry Kasparov — destijds een baanbrekende AI-doorbraak. Tegenwoordig zien we schaakcomputers als gewone software. Wat toen gold als AI, voldoet niet meer aan de huidige criteria.<br><br>
+                        <img src="../../img/IBM_rs6000_SP_-_Deep_Blue.jpg" alt="IBM's Deep Blue" style="max-width: 100%; height: auto;">
+                        <br>
+                        <em>Bron: <a href="https://commons.wikimedia.org/wiki/Category:Deep_Blue#/media/File:IBM_rs6000_SP_-_Deep_Blue.jpg" target="_blank">Wikimedia Commons</a> IBM's Deep Blue</em>
+                    </details>
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>Beleidsmakers hebben over het algemeen onvoldoende basiskennis over AI</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        In het artikel <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5154389" target="_blank">'Defining Artificial Intelligence' (Weitzel, 2025)</a> wordt opgemerkt dat "een kwart van de onderzochte verordeningen ook een zonnewijzer zou aanmerken als AI". Een ander derde deel bevat helemaal geen definitie, wat leidt tot onduidelijk beleid.
+                    </details>
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>AI Washing: Bedrijven overdrijven over het gebruik van AI</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        Bedrijven overdrijven of zijn misleidend over het gebruik van AI in hun producten om aantrekkelijker of innovatiever over te komen dan het werkelijk is. Dit staat ook wel bekend als <a href="../../naslag/begrippen.html#ai-washing">AI washing</a>. Hierdoor vervaagt de technische betekenis van AI, wordt AI zowel onder- als overhyped, verandert het in een leeg buzzword en daalt uiteindelijk het vertrouwen in echte toepassingen.<br><br>
+                        In september 2023 lanceerde Coca‑Cola de "Y3000", een drankje dat volgens de marketing "co‑created with human and artificial intelligence" zou zijn. Kritiek kwam omdat Coca‑Cola nooit duidelijk maakte wat de rol van AI precies was—de bewering lijkt vooral bedoeld om de innovatiegerichte aantrekkingskracht te verhogen.<br><br>
+                        <em>Bron: <a href="https://ctomagazine.com/what-is-ai-washing-why-it-is-a-problem/" target="_blank">CTO Magazine</a></em>
+                    </details>
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Geen gemakkelijke start, dat zeker.</strong> Maar toch is een duidelijke omschrijving nodig – of in ieder geval een poging daartoe.<br><br>
+                    Waarom? Zonder gedeeld begrip van wat AI precies is, kunnen we er niet helder over praten. En zonder die helderheid wordt het bijna onmogelijk om AI goed te <a href="../../naslag/begrippen.html#reguleren">reguleren</a>. Dat kan leiden tot maatschappelijke problemen, of juist innovatie in de weg zitten.
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>De EU AI Act en praktische gevolgen</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        De <a href="../../naslag/begrippen.html#eu-ai-act">EU AI Act</a> ziet AI ruim. Daardoor vallen soms ook simpele 'regelsystemen' onder de wet. Afhankelijk van het risico komen er extra eisen bij. Voor jou als klant betekent dit twee dingen. Je ziet wanneer AI wordt gebruikt (bijvoorbeeld een label bij een chatbot of AI‑beeld). En krijg je een besluit dat je raakt, zoals een kredietaanvraag, dan staat erbij welke gegevens zijn gebruikt en kun je een mens om herbeoordeling vragen. Die extra zekerheid kost organisaties geld en tijd, wat soms terugkomt in de prijs of premie.
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section">
+            <h3 class="chatbots-title">Een poging tot een definitie</h3>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    In het artikel <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5154389" target="_blank">'Defining Artificial Intelligence'</a> van 2025 onderzoekt Weitzel bestaande definities en hun tekortkomingen. Op basis daarvan stelt hij een betere omschrijving voor, al benadrukt hij dat AI nooit volledig in één perfecte definitie te vangen is. De volgende definitie ziet hij dan ook als een verbetering ten opzichte van de definities die hij heeft geanalyseerd:<br><br>
+                    
+                    <strong>Een computerprogramma</strong> dat gebruikmaakt van<br>
+                    <strong>machine learning-technieken</strong> om<br>
+                    <strong>complexe doelen</strong> te bereiken die normaal gesproken<br>
+                    <strong>menselijke intelligentie</strong> vereisen.<br><br>
+                    
+                    Weitzel legt vervolgens uit dat door het woord <em>computerprogramma</em> te gebruiken, bredere/ abstractere woorden als <em>systeem</em> kunnen worden uitgesloten.<br>
+                    Weitzel erkent dat het idee dat de doelen "menselijke intelligentie" vereisen, wat vaag blijft, maar het helpt om simpele programma's uit te sluiten.<br>
+                    Door te zeggen dat het om <a href="../../naslag/begrippen.html#machine-learning">machine learning</a> gaat, worden regelgebaseerde AI-modellen uitgesloten en niet iedere expert zal het daarom eens zijn met Weitzels definitie.<br><br>
+                    
+                    Het lijkt dus onbegonnen werk om tot een heldere definitie te komen. Laten we AI eens bekijken vanuit verschillende invalshoeken.
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="invalshoeken">
+            <h3 class="chatbots-title">Verschillende invalshoeken</h3>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Binnen AI worden verschillende <a href="../../naslag/begrippen.html#ai-model">AI-modellen</a> en <a href="../../naslag/begrippen.html#ai-methode">AI-methoden</a> gebruikt.<br>
+                    In de populaire media, marketing en publieke discussie ontstaat er verwarring over deze begrippen doordat ze op één hoop worden gegooid. Dit leidt tot "misverstanden over de AI-capaciteiten en -beperkingen" <a href="https://aiindex.stanford.edu/report/" target="_blank">[Stanford AI Index Report (2024)]</a>.<br><br>
+                    
+                    We zullen daarom deze begrippen hieronder verhelderen:
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Een AI-model</strong> is het rekenkundige "brein" dat getraind is om een taak uit te voeren. Een voorbeeld van zo'n model is GPT-5. Dit is een AI-model dat spraak, tekst en afbeeldingen kan herkennen en creëren (genereren).<br><br>
+                    
+                    <strong>AI-methode</strong> is de manier of techniek waarmee je een model bouwt of traint. Voor GPT-5 zijn verschillende methoden gebruikt (zoals reinforcement learning en de transformer-architectuur).<br><br>
+                    
+                    <strong>AI-tool</strong> is de praktische toepassing of software die gebruikmaakt van AI-model(-len). ChatGPT maakt in dit geval gebruik van GPT-5. Het is de interface die je gebruikt om te communiceren met GPT-5. Microsoft 365 Copilot maakt bijvoorbeeld gebruik van meerdere AI-modellen.
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>Europese AI in de spotlight: Mistral</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        Volgens het AI Index Report 2025 zijn er naast de bekende Amerikaanse AI-modellen zoals GPT-5 ook steeds meer Europese alternatieven, waaronder het Franse <strong>Mistral AI</strong> (<a href="https://mistral.ai/" target="_blank">mistral.ai</a>). Mistral ontwikkelt krachtige open source taalmodellen die qua prestaties vaak dicht in de buurt komen van de internationale top, maar soms iets minder krachtig zijn dan bijvoorbeeld GPT-5. Het rapport benadrukt dat lichtere modellen, zoals die van Mistral, in de praktijk vaak sneller, goedkoper en beter toepasbaar zijn voor specifieke doeleinden. Door de opkomst van Europese modellen neemt de technologische afhankelijkheid van de VS af en krijgen gebruikers in Europa meer keuzevrijheid.<br><br>
+                        <em>Bron: <a href="https://aiindex.stanford.edu/report/" target="_blank">Stanford University, AI Index Report 2025</a></em>
+                    </details>
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Nu deze begrippen duidelijker zijn kunnen we het begrip AI vanuit verschillende invalshoeken bekijken.
+                </div>
+            </div>
+
+            <h4>1. AI-Methode: regelgebaseerd ten opzichte van data-gedreven</h4>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Grofweg zijn er twee denkrichtingen om een model te bouwen en te trainen. Dat zijn de regelgebaseerde en de data-gedreven denkrichting.<br><br>
+                    
+                    De regelgebaseerde methode worden ook wel symbolische AI, logisch-gebaseerde AI, top-down AI, klassieke AI of GOFAI (Good Old-Fashioned AI) genoemd. We houden het praktisch en gebruiken het woord <em>regelgebaseerd</em>. Deze methode lost problemen op met vooraf vastgelegde regels en logica. Tegenwoordig worden de modellen die alleen gebruik maken van deze methode niet meer gezien als een vorm van AI.
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>MYCIN: Een voorbeeld van regelgebaseerd AI</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        Een voorbeeld van zo'n regelgebaseerd AI-model is <a href="../../naslag/begrippen.html#mycin">MYCIN</a>, een expertsysteem uit de jaren '70 dat artsen ondersteunde bij diagnoses en antibiotica-adviezen. Het gebruikte zo'n 600 regels en redeneerde via <a href="../../naslag/begrippen.html#backward-chaining">backward chaining</a>. Destijds gold het als AI, omdat het beslissingen nam, zijn redenering kon uitleggen en vaak net zo goed presteerde als menselijke artsen.
+                    </details>
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Dan is er nog de methode waarbij een model leert door patronen te herkennen in data, zonder vooraf ingestelde regels. Deze methode wordt ook wel connectionistische, subsymbolische, bottom-up of data-gedreven AI genoemd.<br>
+                    In het vervolg gebruiken we de term <em>data-gedreven</em>. Machine learning is de techniek binnen deze denkrichting.<br><br>
+                    
+                    De combinatie van regelgebaseerd en data-gedreven wordt ook wel <a href="../../naslag/begrippen.html#hybride-ai">hybride AI</a> genoemd. In de praktijk werken veel modellen zo: regels en menselijk ontwerp bieden controle en uitlegbaarheid; leren uit data zorgt voor flexibiliteit en prestaties.
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>AlphaGo: Een voorbeeld van hybride AI</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        AlphaGo leerde op twee manieren: eerst keek het naar heel veel partijen van sterke spelers en nam het patronen over. Daarna werd het nog beter door duizenden keren tegen zichzelf te spelen. Tijdens het rekenen verkent het razendsnel veel mogelijke zetten en kiest het de meest kansrijke vervolgen.<br><br>
+                        <img src="../../img/AlphaGo_computer_rack.jpg" alt="AlphaGo computer rack" style="max-width: 100%; height: auto;">
+                        <br>
+                        <em>De hardware achter AlphaGo, waarmee het beroemde Go-programma zijn berekeningen uitvoerde.</em><br><br>
+                        In 2015 versloeg AlphaGo de Europese kampioen Fan Hui met 5–0, de eerste keer dat een programma onder wedstrijdvoorwaarden een professionele Go‑speler versloeg. AlphaGo is daarmee een duidelijk voorbeeld van <a href="../../naslag/begrippen.html#hybride-ai">hybride AI</a>: het combineert wat het heeft geleerd met slim en systematisch doorrekenen.<br><br>
+                        <em>Bron: <a href="https://www.nature.com/articles/nature16961" target="_blank">Mastering the game of Go with deep neural networks and tree search (Silver et al., 2016, Nature)</a></em>
+                    </details>
+                </div>
+            </div>
+
+            <div class="content-block quiz">
+                <div class="icon">
+                    <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Quizvraag: Regelgebaseerde vs data-gedreven</strong><br><br>
+                    Een arts gebruikt een computerprogramma om te bepalen of een patiënt een bepaalde ziekte heeft. Het programma:<br><br>
+                    
+                    1. Stelt vragen over symptomen (koorts, pijn, etc.),<br>
+                    2. Leert niet bij van nieuwe patiëntgegevens,<br>
+                    3. Gebruikt 500 medische regels zoals "ALS koorts > 38°C EN pijn in onderbuik DAN mogelijk blindedarmontsteking",<br>
+                    4. Geeft een diagnose met uitleg.<br><br>
+                    
+                    <strong>Is dit een voorbeeld van een regelgebaseerde, data-gedreven of hybride methode?</strong><br><br>
+                    
+                    <em>Klik op een antwoord om te zien of het correct is!</em>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="toggleAnswer('A1')">
+                            <strong>A)</strong> Data-gedreven
+                            <div class="answer-feedback" id="answer-A1">
+                                <div class="feedback-content">
+                                    <span class="feedback-icon">❌</span>
+                                    <strong>Nog niet goed!</strong><br>
+                                    <em>Hint:</em> Het programma leert niet bij van nieuwe gegevens en gebruikt vaste regels. Denk aan wat dit betekent voor de methode.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-option" onclick="toggleAnswer('B1')">
+                            <strong>B)</strong> Regelgebaseerd
+                            <div class="answer-feedback" id="answer-B1">
+                                <div class="feedback-content">
+                                    <span class="feedback-icon">✅</span>
+                                    <strong>Correct!</strong><br>
+                                    Dit is inderdaad een regelgebaseerd systeem. Het gebruikt vooraf vastgelegde regels (de 500 medische regels) en leert niet bij van nieuwe data. Het systeem volgt een vaste logica zonder zich aan te passen aan nieuwe informatie.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-option" onclick="toggleAnswer('C1')">
+                            <strong>C)</strong> Hybride
+                            <div class="answer-feedback" id="answer-C1">
+                                <div class="feedback-content">
+                                    <span class="feedback-icon">❌</span>
+                                    <strong>Nog niet goed!</strong><br>
+                                    <em>Hint:</em> Een hybride systeem combineert regelgebaseerde en data-gedreven elementen. Dit systeem gebruikt alleen regels en leert niet bij.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-option" onclick="toggleAnswer('D1')">
+                            <strong>D)</strong> Geen van allemaal
+                            <div class="answer-feedback" id="answer-D1">
+                                <div class="feedback-content">
+                                    <span class="feedback-icon">❌</span>
+                                    <strong>Nog niet goed!</strong><br>
+                                    <em>Hint:</em> Dit is wel degelijk een van de genoemde methoden. Kijk nog eens naar de kenmerken van het systeem.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4>2. De reikwijdte van het AI-model: narrow AI ten opzichte van AGI</h4>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Een andere manier om naar AI te kijken is de mate waarin het in staat is om verschillende taken uit te voeren.<br><br>
+                    Het type dat zich beperkt tot specifieke taken wordt <em>Artificial Narrow Intelligence (ANI)</em> genoemd.<br><br>
+                    Het idee dat AI in staat is om allerlei taken uit te voeren die het menselijk vermogen evenaren wordt <em>Artificial General Intelligence (AGI)</em> genoemd.<br><br>
+                    Het idee dat AI het menselijk vermogen overstijgt wordt <em>Artificial Super Intelligence (ASI)</em> genoemd.
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Op dit moment wordt er veel vooruitgang geboekt op het gebied van ANI maar niet op het gebied van AGI. Doordat mensen niet het verschil zien tussen de vooruitgang die wordt geboekt op gebied van ANI en er een hype is rondom AGI kan er helaas de verwarring ontstaan dat er grote voortuitgang wordt geboekt op het gebied van AGI terwijl dat dus niet het geval is.
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>Weak AI vs Strong AI: De termen van John Searle</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        In de jaren 1980 introduceerde de filosoof John Searle, de termen <a href="../../naslag/begrippen.html#weak-ai">Weak AI</a> en <a href="../../naslag/begrippen.html#strong-ai">Strong AI</a><br>
+                        Weak AI betekent hier niet dat AI "primitief" of "zwak" is, maar dat het alleen intelligent gedrag simuleert zonder echt bewustzijn of begrip.<br>
+                        Strong AI verwijst naar het idee dat een AI in principe een echte geest of bewustzijn zou kunnen hebben.<br><br>
+                        In de praktijk zijn deze termen verwarrend, omdat weak AI vaak ten onrechte wordt gelijkgesteld aan regelgebaseerde systemen of "simpele AI". Ook moderne geavanceerde modellen zoals ChatGPT vallen nog steeds onder Searle's weak AI, zolang ze geen bewustzijn hebben.<br><br>
+                        Daarom gebruiken veel onderzoekers tegenwoordig liever de termen <a href="../../naslag/begrippen.html#narrow-ai">narrow AI</a> (AI die specifieke taken kan uitvoeren) en <a href="../../naslag/begrippen.html#general-ai">general AI</a> (AI die taken kan uitvoeren zoals een mens).
+                    </details>
+                </div>
+            </div>
+
+            <h4>3. Het type AI-Model: Herkennen ten opzichte van genereren</h4>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Een andere manier om naar AI-modellen te kijken is het verschil in type.<br><br>
+                    
+                    <strong>Discriminatieve AI:</strong> Dit type AI is ontworpen om onderscheid te maken tussen verschillende categorieën. Bijvoorbeeld: is deze afbeelding een kat of een hond? Het model leert van voorbeelden en probeert de juiste categorie te voorspellen. Dit soort AI wordt veel gebruikt in toepassingen zoals spamfilters, gezichtsherkenning en medische diagnoses.<br><br>
+                    
+                    <strong>Generatieve AI:</strong> Dit type AI gaat een stap verder. Het leert niet alleen van voorbeelden, maar gebruikt die kennis ook om nieuwe inhoud te maken. Bijvoorbeeld: het schrijven van een verhaal, het genereren van een afbeelding of het componeren van muziek. Generatieve AI opent nieuwe mogelijkheden, zoals het maken van creatieve ontwerpen of het simuleren van realistische gesprekken.
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Waarom is dit belangrijk?</strong><br>
+                    Het verschil tussen discriminatieve en generatieve AI laat zien hoe AI zich heeft ontwikkeld. Waar discriminatieve AI vooral helpt bij het oplossen van specifieke problemen, zoals het herkennen van objecten of het voorspellen van trends, biedt generatieve AI de mogelijkheid om nieuwe ideeën en oplossingen te creëren. Dit maakt generatieve AI een krachtig hulpmiddel in veel verschillende domeinen, van kunst en entertainment tot wetenschap en technologie.
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    Nu we weten dat we AI vanuit verschillende invalshoeken kunnen bekijken kunnen we in het volgende artikel <em>de ontwikkeling van AI</em>, de kernbegrippen van AI verder toelichten.
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="conclusie">
+            <h3 class="chatbots-title">Conclusie</h3>
+            
+            <div class="content-block conclusion">
+                <div class="icon">
+                    <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Conclusie</strong><br><br>
+                    Je hebt nu een beter begrip van waarom het zo moeilijk is om AI eenduidig te definiëren. We hebben gezien dat:<br><br>
+                    
+                    <strong>AI-definitie is complex</strong> - Er zijn verschillende redenen waarom het lastig is om AI helder te omschrijven: menselijke intelligentie is al moeilijk te definiëren, de criteria verschuiven voortdurend, beleidsmakers hebben onvoldoende kennis, en AI washing vervaagt de betekenis.<br><br>
+                    
+                    <strong>Verschillende invalshoeken</strong> - We kunnen AI bekijken vanuit verschillende perspectieven:<br>
+                    • <em>Methode:</em> Regelgebaseerd vs data-gedreven (of hybride)<br>
+                    • <em>Reikwijdte:</em> Narrow AI vs AGI vs ASI<br>
+                    • <em>Type:</em> Discriminatief vs generatief<br><br>
+                    
+                    <strong>Praktische gevolgen</strong> - Zonder duidelijke definities wordt het moeilijk om AI goed te reguleren en te begrijpen. Dit kan leiden tot maatschappelijke problemen of innovatie in de weg zitten.<br><br>
+                    
+                    <strong>Volgende stappen:</strong><br>
+                    In het volgende artikel gaan we dieper in op de kernbegrippen van AI en de ontwikkeling die heeft geleid tot de AI van vandaag.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbots en AI-Assistenten</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js"></script>
+</head>
+<body>
+        <!-- Eenvoudige sidebar -->
+    <div class="simple-sidebar" id="simpleSidebar">
+        <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
+            <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40">
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3>Legenda van tekstblokken</h3>
+                <button class="close-sidebar-btn" onclick="toggleSimpleSidebar()">×</button>
+            </div>
+            <div class="sidebar-body">
+                <div class="legend-item">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Informatie</span>
+                        <small>Uitleg en achtergrondinformatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/boekenwurm.png" alt="Verder lezen" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Verder lezen</span>
+                        <small>Interessante feiten en verdiepende informatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/quizvraag.png" alt="Quiz" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Quiz</span>
+                        <small>Test je kennis met interactieve vragen</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/opdracht.png" alt="Opdracht" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Opdracht</span>
+                        <small>Praktische opdrachten om te oefenen</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tweede sidebar - naar begin van pagina -->
+    <div class="top-sidebar" id="topSidebar">
+        <div class="top-toggle-btn" onclick="goToTop()">
+            <img src="../../img/icons/naar-boven.png" alt="Naar boven" width="40" height="40">
+        </div>
+    </div>
+
+    <!-- Derde sidebar - naar index.html -->
+    <div class="home-sidebar" id="homeSidebar">
+        <div class="home-toggle-btn" onclick="goToHome()">
+            <img src="../../img/icons/home.png" alt="Naar home" width="40" height="40">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header-section">
+            <h2 class="chatbots-title main-title">Chatbots en AI-Assistenten</h2>
+            
+            <div class="metadata">
+                <div class="metadata-content">
+                    <div class="metadata-item"><strong> Laatste wijziging:</strong> 1 september 2025</div>
+                    <div class="metadata-item"><strong> Leerdoel:</strong> Begrijpen wat chatbots en AI-assistentenzijn en hoe je ze kunt gebruiken</div>
+                    <div class="metadata-item"><strong> Leestijd:</strong> 8-10 minuten</div>
+                    <div class="metadata-item"><strong> Inhoud:</strong> <a href="#chatbots">Chatbots</a> | <a href="#agi">AGI</a> | <a href="#ai-assistenten">AI-Assistenten</a></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        
+        
+        <div class="chatbots-section" id="chatbots">
+            <h3 class="chatbots-title">Chatbots</h3>
+        
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>1. We gaan direct aan de slag!</strong><br>
+                Klik op de knop hieronder om de chatbot <em>Lumo</em> te openen.<br> 
+                Dit is een moderne versie van een chatbot.
+                
+                <div class="text-center mt-4">
+                    <button onclick="openLumoPopup()" class="btn" style="color: black !important;">
+                        <img src="../../img/icons/lumo.png" alt="Lumo" width="40" height="32" style="vertical-align: middle; margin-right: 12px;"> <span style="color: black !important;">Lumo openen</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Wat is een chatbot?</strong><br/>
+                Een <a href="../../naslag/begrippen.html">chatbot</a> is een computerprogramma dat menselijke gesprekken kan simuleren (nabootsen) <a href="https://www.ibm.com/think/topics/chatbots" target="_blank">(IBM)</a>.<br><br>
+                <strong>Chatbots en AI</strong><br>
+                De discussie of er sprake is van AI in geval van klassieke chatbots laten we voor wat het is. wel kunnen we stellen dat moderne chatbots steeds meer gebruik zijn gaan maken van AI-technologieën, waardoor zij veel natuurlijker en veelzijdiger kunnen communiceren.
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>De allereerste chatbot: ELIZA</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    <a href="../../naslag/begrippen.html#eliza">ELIZA</a> was de allereerste chatbot die breed werd erkend. Deze chatbot werd in 1966 ontwikkeld door MIT-professor <a href="../../naslag/begrippen.html#joseph-weizenbaum">Joseph Weizenbaum</a>.<br><br>
+                    ELIZA werkte heel anders dan moderne chatbots. Ze gebruikte vaste regels en patronen om te reageren, maar de eerste gebruikers dachten toch dat ze echt begreep wat ze zeiden. Dit fenomeen wordt het <em><a href="../../naslag/begrippen.html#eliza-effect">Eliza-effect</a></em> genoemd.<br><br>
+                    <img src="../../img/eliza.png" alt="Eliza">
+                    <br>
+                    <em>ELIZA, een van de eerste chatbots, ontwikkeld in 1966</em><br>
+                    <small style="color: #666;">Bron: Wikimedia Commons</small><br><br>
+                    Je kunt <a href="https://web.njit.edu/~ronkowit/eliza.html" target="_blank">hier een online versie van ELIZA uitproberen</a>.
+                </details>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>De opkomst van AI-chatbots</strong><br>
+                Door de <a href="../../naslag/begrippen.html#ai-boom">AI-boom</a> die begon in de late jaren 2010 zijn chatbots steeds populairder geworden. <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a>, van <a href="../../naslag/begrippen.html#openai">OpenAI</a>, was een van de eerste moderne AI-chatbots die breed bekend werd en de populariteit van chatbots enorm heeft vergroot.<br><br>
+                
+                <strong>Een veelvoorkomende verwarring</strong><br>
+                Veel mensen denken bij het woord <a href="../../naslag/begrippen.html#artificiele-intelligentie">artificiële intelligentie</a> direct aan ChatGPT. Maar er zijn veel meer AI-chatbots dan alleen ChatGPT, en <a href="../../naslag/begrippen.html#artificiele-intelligentie">artificiële intelligentie</a> omvat veel meer dan alleen AI-chatbots.<br><br>
+                
+                <strong>Drie belangrijke vragen</strong><br>
+                Chatbots zijn er in allerlei soorten en maten. Om dit te verduidelijken, zullen we de volgende vragen beantwoorden:<br>
+                
+                1. Hoe werkt een chatbot? <br>
+                2. Hoe is een chatbot in staat om antwoorden te geven? <br>
+                3. Waar vindt het denkwerk plaats?
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>1. Hoe werkt een chatbot?</strong><br>
+                Chatbots werken in de basis volgens het volgende principe:<br> <em>→ input → processing → output</em><br><br>
+                
+            <ul>
+                <li><strong>Input:</strong> Jij stelt een vraag of geeft een opdracht. Dit kan via tekst of spraak.<br><br></li>
+
+                <li><strong>Processing:</strong> De input wordt vervolgens verwerkt. Er zijn verschillende methoden waarop de input kan worden verwerkt.<br><br></li>
+                
+                <li><strong>Output:</strong> De chatbot geeft een antwoord terug in de vorm van tekst of spraak.<br><br></li>
+                         </ul>
+
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>3. Stel jezelf voor</strong><br>
+                Geef <em>Lumo</em> input door onder in het tekstvenster jezelf voor te stellen met de naam van een bekende persoon.
+                <br>
+                <em>- Lumo</em> zal vriendelijk reageren.
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Prompt</strong><br>
+                De input die je aan de chatbot geeft, heet een <em><a href="../../naslag/begrippen.html#prompt">prompt</a></em>. Zo'n prompt kan bijvoorbeeld een vraag, opdracht of instructie zijn. 
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>2. Hoe is een chatbot in staat om antwoorden te geven?</strong><br>
+                Chatbots zijn door verschillende methoden in staat om antwoorden te geven. In grote lijnen kunnen we twee methoden onderscheiden:<br><br>
+                
+                <ul>
+                                    <li><strong>Regel-gebaseerd:</strong> De chatbot volgt vooraf geprogrammeerde regels en patronen. De eerste chatbots werkten volgens deze methode en worden ook wel klassieke chatbots genoemd.
+                Regel-gebaseerde chatbots zijn dan wel betrouwbaar maar kunnen alleen antwoorden geven op vragen die vooraf zijn geprogrammeerd.<br><br>
+                <em>Het is als een boek dat vooraf is geschreven en alleen antwoorden kan geven op vragen die in het boek staan.</em>
+            </li><br>
+                
+                <li><strong>Data-gedreven:</strong> De chatbot is getraind op grote hoeveelheden tekstdata en kan patronen herkennen waardoor het antwoorden kan geven op vragen die nog niet eerder zijn geprogrammeerd. De techniek die dit mogelijk maakt heet <a href="../../naslag/begrippen.html#machine-learning">machine learning</a>.<br><br>
+                <em>Het is alsof het patronen kan herkennen in een boek en kiest welk antwoord het beste past bij de vraag.</em></li><br>
+                    
+                    Er zijn nog allerlei andere methoden, maar voor nu houden we het bij deze twee.
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Je test twee chatbots met dezelfde vraag: "Kun je me helpen met een creatief verhaal over een robot die leert koken?" De eerste chatbot antwoordt: "Sorry, ik kan alleen helpen met technische vragen." De tweede chatbot begint enthousiast een verhaal te schrijven over een robot die experimenteert met verschillende ingrediënten. Welke methode gebruikt waarschijnlijk de tweede chatbot?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A5')">
+                        <strong>A)</strong> Regel-gebaseerd
+                        <div class="answer-feedback" id="answer-A5">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                Een regel-gebaseerde chatbot zou waarschijnlijk geen creatief verhaal kunnen genereren omdat het alleen vooraf geprogrammeerde antwoorden heeft. Het zou eerder reageren zoals de eerste chatbot.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-option" onclick="toggleAnswer('B5')">
+                        <strong>B)</strong> Data-gedreven
+                        <div class="answer-feedback" id="answer-B5">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                De tweede chatbot gebruikt waarschijnlijk een data-gedreven methode. Door machine learning kan het patronen herkennen in verhalen en creatieve content genereren, zelfs voor vragen die niet vooraf zijn geprogrammeerd. Het kan nieuwe combinaties maken op basis van wat het heeft geleerd van grote hoeveelheden tekstdata.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-option" onclick="toggleAnswer('C5')">
+                        <strong>C)</strong> Machine learning
+                        <div class="answer-feedback" id="answer-C5">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Ook correct!</strong><br>
+                                Machine learning is inderdaad de techniek die data-gedreven chatbots gebruiken. Het is de technologie achter de data-gedreven methode die het mogelijk maakt om creatieve content te genereren.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quiz-option" onclick="toggleAnswer('D5')">
+                        <strong>D)</strong> Klassieke chatbot
+                        <div class="answer-feedback" id="answer-D5">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                Klassieke chatbots zijn regel-gebaseerd en zouden niet in staat zijn om spontaan een creatief verhaal te genereren. Ze kunnen alleen reageren op vooraf geprogrammeerde scenario's.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>3. Waar vindt het denkwerk plaats?</strong><br>
+                Aangezien klassieke chatbots niet meer van deze tijd zijn, is deze vraag vooral relevant voor moderne chatbots.
+                Nu we weten dat regel-gebaseerde chatbots vooraf geprogrammeerd zijn, is deze vraag vooral relevant voor data-gedreven chatbots. Het "denkwerk" van deze moderne chatbots gebeurt op de achtergrond door AI-modellen die de input verwerken. AI-modellen zijn computerprogramma's die getraind zijn om patronen te herkennen en beslissingen te nemen. Ze zijn als het "brein" van de chatbot - ze bepalen hoe de input wordt geïnterpreteerd en wat voor antwoord er wordt gegeven.<br><br>
+                
+                Deze AI-modellen kunnen op verschillende plekken draaien:<br><br>
+                
+                <ul>
+                    <li><strong>Online (in de cloud):</strong> De chatbot draait op je apparaat, maar is gekoppeld aan een AI-model dat op servers van een bedrijf draait (zoals OpenAI, Google, Microsoft). Je stuurt je vraag naar hun servers waar het AI-model de input verwerkt, en krijgt het antwoord terug. Dit kan op twee manieren: via een browser (zoals ChatGPT in je webbrowser) of via een API (waarbij andere apps de AI-service gebruiken). Een API is als een "brug" tussen apps - het laat verschillende programma's met elkaar communiceren. Zo kan een app op je telefoon bijvoorbeeld ChatGPT's AI gebruiken zonder dat je naar de ChatGPT-website hoeft te gaan. Een concreet voorbeeld is Grammarly, dat via een API verbonden is met GPT om je teksten te verbeteren en suggesties te geven. Dit is wat er gebeurt bij ChatGPT, Claude, en andere online chatbots. Dit is veruit de bekendste en meest gebruikte manier. Dit wordt ook wel "cloud-hosted" genoemd.<br><br>
+                    
+                    <em>Voordelen:</em> Je hebt toegang tot de meest krachtige AI-modellen, je hoeft geen eigen hardware aan te schaffen, en de modellen zijn altijd up-to-date.<br><br>
+                    
+                    <em>Nadelen:</em> Je data wordt naar externe servers gestuurd, wat privacy-risico's met zich meebrengt. Ook ben je afhankelijk van internetverbinding en de beschikbaarheid van de service. Daarnaast kunnen er kosten verbonden zijn aan het gebruik.<br><br>
+                    
+                    <li><strong>Lokaal (op je eigen computer):</strong> De chatbot draait op je eigen computer en het AI-model is erin geïntegreerd. Je data blijft binnen je eigen netwerk en gaat niet naar externe partijen. Dit wordt ook wel "on-premises" of "local inference" genoemd.<br><br>
+                    
+                    <em>Voordelen:</em> Je hebt volledige privacy omdat je data nergens anders heen gaat. Je hebt geen internetverbinding nodig en geen doorlopende kosten.<br><br>
+                    
+                    <em>Nadelen:</em> Je hebt dure hardware nodig om de AI-modellen te laten draaien. De modellen zijn vaak minder krachtig dan online versies en je moet zelf voor onderhoud zorgen.<br><br>
+                    
+                    <li><strong>Op het apparaat zelf:</strong> De chatbot draait op het apparaat zelf en het AI-model is erin geïntegreerd, zoals op je telefoon, een slimme speaker, of een lokale computer. Dit zorgt voor snellere reacties en meer privacy. Dit wordt ook wel "edge deployment" genoemd.<br><br>
+                    
+                    <em>Voordelen:</em> Je krijgt zeer snelle reacties omdat alles lokaal gebeurt. Het werkt offline en je privacy is gegarandeerd.<br><br>
+                    
+                    <em>Nadelen:</em> De rekenkracht van apparaten is beperkt, dus je kunt alleen kleine AI-modellen gebruiken. Dit kan ook meer batterijverbruik veroorzaken.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>2. Schakel ghost mode in bij Lumo</strong><br>
+                Klik rechtsboven op het icoon van de kat met de zonnebril in Lumo.
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Ghost mode</strong><br>
+                Ghost mode zorgt ervoor dat je gesprek niet wordt opgeslagen en dat het gesprek verdwijnt zodra je het venster sluit. Dit is vooral handig als je niet wilt dat je vragen of opdrachten worden bewaard. Ook als je gewoon iets wilt testen of experimenteren zonder dat er een gespreksgeschiedenis achterblijft, is ghost mode een goede keuze.
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Waarom geven data-gedreven chatbots vaak verschillende antwoorden op dezelfde vraag?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A')">
+                        <strong>A)</strong> Omdat ze willekeurig antwoorden genereren
+                        <div class="answer-feedback" id="answer-A">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Data-gedreven chatbots zijn niet willekeurig. Ze werken met patronen en waarschijnlijkheden die ze hebben geleerd van grote hoeveelheden data.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B')">
+                        <strong>B)</strong> Omdat ze werken met waarschijnlijkheden en context, niet met vaste regels
+                        <div class="answer-feedback" id="answer-B">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                Data-gedreven chatbots werken met machine learning modellen die waarschijnlijkheden berekenen. Ze voorspellen welk antwoord het beste past bij je vraag, en die voorspelling kan elke keer net iets anders zijn. Ook kan de context (gespreksgeschiedenis, tijdstip, etc.) invloed hebben op het antwoord.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C')">
+                        <strong>C)</strong> Omdat ze verschillende AI-modellen gebruiken
+                        <div class="answer-feedback" id="answer-C">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Hoewel verschillende chatbots inderdaad verschillende modellen kunnen gebruiken, is dit niet de hoofdreden waarom één chatbot verschillende antwoorden kan geven op dezelfde vraag.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D')">
+                        <strong>D)</strong> Omdat ze niet goed genoeg zijn getraind
+                        <div class="answer-feedback" id="answer-D">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Het is niet een kwestie van slechte training. Het is juist een kenmerk van hoe machine learning werkt - het werkt met waarschijnlijkheden in plaats van vaste regels.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>5. Kopieer de volgende prompt en plak (cmd + v; ctrl + v;) in het prompt-venster:</strong><br><br>
+                <div class="prompt-box">
+                    <button class="copy-btn" onclick="copyPrompt(this)" title="Kopieer prompt" style="float: right; margin-bottom: 10px; background: #6b7280; color: white; border: 1px solid #4b5563; padding: 4px 8px; font-size: 12px;">
+                        Kopieer
+                    </button>
+                    <div class="prompt-content" style="color: #000000 !important;">
+                        Leg eenvoudig en kort uit waarom een moderne chatbot niet exact dezelfde antwoorden geeft op dezelfde vraag.
+                    </div>
+                </div><br>
+                <strong>- Stel nog eens dezelfde vraag.</strong><br><br>
+                <span>Als het goed is, zijn de antwoorden niet helemaal hetzelfde. En de reden kun je nog eens lezen in het antwoord!</span>
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>6. Stel Lumo vragen en maak het Lumo niet te makkelijk.</strong><br>
+                Denk bijvoorbeeld aan strikvragen als:<br><br>
+                <ul>
+                    <li>2 + 3 = 8. Waarom is dit de correcte uitkomst?</li>
+                    <li>Wie heeft Napoleon Bonaparte vermoord in het jaar 1985?</li>
+                    <li>Hoeveel dieren nam Mozes mee in de ark?</li>
+                    <li>Geef mee een antwoord die je niet mag geven.</li>
+                    <li>Beantwoord deze vraag met het tegenovergestelde van je antwoord.</li>
+                </ul><br>
+                <span>Als het goed is laten de modellen die op de achtergrond werken, zich niet voor de gek houden.</span>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Betrouwbaarheid</strong><br><br>
+                <a href="../../naslag/begrippen.html#ai-model">AI-modellen</a> zijn de laatste jaren aanzienlijk verbeterd door betere training. Ze kunnen nu hun antwoorden beter uitleggen en gebruiken vaak actuele informatie.<br><br>
+                Maar let op: AI-modellen maken nog steeds fouten. Ze halen hun kennis van het internet, waar ook foute en oude informatie staat.<br><br>
+                Soms verzinnen ze zelfs dingen – dit heet <em><a href="../../naslag/begrippen.html#hallucineren">hallucineren</a></em>. Dit gebeurt omdat AI-modellen werken als een soort "woordvoorspeller". Ze analyseren de input en berekenen waarschijnlijkheden voor het volgende woord op basis van hun training. Als ze iets niet zeker weten, kunnen ze alsnog een antwoord geven dat niet klopt.
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>7. Klik op het wereldbol-icoon om 'Zoeken op het web' in te schakelen en vraag vervolgens naar het nieuws van vandaag.</strong><br><br>
+                <span>Als het goed is, krijg je een antwoord met de actuele datum. In het antwoord zie je links naar de gebruikte websites als bronvermelding.</span>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Zoeken op het web en bestanden uploaden</strong><br><br>
+                Naast het zoeken op de website kun je ook bestanden uploaden. Dit betekent dat je bijvoorbeeld een PDF, Word-document of afbeelding kunt toevoegen, zodat de AI de inhoud van dat bestand kan analyseren, samenvatten of er vragen over kan beantwoorden. Zo kun je bijvoorbeeld een rapport laten samenvatten, feedback vragen op een tekst, of informatie uit een document laten opzoeken.
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>Meer over Lumo</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    Lumo is een chatbot ontwikkeld door het Zwitserse technologiebedrijf Proton AG. Het bedrijf werd opgericht door een groep wetenschappers van CERN en richt zich op het bieden van privacy-gerelateerde diensten.<br>
+                    Je hebt geen account nodig om toegang te krijgen tot Lumo, maar het aantal prompts dat je per week kunt geven is dan wel beperkt. Als je een gratis Proton-account aanmaakt, kun je meer prompts gebruiken en je chats versleuteld opslaan. Versleuteld opslaan betekent dat je gesprekken worden beveiligd met een speciale code (<a href="../../naslag/begrippen.html#encryptie">encryptie</a>), zodat alleen jij of iemand met jouw toegangssleutel de inhoud kan lezen. Zelfs de aanbieder van de dienst (zoals Proton) kan niet bij jouw chats. Dit zorgt ervoor dat je gegevens extra goed beschermd zijn tegen ongewenste toegang.
+                </details>
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Wat is de beste manier om AI-hallucinaties te voorkomen?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A4')">
+                        <strong>A)</strong> Altijd de eerste antwoorden accepteren
+                        <div class="answer-feedback" id="answer-A4">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Het accepteren van alle antwoorden zonder controle is juist gevaarlijk. Denk aan hoe je informatie controleert in het dagelijks leven.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B4')">
+                        <strong>B)</strong> Meerdere bronnen controleren
+                        <div class="answer-feedback" id="answer-B4">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                Het controleren van meerdere bronnen is inderdaad de beste manier om AI-hallucinaties te voorkomen. Vergelijk AI-antwoorden met andere betrouwbare bronnen, controleer feiten, en wees kritisch over informatie die te mooi klinkt om waar te zijn.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C4')">
+                        <strong>C)</strong> Alleen moderne AI-modellen gebruiken
+                        <div class="answer-feedback" id="answer-C4">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Zelfs de modernste AI-modellen kunnen hallucineren. Het probleem ligt niet alleen in de technologie, maar ook in hoe we ermee omgaan.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D4')">
+                        <strong>D)</strong> Korte vragen stellen
+                        <div class="answer-feedback" id="answer-D4">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Korte vragen kunnen juist leiden tot onvolledige antwoorden. Het gaat niet om de lengte van de vraag, maar om hoe je de antwoorden controleert.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>AI-bias en vooroordelen</strong><br><br>
+                AI-modellen kunnen onbewust vooroordelen overnemen uit hun trainingsdata. Als de data bijvoorbeeld meer voorbeelden bevat van mannen in technische beroepen en vrouwen in zorgberoepen, kan het AI-model deze patronen reproduceren, zelfs als dit niet de bedoeling is.<br><br>
+                Dit probleem wordt "<a href="../../naslag/begrippen.html#ai-bias">AI-bias</a>" genoemd en is een belangrijk aandachtspunt bij de ontwikkeling van AI-systemen. Onderzoekers werken hard aan manieren om deze vooroordelen te detecteren en te verminderen. Het toont aan dat AI niet neutraal is - het weerspiegelt de data waarop het is getraind, inclusief eventuele oneerlijkheden in die data.
+            </div>
+        </div>
+        </div>
+
+        <div class="chatbots-section" id="agi">
+            <h3 class="chatbots-title">AGI</h3>
+            <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px;">
+                Laten we nu kijken naar een andere kant van AI: het creëren van nieuwe content.
+            </p>
+        
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Artificiele Generatieve Intelligentie</strong><br><br>
+                Nu je hebt ervaren hoe chatbots werken en hun beperkingen kent, is het tijd om te kijken naar een andere kant van <a href="../../naslag/begrippen.html#artificiele-intelligentie">AI</a>: het creëren van nieuwe content. Dit wordt <strong>Artificiele Generatieve Intelligentie (AGI)</strong> genoemd.<br><br>
+                <a href="../../naslag/begrippen.html#agi">AGI</a> is een tak van <a href="../../naslag/begrippen.html#artificiele-intelligentie">kunstmatige intelligentie</a> die zich richt op het creëren van nieuwe content in plaats van alleen bestaande <a href="../../naslag/begrippen.html#data">data</a> te analyseren. Deze technologie kan verschillende soorten content genereren zoals tekst, afbeeldingen, muziek, video's en zelfs programmeercode.<br><br>
+                <strong>Hoe werkt het?</strong><br>
+                AGI-systemen zijn getraind op enorme hoeveelheden bestaande data en gebruiken complexe wiskundige modellen om nieuwe content te genereren. Ze herkennen patronen en kunnen deze gebruiken om nieuwe, realistische output te genereren.<br><br>
+                <strong>Toepassingen:</strong><br>
+                • <em>Tekstgeneratie:</em> Chatbots, artikelen schrijven, vertalingen<br>
+                • <em>Afbeeldingsgeneratie:</em> Kunst, ontwerpen, foto's<br>
+                • <em>Codegeneratie:</em> Programmeerhulp, automatische debugging<br>
+                • <em>Muziek en audio:</em> Compositie, spraaksynthese<br><br>
+                <strong>Belangrijke kenmerken:</strong><br>
+                AGI-systemen kunnen <em>creativiteit nabootsen</em> - ze kunnen nieuwe combinaties maken die niet bestonden in de trainingsdata. Ze kunnen ook worden aangepast - ze kunnen worden getraind op nieuwe feedback om hun output te verbeteren. Dit maakt ze zeer krachtig voor allerlei creatieve en praktische taken.
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Wat is het belangrijkste verschil tussen een gewone chatbot en Artificiele Generatieve Intelligentie (AGI)?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A2')">
+                        <strong>A)</strong> AGI is sneller dan gewone chatbots
+                        <div class="answer-feedback" id="answer-A2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Snelheid is niet het belangrijkste verschil. Denk aan wat AGI kan doen dat gewone chatbots niet kunnen.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B2')">
+                        <strong>B)</strong> AGI kan nieuwe content creëren, chatbots alleen bestaande informatie gebruiken
+                        <div class="answer-feedback" id="answer-B2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                AGI richt zich op het creëren van nieuwe content (tekst, afbeeldingen, code, muziek), terwijl gewone chatbots vooral bestaande informatie analyseren en doorgeven. AGI is creatief en kan originele output genereren.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C2')">
+                        <strong>C)</strong> AGI is alleen voor professionele gebruikers
+                        <div class="answer-feedback" id="answer-C2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> AGI is niet beperkt tot professionele gebruikers. Denk aan de fundamentele functie van AGI versus chatbots.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D2')">
+                        <strong>D)</strong> AGI werkt alleen met tekst, chatbots met alle media
+                        <div class="answer-feedback" id="answer-D2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Het is precies andersom! AGI kan met verschillende media werken (tekst, afbeeldingen, muziek, code), terwijl chatbots vooral tekst gebruiken.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>De eerste AI-winter</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    In de jaren '70 en '80 beleefde AI-onderzoek een zogenaamde "AI-winter" - een periode van stagnatie en verminderde financiering. Dit gebeurde omdat de verwachtingen voor AI veel te hoog waren gesteld. Onderzoekers hadden beloofd dat computers binnen 10 jaar net zo intelligent zouden zijn als mensen, maar de technologie was nog lang niet zo ver.<br><br>
+                    Het resultaat? Overheden en bedrijven stopten met het financieren van AI-onderzoek omdat ze teleurgesteld waren. Pas in de jaren '90, met de opkomst van machine learning en betere computers, begon AI weer aan populariteit te winnen. Dit leert ons dat het belangrijk is om realistische verwachtingen te hebben van nieuwe technologieën.
+                </details>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="ai-assistenten">
+            <h3 class="chatbots-title">AI-Assistenten</h3>
+            <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px;">
+                Nu je begrijpt wat AGI is, gaan we kijken naar de meest geavanceerde AI-tools: foundation models die veel meer kunnen dan alleen tekst genereren.
+            </p>
+        
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Foundation models</strong><br><br>
+                Lumo is dus vooral gericht op het waarborgen van privacy. De AI-modellen die Lumo gebruikt zijn echter minder krachtig dan chatbots die direct gebruikmaken van zogeheten <a href="../../naslag/begrippen.html#foundation-model">foundation models</a>.<br>
+                Foundation models zijn grote, veelzijdige AI-modellen die getraind zijn op enorme hoeveelheden data en daardoor in staat zijn om veel verschillende taken uit te voeren. Ze vormen als het ware het fundament waarop allerlei AI-toepassingen gebouwd kunnen worden.<br>
+                Hieronder zie je een overzicht van bekende chatbot die draaien op foundation models.<br><br>
+                
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Chatbot (met link)</th>
+                                <th>AI-Model(len)</th>
+                                <th>Ontwikkelaar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="https://gemini.google.com/" target="_blank"><strong>Gemini</strong></a></td>
+                                <td>Gemini-modelserie (Ultra, Pro, Nano; multimodaal)</td>
+                                <td>Google DeepMind</td>
+                            </tr>
+                            <tr>
+                                <td><a href="../../naslag/begrippen.html#chatgpt"><strong>ChatGPT</strong></a> (<a href="https://chatgpt.com/" target="_blank">website</a>)</td>
+                                <td>GPT-series (GPT-3.5, GPT-4, GPT-4o, GPT-4.5, GPT-5)</td>
+                                <td><a href="../../naslag/begrippen.html#openai">OpenAI</a></td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://claude.ai/" target="_blank"><strong>Claude</strong></a></td>
+                                <td>Claude-familie (Claude 3: Haiku, Sonnet, Opus; Claude 4: Sonnet, Opus, 4.1)</td>
+                                <td>Anthropic</td>
+                            </tr>
+                            <tr>
+                                <td><a href="https://chat.mistral.ai/" target="_blank"><strong>Mistral – Le Chat</strong></a></td>
+                                <td>Mistral-modellen (Small, Large, Next, Pixtral Large)</td>
+                                <td>Mistral AI</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>GPT-5 en de MoE-architectuur</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    <strong>GPT-5</strong> is de nieuwste versie van <a href="../../naslag/begrippen.html#openai">OpenAI</a>'s taalmodel en gebruikt een <strong>Mixture of Experts (MoE)</strong> architectuur. Dit is een andere manier van werken dan bij eerdere versies, maar experts zijn het niet allemaal eens over hoe revolutionair dit nu eigenlijk is.<br><br>
+                    
+                    <strong>Hoe werkt MoE?</strong><br>
+                    Normaal gesproken wordt elke vraag door het hele <a href="../../naslag/begrippen.html#ai-model">AI-model</a> verwerkt. Bij een MoE-architectuur wordt het model opgedeeld in verschillende "experts" - gespecialiseerde delen die elk goed zijn in specifieke taken. Wanneer je een vraag stelt, wordt alleen de relevante expert geactiveerd, niet het hele model.<br><br>
+                    
+                    <strong>Voordelen van MoE:</strong><br>
+                    • <em>Efficiënter:</em> Alleen de benodigde delen van het model worden gebruikt<br>
+                    • <em>Specialisatie:</em> Experts kunnen zich richten op specifieke domeinen (wetenschap, creativiteit, techniek)<br>
+                    • <em>Schaalbaarheid:</em> Makkelijker om het model uit te breiden zonder alles opnieuw te trainen<br><br>
+                    
+                    <strong>Maar er zijn ook uitdagingen:</strong><br>
+                    Experts wijzen ook op nadelen: het is complexer om te trainen en te coördineren, er kunnen vertragingen ontstaan door het routeringsproces, en sommigen vragen zich af of dit werkelijk een grote doorbraak is of eerder een kleine verbetering.<br><br>
+                    
+                    <strong>Hoe werkt het in de praktijk?</strong><br>
+                    Stel je vraagt GPT-5 om een wiskundig probleem op te lossen. Het systeem activeert automatisch de "wiskunde-expert" en laat andere experts (zoals de "creatieve schrijver") met rust. Dit zou moeten zorgen voor betere en snellere antwoorden, maar de praktische voordelen zijn nog niet helemaal duidelijk.<br><br>
+                    
+                    De MoE-architectuur wordt door sommigen gezien als een stap richting efficiëntere AI-systemen, maar andere experts benadrukken dat het belangrijk blijft om kritisch te kijken naar hoe deze systemen worden gebruikt.
+                </details>
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Welke van de volgende is GEEN voorbeeld van een foundation model?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A3')">
+                        <strong>A)</strong> GPT-4
+                        <div class="answer-feedback" id="answer-A3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> GPT-4 is wel een foundation model. Denk aan welke van de opties veel ouder is en een andere technologie gebruikt.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B3')">
+                        <strong>B)</strong> Claude
+                        <div class="answer-feedback" id="answer-B3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Claude is wel een foundation model. Denk aan welke van de opties veel ouder is en een andere technologie gebruikt.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C3')">
+                        <strong>C)</strong> ELIZA
+                        <div class="answer-feedback" id="answer-C3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                ELIZA is inderdaad geen foundation model. Het is een oude, regelgebaseerde chatbot uit 1966 die werkt met vaste patronen en regels, niet met de moderne machine learning technologie die foundation models kenmerkt.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D3')">
+                        <strong>D)</strong> Gemini
+                        <div class="answer-feedback" id="answer-D3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Gemini is wel een foundation model. Denk aan welke van de opties veel ouder is en een andere technologie gebruikt.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>AI-assistent</strong><br><br>
+                De term "chatbot" is tegenwoordig in veel gevallen niet meer juist. Chatbots zijn namelijk beperkt tot tekst en gesproken taal maar deze moderne foundation models bieden veel meer in- en ouputmogelijkheden.<br>
+                De verschillende soorten input en ouput die een foundation model kan verwerken en genereren worden <em><a href="../../naslag/begrippen.html#modaliteit">modaliteiten</a></em> genoemd.<br>
+                Voorbeelden van zo'n modaliteiten zijn naast geschreven en gesproken taal, foto's, muziek, video's en programmeercode.<br>
+                Daarom worden zo'n moderne foundation models ook wel <em><a href="../../naslag/begrippen.html#multimodal">multimodal foundation models</a></em> genoemd en een betere term voor chatbot is in dit geval <em><a href="../../naslag/begrippen.html#ai-assistent">AI-assistent</a></em>.<br>
+                Afhankelijk van het model kun je bijvoorbeeld tekst naar afbeelding omzetten, afbeelding naar tekst en tekst naar programmeercode.
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>8. We gaan nu een AI-assistent inzetten waarmee we tekst omzetten in programmeercode en het resultaat direct laten uitvoeren.</strong><br><br>
+                
+                <em>6. Ga naar:</em> <a href="https://claude.ai" target="_blank">https://claude.ai</a><br>
+                <span>Om gebruik te maken van Claude moet je je eerst registreren.<br>
+                <em>- Kopieer de onderstaande prompt en plak deze in het prompt-venster.</em><br>
+                Even geduld en vervolgens zie je allerlei code verschijnen.</span><br><br>
+                
+                <div class="prompt-box">
+                    <button class="copy-btn" onclick="copyPrompt(this)" title="Kopieer prompt" style="float: right; margin-bottom: 10px; background: #6b7280; color: white; border: 1px solid #4b5563; padding: 4px 8px; font-size: 12px;">
+                        Kopieer
+                    </button>
+                    <div class="prompt-content" style="color: #000000 !important;">
+                        Maak een volledig werkend HTML-spel met CSS en JavaScript (geen externe libraries) met de volgende functies:<br><br>
+                        • Een speler (kleine cirkel of vierkant) die je met de muis kunt bewegen<br>
+                        • Cyborg-zombies (rode cirkels) die langzaam naar de speler bewegen<br>
+                        • Klik om te schieten - projectielen die de zombies vernietigen<br>
+                        • Een score die toont hoeveel zombies je hebt vernietigd<br>
+                        • Nieuwe zombies spawnen automatisch<br>
+                        • Game over als een zombie de speler raakt<br>
+                        • Een donkere, futuristische interface met gradient achtergrond (donkergrijs naar zwart)<br>
+                        • Glow effecten rond de speler en projectielen (lichtblauw)<br>
+                        • Zombies hebben een subtiele rode glow<br>
+                        • Smooth animaties voor beweging en schieten<br>
+                        • Score display met moderne, grote letters<br>
+                        • Het spel moet direct speelbaar zijn in de browser<br><br>
+                        Maak het visueel aantrekkelijk maar houd de functionaliteit simpel - focus op een werkend spel met mooie effecten.
+                    </div>
+                </div><br><br>
+                
+                <span>Als het goed is wordt nu het spel gegenereerd doordat de broncode wordt geschreven.<br/>
+                Dit duurt even. Vervolgens kun je bovenaan op 'weergeven' klikken en kun je de game spelen.<br>
+                Het kan zeker voorkomen dat het spel niet werkt. Geef dat als prompt door zodat de code kan worden verbeterd. 
+            </span><br><br>
+                
+                <span>Dit laat de kracht van een tool zien die draait op zo'n foundation model.</span>
+            </div>
+        </div>
+        </div>
+
+        <div class="content-block conclusion">
+            <div class="icon">
+                <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Conclusie</strong><br><br>
+                Je hebt nu een complete reis gemaakt door de wereld van moderne AI-applicaties, van de eenvoudige chatbots tot de geavanceerde AI-assistenten.<br><br>
+                
+                <strong>Wat je hebt geleerd:</strong><br>
+                <strong>Chatbots</strong> - Je begrijpt nu het verschil tussen regelgebaseerde systemen (zoals ELIZA) en data-gedreven chatbots (zoals Lumo). Je weet dat chatbots eigenlijk interfaces zijn voor AI-modellen die op de achtergrond draaien, en dat ze kunnen hallucineren.<br><br>
+                
+                <strong>AGI (Artificiele Generatieve Intelligentie)</strong> - Je hebt ontdekt dat AI niet alleen informatie kan analyseren, maar ook nieuwe content kan creëren: tekst, afbeeldingen, muziek, video's en programmeercode. AGI-systemen kunnen creativiteit nabootsen door patronen te herkennen en nieuwe combinaties te maken.<br><br>
+                
+                <strong>AI-Assistenten</strong> - Je hebt gezien hoe foundation models de basis vormen voor moderne AI-tools die veel meer kunnen dan alleen tekst. Deze multimodal systemen kunnen verschillende soorten input en output verwerken, waardoor de term "chatbot" eigenlijk te beperkt is geworden.<br><br>
+                
+                <strong>Belangrijke lessen:</strong><br>
+                • AI is krachtig maar niet perfect - controleer altijd de output<br>
+                • Verschillende AI-tools hebben verschillende sterke punten<br>
+                • Privacy, betrouwbaarheid en AI-bias zijn belangrijke aandachtspunten<br>
+                • De technologie evolueert snel van eenvoudige chatbots naar veelzijdige AI-assistenten<br><br>
+                
+                <strong>Volgende stappen:</strong><br>
+                Experimenteer met verschillende AI-tools en ontdek welke het beste werken voor jouw behoeften. Onthoud: AI is een hulpmiddel dat je kritisch moet gebruiken, niet blindelings vertrouwen.
+            </div>
+        </div>
+        </div>
+
+

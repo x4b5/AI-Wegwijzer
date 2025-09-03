@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basisbegrippen van AI - De ontwikkeling van AI en de drijvende krachten</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js"></script>
+</head>
+<body>
+    <!-- Eenvoudige sidebar -->
+    <div class="simple-sidebar" id="simpleSidebar">
+        <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
+            <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40">
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3>Legenda van tekstblokken</h3>
+                <button class="close-sidebar-btn" onclick="toggleSimpleSidebar()">×</button>
+            </div>
+            <div class="sidebar-body">
+                <div class="legend-item">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Informatie</span>
+                        <small>Uitleg en achtergrondinformatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/boekenwurm.png" alt="Verder lezen" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Verder lezen</span>
+                        <small>Interessante feiten en verdiepende informatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/quizvraag.png" alt="Quiz" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Quiz</span>
+                        <small>Test je kennis met interactieve vragen</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/opdracht.png" alt="Opdracht" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Opdracht</span>
+                        <small>Praktische opdrachten om te oefenen</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tweede sidebar - naar begin van pagina -->
+    <div class="top-sidebar" id="topSidebar">
+        <div class="top-toggle-btn" onclick="goToTop()">
+            <img src="../../img/icons/naar-boven.png" alt="Naar boven" width="40" height="40">
+        </div>
+    </div>
+
+    <!-- Derde sidebar - naar index.html -->
+    <div class="home-sidebar" id="homeSidebar">
+        <div class="home-toggle-btn" onclick="goToHome()">
+            <img src="../../img/icons/home.png" alt="Naar home" width="40" height="40">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header-section">
+            <h2 class="chatbots-title main-title">Basisbegrippen van AI: De ontwikkeling van AI en de drijvende krachten</h2>
+            
+            <div class="metadata">
+                <div class="metadata-content">
+                    <div class="metadata-item"><strong>Datum:</strong> augustus 2025</div>
+                    <div class="metadata-item"><strong>Laatste wijziging:</strong> 27 augustus 2025</div>
+                    <div class="metadata-item"><strong>Leerdoel:</strong> Leren van de basisbegrippen van AI</div>
+                    <div class="metadata-item"><strong>Voorkennis:</strong> <a href="B-01-ai-beschrijven.html">B-01 AI beschrijven</a></div>
+                    <div class="metadata-item"><strong>Leestijd:</strong> ongeveer 25 minuten</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="inleiding">
+            <h3 class="chatbots-title">Inleiding</h3>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    ChatGPT is voor veel mensen inmiddels een bekend begrip maar <a href="https://www.researchgate.net/publication/375589046_Human_Perception_of_the_Sentience_of_ChatGPT_and_Artificial_Intelligence" target="_blank">veel mensen blijken ChatGPT en AI bijna gelijk te stellen</a>.<br><br>
+                    <a href="https://milan.milanovic.org/" target="_blank">Dr. Milan Milanovic</a> benoemt <a href="https://newsletter.techworld-with-milan.com/p/chatgpt-is-not-ai" target="_blank">"dat "ChatGPT, 'AI' noemen hetzelfde is als een magnetron, 'koken' noemen."</a><br><br>
+                    
+                    Deze afbeelding maakt duidelijk dat er veel verschillende kernbegrippen en stappen zijn tussen het algemene begrip AI en een tool als ChatGPT.
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <img src="../../img/ai-terminology.jpg" alt="Van AI naar ChatGPT" style="max-width: 100%; height: auto;">
+                    <br>
+                    <em>Bron: <a href="https://medium.com/@wjleon/ai-for-everyone-demystifying-artificial-intelligence-d793d99583e9" target="_blank">AI for Everyone</a></em>
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    De kernbegrippen gaan we in dit artikel verder toelichten. Dit doen we door ze in de tijdlijn van de AI-ontwikkeling te plaatsen.<br>
+                    Door de begrippen in deze ontwikkeling te plaatsen, zie je beter wat ze betekenen, hoe ze zich tot elkaar verhouden en waarom sommige ideeën steeds opnieuw terugkomen. Dit helpt je begrijpen waarom AI-definities voortdurend verschuiven - wat vandaag als AI geldt, was dat gisteren misschien nog niet.<br><br>
+                    
+                    Het maakt ook duidelijk dat AI niet alleen van deze tijd is maar al een geschiedenis heeft van 70 jaar!<br><br>
+                    
+                    De beschrijving van de geschiedenis van AI door <a href="https://en.wikipedia.org/wiki/History_of_artificial_intelligence" target="_blank">Wikipedia</a> en <a href="https://www.britannica.com/science/history-of-artificial-intelligence/Connectionism" target="_blank">Brittanica</a> zijn als bron gebruikt om deze tijdlijn te beschrijven. Maar, let op: dit is geen beschrijving van de geschiedenis; de focus ligt op belangrijke de drijvende krachten die de ontwikkeling van AI mogelijk hebben gemaakt tot wat het vandaag de dag is. Deze drijvende krachten maken duidelijk wat de basisbegrippen zijn.
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="ontwikkeling">
+            <h3 class="chatbots-title">De ontwikkeling van AI en de drijvende krachten</h3>
+            
+            <h4>1950–1970</h4>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Het idee AI</strong><br>
+                    De oorsprong van het idee achter AI wordt vaak toegeschreven aan <a href="../../naslag/begrippen.html#alan-turing">Alan Turing</a>. In de jaren 1950 stelde Turing de vraag: "Kunnen machines denken?" en introduceerde hij de beroemde Turingtest als manier om te bepalen of een machine intelligent gedrag kan vertonen dat niet te onderscheiden is van dat van een mens. Hiermee legde hij de basis voor het denken over kunstmatige intelligentie.
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>📌 Alan Turing</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        <img src="../../img/Alan_Turing_(1951)_(crop).jpg" alt="Alan Turing" style="max-width: 100%; height: auto;">
+                        <br>
+                        <em>Alan Turing, WikiMedia</em><br><br>
+                        • Turing was een briljant wiskundige en grondlegger van de informatica (Turingmachine).<br>
+                        • Hij speelde een sleutelrol bij het kraken van de Enigma-code in WOII.<br>
+                        • Werd in 1952 veroordeeld vanwege zijn homoseksualiteit; kreeg pas in 2013 postuum gratie.<br>
+                        • De "Turing Award" is de belangrijkste prijs in de informatica.
+                    </details>
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Regelgebaseerd</strong><br>
+                    Deze periode was de geboorte van de regelgebaseerde AI-methode. Logica en redeneringen worden weergegeven met symbolen en formele regels. Computers konden hierdoor 'redeneren' met regels die door mensen waren ingevoerd. Heel simpel gezegd: als je genoeg regels opschrijft, kan een machine intelligent gedrag vertonen.
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Het idee van neurale netwerken</strong><br>
+                    In die tijd was er de wens om het menselijk brein na te bootsen. Ons brein bestaat uit miljarden neuronen (zenuwcellen) die signalen doorgeven via verbindingen (synapsen). Elk neuron "vuurt" alleen wanneer het voldoende input krijgt van andere neuronen. Dit simpele principe inspireerde onderzoekers: als je dit in een computer kon nabouwen, zou de machine misschien ook kunnen leren. Later werd dit idee <a href="../../naslag/begrippen.html#neuraal-netwerk">neuraal netwerk</a> genoemd.<br><br>
+                    
+                    Een neuraal netwerk in de AI-context is daarom een systeem van "kunstmatige neuronen" die onderling verbonden zijn. Elke verbinding heeft een gewicht: een getal dat aangeeft hoe sterk een input meetelt. Door de gewichten aan te passen op basis van voorbeelden, kan een netwerk patronen herkennen – zoals letters, geluiden of afbeeldingen.
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <img src="../../img/llustrative-image-of-artificial-neural-networks-with-their-working-mechanism-as-like.png" alt="Biologische neuron en artificieel neuraal netwerk" style="max-width: 100%; height: auto;">
+                    <br>
+                    <em>Bron <a href="https://www.researchgate.net/figure/llustrative-image-of-artificial-neural-networks-with-their-working-mechanism-as-like_fig13_380136894" target="_blank">ResearchGate</a></em>
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>De (single-layer) perceptron (1958)</strong><br>
+                    In 1958 ontwierp <a href="../../naslag/begrippen.html#frank-rosenblatt">Frank Rosenblatt</a> de (single-layer) <a href="../../naslag/begrippen.html#perceptron">perceptron</a>, een van de eerste praktisch toepasbare <a href="../../naslag/begrippen.html#neuraal-netwerk">neurale netwerk</a>-modellen. Het bestond uit één laag artificiële neuronen en kon simpele patronen herkennen. Rosenblatt was optimistisch en voorspelde dat zulke netwerken in de toekomst zouden kunnen leren, beslissingen nemen en zelfs talen vertalen.
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary><strong>📌 De perceptron en de eerste AI-winter</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                        Rosenblatt's perceptron leek veelbelovend, maar in 1969 publiceerden Marvin Minsky en Seymour Papert een vernietigend rapport. Ze bewezen dat perceptrons fundamentele beperkingen hadden: ze konden alleen lineair scheidbare patronen leren. Het simpele XOR-probleem (exclusieve OF) kon een perceptron niet oplossen. Dit rapport, plus de hoge kosten van computers in die tijd, leidde tot de eerste AI-winter: een periode van 10+ jaar waarin weinig geld naar AI-onderzoek ging. Het duurde tot de jaren '80 voordat neurale netwerken weer serieus werden genomen.
+                    </details>
+                </div>
+            </div>
+
+            <h4>1970–1980</h4>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>AI-winter</strong><br>
+                    Verwachtingen werden niet waargemaakt. Er brak een periode aan waarin investeringen en enthousiasme voor AI sterk afnam. Zo'n periode wordt ook wel <a href="../../naslag/begrippen.html#ai-winter">AI-winter</a> genoemd. Er waren grofweg twee 'winters': rond 1973 (na het Lighthill‑rapport) en later circa 1987–1993 (na de hype rond expertsystemen).
+                </div>
+            </div>
+
+            <h4>1980–2010</h4>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Expert Systems</strong><br>
+                    Laat jaren '70 en vooral in de jaren '80 kwamen <a href="../../naslag/begrippen.html#expertsysteem">expertsystemen</a> op: programma's die kennisbanken met logische regels gebruikten om beslissingen te nemen. Ze werden ingezet in bijvoorbeeld de medische wereld om diagnoses te ondersteunen. De beperkingen werden later duidelijk: systemen waren moeilijk te onderhouden en leerden niet zelf bij.
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>De opkomst van Machine Learning</strong><br>
+                    De symbolische AI liep vast op problemen zoals waarneming, leren en gezond verstand. Dit maakte duidelijk dat andere benaderingen nodig waren. Het connectionistische paradigma kwam tot bloei door een aantal doorbraken die leidden tot de heropleving van neurale netwerken en de opkomst van <a href="../../naslag/begrippen.html#machine-learning">machine learning</a>. In dit paradigma worden <a href="../../naslag/begrippen.html#algoritme">algoritmen</a> gebruikt om modellen te trainen op data.
+                </div>
+            </div>
+
+            <h4>2010–2017</h4>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Doorbraak van Deep Learning</strong><br>
+                    De grote doorbraak kwam met <a href="../../naslag/begrippen.html#deep-learning">deep learning</a>. Dankzij krachtige GPU's en enorme hoeveelheden data konden veel diepere <a href="../../naslag/begrippen.html#neuraal-netwerk">neurale netwerken</a> worden getraind. Dit maakte plotseling toepassingen zoals spraakherkenning, beeldherkenning en vertaling bruikbaar in de praktijk.<br><br>
+                    
+                    In het volgende deel wordt toegelicht wat ervoor heeft gezorgd dat AI opeens in een stroomversnelling is gekomen.
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="tegenwoordige-tijd">
+            <h3 class="chatbots-title">AI in de tegenwoordige tijd</h3>
+            
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Transformers</strong><br>
+                    In 2017 werd een belangrijke stap gezet in de ontwikkeling van AI met de introductie van de <a href="../../naslag/begrippen.html#transformer">Transformer</a>-architectuur. Deze technologie maakte het mogelijk om AI-modellen te bouwen die veel groter en krachtiger zijn dan ooit tevoren. Deze modellen, met miljarden <a href="../../naslag/begrippen.html#parameters">parameters</a>, kunnen enorme hoeveelheden tekst en afbeeldingen verwerken.
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Generatieve AI</strong><br>
+                    Generatieve AI kwam vanaf 2017 in een stroomversnelling dankzij de transformer-architectuur. Hierdoor konden AI-systemen niet alleen data analyseren, maar ook zelf nieuwe teksten, beelden of andere content maken. Generatieve AI markeert een nieuw tijdperk waarin AI niet alleen herkent, maar ook creëert.
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>GPT's (Generative Pre-trained Transformers)</strong><br>
+                    GPT-modellen zijn een bekend voorbeeld van generatieve AI. Ze werden geïntroduceerd door OpenAI in 2018 en zijn gebaseerd op de transformer-architectuur. In plaats van voor één taak te worden getraind, leren GPT's eerst van enorme hoeveelheden tekst (pre-training) en kunnen daarna worden aangepast voor specifieke toepassingen (fine-tuning).<br><br>
+                    
+                    Met elke nieuwe versie (zoals GPT-2, GPT-3, GPT-4) werden de modellen groter en krachtiger, waardoor ze steeds beter in staat zijn om natuurlijke taal te begrijpen en te genereren. GPT's vormen de basis van veel moderne AI-toepassingen, zoals chatbots en tekstgenerators.
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Foundation models</strong><br>
+                    Dit leidde tot de ontwikkeling van Foundation Models en <a href="../../naslag/begrippen.html#llm">Large Language Models (LLM's)</a> zoals GPT-4, Claude en Gemini, en tot <a href="../../naslag/begrippen.html#generatieve-ai">generatieve AI</a> die in staat is om tekst, afbeeldingen, audio en zelfs code te creëren.<br><br>
+                    
+                    Een belangrijk verschil met eerdere AI-modellen is dat deze nieuwe modellen niet alleen kunnen herkennen of classificeren, maar ook nieuwe dingen kunnen creëren. Dit maakt generatieve AI een van de meest veelbelovende gebieden binnen de moderne technologie.
+                </div>
+            </div>
+
+            <div class="content-block info">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>MLLM's (Multimodal Large Language Models)</strong><br>
+                    Naast foundation models en LLMs is er nog een belangrijke term die je tegenkomt: <strong>MLLM</strong> of <strong>Multimodal Large Language Model</strong>. Dit is eigenlijk de nieuwste generatie van AI-modellen.<br><br>
+                    
+                    <strong>Wat is een MLLM?</strong><br>
+                    Een MLLM is een model dat kan werken met meerdere "modaliteiten" (soorten data) tegelijk. Het kan bijvoorbeeld:<br>
+                    • Tekst lezen en begrijpen<br>
+                    • Afbeeldingen analyseren en beschrijven<br>
+                    • Audio verwerken en transcriberen<br>
+                    • Video's begrijpen en samenvatten<br>
+                    • Al deze informatie combineren om complexe vragen te beantwoorden
+                </div>
+            </div>
+
+            <div class="content-block quiz">
+                <div class="icon">
+                    <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Quizvraag</strong><br><br>
+                    <strong>Wat is een technisch kenmerk dat Large Language Models (LLM's) zoals GPT-5 onderscheidt van eerdere AI-systemen zoals expertsystemen of traditionele neurale netwerken?</strong><br><br>
+                    
+                    <em>Klik op een antwoord om te zien of het correct is!</em>
+                    <div class="quiz-options">
+                        <div class="quiz-option" onclick="toggleAnswer('A2')">
+                            <strong>A)</strong> LLM's gebruiken uitsluitend handmatig opgestelde logische regels om beslissingen te nemen.
+                            <div class="answer-feedback" id="answer-A2">
+                                <div class="feedback-content">
+                                    <span class="feedback-icon">❌</span>
+                                    <strong>Nog niet goed!</strong><br>
+                                    <em>Hint:</em> LLM's zijn juist NIET gebaseerd op handmatig opgestelde regels. Denk aan hoe ze leren van data.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-option" onclick="toggleAnswer('B2')">
+                            <strong>B)</strong> LLM's zijn getraind op grote hoeveelheden ongestructureerde data en gebruiken miljarden parameters in een transformer-architectuur om context en betekenis in tekst te modelleren.
+                            <div class="answer-feedback" id="answer-B2">
+                                <div class="feedback-content">
+                                    <span class="feedback-icon">✅</span>
+                                    <strong>Correct!</strong><br>
+                                    LLM's zoals GPT-5 zijn inderdaad getraind op enorme hoeveelheden tekstdata en gebruiken miljarden parameters in een transformer-architectuur. Dit stelt hen in staat om complexe patronen in taal te herkennen en context te begrijpen, wat hen onderscheidt van eerdere regelgebaseerde systemen.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-option" onclick="toggleAnswer('C2')">
+                            <strong>C)</strong> LLM's kunnen alleen lineair scheidbare patronen herkennen, net als het oorspronkelijke perceptron.
+                            <div class="answer-feedback" id="answer-C2">
+                                <div class="feedback-content">
+                                    <span class="feedback-icon">❌</span>
+                                    <strong>Nog niet goed!</strong><br>
+                                    <em>Hint:</em> De beperking van lineair scheidbare patronen was juist een probleem van het oorspronkelijke perceptron. Moderne LLM's kunnen veel complexere patronen herkennen.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-option" onclick="toggleAnswer('D2')">
+                            <strong>D)</strong> LLM's zijn beperkt tot het verwerken van slechts één type data, zoals alleen tekst of alleen afbeeldingen.
+                            <div class="answer-feedback" id="answer-D2">
+                                <div class="feedback-content">
+                                    <span class="feedback-icon">❌</span>
+                                    <strong>Nog niet goed!</strong><br>
+                                    <em>Hint:</em> Moderne LLM's, vooral MLLM's, kunnen juist meerdere soorten data verwerken (tekst, afbeeldingen, audio, etc.).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="conclusie">
+            <h3 class="chatbots-title">Conclusie</h3>
+            
+            <div class="content-block conclusion">
+                <div class="icon">
+                    <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80">
+                </div>
+                <div class="content-text">
+                    <strong>Conclusie</strong><br><br>
+                    Je hebt nu een overzicht van de ontwikkeling van AI en de belangrijkste basisbegrippen. We hebben gezien hoe AI zich heeft ontwikkeld van een theoretisch concept naar de krachtige technologie van vandaag:<br><br>
+                    
+                    <strong>Historische ontwikkeling:</strong><br>
+                    • <em>1950-1970:</em> Het idee van AI, regelgebaseerde systemen, en de eerste neurale netwerken<br>
+                    • <em>1970-1980:</em> AI-winter door onrealistische verwachtingen<br>
+                    • <em>1980-2010:</em> Expertsystemen en de opkomst van machine learning<br>
+                    • <em>2010-2017:</em> Doorbraak van deep learning<br>
+                    • <em>2017-heden:</em> Transformers, generatieve AI, en foundation models<br><br>
+                    
+                    <strong>Belangrijke begrippen:</strong><br>
+                    • <em>Neurale netwerken:</em> Geïnspireerd door het menselijk brein<br>
+                    • <em>Machine learning:</em> Leren van data in plaats van vaste regels<br>
+                    • <em>Deep learning:</em> Diepe neurale netwerken met meerdere lagen<br>
+                    • <em>Transformers:</em> Architectuur die moderne AI mogelijk maakt<br>
+                    • <em>LLM's:</em> Grote taalmodellen met miljarden parameters<br>
+                    • <em>MLLM's:</em> Multimodale modellen die verschillende soorten data kunnen verwerken<br><br>
+                    
+                    <strong>Wat je nu begrijpt:</strong><br>
+                    AI is niet plotseling ontstaan, maar heeft een geschiedenis van 70 jaar. De huidige AI-boom is het resultaat van decennia van onderzoek, betere hardware, en enorme hoeveelheden data. Door deze ontwikkeling te begrijpen, kun je beter inschatten wat AI wel en niet kan, en waarom bepaalde technologieën nu zo populair zijn.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Agents - Intelligente Assistenten</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="../../js/script.js"></script>
+</head>
+<body>
+        <!-- Eenvoudige sidebar -->
+    <div class="simple-sidebar" id="simpleSidebar">
+        <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
+            <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40">
+        </div>
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3>Legenda van tekstblokken</h3>
+                <button class="close-sidebar-btn" onclick="toggleSimpleSidebar()">×</button>
+            </div>
+            <div class="sidebar-body">
+                <div class="legend-item">
+                    <img src="../../img/icons/informatie.png" alt="Informatie" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Informatie</span>
+                        <small>Uitleg en achtergrondinformatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/boekenwurm.png" alt="Verder lezen" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Verder lezen</span>
+                        <small>Interessante feiten en verdiepende informatie</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/quizvraag.png" alt="Quiz" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Quiz</span>
+                        <small>Test je kennis met interactieve vragen</small>
+                    </div>
+                </div>
+                
+                <div class="legend-item">
+                    <img src="../../img/icons/opdracht.png" alt="Opdracht" width="66" height="66">
+                    <div class="legend-text">
+                        <span class="legend-title">Opdracht</span>
+                        <small>Praktische opdrachten om te oefenen</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tweede sidebar - naar begin van pagina -->
+    <div class="top-sidebar" id="topSidebar">
+        <div class="top-toggle-btn" onclick="goToTop()">
+            <img src="../../img/icons/naar-boven.png" alt="Naar boven" width="40" height="40">
+        </div>
+    </div>
+
+    <!-- Derde sidebar - naar index.html -->
+    <div class="home-sidebar" id="homeSidebar">
+        <div class="home-toggle-btn" onclick="goToHome()">
+            <img src="../../img/icons/home.png" alt="Naar home" width="40" height="40">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="header-section">
+            <h2 class="chatbots-title main-title">AI-Agents: Intelligente Assistenten</h2>
+            
+            <div class="metadata">
+                <div class="metadata-content">
+                    <div class="metadata-item"><strong> Laatste wijziging:</strong> 1 september 2025</div>
+                    <div class="metadata-item"><strong> Leerdoel:</strong> Begrijpen wat AI-agents zijn en hoe ze autonoom kunnen werken</div>
+                    <div class="metadata-item"><strong> Leestijd:</strong> 12-15 minuten</div>
+                    <div class="metadata-item"><strong> Inhoud:</strong> <a href="#wat-zijn-agents">Wat zijn AI-Agents?</a> | <a href="#hoe-werken-ze">Hoe werken ze?</a> | <a href="#toepassingen">Toepassingen</a></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chatbots-section" id="wat-zijn-agents">
+            <h3 class="chatbots-title">Wat zijn AI-Agents?</h3>
+        
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>AI-Agents: De volgende stap in AI</strong><br><br>
+                Een <a href="../../naslag/begrippen.html#ai-agent">AI-agent</a> is een intelligent systeem dat autonoom kan handelen in een omgeving om specifieke doelen te bereiken. In tegenstelling tot traditionele chatbots die alleen reageren op vragen, kunnen AI-agents zelfstandig plannen maken, acties uitvoeren, en hun gedrag aanpassen op basis van feedback.<br><br>
+                <strong>Wat maakt een AI-agent bijzonder?</strong><br>
+                AI-agents kunnen:<br>
+                • <strong>Autonoom handelen</strong> - Ze werken zonder constante menselijke tussenkomst<br>
+                • <strong>Doelen nastreven</strong> - Ze hebben specifieke taken en werken ernaar toe<br>
+                • <strong>Plannen maken</strong> - Ze kunnen complexe stappenplannen ontwikkelen<br>
+                • <strong>Leren en aanpassen</strong> - Ze verbeteren hun prestaties door ervaring<br>
+                • <strong>Interacteren met hun omgeving</strong> - Ze kunnen tools gebruiken, data ophalen, en acties uitvoeren<br><br>
+                Denk aan een AI-agent als een digitale assistent die niet alleen antwoorden geeft, maar ook daadwerkelijk dingen voor je kan doen - zoals een reis boeken, een rapport schrijven, of een project beheren.
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>De eerste AI-agent: Shakey de Robot</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    In 1966 ontwikkelde het Stanford Research Institute "Shakey" - de eerste mobiele robot die als een echte AI-agent kon worden beschouwd. Shakey kon zijn omgeving waarnemen, plannen maken, en acties uitvoeren om doelen te bereiken.<br><br>
+                    Shakey was ongeveer 1,5 meter hoog en reed op wielen. Hij kon eenvoudige taken uitvoeren zoals het verplaatsen van blokken, maar het duurde soms uren om een simpele taak te voltooien. Toch was hij revolutionair omdat hij de eerste robot was die echt kon "denken" en plannen.<br><br>
+                    De naam "Shakey" kwam van zijn onstabiele bewegingen - hij schudde en wiebelde terwijl hij reed. Ondanks zijn beperkingen legde Shakey de basis voor alle moderne AI-agents en robots.<br><br>
+                    <img src="../../img/Alan_Turing_(1951)_(crop).jpg" alt="Alan Turing" style="max-width: 100%; height: auto;">
+                    <br>
+                    <em>Alan Turing, een van de grondleggers van AI en computerwetenschap</em><br>
+                    <small style="color: #666;">Bron: Wikimedia Commons</small>
+                </details>
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>1. Bedenk je eigen AI-agent</strong><br>
+                Stel je voor dat je een AI-agent moet ontwerpen die je dagelijks leven kan verbeteren. Denk na over de volgende vragen:<br><br>
+                <ul>
+                    <li>Welke taak zou je willen automatiseren?</li>
+                    <li>Welke informatie heeft de agent nodig om te werken?</li>
+                    <li>Welke tools of systemen moet de agent kunnen gebruiken?</li>
+                    <li>Hoe zou de agent weten of hij zijn taak goed heeft uitgevoerd?</li>
+                    <li>Wat zou er mis kunnen gaan en hoe zou de agent daarmee omgaan?</li>
+                </ul><br>
+                <span>Schrijf je ideeën op en bedenk hoe complex zo'n agent zou zijn om te bouwen.</span>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Verschillende soorten AI-agents</strong><br><br>
+                AI-agents kunnen worden ingedeeld op basis van hun intelligentieniveau en mogelijkheden:<br><br>
+                <strong>1. Simpele reflex agents</strong><br>
+                Deze agents reageren direct op hun omgeving zonder geheugen of planning. Ze werken met "als-dan" regels. Voorbeeld: een thermostaat die de verwarming aanzet als het koud wordt.<br><br>
+                <strong>2. Model-based reflex agents</strong><br>
+                Deze agents hebben een intern model van hun omgeving en kunnen de gevolgen van hun acties voorspellen. Ze kunnen betere beslissingen nemen omdat ze begrijpen hoe de wereld werkt.<br><br>
+                <strong>3. Goal-based agents</strong><br>
+                Deze agents hebben specifieke doelen en kunnen plannen maken om die doelen te bereiken. Ze kunnen verschillende strategieën overwegen en de beste kiezen.<br><br>
+                <strong>4. Utility-based agents</strong><br>
+                Deze agents proberen niet alleen hun doelen te bereiken, maar ook de beste uitkomst te krijgen. Ze kunnen afwegingen maken tussen verschillende opties op basis van nut of waarde.<br><br>
+                <strong>5. Learning agents</strong><br>
+                Deze agents kunnen leren van hun ervaringen en hun gedrag verbeteren. Ze passen hun strategieën aan op basis van wat wel en niet werkt.
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Wat is het belangrijkste verschil tussen een traditionele chatbot en een AI-agent?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A')">
+                        <strong>A)</strong> AI-agents zijn sneller dan chatbots
+                        <div class="answer-feedback" id="answer-A">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Snelheid is niet het belangrijkste verschil. Denk aan wat AI-agents kunnen doen dat chatbots niet kunnen.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B')">
+                        <strong>B)</strong> AI-agents kunnen autonoom handelen en doelen nastreven
+                        <div class="answer-feedback" id="answer-B">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                Precies! AI-agents kunnen autonoom handelen, plannen maken, en specifieke doelen nastreven. Ze kunnen ook tools gebruiken en acties uitvoeren in hun omgeving. Chatbots reageren alleen op vragen, terwijl AI-agents zelfstandig kunnen werken om taken te voltooien.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C')">
+                        <strong>C)</strong> AI-agents gebruiken alleen tekst, chatbots kunnen ook afbeeldingen
+                        <div class="answer-feedback" id="answer-C">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Het is precies andersom! Moderne chatbots kunnen vaak met verschillende media werken. Het verschil ligt in de autonomie en het vermogen om doelen na te streven.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D')">
+                        <strong>D)</strong> AI-agents zijn alleen voor professionele gebruikers
+                        <div class="answer-feedback" id="answer-D">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> AI-agents zijn niet beperkt tot professionele gebruikers. Denk aan de fundamentele functionaliteit - wat kunnen AI-agents dat chatbots niet kunnen?
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+
+        <div class="chatbots-section" id="hoe-werken-ze">
+            <h3 class="chatbots-title">Hoe werken AI-Agents?</h3>
+            <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px;">
+                AI-agents zijn complexe systemen die verschillende componenten combineren om intelligent gedrag te vertonen.
+            </p>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>De architectuur van een AI-agent</strong><br><br>
+                Een AI-agent bestaat uit verschillende componenten die samenwerken:<br><br>
+                <strong>1. Sensors (Sensoren)</strong><br>
+                Deze verzamelen informatie uit de omgeving. Dit kunnen camera's, microfoons, API's, of andere data-bronnen zijn. Ze vormen de "ogen en oren" van de agent.<br><br>
+                <strong>2. Perceptie</strong><br>
+                De agent verwerkt de ruwe sensor-data en zet deze om in bruikbare informatie. Dit kan bijvoorbeeld betekenen dat een afbeelding wordt geanalyseerd om objecten te herkennen.<br><br>
+                <strong>3. Planning</strong><br>
+                De agent gebruikt zijn kennis en doelen om een plan te maken. Dit kan een eenvoudige reeks stappen zijn of een complexe strategie die wordt aangepast op basis van nieuwe informatie.<br><br>
+                <strong>4. Actie</strong><br>
+                De agent voert acties uit om zijn plan uit te voeren. Dit kunnen fysieke acties zijn (zoals een robot die beweegt) of digitale acties (zoals het versturen van een e-mail).<br><br>
+                <strong>5. Leren</strong><br>
+                De agent evalueert de resultaten van zijn acties en past zijn gedrag aan voor de toekomst. Dit maakt hem slimmer naarmate hij meer ervaring opdoet.
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>2. Analyseer een bestaande AI-agent</strong><br>
+                Kies een AI-agent die je kent (zoals Siri, Alexa, een chatbot, of een andere AI-tool) en analyseer hoe deze werkt:<br><br>
+                <ul>
+                    <li>Welke informatie verzamelt deze agent?</li>
+                    <li>Hoe verwerkt hij die informatie?</li>
+                    <li>Welke acties kan hij uitvoeren?</li>
+                    <li>Hoe leert hij van zijn ervaringen?</li>
+                    <li>Wat zijn zijn beperkingen?</li>
+                </ul><br>
+                <span>Probeer te begrijpen welke componenten van de AI-agent architectuur je kunt herkennen in deze tool.</span>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Planning en besluitvorming</strong><br><br>
+                Een van de meest complexe aspecten van AI-agents is hun vermogen om te plannen en beslissingen te nemen. Dit gebeurt op verschillende niveaus:<br><br>
+                <strong>Korte-termijn planning</strong><br>
+                De agent maakt directe plannen voor de komende acties. Dit kan bijvoorbeeld betekenen: "Eerst de e-mail lezen, dan de agenda controleren, dan een antwoord opstellen."<br><br>
+                <strong>Lange-termijn strategie</strong><br>
+                De agent ontwikkelt overkoepelende strategieën om zijn doelen te bereiken. Dit kan betekenen dat hij verschillende benaderingen overweegt en de beste kiest.<br><br>
+                <strong>Adaptieve planning</strong><br>
+                De agent kan zijn plannen aanpassen als de omstandigheden veranderen. Als een bepaalde aanpak niet werkt, probeert hij een andere strategie.<br><br>
+                <strong>Multi-agent planning</strong><br>
+                Wanneer meerdere AI-agents samenwerken, moeten ze hun plannen coördineren. Dit vereist communicatie en onderhandeling tussen agents.<br><br>
+                <strong>Onzekerheid hanteren</strong><br>
+                AI-agents moeten kunnen omgaan met onzekere informatie en onverwachte situaties. Ze gebruiken waarschijnlijkheidsrekening en risico-analyse om de beste beslissingen te nemen.
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>AlphaGo: De AI-agent die Go versloeg</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    In 2016 versloeg Google's AlphaGo de wereldkampioen Go, Lee Sedol, in een historische wedstrijd. Go is een complex bordspel dat wordt beschouwd als een van de moeilijkste spellen ter wereld - veel complexer dan schaken.<br><br>
+                    AlphaGo was een AI-agent die gebruik maakte van deep learning en reinforcement learning. Het leerde door miljoenen spellen tegen zichzelf te spelen en ontwikkelde strategieën die zelfs de beste menselijke spelers verbaasden.<br><br>
+                    Wat AlphaGo bijzonder maakte was niet alleen dat het won, maar ook hoe het speelde. Het maakte zetten die tegen de intuïtie van menselijke spelers ingingen, maar die later geniaal bleken te zijn. Dit toonde aan dat AI-agents nieuwe manieren van denken kunnen ontwikkelen.<br><br>
+                    <img src="../../img/AlphaGo_computer_rack.jpg" alt="AlphaGo computer" style="max-width: 100%; height: auto;">
+                    <br>
+                    <em>De computerinfrastructuur die werd gebruikt voor AlphaGo</em><br>
+                    <small style="color: #666;">Bron: Wikimedia Commons</small>
+                </details>
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Welk component van een AI-agent is verantwoordelijk voor het verwerken van ruwe sensor-data?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A2')">
+                        <strong>A)</strong> Sensors
+                        <div class="answer-feedback" id="answer-A2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Sensors verzamelen de data, maar verwerken deze niet. Denk aan welke component de ruwe data omzet in bruikbare informatie.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B2')">
+                        <strong>B)</strong> Perceptie
+                        <div class="answer-feedback" id="answer-B2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                Precies! Perceptie is het component dat ruwe sensor-data verwerkt en omzet in bruikbare informatie. Het is alsof de agent zijn "ogen en oren" gebruikt om de wereld te begrijpen. Bijvoorbeeld: een camera ziet pixels, maar perceptie herkent dat het een persoon is.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C2')">
+                        <strong>C)</strong> Planning
+                        <div class="answer-feedback" id="answer-C2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Planning gebruikt de verwerkte informatie om plannen te maken, maar verwerkt niet de ruwe sensor-data. Denk aan de volgorde: eerst data verzamelen, dan verwerken, dan plannen.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D2')">
+                        <strong>D)</strong> Actie
+                        <div class="answer-feedback" id="answer-D2">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Actie voert de plannen uit, maar verwerkt niet de sensor-data. Denk aan welke component tussen sensors en planning zit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+
+        <div class="chatbots-section" id="toepassingen">
+            <h3 class="chatbots-title">Toepassingen van AI-Agents</h3>
+            <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px;">
+                AI-agents worden al gebruikt in veel verschillende domeinen en hun toepassingen groeien snel.
+            </p>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>AI-agents in het dagelijks leven</strong><br><br>
+                AI-agents zijn al onderdeel van ons dagelijks leven, vaak zonder dat we het doorhebben:<br><br>
+                <strong>• Persoonlijke assistenten</strong> - Siri, Alexa, en Google Assistant zijn AI-agents die kunnen plannen, informatie ophalen, en acties uitvoeren zoals het instellen van herinneringen of het bestellen van producten.<br><br>
+                <strong>• Navigatiesystemen</strong> - GPS-apps zoals Google Maps zijn AI-agents die real-time verkeersinformatie analyseren, alternatieve routes plannen, en je begeleiden naar je bestemming.<br><br>
+                <strong>• E-commerce aanbevelingen</strong> - Amazon en andere webshops gebruiken AI-agents die je koopgedrag analyseren, producten aanbevelen, en zelfs automatisch bestellingen plaatsen.<br><br>
+                <strong>• Sociale media</strong> - Platforms zoals Facebook en Instagram gebruiken AI-agents om content te modereren, relevante posts te tonen, en advertenties te targeten.<br><br>
+                <strong>• Smart home systemen</strong> - AI-agents beheren je huis door temperatuur te regelen, verlichting aan te passen, en beveiliging te monitoren.
+            </div>
+        </div>
+
+        <div class="content-block task">
+            <div class="icon">
+                <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>3. Test een AI-agent</strong><br>
+                Kies een AI-agent die je kunt testen (zoals Siri, Alexa, Google Assistant, of een chatbot) en probeer de volgende taken:<br><br>
+                <ul>
+                    <li>Vraag om een planning te maken voor een dag</li>
+                    <li>Laat de agent informatie opzoeken over een onderwerp</li>
+                    <li>Vraag om een herinnering in te stellen</li>
+                    <li>Laat de agent een berekening uitvoeren</li>
+                    <li>Vraag om een grap of verhaal te vertellen</li>
+                </ul><br>
+                <span>Let op hoe de agent reageert, welke acties hij uitvoert, en waar zijn beperkingen liggen. Bedenk welke componenten van de AI-agent architectuur je kunt herkennen.</span>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>AI-agents in bedrijfsleven en industrie</strong><br><br>
+                Bedrijven gebruiken AI-agents voor complexe taken en automatisering:<br><br>
+                <strong>• Customer service</strong> - AI-agents kunnen klantvragen beantwoorden, problemen oplossen, en zelfs complexe transacties afhandelen zonder menselijke tussenkomst.<br><br>
+                <strong>• Supply chain management</strong> - AI-agents optimaliseren voorraadniveaus, voorspellen vraag, en coördineren leveringen tussen verschillende locaties.<br><br>
+                <strong>• Financiële dienstverlening</strong> - AI-agents analyseren kredietrisico's, detecteren fraude, en maken automatische investeringsbeslissingen.<br><br>
+                <strong>• Productie en kwaliteitscontrole</strong> - AI-agents monitoren productieprocessen, detecteren defecten, en optimaliseren efficiëntie in real-time.<br><br>
+                <strong>• Human resources</strong> - AI-agents screenen cv's, plannen interviews, en beheren werknemersdata en -voordelen.<br><br>
+                <strong>• Marketing en sales</strong> - AI-agents personaliseren marketingcampagnes, voorspellen klantgedrag, en optimaliseren prijzen dynamisch.
+            </div>
+        </div>
+
+        <div class="content-block trivia">
+            <div class="icon">
+                <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <details>
+                    <summary><strong>Deep Blue vs Kasparov: De eerste grote AI-overwinning</strong> <span style="color: #666; font-size: 0.9rem; font-weight: normal;">(klik om te lezen)</span></summary>
+                    In 1997 versloeg IBM's Deep Blue de wereldkampioen schaken Garry Kasparov in een historische wedstrijd. Dit was een van de eerste keren dat een AI-agent een menselijke expert versloeg in een complexe intellectuele taak.<br><br>
+                    Deep Blue was een gespecialiseerde computer die 200 miljoen schaakposities per seconde kon evalueren. Het gebruikte brute force rekenkracht en geavanceerde schaakalgoritmes om de beste zetten te vinden.<br><br>
+                    De overwinning van Deep Blue was een mijlpaal in AI-geschiedenis. Het toonde aan dat computers complexe strategische taken konden uitvoeren en zelfs de beste menselijke spelers konden verslaan. Dit opende de deur voor verdere ontwikkelingen in AI-agents.<br><br>
+                    <img src="../../img/IBM_rs6000_SP_-_Deep_Blue.jpg" alt="Deep Blue computer" style="max-width: 100%; height: auto;">
+                    <br>
+                    <em>De Deep Blue computer die Kasparov versloeg</em><br>
+                    <small style="color: #666;">Bron: Wikimedia Commons</small>
+                </details>
+            </div>
+        </div>
+
+        <div class="content-block info">
+            <div class="icon">
+                <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>De toekomst van AI-agents</strong><br><br>
+                AI-agents worden steeds geavanceerder en zullen in de toekomst nog meer mogelijkheden krijgen:<br><br>
+                <strong>• Multi-modal agents</strong> - Agents die kunnen werken met tekst, afbeeldingen, audio, en video tegelijkertijd, waardoor ze veelzijdiger worden.<br><br>
+                <strong>• Collaborative agents</strong> - Meerdere AI-agents die samenwerken aan complexe taken, waarbij ze hun expertise delen en coördineren.<br><br>
+                <strong>• Autonomous agents</strong> - Agents die volledig zelfstandig kunnen werken zonder menselijke supervisie, zelfs in onbekende situaties.<br><br>
+                <strong>• Emotional intelligence</strong> - Agents die emoties kunnen herkennen en erop reageren, waardoor ze natuurlijker kunnen communiceren.<br><br>
+                <strong>• Creative agents</strong> - Agents die kunnen creëren, innoveren, en artistieke werken produceren die voorheen alleen mensen konden maken.<br><br>
+                <strong>• Ethical agents</strong> - Agents die ethische principes kunnen toepassen en morele dilemma's kunnen oplossen op een verantwoorde manier.
+            </div>
+        </div>
+
+        <div class="content-block quiz">
+            <div class="icon">
+                <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Quizvraag</strong><br><br>
+                <strong>Vraag:</strong> Wat is het belangrijkste voordeel van AI-agents ten opzichte van traditionele software?<br><br>
+                
+                <em>Klik op een antwoord om te zien of het correct is!</em>
+                <div class="quiz-options">
+                    <div class="quiz-option" onclick="toggleAnswer('A3')">
+                        <strong>A)</strong> Ze zijn goedkoper om te ontwikkelen
+                        <div class="answer-feedback" id="answer-A3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> AI-agents zijn vaak juist duurder om te ontwikkelen omdat ze complexe algoritmes en veel data nodig hebben. Denk aan wat AI-agents uniek maakt in hun functionaliteit.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('B3')">
+                        <strong>B)</strong> Ze kunnen autonoom handelen en zich aanpassen aan nieuwe situaties
+                        <div class="answer-feedback" id="answer-B3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">✅</span>
+                                <strong>Correct!</strong><br>
+                                Precies! AI-agents kunnen autonoom handelen, plannen maken, en zich aanpassen aan nieuwe situaties zonder dat een programmeur elke mogelijkheid hoeft te voorzien. Ze kunnen leren van ervaring en hun gedrag verbeteren, wat traditionele software niet kan.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('C3')">
+                        <strong>C)</strong> Ze werken sneller dan traditionele software
+                        <div class="answer-feedback" id="answer-C3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> Snelheid is niet het belangrijkste voordeel. AI-agents kunnen soms zelfs langzamer zijn omdat ze complexe berekeningen moeten uitvoeren. Denk aan hun unieke vermogens.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-option" onclick="toggleAnswer('D3')">
+                        <strong>D)</strong> Ze maken nooit fouten
+                        <div class="answer-feedback" id="answer-D3">
+                            <div class="feedback-content">
+                                <span class="feedback-icon">❌</span>
+                                <strong>Nog niet goed!</strong><br>
+                                <em>Hint:</em> AI-agents maken nog steeds fouten, net als traditionele software. Het voordeel ligt niet in perfectie, maar in hun vermogen om autonoom te handelen en te leren.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        </div>
+
+        <div class="content-block conclusion">
+            <div class="icon">
+                <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80">
+            </div>
+            <div class="content-text">
+                <strong>Conclusie</strong><br><br>
+                Je hebt nu een uitgebreid inzicht gekregen in AI-agents - de volgende generatie van intelligente systemen die niet alleen kunnen denken, maar ook kunnen handelen.<br><br>
+                
+                <strong>Wat je hebt geleerd:</strong><br>
+                <strong>AI-Agents basis</strong> - Je begrijpt nu dat AI-agents autonome systemen zijn die doelen kunnen nastreven, plannen kunnen maken, en acties kunnen uitvoeren. Je kent de verschillende soorten agents, van simpele reflex agents tot complexe learning agents.<br><br>
+                
+                <strong>Hoe ze werken</strong> - Je hebt gezien hoe AI-agents zijn opgebouwd uit verschillende componenten: sensors, perceptie, planning, actie, en leren. Je begrijpt hoe deze componenten samenwerken om intelligent gedrag te creëren.<br><br>
+                
+                <strong>Toepassingen</strong> - Je realiseert je nu hoe wijdverspreid AI-agents zijn, van je telefoon tot complexe bedrijfssystemen. Je hebt gezien hoe ze ons dagelijks leven verbeteren en nieuwe mogelijkheden creëren.<br><br>
+                
+                <strong>Belangrijke inzichten:</strong><br>
+                • AI-agents kunnen autonoom handelen en zich aanpassen aan nieuwe situaties<br>
+                • Ze combineren waarneming, planning, en actie om complexe taken uit te voeren<br>
+                • Ze worden steeds geavanceerder en zullen in de toekomst nog meer kunnen<br>
+                • Ze transformeren hoe we werken, leven, en met technologie interacteren<br><br>
+                
+                <strong>Volgende stappen:</strong><br>
+                Blijf experimenteren met AI-agents en observeer hoe ze evolueren. Probeer te begrijpen welke taken ze goed kunnen uitvoeren en waar hun beperkingen liggen. De toekomst van AI wordt mede bepaald door hoe goed we deze intelligente systemen kunnen ontwerpen en verantwoord kunnen gebruiken.
+            </div>
+        </div>
+        </div>
+
+    </div>
+</body>
+</html>
