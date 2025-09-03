@@ -17,6 +17,42 @@ function openLumoPopup() {
     }
 }
 
+// Bookmark functionality
+function bookmarkPage() {
+    const url = window.location.href;
+    const title = document.title;
+    
+    // Check if the browser supports the bookmark API
+    if (window.sidebar && window.sidebar.addPanel) {
+        // Firefox
+        window.sidebar.addPanel(title, url, '');
+    } else if (window.external && ('AddFavorite' in window.external)) {
+        // Internet Explorer
+        window.external.AddFavorite(url, title);
+    } else if (window.opera && window.print) {
+        // Opera
+        const elem = document.createElement('a');
+        elem.setAttribute('href', url);
+        elem.setAttribute('title', title);
+        elem.setAttribute('rel', 'sidebar');
+        elem.click();
+    } else {
+        // Modern browsers (Chrome, Safari, Edge)
+        // Show instructions for manual bookmarking
+        const message = `Om deze pagina te bookmarken:\n\nChrome/Edge: Druk op Ctrl+D (Windows) of Cmd+D (Mac)\nSafari: Druk op Cmd+D (Mac)\n\nOf gebruik de bookmark knop in je browser.`;
+        alert(message);
+        
+        // Also try to copy URL to clipboard
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(url).then(() => {
+                console.log('URL gekopieerd naar clipboard');
+            }).catch(err => {
+                console.log('Kon URL niet kopiëren:', err);
+            });
+        }
+    }
+}
+
 // Quiz functionality
 function toggleAnswer(option) {
     const feedback = document.getElementById(`answer-${option}`);
