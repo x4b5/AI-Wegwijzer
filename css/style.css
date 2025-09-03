@@ -8,39 +8,40 @@
    ======================================== */
 :root {
     /* Primaire kleuren */
-    --primary-blue: #3b82f6;
-    --primary-green: #10b981;
-    --primary-purple: #8b5cf6;
-    --primary-orange: #f59e0b;
-    --primary-red: #ef4444;
-    --primary-indigo: #6366f1;
-    --primary-yellow: #fef3c7;
-    --primary-yellow-light: #f4f2dc;
-    --primary-gray: #6b7280;
-    --primary-gray-light: #d1d5db;
+    --primary-blue: #3774e6;
+    --primary-blue-dark: #1e3a8a;
+    --primary-green: #0fa870;
+    --primary-purple: #7f52e6;
+    --primary-orange: #e88f0a;
+    --primary-red: #e13d3d;
+    --primary-indigo: #5d5ae1;
+    --primary-yellow: #d9c7a0;
+    --primary-yellow-light: #e6e4c7;
+    --primary-gray: #636b77;
+    --primary-gray-light: #c4c8ce;
     
     /* Neutrale kleuren */
     --white: #ffffff;
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
-    --gray-900: #111827;
+    --gray-50: #f0f1f2;
+    --gray-100: #d1d5da;
+    --gray-200: #b8bec8;
+    --gray-300: #c4c8ce;
+    --gray-400: #7a828c;
+    --gray-500: #636b77;
+    --gray-600: #3a4249;
+    --gray-700: #2c3339;
+    --gray-800: #171d24;
+    --gray-900: #0d1116;
     
     /* Achtergrond kleuren */
-    --bg-primary: #f8fafc;
+    --bg-primary: #e6e9ed;
     --bg-secondary: #ffffff;
-    --bg-accent: #f1f5f9;
+    --bg-accent: #d6dbe2;
     
     /* Tekst kleuren */
-    --text-primary: #1e293b;
-    --text-secondary: #475569;
-    --text-muted: #64748b;
+    --text-primary: #17202a;
+    --text-secondary: #38424f;
+    --text-muted: #4f5a6b;
     --text-light: #ffffff;
     
     /* Schaduw kleuren */
@@ -50,9 +51,9 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     
     /* Border kleuren */
-    --border-light: #e2e8f0;
-    --border-medium: #cbd5e1;
-    --border-dark: #94a3b8;
+    --border-light: #c4c9d1;
+    --border-medium: #a8b0bd;
+    --border-dark: #76828f;
     
     /* Overgangen */
     --transition-fast: 0.15s ease;
@@ -228,69 +229,59 @@ h4 {
 }
 
 /* ========================================
-   SPECIFIEKE BLOK TYPES MET RUSTIGE KLEUREN
+   SPECIFIEKE BLOK TYPES MET DONKERDERE KLEUREN EN MAXIMAAL VERLOOP NAAR WIT
    ======================================== */
 .task .icon {
-    background: linear-gradient(135deg, #d1f2d1 0%, rgba(209, 242, 209, 0.8) 50%, rgba(209, 242, 209, 0) 100%); /* Levendiger groen naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #1a5a1a 0%, rgba(26, 90, 26, 0.8) 50%, rgba(26, 90, 26, 0.1) 100%); /* Donkerder groen met maximaal verloop naar wit */
+    color: #3a4249;
 }
 
 .task .icon:hover {
-    color: #374151;
+    color: #2c3339;
     transform: scale(1.05) !important;
 }
 
-/* Geen border-color meer nodig - rustigere layout */
-
 .quiz .icon {
-    background: linear-gradient(135deg, #fecaca 0%, rgba(254, 202, 202, 0.8) 50%, rgba(254, 202, 202, 0) 100%); /* Levendiger rood naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #b85454 0%, rgba(184, 84, 84, 0.8) 50%, rgba(184, 84, 84, 0.1) 100%); /* Donkerder rood met maximaal verloop naar wit */
+    color: #3a4249;
 }
 
 .quiz .icon:hover {
-    color: #374151;
+    color: #2c3339;
     transform: scale(1.05) !important;
 }
 
-/* Geen border-color meer nodig - rustigere layout */
-
 .trivia .icon {
-    background: linear-gradient(135deg, #fef3c7 0%, rgba(254, 243, 199, 0.8) 50%, rgba(254, 243, 199, 0) 100%); /* Levendiger geel naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #b89454 0%, rgba(184, 148, 84, 0.8) 50%, rgba(184, 148, 84, 0.1) 100%); /* Donkerder geel/oranje met maximaal verloop naar wit */
+    color: #3a4249;
 }
 
 .trivia .icon:hover {
-    color: #374151;
+    color: #2c3339;
     transform: scale(1.05) !important;
 }
 
-/* Geen border-color meer nodig - rustigere layout */
-
 .important .icon {
-    background: linear-gradient(135deg, #fecaca 0%, rgba(254, 202, 202, 0.8) 50%, rgba(254, 202, 202, 0) 100%); /* Levendiger rood naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #b85454 0%, rgba(184, 84, 84, 0.8) 50%, rgba(184, 84, 84, 0.1) 100%); /* Donkerder rood met maximaal verloop naar wit */
+    color: #3a4249;
 }
 
 .important .icon:hover {
-    color: #374151;
+    color: #2c3339;
     transform: scale(1.05) !important;
 }
 
-/* Geen border-color meer nodig - rustigere layout */
-
 .info .icon {
-    background: linear-gradient(135deg, #dbeafe 0%, rgba(219, 234, 254, 0.8) 50%, rgba(219, 234, 254, 0) 100%); /* Levendiger blauw naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #4a6fa5 0%, rgba(74, 111, 165, 0.8) 50%, rgba(74, 111, 165, 0.1) 100%); /* Donkerder blauw met maximaal verloop naar wit */
+    color: #3a4249;
 }
 
 .info .icon:hover {
-    color: #374151;
+    color: #2c3339;
     transform: scale(1.05) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
-
-
 
 /* ========================================
    TRIVIA TOGGLE STYLING - MINIMAAL
@@ -525,7 +516,7 @@ h4 {
 
 /* Focus states voor toegankelijkheid */
 .btn:focus, .demo-button:focus, .nav-button:focus, button:focus {
-    outline: 2px solid var(--primary-blue);
+    outline: none;
     outline-offset: 2px;
     cursor: pointer;
 }
@@ -623,7 +614,7 @@ li {
    LINKS STYLING
    ======================================== */
 a {
-    color: var(--primary-blue);
+    color: var(--primary-blue-dark);
     text-decoration: none;
     transition: var(--transition-fast);
     cursor: pointer; /* Hand cursor voor alle links */
@@ -634,7 +625,7 @@ a {
 }
 
 a:hover {
-    color: #2563eb;
+    color: #1e3a8a;
     text-decoration: underline;
 }
 
@@ -642,12 +633,12 @@ a:hover {
    CODE STYLING
    ======================================== */
 code {
-    background: var(--gray-100);
+    background: #2d3748; /* Donkere achtergrond */
     padding: 2px 6px;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
-    color: var(--primary-red);
-    border: 1px solid var(--border-light);
+    color: #e2e8f0; /* Lichte tekst voor contrast */
+    border: 1px solid #4a5568; /* Donkere border */
 }
 
 /* ========================================
@@ -712,7 +703,7 @@ img {
    SPECIALE ELEMENTEN
    ======================================== */
 .important {
-    background: #fef3c7;
+    background: #d9c7a0;
     border: 1px solid #fde68a;
     border-left: 4px solid var(--primary-orange);
     padding: 20px;
@@ -814,12 +805,12 @@ body::-webkit-scrollbar {
    FOCUS STATES
    ======================================== */
 button:focus, .btn:focus, .demo-button:focus {
-    outline: 2px solid var(--primary-blue);
+    outline: none;
     outline-offset: 2px;
 }
 
 a:focus {
-    outline: 2px solid var(--primary-blue);
+    outline: none;
     outline-offset: 2px;
 }
 
@@ -854,16 +845,16 @@ a:focus {
 .content-block[data-type="task"] .icon,
 .content-block.opdracht .icon,
 .task .icon {
-    background: linear-gradient(135deg, #d1f2d1 0%, rgba(209, 242, 209, 0.8) 50%, rgba(209, 242, 209, 0) 100%); /* Levendiger groen naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #4a9a4a 0%, rgba(74, 154, 74, 0.8) 50%, rgba(74, 154, 74, 0.1) 100%); /* Nog lichtere groen */
+    color: #2a3239;
 }
 
 .content-block:has(.icon img[src*="opdracht"]) .icon:hover,
 .content-block[data-type="task"] .icon:hover,
 .content-block.opdracht .icon:hover,
 .task .icon:hover {
-    color: #374151;
-    transform: scale(1.05) !important;
+    color: #2a3239; /* Geen kleurverandering */
+    background: linear-gradient(135deg, #5aaa5a 0%, rgba(90, 170, 90, 0.85) 50%, rgba(90, 170, 90, 0.2) 100%); /* Nog lichtere groen hover */
 }
 
 .content-block:has(.icon img[src*="opdracht"]) .content-text,
@@ -895,15 +886,16 @@ a:focus {
 .content-block:has(.icon img[src*="quizvraag"]) .icon,
 .content-block[data-type="quiz"] .icon,
 .content-block.quiz .icon {
-    background: linear-gradient(135deg, #fecaca 0%, rgba(254, 202, 202, 0.8) 50%, rgba(254, 202, 202, 0) 100%); /* Levendiger rood naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #b85454 0%, rgba(184, 84, 84, 0.8) 50%, rgba(184, 84, 84, 0.1) 100%); /* Donkerder rood met maximaal verloop naar wit */
+    color: #2a3239;
 }
 
 .content-block:has(.icon img[src*="quizvraag"]) .icon:hover,
 .content-block[data-type="quiz"] .icon:hover,
 .content-block.quiz .icon:hover {
-    color: #374151;
-    transform: scale(1.05) !important;
+    color: #2a3239; /* Geen kleurverandering */
+    transform: scale(1.02) !important; /* Kleinere schaal */
+    background: linear-gradient(135deg, #ba5656 0%, rgba(186, 86, 86, 0.85) 50%, rgba(186, 86, 86, 0.2) 100%); /* Donkerder rood hover met maximaal verloop naar wit */
 }
 
 .content-block:has(.icon img[src*="quizvraag"]) .content-text,
@@ -937,15 +929,16 @@ a:focus {
 .content-block:has(.icon img[src*="boekenwurm"]) .icon,
 .content-block[data-type="trivia"] .icon,
 .content-block.trivia .icon {
-    background: linear-gradient(135deg, #fef3c7 0%, rgba(254, 243, 199, 0.8) 50%, rgba(254, 243, 199, 0) 100%); /* Levendiger geel naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #b89454 0%, rgba(184, 148, 84, 0.8) 50%, rgba(184, 148, 84, 0.1) 100%); /* Donkerder geel/oranje met maximaal verloop naar wit */
+    color: #2a3239;
 }
 
 .content-block:has(.icon img[src*="boekenwurm"]) .icon:hover,
 .content-block[data-type="trivia"] .icon:hover,
 .content-block.trivia .icon:hover {
-    color: #374151;
-    transform: scale(1.05) !important;
+    color: #2a3239; /* Geen kleurverandering */
+    transform: scale(1.02) !important; /* Kleinere schaal */
+    background: linear-gradient(135deg, #ba9656 0%, rgba(186, 150, 86, 0.85) 50%, rgba(186, 150, 86, 0.2) 100%); /* Donkerder geel/oranje hover met maximaal verloop naar wit */
 }
 
 /* Tekstkleur voor trivia blokken op zwart zetten */
@@ -964,31 +957,32 @@ a:focus {
 
 /* Fellere, leesbare link kleuren */
 .content-text a {
-    color: #0088ff !important; /* Nog fellere blauwe kleur voor betere leesbaarheid */
+    color: var(--primary-blue-dark) !important; /* Nog fellere blauwe kleur voor betere leesbaarheid */
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .content-text a:hover {
-    color: #0066cc !important; /* Iets donkerder blauw bij hover */
+    color: #1e3a8a !important; /* Donkerblauw bij hover */
     text-decoration: underline;
 }
 
 .content-text a:visited {
-    color: #8800ff !important; /* Nog fellere paarse kleur voor bezochte links */
+    color: #1e3a8a !important; /* Nog fellere paarse kleur voor bezochte links */
 }
 
 /* Ook algemene link styling toevoegen */
 a {
-    color: #0088ff !important; /* Nog fellere blauwe kleur voor alle links */
+    color: var(--primary-blue) !important; /* Nog fellere blauwe kleur voor alle links */
+    font-weight: 600;
 }
 
 a:hover {
-    color: #0066cc !important; /* Iets donkerder blauw bij hover */
+    color: #1e3a8a !important; /* Donkerblauw bij hover */
 }
 
 a:visited {
-    color: #8800ff !important; /* Nog fellere paarse kleur voor bezochte links */
+    color: #1e3a8a !important; /* Nog fellere paarse kleur voor bezochte links */
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -997,14 +991,14 @@ a:visited {
 .content-block:has(.icon img[src*="uitroepteken"]) .icon,
 .content-block[data-type="important"] .icon,
 .content-block.important .icon {
-    background: linear-gradient(135deg, #fecaca 0%, rgba(254, 202, 202, 0.8) 50%, rgba(254, 202, 202, 0) 100%); /* Levendiger rood naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #b85454 0%, rgba(184, 84, 84, 0.8) 50%, rgba(184, 84, 84, 0.1) 100%); /* Donkerder rood met maximaal verloop naar wit */
+    color: #3a4249;
 }
 
 .content-block:has(.icon img[src*="uitroepteken"]) .icon:hover,
 .content-block[data-type="important"] .icon:hover,
 .content-block.important .icon:hover {
-    color: #374151;
+    color: #2c3339;
     transform: scale(1.05) !important;
 }
 
@@ -1014,8 +1008,8 @@ a:visited {
 .content-block:has(.icon img[src*="informatie"]) .icon,
 .content-block[data-type="info"] .icon,
 .content-block.info .icon {
-    background: linear-gradient(135deg, #dbeafe 0%, rgba(219, 234, 254, 0.8) 50%, rgba(219, 234, 254, 0) 100%); /* Levendiger blauw naar transparant */
-    color: #4b5563;
+    background: linear-gradient(135deg, #4a6fa5 0%, rgba(74, 111, 165, 0.8) 50%, rgba(74, 111, 165, 0.1) 100%); /* Donkerder blauw met maximaal verloop naar wit */
+    color: #2a3239;
 }
 
 /* ========================================
@@ -1024,14 +1018,14 @@ a:visited {
 .content-block:has(.icon img[src*="conclusie"]) .icon,
 .content-block[data-type="conclusion"] .icon,
 .content-block.conclusion .icon {
-    background: linear-gradient(135deg, #e9d5ff 0%, rgba(233, 213, 255, 0.8) 50%, rgba(233, 213, 255, 0) 100%); /* Paarse gradient */
-    color: #4b5563;
+    background: linear-gradient(135deg, #8a6fa5 0%, rgba(138, 111, 165, 0.8) 50%, rgba(138, 111, 165, 0.1) 100%); /* Donkerder paars met maximaal verloop naar wit */
+    color: #2a3239;
 }
 
 .content-block:has(.icon img[src*="conclusie"]) .icon:hover,
 .content-block[data-type="conclusion"] .icon:hover,
 .content-block.conclusion .icon:hover {
-    color: #374151;
+    color: #2c3339;
     transform: scale(1.05) !important;
 }
 
@@ -1051,7 +1045,7 @@ a:visited {
 .content-block:has(.icon img[src*="informatie"]) .icon:hover,
 .content-block[data-type="info"] .icon:hover,
 .content-block.info .icon:hover {
-    color: #374151;
+    color: #2c3339;
     transform: scale(1.05) !important;
 }
 
@@ -1304,7 +1298,7 @@ a:visited {
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
-    background: var(--gray-200); /* Zelfde kleur als grijze container */
+    background: var(--gray-500); /* Zelfde kleur als grijze container */
     color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
     border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
     display: flex;
@@ -1318,12 +1312,12 @@ a:visited {
 }
 
 .sidebar-toggle-btn:hover {
-    background: #2d3748; /* Donkere achtergrond bij hover zoals legenda sidebar */
+    background: #8B4513; /* Nog donkerder oranje voor legenda sidebar */
     transform: translateY(-50%) scale(1.5);
 }
 
 .sidebar-toggle-btn:hover {
-    background: #2d3748;
+    background: var(--gray-800);
     transform: translateY(-50%) scale(1.5);
 }
 
@@ -1378,7 +1372,7 @@ a:visited {
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
-    background: var(--gray-200); /* Zelfde kleur als grijze container */
+    background: var(--gray-500); /* Zelfde kleur als grijze container */
     color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
     border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
     display: flex;
@@ -1392,7 +1386,7 @@ a:visited {
 }
 
 .top-toggle-btn:hover {
-    background: #2d3748; /* Donkere achtergrond bij hover zoals legenda sidebar */
+    background: #8B4513; /* Nog donkerder oranje voor omhoog sidebar */
     transform: translateY(-50%) scale(1.5);
 }
 
@@ -1420,7 +1414,7 @@ a:visited {
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
-    background: var(--gray-200); /* Zelfde kleur als grijze container */
+    background: var(--gray-500); /* Zelfde kleur als grijze container */
     color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
     border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
     display: flex;
@@ -1434,7 +1428,7 @@ a:visited {
 }
 
 .home-toggle-btn:hover {
-    background: #2d3748; /* Donkere achtergrond bij hover zoals legenda sidebar */
+    background: #654321; /* Donkerder bruin voor home sidebar */
     transform: translateY(-50%) scale(1.5);
 }
 
@@ -1445,7 +1439,7 @@ a:visited {
 .sidebar-header {
     background: #f7fafc;
     padding: 8px; /* Veel kleiner gemaakt */
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #c4c9d1;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -1453,7 +1447,7 @@ a:visited {
 
 .sidebar-header h3 {
     margin: 0;
-    color: #2d3748;
+    color: #4a5059;
     font-size: 16px; /* Kleiner gemaakt */
 }
 
@@ -1473,8 +1467,8 @@ a:visited {
 }
 
 .close-sidebar-btn:hover {
-    background: #e2e8f0;
-    color: #2d3748;
+    background: #c4c9d1;
+    color: #4a5059;
 }
 
 .sidebar-body {
@@ -1494,15 +1488,15 @@ a:visited {
     gap: 8px; /* Kleinere ruimte tussen kolommen */
     padding: 4px; /* Veel kleinere padding */
     margin-bottom: 3px; /* Veel kleinere margin tussen items */
-    background: #f8fafc;
+    background: #e6e9ed;
     border-radius: 12px; /* Ronder gemaakt */
-    border: 1px solid #e2e8f0;
+    border: 1px solid #c4c9d1;
     transition: all 0.2s ease;
 }
 
 .legend-item:hover {
-    background: #f1f5f9;
-    border-color: #cbd5e1;
+    background: #d6dbe2;
+    border-color: #a8b0bd;
     transform: translateX(5px);
 }
 
@@ -1511,24 +1505,24 @@ a:visited {
     align-self: flex-start; /* Icoon bovenaan uitlijnen */
     border-radius: 8px; /* Ronder gemaakt */
     padding: 10px; /* Meer padding voor roter vlak */
-    background: #dbeafe; /* Standaard blauw voor informatie */
+    background: #c4d4f0; /* Standaard blauw voor informatie */
 }
 
 /* Specifieke achtergrondkleuren voor elk icoon type */
 .legend-item img[src*="informatie"] {
-    background: #dbeafe; /* Blauw - zelfde als informatie blokken */
+    background: #c4d4f0; /* Blauw - zelfde als informatie blokken */
 }
 
 .legend-item img[src*="boekenwurm"] {
-    background: #fef3c7; /* Geel - zelfde als trivia blokken */
+    background: #d9c7a0; /* Geel - zelfde als trivia blokken */
 }
 
 .legend-item img[src*="quizvraag"] {
-    background: #fecaca; /* Rood - zelfde als quiz blokken */
+    background: #e6b3b3; /* Rood - zelfde als quiz blokken */
 }
 
 .legend-item img[src*="opdracht"] {
-    background: #d1f2d1; /* Groen - zelfde als opdracht blokken */
+    background: #0a4a0a; /* Groen - zelfde als opdracht blokken */
 }
 
 .legend-text {
@@ -1539,7 +1533,7 @@ a:visited {
 }
 
 .legend-title {
-    color: #1e293b;
+    color: #17202a;
     font-size: 13px;
     display: block;
     margin: 0; /* Geen margin */
@@ -1549,7 +1543,7 @@ a:visited {
 }
 
 .legend-text small {
-    color: #64748b;
+    color: #4f5a6b;
     font-size: 11px;
     line-height: 1; /* Normale regelafstand */
     margin: 0; /* Geen margin */
