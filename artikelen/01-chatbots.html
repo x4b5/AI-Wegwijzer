@@ -70,11 +70,11 @@
         </div>
 
         <!-- inhoud -->
-        <div class="container">
+        <div class="container"> 
             <div class="header-section">
                 <h2 class="chatbots-title main-title">Chatbots</h2>
 
-                <div class="metadata">
+         <div class="metadata">
                     <div class="metadata-content">
                         <div class="metadata-item"><strong> Laatste wijziging:</strong> <span id="last-updated">[Automatisch bijgewerkt]</span></div>
                             <div class="metadata-item">
@@ -95,14 +95,25 @@
                     </div>
                     <div class="content-text">
                         <strong>Opdracht 1: Venster verplaatsen</strong><br />
-                        Zet dit venster naar de linkerkant van het scherm. <br /><br/>
-                        <em>Tip:</em> Gebruik hiervoor de volgende sneltoetsen:<br/><br/>
-                        Windows: <code>Windows-toets + ←</code> <br/>
+                        Klik op de knop om het venster naar de linkerkant van het scherm te verplaatsen. <br />
+                        <div class="text-center mt-4">
+                            <button onclick="moveWindowLeft()" class="btn" style="color: black !important; border: none; outline: none;">
+                                <span style="color: black !important">Venster naar links verplaatsen</span>
+                            </button>
+                        </div>
                         <br/>
-                        MacOS: <code>Control + Command + F</code> 
-                        <br/><ul><li>Hiermee zet je het venster uit fullscreen.</li>
-                        <li>Hierna kun je het venster verkleinen en aan de linkerkant van het scherm zetten.</li></ul>
-                    </div>
+                        Mocht dit niet lukken, gebruik dan de volgende sneltoetsen:<br/><br/>
+                        <div style="display: flex; gap: 20px; align-items: flex-start; background-color: black; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); color: white; font-size: 14px;">
+                            <div style="flex: 1;">
+                                <img src="../../img/windows.png" alt="Windows" width="24" height="24" style="vertical-align: middle; margin-right: 6px; filter: brightness(0) saturate(100%) invert(100%);" /> <code style="color: white !important; background: #333; font-size: 12px;">Windows-toets + ←</code>
+                            </div>
+                            <div style="flex: 1;">
+                                <img src="../../img/apple-logo.png" alt="Apple" width="24" height="24" style="vertical-align: middle; margin-right: 6px; filter: brightness(0) saturate(100%) invert(100%);" /> <code style="color: white !important; background: #333; font-size: 12px;">Control + Command + F</code>
+                                <ul style="margin-top: 8px; color: white !important; font-size: 12px;"><li>Hiermee zet je het venster uit fullscreen.</li>
+                                <li>Hierna kun je het venster verkleinen en aan de linkerkant van het scherm zetten.</li></ul>
+                            </div>
+                        </div>
+                        <br/>                        </div>
                 </div>
 
                 <div class="content-block task">
@@ -111,7 +122,7 @@
                     </div>
                     <div class="content-text">
                         <strong>Opdracht 2: chatbot openen</strong><br />
-                        Klik op de knop hieronder om de chatbot <em>Lumo</em> te openen.<br />
+                        Klik op de knop om de chatbot <em>Lumo</em> te openen.<br />
                         Dit is een moderne versie van een chatbot.
 
                         <div class="text-center mt-4">
@@ -133,18 +144,50 @@
                         <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>Wat is een chatbot?</strong><br />
-                        Een <a href="../../naslag/begrippen.html">chatbot</a> is een computerprogramma dat menselijke
-                        gesprekken kan simuleren (nabootsen)
-                        <a href="https://www.ibm.com/think/topics/chatbots" target="_blank">(IBM)</a>.<br /><br />
-                        <strong>Chatbots en AI</strong>
+                        <strong>De opkomst van AI-chatbots</strong><br />
+                        Door de <a href="../../naslag/begrippen.html#ai-boom">AI-boom</a> die begon in de late jaren
+                        2010 zijn chatbots steeds populairder geworden.
+                        <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a>, van
+                        <a href="../../naslag/begrippen.html#openai">OpenAI</a>, was een van de eerste moderne
+                        AI-chatbots die ook in staat was om geheel nieuwe inhoud te genereren.<br /> 
+                        ChatGPT werd breed bekend en heeft de populariteit van chatbots enorm vergroot.<br /><br />
+                        
+                        <strong>Een veelvoorkomende verwarring</strong><br />
+                        Veel mensen denken bij het woord AI direct aan ChatGPT. Maar AI omvat veel meer dan alleen
+                        AI-chatbots en er zijn veel meer AI-chatbots dan alleen ChatGPT.<br />
+                        Met andere woorden: er is meer tussen AI en ChatGPT.<br /><br />
+                        <img src="../../img/meer-tussen-ai-en-chatgpt.jpg" alt="Meer tussen AI en ChatGPT" />
                         <br />
-                        Er is een verschil tussen klassieke en moderne chatbots. Dat zullen we zo verder in dit artikel bespreken.<br />
-                        In hoeverre klassieke chatbots gebruik maken van AI, is afhankelijk van de vraag hoe je het begrip AI definieert. Dit is een interessant onderwerp maar we laten het voorlopig even buiten beschouwing.<br/>
-                        Wel kunnen we stellen dat de ontwikkeling van de moderne chatbot vanaf ongeveer 2000 is gebaseerd op de innovaties in de AI-wereld.
-               </div>
+                        <em>"Meer tussen AI en ChatGPT" gegenereerd met Stable Diffusion.</em>
+                        
+                        
+                        
+                        
+
+                        
+                    </div>
                 </div>
 
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>De geschiedenis van chatbots bekekeken vanuit AI</strong>
+                        <br />
+                        Je kunt de verschillende soorten chatbots bekijken vanuit AI en de ontwikkeling die chatbots daarin hebben doorgemaakt:<br />
+                        <ul>
+                            <li> Ongeveer 1960-1990: De eerste chatbots</li>
+                            <li>Ongeveer 1990-2010: De klassieke chatbots</li>
+                            <li>Ongeveer 2010-heden: De moderne chatbots</li>
+                        </ul>
+                        In hoeverre sprake is van AI bij de eerste chatbots, is afhankelijk van hoe je naar het begrip AI kijkt. Dat is een interessant onderwerp, maar we laten het voorlopig even voor wat het is. <br/>
+                        Wel kunnen we zeggen dat de innovaties in de AI-wereld, de belangrijkste drijvende kracht is achter de ontwikkeling van chatbots.<br /><br />
+
+                        Maar dan nog is niet duidelijk wat het verschil is tussen ChatGPT en andere chatbots.
+                    </div>
+                </div>
+                
                 <div class="content-block trivia">
                     <div class="icon">
                         <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80" />
@@ -154,13 +197,13 @@
                             <summary>
                                 <strong>De allereerste chatbot: ELIZA</strong>
                                 <span style="color: #666; font-size: 0.9rem; font-weight: normal"
-                                    >(klik om te lezen)</span
+                                >(klik om te lezen)</span
                                 >
                             </summary>
                             <a href="../../naslag/begrippen.html#eliza">ELIZA</a> was de allereerste chatbot die breed
                             werd erkend. Deze chatbot werd in 1966 ontwikkeld door MIT-professor
                             <a href="../../naslag/begrippen.html#joseph-weizenbaum">Joseph Weizenbaum</a>.<br /><br />
-                            ELIZA werkte heel anders dan moderne chatbots. Vaste regels en patronen werden gebruikt om
+                            ELIZA werkte heel anders dan moderne chatbots. Vaste regels werden gebruikt om
                             te reageren, maar de eerste gebruikers dachten toch dat de chatbot echt begreep wat ze
                             zeiden. Dit fenomeen wordt het
                             <em><a href="../../naslag/begrippen.html#eliza-effect">Eliza-effect</a></em>
@@ -174,36 +217,32 @@
                         </details>
                     </div>
                 </div>
-
+                
                 <div class="content-block info">
                     <div class="icon">
                         <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>De opkomst van AI-chatbots</strong><br />
-                        Door de <a href="../../naslag/begrippen.html#ai-boom">AI-boom</a> die begon in de late jaren
-                        2010 zijn chatbots steeds populairder geworden.
-                        <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a>, van
-                        <a href="../../naslag/begrippen.html#openai">OpenAI</a>, was een van de eerste moderne
-                        AI-chatbots die ook in staat was om geheel nieuwe inhoud te genereren.<br /> 
-                        ChatGPT werd breed bekend en heeft de populariteit van chatbots enorm vergroot.<br /><br />
-
-                        <strong>Een veelvoorkomende verwarring</strong><br />
-                        Veel mensen denken bij het woord AI direct aan ChatGPT. Maar AI omvat veel meer dan alleen
-                        AI-chatbots en er zijn veel meer AI-chatbots dan alleen ChatGPT. Chatbots zijn er in allerlei
-                        soorten en maten. <br /><br />
-
-                        <strong>Drie belangrijke vragen</strong><br />
-                        Als we antwoord kunnen geven op de volgende vragen, dan hebben we een goed beeld waarom er meer
-                        is tussen AI en ChatGPT.<br />
-                        Zo wordt duidelijker wat je met een chatbot kunt doen en waarmee je rekening moet houden.<br />
-                        1. Hoe werkt een chatbot in het algemeen?<br />
-                        2. Hoe is een chatbot in staat om antwoorden te geven? <br />
-                        3. Waar vindt het "denkwerk" plaats?
-                        <br /><br />
-                        <img src="../../img/meer-tussen-ai-en-chatgpt.jpg" alt="Meer tussen AI en ChatGPT" />
-                        <br />
-                        <em>"Meer tussen AI en ChatGPT" gegenereerd met Stable Diffusion.</em>
+                        <strong>Vier belangrijke vragen</strong><br />
+                        Om dat helder te krijgen,gaan we een aantal vragen bespeken:<br />
+                        1. Wat is een chatbot?<br/>
+                        2. Hoe werkt een chatbot in het algemeen?<br />
+                        3. Hoe is een chatbot in staat om antwoorden te geven? <br />
+                        4. Waar vindt het "denkwerk" plaats?<br /><br />
+                        Zo wordt duidelijker wat je met welke chatbot kunt doen en waarmee je rekening moet houden.<br />       
+                    </div>
+                </div>
+                
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>Vraag 1. Wat is een chatbot?</strong><br />
+                        Een <a href="../../naslag/begrippen.html">chatbot</a> (voorheen chatterbot) is een computerprogramma dat menselijke
+                        gesprekken kan simuleren (nabootsen)
+                        <a href="https://www.ibm.com/think/topics/chatbots" target="_blank">(IBM)</a>.<br />
+                        Deze gesprekken worden meestal via tekst gevoerd maar spraak is vaak ook mogelijk. 
                     </div>
                 </div>
 
@@ -212,7 +251,7 @@
                         <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>1. Hoe werkt een chatbot in het algemeen?</strong><br />
+                        <strong>Vraag 2. Hoe werkt een chatbot in het algemeen?</strong><br />
                         Chatbots werken in de basis volgens het volgende principe:<br />
                         <em>→ input → processing → output</em><br />
 
@@ -244,7 +283,7 @@
                         Geef <em>Lumo</em> input door onder in het tekstvenster jezelf voor te stellen met de naam van
                         een bekende persoon.
                         <br />
-                        > Grote kans dat <em>Lumo</em> vriendelijk reageert.
+                        <ul><li>Grote kans dat <em>Lumo</em> vriendelijk reageert.</li></ul>
                     </div>
                 </div>
 
@@ -276,7 +315,7 @@
                         <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>2. Hoe is een chatbot in staat om antwoorden te geven?</strong><br />
+                        <strong>Vraag 3. Hoe is een chatbot in staat om antwoorden te geven?</strong><br />
                         Chatbots zijn door verschillende methoden in staat om antwoorden te geven. In grote lijnen
                         kunnen we twee methoden onderscheiden:<br /><br />
 
@@ -300,8 +339,8 @@
                                 nog niet eerder zijn geprogrammeerd maar het antwoord is niet altijd betrouwbaar.<br />
                                 <br />
                                 <blockquote><em
-                                    >Het is alsof het patronen kan herkennen in een boek en kiest welk antwoord het
-                                    beste past bij de prompt.</em
+                                    >Het is alsof het patronen kan herkennen in een boek en kiest welk antwoord in het boek het 
+                                    beste aansluit bij de prompt.</em
                                 ></blockquote>
                             </li>
                         </ul>
@@ -383,7 +422,7 @@
                         <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>3. Waar vindt het "denkwerk" plaats?</strong><br />
+                        <strong>Vraag 4. Waar vindt het "denkwerk" plaats?</strong><br />
                         Eigenlijk is <em>denkwerk</em> niet het juiste woord. Zeker in het geval van klassieke chatbots. 
                         We hebben besproken dat deze chatbots vooraf geprogrammeerd zijn en alleen antwoorden kunnen geven op de vragen die in het programma staan. Dit is dus geen "denkwerk". We nemen daarom nu afscheid van deze chatbots<br /><br />
                         
@@ -391,60 +430,78 @@
                         Deze AI-modellen zijn computerprogramma's die getraind zijn om patronen te herkennen in data en voorspellingen te maken. De techniek die dit mogelijk maakt heet
                         <a href="../../naslag/begrippen.html#machine-learning">machine learning</a>.<br /><br />      
                         Ze zijn als het "brein" van de chatbot - ze verwerken de input en maken op basis van de beschikbare data een voorspelling over wat voor antwoord aansluit bij de input.<br /><br />
-                        Deze AI-modellen kunnen op verschillende plekken draaien:<br />
+                        Deze AI-modellen kunnen op verschillende plekken draaien:<br /><br />
 
-                        <ul>
-                            <li>
-                                <strong>Online (in de <a href="../../naslag/begrippen.html#cloud">cloud</a>):</strong> De chatbot draait op je apparaat, maar is
-                                gekoppeld aan een AI-model dat op servers van een bedrijf draait (zoals OpenAI, Google,
-                                Microsoft). Je stuurt je vraag naar hun servers waar het AI-model de input verwerkt, en
-                                krijgt het antwoord terug. Dit kan op twee manieren: 
-                                <ul>
-                                <li>via een browser (zoals ChatGPT in
-                                je webbrowser)</li>
-                                <li>via een <a href="../../naslag/begrippen.html#api">API</a>.  
-                                Een API is als een "brug" tussen apps - het laat verschillende programma's met elkaar communiceren.<br /><br />
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Locatie</th>
+                                        <th>Uitleg</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Online (in de <a href="../../naslag/begrippen.html#cloud">cloud</a>)</strong></td>
+                                        <td>
+                                            De chatbot draait op je apparaat, maar is gekoppeld aan een AI-model dat op servers van een bedrijf draait (zoals OpenAI, Google, Microsoft). Je stuurt je vraag naar hun servers waar het AI-model de input verwerkt, en krijgt het antwoord terug. Dit kan op twee manieren: via een browser (zoals ChatGPT in je webbrowser) of via een <a href="../../naslag/begrippen.html#api">API</a>.<br /><br />
+                                            <em>Voordelen:</em> Je hebt toegang tot de meest krachtige AI-modellen, je hoeft geen eigen hardware aan te schaffen, en de modellen zijn altijd up-to-date.<br /><br />
+                                            <em>Nadelen:</em> Je data wordt naar externe servers gestuurd, wat privacy-risico's met zich meebrengt. Ook ben je afhankelijk van internetverbinding en de beschikbaarheid van de service. Daarnaast kunnen er kosten verbonden zijn aan het gebruik.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Lokaal (op je eigen computer)</strong></td>
+                                        <td>
+                                            De chatbot draait op je eigen computer en het AI-model is erin geïntegreerd. Je data blijft binnen je eigen netwerk en gaat niet naar externe partijen. Dit wordt ook wel "on-premises" of "local <a href="../../naslag/begrippen.html#inference">inference</a>" genoemd.<br /><br />
+                                            <em>Voordelen:</em> Je hebt volledige privacy omdat je data nergens anders heen gaat. Je hebt geen internetverbinding nodig en geen doorlopende kosten.<br /><br />
+                                            <em>Nadelen:</em> Je hebt vaak krachtigere hardware nodig om grote AI-modellen te laten draaien. Je kunt ook lichtere modellen installeren die minder rekenkracht vragen, maar deze zijn meestal minder krachtig of nauwkeurig dan de online versies.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Op het apparaat zelf</strong></td>
+                                        <td>
+                                            De chatbot draait op het apparaat zelf en het AI-model is erin geïntegreerd, zoals op je telefoon, een slimme speaker, of een lokale computer. Dit zorgt voor snellere reacties en meer privacy. Dit wordt ook wel "<a href="../../naslag/begrippen.html#edge">edge deployment</a>" genoemd.<br /><br />
+                                            <em>Voordelen:</em> Je krijgt zeer snelle reacties omdat alles lokaal gebeurt. Het werkt offline en je privacy is gegarandeerd.<br /><br />
+                                            <em>Nadelen:</em> De rekenkracht van apparaten is beperkt, dus je kunt alleen kleine AI-modellen gebruiken. Dit kan ook meer batterijverbruik veroorzaken.
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
 
-                                <em>Voordelen:</em> Je hebt toegang tot de meest krachtige AI-modellen, je hoeft geen
-                                eigen hardware aan te schaffen, en de modellen zijn altijd up-to-date.<br /><br />
-
-                                <em>Nadelen:</em> Je data wordt naar externe servers gestuurd, wat privacy-risico's met
-                                zich meebrengt. Ook ben je afhankelijk van internetverbinding en de beschikbaarheid van
-                                de service. Daarnaast kunnen er kosten verbonden zijn aan het gebruik.<br /><br />
-                            </li>
-
-                            <li>
-                                <strong>Lokaal (op je eigen computer):</strong> De chatbot draait op je eigen computer
-                                en het AI-model is erin geïntegreerd. Je data blijft binnen je eigen netwerk en gaat
-                                niet naar externe partijen. Dit wordt ook wel "on-premises" of "local <a href="../../naslag/begrippen.html#inference">inference</a>"
-                                genoemd.<br /><br />
-
-                                <em>Voordelen:</em> Je hebt volledige privacy omdat je data nergens anders heen gaat. Je
-                                hebt geen internetverbinding nodig en geen doorlopende kosten.<br /><br />
-
-                                <em>Nadelen:</em> Je hebt vaak krachtigere hardware nodig om grote AI-modellen te laten draaien. Je kunt ook lichtere modellen installeren die minder rekenkracht vragen, maar deze zijn meestal minder krachtig of nauwkeurig dan de online versies. <br /><br />
-                            </li>
-
-                            <li>
-                                <strong>Op het apparaat zelf:</strong> De chatbot draait op het apparaat zelf en het
-                                AI-model is erin geïntegreerd, zoals op je telefoon, een slimme speaker, of een lokale
-                                computer. Dit zorgt voor snellere reacties en meer privacy. Dit wordt ook wel "<a href="../../naslag/begrippen.html#edge">edge
-                                deployment</a>" genoemd.<br /><br />
-
-                                <em>Voordelen:</em> Je krijgt zeer snelle reacties omdat alles lokaal gebeurt. Het werkt
-                                offline en je privacy is gegarandeerd.<br /><br />
-
-                                <em>Nadelen:</em> De rekenkracht van apparaten is beperkt, dus je kunt alleen kleine
-                                AI-modellen gebruiken. Dit kan ook meer batterijverbruik veroorzaken.<br /><br />
-                            </li>
-                        </ul>
-                        <br />
-
-                    <img src="../../img/denkwerk.png" alt="Edge deployment" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
                     </div>
                     
                     
                 </div>
+
+                            <div class="content-block conclusion">
+                <div class="icon">
+                    <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80" />
+        </div>
+                <div class="content-text">
+                    <strong>Samenvatting: Wat je nu weet over chatbots</strong><br /><br />
+                    
+                    Je hebt nu een compleet beeld van hoe chatbots werken en waarom ze zo populair zijn geworden:<br /><br />
+                    
+                    <strong>De basis:</strong><br />
+                    • Een chatbot is een computerprogramma dat menselijke gesprekken kan simuleren<br />
+                    • Chatbots werken volgens het principe: input → processing → output<br />
+                    • De opkomst van AI-chatbots begon in de late jaren 2010 door de AI-boom<br /><br />
+                    
+                    <strong>Verschillende soorten chatbots:</strong><br />
+                    • <em>Regel-gebaseerde chatbots:</em> Gebruiken vooraf geprogrammeerde regels, zijn betrouwbaar maar beperkt<br />
+                    • <em>Data-gedreven chatbots:</em> Gebruiken AI-modellen en machine learning, zijn veelzijdiger maar niet altijd betrouwbaar<br /><br />
+                    
+                    <strong>Waar het "denkwerk" plaatsvindt:</strong><br />
+                    • <em>Online (cloud):</em> Krachtige modellen, maar je data gaat naar externe servers<br />
+                    • <em>Lokaal:</em> Privacy gegarandeerd, maar je hebt krachtige hardware nodig<br />
+                    • <em>Op het apparaat:</em> Zeer snel en privé, maar beperkte rekenkracht<br /><br />
+                    
+                    <strong>Belangrijke les:</strong><br />
+                    Er is veel meer tussen AI en ChatGPT dan je misschien dacht. Chatbots zijn er in allerlei soorten en maten, elk met hun eigen voor- en nadelen.
+        </div>
+            </div>
+
 
                 <div class="content-block trivia">
                     <div class="icon">
@@ -1356,12 +1413,6 @@
                     </details>
                 </div>
             </div>
-        </div>
 
-        <!-- Copyright sectie -->
-        <div class="copyright-section" style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 0.9rem;">
-            <p>&copy; 2025 Strange Duck in the Byte. Alle rechten voorbehouden.</p>
-            <p>Contact: <a href="mailto:quacktothefuture247@duck.com" style="color: #6b7280; text-decoration: none;">quacktothefuture247@duck.com</a></p>
-        </div>
-    </body>
-</html>
+
+ 
