@@ -6,18 +6,10 @@
         <title>Chatbots en AI-Assistenten</title>
         <link rel="stylesheet" href="../../css/style.css" />
         <script src="../../js/script.js"></script>
-        <script>
-        // Automatische datum update
-        document.addEventListener('DOMContentLoaded', function() {
-            const lastUpdatedElement = document.getElementById('last-updated');
-            if (lastUpdatedElement) {
-                lastUpdatedElement.textContent = new Date().toLocaleDateString('nl-NL');
-            }
-        });
-        </script>
+        <!-- Automatische datum update is verplaatst naar script.js -->
     </head>
     <body>
-        <!-- Eenvoudige sidebar -->
+        <!-- sidebar legenda -->
         <div class="simple-sidebar" id="simpleSidebar">
             <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
                 <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40" />
@@ -63,23 +55,24 @@
             </div>
         </div>
 
-        <!-- Tweede sidebar - naar begin van pagina -->
+        <!-- sidebar - naar begin van pagina -->
         <div class="top-sidebar" id="topSidebar">
             <div class="top-toggle-btn" onclick="goToTop()">
                 <img src="../../img/icons/naar-boven.png" alt="Naar boven" width="40" height="40" />
             </div>
         </div>
 
-        <!-- Derde sidebar - naar index.html -->
+        <!-- sidebar - naar index.html -->
         <div class="home-sidebar" id="homeSidebar">
             <div class="home-toggle-btn" onclick="goToHome()">
                 <img src="../../img/icons/home.png" alt="Naar home" width="40" height="40" />
             </div>
         </div>
 
+        <!-- inhoud -->
         <div class="container">
             <div class="header-section">
-                <h2 class="chatbots-title main-title">Chatbots en AI-Assistenten</h2>
+                <h2 class="chatbots-title main-title">Chatbots</h2>
 
                 <div class="metadata">
                     <div class="metadata-content">

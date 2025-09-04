@@ -121,9 +121,18 @@ function animateSidebars() {
     }, 300); // 300ms vertraging na pagina laden
 }
 
+// Automatische datum update
+function updateLastModifiedDate() {
+    const lastUpdatedElement = document.getElementById("last-updated");
+    if (lastUpdatedElement) {
+        lastUpdatedElement.textContent = new Date().toLocaleDateString("nl-NL");
+    }
+}
+
 // Voer de animatie uit wanneer de pagina geladen is
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function() {
     animateSidebars();
+    updateLastModifiedDate();
 });
 
 // Kopieer prompt functionaliteit

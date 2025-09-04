@@ -6,9 +6,10 @@
         <title>Chatbots en AI-Assistenten</title>
         <link rel="stylesheet" href="../../css/style.css" />
         <script src="../../js/script.js"></script>
+        <!-- Automatische datum update is verplaatst naar script.js -->
     </head>
     <body>
-        <!-- Eenvoudige sidebar -->
+        <!-- sidebar legenda -->
         <div class="simple-sidebar" id="simpleSidebar">
             <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
                 <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40" />
@@ -21,7 +22,7 @@
                 <div class="sidebar-body">
                     <div class="legend-item">
                         <img src="../../img/icons/informatie.png" alt="Informatie" width="66" height="66" />
-                        <div clasös="legend-text">
+                        <div class="legend-text">
                             <span class="legend-title">Informatie</span>
                             <small>Uitleg en achtergrondinformatie</small>
                         </div>
@@ -54,36 +55,33 @@
             </div>
         </div>
 
-        <!-- Tweede sidebar - naar begin van pagina -->
+        <!-- sidebar - naar begin van pagina -->
         <div class="top-sidebar" id="topSidebar">
             <div class="top-toggle-btn" onclick="goToTop()">
                 <img src="../../img/icons/naar-boven.png" alt="Naar boven" width="40" height="40" />
             </div>
         </div>
 
-        <!-- Derde sidebar - naar index.html -->
+        <!-- sidebar - naar index.html -->
         <div class="home-sidebar" id="homeSidebar">
             <div class="home-toggle-btn" onclick="goToHome()">
                 <img src="../../img/icons/home.png" alt="Naar home" width="40" height="40" />
             </div>
         </div>
 
+        <!-- inhoud -->
         <div class="container">
             <div class="header-section">
-                <h2 class="chatbots-title main-title">Chatbots en AI-Assistenten</h2>
+                <h2 class="chatbots-title main-title">Chatbots</h2>
 
                 <div class="metadata">
                     <div class="metadata-content">
-                        <div class="metadata-item"><strong> Laatste wijziging:</strong> 1 september 2025</div>
+                        <div class="metadata-item"><strong> Laatste wijziging:</strong> <span id="last-updated">[Automatisch bijgewerkt]</span></div>
                         <div class="metadata-item">
-                            <strong> Leerdoel:</strong> Begrijpen wat chatbots en AI-assistentenzijn en hoe je ze kunt
-                            gebruiken
+                            <strong> Leerdoel:</strong> Begrijpen wat chatbots zijn, hoe je ze kunt
+                            gebruiken en waar je rekening mee moet houden.
                         </div>
-                        <div class="metadata-item"><strong> Leestijd:</strong> 8-10 minuten</div>
-                        <div class="metadata-item">
-                            <strong> Inhoud:</strong> <a href="#chatbots">Chatbots</a> | <a href="#agi">AGI</a> |
-                            <a href="#ai-assistenten">AI-Assistenten</a>
-                        </div>
+                        <div class="metadata-item"><strong> Leestijd:</strong> (nader te bepalen)</div>        
                     </div>
                 </div>
             </div>
@@ -96,11 +94,16 @@
                         <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>Opdracht 1: Venster plaatsen</strong><br />
-                        Zet dit venster aan de linkerkant van de browser. <br /><br/>
-                        <em>Tip:</em> Gebruik sneltoetsen om dit te doen.<br/>
+                        <strong>Opdracht 1: Venster verplaatsen</strong><br />
+                        Zet dit venster aan de linkerkant van het scherm. <br /><br/>
+                        <em>Tip:</em> Gebruik de volgende sneltoetsen om dit te doen.<br/><br/>
                         Windows: <code>Windows + ←</code> <br/>
-                        Mac: <code>Control + Command + F</code> (uit fullscreen zetten) en dan naar links slepen.
+                        <br/>
+                        MacOS: <code>Control + Command + F</code> 
+                        <br/>
+                        Hiermee zet je het venster uit fullscreen.
+                        <br/>
+                        Dan kun je het venster verkleinen en aan de linkerkant van het scherm zetten.
                     </div>
                 </div>
 
@@ -138,10 +141,9 @@
                         <a href="https://www.ibm.com/think/topics/chatbots" target="_blank">(IBM)</a>.<br /><br />
                         <strong>Chatbots en AI</strong>
                         <br />
-                        Er is een verschil tussen klassieke en moderne chatbots. Dat zullen we zo verder
-                        bespreken.<br />
-                        In hoeverre klassieke catbots gebruik maakt van AI, is afhankelijk van de vraag hoe je het begrip AI definieert. Dit is een interessant onderwerp maar we laten het voorlopig even buiten beschouwing.<br/>
-                        Wel kunnen we stellen dat  deontwikkeling van de moderne chatbot vanaf ongeveer 2000 is gebaseerd op de innovaties in de AI-wereld.
+                        Er is een verschil tussen klassieke en moderne chatbots. Dat zullen we zo verder in dit artikel bespreken.<br />
+                        In hoeverre klassieke chatbots gebruik maken van AI, is afhankelijk van de vraag hoe je het begrip AI definieert. Dit is een interessant onderwerp maar we laten het voorlopig even buiten beschouwing.<br/>
+                        Wel kunnen we stellen dat de ontwikkeling van de moderne chatbot vanaf ongeveer 2000 is gebaseerd op de innovaties in de AI-wereld.
                </div>
                 </div>
 
@@ -240,7 +242,7 @@
                         <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>3. Stel jezelf voor</strong><br />
+                        <strong>Opdracht 3: Stel jezelf voor</strong><br />
                         Geef <em>Lumo</em> input door onder in het tekstvenster jezelf voor te stellen met de naam van
                         een bekende persoon.
                         <br />
@@ -285,11 +287,11 @@
                                 <strong>Regel-gebaseerd:</strong> Door vooraf geprogrammeerde regels is de chatbot in staat om antwoord te geven. De eerste chatbots konden antwoord geven op basis van deze methode en worden ook wel klassieke
                                 chatbots genoemd.<br />
                                 <br />
-                                Regel-gebaseerde chatbots zijn heel beperkt in de antwoorden die ze kunnnen geven maar
+                                Regel-gebaseerde chatbots zijn heel beperkt in de antwoorden die ze kunnen geven maar
                                 als ze wel antwoorden geven, is dit wel een betrouwbaar antwoord. <br /><br />
                                 <blockquote><em
                                     >De methode is als een boek dat vooraf is geschreven en alleen antwoorden kan geven op
-                                    vragen die ookin het boek staan.</em
+                                    vragen die ook in het boek staan.</em
                                 ></blockquote>
                             </li>
                             <br />
@@ -435,10 +437,15 @@
                                 offline en je privacy is gegarandeerd.<br /><br />
 
                                 <em>Nadelen:</em> De rekenkracht van apparaten is beperkt, dus je kunt alleen kleine
-                                AI-modellen gebruiken. Dit kan ook meer batterijverbruik veroorzaken.
+                                AI-modellen gebruiken. Dit kan ook meer batterijverbruik veroorzaken.<br /><br />
                             </li>
                         </ul>
+                        <br />
+
+                    <img src="../../img/denkwerk.png" alt="Edge deployment" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" />
                     </div>
+                    
+                    
                 </div>
 
                 <div class="content-block trivia">
@@ -478,7 +485,7 @@
                         <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>2. Schakel ghost mode in bij Lumo</strong><br />
+                        <strong>Opdracht 4: Schakel ghost mode in bij Lumo</strong><br />
                         Klik rechtsboven op het icoon van de kat met de zonnebril.
                     </div>
                 </div>
@@ -540,9 +547,7 @@
                                     <div class="feedback-content">
                                         <span class="feedback-icon">❌</span>
                                         <strong>Nog niet goed!</strong><br />
-                                        <em>Hint:</em> Hoewel verschillende chatbots inderdaad verschillende modellen
-                                        kunnen gebruiken, is dit niet de hoofdreden waarom één chatbot verschillende
-                                        antwoorden kan geven op dezelfde vraag.
+                                        <em>Hint:</em> Snelheid is niet het belangrijkste verschil. Denk aan wat Generatieve AI kan
                                     </div>
                                 </div>
                             </div>
@@ -569,7 +574,7 @@
                     </div>
                     <div class="content-text">
                         <strong
-                            >5. Kopieer de volgende prompt en plak (windows: <code> ctrl + v</code> mac: <code> cmd + v</code> ) in het prompt-venster:</strong
+                            >Opdracht 5. Kopieer de volgende prompt en plak (windows: <code> ctrl + v</code> mac: <code> cmd + v</code> ) in het prompt-venster:</strong
                         ><br /><br />
                         <div class="prompt-box">
                             <button
@@ -607,7 +612,7 @@
                     </div>
                     <div class="content-text">
                         <strong
-                            >7. Klik op het wereldbol-icoon om 'Zoeken op het web' in te schakelen en vraag vervolgens
+                            >Opdracht 6. Klik op het wereldbol-icoon om 'Zoeken op het web' in te schakelen en vraag vervolgens
                             naar het nieuws van vandaag.</strong
                         ><br /><br />
                         <span
@@ -663,7 +668,7 @@
                         <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>6. We gaan een andere chatbot openen.</strong><br />
+                        <strong>Opdracht 7: We gaan een andere chatbot openen.</strong><br />
                         > Als je nog eens gebruik wilt maken van <em>Lumo</em>, bookmark de pagina door het venster te selecteren en de sneltoets <code>ctrl + d</code>/<code>cmd + d</code> te gebruiken.<br /><br />
                         > Sluit het venster en klik op de onderstaande knop om <em>Perplexity AI</em> te openen.<br />
                         
@@ -686,7 +691,7 @@
                         <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>7. Stel Perplexity AI vragen en maak het niet te makkelijk.</strong><br />
+                        <strong>Opdracht 8: Stel Perplexity AI vragen en maak het niet te makkelijk.</strong><br />
                         Je kunt bijvoorbeeld de volgende strikvragen gebruiken:<br />
                         
                         <div class="prompt-box">
@@ -859,18 +864,26 @@
                         </details>
                     </div>
                 </div>
-
+            </div>
+            
+            
+                        <div class="chatbots-section" id="generatieve-ai">
+                            <h3 class="chatbots-title">Generatieve AI</h3>
+                            <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px">
+                                Laten we nu kijken naar een andere kant van AI: het creëren van nieuwe content.
+                            </p>
+            
                 <div class="content-block task">
                     <div class="icon">
                         <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
                     </div>
                     <div class="content-text">
                         <strong
-                            >8. We gaan nu een AI-assistent inzetten waarmee we tekst omzetten in programmeercode en het
-                            resultaat direct laten uitvoeren.</strong
+                        >Opdracht 9. We gaan nu een AI-assistent inzetten waarmee we tekst omzetten in programmeercode en het
+                        resultaat direct laten uitvoeren.</strong
                         ><br /><br />
 
-                        <em>6. Ga naar:</em> <a href="https://claude.ai" target="_blank">https://claude.ai</a><br />
+                        <em>> Ga naar:</em> <a href="https://claude.ai" target="_blank">https://claude.ai</a><br />
                         <span
                             >Om gebruik te maken van Claude moet je je eerst registreren.<br />
                             <em>- Kopieer de onderstaande prompt en plak deze in het prompt-venster.</em><br />
@@ -926,32 +939,26 @@
                         <span>Dit laat de kracht van een tool zien die draait op zo'n foundation model.</span>
                     </div>
                 </div>
-            </div>
-
-            <div class="chatbots-section" id="agi">
-                <h3 class="chatbots-title">AGI</h3>
-                <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px">
-                    Laten we nu kijken naar een andere kant van AI: het creëren van nieuwe content.
-                </p>
+            
 
                 <div class="content-block info">
                     <div class="icon">
                         <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>Artificiele Generatieve Intelligentie</strong><br /><br />
+                        <strong>Generatieve Artificiele Intelligentie</strong><br /><br />
                         Nu je hebt ervaren hoe chatbots werken en hun beperkingen kent, is het tijd om te kijken naar
                         een andere kant van <a href="../../naslag/begrippen.html#artificiele-intelligentie">AI</a>: het
                         creëren van nieuwe content. Dit wordt
-                        <strong>Artificiele Generatieve Intelligentie (AGI)</strong> genoemd.<br /><br />
-                        <a href="../../naslag/begrippen.html#agi">AGI</a> is een tak van
+                        <strong>Generatieve Artificiele Intelligentie (GenAI)</strong> genoemd.<br /><br />
+                        <a href="../../naslag/begrippen.html#agi">GenAI</a> is een tak van
                         <a href="../../naslag/begrippen.html#artificiele-intelligentie">kunstmatige intelligentie</a>
                         die zich richt op het creëren van nieuwe content in plaats van alleen bestaande
                         <a href="../../naslag/begrippen.html#data">data</a> te analyseren. Deze technologie kan
                         verschillende soorten content genereren zoals tekst, afbeeldingen, muziek, video's en zelfs
                         programmeercode.<br /><br />
                         <strong>Hoe werkt het?</strong><br />
-                        AGI-systemen zijn getraind op enorme hoeveelheden bestaande data en gebruiken complexe
+                        GenAI-systemen zijn getraind op enorme hoeveelheden bestaande data en gebruiken complexe
                         wiskundige modellen om nieuwe content te genereren. Ze herkennen patronen en kunnen deze
                         gebruiken om nieuwe, realistische output te genereren.<br /><br />
                         <strong>Toepassingen:</strong><br />
@@ -960,10 +967,10 @@
                         • <em>Codegeneratie:</em> Programmeerhulp, automatische debugging<br />
                         • <em>Muziek en audio:</em> Compositie, spraaksynthese<br /><br />
                         <strong>Belangrijke kenmerken:</strong><br />
-                        AGI-systemen kunnen <em>creativiteit nabootsen</em> - ze kunnen nieuwe combinaties maken die
+                        Generatieve AI-systemen kunnen <em>creativiteit nabootsen</em> - ze kunnen nieuwe combinaties maken die
                         niet bestonden in de trainingsdata. Ze kunnen ook worden aangepast - ze kunnen worden getraind
                         op nieuwe feedback om hun output te verbeteren. Dit maakt ze zeer krachtig voor allerlei
-                        creatieve en praktische taken.
+                        creatieve en praktische taken. Generatieve AI is creatief en kan originele output genereren.
                     </div>
                 </div>
 
@@ -974,56 +981,54 @@
                     <div class="content-text">
                         <strong>Quizvraag</strong><br /><br />
                         <strong>Vraag:</strong> Wat is het belangrijkste verschil tussen een gewone chatbot en
-                        Artificiele Generatieve Intelligentie (AGI)?<br /><br />
+                        Generatieve AI?<br /><br />
 
                         <em>Klik op een antwoord om te zien of het correct is!</em>
                         <div class="quiz-options">
                             <div class="quiz-option" onclick="toggleAnswer('A2')">
-                                <strong>A)</strong> AGI is sneller dan gewone chatbots
+                                <strong>A)</strong> Generatieve AI is sneller dan gewone chatbots
                                 <div class="answer-feedback" id="answer-A2">
                                     <div class="feedback-content">
-                                        <span class="feedback-icon">❌</span>
-                                        <strong>Nog niet goed!</strong><br />
-                                        <em>Hint:</em> Snelheid is niet het belangrijkste verschil. Denk aan wat AGI kan
-                                        doen dat gewone chatbots niet kunnen.
+                                        <span class="feedback-icon">✅</span>
+                                        <strong>Correct!</strong><br />
+                                        Generatieve AI is sneller dan gewone chatbots.
                                     </div>
                                 </div>
                             </div>
 
                             <div class="quiz-option" onclick="toggleAnswer('B2')">
-                                <strong>B)</strong> AGI kan nieuwe content creëren, chatbots alleen bestaande informatie
+                                <strong>B)</strong> Generatieve AI kan nieuwe content creëren, chatbots alleen bestaande informatie
                                 gebruiken
                                 <div class="answer-feedback" id="answer-B2">
                                     <div class="feedback-content">
                                         <span class="feedback-icon">✅</span>
                                         <strong>Correct!</strong><br />
-                                        AGI richt zich op het creëren van nieuwe content (tekst, afbeeldingen, code,
+                                        Generatieve AI richt zich op het creëren van nieuwe content (tekst, afbeeldingen, code,
                                         muziek), terwijl gewone chatbots vooral bestaande informatie analyseren en
-                                        doorgeven. AGI is creatief en kan originele output genereren.
+                                        doorgeven. Generatieve AI is creatief en kan originele output genereren.
                                     </div>
                                 </div>
                             </div>
 
                             <div class="quiz-option" onclick="toggleAnswer('C2')">
-                                <strong>C)</strong> AGI is alleen voor professionele gebruikers
+                                <strong>C)</strong> Generatieve AI is alleen voor professionele gebruikers
                                 <div class="answer-feedback" id="answer-C2">
                                     <div class="feedback-content">
                                         <span class="feedback-icon">❌</span>
                                         <strong>Nog niet goed!</strong><br />
-                                        <em>Hint:</em> AGI is niet beperkt tot professionele gebruikers. Denk aan de
-                                        fundamentele functie van AGI versus chatbots.
+                                        <em>Hint:</em> Generatieve AI is niet beperkt tot professionele gebruikers. Denk aan de
+                                        fundamentele functie van Generatieve AI versus chatbots.
                                     </div>
                                 </div>
                             </div>
 
                             <div class="quiz-option" onclick="toggleAnswer('D2')">
-                                <strong>D)</strong> AGI werkt alleen met tekst, chatbots met alle media
+                                <strong>D)</strong> Generatieve AI werkt alleen met tekst, chatbots met alle media
                                 <div class="answer-feedback" id="answer-D2">
                                     <div class="feedback-content">
                                         <span class="feedback-icon">❌</span>
                                         <strong>Nog niet goed!</strong><br />
-                                        <em>Hint:</em> Het is precies andersom! AGI kan met verschillende media werken
-                                        (tekst, afbeeldingen, muziek, code), terwijl chatbots vooral tekst gebruiken.
+                                        <em>Hint:</em> Het is precies andersom! Generatieve AI kan met verschillende media werken (tekst, afbeeldingen, muziek, code), terwijl chatbots vooral tekst gebruiken.
                                     </div>
                                 </div>
                             </div>
@@ -1057,7 +1062,7 @@
             <div class="chatbots-section" id="ai-assistenten">
                 <h3 class="chatbots-title">AI-Assistenten</h3>
                 <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px">
-                    Nu je begrijpt wat AGI is, gaan we kijken naar de meest geavanceerde AI-tools: foundation models die
+                    Nu je begrijpt wat Generatieve AI is, gaan we kijken naar de meest geavanceerde AI-tools: foundation models die
                     veel meer kunnen dan alleen tekst genereren.
                 </p>
 
@@ -1261,73 +1266,6 @@
                     </div>
                 </div>
 
-                <div class="content-block task">
-                    <div class="icon">
-                        <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
-                    </div>
-                    <div class="content-text">
-                        <strong
-                            >8. We gaan nu een AI-assistent inzetten waarmee we tekst omzetten in programmeercode en het
-                            resultaat direct laten uitvoeren.</strong
-                        ><br /><br />
-
-                        <em>6. Ga naar:</em> <a href="https://claude.ai" target="_blank">https://claude.ai</a><br />
-                        <span
-                            >Om gebruik te maken van Claude moet je je eerst registreren.<br />
-                            <em>- Kopieer de onderstaande prompt en plak deze in het prompt-venster.</em><br />
-                            Even geduld en vervolgens zie je allerlei code verschijnen.</span
-                        ><br /><br />
-
-                        <div class="prompt-box">
-                            <button
-                                class="copy-btn"
-                                onclick="copyPrompt(this)"
-                                title="Kopieer prompt"
-                                style="
-                                    float: right;
-                                    margin-bottom: 10px;
-                                    background: #6b7280;
-                                    color: white;
-                                    border: 1px solid #4b5563;
-                                    padding: 4px 8px;
-                                    font-size: 12px;
-                                ">
-                                Kopieer
-                            </button>
-                            <div class="prompt-content" style="color: #000000 !important">
-                                Maak een volledig werkend HTML-spel met CSS en JavaScript (geen externe libraries) met
-                                de volgende functies:<br /><br />
-                                • Een speler (kleine cirkel of vierkant) die je met de muis kunt bewegen<br />
-                                • Cyborg-zombies (rode cirkels) die langzaam naar de speler bewegen<br />
-                                • Klik om te schieten - projectielen die de zombies vernietigen<br />
-                                • Een score die toont hoeveel zombies je hebt vernietigd<br />
-                                • Nieuwe zombies spawnen automatisch<br />
-                                • Game over als een zombie de speler raakt<br />
-                                • Een donkere, futuristische interface met gradient achtergrond (donkergrijs naar
-                                zwart)<br />
-                                • Glow effecten rond de speler en projectielen (lichtblauw)<br />
-                                • Zombies hebben een subtiele rode glow<br />
-                                • Smooth animaties voor beweging en schieten<br />
-                                • Score display met moderne, grote letters<br />
-                                • Het spel moet direct speelbaar zijn in de browser<br /><br />
-                                Maak het visueel aantrekkelijk maar houd de functionaliteit simpel - focus op een
-                                werkend spel met mooie effecten.
-                            </div>
-                        </div>
-                        <br /><br />
-
-                        <span
-                            >Als het goed is wordt nu het spel gegenereerd doordat de broncode wordt geschreven.<br />
-                            Dit duurt even. Vervolgens kun je bovenaan op 'weergeven' klikken en kun je de game
-                            spelen.<br />
-                            Het kan zeker voorkomen dat het spel niet werkt. Geef dat als prompt door zodat de code kan
-                            worden verbeterd. </span
-                        ><br /><br />
-
-                        <span>Dit laat de kracht van een tool zien die draait op zo'n foundation model.</span>
-                    </div>
-                </div>
-            </div>
 
             <div class="content-block conclusion">
                 <div class="icon">
@@ -1343,9 +1281,9 @@
                     ELIZA) en data-gedreven chatbots (zoals Lumo). Je weet dat chatbots eigenlijk interfaces zijn voor
                     AI-modellen die op de achtergrond draaien, en dat ze kunnen hallucineren.<br /><br />
 
-                    <strong>AGI (Artificiele Generatieve Intelligentie)</strong> - Je hebt ontdekt dat AI niet alleen
+                    <strong>Generatieve AI</strong> - Je hebt ontdekt dat AI niet alleen
                     informatie kan analyseren, maar ook nieuwe content kan creëren: tekst, afbeeldingen, muziek, video's
-                    en programmeercode. AGI-systemen kunnen creativiteit nabootsen door patronen te herkennen en nieuwe
+                    en programmeercode. Generatieve AI-systemen kunnen creativiteit nabootsen door patronen te herkennen en nieuwe
                     combinaties te maken.<br /><br />
 
                     <strong>AI-Assistenten</strong> - Je hebt gezien hoe foundation models de basis vormen voor moderne
@@ -1363,6 +1301,69 @@
                     Onthoud: AI is een hulpmiddel dat je kritisch moet gebruiken, niet blindelings vertrouwen.
                 </div>
             </div>
+
+            <div class="content-block conclusion">
+                <div class="icon">
+                    <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80" />
+                </div>
+                <div class="content-text">
+                    <strong>Reflectie-opdracht:</strong><br />
+                    Denk na over hoe je AI-tools kunt gebruiken in je dagelijks leven, werk of studie. Welke taken zouden baat hebben bij AI-ondersteuning? Welke risico's zie je?<br /><br />
+
+                    <strong>Ethische overwegingen:</strong><br />
+                    • <em>Privacy:</em> Welke informatie deel je met AI-tools?<br />
+                    • <em>Bias:</em> Hoe herken je vooroordelen in AI-output?<br />
+                    • <em>Afhankelijkheid:</em> Wanneer is het beter om zelf na te denken in plaats van AI te gebruiken?<br /><br />
+                </div>
+            </div>
+
+            <div class="content-block info" style="background-color: #fef3c7; border-left: 4px solid #f59e0b;">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Pauze" width="80" height="80" />
+                </div>
+                <div class="content-text">
+                    <strong>⏸️ Pauze-moment</strong><br />
+                    Je hebt nu de basis geleerd over chatbots. Neem even de tijd om dit te verwerken voordat je verder gaat.<br /><br />
+                    
+                    <em>Vraag jezelf af:</em> Wat was het meest verrassende dat je net hebt geleerd? Welke vragen heb je nog?
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80" />
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary>
+                            <strong>GenAI vs AGI: Een veelgemaakte verwarring</strong>
+                            <span style="color: #666; font-size: 0.9rem; font-weight: normal">(klik om te lezen)</span>
+                        </summary>
+                        <strong>Waarom worden deze begrippen door elkaar gehaald?</strong><br />
+                        De termen <strong>GenAI (Generatieve AI)</strong> en <strong>AGI (Artificial General Intelligence)</strong> worden vaak door elkaar gebruikt, maar ze betekenen heel verschillende dingen. Deze verwarring ontstaat omdat beide termen over AI gaan, maar ze verwijzen naar totaal verschillende concepten.<br /><br />
+                        
+                        <strong>Wat is het verschil?</strong><br />
+                        • <strong>GenAI (Generatieve AI):</strong> Dit is wat we in dit artikel bespreken - AI-systemen die nieuwe content kunnen creëren (tekst, afbeeldingen, muziek, code). ChatGPT, DALL-E en Claude zijn voorbeelden van GenAI.<br /><br />
+                        
+                        • <strong>AGI (Artificial General Intelligence):</strong> Dit verwijst naar een hypothetische AI die net zo intelligent is als een mens - of zelfs intelligenter. AGI zou alle taken kunnen uitvoeren die een mens kan, van wiskunde tot creativiteit tot sociale interactie. AGI bestaat nog niet en experts zijn het oneens over wanneer (of zelfs of) het ooit zal bestaan.<br /><br />
+                        
+                        <strong>De verwarring in de media</strong><br />
+                        Veel nieuwsartikelen en discussies gebruiken "AGI" wanneer ze eigenlijk "GenAI" bedoelen. Dit gebeurt omdat:<br />
+                        • Beide termen relatief nieuw zijn voor het grote publiek<br />
+                        • De afkortingen lijken op elkaar<br />
+                        • Beide gaan over geavanceerde AI-technologie<br /><br />
+                        
+                        <strong>Waarom is dit belangrijk?</strong><br />
+                        Het onderscheid is cruciaal omdat het verschillende verwachtingen schept. GenAI is al realiteit en wordt dagelijks gebruikt, terwijl AGI nog steeds science fiction is. Door deze termen correct te gebruiken, kunnen we realistische verwachtingen hebben van wat AI nu kan en wat nog toekomstmuziek is.
+                    </details>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright sectie -->
+        <div class="copyright-section" style="text-align: center; padding: 20px; margin-top: 40px; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 0.9rem;">
+            <p>&copy; 2025 Strange Duck in the Byte. Alle rechten voorbehouden.</p>
+            <p>Contact: <a href="mailto:quacktothefuture247@duck.com" style="color: #6b7280; text-decoration: none;">quacktothefuture247@duck.com</a></p>
         </div>
     </body>
 </html>
