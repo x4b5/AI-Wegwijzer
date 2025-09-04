@@ -19,7 +19,7 @@
     --primary-yellow-light: #e6e4c7;
     --primary-gray: #636b77;
     --primary-gray-light: #c4c8ce;
-    
+
     /* Neutrale kleuren */
     --white: #ffffff;
     --gray-50: #f0f1f2;
@@ -32,29 +32,29 @@
     --gray-700: #2c3339;
     --gray-800: #171d24;
     --gray-900: #0d1116;
-    
+
     /* Achtergrond kleuren */
     --bg-primary: #e6e9ed;
     --bg-secondary: #ffffff;
     --bg-accent: #d6dbe2;
-    
+
     /* Tekst kleuren */
     --text-primary: #17202a;
     --text-secondary: #38424f;
     --text-muted: #4f5a6b;
     --text-light: #ffffff;
-    
+
     /* Schaduw kleuren */
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    
+
     /* Border kleuren */
     --border-light: #c4c9d1;
     --border-medium: #a8b0bd;
     --border-dark: #76828f;
-    
+
     /* Overgangen */
     --transition-fast: 0.15s ease;
     --transition-normal: 0.3s ease;
@@ -71,7 +71,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     line-height: 1.7;
     color: var(--text-primary);
     max-width: 1200px;
@@ -95,7 +95,7 @@ h1 {
     padding: 8px 25px; /* Padding zoals bij chatbots titel */
     font-weight: 700;
     text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background: transparent; /* Geen achtergrond */
     border-radius: 12px; /* Afgeronde hoeken zoals bij chatbots titel */
     border: none;
@@ -230,7 +230,12 @@ h4 {
    SPECIFIEKE BLOK TYPES MET DONKERDERE KLEUREN EN MAXIMAAL VERLOOP NAAR WIT
    ======================================== */
 .task .icon {
-    background: linear-gradient(135deg, #1a5a1a 0%, rgba(26, 90, 26, 0.8) 50%, rgba(26, 90, 26, 0.1) 100%); /* Donkerder groen met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #1a5a1a 0%,
+        rgba(26, 90, 26, 0.8) 50%,
+        rgba(26, 90, 26, 0.1) 100%
+    ); /* Donkerder groen met maximaal verloop naar wit */
     color: #3a4249;
 }
 
@@ -239,7 +244,12 @@ h4 {
 }
 
 .quiz .icon {
-    background: linear-gradient(135deg, #b85454 0%, rgba(184, 84, 84, 0.8) 50%, rgba(184, 84, 84, 0.1) 100%); /* Donkerder rood met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #b85454 0%,
+        rgba(184, 84, 84, 0.8) 50%,
+        rgba(184, 84, 84, 0.1) 100%
+    ); /* Donkerder rood met maximaal verloop naar wit */
     color: #3a4249;
 }
 
@@ -249,7 +259,12 @@ h4 {
 }
 
 .trivia .icon {
-    background: linear-gradient(135deg, #b89454 0%, rgba(184, 148, 84, 0.8) 50%, rgba(184, 148, 84, 0.1) 100%); /* Donkerder geel/oranje met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #b89454 0%,
+        rgba(184, 148, 84, 0.8) 50%,
+        rgba(184, 148, 84, 0.1) 100%
+    ); /* Donkerder geel/oranje met maximaal verloop naar wit */
     color: #3a4249;
 }
 
@@ -259,7 +274,12 @@ h4 {
 }
 
 .important .icon {
-    background: linear-gradient(135deg, #b85454 0%, rgba(184, 84, 84, 0.8) 50%, rgba(184, 84, 84, 0.1) 100%); /* Donkerder rood met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #b85454 0%,
+        rgba(184, 84, 84, 0.8) 50%,
+        rgba(184, 84, 84, 0.1) 100%
+    ); /* Donkerder rood met maximaal verloop naar wit */
     color: #3a4249;
 }
 
@@ -269,7 +289,12 @@ h4 {
 }
 
 .info .icon {
-    background: linear-gradient(135deg, #4a6fa5 0%, rgba(74, 111, 165, 0.8) 50%, rgba(74, 111, 165, 0.1) 100%); /* Donkerder blauw met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #4a6fa5 0%,
+        rgba(74, 111, 165, 0.8) 50%,
+        rgba(74, 111, 165, 0.1) 100%
+    ); /* Donkerder blauw met maximaal verloop naar wit */
     color: #3a4249;
 }
 
@@ -361,7 +386,7 @@ h4 {
     margin: 25px 0;
     border: 1px solid var(--border-light);
     box-shadow: var(--shadow-sm);
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "Courier New", Courier, monospace;
 }
 
 .prompt-header {
@@ -422,12 +447,28 @@ h4 {
    INTERACTIEVE ELEMENTEN STYLING
    ======================================== */
 /* Alle klikbare elementen krijgen hand cursor */
-[onclick], [href], button, .btn, .demo-button, .nav-button, .icon, .quiz-option, summary {
+[onclick],
+[href],
+button,
+.btn,
+.demo-button,
+.nav-button,
+.icon,
+.quiz-option,
+summary {
     cursor: pointer;
 }
 
 /* Voorkom tekst selectie bij interactieve elementen */
-[onclick], [href], button, .btn, .demo-button, .nav-button, .icon, .quiz-option, summary {
+[onclick],
+[href],
+button,
+.btn,
+.demo-button,
+.nav-button,
+.icon,
+.quiz-option,
+summary {
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -435,7 +476,15 @@ h4 {
 }
 
 /* Hover effecten voor alle interactieve elementen */
-[onclick]:hover, [href]:hover, button:hover, .btn:hover, .demo-button:hover, .nav-button:hover, .icon:hover, .quiz-option:hover, summary:hover {
+[onclick]:hover,
+[href]:hover,
+button:hover,
+.btn:hover,
+.demo-button:hover,
+.nav-button:hover,
+.icon:hover,
+.quiz-option:hover,
+summary:hover {
     cursor: pointer;
 }
 
@@ -563,7 +612,8 @@ table {
     border: 1px solid var(--border-light);
 }
 
-th, td {
+th,
+td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid var(--border-light);
@@ -582,7 +632,8 @@ tr:hover {
 /* ========================================
    LISTS STYLING
    ======================================== */
-ul, ol {
+ul,
+ol {
     margin: 15px 0;
     padding-left: 25px;
 }
@@ -619,7 +670,7 @@ code {
     background: #2d3748; /* Donkere achtergrond */
     padding: 2px 6px;
     border-radius: 4px;
-    font-family: 'Courier New', monospace;
+    font-family: "Courier New", monospace;
     color: #e2e8f0; /* Lichte tekst voor contrast */
     border: 1px solid #4a5568; /* Donkere border */
 }
@@ -651,18 +702,32 @@ img {
 /* ========================================
    UTILITY CLASSES
    ======================================== */
-.text-center { text-align: center; }
+.text-center {
+    text-align: center;
+}
 
-.mb-2 { margin-bottom: 0.5rem; }
+.mb-2 {
+    margin-bottom: 0.5rem;
+}
 
-.mb-4 { margin-bottom: 1.5rem; }
+.mb-4 {
+    margin-bottom: 1.5rem;
+}
 
-.mt-2 { margin-top: 0.5rem; }
+.mt-2 {
+    margin-top: 0.5rem;
+}
 
-.mt-4 { margin-top: 1.5rem; }
+.mt-4 {
+    margin-top: 1.5rem;
+}
 
-.shadow-md { box-shadow: var(--shadow-md); }
-.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-md {
+    box-shadow: var(--shadow-md);
+}
+.shadow-lg {
+    box-shadow: var(--shadow-lg);
+}
 
 /* ========================================
    SPECIALE ELEMENTEN
@@ -691,16 +756,16 @@ img {
     body {
         padding: 20px;
     }
-    
+
     .container {
         padding: 30px;
     }
-    
+
     .content-block {
         margin: 40px 0;
         flex-direction: row; /* Blijf in rij-layout */
     }
-    
+
     .icon {
         width: 60px; /* Iets smaller op mobiel */
         min-height: 100%;
@@ -709,12 +774,12 @@ img {
         border-radius: 0 0 16px 0;
         flex-shrink: 0;
     }
-    
+
     .icon img {
         width: 80px; /* Iets kleiner icoon op mobiel */
         height: 80px;
     }
-    
+
     .content-text {
         border-radius: 0 16px 16px 0;
         border-top: none;
@@ -722,13 +787,13 @@ img {
         padding: 20px; /* Minder padding op mobiel */
         flex: 1; /* Neem beschikbare ruimte in */
     }
-    
+
     h1 {
         font-size: 2.2rem;
         padding: 20px 25px;
         margin: 1.5rem 0 1.5rem 0;
     }
-    
+
     h2 {
         font-size: 1.5rem;
     }
@@ -754,8 +819,14 @@ body::-webkit-scrollbar {
    ANIMATIES EN TRANSITIES
    ======================================== */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .content-block {
@@ -766,7 +837,9 @@ body::-webkit-scrollbar {
 /* ========================================
    FOCUS STATES
    ======================================== */
-button:focus, .btn:focus, .demo-button:focus {
+button:focus,
+.btn:focus,
+.demo-button:focus {
     outline: none;
     outline-offset: 2px;
 }
@@ -786,12 +859,12 @@ a:focus {
         padding: 0;
         margin: 0;
     }
-    
+
     .container {
         box-shadow: none;
         border: 1px solid #ccc;
     }
-    
+
     .icon {
         background: var(--gray-100) !important;
         color: var(--text-primary) !important;
@@ -807,7 +880,12 @@ a:focus {
 .content-block[data-type="task"] .icon,
 .content-block.opdracht .icon,
 .task .icon {
-    background: linear-gradient(135deg, #4a9a4a 0%, rgba(74, 154, 74, 0.8) 50%, rgba(74, 154, 74, 0.1) 100%); /* Nog lichtere groen */
+    background: linear-gradient(
+        135deg,
+        #4a9a4a 0%,
+        rgba(74, 154, 74, 0.8) 50%,
+        rgba(74, 154, 74, 0.1) 100%
+    ); /* Nog lichtere groen */
     color: #2a3239;
 }
 
@@ -816,7 +894,12 @@ a:focus {
 .content-block.opdracht .icon:hover,
 .task .icon:hover {
     color: #2a3239; /* Geen kleurverandering */
-    background: linear-gradient(135deg, #5aaa5a 0%, rgba(90, 170, 90, 0.85) 50%, rgba(90, 170, 90, 0.2) 100%); /* Nog lichtere groen hover */
+    background: linear-gradient(
+        135deg,
+        #5aaa5a 0%,
+        rgba(90, 170, 90, 0.85) 50%,
+        rgba(90, 170, 90, 0.2) 100%
+    ); /* Nog lichtere groen hover */
 }
 
 .content-block:has(.icon img[src*="opdracht"]) .content-text,
@@ -848,7 +931,12 @@ a:focus {
 .content-block:has(.icon img[src*="quizvraag"]) .icon,
 .content-block[data-type="quiz"] .icon,
 .content-block.quiz .icon {
-    background: linear-gradient(135deg, #b85454 0%, rgba(184, 84, 84, 0.8) 50%, rgba(184, 84, 84, 0.1) 100%); /* Donkerder rood met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #b85454 0%,
+        rgba(184, 84, 84, 0.8) 50%,
+        rgba(184, 84, 84, 0.1) 100%
+    ); /* Donkerder rood met maximaal verloop naar wit */
     color: #2a3239;
 }
 
@@ -857,7 +945,12 @@ a:focus {
 .content-block.quiz .icon:hover {
     color: #2a3239; /* Geen kleurverandering */
     transform: scale(1.02) !important; /* Kleinere schaal */
-    background: linear-gradient(135deg, #ba5656 0%, rgba(186, 86, 86, 0.85) 50%, rgba(186, 86, 86, 0.2) 100%); /* Donkerder rood hover met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #ba5656 0%,
+        rgba(186, 86, 86, 0.85) 50%,
+        rgba(186, 86, 86, 0.2) 100%
+    ); /* Donkerder rood hover met maximaal verloop naar wit */
 }
 
 .content-block:has(.icon img[src*="quizvraag"]) .content-text,
@@ -891,7 +984,12 @@ a:focus {
 .content-block:has(.icon img[src*="boekenwurm"]) .icon,
 .content-block[data-type="trivia"] .icon,
 .content-block.trivia .icon {
-    background: linear-gradient(135deg, #b89454 0%, rgba(184, 148, 84, 0.8) 50%, rgba(184, 148, 84, 0.1) 100%); /* Donkerder geel/oranje met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #b89454 0%,
+        rgba(184, 148, 84, 0.8) 50%,
+        rgba(184, 148, 84, 0.1) 100%
+    ); /* Donkerder geel/oranje met maximaal verloop naar wit */
     color: #2a3239;
 }
 
@@ -900,7 +998,12 @@ a:focus {
 .content-block.trivia .icon:hover {
     color: #2a3239; /* Geen kleurverandering */
     transform: scale(1.02) !important; /* Kleinere schaal */
-    background: linear-gradient(135deg, #ba9656 0%, rgba(186, 150, 86, 0.85) 50%, rgba(186, 150, 86, 0.2) 100%); /* Donkerder geel/oranje hover met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #ba9656 0%,
+        rgba(186, 150, 86, 0.85) 50%,
+        rgba(186, 150, 86, 0.2) 100%
+    ); /* Donkerder geel/oranje hover met maximaal verloop naar wit */
 }
 
 /* Tekstkleur voor trivia blokken op zwart zetten */
@@ -953,7 +1056,12 @@ a:visited {
 .content-block:has(.icon img[src*="uitroepteken"]) .icon,
 .content-block[data-type="important"] .icon,
 .content-block.important .icon {
-    background: linear-gradient(135deg, #b85454 0%, rgba(184, 84, 84, 0.8) 50%, rgba(184, 84, 84, 0.1) 100%); /* Donkerder rood met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #b85454 0%,
+        rgba(184, 84, 84, 0.8) 50%,
+        rgba(184, 84, 84, 0.1) 100%
+    ); /* Donkerder rood met maximaal verloop naar wit */
     color: #3a4249;
 }
 
@@ -970,7 +1078,12 @@ a:visited {
 .content-block:has(.icon img[src*="informatie"]) .icon,
 .content-block[data-type="info"] .icon,
 .content-block.info .icon {
-    background: linear-gradient(135deg, #4a6fa5 0%, rgba(74, 111, 165, 0.8) 50%, rgba(74, 111, 165, 0.1) 100%); /* Donkerder blauw met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #4a6fa5 0%,
+        rgba(74, 111, 165, 0.8) 50%,
+        rgba(74, 111, 165, 0.1) 100%
+    ); /* Donkerder blauw met maximaal verloop naar wit */
     color: #2a3239;
 }
 
@@ -980,7 +1093,12 @@ a:visited {
 .content-block:has(.icon img[src*="conclusie"]) .icon,
 .content-block[data-type="conclusion"] .icon,
 .content-block.conclusion .icon {
-    background: linear-gradient(135deg, #8a6fa5 0%, rgba(138, 111, 165, 0.8) 50%, rgba(138, 111, 165, 0.1) 100%); /* Donkerder paars met maximaal verloop naar wit */
+    background: linear-gradient(
+        135deg,
+        #8a6fa5 0%,
+        rgba(138, 111, 165, 0.8) 50%,
+        rgba(138, 111, 165, 0.1) 100%
+    ); /* Donkerder paars met maximaal verloop naar wit */
     color: #2a3239;
 }
 
@@ -1104,7 +1222,7 @@ a:visited {
     display: block;
     width: 80px;
     height: 80px;
-    background-image: url('../../img/icons/opdracht.png');
+    background-image: url("../../img/icons/opdracht.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1117,7 +1235,7 @@ a:visited {
     display: block;
     width: 80px;
     height: 80px;
-    background-image: url('../../img/icons/quizvraag.png');
+    background-image: url("../../img/icons/quizvraag.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1130,7 +1248,7 @@ a:visited {
     display: block;
     width: 80px;
     height: 80px;
-    background-image: url('../../img/icons/boekenwurm.png');
+    background-image: url("../../img/icons/boekenwurm.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1143,7 +1261,7 @@ a:visited {
     display: block;
     width: 80px;
     height: 80px;
-    background-image: url('../../img/icons/uitroepteken.png');
+    background-image: url("../../img/icons/uitroepteken.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1156,7 +1274,7 @@ a:visited {
     display: block;
     width: 80px;
     height: 80px;
-    background-image: url('../../img/icons/informatie.png');
+    background-image: url("../../img/icons/informatie.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1334,7 +1452,7 @@ a:visited {
 }
 
 .top-toggle-btn:hover {
-    background: #8B4513; /* Nog donkerder oranje voor omhoog sidebar */
+    background: #8b4513; /* Nog donkerder oranje voor omhoog sidebar */
     transform: translateY(-50%) scale(1.1) translateX(5px); /* Schaal iets en schuif licht naar rechts */
 }
 
@@ -1493,4 +1611,3 @@ a:visited {
     margin: 0; /* Geen margin */
     padding: 0; /* Geen padding */
 }
-
