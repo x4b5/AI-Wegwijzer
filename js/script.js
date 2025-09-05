@@ -6,14 +6,33 @@ function openLumoPopup() {
   const left = screenWidth - popupWidth - 20;
   const top = 20;
 
-  const popup = window.open(
+  // Probeer eerst met specifieke positie
+  let popup = window.open(
     'https://lumo.proton.me',
     'lumoChatbot',
     `width=${popupWidth},height=${popupHeight},left=${left},top=${top},scrollbars=yes,resizable=yes,status=yes,toolbar=no,menubar=no,location=yes`
   );
 
+  // Als popup niet correct wordt geopend, probeer opnieuw zonder positie
+  if (!popup || popup.closed || typeof popup.closed == 'undefined') {
+    popup = window.open(
+      'https://lumo.proton.me',
+      'lumoChatbot',
+      `width=${popupWidth},height=${popupHeight},scrollbars=yes,resizable=yes,status=yes,toolbar=no,menubar=no,location=yes`
+    );
+  }
+
   if (popup) {
     popup.focus();
+    // Probeer de positie te verplaatsen na het openen
+    try {
+      popup.moveTo(left, top);
+    } catch (e) {
+      // Als moveTo niet werkt, probeer dan de gebruiker te informeren
+      console.log('Popup geopend, maar positie kon niet worden ingesteld');
+    }
+  } else {
+    alert('Popup werd geblokkeerd. Sta popups toe voor deze website en probeer opnieuw.');
   }
 }
 
@@ -217,4 +236,57 @@ function moveWindowLeft() {
         // Silent fallback - no alerts
         console.log("Window move functionality not available");
     }
+}
+
+// Theme toggle functionaliteit
+function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update toggle button icon
+    updateThemeIcon(newTheme);
+}
+
+function updateThemeIcon(theme) {
+    const themeIcon = document.getElementById('theme-icon');
+    
+    if (themeIcon) {
+        themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+}
+
+function initializeTheme() {
+    // Check for saved theme preference or default to light mode
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const html = document.documentElement;
+    
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+}
+
+// Initialize theme when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    initializeTheme();
+    animateSidebars();
+});
+
+// Animate sidebars on page load
+function animateSidebars() {
+    const sidebars = document.querySelectorAll(
+        '.simple-sidebar, .top-sidebar, .home-sidebar, .theme-sidebar'
+    );
+
+    // Add a small delay for a nicer animation
+    setTimeout(() => {
+        sidebars.forEach((sidebar, index) => {
+            // Stagger the animations for a better effect
+            setTimeout(() => {
+                sidebar.classList.add('loaded');
+            }, index * 200); // 200ms delay between each sidebar
+        });
+    }, 100);
 }

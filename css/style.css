@@ -61,6 +61,60 @@
     --transition-slow: 0.5s ease;
 }
 
+/* Dark Mode variabelen */
+[data-theme="dark"] {
+    /* Dark Mode - Achtergrond kleuren */
+    --bg-primary: #0d1116;
+    --bg-secondary: #161b22;
+    --bg-accent: #21262d;
+
+    /* Dark Mode - Tekst kleuren */
+    --text-primary: #f0f6fc;
+    --text-secondary: #c9d1d9;
+    --text-muted: #8b949e;
+    --text-light: #ffffff;
+}
+
+/* Theme Toggle Sidebar */
+.theme-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    transform: translateX(-100%);
+    transition: transform 0.8s ease-in-out;
+}
+
+.theme-sidebar.loaded {
+    transform: translateX(0);
+}
+
+.theme-toggle-btn {
+    position: fixed;
+    left: 0;
+    top: calc(50% + 240px);
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: var(--gray-600);
+    color: var(--text-primary);
+    border-radius: 0 30px 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 24px;
+    border: none;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background: #4a5568;
+    transform: translateY(-50%) scale(1.1) translateX(5px);
+}
+
 /* ========================================
    BASIS RESET EN TYPOGRAFIE
    ======================================== */
@@ -1610,4 +1664,647 @@ a:visited {
     line-height: 1; /* Normale regelafstand */
     margin: 0; /* Geen margin */
     padding: 0; /* Geen padding */
+}
+
+/* ========================================
+   DARK MODE STYLING
+   ======================================== */
+
+/* Dark mode voor body en basis elementen */
+[data-theme="dark"] body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .content-text {
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .header-section {
+    background: var(--bg-accent);
+}
+
+[data-theme="dark"] .chatbots-section {
+    background: var(--bg-accent);
+}
+
+/* Dark mode voor sidebars */
+[data-theme="dark"] .sidebar-content {
+    background: var(--bg-secondary);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .sidebar-header {
+    background: var(--bg-accent);
+    border-bottom: 1px solid var(--gray-600);
+}
+
+[data-theme="dark"] .sidebar-header h3 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .sidebar-body p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .close-sidebar-btn {
+    color: var(--text-muted);
+}
+
+[data-theme="dark"] .close-sidebar-btn:hover {
+    background: var(--gray-600);
+    color: var(--text-primary);
+}
+
+/* Dark mode voor legend items */
+[data-theme="dark"] .legend-item {
+    background: var(--bg-accent);
+    border: 1px solid var(--gray-600);
+}
+
+[data-theme="dark"] .legend-item:hover {
+    background: var(--gray-700);
+    border-color: var(--gray-500);
+}
+
+[data-theme="dark"] .legend-title {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .legend-text small {
+    color: var(--text-secondary);
+}
+
+/* Dark mode voor quiz options */
+[data-theme="dark"] .quiz-option {
+    background: var(--bg-secondary);
+    border: 2px solid var(--gray-600);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .quiz-option:hover {
+    background: var(--bg-accent);
+    border-color: var(--gray-500);
+}
+
+[data-theme="dark"] .quiz-option strong {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .answer-feedback {
+    border-top: 1px solid var(--gray-600);
+}
+
+[data-theme="dark"] .feedback-content {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .quiz-option.correct,
+[data-theme="dark"] .quiz-option.incorrect {
+    background: var(--bg-accent);
+}
+
+/* Dark mode voor buttons */
+[data-theme="dark"] .btn,
+[data-theme="dark"] button {
+    background: var(--gray-300);
+    color: var(--text-primary) !important;
+    border: 1px solid var(--gray-500);
+}
+
+[data-theme="dark"] .btn:hover,
+[data-theme="dark"] button:hover {
+    background: var(--gray-400);
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor alle button tekst */
+[data-theme="dark"] .btn *,
+[data-theme="dark"] button *,
+[data-theme="dark"] .demo-button,
+[data-theme="dark"] .nav-button,
+[data-theme="dark"] .copy-btn {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .copy-btn {
+    background: var(--primary-blue);
+    color: var(--text-light) !important;
+}
+
+[data-theme="dark"] .copy-btn:hover {
+    background: var(--primary-indigo);
+    color: var(--text-light) !important;
+}
+
+/* Dark mode voor prompt boxes */
+[data-theme="dark"] .prompt-box {
+    background: var(--bg-accent);
+    border: 1px solid var(--gray-600);
+}
+
+[data-theme="dark"] .prompt-header {
+    border-bottom: 2px solid var(--gray-600);
+}
+
+/* Dark mode voor summary buttons */
+[data-theme="dark"] .content-block .content-text summary {
+    background: var(--bg-accent);
+    border: 1px solid var(--gray-600);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .content-block .content-text summary:hover {
+    background: var(--gray-700);
+    border-color: var(--gray-500);
+}
+
+/* Dark mode voor tables */
+[data-theme="dark"] table {
+    background: var(--bg-secondary);
+    border: 1px solid var(--gray-600);
+}
+
+[data-theme="dark"] th,
+[data-theme="dark"] td {
+    border-bottom: 1px solid var(--gray-600);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] th {
+    background: var(--bg-accent);
+}
+
+[data-theme="dark"] tr:hover {
+    background: var(--bg-accent);
+}
+
+/* Dark mode voor lists */
+[data-theme="dark"] li {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] blockquote {
+    background: var(--bg-accent);
+    color: var(--text-secondary);
+}
+
+/* Dark mode voor sidebar toggle buttons */
+[data-theme="dark"] .sidebar-toggle-btn,
+[data-theme="dark"] .top-toggle-btn,
+[data-theme="dark"] .home-toggle-btn,
+[data-theme="dark"] .theme-toggle-btn {
+    background: var(--gray-600);
+    color: var(--text-primary) !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark mode voor close button */
+[data-theme="dark"] .close-sidebar-btn {
+    color: var(--text-muted) !important;
+}
+
+[data-theme="dark"] .close-sidebar-btn:hover {
+    background: var(--gray-600);
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor alle tekst in content */
+[data-theme="dark"] .content-text p,
+[data-theme="dark"] .content-text div,
+[data-theme="dark"] .content-text span,
+[data-theme="dark"] .content-text em,
+[data-theme="dark"] .content-text i {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .content-text strong,
+[data-theme="dark"] .content-text b {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .content-text ul,
+[data-theme="dark"] .content-text ol {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .content-text li {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .content-text a {
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .content-text a:hover {
+    color: #93c5fd !important;
+}
+
+[data-theme="dark"] .content-text a:visited {
+    color: #60a5fa !important;
+}
+
+/* Dark mode voor specifieke content blokken */
+[data-theme="dark"] .task .content-text,
+[data-theme="dark"] .quiz .content-text,
+[data-theme="dark"] .trivia .content-text,
+[data-theme="dark"] .important .content-text,
+[data-theme="dark"] .info .content-text,
+[data-theme="dark"] .conclusion .content-text {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* Dark mode voor alle tekst in info en trivia blokken */
+[data-theme="dark"] .info .content-text,
+[data-theme="dark"] .info .content-text *,
+[data-theme="dark"] .trivia .content-text,
+[data-theme="dark"] .trivia .content-text *,
+[data-theme="dark"] .task .content-text,
+[data-theme="dark"] .task .content-text *,
+[data-theme="dark"] .quiz .content-text,
+[data-theme="dark"] .quiz .content-text *,
+[data-theme="dark"] .important .content-text,
+[data-theme="dark"] .important .content-text *,
+[data-theme="dark"] .conclusion .content-text,
+[data-theme="dark"] .conclusion .content-text * {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor specifieke elementen in content blokken */
+[data-theme="dark"] .info .content-text p,
+[data-theme="dark"] .info .content-text div,
+[data-theme="dark"] .info .content-text span,
+[data-theme="dark"] .info .content-text em,
+[data-theme="dark"] .info .content-text i,
+[data-theme="dark"] .info .content-text strong,
+[data-theme="dark"] .info .content-text b,
+[data-theme="dark"] .trivia .content-text p,
+[data-theme="dark"] .trivia .content-text div,
+[data-theme="dark"] .trivia .content-text span,
+[data-theme="dark"] .trivia .content-text em,
+[data-theme="dark"] .trivia .content-text i,
+[data-theme="dark"] .trivia .content-text strong,
+[data-theme="dark"] .trivia .content-text b {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor alle content blokken - extra specifiek */
+[data-theme="dark"] .content-block.info,
+[data-theme="dark"] .content-block.trivia,
+[data-theme="dark"] .content-block.task,
+[data-theme="dark"] .content-block.quiz,
+[data-theme="dark"] .content-block.important,
+[data-theme="dark"] .content-block.conclusion {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .content-block.info *,
+[data-theme="dark"] .content-block.trivia *,
+[data-theme="dark"] .content-block.task *,
+[data-theme="dark"] .content-block.quiz *,
+[data-theme="dark"] .content-block.important *,
+[data-theme="dark"] .content-block.conclusion * {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor alle tekst in content blokken - maximale dekking */
+[data-theme="dark"] .content-block {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .content-block * {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode override voor task en conclusion blokken - hogere specificiteit */
+[data-theme="dark"] .task .content-text,
+[data-theme="dark"] .task .content-text *,
+[data-theme="dark"] .conclusion .content-text,
+[data-theme="dark"] .conclusion .content-text * {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode override voor content-block classes */
+[data-theme="dark"] .content-block.task .content-text,
+[data-theme="dark"] .content-block.task .content-text *,
+[data-theme="dark"] .content-block.conclusion .content-text,
+[data-theme="dark"] .content-block.conclusion .content-text * {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor links in content blokken */
+[data-theme="dark"] .info .content-text a,
+[data-theme="dark"] .trivia .content-text a,
+[data-theme="dark"] .task .content-text a,
+[data-theme="dark"] .quiz .content-text a,
+[data-theme="dark"] .important .content-text a,
+[data-theme="dark"] .conclusion .content-text a {
+    color: #60a5fa !important;
+}
+
+[data-theme="dark"] .info .content-text a:hover,
+[data-theme="dark"] .trivia .content-text a:hover,
+[data-theme="dark"] .task .content-text a:hover,
+[data-theme="dark"] .quiz .content-text a:hover,
+[data-theme="dark"] .important .content-text a:hover,
+[data-theme="dark"] .conclusion .content-text a:hover {
+    color: #93c5fd !important;
+}
+
+/* Dark mode voor lists in content blokken */
+[data-theme="dark"] .info .content-text ul,
+[data-theme="dark"] .info .content-text ol,
+[data-theme="dark"] .info .content-text li,
+[data-theme="dark"] .trivia .content-text ul,
+[data-theme="dark"] .trivia .content-text ol,
+[data-theme="dark"] .trivia .content-text li,
+[data-theme="dark"] .task .content-text ul,
+[data-theme="dark"] .task .content-text ol,
+[data-theme="dark"] .task .content-text li,
+[data-theme="dark"] .quiz .content-text ul,
+[data-theme="dark"] .quiz .content-text ol,
+[data-theme="dark"] .quiz .content-text li {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor blockquotes in content blokken */
+[data-theme="dark"] .info .content-text blockquote,
+[data-theme="dark"] .trivia .content-text blockquote,
+[data-theme="dark"] .task .content-text blockquote,
+[data-theme="dark"] .quiz .content-text blockquote {
+    background: var(--bg-accent);
+    color: var(--text-secondary);
+    border-left: 4px solid var(--gray-600);
+}
+
+/* Dark mode voor details/summary in trivia blokken */
+[data-theme="dark"] .trivia .content-text details,
+[data-theme="dark"] .trivia .content-text summary {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .trivia .content-text summary {
+    background: var(--bg-accent);
+    border: 1px solid var(--gray-600);
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .trivia .content-text summary:hover {
+    background: var(--gray-700);
+    border-color: var(--gray-500);
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor metadata */
+[data-theme="dark"] .metadata {
+    background: var(--bg-accent);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .metadata-content {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .metadata-item {
+    color: var(--text-primary);
+}
+
+/* Dark mode voor inline styles override */
+[data-theme="dark"] *[style*="color: black"],
+[data-theme="dark"] *[style*="color: black !important"],
+[data-theme="dark"] *[style*="color: #000"],
+[data-theme="dark"] *[style*="color: #000000"],
+[data-theme="dark"] span[style*="color: black"],
+[data-theme="dark"] span[style*="color: black !important"],
+[data-theme="dark"] div[style*="color: black"],
+[data-theme="dark"] div[style*="color: black !important"],
+[data-theme="dark"] p[style*="color: black"],
+[data-theme="dark"] p[style*="color: black !important"],
+[data-theme="dark"] em[style*="color: black"],
+[data-theme="dark"] em[style*="color: black !important"],
+[data-theme="dark"] i[style*="color: black"],
+[data-theme="dark"] i[style*="color: black !important"],
+[data-theme="dark"] strong[style*="color: black"],
+[data-theme="dark"] strong[style*="color: black !important"],
+[data-theme="dark"] b[style*="color: black"],
+[data-theme="dark"] b[style*="color: black !important"] {
+    color: var(--text-primary) !important;
+}
+
+/* Extra specifieke regels voor content blokken met inline styles */
+[data-theme="dark"] .info *[style*="color: black"],
+[data-theme="dark"] .info *[style*="color: black !important"],
+[data-theme="dark"] .trivia *[style*="color: black"],
+[data-theme="dark"] .trivia *[style*="color: black !important"],
+[data-theme="dark"] .task *[style*="color: black"],
+[data-theme="dark"] .task *[style*="color: black !important"],
+[data-theme="dark"] .quiz *[style*="color: black"],
+[data-theme="dark"] .quiz *[style*="color: black !important"],
+[data-theme="dark"] .important *[style*="color: black"],
+[data-theme="dark"] .important *[style*="color: black !important"],
+[data-theme="dark"] .conclusion *[style*="color: black"],
+[data-theme="dark"] .conclusion *[style*="color: black !important"] {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor specifieke kleuren die donker zijn in light mode */
+[data-theme="dark"] *[style*="color: #666"],
+[data-theme="dark"] *[style*="color: #666 !important"],
+[data-theme="dark"] span[style*="color: #666"],
+[data-theme="dark"] span[style*="color: #666 !important"],
+[data-theme="dark"] small[style*="color: #666"],
+[data-theme="dark"] small[style*="color: #666 !important"] {
+    color: var(--text-secondary) !important;
+}
+
+/* Dark mode override voor bestaande zwarte tekst regels */
+[data-theme="dark"] .task .content-text,
+[data-theme="dark"] .task .content-text *,
+[data-theme="dark"] .conclusion .content-text,
+[data-theme="dark"] .conclusion .content-text * {
+    color: var(--text-primary) !important;
+}
+
+/* Extra specifieke override voor content-block classes */
+[data-theme="dark"] .content-block.task,
+[data-theme="dark"] .content-block.task *,
+[data-theme="dark"] .content-block.conclusion,
+[data-theme="dark"] .content-block.conclusion * {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode override voor bestaande zwarte tekst regels - maximale specificiteit */
+[data-theme="dark"] .content-block[data-type="conclusion"] .content-text,
+[data-theme="dark"] .content-block.conclusion .content-text,
+[data-theme="dark"] .content-block[data-type="conclusion"] .content-text *,
+[data-theme="dark"] .content-block.conclusion .content-text * {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .content-block[data-type="info"] .content-text,
+[data-theme="dark"] .content-block.info .content-text,
+[data-theme="dark"] .content-block[data-type="info"] .content-text *,
+[data-theme="dark"] .content-block.info .content-text * {
+    color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .content-block[data-type="trivia"] .content-text,
+[data-theme="dark"] .content-block.trivia .content-text,
+[data-theme="dark"] .content-block[data-type="trivia"] .content-text *,
+[data-theme="dark"] .content-block.trivia .content-text * {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode override voor alle bestaande zwarte tekst regels - absolute specificiteit */
+[data-theme="dark"] .content-block .content-text,
+[data-theme="dark"] .content-block .content-text *,
+[data-theme="dark"] .content-block .content-text strong,
+[data-theme="dark"] .content-block .content-text p,
+[data-theme="dark"] .content-block .content-text div,
+[data-theme="dark"] .content-block .content-text span,
+[data-theme="dark"] .content-block .content-text em,
+[data-theme="dark"] .content-block .content-text i,
+[data-theme="dark"] .content-block .content-text b {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode override voor conclusie blokken - maximale specificiteit */
+[data-theme="dark"] .content-block:has(.icon img[src*="conclusie"]) .content-text,
+[data-theme="dark"] .content-block:has(.icon img[src*="conclusie"]) .content-text *,
+[data-theme="dark"] .content-block[data-type="conclusion"] .content-text,
+[data-theme="dark"] .content-block[data-type="conclusion"] .content-text *,
+[data-theme="dark"] .content-block.conclusion .content-text,
+[data-theme="dark"] .content-block.conclusion .content-text * {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode override voor alle conclusie varianten - absolute specificiteit */
+[data-theme="dark"] .content-block:has(.icon img[src*="conclusie"]) .content-text,
+[data-theme="dark"] .content-block:has(.icon img[src*="conclusie"]) .content-text *,
+[data-theme="dark"] .content-block[data-type="conclusion"] .content-text,
+[data-theme="dark"] .content-block[data-type="conclusion"] .content-text *,
+[data-theme="dark"] .content-block.conclusion .content-text,
+[data-theme="dark"] .content-block.conclusion .content-text *,
+[data-theme="dark"] .content-block.conclusion,
+[data-theme="dark"] .content-block.conclusion * {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor code elementen in opdracht blokken */
+[data-theme="dark"] .task code,
+[data-theme="dark"] .task code *,
+[data-theme="dark"] .content-block.task code,
+[data-theme="dark"] .content-block.task code *,
+[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) code,
+[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) code * {
+    color: var(--text-primary) !important;
+    background: var(--bg-accent) !important;
+}
+
+/* Dark mode voor alle code elementen */
+[data-theme="dark"] code,
+[data-theme="dark"] code * {
+    color: var(--text-primary) !important;
+    background: var(--bg-accent) !important;
+}
+
+/* Dark mode voor zwarte achtergrond divs in opdracht blokken */
+[data-theme="dark"] .task div[style*="background-color: black"],
+[data-theme="dark"] .task div[style*="background-color: black"] *,
+[data-theme="dark"] .content-block.task div[style*="background-color: black"],
+[data-theme="dark"] .content-block.task div[style*="background-color: black"] *,
+[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) div[style*="background-color: black"],
+[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) div[style*="background-color: black"] * {
+    background: var(--bg-accent) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor alle zwarte achtergrond divs */
+[data-theme="dark"] div[style*="background-color: black"],
+[data-theme="dark"] div[style*="background-color: black"] * {
+    background: var(--bg-accent) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor prompt-box en prompt-content */
+[data-theme="dark"] .prompt-box,
+[data-theme="dark"] .prompt-box *,
+[data-theme="dark"] .prompt-content,
+[data-theme="dark"] .prompt-content * {
+    color: var(--text-primary) !important;
+    background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
+}
+
+/* Dark mode voor prompt-box in opdracht blokken */
+[data-theme="dark"] .task .prompt-box,
+[data-theme="dark"] .task .prompt-box *,
+[data-theme="dark"] .task .prompt-content,
+[data-theme="dark"] .task .prompt-content *,
+[data-theme="dark"] .content-block.task .prompt-box,
+[data-theme="dark"] .content-block.task .prompt-box *,
+[data-theme="dark"] .content-block.task .prompt-content,
+[data-theme="dark"] .content-block.task .prompt-content *,
+[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) .prompt-box,
+[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) .prompt-box *,
+[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) .prompt-content,
+[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) .prompt-content * {
+    color: var(--text-primary) !important;
+    background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
+}
+
+/* Dark mode override voor inline styles in prompt-content */
+[data-theme="dark"] .prompt-content[style*="color: #000000"],
+[data-theme="dark"] .prompt-content[style*="color: #000000 !important"],
+[data-theme="dark"] .prompt-content[style*="color: #000000"] *,
+[data-theme="dark"] .prompt-content[style*="color: #000000 !important"] * {
+    color: var(--text-primary) !important;
+    background: var(--bg-accent) !important;
+}
+
+/* Dark mode override voor bestaande zwarte tekst regels - maximale specificiteit */
+[data-theme="dark"] .prompt-box,
+[data-theme="dark"] .prompt-box *,
+[data-theme="dark"] .prompt-content,
+[data-theme="dark"] .prompt-content * {
+    color: var(--text-primary) !important;
+    background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
+}
+
+/* Extra specifieke override voor alle prompt elementen */
+[data-theme="dark"] .content-block .prompt-box,
+[data-theme="dark"] .content-block .prompt-box *,
+[data-theme="dark"] .content-block .prompt-content,
+[data-theme="dark"] .content-block .prompt-content *,
+[data-theme="dark"] .content-block.task .prompt-box,
+[data-theme="dark"] .content-block.task .prompt-box *,
+[data-theme="dark"] .content-block.task .prompt-content,
+[data-theme="dark"] .content-block.task .prompt-content * {
+    color: var(--text-primary) !important;
+    background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
+}
+
+/* Extra specifieke regel voor buttons met inline styles */
+[data-theme="dark"] button *[style*="color: black"],
+[data-theme="dark"] button *[style*="color: black !important"],
+[data-theme="dark"] .btn *[style*="color: black"],
+[data-theme="dark"] .btn *[style*="color: black !important"] {
+    color: var(--text-primary) !important;
+}
+
+/* Dark mode voor alle tekst in buttons */
+[data-theme="dark"] button,
+[data-theme="dark"] button *,
+[data-theme="dark"] .btn,
+[data-theme="dark"] .btn * {
+    color: var(--text-primary) !important;
 }

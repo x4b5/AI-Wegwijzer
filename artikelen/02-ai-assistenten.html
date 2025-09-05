@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AI-Assistenten</title>
+        <link rel="stylesheet" href="../../css/style.css" />
+        <script src="../../js/script.js"></script>
+        <!-- Automatische datum update is verplaatst naar script.js -->
+    </head>
+    <body>
+        <!-- sidebar legenda -->
+        <div class="simple-sidebar" id="simpleSidebar">
+            <div class="sidebar-toggle-btn" onclick="toggleSimpleSidebar()">
+                <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40" />
+            </div>
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3>Legenda van tekstblokken</h3>
+                    <button class="close-sidebar-btn" onclick="toggleSimpleSidebar()">×</button>
+                </div>
+                <div class="sidebar-body">
+                    <div class="legend-item">
+                        <img src="../../img/icons/informatie.png" alt="Informatie" width="66" height="66" />
+                        <div class="legend-text">
+                            <span class="legend-title">Informatie</span>
+                            <small>Uitleg en achtergrondinformatie</small>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <img src="../../img/icons/boekenwurm.png" alt="Verder lezen" width="66" height="66" />
+                        <div class="legend-text">
+                            <span class="legend-title">Verder lezen</span>
+                            <small>Interessante feiten en verdiepende informatie</small>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <img src="../../img/icons/quizvraag.png" alt="Quiz" width="66" height="66" />
+                        <div class="legend-text">
+                            <span class="legend-title">Quiz</span>
+                            <small>Test je kennis met interactieve vragen</small>
+                        </div>
+                    </div>
+
+                    <div class="legend-item">
+                        <img src="../../img/icons/opdracht.png" alt="Opdracht" width="66" height="66" />
+                        <div class="legend-text">
+                            <span class="legend-title">Opdracht</span>
+                            <small>Praktische opdrachten om te oefenen</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- sidebar - naar begin van pagina -->
+        <div class="top-sidebar" id="topSidebar">
+            <div class="top-toggle-btn" onclick="goToTop()">
+                <img src="../../img/icons/naar-boven.png" alt="Naar boven" width="40" height="40" />
+            </div>
+        </div>
+
+        <!-- sidebar - naar index.html -->
+        <div class="home-sidebar" id="homeSidebar">
+            <div class="home-toggle-btn" onclick="goToHome()">
+                <img src="../../img/icons/home.png" alt="Naar home" width="40" height="40" />
+            </div>
+        </div>
+
+        <!-- Theme Toggle Sidebar -->
+        <div class="theme-sidebar" id="themeSidebar">
+            <div class="theme-toggle-btn" onclick="toggleTheme()" role="button" tabindex="0">
+                <span id="theme-icon">🌙</span>
+            </div>
+        </div>
+
+        <!-- inhoud -->
+        <div class="container"> 
+            <div class="header-section">
+                <h2 class="chatbots-title main-title">AI-Assistenten</h2>
+
+         <div class="metadata">
+                    <div class="metadata-content">
+                        <div class="metadata-item"><strong> Laatste wijziging:</strong> <span id="last-updated">[Automatisch bijgewerkt]</span></div>
+                            <div class="metadata-item">
+                            <strong> Leerdoel:</strong> Begrijpen wat chatbots zijn, hoe je ze kunt
+                            gebruiken en waar je rekening mee moet houden.
+                        </div>
+                        <div class="metadata-item"><strong> Leestijd:</strong> (nader te bepalen)</div>        
+                    </div>
+                </div>
+            </div>
+
+            
+                        <div class="chatbots-section" id="generatieve-ai">
+                            <h3 class="chatbots-title">Generatieve AI</h3>
+                            <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px">
+                                Laten we nu kijken naar een andere kant van AI: het creëren van nieuwe content.
+                            </p>
+            
+                <div class="content-block task">
+                    <div class="icon">
+                        <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong
+                        >Opdracht 9. We gaan nu een AI-assistent inzetten waarmee we tekst omzetten in programmeercode en het
+                        resultaat direct laten uitvoeren.</strong
+                        ><br /><br />
+
+                        <em>> Ga naar:</em> <a href="https://claude.ai" target="_blank">https://claude.ai</a><br />
+                        <span
+                            >Om gebruik te maken van Claude moet je je eerst registreren.<br />
+                            <em>- Kopieer de onderstaande prompt en plak deze in het prompt-venster.</em><br />
+                            Even geduld en vervolgens zie je allerlei code verschijnen.</span
+                        ><br /><br />
+
+                        <div class="prompt-box">
+                            <button
+                                class="copy-btn"
+                                onclick="copyPrompt(this)"
+                                title="Kopieer prompt"
+                                style="
+                                    float: right;
+                                    margin-bottom: 10px;
+                                    background: #6b7280;
+                                    color: white;
+                                    border: 1px solid #4b5563;
+                                    padding: 4px 8px;
+                                    font-size: 12px;
+                                ">
+                                Kopieer
+                            </button>
+                            <div class="prompt-content" style="color: #000000 !important">
+                                Maak een volledig werkend HTML-spel met CSS en JavaScript (geen externe libraries) met
+                                de volgende functies:<br /><br />
+                                • Een speler (kleine cirkel of vierkant) die je met de muis kunt bewegen<br />
+                                • Cyborg-zombies (rode cirkels) die langzaam naar de speler bewegen<br />
+                                • Klik om te schieten - projectielen die de zombies vernietigen<br />
+                                • Een score die toont hoeveel zombies je hebt vernietigd<br />
+                                • Nieuwe zombies spawnen automatisch<br />
+                                • Game over als een zombie de speler raakt<br />
+                                • Een donkere, futuristische interface met gradient achtergrond (donkergrijs naar
+                                zwart)<br />
+                                • Glow effecten rond de speler en projectielen (lichtblauw)<br />
+                                • Zombies hebben een subtiele rode glow<br />
+                                • Smooth animaties voor beweging en schieten<br />
+                                • Score display met moderne, grote letters<br />
+                                • Het spel moet direct speelbaar zijn in de browser<br /><br />
+                                Maak het visueel aantrekkelijk maar houd de functionaliteit simpel - focus op een
+                                werkend spel met mooie effecten.
+                            </div>
+                        </div>
+                        <br /><br />
+
+                        <span
+                            >Als het goed is wordt nu het spel gegenereerd doordat de broncode wordt geschreven.<br />
+                            Dit duurt even. Vervolgens kun je bovenaan op 'weergeven' klikken en kun je de game
+                            spelen.<br />
+                            Het kan zeker voorkomen dat het spel niet werkt. Geef dat als prompt door zodat de code kan
+                            worden verbeterd. </span
+                        ><br /><br />
+
+                        <span>Dit laat de kracht van een tool zien die draait op zo'n foundation model.</span>
+                    </div>
+                </div>
+            
+
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>Generatieve Artificiele Intelligentie</strong><br /><br />
+                        Nu je hebt ervaren hoe chatbots werken en hun beperkingen kent, is het tijd om te kijken naar
+                        een andere kant van <a href="../../naslag/begrippen.html#artificiele-intelligentie">AI</a>: het
+                        creëren van nieuwe content. Dit wordt
+                        <strong>Generatieve Artificiele Intelligentie (GenAI)</strong> genoemd.<br /><br />
+                        <a href="../../naslag/begrippen.html#agi">GenAI</a> is een tak van
+                        <a href="../../naslag/begrippen.html#artificiele-intelligentie">kunstmatige intelligentie</a>
+                        die zich richt op het creëren van nieuwe content in plaats van alleen bestaande
+                        <a href="../../naslag/begrippen.html#data">data</a> te analyseren. Deze technologie kan
+                        verschillende soorten content genereren zoals tekst, afbeeldingen, muziek, video's en zelfs
+                        programmeercode.<br /><br />
+                        <strong>Hoe werkt het?</strong><br />
+                        GenAI-systemen zijn getraind op enorme hoeveelheden bestaande data en gebruiken complexe
+                        wiskundige modellen om nieuwe content te genereren. Ze herkennen patronen en kunnen deze
+                        gebruiken om nieuwe, realistische output te genereren.<br /><br />
+                        <strong>Toepassingen:</strong><br />
+                        • <em>Tekstgeneratie:</em> Chatbots, artikelen schrijven, vertalingen<br />
+                        • <em>Afbeeldingsgeneratie:</em> Kunst, ontwerpen, foto's<br />
+                        • <em>Codegeneratie:</em> Programmeerhulp, automatische debugging<br />
+                        • <em>Muziek en audio:</em> Compositie, spraaksynthese<br /><br />
+                        <strong>Belangrijke kenmerken:</strong><br />
+                        Generatieve AI-systemen kunnen <em>creativiteit nabootsen</em> - ze kunnen nieuwe combinaties maken die
+                        niet bestonden in de trainingsdata. Ze kunnen ook worden aangepast - ze kunnen worden getraind
+                        op nieuwe feedback om hun output te verbeteren. Dit maakt ze zeer krachtig voor allerlei
+                        creatieve en praktische taken. Generatieve AI is creatief en kan originele output genereren.
+                    </div>
+                </div>
+
+                <div class="content-block quiz">
+                    <div class="icon">
+                        <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>Quizvraag</strong><br /><br />
+                        <strong>Vraag:</strong> Wat is het belangrijkste verschil tussen een gewone chatbot en
+                        Generatieve AI?<br /><br />
+
+                        <em>Klik op een antwoord om te zien of het correct is!</em>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="toggleAnswer('A2')">
+                                <strong>A)</strong> Generatieve AI is sneller dan gewone chatbots
+                                <div class="answer-feedback" id="answer-A2">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">✅</span>
+                                        <strong>Correct!</strong><br />
+                                        Generatieve AI is sneller dan gewone chatbots.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quiz-option" onclick="toggleAnswer('B2')">
+                                <strong>B)</strong> Generatieve AI kan nieuwe content creëren, chatbots alleen bestaande informatie
+                                gebruiken
+                                <div class="answer-feedback" id="answer-B2">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">✅</span>
+                                        <strong>Correct!</strong><br />
+                                        Generatieve AI richt zich op het creëren van nieuwe content (tekst, afbeeldingen, code,
+                                        muziek), terwijl gewone chatbots vooral bestaande informatie analyseren en
+                                        doorgeven. Generatieve AI is creatief en kan originele output genereren.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quiz-option" onclick="toggleAnswer('C2')">
+                                <strong>C)</strong> Generatieve AI is alleen voor professionele gebruikers
+                                <div class="answer-feedback" id="answer-C2">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">❌</span>
+                                        <strong>Nog niet goed!</strong><br />
+                                        <em>Hint:</em> Generatieve AI is niet beperkt tot professionele gebruikers. Denk aan de
+                                        fundamentele functie van Generatieve AI versus chatbots.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quiz-option" onclick="toggleAnswer('D2')">
+                                <strong>D)</strong> Generatieve AI werkt alleen met tekst, chatbots met alle media
+                                <div class="answer-feedback" id="answer-D2">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">❌</span>
+                                        <strong>Nog niet goed!</strong><br />
+                                        <em>Hint:</em> Het is precies andersom! Generatieve AI kan met verschillende media werken (tekst, afbeeldingen, muziek, code), terwijl chatbots vooral tekst gebruiken.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80" />
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary>
+                            <strong>De eerste AI-winter</strong>
+                            <span style="color: #666; font-size: 0.9rem; font-weight: normal">(klik om te lezen)</span>
+                        </summary>
+                        In de jaren '70 en '80 beleefde AI-onderzoek een zogenaamde "AI-winter" - een periode van
+                        stagnatie en verminderde financiering. Dit gebeurde omdat de verwachtingen voor AI veel te hoog
+                        waren gesteld. Onderzoekers hadden beloofd dat computers binnen 10 jaar net zo intelligent
+                        zouden zijn als mensen, maar de technologie was nog lang niet zo ver.<br /><br />
+                        Het resultaat? Overheden en bedrijven stopten met het financieren van AI-onderzoek omdat ze
+                        teleurgesteld waren. Pas in de jaren '90, met de opkomst van machine learning en betere
+                        computers, begon AI weer aan populariteit te winnen. Dit leert ons dat het belangrijk is om
+                        realistische verwachtingen te hebben van nieuwe technologieën.
+                    </details>
+                </div>
+            </div>
+
+            <div class="chatbots-section" id="ai-assistenten">
+                <h3 class="chatbots-title">AI-Assistenten</h3>
+                <p style="text-align: center; font-style: italic; color: var(--text-secondary); margin-bottom: 30px">
+                    Nu je begrijpt wat Generatieve AI is, gaan we kijken naar de meest geavanceerde AI-tools: foundation models die
+                    veel meer kunnen dan alleen tekst genereren.
+                </p>
+
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>Foundation models</strong><br /><br />
+                        Lumo is dus vooral gericht op het waarborgen van privacy. De AI-modellen die Lumo gebruikt zijn
+                        echter minder krachtig dan chatbots die direct gebruikmaken van zogeheten
+                        <a href="../../naslag/begrippen.html#foundation-model">foundation models</a>.<br />
+                        Foundation models zijn grote, veelzijdige AI-modellen die getraind zijn op enorme hoeveelheden
+                        data en daardoor in staat zijn om veel verschillende taken uit te voeren. Ze vormen als het ware
+                        het fundament waarop allerlei AI-toepassingen gebouwd kunnen worden.<br />
+                        Hieronder zie je een overzicht van bekende chatbot die draaien op foundation models.<br /><br />
+
+                        <div class="table-container">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Chatbot (met link)</th>
+                                        <th>AI-Model(len)</th>
+                                        <th>Ontwikkelaar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="https://gemini.google.com/" target="_blank"
+                                                ><strong>Gemini</strong></a
+                                            >
+                                        </td>
+                                        <td>Gemini-modelserie (Ultra, Pro, Nano; multimodaal)</td>
+                                        <td>Google DeepMind</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="../../naslag/begrippen.html#chatgpt"><strong>ChatGPT</strong></a>
+                                            (<a href="https://chatgpt.com/" target="_blank">website</a>)
+                                        </td>
+                                        <td>GPT-series (GPT-3.5, GPT-4, GPT-4o, GPT-4.5, GPT-5)</td>
+                                        <td><a href="../../naslag/begrippen.html#openai">OpenAI</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://claude.ai/" target="_blank"><strong>Claude</strong></a>
+                                        </td>
+                                        <td>
+                                            Claude-familie (Claude 3: Haiku, Sonnet, Opus; Claude 4: Sonnet, Opus, 4.1)
+                                        </td>
+                                        <td>Anthropic</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="https://chat.mistral.ai/" target="_blank"
+                                                ><strong>Mistral – Le Chat</strong></a
+                                            >
+                                        </td>
+                                        <td>Mistral-modellen (Small, Large, Next, Pixtral Large)</td>
+                                        <td>Mistral AI</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block trivia">
+                    <div class="icon">
+                        <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <details>
+                            <summary>
+                                <strong>GPT-5 en de MoE-architectuur</strong>
+                                <span style="color: #666; font-size: 0.9rem; font-weight: normal"
+                                    >(klik om te lezen)</span
+                                >
+                            </summary>
+                            <strong>GPT-5</strong> is de nieuwste versie van
+                            <a href="../../naslag/begrippen.html#openai">OpenAI</a>'s taalmodel en gebruikt een
+                            <strong>Mixture of Experts (MoE)</strong> architectuur. Dit is een andere manier van werken
+                            dan bij eerdere versies, maar experts zijn het niet allemaal eens over hoe revolutionair dit
+                            nu eigenlijk is.<br /><br />
+
+                            <strong>Hoe werkt MoE?</strong><br />
+                            Normaal gesproken wordt elke vraag door het hele
+                            <a href="../../naslag/begrippen.html#ai-model">AI-model</a> verwerkt. Bij een
+                            MoE-architectuur wordt het model opgedeeld in verschillende "experts" - gespecialiseerde
+                            delen die elk goed zijn in specifieke taken. Wanneer je een vraag stelt, wordt alleen de
+                            relevante expert geactiveerd, niet het hele model.<br /><br />
+
+                            <strong>Voordelen van MoE:</strong><br />
+                            • <em>Efficiënter:</em> Alleen de benodigde delen van het model worden gebruikt<br />
+                            • <em>Specialisatie:</em> Experts kunnen zich richten op specifieke domeinen (wetenschap,
+                            creativiteit, techniek)<br />
+                            • <em>Schaalbaarheid:</em> Makkelijker om het model uit te breiden zonder alles opnieuw te
+                            trainen<br /><br />
+
+                            <strong>Maar er zijn ook uitdagingen:</strong><br />
+                            Experts wijzen ook op nadelen: het is complexer om te trainen en te coördineren, er kunnen
+                            vertragingen ontstaan door het routeringsproces, en sommigen vragen zich af of dit werkelijk
+                            een grote doorbraak is of eerder een kleine verbetering.<br /><br />
+
+                            <strong>Hoe werkt het in de praktijk?</strong><br />
+                            Stel je vraagt GPT-5 om een wiskundig probleem op te lossen. Het systeem activeert
+                            automatisch de "wiskunde-expert" en laat andere experts (zoals de "creatieve schrijver") met
+                            rust. Dit zou moeten zorgen voor betere en snellere antwoorden, maar de praktische voordelen
+                            zijn nog niet helemaal duidelijk.<br /><br />
+
+                            De MoE-architectuur wordt door sommigen gezien als een stap richting efficiëntere
+                            AI-systemen, maar andere experts benadrukken dat het belangrijk blijft om kritisch te kijken
+                            naar hoe deze systemen worden gebruikt.
+                        </details>
+                    </div>
+                </div>
+
+                <div class="content-block quiz">
+                    <div class="icon">
+                        <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>Quizvraag</strong><br /><br />
+                        <strong>Vraag:</strong> Welke van de volgende is GEEN voorbeeld van een foundation model?<br /><br />
+
+                        <em>Klik op een antwoord om te zien of het correct is!</em>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="toggleAnswer('A3')">
+                                <strong>A)</strong> GPT-4
+                                <div class="answer-feedback" id="answer-A3">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">❌</span>
+                                        <strong>Nog niet goed!</strong><br />
+                                        <em>Hint:</em> GPT-4 is wel een foundation model. Denk aan welke van de opties
+                                        veel ouder is en een andere technologie gebruikt.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quiz-option" onclick="toggleAnswer('B3')">
+                                <strong>B)</strong> Claude
+                                <div class="answer-feedback" id="answer-B3">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">❌</span>
+                                        <strong>Nog niet goed!</strong><br />
+                                        <em>Hint:</em> Claude is wel een foundation model. Denk aan welke van de opties
+                                        veel ouder is en een andere technologie gebruikt.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quiz-option" onclick="toggleAnswer('C3')">
+                                <strong>C)</strong> ELIZA
+                                <div class="answer-feedback" id="answer-C3">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">✅</span>
+                                        <strong>Correct!</strong><br />
+                                        ELIZA is inderdaad geen foundation model. Het is een oude, regelgebaseerde
+                                        chatbot uit 1966 die werkt met vaste patronen en regels, niet met de moderne
+                                        machine learning technologie die foundation models kenmerkt.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="quiz-option" onclick="toggleAnswer('D3')">
+                                <strong>D)</strong> Gemini
+                                <div class="answer-feedback" id="answer-D3">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">❌</span>
+                                        <strong>Nog niet goed!</strong><br />
+                                        <em>Hint:</em> Gemini is wel een foundation model. Denk aan welke van de opties
+                                        veel ouder is en een andere technologie gebruikt.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>AI-assistent</strong><br /><br />
+                        De term "chatbot" is tegenwoordig in veel gevallen niet meer juist. Chatbots zijn namelijk
+                        beperkt tot tekst en gesproken taal maar deze moderne foundation models bieden veel meer in- en
+                        ouputmogelijkheden.<br />
+                        De verschillende soorten input en ouput die een foundation model kan verwerken en genereren
+                        worden <em><a href="../../naslag/begrippen.html#modaliteit">modaliteiten</a></em> genoemd.<br />
+                        Voorbeelden van zo'n modaliteiten zijn naast geschreven en gesproken taal, foto's, muziek,
+                        video's en programmeercode.<br />
+                        Daarom worden zo'n moderne foundation models ook wel
+                        <em><a href="../../naslag/begrippen.html#multimodal">multimodal foundation models</a></em>
+                        genoemd en een betere term voor chatbot is in dit geval
+                        <em><a href="../../naslag/begrippen.html#ai-assistent">AI-assistent</a></em
+                        >.<br />
+                        Afhankelijk van het model kun je bijvoorbeeld tekst naar afbeelding omzetten, afbeelding naar
+                        tekst en tekst naar programmeercode.
+                    </div>
+                </div>
+
+
+            <div class="content-block conclusion">
+                <div class="icon">
+                    <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80" />
+                </div>
+                <div class="content-text">
+                    <strong>Conclusie</strong><br /><br />
+                    Je hebt nu een complete reis gemaakt door de wereld van moderne AI-applicaties, van de eenvoudige
+                    chatbots tot de geavanceerde AI-assistenten.<br /><br />
+
+                    <strong>Wat je hebt geleerd:</strong><br />
+                    <strong>Chatbots</strong> - Je begrijpt nu het verschil tussen regelgebaseerde systemen (zoals
+                    ELIZA) en data-gedreven chatbots (zoals Lumo). Je weet dat chatbots eigenlijk interfaces zijn voor
+                    AI-modellen die op de achtergrond draaien, en dat ze kunnen hallucineren.<br /><br />
+
+                    <strong>Generatieve AI</strong> - Je hebt ontdekt dat AI niet alleen
+                    informatie kan analyseren, maar ook nieuwe content kan creëren: tekst, afbeeldingen, muziek, video's
+                    en programmeercode. Generatieve AI-systemen kunnen creativiteit nabootsen door patronen te herkennen en nieuwe
+                    combinaties te maken.<br /><br />
+
+                    <strong>AI-Assistenten</strong> - Je hebt gezien hoe foundation models de basis vormen voor moderne
+                    AI-tools die veel meer kunnen dan alleen tekst. Deze multimodal systemen kunnen verschillende
+                    soorten input en output verwerken, waardoor de term "chatbot" eigenlijk te beperkt is geworden.<br /><br />
+
+                    <strong>Belangrijke lessen:</strong><br />
+                    • AI is krachtig maar niet perfect - controleer altijd de output<br />
+                    • Verschillende AI-tools hebben verschillende sterke punten<br />
+                    • Privacy, betrouwbaarheid en AI-bias zijn belangrijke aandachtspunten<br />
+                    • De technologie evolueert snel van eenvoudige chatbots naar veelzijdige AI-assistenten<br /><br />
+
+                    <strong>Volgende stappen:</strong><br />
+                    Experimenteer met verschillende AI-tools en ontdek welke het beste werken voor jouw behoeften.
+                    Onthoud: AI is een hulpmiddel dat je kritisch moet gebruiken, niet blindelings vertrouwen.
+                </div>
+            </div>
+
+            <div class="content-block conclusion">
+                <div class="icon">
+                    <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80" />
+                </div>
+                <div class="content-text">
+                    <strong>Reflectie-opdracht:</strong><br />
+                    Denk na over hoe je AI-tools kunt gebruiken in je dagelijks leven, werk of studie. Welke taken zouden baat hebben bij AI-ondersteuning? Welke risico's zie je?<br /><br />
+
+                    <strong>Ethische overwegingen:</strong><br />
+                    • <em>Privacy:</em> Welke informatie deel je met AI-tools?<br />
+                    • <em>Bias:</em> Hoe herken je vooroordelen in AI-output?<br />
+                    • <em>Afhankelijkheid:</em> Wanneer is het beter om zelf na te denken in plaats van AI te gebruiken?<br /><br />
+                </div>
+            </div>
+
+            <div class="content-block info" style="background-color: #fef3c7; border-left: 4px solid #f59e0b;">
+                <div class="icon">
+                    <img src="../../img/icons/informatie.png" alt="Pauze" width="80" height="80" />
+                </div>
+                <div class="content-text">
+                    <strong>⏸️ Pauze-moment</strong><br />
+                    Je hebt nu de basis geleerd over chatbots. Neem even de tijd om dit te verwerken voordat je verder gaat.<br /><br />
+                    
+                    <em>Vraag jezelf af:</em> Wat was het meest verrassende dat je net hebt geleerd? Welke vragen heb je nog?
+                </div>
+            </div>
+
+            <div class="content-block trivia">
+                <div class="icon">
+                    <img src="../../img/icons/boekenwurm.png" alt="Trivia/weetjes" width="80" height="80" />
+                </div>
+                <div class="content-text">
+                    <details>
+                        <summary>
+                            <strong>GenAI vs AGI: Een veelgemaakte verwarring</strong>
+                            <span style="color: #666; font-size: 0.9rem; font-weight: normal">(klik om te lezen)</span>
+                        </summary>
+                        <strong>Waarom worden deze begrippen door elkaar gehaald?</strong><br />
+                        De termen <strong>GenAI (Generatieve AI)</strong> en <strong>AGI (Artificial General Intelligence)</strong> worden vaak door elkaar gebruikt, maar ze betekenen heel verschillende dingen. Deze verwarring ontstaat omdat beide termen over AI gaan, maar ze verwijzen naar totaal verschillende concepten.<br /><br />
+                        
+                        <strong>Wat is het verschil?</strong><br />
+                        • <strong>GenAI (Generatieve AI):</strong> Dit is wat we in dit artikel bespreken - AI-systemen die nieuwe content kunnen creëren (tekst, afbeeldingen, muziek, code). ChatGPT, DALL-E en Claude zijn voorbeelden van GenAI.<br /><br />
+                        
+                        • <strong>AGI (Artificial General Intelligence):</strong> Dit verwijst naar een hypothetische AI die net zo intelligent is als een mens - of zelfs intelligenter. AGI zou alle taken kunnen uitvoeren die een mens kan, van wiskunde tot creativiteit tot sociale interactie. AGI bestaat nog niet en experts zijn het oneens over wanneer (of zelfs of) het ooit zal bestaan.<br /><br />
+                        
+                        <strong>De verwarring in de media</strong><br />
+                        Veel nieuwsartikelen en discussies gebruiken "AGI" wanneer ze eigenlijk "GenAI" bedoelen. Dit gebeurt omdat:<br />
+                        • Beide termen relatief nieuw zijn voor het grote publiek<br />
+                        • De afkortingen lijken op elkaar<br />
+                        • Beide gaan over geavanceerde AI-technologie<br /><br />
+                        
+                        <strong>Waarom is dit belangrijk?</strong><br />
+                        Het onderscheid is cruciaal omdat het verschillende verwachtingen schept. GenAI is al realiteit en wordt dagelijks gebruikt, terwijl AGI nog steeds science fiction is. Door deze termen correct te gebruiken, kunnen we realistische verwachtingen hebben van wat AI nu kan en wat nog toekomstmuziek is.
+                    </details>
+                </div>
+            </div>
+
+
+ 
