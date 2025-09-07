@@ -1076,13 +1076,12 @@ a:focus {
 
 /* Fellere, leesbare link kleuren */
 .content-text a {
-    color: var(--primary-blue-dark) !important; /* Nog fellere blauwe kleur voor betere leesbaarheid */
+    color: var(--primary-blue) !important; /* Nog fellere blauwe kleur voor betere leesbaarheid */
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .content-text a:hover {
-    color: #1e3a8a !important; /* Donkerblauw bij hover */
     text-decoration: underline;
 }
 
@@ -2009,7 +2008,7 @@ a:visited {
 [data-theme="dark"] .quiz .content-text a,
 [data-theme="dark"] .important .content-text a,
 [data-theme="dark"] .conclusion .content-text a {
-    color: #60a5fa !important;
+    color: #fa60e5 !important;
 }
 
 [data-theme="dark"] .info .content-text a:hover,
