@@ -100,13 +100,21 @@ function toggleAnswer(option, buttonEl) {
     btn.setAttribute('aria-expanded', 'false');
   });
 
-  // Toon geselecteerde feedback
+  // Toon geselecteerde feedback (toegankelijk)
   feedback.classList.add('show');
   feedback.hidden = false;
   feedback.setAttribute('aria-hidden', 'false');
+  feedback.setAttribute('role', 'status');
+  feedback.setAttribute('aria-live', 'polite');
   if (buttonEl) {
     buttonEl.setAttribute('aria-expanded', 'true');
   }
+
+  // Verplaats focus kort naar feedback voor screenreaders
+  if (!feedback.hasAttribute('tabindex')) {
+    feedback.setAttribute('tabindex', '-1');
+  }
+  feedback.focus({ preventScroll: false });
 }
 
 // Eenvoudige sidebar functionaliteit
@@ -127,7 +135,19 @@ function goToTop() {
 
 // Naar home knop functionaliteit
 function goToHome() {
-  window.location.href = '../../index.html';
+  try {
+    const segments = window.location.pathname.split('/').filter(Boolean);
+    const rootIndex = segments.indexOf('AI-Wegwijzer');
+    if (rootIndex !== -1) {
+      const base =
+        '/' + segments.slice(0, rootIndex + 1).join('/') + '/index.html';
+      window.location.href = base;
+    } else {
+      window.location.href = '/index.html';
+    }
+  } catch (e) {
+    window.location.href = '/index.html';
+  }
 }
 
 // Navigatie tussen content-blokken
@@ -199,15 +219,76 @@ function animateSidebars() {
 function updateLastModifiedDate() {
   const lastUpdatedElement = document.getElementById('last-updated');
   if (lastUpdatedElement) {
-    lastUpdatedElement.textContent = new Date().toLocaleDateString('nl-NL');
+    const now = new Date();
+    lastUpdatedElement.textContent = now.toLocaleDateString('nl-NL');
+    if (lastUpdatedElement.tagName.toLowerCase() === 'time') {
+      lastUpdatedElement.setAttribute('datetime', now.toISOString());
+    }
   }
 }
 
 // Voer de animatie uit wanneer de pagina geladen is
 document.addEventListener('DOMContentLoaded', function () {
+  // Bestaande initialisatie
+  initializeTheme();
   animateSidebars();
   updateLastModifiedDate();
+
+  // Sidebar legenda toggle
+  const legendToggleBtn = document.querySelector('.sidebar-toggle-btn');
+  if (legendToggleBtn) {
+    legendToggleBtn.addEventListener('click', toggleSimpleSidebar);
+  }
+
+  const legendCloseBtn = document.querySelector('.close-sidebar-btn');
+  if (legendCloseBtn) {
+    legendCloseBtn.addEventListener('click', toggleSimpleSidebar);
+  }
+
+  // Top: naar boven
+  const topToggleBtn = document.querySelector('.top-toggle-btn');
+  if (topToggleBtn) {
+    topToggleBtn.addEventListener('click', goToTop);
+  }
+
+  // Home: naar home
+  const homeToggleBtn = document.querySelector('.home-toggle-btn');
+  if (homeToggleBtn) {
+    homeToggleBtn.addEventListener('click', goToHome);
+  }
+
+  // Theme toggle
+  const themeToggleBtn = document.querySelector('.theme-toggle-btn');
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', toggleTheme);
+  }
+
+  // Navigatie omhoog/omlaag
+  const navUpBtn = document.querySelector('.nav-up-toggle-btn');
+  if (navUpBtn) {
+    navUpBtn.addEventListener('click', scrollToPreviousBlock);
+  }
+  const navDownBtn = document.querySelector('.nav-down-toggle-btn');
+  if (navDownBtn) {
+    navDownBtn.addEventListener('click', scrollToNextBlock);
+  }
+
+  // Opdrachtknoppen
+  const btnMoveLeft = document.getElementById('btn-move-left');
+  if (btnMoveLeft) {
+    btnMoveLeft.addEventListener('click', moveWindowLeft);
+  }
+  const btnOpenLumo = document.getElementById('btn-open-lumo');
+  if (btnOpenLumo) {
+    btnOpenLumo.addEventListener('click', openLumoPopup);
+  }
+  const btnOpenPerplexity = document.getElementById('btn-open-perplexity');
+  if (btnOpenPerplexity) {
+    btnOpenPerplexity.addEventListener('click', openPerplexityPopup);
+  }
 });
+
+// Verplaats bestaande DOMContentLoaded listeners niet; ze staan hierboven samengevoegd
 
 // Kopieer prompt functionaliteit
 function copyPrompt(button) {
@@ -297,8 +378,15 @@ function toggleTheme() {
   html.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
 
-  // Update toggle button icon
+  // Update toggle button icon en aria-state
   updateThemeIcon(newTheme);
+  const toggleBtn = document.querySelector('.theme-toggle-btn');
+  if (toggleBtn) {
+    toggleBtn.setAttribute(
+      'aria-pressed',
+      newTheme === 'dark' ? 'true' : 'false'
+    );
+  }
 }
 
 function updateThemeIcon(theme) {
@@ -316,6 +404,13 @@ function initializeTheme() {
 
   html.setAttribute('data-theme', savedTheme);
   updateThemeIcon(savedTheme);
+  const toggleBtn = document.querySelector('.theme-toggle-btn');
+  if (toggleBtn) {
+    toggleBtn.setAttribute(
+      'aria-pressed',
+      savedTheme === 'dark' ? 'true' : 'false'
+    );
+  }
 }
 
 // Initialize theme when page loads
@@ -339,4 +434,41 @@ function animateSidebars() {
       }, index * 200); // 200ms delay between each sidebar
     });
   }, 100);
+}
+
+function openPerplexityPopup() {
+  const screenWidth = window.screen.width;
+  const screenHeight = window.screen.height;
+  const popupWidth = Math.min(1200, screenWidth * 0.5);
+  const popupHeight = Math.min(900, screenHeight * 0.9);
+  const left = screenWidth - popupWidth - 20;
+  const top = 20;
+
+  const features = `width=${popupWidth},height=${popupHeight},left=${left},top=${top},scrollbars=yes,resizable=yes,status=yes,toolbar=no,menubar=no,location=yes,noopener`;
+  const win = window.open(
+    'https://www.perplexity.ai/',
+    'perplexityChatbot',
+    features
+  );
+  if (win) {
+    try {
+      win.focus();
+    } catch (e) {}
+  }
+}
+
+function openChatGPT() {
+  const screenWidth = window.screen.width;
+  const screenHeight = window.screen.height;
+  const popupWidth = Math.min(1200, screenWidth * 0.5);
+  const popupHeight = Math.min(900, screenHeight * 0.9);
+  const left = screenWidth - popupWidth - 20;
+  const top = 20;
+  const features = `width=${popupWidth},height=${popupHeight},left=${left},top=${top},scrollbars=yes,resizable=yes,status=yes,toolbar=no,menubar=no,location=yes,noopener`;
+  const win = window.open('https://chat.openai.com', 'chatgpt', features);
+  if (win) {
+    try {
+      win.focus();
+    } catch (e) {}
+  }
 }

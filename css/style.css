@@ -59,6 +59,13 @@
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
+
+  /* Link kleuren - uniform */
+  --link-color: #3774e6;
+  --link-hover-color: #1e3a8a;
+  /* Externe link kleuren (donkergroen) */
+  --link-external-color: #0b6b50;
+  --link-external-hover-color: #08533e;
 }
 
 /* Dark Mode variabelen */
@@ -193,6 +200,87 @@ h4 {
   font-size: 1.2rem;
   margin: 1.5rem 0 0.8rem 0;
   font-weight: 500;
+}
+
+/* Header compact variant */
+.header-section.header-compact {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.hero-image {
+  max-width: 70%;
+  height: auto;
+  margin: -15px -15px -65px -15px;
+  border-radius: 8px;
+}
+
+.page-title {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.metadata-header {
+  text-align: left;
+  padding: 0 50px 20px 50px;
+}
+
+/* Buttons */
+.btn-primary {
+  color: #000000;
+  background: var(--primary-yellow-light);
+  border: 1px solid var(--border-light);
+}
+
+.btn-primary:hover {
+  background: var(--gray-100);
+  border-color: var(--border-medium);
+}
+
+.btn-icon {
+  vertical-align: middle;
+  margin-right: 12px;
+}
+
+/* Hotkey panel */
+.hotkey-panel {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background-color: #000;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Hotkey panel details */
+.hotkey-col.fixed {
+  flex: 0 0 190px;
+}
+.hotkey-col.flex {
+  flex: 1;
+}
+.hotkey-icon {
+  vertical-align: middle;
+  margin-right: 6px;
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+.hotkey-code {
+  color: #fff;
+  background: #333;
+  font-size: 12px;
+  padding: 0 4px;
+  border-radius: 3px;
+}
+.hotkey-notes {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 12px;
 }
 
 /* ========================================
@@ -706,7 +794,7 @@ li {
    LINKS STYLING
    ======================================== */
 a {
-  color: var(--primary-blue-dark);
+  color: var(--link-color);
   text-decoration: none;
   transition: var(--transition-fast);
   cursor: pointer; /* Hand cursor voor alle links */
@@ -717,8 +805,20 @@ a {
 }
 
 a:hover {
-  color: #1e3a8a;
+  color: var(--link-hover-color);
   text-decoration: underline;
+}
+/* Externe links (http/https) donkergroen */
+a[href^="http://"],
+a[href^="https://"]
+{
+  color: var(--link-external-color) !important;
+}
+
+a[href^="http://"]:hover,
+a[href^="https://"]:hover
+{
+  color: var(--link-external-hover-color) !important;
 }
 
 /* ========================================
@@ -801,10 +901,21 @@ img {
 }
 
 .table-container {
+  width: 100%;
   overflow-x: auto;
-  margin: 25px 0;
-  border-radius: 8px;
-  box-shadow: var(--shadow-md);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
 }
 
 /* ========================================
@@ -1080,35 +1191,58 @@ a:focus {
 
 /* Fellere, leesbare link kleuren */
 .content-text a {
-  color: var(
-    --primary-blue
-  ) !important; /* Nog fellere blauwe kleur voor betere leesbaarheid */
+  color: var(--link-color) !important;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .content-text a:hover {
   text-decoration: underline;
+  color: var(--link-hover-color) !important;
 }
 
 .content-text a:visited {
-  color: #1e3a8a !important; /* Nog fellere paarse kleur voor bezochte links */
+  color: var(--link-color) !important;
+}
+
+/* Externe links in content-text ook donkergroen */
+.content-text a[href^="http://"],
+.content-text a[href^="https://"]
+{
+  color: var(--link-external-color) !important;
+}
+
+.content-text a[href^="http://"]:hover,
+.content-text a[href^="https://"]:hover
+{
+  color: var(--link-external-hover-color) !important;
 }
 
 /* Ook algemene link styling toevoegen */
 a {
-  color: var(
-    --primary-blue
-  ) !important; /* Nog fellere blauwe kleur voor alle links */
+  color: var(--link-color) !important;
   font-weight: 600;
 }
 
 a:hover {
-  color: #1e3a8a !important; /* Donkerblauw bij hover */
+  color: var(--link-hover-color) !important;
 }
 
 a:visited {
-  color: #1e3a8a !important; /* Nog fellere paarse kleur voor bezochte links */
+  color: var(--link-color) !important;
+}
+
+/* Externe links globale override (na algemene regels) */
+a[href^="http://"],
+a[href^="https://"]
+{
+  color: var(--link-external-color) !important;
+}
+
+a[href^="http://"]:hover,
+a[href^="https://"]:hover
+{
+  color: var(--link-external-hover-color) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -1245,11 +1379,11 @@ a:visited {
 }
 
 .chatbots-section .content-text a {
-  color: #90cdf4; /* Lichte blauwe links voor donkere achtergrond */
+  color: var(--link-color);
 }
 
 .chatbots-section .content-text a:hover {
-  color: #63b3ed; /* Donkerder blauw bij hover */
+  color: var(--link-hover-color);
 }
 
 .metadata {
@@ -1389,6 +1523,15 @@ a:visited {
 .feedback-content {
   color: var(--text-primary); /* Donkere tekst voor betere leesbaarheid */
   line-height: 1.5;
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+[data-theme='dark'] .feedback-content {
+  background: var(--bg-accent);
+  border: 1px solid var(--gray-600);
 }
 
 .feedback-icon {
@@ -1398,12 +1541,27 @@ a:visited {
 
 .quiz-option.correct {
   border-color: var(--primary-green);
-  background: var(--primary-yellow-light);
+  background: var(--white); /* neutrale achtergrond voor betere leesbaarheid */
+  box-shadow: inset 4px 0 0 0 var(--primary-green); /* linkeraccent */
 }
 
 .quiz-option.incorrect {
   border-color: var(--primary-red);
-  background: #fef2f2; /* Lichte rode achtergrond */
+  background: var(--white); /* neutrale achtergrond */
+  box-shadow: inset 4px 0 0 0 var(--primary-red); /* linkeraccent */
+}
+
+/* Donkere modus: behoud contrast en leesbaarheid */
+[data-theme='dark'] .quiz-option.correct {
+  border-color: var(--primary-green);
+  background: var(--bg-secondary);
+  box-shadow: inset 4px 0 0 0 var(--primary-green);
+}
+
+[data-theme='dark'] .quiz-option.incorrect {
+  border-color: var(--primary-red);
+  background: var(--bg-secondary);
+  box-shadow: inset 4px 0 0 0 var(--primary-red);
 }
 
 /* Eenvoudige sidebar styling */
@@ -1915,15 +2073,15 @@ a:visited {
 }
 
 [data-theme='dark'] .content-text a {
-  color: #60a5fa !important;
+  color: var(--link-color) !important;
 }
 
 [data-theme='dark'] .content-text a:hover {
-  color: #93c5fd !important;
+  color: var(--link-hover-color) !important;
 }
 
 [data-theme='dark'] .content-text a:visited {
-  color: #60a5fa !important;
+  color: var(--link-color) !important;
 }
 
 /* Dark mode voor specifieke content blokken */
@@ -2022,7 +2180,7 @@ a:visited {
 [data-theme='dark'] .quiz .content-text a,
 [data-theme='dark'] .important .content-text a,
 [data-theme='dark'] .conclusion .content-text a {
-  color: #fa60e5 !important;
+  color: var(--link-color) !important;
 }
 
 [data-theme='dark'] .info .content-text a:hover,
@@ -2031,7 +2189,7 @@ a:visited {
 [data-theme='dark'] .quiz .content-text a:hover,
 [data-theme='dark'] .important .content-text a:hover,
 [data-theme='dark'] .conclusion .content-text a:hover {
-  color: #93c5fd !important;
+  color: var(--link-hover-color) !important;
 }
 
 /* Dark mode voor lists in content blokken */
@@ -2405,4 +2563,188 @@ a:visited {
 .nav-up-toggle-btn img,
 .nav-down-toggle-btn img {
   filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-blue);
+  color: var(--white);
+  padding: 8px 12px;
+  z-index: 10000;
+  border-radius: 0 0 6px 0;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* TOC */
+.toc {
+  margin: 10px 0 25px 0;
+}
+.toc ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+}
+.toc a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.toc a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Utilities */
+.text-black {
+  color: #000000 !important;
+}
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.img-elevated {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Misc utilities */
+.rotate-180 {
+  transform: rotate(180deg);
+}
+.text-center {
+  text-align: center;
+}
+.diagram-img {
+  max-width: 70%;
+  height: auto;
+  border-radius: 8px;
+}
+.img-350 {
+  max-width: 350px;
+  height: auto;
+}
+
+/* Callouts */
+.callouts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+.callout {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid transparent;
+}
+.callout-blue {
+  border-left-color: #007bff;
+}
+.callout-green {
+  border-left-color: #28a745;
+}
+.callout-red {
+  border-left-color: #dc3545;
+}
+.callout-link {
+  color: var(--link-color);
+  font-weight: 700;
+  text-decoration: none;
+}
+.callout-link:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Fellere, leesbare link kleuren */
+.content-text a {
+  color: var(--link-color) !important;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.content-text a:hover {
+  text-decoration: underline;
+  color: var(--link-hover-color) !important;
+}
+
+/* Geen border-color meer nodig - rustigere layout */
+
+/* Zorg voor leesbare knop-tekst (lichtmodus) binnen content-blokken */
+.content-block .content-text button:not(.copy-btn),
+.content-block .content-text .btn:not(.copy-btn) {
+  color: #000000 !important;
+}
+.content-block .content-text button:not(.copy-btn) *,
+.content-block .content-text .btn:not(.copy-btn) * {
+  color: #000000 !important;
+}
+
+/* Extra specifieke overrides voor task/opdracht varianten (overtreffen :has en * regels) */
+.content-block:has(.icon img[src*='opdracht'])
+  .content-text
+  button:not(.copy-btn),
+.content-block:has(.icon img[src*='opdracht'])
+  .content-text
+  .btn:not(.copy-btn),
+.content-block[data-type='task'] .content-text button:not(.copy-btn),
+.content-block[data-type='task'] .content-text .btn:not(.copy-btn),
+.content-block.opdracht .content-text button:not(.copy-btn),
+.content-block.opdracht .content-text .btn:not(.copy-btn),
+.task .content-text button:not(.copy-btn),
+.task .content-text .btn:not(.copy-btn) {
+  color: #000000 !important;
+}
+.content-block:has(.icon img[src*='opdracht'])
+  .content-text
+  button:not(.copy-btn)
+  *,
+.content-block:has(.icon img[src*='opdracht'])
+  .content-text
+  .btn:not(.copy-btn)
+  *,
+.content-block[data-type='task'] .content-text button:not(.copy-btn) *,
+.content-block[data-type='task'] .content-text .btn:not(.copy-btn) *,
+.content-block.opdracht .content-text button:not(.copy-btn) *,
+.content-block.opdracht .content-text .btn:not(.copy-btn) *,
+.task .content-text button:not(.copy-btn) *,
+.task .content-text .btn:not(.copy-btn) * {
+  color: #000000 !important;
+}
+
+/* Extra specifieke overrides voor quiz varianten */
+.content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  button:not(.copy-btn),
+.content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  .btn:not(.copy-btn),
+.content-block[data-type='quiz'] .content-text button:not(.copy-btn),
+.content-block[data-type='quiz'] .content-text .btn:not(.copy-btn),
+.content-block.quiz .content-text button:not(.copy-btn),
+.content-block.quiz .content-text .btn:not(.copy-btn) {
+  color: #000000 !important;
+}
+.content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  button:not(.copy-btn)
+  *,
+.content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  .btn:not(.copy-btn)
+  *,
+.content-block[data-type='quiz'] .content-text button:not(.copy-btn) *,
+.content-block[data-type='quiz'] .content-text .btn:not(.copy-btn) *,
+.content-block.quiz .content-text button:not(.copy-btn) *,
+.content-block.quiz .content-text .btn:not(.copy-btn) * {
+  color: #000000 !important;
 }
