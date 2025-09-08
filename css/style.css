@@ -7,354 +7,358 @@
    KLEUREN VARIABELEN
    ======================================== */
 :root {
-    /* Primaire kleuren */
-    --primary-blue: #3774e6;
-    --primary-blue-dark: #1e3a8a;
-    --primary-green: #0fa870;
-    --primary-purple: #7f52e6;
-    --primary-orange: #e88f0a;
-    --primary-red: #e13d3d;
-    --primary-indigo: #5d5ae1;
-    --primary-yellow: #d9c7a0;
-    --primary-yellow-light: #e6e4c7;
-    --primary-gray: #636b77;
-    --primary-gray-light: #c4c8ce;
+  /* Primaire kleuren */
+  --primary-blue: #3774e6;
+  --primary-blue-dark: #1e3a8a;
+  --primary-green: #0fa870;
+  --primary-purple: #7f52e6;
+  --primary-orange: #e88f0a;
+  --primary-red: #e13d3d;
+  --primary-indigo: #5d5ae1;
+  --primary-yellow: #d9c7a0;
+  --primary-yellow-light: #e6e4c7;
+  --primary-gray: #636b77;
+  --primary-gray-light: #c4c8ce;
 
-    /* Neutrale kleuren */
-    --white: #ffffff;
-    --gray-50: #f0f1f2;
-    --gray-100: #d1d5da;
-    --gray-200: #b8bec8;
-    --gray-300: #c4c8ce;
-    --gray-400: #7a828c;
-    --gray-500: #636b77;
-    --gray-600: #3a4249;
-    --gray-700: #2c3339;
-    --gray-800: #171d24;
-    --gray-900: #0d1116;
+  /* Neutrale kleuren */
+  --white: #ffffff;
+  --gray-50: #f0f1f2;
+  --gray-100: #d1d5da;
+  --gray-200: #b8bec8;
+  --gray-300: #a6a9ad;
+  --gray-400: #7a828c;
+  --gray-500: #636b77;
+  --gray-600: #3a4249;
+  --gray-700: #2c3339;
+  --gray-800: #171d24;
+  --gray-900: #0d1116;
 
-    /* Achtergrond kleuren */
-    --bg-primary: #e6e9ed;
-    --bg-secondary: #ffffff;
-    --bg-accent: #d6dbe2;
+  /* Achtergrond kleuren */
+  --bg-primary: #c4c8ce;
+  --bg-secondary: #ffffff;
+  --bg-accent: #d6dbe2;
 
-    /* Tekst kleuren */
-    --text-primary: #17202a;
-    --text-secondary: #38424f;
-    --text-muted: #4f5a6b;
-    --text-light: #ffffff;
+  /* Tekst kleuren */
+  --text-primary: #17202a;
+  --text-secondary: #38424f;
+  --text-muted: #4f5a6b;
+  --text-light: #ffffff;
 
-    /* Schaduw kleuren */
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  /* Schaduw kleuren */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
 
-    /* Border kleuren */
-    --border-light: #c4c9d1;
-    --border-medium: #a8b0bd;
-    --border-dark: #76828f;
+  /* Border kleuren */
+  --border-light: #c4c9d1;
+  --border-medium: #a8b0bd;
+  --border-dark: #76828f;
 
-    /* Overgangen */
-    --transition-fast: 0.15s ease;
-    --transition-normal: 0.3s ease;
-    --transition-slow: 0.5s ease;
+  /* Overgangen */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
 /* Dark Mode variabelen */
-[data-theme="dark"] {
-    /* Dark Mode - Achtergrond kleuren */
-    --bg-primary: #0d1116;
-    --bg-secondary: #161b22;
-    --bg-accent: #21262d;
+[data-theme='dark'] {
+  /* Dark Mode - Achtergrond kleuren */
+  --bg-primary: #0d1116;
+  --bg-secondary: #161b22;
+  --bg-accent: #21262d;
 
-    /* Dark Mode - Tekst kleuren */
-    --text-primary: #f0f6fc;
-    --text-secondary: #c9d1d9;
-    --text-muted: #8b949e;
-    --text-light: #ffffff;
+  /* Dark Mode - Tekst kleuren */
+  --text-primary: #f0f6fc;
+  --text-secondary: #c9d1d9;
+  --text-muted: #8b949e;
+  --text-light: #ffffff;
 }
 
 /* Theme Toggle Sidebar */
 .theme-sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 1000;
-    transform: translateX(-100%);
-    transition: transform 0.8s ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
 }
 
 .theme-sidebar.loaded {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .theme-toggle-btn {
-    position: fixed;
-    left: 0;
-    top: calc(50% + 240px);
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background: var(--gray-600);
-    color: var(--text-primary);
-    border-radius: 0 30px 30px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 24px;
-    border: none;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
+  position: fixed;
+  left: -6px;
+  top: 92px;
+  transform: translateY(0);
+  width: 60px;
+  height: 60px;
+  background: var(--gray-600);
+  color: var(--text-primary);
+  border-radius: 0 30px 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  border: none;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0.7;
 }
 
 .theme-toggle-btn:hover {
-    background: #4a5568;
-    transform: translateY(-50%) scale(1.1) translateX(5px);
+  background: #4a5568;
+  transform: translateY(0) scale(1.1) translateX(5px);
+  opacity: 1;
 }
 
 /* ========================================
    BASIS RESET EN TYPOGRAFIE
    ======================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.7;
-    color: var(--text-primary);
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: var(--bg-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  line-height: 1.7;
+  color: var(--text-primary);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: var(--bg-primary);
 }
 
 .container {
-    background: transparent;
-    padding: 40px; /* Kleiner gemaakt voor bredere container */
-    border-radius: 20px;
-    box-shadow: none;
-    border: none;
+  background: transparent;
+  padding: 40px; /* Kleiner gemaakt voor bredere container */
+  border-radius: 20px;
+  box-shadow: none;
+  border: none;
 }
 
 h1 {
-    color: var(--text-primary); /* Donkere tekst op lichte achtergrond */
-    font-size: 2.6rem;
-    margin: 0;
-    padding: 8px 25px; /* Padding zoals bij chatbots titel */
-    font-weight: 700;
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    background: transparent; /* Geen achtergrond */
-    border-radius: 12px; /* Afgeronde hoeken zoals bij chatbots titel */
-    border: none;
-    box-shadow: none;
-    position: relative;
-    overflow: visible;
-    letter-spacing: 0.3px;
+  color: var(--text-primary); /* Donkere tekst op lichte achtergrond */
+  font-size: 2.6rem;
+  margin: 0;
+  padding: 8px 25px; /* Padding zoals bij chatbots titel */
+  font-weight: 700;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: transparent; /* Geen achtergrond */
+  border-radius: 12px; /* Afgeronde hoeken zoals bij chatbots titel */
+  border: none;
+  box-shadow: none;
+  position: relative;
+  overflow: visible;
+  letter-spacing: 0.3px;
 }
 
 .header-section {
-    background: var(--gray-200);
-    border-radius: 16px;
-    border: none;
-    box-shadow: var(--shadow-sm);
-    padding: 30px 35px;
-    margin: 2.5rem 0 2.5rem 0;
+  background: var(--gray-300);
+  border-radius: 16px;
+  border: none;
+  box-shadow: var(--shadow-sm);
+  padding: 30px 35px;
+  margin: 2.5rem 0 2.5rem 0;
 }
 
 h2 {
-    color: #000000; /* Zwarte tekst */
-    font-size: 1.8rem;
-    margin: 3rem 0 1.5rem 0;
-    border-left: 4px solid var(--primary-blue);
-    padding-left: 20px;
-    font-weight: 600;
+  color: #000000; /* Zwarte tekst */
+  font-size: 1.8rem;
+  margin: 3rem 0 1.5rem 0;
+  border-left: 4px solid var(--primary-blue);
+  padding-left: 20px;
+  font-weight: 600;
 }
 
 h3 {
-    color: #000000; /* Zwarte tekst */
-    font-size: 1.4rem;
-    margin: 2rem 0 1rem 0;
-    font-weight: 600;
+  color: #000000; /* Zwarte tekst */
+  font-size: 1.4rem;
+  margin: 2rem 0 1rem 0;
+  font-weight: 600;
 }
 
 h4 {
-    color: #000000; /* Zwarte tekst */
-    font-size: 1.2rem;
-    margin: 1.5rem 0 0.8rem 0;
-    font-weight: 500;
+  color: #000000; /* Zwarte tekst */
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.8rem 0;
+  font-weight: 500;
 }
 
 /* ========================================
    CONTENT BLOCKS - BASIS STYLING
    ======================================== */
 .content-block {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    background: var(--bg-secondary);
-    border-radius: 30px; /* Zachtere hoeken */
-    margin: 40px 0; /* Compacte scheiding tussen blokken */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Verfijnde schaduw */
-    overflow: hidden;
-    transition: all 0.3s ease; /* Smooth transitions */
-    border: none;
-    min-height: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: var(--bg-secondary);
+  border-radius: 30px; /* Zachtere hoeken */
+  margin: 40px 0; /* Compacte scheiding tussen blokken */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Verfijnde schaduw */
+  overflow: hidden;
+  transition: all 0.3s ease; /* Smooth transitions */
+  border: none;
+  min-height: fit-content;
 }
 
 .content-block:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Verfijnde hover schaduw */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Verfijnde hover schaduw */
 }
 
 /* Voorkom dat iconen meebewegen met content-block hover */
 .content-block:hover .icon {
-    transform: none;
+  transform: none;
 }
 
 /* Zorg dat iconen hun eigen hover effect behouden */
 .content-block .icon:hover {
-    transform: scale(1.05) !important;
+  transform: scale(1.05) !important;
 }
 
 /* Alleen de content-text beweegt omhoog bij hover */
 .content-block:hover .content-text {
-    transform: translateY(-3px);
+  transform: translateY(-3px);
 }
 
 /* ========================================
    ICON STYLING
    ======================================== */
 .icon {
-    font-size: 1.5em;
-    color: var(--text-light);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    width: 80px;
-    min-height: 100%;
-    margin-right: 0;
-    flex-shrink: 0;
-    transition: all 0.3s ease; /* Smooth transitions */
-    padding: 10px 8px;
-    border-radius: 0 0 18px; /* Zachtere hoeken */
-    align-self: stretch;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Zeer subtiele binnen schaduw */
-    user-select: none; /* Voorkom tekst selectie */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  font-size: 1.5em;
+  color: var(--text-light);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80px;
+  min-height: 100%;
+  margin-right: 0;
+  flex-shrink: 0;
+  transition: all 0.3s ease; /* Smooth transitions */
+  padding: 10px 8px;
+  border-radius: 0 0 18px; /* Zachtere hoeken */
+  align-self: stretch;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Zeer subtiele binnen schaduw */
+  user-select: none; /* Voorkom tekst selectie */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .icon img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    object-position: start;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  object-position: start;
 }
 
 .icon:hover {
-    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08); /* Subtiele hover schaduw */
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08); /* Subtiele hover schaduw */
 }
 
 /* ========================================
    CONTENT TEXT STYLING
    ======================================== */
 .content-text {
-    flex: 1;
-    line-height: 1.9; /* Iets verfijnder line-height */
-    background: var(--bg-secondary); /* Terug naar originele achtergrond */
-    padding: 30px;
-    border-radius: 0 18px 18px 0; /* Zachtere hoeken */
-    border: none; /* Geen randen */
-    width: 100%;
-    color: #000000; /* Zwarte tekst */
-    min-height: 100%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Zeer subtiele schaduw */
-    transition: all 0.3s ease; /* Smooth transitions */
-    letter-spacing: 0.01em; /* Subtiele letter-spacing voor betere leesbaarheid */
+  flex: 1;
+  line-height: 1.9; /* Iets verfijnder line-height */
+  background: var(--bg-secondary); /* Terug naar originele achtergrond */
+  padding: 30px;
+  border-radius: 0 18px 18px 0; /* Zachtere hoeken */
+  border: none; /* Geen randen */
+  width: 100%;
+  color: #000000; /* Zwarte tekst */
+  min-height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Zeer subtiele schaduw */
+  transition: all 0.3s ease; /* Smooth transitions */
+  letter-spacing: 0.01em; /* Subtiele letter-spacing voor betere leesbaarheid */
 }
 
 /* ========================================
    SPECIFIEKE BLOK TYPES MET DONKERDERE KLEUREN EN MAXIMAAL VERLOOP NAAR WIT
    ======================================== */
 .task .icon {
-    background: linear-gradient(
-        135deg,
-        #1a5a1a 0%,
-        rgba(26, 90, 26, 0.8) 50%,
-        rgba(26, 90, 26, 0.1) 100%
-    ); /* Donkerder groen met maximaal verloop naar wit */
-    color: #3a4249;
+  background: linear-gradient(
+    135deg,
+    #1a5a1a 0%,
+    rgba(26, 90, 26, 0.8) 50%,
+    rgba(26, 90, 26, 0.1) 100%
+  ); /* Donkerder groen met maximaal verloop naar wit */
+  color: #3a4249;
 }
 
 .task .icon:hover {
-    color: #2c3339;
+  color: #2c3339;
 }
 
 .quiz .icon {
-    background: linear-gradient(
-        135deg,
-        #b85454 0%,
-        rgba(184, 84, 84, 0.8) 50%,
-        rgba(184, 84, 84, 0.1) 100%
-    ); /* Donkerder rood met maximaal verloop naar wit */
-    color: #3a4249;
+  background: linear-gradient(
+    135deg,
+    #b85454 0%,
+    rgba(184, 84, 84, 0.8) 50%,
+    rgba(184, 84, 84, 0.1) 100%
+  ); /* Donkerder rood met maximaal verloop naar wit */
+  color: #3a4249;
 }
 
 .quiz .icon:hover {
-    color: #2c3339;
-    transform: scale(1.05) !important;
+  color: #2c3339;
+  transform: scale(1.05) !important;
 }
 
 .trivia .icon {
-    background: linear-gradient(
-        135deg,
-        #b89454 0%,
-        rgba(184, 148, 84, 0.8) 50%,
-        rgba(184, 148, 84, 0.1) 100%
-    ); /* Donkerder geel/oranje met maximaal verloop naar wit */
-    color: #3a4249;
+  background: linear-gradient(
+    135deg,
+    #b89454 0%,
+    rgba(184, 148, 84, 0.8) 50%,
+    rgba(184, 148, 84, 0.1) 100%
+  ); /* Donkerder geel/oranje met maximaal verloop naar wit */
+  color: #3a4249;
 }
 
 .trivia .icon:hover {
-    color: #2c3339;
-    transform: scale(1.05) !important;
+  color: #2c3339;
+  transform: scale(1.05) !important;
 }
 
 .important .icon {
-    background: linear-gradient(
-        135deg,
-        #b85454 0%,
-        rgba(184, 84, 84, 0.8) 50%,
-        rgba(184, 84, 84, 0.1) 100%
-    ); /* Donkerder rood met maximaal verloop naar wit */
-    color: #3a4249;
+  background: linear-gradient(
+    135deg,
+    #b85454 0%,
+    rgba(184, 84, 84, 0.8) 50%,
+    rgba(184, 84, 84, 0.1) 100%
+  ); /* Donkerder rood met maximaal verloop naar wit */
+  color: #3a4249;
 }
 
 .important .icon:hover {
-    color: #2c3339;
-    transform: scale(1.05) !important;
+  color: #2c3339;
+  transform: scale(1.05) !important;
 }
 
 .info .icon {
-    background: linear-gradient(
-        135deg,
-        #4a6fa5 0%,
-        rgba(74, 111, 165, 0.8) 50%,
-        rgba(74, 111, 165, 0.1) 100%
-    ); /* Donkerder blauw met maximaal verloop naar wit */
-    color: #3a4249;
+  background: linear-gradient(
+    135deg,
+    #4a6fa5 0%,
+    rgba(74, 111, 165, 0.8) 50%,
+    rgba(74, 111, 165, 0.1) 100%
+  ); /* Donkerder blauw met maximaal verloop naar wit */
+  color: #3a4249;
 }
 
 .info .icon:hover {
-    color: #2c3339;
-    transform: scale(1.05) !important;
+  color: #2c3339;
+  transform: scale(1.05) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -363,66 +367,66 @@ h4 {
    TRIVIA TOGGLE STYLING - MINIMAAL
    ======================================== */
 .content-block.trivia .content-text details {
-    width: 100%;
+  width: 100%;
 }
 
 .content-block .content-text summary {
-    cursor: pointer; /* Hand cursor voor summary elementen */
-    padding: 8px 12px;
-    border-radius: 6px;
-    background: var(--primary-yellow-light);
-    border: 1px solid var(--border-light);
-    color: var(--text-primary);
-    margin-bottom: 15px;
-    transition: var(--transition-fast);
-    list-style: none;
-    position: relative;
-    user-select: none; /* Voorkom tekst selectie */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  cursor: pointer; /* Hand cursor voor summary elementen */
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--primary-yellow-light);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  transition: var(--transition-fast);
+  list-style: none;
+  position: relative;
+  user-select: none; /* Voorkom tekst selectie */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .content-block .content-text summary:hover {
-    background: var(--gray-100);
-    border-color: var(--border-medium);
+  background: var(--gray-100);
+  border-color: var(--border-medium);
 }
 
 .content-block .content-text summary::after {
-    content: "▶";
-    position: absolute;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--text-muted);
-    transition: var(--transition-normal);
+  content: '▶';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  transition: var(--transition-normal);
 }
 
 .content-block .content-text details[open] summary::after {
-    transform: translateY(-50%) rotate(90deg);
-    color: var(--primary-blue);
+  transform: translateY(-50%) rotate(90deg);
+  color: var(--primary-blue);
 }
 
 /* ========================================
    QUIZ OPTION STYLING
    ======================================== */
 .quiz-option {
-    cursor: pointer; /* Hand cursor voor quiz opties */
-    padding: 12px;
-    border-radius: 8px;
-    transition: var(--transition-fast);
-    margin: 8px 0;
-    background: var(--gray-50);
-    border: 1px solid var(--border-light);
-    user-select: none; /* Voorkom tekst selectie */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  cursor: pointer; /* Hand cursor voor quiz opties */
+  padding: 12px;
+  border-radius: 8px;
+  transition: var(--transition-fast);
+  margin: 8px 0;
+  background: var(--gray-50);
+  border: 1px solid var(--border-light);
+  user-select: none; /* Voorkom tekst selectie */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .quiz-option:hover {
-    background: var(--gray-100);
-    border-color: var(--border-medium);
+  background: var(--gray-100);
+  border-color: var(--border-medium);
 }
 
 /* ========================================
@@ -433,68 +437,68 @@ h4 {
    PROMPT BOX STYLING
    ======================================== */
 .prompt-box {
-    background: var(--gray-50);
-    color: var(--text-primary);
-    padding: 25px;
-    border-radius: 12px;
-    margin: 25px 0;
-    border: 1px solid var(--border-light);
-    box-shadow: var(--shadow-sm);
-    font-family: "Courier New", Courier, monospace;
+  background: var(--gray-50);
+  color: var(--text-primary);
+  padding: 25px;
+  border-radius: 12px;
+  margin: 25px 0;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .prompt-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-light);
 }
 
 .prompt-header span {
-    font-weight: bold;
-    font-size: 1.1em;
-    color: var(--text-primary);
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--text-primary);
 }
 
 .copy-btn {
-    background: var(--primary-blue);
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.2s ease;
+  background: var(--primary-blue);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
 }
 
 .copy-btn:hover {
-    background: var(--primary-indigo);
-    transform: scale(1.05) !important;
+  background: var(--primary-indigo);
+  transform: scale(1.05) !important;
 }
 
 .copy-btn:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 
 .prompt-content {
-    line-height: 1.6;
-    color: #000000 !important; /* Zorg dat alle tekst in prompt-content zwart is */
+  line-height: 1.6;
+  color: #000000 !important; /* Zorg dat alle tekst in prompt-content zwart is */
 }
 
 /* Zorg dat alle tekst in prompt-box elementen zwart is, ook binnen opdracht blokken */
 .prompt-box {
-    color: #000000 !important; /* Basis tekstkleur voor prompt-box */
+  color: #000000 !important; /* Basis tekstkleur voor prompt-box */
 }
 
 .prompt-box * {
-    color: #000000 !important; /* Alle elementen binnen prompt-box krijgen zwarte tekst */
+  color: #000000 !important; /* Alle elementen binnen prompt-box krijgen zwarte tekst */
 }
 
 .prompt-box a {
-    color: var(--primary-blue);
-    text-decoration: underline;
+  color: var(--primary-blue);
+  text-decoration: underline;
 }
 
 /* ========================================
@@ -510,7 +514,7 @@ button,
 .icon,
 .quiz-option,
 summary {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* Voorkom tekst selectie bij interactieve elementen */
@@ -523,10 +527,10 @@ button,
 .icon,
 .quiz-option,
 summary {
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 /* Hover effecten voor alle interactieve elementen */
@@ -539,37 +543,37 @@ button:hover,
 .icon:hover,
 .quiz-option:hover,
 summary:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 /* ========================================
    BUTTON STYLING
    ======================================== */
 .btn, /* .demo-button, .nav-button, */ button {
-    display: inline-block;
-    background: var(--white);
-    color: var(--gray-700);
-    padding: 18px 35px;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: var(--transition-normal);
-    border: 1px solid var(--gray-700);
-    box-shadow: var(--shadow-md);
-    cursor: pointer; /* Hand cursor voor alle buttons */
-    font-family: inherit;
-    user-select: none; /* Voorkom tekst selectie bij dubbelklikken */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  display: inline-block;
+  background: var(--white);
+  color: var(--gray-700);
+  padding: 18px 35px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition-normal);
+  border: 1px solid var(--gray-700);
+  box-shadow: var(--shadow-md);
+  cursor: pointer; /* Hand cursor voor alle buttons */
+  font-family: inherit;
+  user-select: none; /* Voorkom tekst selectie bij dubbelklikken */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .btn:hover, /* .demo-button:hover, .nav-button:hover, */ button:hover {
-    background: var(--primary-gray-light);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
-    cursor: pointer; /* Zorg ervoor dat hand cursor blijft bij hover */
+  background: var(--primary-gray-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer; /* Zorg ervoor dat hand cursor blijft bij hover */
 }
 
 /* ========================================
@@ -594,22 +598,22 @@ summary:hover {
 
 /* Voorkom dat buttons meerdere keren worden geklikt */
 .btn:active, /* .demo-button:active, .nav-button:active, */ button:active {
-    transform: translateY(0);
-    box-shadow: var(--shadow-md);
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
 }
 
 /* Focus states voor toegankelijkheid */
 .btn:focus, /* .demo-button:focus, .nav-button:focus, */ button:focus {
-    outline: none;
-    outline-offset: 2px;
-    cursor: pointer;
+  outline: none;
+  outline-offset: 2px;
+  cursor: pointer;
 }
 
 /* Disabled state voor buttons */
 .btn:disabled, /* .demo-button:disabled, .nav-button:disabled, */ button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 /* ========================================
@@ -634,53 +638,53 @@ summary:hover {
 */
 
 @media (max-width: 768px) {
-    .back-floating {
-        left: 16px;
-        bottom: 16px;
-        top: auto;
-        transform: none;
-    }
-    .back-floating:hover,
-    .back-floating:active {
-        transform: none;
-    }
+  .back-floating {
+    left: 16px;
+    bottom: 16px;
+    top: auto;
+    transform: none;
+  }
+  .back-floating:hover,
+  .back-floating:active {
+    transform: none;
+  }
 }
 
 @media print {
-    .back-floating {
-        display: none;
-    }
+  .back-floating {
+    display: none;
+  }
 }
 
 /* ========================================
    TABEL STYLING
    ======================================== */
 table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 25px 0;
-    background: var(--white);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border-light);
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
 }
 
 th,
 td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid var(--border-light);
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
 }
 
 th {
-    background: var(--gray-50);
-    font-weight: 600;
-    color: var(--text-primary);
+  background: var(--gray-50);
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 tr:hover {
-    background: var(--gray-50);
+  background: var(--gray-50);
 }
 
 /* ========================================
@@ -688,204 +692,204 @@ tr:hover {
    ======================================== */
 ul,
 ol {
-    margin: 15px 0;
-    padding-left: 25px;
+  margin: 15px 0;
+  padding-left: 25px;
 }
 
 li {
-    margin-bottom: 8px;
-    line-height: 1.6;
-    color: var(--text-secondary);
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
 /* ========================================
    LINKS STYLING
    ======================================== */
 a {
-    color: var(--primary-blue-dark);
-    text-decoration: none;
-    transition: var(--transition-fast);
-    cursor: pointer; /* Hand cursor voor alle links */
-    user-select: none; /* Voorkom tekst selectie */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
+  color: var(--primary-blue-dark);
+  text-decoration: none;
+  transition: var(--transition-fast);
+  cursor: pointer; /* Hand cursor voor alle links */
+  user-select: none; /* Voorkom tekst selectie */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 a:hover {
-    color: #1e3a8a;
-    text-decoration: underline;
+  color: #1e3a8a;
+  text-decoration: underline;
 }
 
 /* ========================================
    CODE STYLING
    ======================================== */
 code {
-    background: #2d3748; /* Donkere achtergrond */
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: "Courier New", monospace;
-    color: #e2e8f0; /* Lichte tekst voor contrast */
-    border: 1px solid #4a5568; /* Donkere border */
+  background: #2d3748; /* Donkere achtergrond */
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #e2e8f0; /* Lichte tekst voor contrast */
+  border: 1px solid #4a5568; /* Donkere border */
 }
 
 /* ========================================
    BLOCKQUOTE STYLING
    ======================================== */
 blockquote {
-    border-left: 4px solid var(--primary-blue);
-    padding-left: 20px;
-    margin: 20px 0;
-    font-style: italic;
-    color: var(--text-muted);
-    background: var(--gray-50);
-    padding: 15px 20px;
-    border-radius: 0 8px 8px 0;
+  border-left: 4px solid var(--primary-blue);
+  padding-left: 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: var(--text-muted);
+  background: var(--gray-50);
+  padding: 15px 20px;
+  border-radius: 0 8px 8px 0;
 }
 
 /* ========================================
    IMAGES STYLING
    ======================================== */
 img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: var(--shadow-sm);
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: var(--shadow-sm);
 }
 
 /* ========================================
    UTILITY CLASSES
    ======================================== */
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .mb-2 {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .mb-4 {
-    margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .mt-2 {
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .mt-4 {
-    margin-top: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .shadow-md {
-    box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md);
 }
 .shadow-lg {
-    box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-lg);
 }
 
 /* ========================================
    SPECIALE ELEMENTEN
    ======================================== */
 .important {
-    background: #d9c7a0;
-    border: 1px solid #fde68a;
-    border-left: 4px solid var(--primary-orange);
-    padding: 20px;
-    margin: 25px 0;
-    border-radius: 8px;
-    color: #92400e;
+  background: #d9c7a0;
+  border: 1px solid #fde68a;
+  border-left: 4px solid var(--primary-orange);
+  padding: 20px;
+  margin: 25px 0;
+  border-radius: 8px;
+  color: #92400e;
 }
 
 .table-container {
-    overflow-x: auto;
-    margin: 25px 0;
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
+  overflow-x: auto;
+  margin: 25px 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
 }
 
 /* ========================================
    RESPONSIVE DESIGN
    ======================================== */
 @media (max-width: 768px) {
-    body {
-        padding: 20px;
-    }
+  body {
+    padding: 20px;
+  }
 
-    .container {
-        padding: 30px;
-    }
+  .container {
+    padding: 30px;
+  }
 
-    .content-block {
-        margin: 40px 0;
-        flex-direction: row; /* Blijf in rij-layout */
-    }
+  .content-block {
+    margin: 40px 0;
+    flex-direction: row; /* Blijf in rij-layout */
+  }
 
-    .icon {
-        width: 60px; /* Iets smaller op mobiel */
-        min-height: 100%;
-        margin-right: 0;
-        align-self: stretch;
-        border-radius: 0 0 16px 0;
-        flex-shrink: 0;
-    }
+  .icon {
+    width: 60px; /* Iets smaller op mobiel */
+    min-height: 100%;
+    margin-right: 0;
+    align-self: stretch;
+    border-radius: 0 0 16px 0;
+    flex-shrink: 0;
+  }
 
-    .icon img {
-        width: 80px; /* Iets kleiner icoon op mobiel */
-        height: 80px;
-    }
+  .icon img {
+    width: 80px; /* Iets kleiner icoon op mobiel */
+    height: 80px;
+  }
 
-    .content-text {
-        border-radius: 0 16px 16px 0;
-        border-top: none;
-        border-left: none;
-        padding: 20px; /* Minder padding op mobiel */
-        flex: 1; /* Neem beschikbare ruimte in */
-    }
+  .content-text {
+    border-radius: 0 16px 16px 0;
+    border-top: none;
+    border-left: none;
+    padding: 20px; /* Minder padding op mobiel */
+    flex: 1; /* Neem beschikbare ruimte in */
+  }
 
-    h1 {
-        font-size: 2.2rem;
-        padding: 20px 25px;
-        margin: 1.5rem 0 1.5rem 0;
-    }
+  h1 {
+    font-size: 2.2rem;
+    padding: 20px 25px;
+    margin: 1.5rem 0 1.5rem 0;
+  }
 
-    h2 {
-        font-size: 1.5rem;
-    }
+  h2 {
+    font-size: 1.5rem;
+  }
 }
 
 /* ========================================
    SCROLLBAR VERBERGEN
    ======================================== */
 html {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 html::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* ========================================
    ANIMATIES EN TRANSITIES
    ======================================== */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .content-block {
-    animation: fadeIn 0.5s ease-out;
-    min-height: fit-content;
+  animation: fadeIn 0.5s ease-out;
+  min-height: fit-content;
 }
 
 /* ========================================
@@ -894,35 +898,35 @@ body::-webkit-scrollbar {
 button:focus,
 .btn:focus,
 .demo-button:focus {
-    outline: none;
-    outline-offset: 2px;
+  outline: none;
+  outline-offset: 2px;
 }
 
 a:focus {
-    outline: none;
-    outline-offset: 2px;
+  outline: none;
+  outline-offset: 2px;
 }
 
 /* ========================================
    PRINT STYLING
    ======================================== */
 @media print {
-    body {
-        background: white;
-        color: black;
-        padding: 0;
-        margin: 0;
-    }
+  body {
+    background: white;
+    color: black;
+    padding: 0;
+    margin: 0;
+  }
 
-    .container {
-        box-shadow: none;
-        border: 1px solid #ccc;
-    }
+  .container {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
 
-    .icon {
-        background: var(--gray-100) !important;
-        color: var(--text-primary) !important;
-    }
+  .icon {
+    background: var(--gray-100) !important;
+    color: var(--text-primary) !important;
+  }
 }
 
 /* ========================================
@@ -930,270 +934,274 @@ a:focus {
    ======================================== */
 
 /* Opdracht blokken - automatisch groen met opdracht icoon */
-.content-block:has(.icon img[src*="opdracht"]) .icon,
-.content-block[data-type="task"] .icon,
+.content-block:has(.icon img[src*='opdracht']) .icon,
+.content-block[data-type='task'] .icon,
 .content-block.opdracht .icon,
 .task .icon {
-    background: linear-gradient(
-        135deg,
-        #4a9a4a 0%,
-        rgba(74, 154, 74, 0.8) 50%,
-        rgba(74, 154, 74, 0.1) 100%
-    ); /* Nog lichtere groen */
-    color: #2a3239;
+  background: linear-gradient(
+    135deg,
+    #4a9a4a 0%,
+    rgba(74, 154, 74, 0.8) 50%,
+    rgba(74, 154, 74, 0.1) 100%
+  ); /* Nog lichtere groen */
+  color: #2a3239;
 }
 
-.content-block:has(.icon img[src*="opdracht"]) .icon:hover,
-.content-block[data-type="task"] .icon:hover,
+.content-block:has(.icon img[src*='opdracht']) .icon:hover,
+.content-block[data-type='task'] .icon:hover,
 .content-block.opdracht .icon:hover,
 .task .icon:hover {
-    color: #2a3239; /* Geen kleurverandering */
-    background: linear-gradient(
-        135deg,
-        #5aaa5a 0%,
-        rgba(90, 170, 90, 0.85) 50%,
-        rgba(90, 170, 90, 0.2) 100%
-    ); /* Nog lichtere groen hover */
+  color: #2a3239; /* Geen kleurverandering */
+  background: linear-gradient(
+    135deg,
+    #5aaa5a 0%,
+    rgba(90, 170, 90, 0.85) 50%,
+    rgba(90, 170, 90, 0.2) 100%
+  ); /* Nog lichtere groen hover */
 }
 
-.content-block:has(.icon img[src*="opdracht"]) .content-text,
-.content-block[data-type="task"] .content-text,
+.content-block:has(.icon img[src*='opdracht']) .content-text,
+.content-block[data-type='task'] .content-text,
 .content-block.opdracht .content-text,
 .task .content-text {
-    border-color: #86efac;
-    background-color: #467255; /* Nog zachtere, rustigere donkergroen */
-    color: #f1fcf5 !important; /* Lichtere groene tekst voor betere leesbaarheid */
+  border-color: #86efac;
+  background-color: #467255; /* Nog zachtere, rustigere donkergroen */
+  color: #f1fcf5 !important; /* Lichtere groene tekst voor betere leesbaarheid */
 }
 
 /* Zorg dat alle tekst in opdracht blokken wit is, inclusief lijsten en andere elementen */
-.content-block:has(.icon img[src*="opdracht"]) .content-text *,
-.content-block[data-type="task"] .content-text *,
+.content-block:has(.icon img[src*='opdracht']) .content-text *,
+.content-block[data-type='task'] .content-text *,
 .content-block.opdracht .content-text *,
 .task .content-text * {
-    color: #f1fcf5 !important; /* Witte tekst voor alle tekst in opdrachten */
+  color: #f1fcf5 !important; /* Witte tekst voor alle tekst in opdrachten */
 }
 
 /* Maak de lijst items in opdracht blokken cursief */
-.content-block:has(.icon img[src*="opdracht"]) .content-text li,
-.content-block[data-type="task"] .content-text li,
+.content-block:has(.icon img[src*='opdracht']) .content-text li,
+.content-block[data-type='task'] .content-text li,
 .content-block.opdracht .content-text li,
 .task .content-text li {
-    font-style: italic;
+  font-style: italic;
 }
 
 /* Quiz blokken - automatisch rood met quiz icoon */
-.content-block:has(.icon img[src*="quizvraag"]) .icon,
-.content-block[data-type="quiz"] .icon,
+.content-block:has(.icon img[src*='quizvraag']) .icon,
+.content-block[data-type='quiz'] .icon,
 .content-block.quiz .icon {
-    background: linear-gradient(
-        135deg,
-        #b85454 0%,
-        rgba(184, 84, 84, 0.8) 50%,
-        rgba(184, 84, 84, 0.1) 100%
-    ); /* Donkerder rood met maximaal verloop naar wit */
-    color: #2a3239;
+  background: linear-gradient(
+    135deg,
+    #b85454 0%,
+    rgba(184, 84, 84, 0.8) 50%,
+    rgba(184, 84, 84, 0.1) 100%
+  ); /* Donkerder rood met maximaal verloop naar wit */
+  color: #2a3239;
 }
 
-.content-block:has(.icon img[src*="quizvraag"]) .icon:hover,
-.content-block[data-type="quiz"] .icon:hover,
+.content-block:has(.icon img[src*='quizvraag']) .icon:hover,
+.content-block[data-type='quiz'] .icon:hover,
 .content-block.quiz .icon:hover {
-    color: #2a3239; /* Geen kleurverandering */
-    transform: scale(1.02) !important; /* Kleinere schaal */
-    background: linear-gradient(
-        135deg,
-        #ba5656 0%,
-        rgba(186, 86, 86, 0.85) 50%,
-        rgba(186, 86, 86, 0.2) 100%
-    ); /* Donkerder rood hover met maximaal verloop naar wit */
+  color: #2a3239; /* Geen kleurverandering */
+  transform: scale(1.02) !important; /* Kleinere schaal */
+  background: linear-gradient(
+    135deg,
+    #ba5656 0%,
+    rgba(186, 86, 86, 0.85) 50%,
+    rgba(186, 86, 86, 0.2) 100%
+  ); /* Donkerder rood hover met maximaal verloop naar wit */
 }
 
-.content-block:has(.icon img[src*="quizvraag"]) .content-text,
-.content-block[data-type="quiz"] .content-text,
+.content-block:has(.icon img[src*='quizvraag']) .content-text,
+.content-block[data-type='quiz'] .content-text,
 .content-block.quiz .content-text {
-    background-color: #a15656; /* Nog mattere, rustigere donkerrode achtergrond */
-    color: #fef2f2; /* Lichte rode tekst voor betere leesbaarheid */
+  background-color: #a15656; /* Nog mattere, rustigere donkerrode achtergrond */
+  color: #fef2f2; /* Lichte rode tekst voor betere leesbaarheid */
 }
 
 /* Alleen de quiz-opties krijgen zwarte tekst, de rest blijft wit */
 .quiz-options .quiz-option strong {
-    color: #000000 !important; /* Zwarte tekst voor quiz-opties (A), B), C), D)) */
+  color: #000000 !important; /* Zwarte tekst voor quiz-opties (A), B), C), D)) */
 }
 
 /* Alle andere tekst in quiz blokken blijft wit */
-.content-block:has(.icon img[src*="quizvraag"]) .content-text,
-.content-block[data-type="quiz"] .content-text,
+.content-block:has(.icon img[src*='quizvraag']) .content-text,
+.content-block[data-type='quiz'] .content-text,
 .content-block.quiz .content-text {
-    color: #fef2f2 !important; /* Witte tekst voor alle normale tekst in quiz */
+  color: #fef2f2 !important; /* Witte tekst voor alle normale tekst in quiz */
 }
 
 /* Zorg dat alle tekst in opdracht blokken wit is, inclusief lijsten */
-.content-block:has(.icon img[src*="opdracht"]) .content-text,
-.content-block[data-type="task"] .content-text,
+.content-block:has(.icon img[src*='opdracht']) .content-text,
+.content-block[data-type='task'] .content-text,
 .content-block.opdracht .content-text,
 .task .content-text {
-    color: #f1fcf5 !important; /* Witte tekst voor alle tekst in opdrachten */
+  color: #f1fcf5 !important; /* Witte tekst voor alle tekst in opdrachten */
 }
 
 /* Trivia blokken - automatisch geel met trivia icoon */
-.content-block:has(.icon img[src*="boekenwurm"]) .icon,
-.content-block[data-type="trivia"] .icon,
+.content-block:has(.icon img[src*='boekenwurm']) .icon,
+.content-block[data-type='trivia'] .icon,
 .content-block.trivia .icon {
-    background: linear-gradient(
-        135deg,
-        #b89454 0%,
-        rgba(184, 148, 84, 0.8) 50%,
-        rgba(184, 148, 84, 0.1) 100%
-    ); /* Donkerder geel/oranje met maximaal verloop naar wit */
-    color: #2a3239;
+  background: linear-gradient(
+    135deg,
+    #b89454 0%,
+    rgba(184, 148, 84, 0.8) 50%,
+    rgba(184, 148, 84, 0.1) 100%
+  ); /* Donkerder geel/oranje met maximaal verloop naar wit */
+  color: #2a3239;
 }
 
-.content-block:has(.icon img[src*="boekenwurm"]) .icon:hover,
-.content-block[data-type="trivia"] .icon:hover,
+.content-block:has(.icon img[src*='boekenwurm']) .icon:hover,
+.content-block[data-type='trivia'] .icon:hover,
 .content-block.trivia .icon:hover {
-    color: #2a3239; /* Geen kleurverandering */
-    transform: scale(1.02) !important; /* Kleinere schaal */
-    background: linear-gradient(
-        135deg,
-        #ba9656 0%,
-        rgba(186, 150, 86, 0.85) 50%,
-        rgba(186, 150, 86, 0.2) 100%
-    ); /* Donkerder geel/oranje hover met maximaal verloop naar wit */
+  color: #2a3239; /* Geen kleurverandering */
+  transform: scale(1.02) !important; /* Kleinere schaal */
+  background: linear-gradient(
+    135deg,
+    #ba9656 0%,
+    rgba(186, 150, 86, 0.85) 50%,
+    rgba(186, 150, 86, 0.2) 100%
+  ); /* Donkerder geel/oranje hover met maximaal verloop naar wit */
 }
 
 /* Tekstkleur voor trivia blokken op zwart zetten */
-.content-block:has(.icon img[src*="boekenwurm"]) .content-text,
-.content-block[data-type="trivia"] .content-text,
+.content-block:has(.icon img[src*='boekenwurm']) .content-text,
+.content-block[data-type='trivia'] .content-text,
 .content-block.trivia .content-text {
-    color: #000000; /* Zwarte tekst voor trivia blokken */
+  color: #000000; /* Zwarte tekst voor trivia blokken */
 }
 
 /* Vetgedrukte tekst in trivia blokken ook op zwart */
-.content-block:has(.icon img[src*="boekenwurm"]) .content-text strong,
-.content-block[data-type="trivia"] .content-text strong,
+.content-block:has(.icon img[src*='boekenwurm']) .content-text strong,
+.content-block[data-type='trivia'] .content-text strong,
 .content-block.trivia .content-text strong {
-    color: #000000; /* Zwarte tekst voor vetgedrukte woorden */
+  color: #000000; /* Zwarte tekst voor vetgedrukte woorden */
 }
 
 /* Fellere, leesbare link kleuren */
 .content-text a {
-    color: var(--primary-blue) !important; /* Nog fellere blauwe kleur voor betere leesbaarheid */
-    text-decoration: none;
-    transition: color 0.2s ease;
+  color: var(
+    --primary-blue
+  ) !important; /* Nog fellere blauwe kleur voor betere leesbaarheid */
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
 .content-text a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .content-text a:visited {
-    color: #1e3a8a !important; /* Nog fellere paarse kleur voor bezochte links */
+  color: #1e3a8a !important; /* Nog fellere paarse kleur voor bezochte links */
 }
 
 /* Ook algemene link styling toevoegen */
 a {
-    color: var(--primary-blue) !important; /* Nog fellere blauwe kleur voor alle links */
-    font-weight: 600;
+  color: var(
+    --primary-blue
+  ) !important; /* Nog fellere blauwe kleur voor alle links */
+  font-weight: 600;
 }
 
 a:hover {
-    color: #1e3a8a !important; /* Donkerblauw bij hover */
+  color: #1e3a8a !important; /* Donkerblauw bij hover */
 }
 
 a:visited {
-    color: #1e3a8a !important; /* Nog fellere paarse kleur voor bezochte links */
+  color: #1e3a8a !important; /* Nog fellere paarse kleur voor bezochte links */
 }
 
 /* Geen border-color meer nodig - rustigere layout */
 
 /* Belangrijke informatie - automatisch rood met uitroepteken icoon */
-.content-block:has(.icon img[src*="uitroepteken"]) .icon,
-.content-block[data-type="important"] .icon,
+.content-block:has(.icon img[src*='uitroepteken']) .icon,
+.content-block[data-type='important'] .icon,
 .content-block.important .icon {
-    background: linear-gradient(
-        135deg,
-        #b85454 0%,
-        rgba(184, 84, 84, 0.8) 50%,
-        rgba(184, 84, 84, 0.1) 100%
-    ); /* Donkerder rood met maximaal verloop naar wit */
-    color: #3a4249;
+  background: linear-gradient(
+    135deg,
+    #b85454 0%,
+    rgba(184, 84, 84, 0.8) 50%,
+    rgba(184, 84, 84, 0.1) 100%
+  ); /* Donkerder rood met maximaal verloop naar wit */
+  color: #3a4249;
 }
 
-.content-block:has(.icon img[src*="uitroepteken"]) .icon:hover,
-.content-block[data-type="important"] .icon:hover,
+.content-block:has(.icon img[src*='uitroepteken']) .icon:hover,
+.content-block[data-type='important'] .icon:hover,
 .content-block.important .icon:hover {
-    color: #2c3339;
-    transform: scale(1.05) !important;
+  color: #2c3339;
+  transform: scale(1.05) !important;
 }
 
 /* Geen border-color meer nodig - rustigere layout */
 
 /* Informatie blokken - automatisch blauw met informatie icoon */
-.content-block:has(.icon img[src*="informatie"]) .icon,
-.content-block[data-type="info"] .icon,
+.content-block:has(.icon img[src*='informatie']) .icon,
+.content-block[data-type='info'] .icon,
 .content-block.info .icon {
-    background: linear-gradient(
-        135deg,
-        #4a6fa5 0%,
-        rgba(74, 111, 165, 0.8) 50%,
-        rgba(74, 111, 165, 0.1) 100%
-    ); /* Donkerder blauw met maximaal verloop naar wit */
-    color: #2a3239;
+  background: linear-gradient(
+    135deg,
+    #4a6fa5 0%,
+    rgba(74, 111, 165, 0.8) 50%,
+    rgba(74, 111, 165, 0.1) 100%
+  ); /* Donkerder blauw met maximaal verloop naar wit */
+  color: #2a3239;
 }
 
 /* ========================================
    CONCLUSIE CONTENT BLOCK
    ======================================== */
-.content-block:has(.icon img[src*="conclusie"]) .icon,
-.content-block[data-type="conclusion"] .icon,
+.content-block:has(.icon img[src*='conclusie']) .icon,
+.content-block[data-type='conclusion'] .icon,
 .content-block.conclusion .icon {
-    background: linear-gradient(
-        135deg,
-        #8a6fa5 0%,
-        rgba(138, 111, 165, 0.8) 50%,
-        rgba(138, 111, 165, 0.1) 100%
-    ); /* Donkerder paars met maximaal verloop naar wit */
-    color: #2a3239;
+  background: linear-gradient(
+    135deg,
+    #8a6fa5 0%,
+    rgba(138, 111, 165, 0.8) 50%,
+    rgba(138, 111, 165, 0.1) 100%
+  ); /* Donkerder paars met maximaal verloop naar wit */
+  color: #2a3239;
 }
 
-.content-block:has(.icon img[src*="conclusie"]) .icon:hover,
-.content-block[data-type="conclusion"] .icon:hover,
+.content-block:has(.icon img[src*='conclusie']) .icon:hover,
+.content-block[data-type='conclusion'] .icon:hover,
 .content-block.conclusion .icon:hover {
-    color: #2c3339;
-    transform: scale(1.05) !important;
+  color: #2c3339;
+  transform: scale(1.05) !important;
 }
 
 /* Zorg dat tekst in conclusie blokken zwart is */
-.content-block:has(.icon img[src*="conclusie"]) .content-text,
-.content-block[data-type="conclusion"] .content-text,
+.content-block:has(.icon img[src*='conclusie']) .content-text,
+.content-block[data-type='conclusion'] .content-text,
 .content-block.conclusion .content-text {
-    color: #000000 !important;
+  color: #000000 !important;
 }
 
-.content-block:has(.icon img[src*="conclusie"]) .content-text *,
-.content-block[data-type="conclusion"] .content-text *,
+.content-block:has(.icon img[src*='conclusie']) .content-text *,
+.content-block[data-type='conclusion'] .content-text *,
 .content-block.conclusion .content-text * {
-    color: #000000 !important;
+  color: #000000 !important;
 }
 
-.content-block:has(.icon img[src*="informatie"]) .icon:hover,
-.content-block[data-type="info"] .icon:hover,
+.content-block:has(.icon img[src*='informatie']) .icon:hover,
+.content-block[data-type='info'] .icon:hover,
 .content-block.info .icon:hover {
-    color: #2c3339;
-    transform: scale(1.05) !important;
+  color: #2c3339;
+  transform: scale(1.05) !important;
 }
 
 /* Tekstkleur voor informatie blokken op zwart zetten */
-.content-block:has(.icon img[src*="informatie"]) .content-text,
-.content-block[data-type="info"] .content-text,
+.content-block:has(.icon img[src*='informatie']) .content-text,
+.content-block[data-type='info'] .content-text,
 .content-block.info .content-text {
-    color: #000000; /* Zwarte tekst voor informatie blokken */
+  color: #000000; /* Zwarte tekst voor informatie blokken */
 }
 
 /* Vetgedrukte tekst in informatie blokken ook op zwart */
-.content-block:has(.icon img[src*="informatie"]) .content-text strong,
-.content-block[data-type="info"] .content-text strong,
+.content-block:has(.icon img[src*='informatie']) .content-text strong,
+.content-block[data-type='info'] .content-text strong,
 .content-block.info .content-text strong {
-    color: #000000; /* Zwarte tekst voor vetgedrukte woorden */
+  color: #000000; /* Zwarte tekst voor vetgedrukte woorden */
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -1202,67 +1210,67 @@ a:visited {
    METADATA STYLING
    ======================================== */
 .chatbots-section {
-    background: var(--gray-200); /* Terug naar originele kleur */
-    border-radius: 16px;
-    padding: 25px;
-    margin: 30px 0;
-    box-shadow: var(--shadow-md);
+  background: var(--gray-200); /* Terug naar originele kleur */
+  border-radius: 16px;
+  padding: 25px;
+  margin: 30px 0;
+  box-shadow: var(--shadow-md);
 }
 
 .chatbots-title {
-    color: var(--white);
-    background: #4a5568; /* Zelfde kleur als de sidebars */
-    padding: 8px 25px;
-    border-radius: 12px;
-    margin-bottom: 30px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-align: center;
-    border-left: none !important; /* Verwijder blauwe rand links */
+  color: var(--white);
+  background: #4a5568; /* Zelfde kleur als de sidebars */
+  padding: 8px 25px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  border-left: none !important; /* Verwijder blauwe rand links */
 }
 
 /* Aparte styling voor hoofdtitel */
 .chatbots-title.main-title {
-    font-size: 1.8rem;
-    padding: 12px 30px;
+  font-size: 1.8rem;
+  padding: 12px 30px;
 }
 
 /* Tekst in chatbots section aanpassen voor betere leesbaarheid */
 .chatbots-section .content-text {
-    color: #f7fafc; /* Lichte tekst voor donkere achtergrond */
+  color: #f7fafc; /* Lichte tekst voor donkere achtergrond */
 }
 
 .chatbots-section .content-text strong {
-    color: #ffffff; /* Witte tekst voor belangrijke woorden */
+  color: #ffffff; /* Witte tekst voor belangrijke woorden */
 }
 
 .chatbots-section .content-text a {
-    color: #90cdf4; /* Lichte blauwe links voor donkere achtergrond */
+  color: #90cdf4; /* Lichte blauwe links voor donkere achtergrond */
 }
 
 .chatbots-section .content-text a:hover {
-    color: #63b3ed; /* Donkerder blauw bij hover */
+  color: #63b3ed; /* Donkerder blauw bij hover */
 }
 
 .metadata {
-    background: none;
-    padding: 0;
-    border-radius: 0;
-    margin: 20px 0 0 0;
-    border: none;
-    box-shadow: none;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  margin: 20px 0 0 0;
+  border: none;
+  box-shadow: none;
 }
 
 .metadata-content {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 0.95rem;
-    color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
 }
 
 .metadata-item {
-    width: 100%;
+  width: 100%;
 }
 
 /* ========================================
@@ -1271,398 +1279,404 @@ a:visited {
 
 /* Opdracht blokken - automatisch icoon */
 .content-block.opdracht .icon::before {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url("../../img/icons/opdracht.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0 auto;
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url('../../img/icons/opdracht.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
 }
 
 /* Quiz blokken - automatisch icoon */
 .content-block.quiz .icon::before {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url("../../img/icons/quizvraag.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0 auto;
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url('../../img/icons/quizvraag.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
 }
 
 /* Trivia blokken - automatisch icoon */
 .content-block.trivia .icon::before {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url("../../img/icons/boekenwurm.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0 auto;
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url('../../img/icons/boekenwurm.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
 }
 
 /* Belangrijke informatie - automatisch icoon */
 .content-block.important .icon::before {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url("../../img/icons/uitroepteken.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0 auto;
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url('../../img/icons/uitroepteken.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
 }
 
 /* Informatie blokken - automatisch icoon */
 .content-block.info .icon::before {
-    content: "";
-    display: block;
-    width: 80px;
-    height: 80px;
-    background-image: url("../../img/icons/informatie.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    margin: 0 auto;
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url('../../img/icons/informatie.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 auto;
 }
 
 /* Quiz styling */
 .quiz-options {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
 }
 
 .quiz-option {
-    background: var(--white);
-    border: 2px solid var(--gray-300);
-    border-radius: 12px;
-    padding: 10px 15px; /* Kleinere padding voor compactere hoogte */
-    cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    color: var(--text-primary); /* Expliciete tekstkleur voor leesbaarheid */
+  background: var(--white);
+  border: 2px solid var(--gray-300);
+  border-radius: 12px;
+  padding: 10px 15px; /* Kleinere padding voor compactere hoogte */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-primary); /* Expliciete tekstkleur voor leesbaarheid */
 }
 
 .quiz-option strong {
-    color: var(--text-primary); /* Zorg dat strong tekst ook zwart is */
+  color: var(--text-primary); /* Zorg dat strong tekst ook zwart is */
 }
 
 .quiz-option:hover {
-    border-color: var(--gray-300); /* Behoud de originele grijze rand */
-    box-shadow: var(--shadow-sm);
-    transform: translateY(-2px);
-    background: var(--gray-50); /* Subtiele achtergrondkleur bij hover */
+  border-color: var(--gray-300); /* Behoud de originele grijze rand */
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+  background: var(--gray-50); /* Subtiele achtergrondkleur bij hover */
 }
 
 .answer-feedback {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease;
-    margin-top: 10px; /* Kleinere margin voor compactere uitstraling */
-    border-top: 1px solid var(--gray-200);
-    padding-top: 10px; /* Kleinere padding voor compactere uitstraling */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: 10px; /* Kleinere margin voor compactere uitstraling */
+  border-top: 1px solid var(--gray-200);
+  padding-top: 10px; /* Kleinere padding voor compactere uitstraling */
 }
 
 .answer-feedback.show {
-    max-height: 200px;
+  max-height: 200px;
 }
 
 .feedback-content {
-    color: var(--text-primary); /* Donkere tekst voor betere leesbaarheid */
-    line-height: 1.5;
+  color: var(--text-primary); /* Donkere tekst voor betere leesbaarheid */
+  line-height: 1.5;
 }
 
 .feedback-icon {
-    font-size: 1.2em;
-    margin-right: 8px;
+  font-size: 1.2em;
+  margin-right: 8px;
 }
 
 .quiz-option.correct {
-    border-color: var(--primary-green);
-    background: var(--primary-yellow-light);
+  border-color: var(--primary-green);
+  background: var(--primary-yellow-light);
 }
 
 .quiz-option.incorrect {
-    border-color: var(--primary-red);
-    background: #fef2f2; /* Lichte rode achtergrond */
+  border-color: var(--primary-red);
+  background: #fef2f2; /* Lichte rode achtergrond */
 }
 
 /* Eenvoudige sidebar styling */
 .simple-sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 1000;
-    /* Start off-screen */
-    transform: translateX(-100%);
-    transition: transform 0.8s ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+  /* Start off-screen */
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
 }
 
 /* Animate sidebar in on page load */
 .simple-sidebar.loaded {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .sidebar-toggle-btn {
-    position: fixed;
-    left: 0; /* Op de linkerkant van het scherm */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background: var(--gray-500); /* Zelfde kleur als grijze container */
-    color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
-    border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 24px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+  position: fixed;
+  left: -6px; /* Op de linkerkant van het scherm */
+  top: 164px;
+  transform: translateY(0);
+  width: 60px;
+  height: 60px;
+  background: var(--gray-500); /* Zelfde kleur als grijze container */
+  color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
+  border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+  opacity: 0.7;
 }
 
 .sidebar-toggle-btn:hover {
-    background: var(--gray-800);
-    transform: translateY(-50%) scale(1.1) translateX(5px); /* Schaal iets en schuif licht naar rechts */
+  background: var(--gray-800);
+  transform: translateY(0) scale(1.1) translateX(5px);
+  opacity: 1;
 }
 
 .sidebar-content {
-    position: fixed;
-    left: -380px; /* Volledig verborgen met nieuwe breedte */
-    top: 20px; /* Hoger geplaatst, niet meer gecentreerd */
-    width: 380px; /* Nog breder gemaakt voor betere leesbaarheid */
-    max-height: 400px; /* Hoger gemaakt om alles te passen */
-    background: white;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
-    z-index: 1000;
-    border-radius: 0 20px 20px 0; /* Afgeronde rechter hoeken */
-    overflow-y: hidden; /* Geen scrollbar meer */
-    pointer-events: none; /* Laat scrollen door wanneer gesloten */
-    transform: scale(1); /* Start grootte */
+  position: fixed;
+  left: -380px; /* Volledig verborgen met nieuwe breedte */
+  top: 20px; /* Hoger geplaatst, niet meer gecentreerd */
+  width: 380px; /* Nog breder gemaakt voor betere leesbaarheid */
+  max-height: 400px; /* Hoger gemaakt om alles te passen */
+  background: white;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+  z-index: 1000;
+  border-radius: 0 20px 20px 0; /* Afgeronde rechter hoeken */
+  overflow-y: hidden; /* Geen scrollbar meer */
+  pointer-events: none; /* Laat scrollen door wanneer gesloten */
+  transform: scale(1); /* Start grootte */
 }
 
 .simple-sidebar.open .sidebar-content {
-    left: 50px; /* Meer naar rechts geplaatst voor betere zichtbaarheid */
-    pointer-events: auto; /* Herstel interactie wanneer open */
+  left: 50px; /* Meer naar rechts geplaatst voor betere zichtbaarheid */
+  pointer-events: auto; /* Herstel interactie wanneer open */
 }
 
 /* Hover effect - schuif sidebar naar rechts */
 .simple-sidebar.open .sidebar-content:hover {
-    transform: translateX(10px); /* Schuif 10px naar rechts */
-    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15); /* Iets sterkere schaduw */
+  transform: translateX(10px); /* Schuif 10px naar rechts */
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15); /* Iets sterkere schaduw */
 }
 
 /* Tweede sidebar - naar boven knop */
 .top-sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 1000;
-    /* Start off-screen */
-    transform: translateX(-100%);
-    transition: transform 0.8s ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+  /* Start off-screen */
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
 }
 
 /* Animate top sidebar in on page load */
 .top-sidebar.loaded {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .top-toggle-btn {
-    position: fixed;
-    left: 0; /* Op de linkerkant van het scherm */
-    top: calc(50% + 160px); /* Lager onder de home knop */
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background: var(--gray-500); /* Zelfde kleur als grijze container */
-    color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
-    border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 24px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+  position: fixed;
+  left: -6px; /* Op de linkerkant van het scherm */
+  bottom: 140px; /* Boven de kleine nav-knoppen */
+  transform: translateY(0);
+  width: 60px;
+  height: 60px;
+  background: var(--gray-500); /* Zelfde kleur als grijze container */
+  color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
+  border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+  opacity: 0.7;
 }
 
 .top-toggle-btn:hover {
-    background: #8b4513; /* Nog donkerder oranje voor omhoog sidebar */
-    transform: translateY(-50%) scale(1.1) translateX(5px); /* Schaal iets en schuif licht naar rechts */
+  background: #8b4513; /* Nog donkerder oranje voor omhoog sidebar */
+  transform: translateY(0) scale(1.1) translateX(5px);
+  opacity: 1;
 }
 
 /* Derde sidebar - naar home knop */
 .home-sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    z-index: 1000;
-    /* Start off-screen */
-    transform: translateX(-100%);
-    transition: transform 0.8s ease-in-out;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+  /* Start off-screen */
+  transform: translateX(-100%);
+  transition: transform 0.8s ease-in-out;
 }
 
 /* Animate home sidebar in on page load */
 .home-sidebar.loaded {
-    transform: translateX(0);
+  transform: translateX(0);
 }
 
 .home-toggle-btn {
-    position: fixed;
-    left: 0; /* Op de linkerkant van het scherm */
-    top: calc(50% + 80px); /* Tussen legende en naar-boven knop */
-    transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    background: var(--gray-500); /* Zelfde kleur als grijze container */
-    color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
-    border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 24px;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-    z-index: 1001;
-    transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+  position: fixed;
+  left: -6px; /* Op de linkerkant van het scherm */
+  top: 20px;
+  transform: translateY(0);
+  width: 60px;
+  height: 60px;
+  background: var(--gray-500); /* Zelfde kleur als grijze container */
+  color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
+  border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
+  opacity: 0.7;
 }
 
 .home-toggle-btn:hover {
-    background: #654321; /* Donkerder bruin voor home sidebar */
-    transform: translateY(-50%) scale(1.1) translateX(5px); /* Schaal iets en schuif licht naar rechts */
+  background: #654321; /* Donkerder bruin voor home sidebar */
+  transform: translateY(0) scale(1.1) translateX(5px);
+  opacity: 1;
 }
 
 .sidebar-header {
-    background: #f7fafc;
-    padding: 8px; /* Veel kleiner gemaakt */
-    border-bottom: 1px solid #c4c9d1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: #f7fafc;
+  padding: 8px; /* Veel kleiner gemaakt */
+  border-bottom: 1px solid #c4c9d1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .sidebar-header h3 {
-    margin: 0;
-    color: #4a5059;
-    font-size: 16px; /* Kleiner gemaakt */
+  margin: 0;
+  color: #4a5059;
+  font-size: 16px; /* Kleiner gemaakt */
 }
 
 .close-sidebar-btn {
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: #718096;
-    cursor: pointer;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #718096;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 .close-sidebar-btn:hover {
-    background: #c4c9d1;
-    color: #4a5059;
+  background: #c4c9d1;
+  color: #4a5059;
 }
 
 .sidebar-body {
-    padding: 8px; /* Veel kleiner gemaakt */
+  padding: 8px; /* Veel kleiner gemaakt */
 }
 
 .sidebar-body p {
-    margin: 15px 0;
-    color: #4a5568;
-    line-height: 1.5;
+  margin: 15px 0;
+  color: #4a5568;
+  line-height: 1.5;
 }
 
 /* Legend items styling */
 .legend-item {
-    display: grid;
-    grid-template-columns: 76px 1fr; /* Kolom voor icoon (76px) en kolom voor tekst (rest) */
-    gap: 8px; /* Kleinere ruimte tussen kolommen */
-    padding: 4px; /* Veel kleinere padding */
-    margin-bottom: 3px; /* Veel kleinere margin tussen items */
-    background: #e6e9ed;
-    border-radius: 12px; /* Ronder gemaakt */
-    border: 1px solid #c4c9d1;
-    transition: all 0.2s ease;
+  display: grid;
+  grid-template-columns: 76px 1fr; /* Kolom voor icoon (76px) en kolom voor tekst (rest) */
+  gap: 8px; /* Kleinere ruimte tussen kolommen */
+  padding: 4px; /* Veel kleinere padding */
+  margin-bottom: 3px; /* Veel kleinere margin tussen items */
+  background: #e6e9ed;
+  border-radius: 12px; /* Ronder gemaakt */
+  border: 1px solid #c4c9d1;
+  transition: all 0.2s ease;
 }
 
 .legend-item:hover {
-    background: #d6dbe2;
-    border-color: #a8b0bd;
-    transform: translateX(5px);
+  background: #d6dbe2;
+  border-color: #a8b0bd;
+  transform: translateX(5px);
 }
 
 .legend-item img {
-    justify-self: center; /* Centreer icoon in zijn kolom */
-    align-self: flex-start; /* Icoon bovenaan uitlijnen */
-    border-radius: 8px; /* Ronder gemaakt */
-    padding: 10px; /* Meer padding voor roter vlak */
-    background: #c4d4f0; /* Standaard blauw voor informatie */
+  justify-self: center; /* Centreer icoon in zijn kolom */
+  align-self: flex-start; /* Icoon bovenaan uitlijnen */
+  border-radius: 8px; /* Ronder gemaakt */
+  padding: 10px; /* Meer padding voor roter vlak */
+  background: #c4d4f0; /* Standaard blauw voor informatie */
 }
 
 /* Specifieke achtergrondkleuren voor elk icoon type */
-.legend-item img[src*="informatie"] {
-    background: #4a6fa5; /* Blauw - zelfde als informatie blokken */
+.legend-item img[src*='informatie'] {
+  background: #4a6fa5; /* Blauw - zelfde als informatie blokken */
 }
 
-.legend-item img[src*="boekenwurm"] {
-    background: #b89454; /* Geel/oranje - zelfde als trivia blokken */
+.legend-item img[src*='boekenwurm'] {
+  background: #b89454; /* Geel/oranje - zelfde als trivia blokken */
 }
 
-.legend-item img[src*="quizvraag"] {
-    background: #b85454; /* Rood - zelfde als quiz blokken */
+.legend-item img[src*='quizvraag'] {
+  background: #b85454; /* Rood - zelfde als quiz blokken */
 }
 
-.legend-item img[src*="opdracht"] {
-    background: #4a9a4a; /* Groen - zelfde als opdracht blokken */
+.legend-item img[src*='opdracht'] {
+  background: #4a9a4a; /* Groen - zelfde als opdracht blokken */
 }
 
 .legend-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Tekst bovenaan uitlijnen */
-    gap: 0px; /* Geen ruimte tussen flex items */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Tekst bovenaan uitlijnen */
+  gap: 0px; /* Geen ruimte tussen flex items */
 }
 
 .legend-title {
-    color: #17202a;
-    font-size: 13px;
-    display: block;
-    margin: 0; /* Geen margin */
-    padding: 5px 0; /* Geen padding */
-    line-height: 1; /* Normale regelafstand */
-    font-weight: bold; /* Bold styling */
+  color: #17202a;
+  font-size: 13px;
+  display: block;
+  margin: 0; /* Geen margin */
+  padding: 5px 0; /* Geen padding */
+  line-height: 1; /* Normale regelafstand */
+  font-weight: bold; /* Bold styling */
 }
 
 .legend-text small {
-    color: #4f5a6b;
-    font-size: 11px;
-    line-height: 1; /* Normale regelafstand */
-    margin: 0; /* Geen margin */
-    padding: 0; /* Geen padding */
+  color: #4f5a6b;
+  font-size: 11px;
+  line-height: 1; /* Normale regelafstand */
+  margin: 0; /* Geen margin */
+  padding: 0; /* Geen padding */
 }
 
 /* ========================================
@@ -1670,640 +1684,725 @@ a:visited {
    ======================================== */
 
 /* Dark mode voor body en basis elementen */
-[data-theme="dark"] body {
-    background: var(--bg-primary);
-    color: var(--text-primary);
+[data-theme='dark'] body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4 {
-    color: var(--text-primary);
+[data-theme='dark'] h1,
+[data-theme='dark'] h2,
+[data-theme='dark'] h3,
+[data-theme='dark'] h4 {
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] .content-text {
-    color: var(--text-primary);
-    background: var(--bg-secondary);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+[data-theme='dark'] .content-text {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-[data-theme="dark"] .header-section {
-    background: var(--bg-accent);
+[data-theme='dark'] .header-section {
+  background: var(--bg-accent);
 }
 
-[data-theme="dark"] .chatbots-section {
-    background: var(--bg-accent);
+[data-theme='dark'] .chatbots-section {
+  background: var(--bg-accent);
 }
 
 /* Dark mode voor sidebars */
-[data-theme="dark"] .sidebar-content {
-    background: var(--bg-secondary);
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+[data-theme='dark'] .sidebar-content {
+  background: var(--bg-secondary);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
 
-[data-theme="dark"] .sidebar-header {
-    background: var(--bg-accent);
-    border-bottom: 1px solid var(--gray-600);
+[data-theme='dark'] .sidebar-header {
+  background: var(--bg-accent);
+  border-bottom: 1px solid var(--gray-600);
 }
 
-[data-theme="dark"] .sidebar-header h3 {
-    color: var(--text-primary);
+[data-theme='dark'] .sidebar-header h3 {
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] .sidebar-body p {
-    color: var(--text-secondary);
+[data-theme='dark'] .sidebar-body p {
+  color: var(--text-secondary);
 }
 
-[data-theme="dark"] .close-sidebar-btn {
-    color: var(--text-muted);
+[data-theme='dark'] .close-sidebar-btn {
+  color: var(--text-muted);
 }
 
-[data-theme="dark"] .close-sidebar-btn:hover {
-    background: var(--gray-600);
-    color: var(--text-primary);
+[data-theme='dark'] .close-sidebar-btn:hover {
+  background: var(--gray-600);
+  color: var(--text-primary);
 }
 
 /* Dark mode voor legend items */
-[data-theme="dark"] .legend-item {
-    background: var(--bg-accent);
-    border: 1px solid var(--gray-600);
+[data-theme='dark'] .legend-item {
+  background: var(--bg-accent);
+  border: 1px solid var(--gray-600);
 }
 
-[data-theme="dark"] .legend-item:hover {
-    background: var(--gray-700);
-    border-color: var(--gray-500);
+[data-theme='dark'] .legend-item:hover {
+  background: var(--gray-700);
+  border-color: var(--gray-500);
 }
 
-[data-theme="dark"] .legend-title {
-    color: var(--text-primary);
+[data-theme='dark'] .legend-title {
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] .legend-text small {
-    color: var(--text-secondary);
+[data-theme='dark'] .legend-text small {
+  color: var(--text-secondary);
 }
 
 /* Dark mode voor quiz options */
-[data-theme="dark"] .quiz-option {
-    background: var(--bg-secondary);
-    border: 2px solid var(--gray-600);
-    color: var(--text-primary);
+[data-theme='dark'] .quiz-option {
+  background: var(--bg-secondary);
+  border: 2px solid var(--gray-600);
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] .quiz-option:hover {
-    background: var(--bg-accent);
-    border-color: var(--gray-500);
+[data-theme='dark'] .quiz-option:hover {
+  background: var(--bg-accent);
+  border-color: var(--gray-500);
 }
 
-[data-theme="dark"] .quiz-option strong {
-    color: var(--text-primary);
+[data-theme='dark'] .quiz-option strong {
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] .answer-feedback {
-    border-top: 1px solid var(--gray-600);
+[data-theme='dark'] .answer-feedback {
+  border-top: 1px solid var(--gray-600);
 }
 
-[data-theme="dark"] .feedback-content {
-    color: var(--text-primary);
+[data-theme='dark'] .feedback-content {
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] .quiz-option.correct,
-[data-theme="dark"] .quiz-option.incorrect {
-    background: var(--bg-accent);
+[data-theme='dark'] .quiz-option.correct,
+[data-theme='dark'] .quiz-option.incorrect {
+  background: var(--bg-accent);
 }
 
 /* Dark mode voor buttons */
-[data-theme="dark"] .btn,
-[data-theme="dark"] button {
-    background: var(--gray-300);
-    color: var(--text-primary) !important;
-    border: 1px solid var(--gray-500);
+[data-theme='dark'] .btn,
+[data-theme='dark'] button {
+  background: var(--gray-300);
+  color: var(--text-primary) !important;
+  border: 1px solid var(--gray-500);
 }
 
-[data-theme="dark"] .btn:hover,
-[data-theme="dark"] button:hover {
-    background: var(--gray-400);
-    color: var(--text-primary) !important;
+[data-theme='dark'] .btn:hover,
+[data-theme='dark'] button:hover {
+  background: var(--gray-400);
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor alle button tekst */
-[data-theme="dark"] .btn *,
-[data-theme="dark"] button *,
-[data-theme="dark"] .demo-button,
-[data-theme="dark"] .nav-button,
-[data-theme="dark"] .copy-btn {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .btn *,
+[data-theme='dark'] button *,
+[data-theme='dark'] .demo-button,
+[data-theme='dark'] .nav-button,
+[data-theme='dark'] .copy-btn {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .copy-btn {
-    background: var(--primary-blue);
-    color: var(--text-light) !important;
+[data-theme='dark'] .copy-btn {
+  background: var(--primary-blue);
+  color: var(--text-light) !important;
 }
 
-[data-theme="dark"] .copy-btn:hover {
-    background: var(--primary-indigo);
-    color: var(--text-light) !important;
+[data-theme='dark'] .copy-btn:hover {
+  background: var(--primary-indigo);
+  color: var(--text-light) !important;
 }
 
 /* Dark mode voor prompt boxes */
-[data-theme="dark"] .prompt-box {
-    background: var(--bg-accent);
-    border: 1px solid var(--gray-600);
+[data-theme='dark'] .prompt-box {
+  background: var(--bg-accent);
+  border: 1px solid var(--gray-600);
 }
 
-[data-theme="dark"] .prompt-header {
-    border-bottom: 2px solid var(--gray-600);
+[data-theme='dark'] .prompt-header {
+  border-bottom: 2px solid var(--gray-600);
 }
 
 /* Dark mode voor summary buttons */
-[data-theme="dark"] .content-block .content-text summary {
-    background: var(--bg-accent);
-    border: 1px solid var(--gray-600);
-    color: var(--text-primary);
+[data-theme='dark'] .content-block .content-text summary {
+  background: var(--bg-accent);
+  border: 1px solid var(--gray-600);
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] .content-block .content-text summary:hover {
-    background: var(--gray-700);
-    border-color: var(--gray-500);
+[data-theme='dark'] .content-block .content-text summary:hover {
+  background: var(--gray-700);
+  border-color: var(--gray-500);
 }
 
 /* Dark mode voor tables */
-[data-theme="dark"] table {
-    background: var(--bg-secondary);
-    border: 1px solid var(--gray-600);
+[data-theme='dark'] table {
+  background: var(--bg-secondary);
+  border: 1px solid var(--gray-600);
 }
 
-[data-theme="dark"] th,
-[data-theme="dark"] td {
-    border-bottom: 1px solid var(--gray-600);
-    color: var(--text-primary);
+[data-theme='dark'] th,
+[data-theme='dark'] td {
+  border-bottom: 1px solid var(--gray-600);
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] th {
-    background: var(--bg-accent);
+[data-theme='dark'] th {
+  background: var(--bg-accent);
 }
 
-[data-theme="dark"] tr:hover {
-    background: var(--bg-accent);
+[data-theme='dark'] tr:hover {
+  background: var(--bg-accent);
 }
 
 /* Dark mode voor lists */
-[data-theme="dark"] li {
-    color: var(--text-primary);
+[data-theme='dark'] li {
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] blockquote {
-    background: var(--bg-accent);
-    color: var(--text-secondary);
+[data-theme='dark'] blockquote {
+  background: var(--bg-accent);
+  color: var(--text-secondary);
 }
 
 /* Dark mode voor sidebar toggle buttons */
-[data-theme="dark"] .sidebar-toggle-btn,
-[data-theme="dark"] .top-toggle-btn,
-[data-theme="dark"] .home-toggle-btn,
-[data-theme="dark"] .theme-toggle-btn {
-    background: var(--gray-600);
-    color: var(--text-primary) !important;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+[data-theme='dark'] .sidebar-toggle-btn,
+[data-theme='dark'] .top-toggle-btn,
+[data-theme='dark'] .home-toggle-btn,
+[data-theme='dark'] .theme-toggle-btn {
+  background: var(--gray-600);
+  color: var(--text-primary) !important;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
 }
 
 /* Dark mode voor close button */
-[data-theme="dark"] .close-sidebar-btn {
-    color: var(--text-muted) !important;
+[data-theme='dark'] .close-sidebar-btn {
+  color: var(--text-muted) !important;
 }
 
-[data-theme="dark"] .close-sidebar-btn:hover {
-    background: var(--gray-600);
-    color: var(--text-primary) !important;
+[data-theme='dark'] .close-sidebar-btn:hover {
+  background: var(--gray-600);
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor alle tekst in content */
-[data-theme="dark"] .content-text p,
-[data-theme="dark"] .content-text div,
-[data-theme="dark"] .content-text span,
-[data-theme="dark"] .content-text em,
-[data-theme="dark"] .content-text i {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-text p,
+[data-theme='dark'] .content-text div,
+[data-theme='dark'] .content-text span,
+[data-theme='dark'] .content-text em,
+[data-theme='dark'] .content-text i {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .content-text strong,
-[data-theme="dark"] .content-text b {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-text strong,
+[data-theme='dark'] .content-text b {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .content-text ul,
-[data-theme="dark"] .content-text ol {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-text ul,
+[data-theme='dark'] .content-text ol {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .content-text li {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-text li {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .content-text a {
-    color: #60a5fa !important;
+[data-theme='dark'] .content-text a {
+  color: #60a5fa !important;
 }
 
-[data-theme="dark"] .content-text a:hover {
-    color: #93c5fd !important;
+[data-theme='dark'] .content-text a:hover {
+  color: #93c5fd !important;
 }
 
-[data-theme="dark"] .content-text a:visited {
-    color: #60a5fa !important;
+[data-theme='dark'] .content-text a:visited {
+  color: #60a5fa !important;
 }
 
 /* Dark mode voor specifieke content blokken */
-[data-theme="dark"] .task .content-text,
-[data-theme="dark"] .quiz .content-text,
-[data-theme="dark"] .trivia .content-text,
-[data-theme="dark"] .important .content-text,
-[data-theme="dark"] .info .content-text,
-[data-theme="dark"] .conclusion .content-text {
-    background: var(--bg-secondary);
-    color: var(--text-primary);
+[data-theme='dark'] .task .content-text,
+[data-theme='dark'] .quiz .content-text,
+[data-theme='dark'] .trivia .content-text,
+[data-theme='dark'] .important .content-text,
+[data-theme='dark'] .info .content-text,
+[data-theme='dark'] .conclusion .content-text {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
 }
 
 /* Dark mode voor alle tekst in info en trivia blokken */
-[data-theme="dark"] .info .content-text,
-[data-theme="dark"] .info .content-text *,
-[data-theme="dark"] .trivia .content-text,
-[data-theme="dark"] .trivia .content-text *,
-[data-theme="dark"] .task .content-text,
-[data-theme="dark"] .task .content-text *,
-[data-theme="dark"] .quiz .content-text,
-[data-theme="dark"] .quiz .content-text *,
-[data-theme="dark"] .important .content-text,
-[data-theme="dark"] .important .content-text *,
-[data-theme="dark"] .conclusion .content-text,
-[data-theme="dark"] .conclusion .content-text * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .info .content-text,
+[data-theme='dark'] .info .content-text *,
+[data-theme='dark'] .trivia .content-text,
+[data-theme='dark'] .trivia .content-text *,
+[data-theme='dark'] .task .content-text,
+[data-theme='dark'] .task .content-text *,
+[data-theme='dark'] .quiz .content-text,
+[data-theme='dark'] .quiz .content-text *,
+[data-theme='dark'] .important .content-text,
+[data-theme='dark'] .important .content-text *,
+[data-theme='dark'] .conclusion .content-text,
+[data-theme='dark'] .conclusion .content-text * {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor specifieke elementen in content blokken */
-[data-theme="dark"] .info .content-text p,
-[data-theme="dark"] .info .content-text div,
-[data-theme="dark"] .info .content-text span,
-[data-theme="dark"] .info .content-text em,
-[data-theme="dark"] .info .content-text i,
-[data-theme="dark"] .info .content-text strong,
-[data-theme="dark"] .info .content-text b,
-[data-theme="dark"] .trivia .content-text p,
-[data-theme="dark"] .trivia .content-text div,
-[data-theme="dark"] .trivia .content-text span,
-[data-theme="dark"] .trivia .content-text em,
-[data-theme="dark"] .trivia .content-text i,
-[data-theme="dark"] .trivia .content-text strong,
-[data-theme="dark"] .trivia .content-text b {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .info .content-text p,
+[data-theme='dark'] .info .content-text div,
+[data-theme='dark'] .info .content-text span,
+[data-theme='dark'] .info .content-text em,
+[data-theme='dark'] .info .content-text i,
+[data-theme='dark'] .info .content-text strong,
+[data-theme='dark'] .info .content-text b,
+[data-theme='dark'] .trivia .content-text p,
+[data-theme='dark'] .trivia .content-text div,
+[data-theme='dark'] .trivia .content-text span,
+[data-theme='dark'] .trivia .content-text em,
+[data-theme='dark'] .trivia .content-text i,
+[data-theme='dark'] .trivia .content-text strong,
+[data-theme='dark'] .trivia .content-text b {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor alle content blokken - extra specifiek */
-[data-theme="dark"] .content-block.info,
-[data-theme="dark"] .content-block.trivia,
-[data-theme="dark"] .content-block.task,
-[data-theme="dark"] .content-block.quiz,
-[data-theme="dark"] .content-block.important,
-[data-theme="dark"] .content-block.conclusion {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block.info,
+[data-theme='dark'] .content-block.trivia,
+[data-theme='dark'] .content-block.task,
+[data-theme='dark'] .content-block.quiz,
+[data-theme='dark'] .content-block.important,
+[data-theme='dark'] .content-block.conclusion {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .content-block.info *,
-[data-theme="dark"] .content-block.trivia *,
-[data-theme="dark"] .content-block.task *,
-[data-theme="dark"] .content-block.quiz *,
-[data-theme="dark"] .content-block.important *,
-[data-theme="dark"] .content-block.conclusion * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block.info *,
+[data-theme='dark'] .content-block.trivia *,
+[data-theme='dark'] .content-block.task *,
+[data-theme='dark'] .content-block.quiz *,
+[data-theme='dark'] .content-block.important *,
+[data-theme='dark'] .content-block.conclusion * {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor alle tekst in content blokken - maximale dekking */
-[data-theme="dark"] .content-block {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .content-block * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block * {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode override voor task en conclusion blokken - hogere specificiteit */
-[data-theme="dark"] .task .content-text,
-[data-theme="dark"] .task .content-text *,
-[data-theme="dark"] .conclusion .content-text,
-[data-theme="dark"] .conclusion .content-text * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .task .content-text,
+[data-theme='dark'] .task .content-text *,
+[data-theme='dark'] .conclusion .content-text,
+[data-theme='dark'] .conclusion .content-text * {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode override voor content-block classes */
-[data-theme="dark"] .content-block.task .content-text,
-[data-theme="dark"] .content-block.task .content-text *,
-[data-theme="dark"] .content-block.conclusion .content-text,
-[data-theme="dark"] .content-block.conclusion .content-text * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block.task .content-text,
+[data-theme='dark'] .content-block.task .content-text *,
+[data-theme='dark'] .content-block.conclusion .content-text,
+[data-theme='dark'] .content-block.conclusion .content-text * {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor links in content blokken */
-[data-theme="dark"] .info .content-text a,
-[data-theme="dark"] .trivia .content-text a,
-[data-theme="dark"] .task .content-text a,
-[data-theme="dark"] .quiz .content-text a,
-[data-theme="dark"] .important .content-text a,
-[data-theme="dark"] .conclusion .content-text a {
-    color: #fa60e5 !important;
+[data-theme='dark'] .info .content-text a,
+[data-theme='dark'] .trivia .content-text a,
+[data-theme='dark'] .task .content-text a,
+[data-theme='dark'] .quiz .content-text a,
+[data-theme='dark'] .important .content-text a,
+[data-theme='dark'] .conclusion .content-text a {
+  color: #fa60e5 !important;
 }
 
-[data-theme="dark"] .info .content-text a:hover,
-[data-theme="dark"] .trivia .content-text a:hover,
-[data-theme="dark"] .task .content-text a:hover,
-[data-theme="dark"] .quiz .content-text a:hover,
-[data-theme="dark"] .important .content-text a:hover,
-[data-theme="dark"] .conclusion .content-text a:hover {
-    color: #93c5fd !important;
+[data-theme='dark'] .info .content-text a:hover,
+[data-theme='dark'] .trivia .content-text a:hover,
+[data-theme='dark'] .task .content-text a:hover,
+[data-theme='dark'] .quiz .content-text a:hover,
+[data-theme='dark'] .important .content-text a:hover,
+[data-theme='dark'] .conclusion .content-text a:hover {
+  color: #93c5fd !important;
 }
 
 /* Dark mode voor lists in content blokken */
-[data-theme="dark"] .info .content-text ul,
-[data-theme="dark"] .info .content-text ol,
-[data-theme="dark"] .info .content-text li,
-[data-theme="dark"] .trivia .content-text ul,
-[data-theme="dark"] .trivia .content-text ol,
-[data-theme="dark"] .trivia .content-text li,
-[data-theme="dark"] .task .content-text ul,
-[data-theme="dark"] .task .content-text ol,
-[data-theme="dark"] .task .content-text li,
-[data-theme="dark"] .quiz .content-text ul,
-[data-theme="dark"] .quiz .content-text ol,
-[data-theme="dark"] .quiz .content-text li {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .info .content-text ul,
+[data-theme='dark'] .info .content-text ol,
+[data-theme='dark'] .info .content-text li,
+[data-theme='dark'] .trivia .content-text ul,
+[data-theme='dark'] .trivia .content-text ol,
+[data-theme='dark'] .trivia .content-text li,
+[data-theme='dark'] .task .content-text ul,
+[data-theme='dark'] .task .content-text ol,
+[data-theme='dark'] .task .content-text li,
+[data-theme='dark'] .quiz .content-text ul,
+[data-theme='dark'] .quiz .content-text ol,
+[data-theme='dark'] .quiz .content-text li {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor blockquotes in content blokken */
-[data-theme="dark"] .info .content-text blockquote,
-[data-theme="dark"] .trivia .content-text blockquote,
-[data-theme="dark"] .task .content-text blockquote,
-[data-theme="dark"] .quiz .content-text blockquote {
-    background: var(--bg-accent);
-    color: var(--text-secondary);
-    border-left: 4px solid var(--gray-600);
+[data-theme='dark'] .info .content-text blockquote,
+[data-theme='dark'] .trivia .content-text blockquote,
+[data-theme='dark'] .task .content-text blockquote,
+[data-theme='dark'] .quiz .content-text blockquote {
+  background: var(--bg-accent);
+  color: var(--text-secondary);
+  border-left: 4px solid var(--gray-600);
 }
 
 /* Dark mode voor details/summary in trivia blokken */
-[data-theme="dark"] .trivia .content-text details,
-[data-theme="dark"] .trivia .content-text summary {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .trivia .content-text details,
+[data-theme='dark'] .trivia .content-text summary {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .trivia .content-text summary {
-    background: var(--bg-accent);
-    border: 1px solid var(--gray-600);
-    color: var(--text-primary) !important;
+[data-theme='dark'] .trivia .content-text summary {
+  background: var(--bg-accent);
+  border: 1px solid var(--gray-600);
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .trivia .content-text summary:hover {
-    background: var(--gray-700);
-    border-color: var(--gray-500);
-    color: var(--text-primary) !important;
+[data-theme='dark'] .trivia .content-text summary:hover {
+  background: var(--gray-700);
+  border-color: var(--gray-500);
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor metadata */
-[data-theme="dark"] .metadata {
-    background: var(--bg-accent);
-    color: var(--text-primary);
+[data-theme='dark'] .metadata {
+  background: var(--bg-accent);
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] .metadata-content {
-    color: var(--text-primary);
+[data-theme='dark'] .metadata-content {
+  color: var(--text-primary);
 }
 
-[data-theme="dark"] .metadata-item {
-    color: var(--text-primary);
+[data-theme='dark'] .metadata-item {
+  color: var(--text-primary);
 }
 
 /* Dark mode voor inline styles override */
-[data-theme="dark"] *[style*="color: black"],
-[data-theme="dark"] *[style*="color: black !important"],
-[data-theme="dark"] *[style*="color: #000"],
-[data-theme="dark"] *[style*="color: #000000"],
-[data-theme="dark"] span[style*="color: black"],
-[data-theme="dark"] span[style*="color: black !important"],
-[data-theme="dark"] div[style*="color: black"],
-[data-theme="dark"] div[style*="color: black !important"],
-[data-theme="dark"] p[style*="color: black"],
-[data-theme="dark"] p[style*="color: black !important"],
-[data-theme="dark"] em[style*="color: black"],
-[data-theme="dark"] em[style*="color: black !important"],
-[data-theme="dark"] i[style*="color: black"],
-[data-theme="dark"] i[style*="color: black !important"],
-[data-theme="dark"] strong[style*="color: black"],
-[data-theme="dark"] strong[style*="color: black !important"],
-[data-theme="dark"] b[style*="color: black"],
-[data-theme="dark"] b[style*="color: black !important"] {
-    color: var(--text-primary) !important;
+[data-theme='dark'] *[style*='color: black'],
+[data-theme='dark'] *[style*='color: black !important'],
+[data-theme='dark'] *[style*='color: #000'],
+[data-theme='dark'] *[style*='color: #000000'],
+[data-theme='dark'] span[style*='color: black'],
+[data-theme='dark'] span[style*='color: black !important'],
+[data-theme='dark'] div[style*='color: black'],
+[data-theme='dark'] div[style*='color: black !important'],
+[data-theme='dark'] p[style*='color: black'],
+[data-theme='dark'] p[style*='color: black !important'],
+[data-theme='dark'] em[style*='color: black'],
+[data-theme='dark'] em[style*='color: black !important'],
+[data-theme='dark'] i[style*='color: black'],
+[data-theme='dark'] i[style*='color: black !important'],
+[data-theme='dark'] strong[style*='color: black'],
+[data-theme='dark'] strong[style*='color: black !important'],
+[data-theme='dark'] b[style*='color: black'],
+[data-theme='dark'] b[style*='color: black !important'] {
+  color: var(--text-primary) !important;
 }
 
 /* Extra specifieke regels voor content blokken met inline styles */
-[data-theme="dark"] .info *[style*="color: black"],
-[data-theme="dark"] .info *[style*="color: black !important"],
-[data-theme="dark"] .trivia *[style*="color: black"],
-[data-theme="dark"] .trivia *[style*="color: black !important"],
-[data-theme="dark"] .task *[style*="color: black"],
-[data-theme="dark"] .task *[style*="color: black !important"],
-[data-theme="dark"] .quiz *[style*="color: black"],
-[data-theme="dark"] .quiz *[style*="color: black !important"],
-[data-theme="dark"] .important *[style*="color: black"],
-[data-theme="dark"] .important *[style*="color: black !important"],
-[data-theme="dark"] .conclusion *[style*="color: black"],
-[data-theme="dark"] .conclusion *[style*="color: black !important"] {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .info *[style*='color: black'],
+[data-theme='dark'] .info *[style*='color: black !important'],
+[data-theme='dark'] .trivia *[style*='color: black'],
+[data-theme='dark'] .trivia *[style*='color: black !important'],
+[data-theme='dark'] .task *[style*='color: black'],
+[data-theme='dark'] .task *[style*='color: black !important'],
+[data-theme='dark'] .quiz *[style*='color: black'],
+[data-theme='dark'] .quiz *[style*='color: black !important'],
+[data-theme='dark'] .important *[style*='color: black'],
+[data-theme='dark'] .important *[style*='color: black !important'],
+[data-theme='dark'] .conclusion *[style*='color: black'],
+[data-theme='dark'] .conclusion *[style*='color: black !important'] {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor specifieke kleuren die donker zijn in light mode */
-[data-theme="dark"] *[style*="color: #666"],
-[data-theme="dark"] *[style*="color: #666 !important"],
-[data-theme="dark"] span[style*="color: #666"],
-[data-theme="dark"] span[style*="color: #666 !important"],
-[data-theme="dark"] small[style*="color: #666"],
-[data-theme="dark"] small[style*="color: #666 !important"] {
-    color: var(--text-secondary) !important;
+[data-theme='dark'] *[style*='color: #666'],
+[data-theme='dark'] *[style*='color: #666 !important'],
+[data-theme='dark'] span[style*='color: #666'],
+[data-theme='dark'] span[style*='color: #666 !important'],
+[data-theme='dark'] small[style*='color: #666'],
+[data-theme='dark'] small[style*='color: #666 !important'] {
+  color: var(--text-secondary) !important;
 }
 
 /* Dark mode override voor bestaande zwarte tekst regels */
-[data-theme="dark"] .task .content-text,
-[data-theme="dark"] .task .content-text *,
-[data-theme="dark"] .conclusion .content-text,
-[data-theme="dark"] .conclusion .content-text * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .task .content-text,
+[data-theme='dark'] .task .content-text *,
+[data-theme='dark'] .conclusion .content-text,
+[data-theme='dark'] .conclusion .content-text * {
+  color: var(--text-primary) !important;
 }
 
 /* Extra specifieke override voor content-block classes */
-[data-theme="dark"] .content-block.task,
-[data-theme="dark"] .content-block.task *,
-[data-theme="dark"] .content-block.conclusion,
-[data-theme="dark"] .content-block.conclusion * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block.task,
+[data-theme='dark'] .content-block.task *,
+[data-theme='dark'] .content-block.conclusion,
+[data-theme='dark'] .content-block.conclusion * {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode override voor bestaande zwarte tekst regels - maximale specificiteit */
-[data-theme="dark"] .content-block[data-type="conclusion"] .content-text,
-[data-theme="dark"] .content-block.conclusion .content-text,
-[data-theme="dark"] .content-block[data-type="conclusion"] .content-text *,
-[data-theme="dark"] .content-block.conclusion .content-text * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block[data-type='conclusion'] .content-text,
+[data-theme='dark'] .content-block.conclusion .content-text,
+[data-theme='dark'] .content-block[data-type='conclusion'] .content-text *,
+[data-theme='dark'] .content-block.conclusion .content-text * {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .content-block[data-type="info"] .content-text,
-[data-theme="dark"] .content-block.info .content-text,
-[data-theme="dark"] .content-block[data-type="info"] .content-text *,
-[data-theme="dark"] .content-block.info .content-text * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block[data-type='info'] .content-text,
+[data-theme='dark'] .content-block.info .content-text,
+[data-theme='dark'] .content-block[data-type='info'] .content-text *,
+[data-theme='dark'] .content-block.info .content-text * {
+  color: var(--text-primary) !important;
 }
 
-[data-theme="dark"] .content-block[data-type="trivia"] .content-text,
-[data-theme="dark"] .content-block.trivia .content-text,
-[data-theme="dark"] .content-block[data-type="trivia"] .content-text *,
-[data-theme="dark"] .content-block.trivia .content-text * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block[data-type='trivia'] .content-text,
+[data-theme='dark'] .content-block.trivia .content-text,
+[data-theme='dark'] .content-block[data-type='trivia'] .content-text *,
+[data-theme='dark'] .content-block.trivia .content-text * {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode override voor alle bestaande zwarte tekst regels - absolute specificiteit */
-[data-theme="dark"] .content-block .content-text,
-[data-theme="dark"] .content-block .content-text *,
-[data-theme="dark"] .content-block .content-text strong,
-[data-theme="dark"] .content-block .content-text p,
-[data-theme="dark"] .content-block .content-text div,
-[data-theme="dark"] .content-block .content-text span,
-[data-theme="dark"] .content-block .content-text em,
-[data-theme="dark"] .content-block .content-text i,
-[data-theme="dark"] .content-block .content-text b {
-    color: var(--text-primary) !important;
+[data-theme='dark'] .content-block .content-text,
+[data-theme='dark'] .content-block .content-text *,
+[data-theme='dark'] .content-block .content-text strong,
+[data-theme='dark'] .content-block .content-text p,
+[data-theme='dark'] .content-block .content-text div,
+[data-theme='dark'] .content-block .content-text span,
+[data-theme='dark'] .content-block .content-text em,
+[data-theme='dark'] .content-block .content-text i,
+[data-theme='dark'] .content-block .content-text b {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode override voor conclusie blokken - maximale specificiteit */
-[data-theme="dark"] .content-block:has(.icon img[src*="conclusie"]) .content-text,
-[data-theme="dark"] .content-block:has(.icon img[src*="conclusie"]) .content-text *,
-[data-theme="dark"] .content-block[data-type="conclusion"] .content-text,
-[data-theme="dark"] .content-block[data-type="conclusion"] .content-text *,
-[data-theme="dark"] .content-block.conclusion .content-text,
-[data-theme="dark"] .content-block.conclusion .content-text * {
-    color: var(--text-primary) !important;
+[data-theme='dark']
+  .content-block:has(.icon img[src*='conclusie'])
+  .content-text,
+[data-theme='dark']
+  .content-block:has(.icon img[src*='conclusie'])
+  .content-text
+  *,
+[data-theme='dark'] .content-block[data-type='conclusion'] .content-text,
+[data-theme='dark'] .content-block[data-type='conclusion'] .content-text *,
+[data-theme='dark'] .content-block.conclusion .content-text,
+[data-theme='dark'] .content-block.conclusion .content-text * {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode override voor alle conclusie varianten - absolute specificiteit */
-[data-theme="dark"] .content-block:has(.icon img[src*="conclusie"]) .content-text,
-[data-theme="dark"] .content-block:has(.icon img[src*="conclusie"]) .content-text *,
-[data-theme="dark"] .content-block[data-type="conclusion"] .content-text,
-[data-theme="dark"] .content-block[data-type="conclusion"] .content-text *,
-[data-theme="dark"] .content-block.conclusion .content-text,
-[data-theme="dark"] .content-block.conclusion .content-text *,
-[data-theme="dark"] .content-block.conclusion,
-[data-theme="dark"] .content-block.conclusion * {
-    color: var(--text-primary) !important;
+[data-theme='dark']
+  .content-block:has(.icon img[src*='conclusie'])
+  .content-text,
+[data-theme='dark']
+  .content-block:has(.icon img[src*='conclusie'])
+  .content-text
+  *,
+[data-theme='dark'] .content-block[data-type='conclusion'] .content-text,
+[data-theme='dark'] .content-block[data-type='conclusion'] .content-text *,
+[data-theme='dark'] .content-block.conclusion .content-text,
+[data-theme='dark'] .content-block.conclusion .content-text *,
+[data-theme='dark'] .content-block.conclusion,
+[data-theme='dark'] .content-block.conclusion * {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor code elementen in opdracht blokken */
-[data-theme="dark"] .task code,
-[data-theme="dark"] .task code *,
-[data-theme="dark"] .content-block.task code,
-[data-theme="dark"] .content-block.task code *,
-[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) code,
-[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) code * {
-    color: var(--text-primary) !important;
-    background: var(--bg-accent) !important;
+[data-theme='dark'] .task code,
+[data-theme='dark'] .task code *,
+[data-theme='dark'] .content-block.task code,
+[data-theme='dark'] .content-block.task code *,
+[data-theme='dark'] .content-block:has(.icon img[src*='opdracht']) code,
+[data-theme='dark'] .content-block:has(.icon img[src*='opdracht']) code * {
+  color: var(--text-primary) !important;
+  background: var(--bg-accent) !important;
 }
 
 /* Dark mode voor alle code elementen */
-[data-theme="dark"] code,
-[data-theme="dark"] code * {
-    color: var(--text-primary) !important;
-    background: var(--bg-accent) !important;
+[data-theme='dark'] code,
+[data-theme='dark'] code * {
+  color: var(--text-primary) !important;
+  background: var(--bg-accent) !important;
 }
 
 /* Dark mode voor zwarte achtergrond divs in opdracht blokken */
-[data-theme="dark"] .task div[style*="background-color: black"],
-[data-theme="dark"] .task div[style*="background-color: black"] *,
-[data-theme="dark"] .content-block.task div[style*="background-color: black"],
-[data-theme="dark"] .content-block.task div[style*="background-color: black"] *,
-[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) div[style*="background-color: black"],
-[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) div[style*="background-color: black"] * {
-    background: var(--bg-accent) !important;
-    color: var(--text-primary) !important;
+[data-theme='dark'] .task div[style*='background-color: black'],
+[data-theme='dark'] .task div[style*='background-color: black'] *,
+[data-theme='dark'] .content-block.task div[style*='background-color: black'],
+[data-theme='dark'] .content-block.task div[style*='background-color: black'] *,
+[data-theme='dark']
+  .content-block:has(.icon img[src*='opdracht'])
+  div[style*='background-color: black'],
+[data-theme='dark']
+  .content-block:has(.icon img[src*='opdracht'])
+  div[style*='background-color: black']
+  * {
+  background: var(--bg-accent) !important;
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor alle zwarte achtergrond divs */
-[data-theme="dark"] div[style*="background-color: black"],
-[data-theme="dark"] div[style*="background-color: black"] * {
-    background: var(--bg-accent) !important;
-    color: var(--text-primary) !important;
+[data-theme='dark'] div[style*='background-color: black'],
+[data-theme='dark'] div[style*='background-color: black'] * {
+  background: var(--bg-accent) !important;
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor prompt-box en prompt-content */
-[data-theme="dark"] .prompt-box,
-[data-theme="dark"] .prompt-box *,
-[data-theme="dark"] .prompt-content,
-[data-theme="dark"] .prompt-content * {
-    color: var(--text-primary) !important;
-    background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
+[data-theme='dark'] .prompt-box,
+[data-theme='dark'] .prompt-box *,
+[data-theme='dark'] .prompt-content,
+[data-theme='dark'] .prompt-content * {
+  color: var(--text-primary) !important;
+  background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
 }
 
 /* Dark mode voor prompt-box in opdracht blokken */
-[data-theme="dark"] .task .prompt-box,
-[data-theme="dark"] .task .prompt-box *,
-[data-theme="dark"] .task .prompt-content,
-[data-theme="dark"] .task .prompt-content *,
-[data-theme="dark"] .content-block.task .prompt-box,
-[data-theme="dark"] .content-block.task .prompt-box *,
-[data-theme="dark"] .content-block.task .prompt-content,
-[data-theme="dark"] .content-block.task .prompt-content *,
-[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) .prompt-box,
-[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) .prompt-box *,
-[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) .prompt-content,
-[data-theme="dark"] .content-block:has(.icon img[src*="opdracht"]) .prompt-content * {
-    color: var(--text-primary) !important;
-    background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
+[data-theme='dark'] .task .prompt-box,
+[data-theme='dark'] .task .prompt-box *,
+[data-theme='dark'] .task .prompt-content,
+[data-theme='dark'] .task .prompt-content *,
+[data-theme='dark'] .content-block.task .prompt-box,
+[data-theme='dark'] .content-block.task .prompt-box *,
+[data-theme='dark'] .content-block.task .prompt-content,
+[data-theme='dark'] .content-block.task .prompt-content *,
+[data-theme='dark'] .content-block:has(.icon img[src*='opdracht']) .prompt-box,
+[data-theme='dark']
+  .content-block:has(.icon img[src*='opdracht'])
+  .prompt-box
+  *,
+[data-theme='dark']
+  .content-block:has(.icon img[src*='opdracht'])
+  .prompt-content,
+[data-theme='dark']
+  .content-block:has(.icon img[src*='opdracht'])
+  .prompt-content
+  * {
+  color: var(--text-primary) !important;
+  background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
 }
 
 /* Dark mode override voor inline styles in prompt-content */
-[data-theme="dark"] .prompt-content[style*="color: #000000"],
-[data-theme="dark"] .prompt-content[style*="color: #000000 !important"],
-[data-theme="dark"] .prompt-content[style*="color: #000000"] *,
-[data-theme="dark"] .prompt-content[style*="color: #000000 !important"] * {
-    color: var(--text-primary) !important;
-    background: var(--bg-accent) !important;
+[data-theme='dark'] .prompt-content[style*='color: #000000'],
+[data-theme='dark'] .prompt-content[style*='color: #000000 !important'],
+[data-theme='dark'] .prompt-content[style*='color: #000000'] *,
+[data-theme='dark'] .prompt-content[style*='color: #000000 !important'] * {
+  color: var(--text-primary) !important;
+  background: var(--bg-accent) !important;
 }
 
 /* Dark mode override voor bestaande zwarte tekst regels - maximale specificiteit */
-[data-theme="dark"] .prompt-box,
-[data-theme="dark"] .prompt-box *,
-[data-theme="dark"] .prompt-content,
-[data-theme="dark"] .prompt-content * {
-    color: var(--text-primary) !important;
-    background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
+[data-theme='dark'] .prompt-box,
+[data-theme='dark'] .prompt-box *,
+[data-theme='dark'] .prompt-content,
+[data-theme='dark'] .prompt-content * {
+  color: var(--text-primary) !important;
+  background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
 }
 
 /* Extra specifieke override voor alle prompt elementen */
-[data-theme="dark"] .content-block .prompt-box,
-[data-theme="dark"] .content-block .prompt-box *,
-[data-theme="dark"] .content-block .prompt-content,
-[data-theme="dark"] .content-block .prompt-content *,
-[data-theme="dark"] .content-block.task .prompt-box,
-[data-theme="dark"] .content-block.task .prompt-box *,
-[data-theme="dark"] .content-block.task .prompt-content,
-[data-theme="dark"] .content-block.task .prompt-content * {
-    color: var(--text-primary) !important;
-    background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
+[data-theme='dark'] .content-block .prompt-box,
+[data-theme='dark'] .content-block .prompt-box *,
+[data-theme='dark'] .content-block .prompt-content,
+[data-theme='dark'] .content-block .prompt-content *,
+[data-theme='dark'] .content-block.task .prompt-box,
+[data-theme='dark'] .content-block.task .prompt-box *,
+[data-theme='dark'] .content-block.task .prompt-content,
+[data-theme='dark'] .content-block.task .prompt-content * {
+  color: var(--text-primary) !important;
+  background: #6b7280 !important; /* Nog lichtere grijze achtergrond voor betere leesbaarheid */
 }
 
 /* Extra specifieke regel voor buttons met inline styles */
-[data-theme="dark"] button *[style*="color: black"],
-[data-theme="dark"] button *[style*="color: black !important"],
-[data-theme="dark"] .btn *[style*="color: black"],
-[data-theme="dark"] .btn *[style*="color: black !important"] {
-    color: var(--text-primary) !important;
+[data-theme='dark'] button *[style*='color: black'],
+[data-theme='dark'] button *[style*='color: black !important'],
+[data-theme='dark'] .btn *[style*='color: black'],
+[data-theme='dark'] .btn *[style*='color: black !important'] {
+  color: var(--text-primary) !important;
 }
 
 /* Dark mode voor alle tekst in buttons */
-[data-theme="dark"] button,
-[data-theme="dark"] button *,
-[data-theme="dark"] .btn,
-[data-theme="dark"] .btn * {
-    color: var(--text-primary) !important;
+[data-theme='dark'] button,
+[data-theme='dark'] button *,
+[data-theme='dark'] .btn,
+[data-theme='dark'] .btn * {
+  color: var(--text-primary) !important;
+}
+
+/* Linker sidebars - navigatie omhoog/omlaag */
+.nav-up-sidebar,
+.nav-down-sidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 1000;
+  transform: translateX(-100%); /* Start off-screen links */
+  transition: transform 0.8s ease-in-out;
+}
+
+.nav-up-sidebar.loaded,
+.nav-down-sidebar.loaded {
+  transform: translateX(0);
+}
+
+.nav-up-toggle-btn,
+.nav-down-toggle-btn {
+  position: fixed;
+  left: -6px; /* Op de linkerkant van het scherm */
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  background: var(--gray-500);
+  color: #000000;
+  border-radius: 0 24px 24px 0; /* Kleiner en passend voor links */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 20px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+  transition: all 0.6s ease;
+  opacity: 0.7;
+}
+
+/* Positionering onderaan het scherm */
+.nav-up-toggle-btn {
+  left: -6px;
+  bottom: 86px;
+  transform: translateY(0);
+}
+.nav-down-toggle-btn {
+  bottom: 32px;
+  transform: translateY(0);
+}
+
+.nav-up-toggle-btn:hover,
+.nav-down-toggle-btn:hover {
+  background: #2f855a; /* Donkerder groen bij hover */
+  transform: translateY(0) scale(1.1) translateX(5px);
+  opacity: 1;
+}
+
+/* Iconen wit maken indien nodig (optioneel, afhankelijk van asset) */
+.nav-up-toggle-btn img,
+.nav-down-toggle-btn img {
+  filter: brightness(0) saturate(100%) invert(100%);
 }
