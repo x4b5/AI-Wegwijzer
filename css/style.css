@@ -1,3 +1,23 @@
+/* Nav omhoog/omlaag knoppen met iconen */
+.nav-up-toggle-btn {
+  background-image: url('../img/icons/naar-boven.png');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 32px 32px;
+}
+.nav-down-toggle-btn {
+  background-image: url('../img/icons/naar-boven.png');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 32px 32px;
+  transform: rotate(180deg);
+}
+
+/* Verberg inline afbeeldingen binnen de nav-knoppen zodat de background zichtbaar is */
+.nav-up-toggle-btn img,
+.nav-down-toggle-btn img {
+  display: block;
+}
 /* ========================================
    AI-WEGWIJZER STYLE.CSS
    Alle styling in één bestand met verbeterde kleuren
@@ -61,11 +81,25 @@
   --transition-slow: 0.5s ease;
 
   /* Link kleuren - uniform */
-  --link-color: #3774e6;
-  --link-hover-color: #1e3a8a;
+  --link-color: #3a6bbd; /* zachter blauw */
+  --link-hover-color: #2a4f8a; /* minder fel hover */
   /* Externe link kleuren (donkergroen) */
   --link-external-color: #0b6b50;
   --link-external-hover-color: #08533e;
+
+  /* Accent kleuren */
+  --accent-quiz: #b85454;
+  --accent-quiz-rgb: 184, 84, 84;
+  --accent-task: #4a9a4a;
+  --accent-task-rgb: 74, 154, 74;
+  --accent-trivia: #b89454;
+  --accent-trivia-rgb: 184, 148, 84;
+  --accent-info: #4a6fa5;
+  --accent-info-rgb: 74, 111, 165;
+  --accent-important: #b85454;
+  --accent-important-rgb: 184, 84, 84;
+  --accent-conclusion: #8a6fa5;
+  --accent-conclusion-rgb: 138, 111, 165;
 }
 
 /* Dark Mode variabelen */
@@ -99,14 +133,15 @@
 
 .theme-toggle-btn {
   position: fixed;
-  left: -6px;
-  top: 92px;
+  left: -24px;
+  top: 84px; /* 16px onder home (16 + 52 + 16 = 84) */
   transform: translateY(0);
-  width: 60px;
-  height: 60px;
+  transform-origin: right center;
+  width: 52px;
+  height: 52px;
   background: var(--gray-600);
   color: var(--text-primary);
-  border-radius: 0 30px 30px 0;
+  border-radius: 0 26px 26px 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,9 +154,15 @@
 }
 
 .theme-toggle-btn:hover {
-  background: #4a5568;
+  background-color: #4a5568; /* Alleen kleur verbeteren, icon blijft */
   transform: translateY(0) scale(1.1) translateX(5px);
   opacity: 1;
+}
+
+/* Nudge theme icon slightly to the right for visual centering */
+.theme-toggle-btn #theme-icon {
+  display: inline-block;
+  transform: translateX(4px);
 }
 
 /* ========================================
@@ -180,7 +221,7 @@ h1 {
 }
 
 h2 {
-  color: #000000; /* Zwarte tekst */
+  color: var(--text-primary);
   font-size: 1.8rem;
   margin: 3rem 0 1.5rem 0;
   border-left: 4px solid var(--primary-blue);
@@ -189,14 +230,14 @@ h2 {
 }
 
 h3 {
-  color: #000000; /* Zwarte tekst */
+  color: var(--text-primary);
   font-size: 1.4rem;
   margin: 2rem 0 1rem 0;
   font-weight: 600;
 }
 
 h4 {
-  color: #000000; /* Zwarte tekst */
+  color: var(--text-primary);
   font-size: 1.2rem;
   margin: 1.5rem 0 0.8rem 0;
   font-weight: 500;
@@ -230,7 +271,7 @@ h4 {
 
 /* Buttons */
 .btn-primary {
-  color: #000000;
+  color: var(--text-primary);
   background: var(--primary-yellow-light);
   border: 1px solid var(--border-light);
 }
@@ -250,11 +291,11 @@ h4 {
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  background-color: #000;
+  background-color: var(--bg-accent);
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  color: #fff;
+  color: var(--text-primary);
   font-size: 14px;
 }
 
@@ -271,15 +312,15 @@ h4 {
   filter: brightness(0) saturate(100%) invert(100%);
 }
 .hotkey-code {
-  color: #fff;
-  background: #333;
+  color: var(--text-primary);
+  background: var(--bg-secondary);
   font-size: 12px;
   padding: 0 4px;
   border-radius: 3px;
 }
 .hotkey-notes {
   margin-top: 8px;
-  color: #fff;
+  color: var(--text-secondary);
   font-size: 12px;
 }
 
@@ -291,9 +332,9 @@ h4 {
   flex-direction: row;
   align-items: stretch;
   background: var(--bg-secondary);
-  border-radius: 30px; /* Zachtere hoeken */
+  border-radius: 16px; /* Harmoniseerde hoeken */
   margin: 40px 0; /* Compacte scheiding tussen blokken */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Verfijnde schaduw */
+  box-shadow: var(--shadow-md); /* Consistente schaduw */
   overflow: hidden;
   transition: all 0.3s ease; /* Smooth transitions */
   border: none;
@@ -301,7 +342,7 @@ h4 {
 }
 
 .content-block:hover {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Verfijnde hover schaduw */
+  box-shadow: var(--shadow-lg); /* Consistente hover schaduw */
 }
 
 /* Voorkom dat iconen meebewegen met content-block hover */
@@ -311,7 +352,7 @@ h4 {
 
 /* Zorg dat iconen hun eigen hover effect behouden */
 .content-block .icon:hover {
-  transform: scale(1.05) !important;
+  transform: scale(1.03) !important;
 }
 
 /* Alleen de content-text beweegt omhoog bij hover */
@@ -334,7 +375,7 @@ h4 {
   flex-shrink: 0;
   transition: all 0.3s ease; /* Smooth transitions */
   padding: 10px 8px;
-  border-radius: 0 0 18px; /* Zachtere hoeken */
+  border-radius: 0; /* Geen binnenronding, zodat onderhoek vol kleur is */
   align-self: stretch;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Zeer subtiele binnen schaduw */
   user-select: none; /* Voorkom tekst selectie */
@@ -359,30 +400,55 @@ h4 {
    ======================================== */
 .content-text {
   flex: 1;
-  line-height: 1.9; /* Iets verfijnder line-height */
+  line-height: 1.8; /* Consistente, comfortabele regelafstand */
   background: var(--bg-secondary); /* Terug naar originele achtergrond */
   padding: 30px;
-  border-radius: 0 18px 18px 0; /* Zachtere hoeken */
+  border-radius: 0 16px 16px 0; /* Harmoniseerde hoeken */
   border: none; /* Geen randen */
   width: 100%;
-  color: #000000; /* Zwarte tekst */
+  color: var(--text-primary);
   min-height: 100%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Zeer subtiele schaduw */
   transition: all 0.3s ease; /* Smooth transitions */
   letter-spacing: 0.01em; /* Subtiele letter-spacing voor betere leesbaarheid */
+  position: relative; /* Voor overlay (::before) */
+  z-index: 0;
+}
+
+/* Organische, verticale tint-overlay voor contentkolom */
+.content-block .content-text::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0; /* achter de content */
+  background: none; /* per type ingesteld */
+}
+
+/* Typografie ritme binnen content-blokken */
+.content-text p {
+  margin: 0 0 0.9rem; /* Consistente paragraafafstand */
+}
+
+.content-text h2,
+.content-text h3,
+.content-text h4 {
+  line-height: 1.3; /* Compacte kopregelafstand */
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.content-text > *:last-child {
+  margin-bottom: 0; /* Geen extra ruimte onderaan blok */
 }
 
 /* ========================================
    SPECIFIEKE BLOK TYPES MET DONKERDERE KLEUREN EN MAXIMAAL VERLOOP NAAR WIT
    ======================================== */
 .task .icon {
-  background: linear-gradient(
-    135deg,
-    #1a5a1a 0%,
-    rgba(26, 90, 26, 0.8) 50%,
-    rgba(26, 90, 26, 0.1) 100%
-  ); /* Donkerder groen met maximaal verloop naar wit */
-  color: #3a4249;
+  background: color-mix(in srgb, var(--accent-task) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 .task .icon:hover {
@@ -390,13 +456,8 @@ h4 {
 }
 
 .quiz .icon {
-  background: linear-gradient(
-    135deg,
-    #b85454 0%,
-    rgba(184, 84, 84, 0.8) 50%,
-    rgba(184, 84, 84, 0.1) 100%
-  ); /* Donkerder rood met maximaal verloop naar wit */
-  color: #3a4249;
+  background: color-mix(in srgb, var(--accent-quiz) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 .quiz .icon:hover {
@@ -405,13 +466,8 @@ h4 {
 }
 
 .trivia .icon {
-  background: linear-gradient(
-    135deg,
-    #b89454 0%,
-    rgba(184, 148, 84, 0.8) 50%,
-    rgba(184, 148, 84, 0.1) 100%
-  ); /* Donkerder geel/oranje met maximaal verloop naar wit */
-  color: #3a4249;
+  background: color-mix(in srgb, var(--accent-trivia) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 .trivia .icon:hover {
@@ -420,13 +476,8 @@ h4 {
 }
 
 .important .icon {
-  background: linear-gradient(
-    135deg,
-    #b85454 0%,
-    rgba(184, 84, 84, 0.8) 50%,
-    rgba(184, 84, 84, 0.1) 100%
-  ); /* Donkerder rood met maximaal verloop naar wit */
-  color: #3a4249;
+  background: color-mix(in srgb, var(--accent-important) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 .important .icon:hover {
@@ -435,13 +486,8 @@ h4 {
 }
 
 .info .icon {
-  background: linear-gradient(
-    135deg,
-    #4a6fa5 0%,
-    rgba(74, 111, 165, 0.8) 50%,
-    rgba(74, 111, 165, 0.1) 100%
-  ); /* Donkerder blauw met maximaal verloop naar wit */
-  color: #3a4249;
+  background: color-mix(in srgb, var(--accent-info) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 .info .icon:hover {
@@ -572,16 +618,16 @@ h4 {
 
 .prompt-content {
   line-height: 1.6;
-  color: #000000 !important; /* Zorg dat alle tekst in prompt-content zwart is */
+  color: var(--text-primary) !important;
 }
 
 /* Zorg dat alle tekst in prompt-box elementen zwart is, ook binnen opdracht blokken */
 .prompt-box {
-  color: #000000 !important; /* Basis tekstkleur voor prompt-box */
+  color: var(--text-primary) !important;
 }
 
 .prompt-box * {
-  color: #000000 !important; /* Alle elementen binnen prompt-box krijgen zwarte tekst */
+  color: var(--text-primary) !important;
 }
 
 .prompt-box a {
@@ -825,12 +871,101 @@ a[href^="https://"]:hover
    CODE STYLING
    ======================================== */
 code {
-  background: #2d3748; /* Donkere achtergrond */
+  background: #000000; /* Altijd zwart voor maximaal contrast */
   padding: 2px 6px;
   border-radius: 4px;
   font-family: 'Courier New', monospace;
-  color: #e2e8f0; /* Lichte tekst voor contrast */
-  border: 1px solid #4a5568; /* Donkere border */
+  color: #ffffff; /* Altijd wit voor maximaal contrast */
+  border: 1px solid #333333; /* Subtiele rand */
+}
+
+/* Inline code binnen gekleurde content-blokken blijft leesbaar */
+.content-text code {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+
+/* Code blocks (pre) altijd met duidelijk contrast en horizontale scroll indien nodig */
+pre {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border: 1px solid #333333 !important;
+  border-radius: 6px;
+  padding: 12px 14px;
+  overflow-x: auto;
+  line-height: 1.6;
+}
+pre code {
+  background: transparent !important;
+  color: inherit !important;
+  border: 0 !important;
+  padding: 0;
+}
+
+/* ========================================
+   FINAL CODE CONTRAST OVERRIDES (DARK MODE)
+   ======================================== */
+/* Zorg dat niets code-tekstkleur overschrijft in dark mode */
+[data-theme='dark'] .content-text pre,
+[data-theme='dark'] pre {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+[data-theme='dark'] .content-text pre *,
+[data-theme='dark'] pre * {
+  color: #ffffff !important;
+}
+[data-theme='dark'] .content-text code,
+[data-theme='dark'] code {
+  background: #000000 !important;
+  color: #ffffff !important;
+  border-color: #333333 !important;
+}
+[data-theme='dark'] .content-text code *,
+[data-theme='dark'] code * {
+  color: #ffffff !important;
+}
+
+/* Override inline (hardcoded) kleuren binnen code/pre in dark mode */
+[data-theme='dark'] pre[style*='color'],
+[data-theme='dark'] code[style*='color'],
+[data-theme='dark'] pre *[style*='color'],
+[data-theme='dark'] code *[style*='color'] {
+  color: #ffffff !important;
+}
+
+/* ========================================
+   LIGHT MODE CODE STYLES (SOFT LIGHT BG)
+   ======================================== */
+body:not([data-theme='dark']) pre,
+body:not([data-theme='dark']) .content-text pre {
+  background: #f6f8fa !important; /* licht grijs/blauw zoals GitHub */
+  color: #111827 !important; /* bijna zwart */
+  border: 1px solid #e5e7eb !important;
+  border-radius: 6px;
+}
+body:not([data-theme='dark']) pre *,
+body:not([data-theme='dark']) .content-text pre * {
+  color: #111827 !important;
+}
+body:not([data-theme='dark']) code,
+body:not([data-theme='dark']) .content-text code {
+  background: #f1f5f9 !important; /* wat donkerder licht grijs voor inline */
+  color: #111827 !important;
+  border: 1px solid #e5e7eb !important;
+}
+body:not([data-theme='dark']) code *,
+body:not([data-theme='dark']) .content-text code * {
+  color: #111827 !important;
+}
+/* Inline hardcoded kleurregels binnen code/pre neutraliseren in light mode */
+body:not([data-theme='dark']) pre[style*='color'],
+body:not([data-theme='dark']) code[style*='color'],
+body:not([data-theme='dark']) pre *[style*='color'],
+body:not([data-theme='dark']) code *[style*='color'] {
+  color: #111827 !important;
 }
 
 /* ========================================
@@ -940,7 +1075,7 @@ img {
     min-height: 100%;
     margin-right: 0;
     align-self: stretch;
-    border-radius: 0 0 16px 0;
+    border-radius: 0; /* Geen ronding zodat onderhoek vol kleur is */
     flex-shrink: 0;
   }
 
@@ -953,7 +1088,7 @@ img {
     border-radius: 0 16px 16px 0;
     border-top: none;
     border-left: none;
-    padding: 20px; /* Minder padding op mobiel */
+    padding: 18px; /* Iets compacter op mobiel */
     flex: 1; /* Neem beschikbare ruimte in */
   }
 
@@ -965,6 +1100,16 @@ img {
 
   h2 {
     font-size: 1.5rem;
+  }
+
+  /* Mobiel: quizopties iets compacter */
+  .quiz-option {
+    padding: 10px 14px 10px 40px;
+    font-size: 0.95rem;
+  }
+  .quiz-options .quiz-option::before {
+    left: 12px;
+    font-size: 1.35rem;
   }
 }
 
@@ -1018,13 +1163,23 @@ a:focus {
   outline-offset: 2px;
 }
 
+/* Toegankelijke focus zichtbaar maken */
+:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 3px;
+}
+.quiz-option:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 4px;
+}
+
 /* ========================================
    PRINT STYLING
    ======================================== */
 @media print {
   body {
     background: white;
-    color: black;
+    color: #000; /* expliciet print-contrast */
     padding: 0;
     margin: 0;
   }
@@ -1049,13 +1204,8 @@ a:focus {
 .content-block[data-type='task'] .icon,
 .content-block.opdracht .icon,
 .task .icon {
-  background: linear-gradient(
-    135deg,
-    #4a9a4a 0%,
-    rgba(74, 154, 74, 0.8) 50%,
-    rgba(74, 154, 74, 0.1) 100%
-  ); /* Nog lichtere groen */
-  color: #2a3239;
+  background: color-mix(in srgb, var(--accent-task) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 .content-block:has(.icon img[src*='opdracht']) .icon:hover,
@@ -1071,22 +1221,7 @@ a:focus {
   ); /* Nog lichtere groen hover */
 }
 
-.content-block:has(.icon img[src*='opdracht']) .content-text,
-.content-block[data-type='task'] .content-text,
-.content-block.opdracht .content-text,
-.task .content-text {
-  border-color: #86efac;
-  background-color: #467255; /* Nog zachtere, rustigere donkergroen */
-  color: #f1fcf5 !important; /* Lichtere groene tekst voor betere leesbaarheid */
-}
-
-/* Zorg dat alle tekst in opdracht blokken wit is, inclusief lijsten en andere elementen */
-.content-block:has(.icon img[src*='opdracht']) .content-text *,
-.content-block[data-type='task'] .content-text *,
-.content-block.opdracht .content-text *,
-.task .content-text * {
-  color: #f1fcf5 !important; /* Witte tekst voor alle tekst in opdrachten */
-}
+/* Verwijderd: oude groene background/lichte tekst voor opdracht-blokken (nu uniform) */
 
 /* Maak de lijst items in opdracht blokken cursief */
 .content-block:has(.icon img[src*='opdracht']) .content-text li,
@@ -1100,13 +1235,8 @@ a:focus {
 .content-block:has(.icon img[src*='quizvraag']) .icon,
 .content-block[data-type='quiz'] .icon,
 .content-block.quiz .icon {
-  background: linear-gradient(
-    135deg,
-    #b85454 0%,
-    rgba(184, 84, 84, 0.8) 50%,
-    rgba(184, 84, 84, 0.1) 100%
-  ); /* Donkerder rood met maximaal verloop naar wit */
-  color: #2a3239;
+  background: color-mix(in srgb, var(--accent-quiz) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 .content-block:has(.icon img[src*='quizvraag']) .icon:hover,
@@ -1122,44 +1252,113 @@ a:focus {
   ); /* Donkerder rood hover met maximaal verloop naar wit */
 }
 
+/* Quiz blokken: neutralere achtergrond met linker accentlijn */
 .content-block:has(.icon img[src*='quizvraag']) .content-text,
 .content-block[data-type='quiz'] .content-text,
 .content-block.quiz .content-text {
-  background-color: #a15656; /* Nog mattere, rustigere donkerrode achtergrond */
-  color: #fef2f2; /* Lichte rode tekst voor betere leesbaarheid */
+  background-color: var(--bg-secondary);
+  background-image: none;
+  color: var(--text-primary);
+  border-left: 4px solid var(--accent-quiz); /* Accentlijn links */
 }
+/* Overlay voor quiz */
+.content-block:has(.icon img[src*='quizvraag']) .content-text::before,
+.content-block[data-type='quiz'] .content-text::before,
+.content-block.quiz .content-text::before { background: none; }
 
-/* Alleen de quiz-opties krijgen zwarte tekst, de rest blijft wit */
-.quiz-options .quiz-option strong {
-  color: #000000 !important; /* Zwarte tekst voor quiz-opties (A), B), C), D)) */
-}
-
-/* Alle andere tekst in quiz blokken blijft wit */
-.content-block:has(.icon img[src*='quizvraag']) .content-text,
-.content-block[data-type='quiz'] .content-text,
-.content-block.quiz .content-text {
-  color: #fef2f2 !important; /* Witte tekst voor alle normale tekst in quiz */
-}
-
-/* Zorg dat alle tekst in opdracht blokken wit is, inclusief lijsten */
+/* Uniform accent stijl voor andere blokken (zelfde als quiz) */
+/* Opdracht/Task - groen accent */
 .content-block:has(.icon img[src*='opdracht']) .content-text,
 .content-block[data-type='task'] .content-text,
 .content-block.opdracht .content-text,
 .task .content-text {
-  color: #f1fcf5 !important; /* Witte tekst voor alle tekst in opdrachten */
+  background-color: var(--bg-secondary);
+  background-image: none;
+  color: var(--text-primary) !important;
+  border-left: 4px solid var(--accent-task);
 }
+/* Overlay voor opdracht/task */
+.content-block:has(.icon img[src*='opdracht']) .content-text::before,
+.content-block[data-type='task'] .content-text::before,
+.content-block.opdracht .content-text::before,
+.task .content-text::before { background: none; }
+.content-block:has(.icon img[src*='opdracht']) .content-text *,
+.content-block[data-type='task'] .content-text *,
+.content-block.opdracht .content-text *,
+.task .content-text * {
+  color: var(--text-primary) !important;
+}
+
+/* Trivia - geel/oranje accent */
+.content-block:has(.icon img[src*='boekenwurm']) .content-text,
+.content-block[data-type='trivia'] .content-text,
+.content-block.trivia .content-text {
+  background-color: var(--bg-secondary);
+  background-image: none;
+  color: var(--text-primary);
+  border-left: 4px solid var(--accent-trivia);
+}
+/* Overlay voor trivia */
+.content-block:has(.icon img[src*='boekenwurm']) .content-text::before,
+.content-block[data-type='trivia'] .content-text::before,
+.content-block.trivia .content-text::before { background: none; }
+
+/* Info - blauw accent */
+.content-block:has(.icon img[src*='informatie']) .content-text,
+.content-block[data-type='info'] .content-text,
+.content-block.info .content-text {
+  background-color: var(--bg-secondary);
+  background-image: none;
+  color: var(--text-primary);
+  border-left: 4px solid var(--accent-info);
+}
+/* Overlay voor info */
+.content-block:has(.icon img[src*='informatie']) .content-text::before,
+.content-block[data-type='info'] .content-text::before,
+.content-block.info .content-text::before { background: none; }
+
+/* Belangrijke info - rood accent */
+.content-block:has(.icon img[src*='uitroepteken']) .content-text,
+.content-block[data-type='important'] .content-text,
+.content-block.important .content-text {
+  background-color: var(--bg-secondary);
+  background-image: none;
+  color: var(--text-primary);
+  border-left: 4px solid var(--accent-important);
+}
+/* Overlay voor important */
+.content-block:has(.icon img[src*='uitroepteken']) .content-text::before,
+.content-block[data-type='important'] .content-text::before,
+.content-block.important .content-text::before { background: none; }
+
+/* Conclusie - paars accent */
+.content-block:has(.icon img[src*='conclusie']) .content-text,
+.content-block[data-type='conclusion'] .content-text,
+.content-block.conclusion .content-text {
+  background-color: var(--bg-secondary);
+  background-image: none;
+  color: var(--text-primary);
+  border-left: 4px solid var(--accent-conclusion);
+}
+/* Overlay voor conclusion */
+.content-block:has(.icon img[src*='conclusie']) .content-text::before,
+.content-block[data-type='conclusion'] .content-text::before,
+.content-block.conclusion .content-text::before { background: none; }
+
+/* Quiz-opties zwart; rest volgt basisschema */
+.quiz-options .quiz-option strong {
+  color: var(--text-primary) !important;
+}
+
+/* Zorg dat alle tekst in opdracht blokken wit is, inclusief lijsten */
+/* Verwijderd: geen witte tekst forceren; gebruik themakleur voor leesbaarheid */
 
 /* Trivia blokken - automatisch geel met trivia icoon */
 .content-block:has(.icon img[src*='boekenwurm']) .icon,
 .content-block[data-type='trivia'] .icon,
 .content-block.trivia .icon {
-  background: linear-gradient(
-    135deg,
-    #b89454 0%,
-    rgba(184, 148, 84, 0.8) 50%,
-    rgba(184, 148, 84, 0.1) 100%
-  ); /* Donkerder geel/oranje met maximaal verloop naar wit */
-  color: #2a3239;
+  background: color-mix(in srgb, var(--accent-trivia) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 .content-block:has(.icon img[src*='boekenwurm']) .icon:hover,
@@ -1179,30 +1378,40 @@ a:focus {
 .content-block:has(.icon img[src*='boekenwurm']) .content-text,
 .content-block[data-type='trivia'] .content-text,
 .content-block.trivia .content-text {
-  color: #000000; /* Zwarte tekst voor trivia blokken */
+  color: var(--text-primary);
 }
 
 /* Vetgedrukte tekst in trivia blokken ook op zwart */
 .content-block:has(.icon img[src*='boekenwurm']) .content-text strong,
 .content-block[data-type='trivia'] .content-text strong,
 .content-block.trivia .content-text strong {
-  color: #000000; /* Zwarte tekst voor vetgedrukte woorden */
+  color: var(--text-primary);
 }
 
 /* Fellere, leesbare link kleuren */
 .content-text a {
   color: var(--link-color) !important;
-  text-decoration: none;
+  text-decoration: underline; /* betere herkenbaarheid */
+  text-underline-offset: 2px;
   transition: color 0.2s ease;
 }
 
 .content-text a:hover {
-  text-decoration: underline;
   color: var(--link-hover-color) !important;
 }
 
 .content-text a:visited {
   color: var(--link-color) !important;
+}
+
+/* Externe link indicator voor alle content-links die in nieuw tabblad openen */
+.content-text a[target="_blank"]::after {
+  content: '↗︎';
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.85em;
+  opacity: 0.75;
+  color: inherit;
 }
 
 /* Externe links in content-text ook donkergroen */
@@ -1221,7 +1430,7 @@ a:focus {
 /* Ook algemene link styling toevoegen */
 a {
   color: var(--link-color) !important;
-  font-weight: 600;
+  font-weight: inherit; /* zelfde als body-tekst */
 }
 
 a:hover {
@@ -1251,13 +1460,8 @@ a[href^="https://"]:hover
 .content-block:has(.icon img[src*='uitroepteken']) .icon,
 .content-block[data-type='important'] .icon,
 .content-block.important .icon {
-  background: linear-gradient(
-    135deg,
-    #b85454 0%,
-    rgba(184, 84, 84, 0.8) 50%,
-    rgba(184, 84, 84, 0.1) 100%
-  ); /* Donkerder rood met maximaal verloop naar wit */
-  color: #3a4249;
+  background: color-mix(in srgb, var(--accent-important) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 .content-block:has(.icon img[src*='uitroepteken']) .icon:hover,
@@ -1273,13 +1477,8 @@ a[href^="https://"]:hover
 .content-block:has(.icon img[src*='informatie']) .icon,
 .content-block[data-type='info'] .icon,
 .content-block.info .icon {
-  background: linear-gradient(
-    135deg,
-    #4a6fa5 0%,
-    rgba(74, 111, 165, 0.8) 50%,
-    rgba(74, 111, 165, 0.1) 100%
-  ); /* Donkerder blauw met maximaal verloop naar wit */
-  color: #2a3239;
+  background: color-mix(in srgb, var(--accent-info) 60%, #ffffff);
+  color: var(--text-primary);
 }
 
 /* ========================================
@@ -1308,13 +1507,13 @@ a[href^="https://"]:hover
 .content-block:has(.icon img[src*='conclusie']) .content-text,
 .content-block[data-type='conclusion'] .content-text,
 .content-block.conclusion .content-text {
-  color: #000000 !important;
+  color: var(--text-primary) !important;
 }
 
 .content-block:has(.icon img[src*='conclusie']) .content-text *,
 .content-block[data-type='conclusion'] .content-text *,
 .content-block.conclusion .content-text * {
-  color: #000000 !important;
+  color: var(--text-primary) !important;
 }
 
 .content-block:has(.icon img[src*='informatie']) .icon:hover,
@@ -1328,14 +1527,14 @@ a[href^="https://"]:hover
 .content-block:has(.icon img[src*='informatie']) .content-text,
 .content-block[data-type='info'] .content-text,
 .content-block.info .content-text {
-  color: #000000; /* Zwarte tekst voor informatie blokken */
+  color: var(--text-primary);
 }
 
 /* Vetgedrukte tekst in informatie blokken ook op zwart */
 .content-block:has(.icon img[src*='informatie']) .content-text strong,
 .content-block[data-type='info'] .content-text strong,
 .content-block.info .content-text strong {
-  color: #000000; /* Zwarte tekst voor vetgedrukte woorden */
+  color: var(--text-primary);
 }
 
 /* Geen border-color meer nodig - rustigere layout */
@@ -1371,11 +1570,11 @@ a[href^="https://"]:hover
 
 /* Tekst in chatbots section aanpassen voor betere leesbaarheid */
 .chatbots-section .content-text {
-  color: #f7fafc; /* Lichte tekst voor donkere achtergrond */
+  color: var(--text-primary);
 }
 
 .chatbots-section .content-text strong {
-  color: #ffffff; /* Witte tekst voor belangrijke woorden */
+  color: var(--text-primary);
 }
 
 .chatbots-section .content-text a {
@@ -1488,16 +1687,44 @@ a[href^="https://"]:hover
   background: var(--white);
   border: 2px solid var(--gray-300);
   border-radius: 12px;
-  padding: 10px 15px; /* Kleinere padding voor compactere hoogte */
+  padding: 10px 15px 10px 44px; /* Extra links voor emoji-label */
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
   color: var(--text-primary); /* Expliciete tekstkleur voor leesbaarheid */
+  font-size: 0.95rem; /* Kleiner lettertype voor opties */
+  font-weight: 400; /* Niet vetgedrukt */
+  text-align: left; /* Tekst links uitlijnen */
+  line-height: 1.6; /* Iets grotere regelafstand voor betere leesbaarheid */
 }
 
 .quiz-option strong {
   color: var(--text-primary); /* Zorg dat strong tekst ook zwart is */
+  font-weight: 400; /* Niet vetgedrukt binnen opties */
+}
+
+/* Vervang A) B) C) D) door squared emoji labels links */
+.quiz-options .quiz-option > strong:first-child {
+  display: none;
+}
+.quiz-options .quiz-option::before {
+  content: '🅐';
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem; /* Iets groter voor leesbaarheid */
+  line-height: 1;
+}
+.quiz-options .quiz-option:nth-of-type(2)::before {
+  content: '🅑';
+}
+.quiz-options .quiz-option:nth-of-type(3)::before {
+  content: '🅒';
+}
+.quiz-options .quiz-option:nth-of-type(4)::before {
+  content: '🅓';
 }
 
 .quiz-option:hover {
@@ -1527,6 +1754,31 @@ a[href^="https://"]:hover
   border: 1px solid var(--gray-200);
   border-radius: 8px;
   padding: 10px 12px;
+}
+
+/* Verwijzingslink onder een quizoptie (bijv. naar naslag) */
+.option-link {
+  display: inline-block;
+  margin: 2px 0 10px 44px; /* uitlijnen met tekst van .quiz-option */
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+.content-text .option-link a {
+  color: var(--link-color) !important;
+  text-decoration: underline;
+}
+[data-theme='dark'] .option-link {
+  color: var(--text-secondary) !important;
+}
+/* Externe link indicator voor option-link */
+.content-text .option-link a[href^="http://"]::after,
+.content-text .option-link a[href^="https://"]::after {
+  content: '↗︎';
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.85em;
+  opacity: 0.75;
+  color: inherit;
 }
 
 [data-theme='dark'] .feedback-content {
@@ -1583,14 +1835,15 @@ a[href^="https://"]:hover
 
 .sidebar-toggle-btn {
   position: fixed;
-  left: -6px; /* Op de linkerkant van het scherm */
-  top: 164px;
+  left: -24px; /* Op de linkerkant van het scherm */
+  top: 152px; /* 16px onder theme (84 + 52 + 16 = 152) */
   transform: translateY(0);
-  width: 60px;
-  height: 60px;
+  transform-origin: right center;
+  width: 52px;
+  height: 52px;
   background: var(--gray-500); /* Zelfde kleur als grijze container */
   color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
-  border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
+  border-radius: 0 26px 26px 0; /* Afgeronde rechter hoeken */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1600,10 +1853,17 @@ a[href^="https://"]:hover
   z-index: 1001;
   transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
   opacity: 0.7;
+  background-image: url('../img/icons/legende.png');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 34px 34px;
 }
 
+/* Inline img voor legenda-knop tonen */
+.sidebar-toggle-btn img { display: block; }
+
 .sidebar-toggle-btn:hover {
-  background: var(--gray-800);
+  background-color: var(--gray-800); /* Alleen kleur, geen reset bg-image */
   transform: translateY(0) scale(1.1) translateX(5px);
   opacity: 1;
 }
@@ -1654,14 +1914,15 @@ a[href^="https://"]:hover
 
 .top-toggle-btn {
   position: fixed;
-  left: -6px; /* Op de linkerkant van het scherm */
-  bottom: 140px; /* Boven de kleine nav-knoppen */
+  left: -24px; /* Op de linkerkant van het scherm */
+  top: 220px; /* Onder legenda met 16px ritme */
   transform: translateY(0);
-  width: 60px;
-  height: 60px;
+  transform-origin: right center;
+  width: 52px;
+  height: 52px;
   background: var(--gray-500); /* Zelfde kleur als grijze container */
   color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
-  border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
+  border-radius: 0 26px 26px 0; /* Afgeronde rechter hoeken */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1671,13 +1932,20 @@ a[href^="https://"]:hover
   z-index: 1001;
   transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
   opacity: 0.7;
+  background-image: url('../img/icons/naar-boven.png');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 32px 32px;
 }
 
 .top-toggle-btn:hover {
-  background: #8b4513; /* Nog donkerder oranje voor omhoog sidebar */
+  background-color: #8b4513; /* Alleen kleur, icon blijft */
   transform: translateY(0) scale(1.1) translateX(5px);
   opacity: 1;
 }
+
+/* Verberg inline img zodat background-icoon zichtbaar is */
+.top-toggle-btn img { display: block; }
 
 /* Derde sidebar - naar home knop */
 .home-sidebar {
@@ -1698,14 +1966,15 @@ a[href^="https://"]:hover
 
 .home-toggle-btn {
   position: fixed;
-  left: -6px; /* Op de linkerkant van het scherm */
-  top: 20px;
+  left: -24px; /* Op de linkerkant van het scherm */
+  top: 16px; /* Uitgelijnd met ritme */
   transform: translateY(0);
-  width: 60px;
-  height: 60px;
+  transform-origin: right center;
+  width: 52px;
+  height: 52px;
   background: var(--gray-500); /* Zelfde kleur als grijze container */
   color: #000000; /* Zwarte tekst voor betere leesbaarheid op lichte achtergrond */
-  border-radius: 0 30px 30px 0; /* Afgeronde rechter hoeken */
+  border-radius: 0 26px 26px 0; /* Afgeronde rechter hoeken */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1715,11 +1984,15 @@ a[href^="https://"]:hover
   z-index: 1001;
   transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
   opacity: 0.7;
+  background-image: url('../img/icons/home.png');
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 34px 34px;
 }
 
 .home-toggle-btn:hover {
   background: #654321; /* Donkerder bruin voor home sidebar */
-  transform: translateY(0) scale(1.1) translateX(5px);
+  transform: translateY(0) scale(1.08);
   opacity: 1;
 }
 
@@ -1919,7 +2192,7 @@ a[href^="https://"]:hover
 [data-theme='dark'] .quiz-option {
   background: var(--bg-secondary);
   border: 2px solid var(--gray-600);
-  color: var(--text-primary);
+  color: var(--text-light) !important; /* Witte tekst in dark mode */
 }
 
 [data-theme='dark'] .quiz-option:hover {
@@ -1928,7 +2201,13 @@ a[href^="https://"]:hover
 }
 
 [data-theme='dark'] .quiz-option strong {
-  color: var(--text-primary);
+  color: var(--text-light) !important;
+}
+
+/* Overrule zwarte knop-tekstkleur in dark mode binnen quiz-blokken */
+[data-theme='dark'] .content-block.quiz .content-text button.quiz-option,
+[data-theme='dark'] .content-block.quiz .content-text button.quiz-option * {
+  color: var(--text-light) !important;
 }
 
 [data-theme='dark'] .answer-feedback {
@@ -2091,7 +2370,7 @@ a[href^="https://"]:hover
 [data-theme='dark'] .important .content-text,
 [data-theme='dark'] .info .content-text,
 [data-theme='dark'] .conclusion .content-text {
-  background: var(--bg-secondary);
+  background: color-mix(in srgb, var(--bg-secondary) 90%, #000000 10%);
   color: var(--text-primary);
 }
 
@@ -2523,13 +2802,14 @@ a[href^="https://"]:hover
 .nav-up-toggle-btn,
 .nav-down-toggle-btn {
   position: fixed;
-  left: -6px; /* Op de linkerkant van het scherm */
-  transform: translateY(-50%);
-  width: 48px;
-  height: 48px;
+  left: -24px; /* Op de linkerkant van het scherm */
+  transform: translateY(0);
+  transform-origin: right center;
+  width: 52px;
+  height: 52px;
   background: var(--gray-500);
   color: #000000;
-  border-radius: 0 24px 24px 0; /* Kleiner en passend voor links */
+  border-radius: 0 26px 26px 0; /* Zelfde ronding als andere knoppen */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2542,28 +2822,22 @@ a[href^="https://"]:hover
 }
 
 /* Positionering onderaan het scherm */
-.nav-up-toggle-btn {
-  left: -6px;
-  bottom: 86px;
-  transform: translateY(0);
-}
-.nav-down-toggle-btn {
-  bottom: 32px;
-  transform: translateY(0);
-}
+.nav-up-toggle-btn { top: 288px; }
+.nav-down-toggle-btn { top: 356px; } /* 52px knop + 16px spacing vanaf nav-up */
 
 .nav-up-toggle-btn:hover,
 .nav-down-toggle-btn:hover {
-  background: #2f855a; /* Donkerder groen bij hover */
+  background-color: #2f855a; /* Alleen kleur, behoud icon */
   transform: translateY(0) scale(1.1) translateX(5px);
   opacity: 1;
 }
 
 /* Iconen wit maken indien nodig (optioneel, afhankelijk van asset) */
 .nav-up-toggle-btn img,
-.nav-down-toggle-btn img {
-  filter: brightness(0) saturate(100%) invert(100%);
-}
+.nav-down-toggle-btn img { filter: none !important; }
+
+/* Home knop icoon zichtbaar - inline img weer aan */
+.home-toggle-btn img { display: block; }
 
 /* Skip link for accessibility */
 .skip-link {
@@ -2596,7 +2870,7 @@ a[href^="https://"]:hover
 .toc a {
   color: var(--link-color);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: inherit;
 }
 .toc a:hover {
   color: var(--link-hover-color);
@@ -2633,6 +2907,69 @@ a[href^="https://"]:hover
   height: auto;
 }
 
+/* ========================================
+   SIDEBAR ICON CLARITY - INLINE IMG, NO BG
+   ======================================== */
+/* Verwijderd: laat background-image werken */
+
+.home-toggle-btn img,
+.sidebar-toggle-btn img,
+.top-toggle-btn img {
+  display: block !important;
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
+}
+
+.nav-up-toggle-btn img,
+.nav-down-toggle-btn img {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  filter: none;
+}
+
+/* Tijdelijke visuele hulplijn om knoppen/icoontjes te verifiëren */
+.home-toggle-btn,
+.sidebar-toggle-btn,
+.top-toggle-btn,
+.nav-up-toggle-btn,
+.nav-down-toggle-btn {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+/* Final hard overrides to ensure sidebar icons render */
+.home-toggle-btn img,
+.sidebar-toggle-btn img,
+.top-toggle-btn img {
+  display: block !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+
+/* ========================================
+   DARK MODE: QUIZ-OPTIES LICHTE ACHTERGROND (ROBUUST)
+   ======================================== */
+[data-theme='dark'] .content-block:has(.icon img[src*='quizvraag']) .content-text .quiz-option,
+[data-theme='dark'] .content-block[data-type='quiz'] .content-text .quiz-option,
+[data-theme='dark'] .content-block.quiz .content-text .quiz-option {
+  background: var(--gray-50) !important; /* Lichte grijs ondergrond */
+  border-color: var(--gray-600) !important;
+  color: #000000 !important; /* Zwarte tekst op lichtgrijs */
+}
+[data-theme='dark'] .content-block:has(.icon img[src*='quizvraag']) .content-text .quiz-option *,
+[data-theme='dark'] .content-block[data-type='quiz'] .content-text .quiz-option *,
+[data-theme='dark'] .content-block.quiz .content-text .quiz-option * {
+  color: #000000 !important;
+}
+[data-theme='dark'] .content-block.quiz .content-text .quiz-option:hover,
+[data-theme='dark'] .content-block[data-type='quiz'] .content-text .quiz-option:hover,
+[data-theme='dark'] .content-block:has(.icon img[src*='quizvraag']) .content-text .quiz-option:hover {
+  background: var(--gray-100) !important;
+  border-color: var(--gray-500) !important;
+}
+
 /* Callouts */
 .callouts {
   display: flex;
@@ -2657,7 +2994,7 @@ a[href^="https://"]:hover
 }
 .callout-link {
   color: var(--link-color);
-  font-weight: 700;
+  font-weight: inherit;
   text-decoration: none;
 }
 .callout-link:hover {
@@ -2679,72 +3016,64 @@ a[href^="https://"]:hover
 
 /* Geen border-color meer nodig - rustigere layout */
 
-/* Zorg voor leesbare knop-tekst (lichtmodus) binnen content-blokken */
-.content-block .content-text button:not(.copy-btn),
-.content-block .content-text .btn:not(.copy-btn) {
+/* Zorg voor leesbare knop-tekst (alleen light mode) binnen content-blokken */
+body:not([data-theme='dark']) .content-block .content-text button:not(.copy-btn),
+body:not([data-theme='dark']) .content-block .content-text .btn:not(.copy-btn) {
   color: #000000 !important;
 }
-.content-block .content-text button:not(.copy-btn) *,
-.content-block .content-text .btn:not(.copy-btn) * {
-  color: #000000 !important;
-}
-
-/* Extra specifieke overrides voor task/opdracht varianten (overtreffen :has en * regels) */
-.content-block:has(.icon img[src*='opdracht'])
-  .content-text
-  button:not(.copy-btn),
-.content-block:has(.icon img[src*='opdracht'])
-  .content-text
-  .btn:not(.copy-btn),
-.content-block[data-type='task'] .content-text button:not(.copy-btn),
-.content-block[data-type='task'] .content-text .btn:not(.copy-btn),
-.content-block.opdracht .content-text button:not(.copy-btn),
-.content-block.opdracht .content-text .btn:not(.copy-btn),
-.task .content-text button:not(.copy-btn),
-.task .content-text .btn:not(.copy-btn) {
-  color: #000000 !important;
-}
-.content-block:has(.icon img[src*='opdracht'])
-  .content-text
-  button:not(.copy-btn)
-  *,
-.content-block:has(.icon img[src*='opdracht'])
-  .content-text
-  .btn:not(.copy-btn)
-  *,
-.content-block[data-type='task'] .content-text button:not(.copy-btn) *,
-.content-block[data-type='task'] .content-text .btn:not(.copy-btn) *,
-.content-block.opdracht .content-text button:not(.copy-btn) *,
-.content-block.opdracht .content-text .btn:not(.copy-btn) *,
-.task .content-text button:not(.copy-btn) *,
-.task .content-text .btn:not(.copy-btn) * {
+body:not([data-theme='dark']) .content-block .content-text button:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block .content-text .btn:not(.copy-btn) * {
   color: #000000 !important;
 }
 
-/* Extra specifieke overrides voor quiz varianten */
-.content-block:has(.icon img[src*='quizvraag'])
-  .content-text
-  button:not(.copy-btn),
-.content-block:has(.icon img[src*='quizvraag'])
-  .content-text
-  .btn:not(.copy-btn),
-.content-block[data-type='quiz'] .content-text button:not(.copy-btn),
-.content-block[data-type='quiz'] .content-text .btn:not(.copy-btn),
-.content-block.quiz .content-text button:not(.copy-btn),
-.content-block.quiz .content-text .btn:not(.copy-btn) {
+/* Extra specifieke overrides voor task/opdracht varianten (alleen light mode) */
+body:not([data-theme='dark']) .content-block:has(.icon img[src*='opdracht']) .content-text button:not(.copy-btn),
+body:not([data-theme='dark']) .content-block:has(.icon img[src*='opdracht']) .content-text .btn:not(.copy-btn),
+body:not([data-theme='dark']) .content-block[data-type='task'] .content-text button:not(.copy-btn),
+body:not([data-theme='dark']) .content-block[data-type='task'] .content-text .btn:not(.copy-btn),
+body:not([data-theme='dark']) .content-block.opdracht .content-text button:not(.copy-btn),
+body:not([data-theme='dark']) .content-block.opdracht .content-text .btn:not(.copy-btn),
+body:not([data-theme='dark']) .task .content-text button:not(.copy-btn),
+body:not([data-theme='dark']) .task .content-text .btn:not(.copy-btn) {
   color: #000000 !important;
 }
-.content-block:has(.icon img[src*='quizvraag'])
-  .content-text
-  button:not(.copy-btn)
-  *,
-.content-block:has(.icon img[src*='quizvraag'])
-  .content-text
-  .btn:not(.copy-btn)
-  *,
-.content-block[data-type='quiz'] .content-text button:not(.copy-btn) *,
-.content-block[data-type='quiz'] .content-text .btn:not(.copy-btn) *,
-.content-block.quiz .content-text button:not(.copy-btn) *,
-.content-block.quiz .content-text .btn:not(.copy-btn) * {
+body:not([data-theme='dark']) .content-block:has(.icon img[src*='opdracht']) .content-text button:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block:has(.icon img[src*='opdracht']) .content-text .btn:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block[data-type='task'] .content-text button:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block[data-type='task'] .content-text .btn:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block.opdracht .content-text button:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block.opdracht .content-text .btn:not(.copy-btn) *,
+body:not([data-theme='dark']) .task .content-text button:not(.copy-btn) *,
+body:not([data-theme='dark']) .task .content-text .btn:not(.copy-btn) * {
   color: #000000 !important;
+}
+
+/* Extra specifieke overrides voor quiz varianten (alleen light mode) */
+body:not([data-theme='dark']) .content-block:has(.icon img[src*='quizvraag']) .content-text button:not(.copy-btn),
+body:not([data-theme='dark']) .content-block:has(.icon img[src*='quizvraag']) .content-text .btn:not(.copy-btn),
+body:not([data-theme='dark']) .content-block[data-type='quiz'] .content-text button:not(.copy-btn),
+body:not([data-theme='dark']) .content-block[data-type='quiz'] .content-text .btn:not(.copy-btn),
+body:not([data-theme='dark']) .content-block.quiz .content-text button:not(.copy-btn),
+body:not([data-theme='dark']) .content-block.quiz .content-text .btn:not(.copy-btn) {
+  color: #000000 !important;
+}
+body:not([data-theme='dark']) .content-block:has(.icon img[src*='quizvraag']) .content-text button:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block:has(.icon img[src*='quizvraag']) .content-text .btn:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block[data-type='quiz'] .content-text button:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block[data-type='quiz'] .content-text .btn:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block.quiz .content-text button:not(.copy-btn) *,
+body:not([data-theme='dark']) .content-block.quiz .content-text .btn:not(.copy-btn) * {
+  color: #000000 !important;
+}
+
+/* ========================================
+   DARK MODE FINAL OVERRIDES (QUIZ OPTIONS)
+   ======================================== */
+[data-theme='dark'] .content-block .content-text button.quiz-option,
+[data-theme='dark'] .content-block .content-text button.quiz-option * {
+  color: var(--text-light) !important;
+}
+[data-theme='dark'] .quiz-option,
+[data-theme='dark'] .quiz-option * {
+  color: var(--text-light) !important;
 }

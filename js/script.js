@@ -98,6 +98,7 @@ function toggleAnswer(option, buttonEl) {
   });
   allButtons.forEach((btn) => {
     btn.setAttribute('aria-expanded', 'false');
+    btn.classList.remove('correct', 'incorrect');
   });
 
   // Toon geselecteerde feedback (toegankelijk)
@@ -115,6 +116,60 @@ function toggleAnswer(option, buttonEl) {
     feedback.setAttribute('tabindex', '-1');
   }
   feedback.focus({ preventScroll: false });
+
+  // Bepaal correctheid op basis van icoon (✅ is correct)
+  const iconEl = feedback.querySelector('.feedback-icon');
+  const isCorrect = iconEl && /✅/.test(iconEl.textContent || '');
+  if (buttonEl) {
+    buttonEl.classList.add(isCorrect ? 'correct' : 'incorrect');
+  }
+
+  // Sla voortgang op
+  try {
+    if (typeof LearningProgress !== 'undefined') {
+      LearningProgress.recordQuizResult(option, !!isCorrect);
+    }
+  } catch (e) {}
+}
+
+// Maak quizopties toegankelijk (keyboard/ARIA), ook voor niet-button elementen
+function enhanceQuizAccessibility() {
+  try {
+    const options = document.querySelectorAll('.quiz-option');
+    options.forEach((el) => {
+      // Bepaal feedback-id: eerst via child .answer-feedback, anders via aria-controls, anders via inline onclick
+      let feedbackId = '';
+      const childFeedback = el.querySelector('.answer-feedback');
+      if (childFeedback && childFeedback.id) {
+        feedbackId = childFeedback.id;
+      } else if (el.getAttribute('aria-controls')) {
+        feedbackId = el.getAttribute('aria-controls');
+      } else {
+        const onclick = el.getAttribute('onclick') || '';
+        const m = onclick.match(/toggleAnswer\('([^']+)'/);
+        if (m && m[1]) feedbackId = `answer-${m[1]}`;
+      }
+
+      if (feedbackId) {
+        el.setAttribute('aria-controls', feedbackId);
+      }
+      el.setAttribute('aria-expanded', 'false');
+
+      // Als het geen <button> is, zet rol en tabindex, en voeg keyboard support toe
+      if (el.tagName.toLowerCase() !== 'button') {
+        el.setAttribute('role', 'button');
+        if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+        el.addEventListener('keydown', (ev) => {
+          const key = ev.key;
+          if (key === 'Enter' || key === ' ') {
+            ev.preventDefault();
+            const id = (el.getAttribute('aria-controls') || '').replace(/^answer-/, '');
+            if (id) toggleAnswer(id, el);
+          }
+        });
+      }
+    });
+  } catch (e) {}
 }
 
 // Eenvoudige sidebar functionaliteit
@@ -198,22 +253,7 @@ function scrollToPreviousBlock() {
   }
 }
 
-// Sidebar animatie bij pagina laden
-function animateSidebars() {
-  const sidebars = document.querySelectorAll(
-    '.simple-sidebar, .top-sidebar, .home-sidebar'
-  );
-
-  // Voeg een kleine vertraging toe voor een mooiere animatie
-  setTimeout(() => {
-    sidebars.forEach((sidebar, index) => {
-      // Stagger de animaties voor een mooier effect
-      setTimeout(() => {
-        sidebar.classList.add('loaded');
-      }, index * 200); // 200ms vertraging tussen elke sidebar
-    });
-  }, 300); // 300ms vertraging na pagina laden
-}
+// (verplaatst) animateSidebars: gebruik de uitgebreidere variant verderop in dit bestand
 
 // Automatische datum update
 function updateLastModifiedDate() {
@@ -221,7 +261,7 @@ function updateLastModifiedDate() {
   if (lastUpdatedElement) {
     const now = new Date();
     lastUpdatedElement.textContent = now.toLocaleDateString('nl-NL');
-    if (lastUpdatedElement.tagName.toLowerCase() === 'time') {
+    if (lastUpdatedElement.tagName && lastUpdatedElement.tagName.toLowerCase() === 'time') {
       lastUpdatedElement.setAttribute('datetime', now.toISOString());
     }
   }
@@ -276,16 +316,31 @@ document.addEventListener('DOMContentLoaded', function () {
   // Opdrachtknoppen
   const btnMoveLeft = document.getElementById('btn-move-left');
   if (btnMoveLeft) {
-    btnMoveLeft.addEventListener('click', moveWindowLeft);
+    btnMoveLeft.addEventListener('click', function() {
+      moveWindowLeft();
+      if (typeof LearningProgress !== 'undefined') LearningProgress.recordTask('moveLeft');
+    });
   }
   const btnOpenLumo = document.getElementById('btn-open-lumo');
   if (btnOpenLumo) {
-    btnOpenLumo.addEventListener('click', openLumoPopup);
+    btnOpenLumo.addEventListener('click', function() {
+      openLumoPopup();
+      if (typeof LearningProgress !== 'undefined') LearningProgress.recordTask('openedLumo');
+    });
   }
   const btnOpenPerplexity = document.getElementById('btn-open-perplexity');
   if (btnOpenPerplexity) {
-    btnOpenPerplexity.addEventListener('click', openPerplexityPopup);
+    btnOpenPerplexity.addEventListener('click', function() {
+      openPerplexityPopup();
+      if (typeof LearningProgress !== 'undefined') LearningProgress.recordTask('openedPerplexity');
+    });
   }
+
+  // Start voortgangsbadge
+  if (typeof LearningProgress !== 'undefined') LearningProgress.init();
+
+  // Toegankelijkheid voor quizopties initialiseren
+  enhanceQuizAccessibility();
 });
 
 // Verplaats bestaande DOMContentLoaded listeners niet; ze staan hierboven samengevoegd
@@ -456,6 +511,264 @@ function openPerplexityPopup() {
     } catch (e) {}
   }
 }
+
+// Klein leer-progress systeem
+const LearningProgress = (function () {
+  const STORAGE_KEY = 'aiwegwijzer.progress.v1';
+  let state = {
+    quizzes: {}, // id -> { correct:boolean }
+    tasks: { moveLeft: false, openedLumo: false, openedPerplexity: false },
+    ui: { collapsed: false },
+  };
+
+  function load() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const parsed = JSON.parse(raw);
+        if (parsed && typeof parsed === 'object') {
+          state = {
+            quizzes: Object.assign({}, state.quizzes, parsed.quizzes || {}),
+            tasks: Object.assign({}, state.tasks, parsed.tasks || {}),
+            ui: Object.assign({}, state.ui, parsed.ui || {}),
+          };
+        }
+      }
+    } catch (e) {}
+  }
+
+  function save() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {}
+  }
+
+  // Stel standaard in dat de balk ingeklapt is op kleine schermen,
+  // behalve als de gebruiker al een voorkeur heeft opgeslagen
+  function maybeSetDefaultCollapsedForMobile() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      let hasPreference = false;
+      if (raw) {
+        try {
+          const parsed = JSON.parse(raw);
+          if (
+            parsed &&
+            parsed.ui &&
+            Object.prototype.hasOwnProperty.call(parsed.ui, 'collapsed') &&
+            typeof parsed.ui.collapsed === 'boolean'
+          ) {
+            hasPreference = true;
+          }
+        } catch (e) {}
+      }
+      if (!hasPreference) {
+        const isMobile = window.matchMedia
+          ? window.matchMedia('(max-width: 768px)').matches
+          : window.innerWidth <= 768;
+        state.ui.collapsed = !!isMobile;
+        save();
+      }
+    } catch (e) {}
+  }
+
+  function ensureBadge() {
+    let el = document.getElementById('learning-progress-badge');
+    if (!el) {
+      el = document.createElement('div');
+      el.id = 'learning-progress-badge';
+      el.setAttribute('role', 'status');
+      el.style.position = 'fixed';
+      el.style.left = '0';
+      el.style.right = '0';
+      el.style.bottom = '0';
+      el.style.zIndex = '1100';
+      el.style.padding = '10px 16px';
+      el.style.borderRadius = '0';
+      el.style.background = 'rgba(255,255,255,0.95)';
+      el.style.borderTop = '1px solid #c4c9d1';
+      el.style.boxShadow = '0 -2px 10px rgba(0,0,0,0.06)';
+      el.style.fontSize = '13px';
+      el.style.color = '#111827';
+      el.style.userSelect = 'none';
+      el.style.textAlign = 'center';
+
+      const inner = document.createElement('div');
+      inner.style.maxWidth = '1200px';
+      inner.style.margin = '0 auto';
+      inner.style.display = 'flex';
+      inner.style.alignItems = 'center';
+      inner.style.justifyContent = 'center';
+      inner.style.position = 'relative';
+
+      const text = document.createElement('span');
+      text.id = 'learning-progress-text';
+      text.textContent = '';
+
+      const toggle = document.createElement('button');
+      toggle.id = 'learning-progress-toggle';
+      toggle.type = 'button';
+      toggle.setAttribute('aria-label', 'Minimaliseer');
+      toggle.style.position = 'absolute';
+      toggle.style.right = '12px';
+      toggle.style.top = '50%';
+      toggle.style.transform = 'translateY(-50%)';
+      toggle.style.background = 'transparent';
+      toggle.style.border = '1px solid #c4c9d1';
+      toggle.style.borderRadius = '6px';
+      toggle.style.padding = '2px 8px';
+      toggle.style.cursor = 'pointer';
+      toggle.style.fontSize = '12px';
+      toggle.textContent = state.ui.collapsed ? '▲' : '▼';
+      toggle.addEventListener('click', function () {
+        state.ui.collapsed = !state.ui.collapsed;
+        save();
+        applyCollapsed(el);
+      });
+
+      inner.appendChild(text);
+      inner.appendChild(toggle);
+      el.appendChild(inner);
+
+      document.body.appendChild(el);
+      // Zorg dat de balk geen content overlapt
+      try {
+        const currentPadding = parseInt(
+          window.getComputedStyle(document.body).paddingBottom || '0',
+          10
+        );
+        if (currentPadding < 56) {
+          document.body.style.paddingBottom = '56px';
+        }
+      } catch (e) {}
+    }
+    // Pas themestijlen toe
+    applyThemeStyles(el);
+    applyCollapsed(el);
+    return el;
+  }
+
+  function applyCollapsed(el) {
+    try {
+      const text = el.querySelector('#learning-progress-text');
+      const toggle = el.querySelector('#learning-progress-toggle');
+      if (!text || !toggle) return;
+      if (state.ui.collapsed) {
+        text.style.display = 'none';
+        el.style.padding = '6px 16px';
+        toggle.textContent = '▲';
+        toggle.setAttribute('aria-label', 'Maximaliseer');
+      } else {
+        text.style.display = 'inline';
+        el.style.padding = '10px 16px';
+        toggle.textContent = '▼';
+        toggle.setAttribute('aria-label', 'Minimaliseer');
+      }
+    } catch (e) {}
+  }
+
+  function applyThemeStyles(el) {
+    try {
+      const html = document.documentElement;
+      const isDark = (html.getAttribute('data-theme') || '').toLowerCase() === 'dark';
+      const text = el.querySelector('#learning-progress-text');
+      const toggle = el.querySelector('#learning-progress-toggle');
+
+      // Gebruik CSS-variabelen zodat kleuren consistent blijven met het thema
+      el.style.background = 'var(--bg-secondary)';
+      el.style.color = 'var(--text-primary)';
+      el.style.borderTop = isDark ? '1px solid var(--gray-600)' : '1px solid var(--border-light)';
+      el.style.boxShadow = isDark ? '0 -2px 10px rgba(0,0,0,0.3)' : '0 -2px 10px rgba(0,0,0,0.06)';
+      if (text) text.style.color = 'var(--text-primary)';
+      if (toggle) {
+        toggle.style.border = isDark ? '1px solid var(--gray-600)' : '1px solid var(--border-light)';
+        toggle.style.color = 'var(--text-primary)';
+        toggle.style.background = 'transparent';
+      }
+    } catch (e) {}
+  }
+
+  // Vind alle correcte antwoordtargets op de pagina (aan de hand van ✅ icoon)
+  function getQuizTargetIds() {
+    try {
+      const nodes = Array.from(
+        document.querySelectorAll('.answer-feedback .feedback-icon')
+      );
+      const targets = nodes
+        .filter((n) => /✅/.test((n.textContent || '').trim()))
+        .map((n) => n.closest('.answer-feedback'))
+        .filter(Boolean)
+        .map((fb) => {
+          const id = fb.id || '';
+          return id.startsWith('answer-') ? id.substring('answer-'.length) : id;
+        })
+        .filter((id) => !!id);
+      // Dedup voor het geval van meerdere elementen
+      return Array.from(new Set(targets));
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function calcProgress() {
+    const targets = getQuizTargetIds();
+    const total = targets.length;
+    const done = targets.filter((id) => state.quizzes[id] && state.quizzes[id].correct).length;
+    const pct = total > 0 ? Math.round((done / total) * 100) : 0;
+    return { done, total, pct };
+  }
+
+  function renderBadge() {
+    const badge = ensureBadge();
+    const { pct, done, total } = calcProgress();
+    const text = badge.querySelector('#learning-progress-text');
+    if (text) {
+      text.textContent = `Quiz-voortgang: ${pct}% (${done}/${total})`;
+    } else {
+      badge.textContent = `Quiz-voortgang: ${pct}% (${done}/${total})`;
+    }
+    applyThemeStyles(badge);
+    applyCollapsed(badge);
+  }
+
+  function recordQuizResult(id, correct) {
+    if (!state.quizzes[id]) state.quizzes[id] = { correct: false };
+    state.quizzes[id].correct = state.quizzes[id].correct || !!correct;
+    save();
+    renderBadge();
+  }
+
+  function recordTask(name) {
+    if (Object.prototype.hasOwnProperty.call(state.tasks, name)) {
+      state.tasks[name] = true;
+      save();
+      renderBadge();
+    }
+  }
+
+  // confidence UI verwijderd
+
+  function init() {
+    load();
+    // Eerste keer of oude opslag zonder voorkeur: op mobiel standaard ingeklapt
+    maybeSetDefaultCollapsedForMobile();
+    renderBadge();
+    // Observeer thema-wijzigingen
+    try {
+      const obs = new MutationObserver(function (mutations) {
+        for (const m of mutations) {
+          if (m.attributeName === 'data-theme') {
+            const el = document.getElementById('learning-progress-badge');
+            if (el) applyThemeStyles(el);
+          }
+        }
+      });
+      obs.observe(document.documentElement, { attributes: true });
+    } catch (e) {}
+  }
+
+  return { init, recordQuizResult, recordTask };
+})();
 
 function openChatGPT() {
   const screenWidth = window.screen.width;

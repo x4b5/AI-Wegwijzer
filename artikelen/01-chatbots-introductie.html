@@ -121,6 +121,10 @@
           </div>
         </div>
       </div>
+
+      
+
+      
     </div>
 
     <!-- sidebar - naar begin van pagina -->
@@ -139,7 +143,7 @@
     </div>
 
     <!-- sidebar - naar index.html -->
-    <div class="home-sidebar" id="homeSidebar">
+    <div class="home-sidebar loaded" id="homeSidebar">
       <button type="button" class="home-toggle-btn" aria-label="Ga naar home">
         <img
           src="../../img/icons/home.png"
@@ -332,6 +336,7 @@
         </div>
       </div>
 
+      <!-- quiz-lumo verplaatsing: hiervoor stond hij na geschiedenis -->
       <div class="content-block info">
         <div class="icon">
           <img
@@ -385,6 +390,8 @@
           <em>"Meer tussen AI en ChatGPT" gegenereerd met Stable Diffusion.</em>
         </div>
       </div>
+
+      
 
       <div class="content-block info">
         <div class="icon">
@@ -455,6 +462,114 @@
             van intentie), het raadplegen van bronnen en het genereren van een
             helder antwoord.
           </p>
+        </div>
+      </div>
+
+      <div class="content-block quiz" id="quiz-lumo">
+        <div class="icon">
+          <img
+            src="../../img/icons/quizvraag.png"
+            alt="Quizvraag"
+            width="80"
+            height="80"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="content-text">
+          <strong>Quizvraag</strong><br /><br />
+          Welk type chatbot denk je dat Lumo is?<br /><br />
+
+          <em>Klik op een antwoord om de uitleg te zien.</em>
+          <div class="quiz-options" role="group" aria-label="Antwoordopties">
+            <button
+              class="quiz-option"
+              type="button"
+              aria-expanded="false"
+              aria-controls="answer-A8"
+              onclick="toggleAnswer('A8', this)"
+            >
+              <strong>A)</strong> Een regelgebaseerde chatbot
+            </button>
+            <div
+              class="answer-feedback"
+              id="answer-A8"
+              hidden
+              aria-hidden="true"
+            >
+              <div class="feedback-content">
+                <span class="feedback-icon">❌</span>
+                <strong>Nog niet helemaal!</strong><br />
+                Regelgebaseerde chatbots werken vooral met vaste beslisregels. Lumo doet meer dan dat.
+              </div>
+            </div>
+
+            <button
+              class="quiz-option"
+              type="button"
+              aria-expanded="false"
+              aria-controls="answer-B8"
+              onclick="toggleAnswer('B8', this)"
+            >
+              <strong>B)</strong> Een klassieke AI-chatbot (discriminatief)
+            </button>
+            <div
+              class="answer-feedback"
+              id="answer-B8"
+              hidden
+              aria-hidden="true"
+            >
+              <div class="feedback-content">
+                <span class="feedback-icon">❌</span>
+                <strong>Nog niet helemaal!</strong><br />
+                Klassieke AI-chatbots herkennen vooral intenties en categorieën; Lumo gaat doorgaans verder.
+              </div>
+            </div>
+
+            <button
+              class="quiz-option"
+              type="button"
+              aria-expanded="false"
+              aria-controls="answer-C8"
+              onclick="toggleAnswer('C8', this)"
+            >
+              <strong>C)</strong> Een moderne AI-chatbot (generatief)
+            </button>
+            <div
+              class="answer-feedback"
+              id="answer-C8"
+              hidden
+              aria-hidden="true"
+            >
+              <div class="feedback-content">
+                <span class="feedback-icon">✅</span>
+                <strong>Goed beredeneerd!</strong><br />
+                Lumo profileert zich als een moderne AI‑assistent met generatieve mogelijkheden.
+              </div>
+            </div>
+
+            <button
+              class="quiz-option"
+              type="button"
+              aria-expanded="false"
+              aria-controls="answer-D8"
+              onclick="toggleAnswer('D8', this)"
+            >
+              <strong>D)</strong> Een hybride aanpak (mix van regels, herkenning en genereren)
+            </button>
+            <div
+              class="answer-feedback"
+              id="answer-D8"
+              hidden
+              aria-hidden="true"
+            >
+              <div class="feedback-content">
+                <span class="feedback-icon">❌</span>
+                <strong>Er valt wat voor te zeggen…</strong><br />
+                In de praktijk combineren veel chatbots meerdere technieken, maar Lumo wordt meestal als modern en generatief gezien.
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -665,12 +780,11 @@
               aria-controls="answer-A7"
               onclick="toggleAnswer('A7', this)"
             >
-              <strong>A)</strong>
-              <a
-                href="../../naslag/begrippen.html#conversational-user-interface"
-                >Conversational user interface</a
-              >
+              <strong>A)</strong> Conversational user interface
             </button>
+            <small class="option-link">
+              Zie: <a href="../../naslag/begrippen.html#conversational-user-interface">begrip</a>
+            </small>
             <div
               class="answer-feedback"
               id="answer-A7"
@@ -693,11 +807,11 @@
               aria-controls="answer-B7"
               onclick="toggleAnswer('B7', this)"
             >
-              <strong>B)</strong>
-              <a href="../../naslag/begrippen.html#user-interface"
-                >Graphical user interface</a
-              >
+              <strong>B)</strong> Graphical user interface
             </button>
+            <small class="option-link">
+              Zie: <a href="../../naslag/begrippen.html#user-interface">begrip</a>
+            </small>
             <div
               class="answer-feedback"
               id="answer-B7"
@@ -720,11 +834,11 @@
               aria-controls="answer-C7"
               onclick="toggleAnswer('C7', this)"
             >
-              <strong>C)</strong>
-              <a href="../../naslag/begrippen.html#user-interface"
-                >Command line interface</a
-              >
+              <strong>C)</strong> Command line interface
             </button>
+            <small class="option-link">
+              Zie: <a href="../../naslag/begrippen.html#user-interface">begrip</a>
+            </small>
             <div
               class="answer-feedback"
               id="answer-C7"
