@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Chatbots en AI-Assistenten</title>
+        <title>Chatbots: een introductie</title>
         <link rel="stylesheet" href="../../css/style.css" />
         <script src="../../js/script.js"></script>
         <!-- Automatische datum update is verplaatst naar script.js -->
@@ -78,23 +78,22 @@
 
         <!-- inhoud -->
         <div class="container"> 
-            <div class="header-section">
-                <h2 class="chatbots-title main-title">Chatbots</h2>
+            <div class="header-section" style="padding: 10px 0; text-align: center;">
+                <img src="../../img/chatbot.png" alt="Chatbot" style="max-width: 70%; height: auto; margin: -15px -15px -65px -15px; border-radius: 8px;" />
+                <h2 class="chatbots-title main-title" style="font-family: 'Courier New', monospace; font-weight: bold; letter-spacing: 3px; text-transform: uppercase; padding: 10px;">Chatbots: een introductie</h2>
 
-         <div class="metadata">
+         <div class="metadata" style="text-align: left; padding: 0 50px 20px 50px;">
                     <div class="metadata-content">
                         <div class="metadata-item"><strong> Laatste wijziging:</strong> <span id="last-updated">[Automatisch bijgewerkt]</span></div>
                             <div class="metadata-item">
                             <strong> Leerdoel:</strong> Begrijpen wat chatbots zijn, hoe je ze kunt
                             gebruiken en waar je rekening mee moet houden.
                         </div>
-                        <div class="metadata-item"><strong> Leestijd:</strong> (nader te bepalen)</div>        
+                        <div class="metadata-item"><strong> Leestijd:</strong> 15-20 minuten</div>        
                     </div>
                 </div>
             </div>
 
-            <div class="chatbots-section" id="chatbots">
-                <h3 class="chatbots-title">Chatbots</h3>
 
                 <div class="content-block task">
                     <div class="icon">
@@ -129,18 +128,18 @@
                     </div>
                     <div class="content-text">
                         <strong>Opdracht 2: chatbot openen</strong><br />
-                        Klik op de knop om de chatbot <em>Lumo</em> te openen.<br />
+                        Klik op de knop om de chatbot <em><em>Lumo</em></em> te openen.<br />
                         Dit is een moderne versie van een chatbot.
 
                         <div class="text-center mt-4">
                             <button onclick="openLumoPopup()" class="btn" style="color: black !important">
                                 <img
                                     src="../../img/icons/lumo.png"
-                                    alt="Lumo"
+                                    alt="<em>Lumo</em>"
                                     width="40"
                                     height="32"
                                     style="vertical-align: middle; margin-right: 12px" />
-                                <span style="color: black !important">Lumo openen</span>
+                                <span style="color: black !important"><em style="color: black !important;">Lumo</em> openen</span>
                             </button>
                         </div>
                     </div>
@@ -228,7 +227,7 @@
                     <div class="content-text">
                         <strong>Vier belangrijke vragen</strong><br />
                         We hebben bij het beestje de verschillende namen genoemd maar dan is nog niet duidelijk wat het verschil is tussen ChatGPT en andere chatbots.
-                        Om dat helder te krijgen, gaan we een aantal vragen bespeken:<br /><br />
+                        Om dat helder te krijgen, gaan we een aantal vragen beantwoorden:<br /><br />
                         1. Wat is een chatbot?<br/>
                         2. Hoe werkt een chatbot in het algemeen?<br />
                         3. Hoe is een chatbot in staat om antwoorden te geven? <br />
@@ -281,8 +280,13 @@
                         <strong>Conversational user interface</strong><br />
                          De plek waar waar de communicatie tussen mens en machine plaatsvindt wordt de <a href="../../naslag/begrippen.html#user-interface">user interface</a> genoemd.
 
-                        De user interface heeft in het teken van gebruikersvriendelijkheid een ontwikkeling doorgemaakt van het gebruik van ponskaarten, naar het toepassen van commando's (command line interface), naar de mogelijkheid om via een grafische interface (graphical user interface) te communiceren.<br /> 
-                        Via chatbots is het tegenwoordig ook mogelijk om via natuurlijke taal te communiceren. Dit wordt de <em>conversational user interface</em> genoemd. 
+                        De user interface heeft in het teken van gebruikersvriendelijkheid een ontwikkeling doorgemaakt van:
+                        <ul>
+                            <li>het gebruik van ponskaarten naar,</li>
+                            <li>het toepassen van commando's (command line interface) naar,</li>
+                            <li>de mogelijkheid om via een grafische interface (graphical user interface) te communiceren.</li>
+                        </ul>
+                        Middels chatbots is het tegenwoordig ook mogelijk om via natuurlijke taal te communiceren. Dit wordt de <em>conversational user interface</em> genoemd. 
                         <a href="https://en.wikipedia.org/wiki/Conversational_user_interface?utm_source=chatgpt.com" target="_blank">(Wikipedia)</a>.<br />
                         De communicatie tussen mens en machine wordt hierdoor toegankelijker voor meer mensen.                        <br><br />
                     </div>
@@ -339,16 +343,60 @@
                     </div>
                 </div>
 
+                <div class="content-block quiz">
+                    <div class="icon">
+                        <img src="../../img/icons/quizvraag.png" alt="Quizvraag" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>Quizvraag</strong><br /><br />
+                        Hoe wordt de interface van de chatbot <em>Lumo</em> genoemd?<br /><br />
+
+                        <em>Klik op een antwoord om te zien of het correct is!</em>
+                        <div class="quiz-options">
+                            <div class="quiz-option" onclick="toggleAnswer('A7')">
+                                <strong>A)</strong> Conversational user interface
+                                <div class="answer-feedback" id="answer-A7">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">✅</span>
+                                        <strong>Correct!</strong><br />
+                                        De interface van chatbots wordt inderdaad een conversational user interface genoemd, omdat je via natuurlijke taal communiceert.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quiz-option" onclick="toggleAnswer('B7')">
+                                <strong>B)</strong> Graphical user interface
+                                <div class="answer-feedback" id="answer-B7">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">❌</span>
+                                        <strong>Nog niet goed!</strong><br />
+                                        Er is inderdaad wel een grafische interface, maar om de chatbot te gebruiken communiceer je via natuurlijke taal, niet via knoppen en vensters.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="quiz-option" onclick="toggleAnswer('C7')">
+                                <strong>C)</strong> Command line interface
+                                <div class="answer-feedback" id="answer-C7">
+                                    <div class="feedback-content">
+                                        <span class="feedback-icon">❌</span>
+                                        <strong>Nog niet goed!</strong><br />
+                                        Een command line interface gebruikt commando's, niet natuurlijke taal zoals bij chatbots.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="content-block task">
                     <div class="icon">
                         <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
                     </div>
                     <div class="content-text">
                         <strong>Opdracht 3: Stel jezelf voor</strong><br />
-                        Geef <em>Lumo</em> input door onder in het tekstvenster jezelf voor te stellen met de naam van
+                        Geef <em><em>Lumo</em></em> input door onder in het tekstvenster jezelf voor te stellen met de naam van
                         een bekende persoon.
                         <br />
-                        <ul><li>Grote kans dat <em>Lumo</em> vriendelijk reageert.</li></ul>
+                        <ul><li>Grote kans dat <em><em>Lumo</em></em> vriendelijk reageert.</li></ul>
                     </div>
                 </div>
 
@@ -400,9 +448,9 @@
                         <ul>
                             <li>
                             <strong>Voorbeeld weersituatie:</strong><br />
-                                Als er donkere wolken zijn, de luchtdruk daalt en de luchtvochtigheid stijgt, dan is er grote kans op regen.
+                            Vooraf is het volgende geprogrammeerd: "Als de lucht 90 tot 100 procent is bedekt met donkere wolken en de luchtdruk daalt naar 1005 hPa en de luchtvochtigheid stijgt tot 80 à 95 procent, geef dan aan dat er 80% kans op regen is."
                                 <br /><br />
-                                De chatbot volgt deze regels stap voor stap. Alles staat vast: dezelfde input levert altijd hetzelfde antwoord op. Dit wordt <em>deterministisch</em> genoemd. 
+                                De chatbot volgt deze regels stap voor stap. Alles staat vast: dezelfde input levert altijd hetzelfde antwoord op. Dit wordt <em><a href="../../naslag/begrippen.html#deterministisch">deterministisch</a></em> genoemd. 
                                 <br /><br />
                                 Bij chatbot 1.0 werd alleen gebruik gemaakt van deze methode.
 
@@ -428,9 +476,10 @@
                             <li>
 
                                 <strong>Voorbeeld weersituatie:</strong><br />
-                                Uit de data blijkt: in 4 van de 5 gevallen regent het als er donkere wolken zijn, de luchtdruk daalt en de luchtvochtigheid stijgt.
+                                Uit de data blijkt: in 4 van de 5 gevallen regent het wanneer de lucht 90 tot 100 procent is bedekt met donkere wolken, de luchtdruk daalt naar rond de 995 tot 1005 hPa en de luchtvochtigheid stijgt tot 80 à 95 procent.<br /> 
+                                Op basis van dit patroon kan worden geconcludeerd dat er 80% kans op regen is. 
                                 <br /><br />
-                                Op basis van het herkennen van patronen kan worden aangegeven hoe groot de kans is. Dit noemt men <em>probabilistisch</em>.
+                                Door het herkennen van patronen kan worden aangegeven hoe groot de kans is. Dit noemt men <em><a href="../../naslag/begrippen.html#probabilistisch">probabilistisch</a></em>.
                                 <br /><br />
                                 De toepassing van deze methode luidde de opkomst van chatbot 2.0 in.
 
@@ -472,7 +521,7 @@
                                     <div class="feedback-content">
                                         <span class="feedback-icon">❌</span>
                                         <strong>Nog niet goed!</strong><br />
-                                        Altijd hetzelfde antwoord wijst op regel-gebaseerde aanpak. Dit is deterministisch gedrag.
+                                        Altijd hetzelfde antwoord wijst op regel-gebaseerde aanpak. Dit is <a href="../../naslag/begrippen.html#deterministisch">deterministisch</a> gedrag.
                                     </div>
                                 </div>
                             </div>
@@ -603,7 +652,7 @@
                     </div>
                     <div class="content-text">
                         <strong>Quizvraag</strong><br /><br />
-                        Waar denk je dat op dit moment het "denkwerk" van de chatbot Lumo plaatsvindt?<br /><br />
+                        Waar denk je dat op dit moment het "denkwerk" van de chatbot <em>Lumo</em> plaatsvindt?<br /><br />
 
                         <em>Klik op een antwoord om te zien of het correct is!</em>
                         <div class="quiz-options">
@@ -656,7 +705,7 @@
                         <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
                     </div>
                     <div class="content-text">
-                        <strong>Opdracht 4: Schakel ghost mode in bij Lumo</strong><br />
+                        <strong>Opdracht 4: Schakel ghost mode in bij <em>Lumo</em></strong><br />
                         Klik rechtsboven op het icoon van de kat met de zonnebril.
                     </div>
                 </div>
@@ -777,6 +826,29 @@
                     </div>
                 </div>
 
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="../../img/icons/informatie.png" alt="Informatie" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>Waar kom je chatbots tegen?</strong><br />
+                        Je hebt vast wel eens een chatbot gebruikt zonder het te beseffen! Ze zijn overal om ons heen. Hier zijn wat voorbeelden uit 2025 die je misschien herkent:<br /><br />
+                        
+                        <strong>Mode en winkelen</strong><br />
+                        <em>H&M's virtuele stylist</em> helpt je bij het kiezen van outfits! Je kunt foto's uploaden van kleding die je leuk vindt, en de chatbot suggereert vergelijkbare items en helpt bij het samenstellen van complete looks. Dit heeft geleid tot een flinke toename in klantbetrokkenheid en verkoop <a href="https://www.chatbottech.nl/post/trends-in-ai-chatbot-technologie-6-concrete-toepassingen" target="_blank">(ChatbotTech, 2025)</a>.<br /><br />
+                        
+                        <strong>Gezondheidszorg</strong><br />
+                        <em>Babylon Health's symptoomchecker</em> helpt je bij het beoordelen van symptomen en geeft medisch advies. De chatbot gebruikt machine learning om nauwkeurige en gepersonaliseerde gezondheidsinformatie te bieden - cruciaal als het om je gezondheid gaat! <a href="https://nl.moyens.net/sociale-netwerken/12-beste-chatbot-voorbeelden-voor-bedrijven-verhoog-betrokkenheid-efficientie/" target="_blank">(Moyens, 2025)</a>.<br /><br />
+                        
+                        <strong>Taal leren</strong><br />
+                        <em>Duolingo's taalcoach</em> fungeert als je persoonlijke gesprekspartner! Je kunt gesprekken voeren met de chatbot om je spreekvaardigheid te oefenen, waarbij je direct feedback krijgt en suggesties voor verbetering. Perfect om je talenkennis bij te spijkeren <a href="https://www.chatbottech.nl/post/trends-in-ai-chatbot-technologie-6-concrete-toepassingen" target="_blank">(ChatbotTech, 2025)</a>.<br /><br />
+                        
+                        <strong>Bij de overheid</strong><br />
+                        In Singapore kunnen inwoners via WhatsApp of Telegram praten met de <em>SG OneService Chatbot</em>. Geen ingewikkelde formulieren meer - gewoon een berichtje sturen en de chatbot helpt je verder. Ook de Australische belastingdienst heeft <em>Alex</em>, die 24/7 beschikbaar is om vragen over belastingen te beantwoorden <a href="https://botpress.com/nl/blog/chatbots-for-government" target="_blank">(Botpress, 2025)</a>.<br /><br />
+                        
+                    </div>
+                </div>
+
                 <div class="content-block task">
                     <div class="icon">
                         <img src="../../img/icons/opdracht.png" alt="Opdracht" width="80" height="80" />
@@ -802,7 +874,8 @@
                         Naast het zoeken op de website kun je ook bestanden uploaden. Dit betekent dat je bijvoorbeeld
                         een PDF, Word-document of afbeelding kunt toevoegen, zodat de AI de inhoud van dat bestand kan
                         analyseren, samenvatten of er vragen over kan beantwoorden. Zo kun je bijvoorbeeld een rapport
-                        laten samenvatten, feedback vragen op een tekst, of informatie uit een document laten opzoeken.
+                        laten samenvatten, feedback vragen op een tekst, of informatie uit een document laten opzoeken.<br />
+                        De mogelijkheid om een AI-model te combineren met informatie uit databases, externe bestanden en toegang tot het web heet <em><a href="../../naslag/begrippen.html#rag">Retrieval-Augmented Generation (RAG)</a></em>. 
                     </div>
                 </div>
 
@@ -813,15 +886,15 @@
                     <div class="content-text">
                         <details>
                             <summary>
-                                <strong>Meer over Lumo</strong>
+                                <strong>Meer over <em>Lumo</em></strong>
                                 <span style="color: #666; font-size: 0.9rem; font-weight: normal"
                                     >(klik om te lezen)</span
                                 >
                             </summary>
-                            Lumo is een chatbot ontwikkeld door het Zwitserse technologiebedrijf Proton AG. Het bedrijf
+                            <em>Lumo</em> is een chatbot ontwikkeld door het Zwitserse technologiebedrijf Proton AG. Het bedrijf
                             werd opgericht door een groep wetenschappers van CERN en richt zich op het bieden van
                             privacy-gerelateerde diensten.<br />
-                            Je hebt geen account nodig om toegang te krijgen tot Lumo, maar het aantal prompts dat je
+                            Je hebt geen account nodig om toegang te krijgen tot <em>Lumo</em>, maar het aantal prompts dat je
                             per week kunt geven is dan wel beperkt. Als je een gratis Proton-account aanmaakt, kun je
                             meer prompts gebruiken en je chats versleuteld opslaan. Versleuteld opslaan betekent dat je
                             gesprekken worden beveiligd met een speciale code (<a
@@ -840,7 +913,7 @@
                     </div>
                     <div class="content-text">
                         <strong>Opdracht 7: We gaan een andere chatbot openen.</strong><br />
-                        > Als je nog eens gebruik wilt maken van <em>Lumo</em>, bookmark de pagina door het venster te selecteren en de sneltoets <code>ctrl + d</code>/<code>cmd + d</code> te gebruiken.<br /><br />
+                        > Als je nog eens gebruik wilt maken van <em><em>Lumo</em></em>, bookmark de pagina door het venster te selecteren en de sneltoets <code>ctrl + d</code>/<code>cmd + d</code> te gebruiken.<br /><br />
                         > Sluit het venster en klik op de onderstaande knop om <em>Perplexity AI</em> te openen.<br />
                         
                         <div class="text-center mt-4">
@@ -1035,6 +1108,55 @@
                         </details>
                     </div>
                 </div>
-            </div>
+
+                <div class="content-block info">
+                    <div class="icon">
+                        <img src="../../img/icons/conclusie.png" alt="Conclusie" width="80" height="80" />
+                    </div>
+                    <div class="content-text">
+                        <strong>Samenvatting en conclusie</strong><br /><br />
+                        In dit artikel hebben we de wereld van chatbots verkend en de belangrijkste concepten besproken die je moet begrijpen om effectief met deze technologie te werken.<br /><br />
+                        
+                        <strong>Wat hebben we geleerd?</strong><br />
+                        • <strong>Chatbots zijn computerprogramma's</strong> die menselijke gesprekken kunnen simuleren via een <a href="../../naslag/begrippen.html#conversational-user-interface">conversational user interface</a><br />
+                        • <strong>Er zijn verschillende generaties:</strong> van regelgebaseerde chatbots (1.0) tot moderne AI-chatbots (3.0)<br />
+                        • <strong>Twee hoofdmethoden:</strong> <a href="../../naslag/begrippen.html#regelgebaseerd">regelgebaseerd</a> (deterministisch) en <a href="../../naslag/begrippen.html#data-gedreven">data-gedreven</a> (probabilistisch)<br />
+                        • <strong>AI-modellen draaien op verschillende locaties:</strong> in de cloud, lokaal, of op het apparaat zelf<br />
+                        • <strong>Moderne chatbots gebruiken RAG</strong> om actuele informatie te combineren met hun kennis<br /><br />
+                        
+                        <strong>Praktische inzichten</strong><br />
+                        • <strong>Prompt-engineering is cruciaal:</strong> De kwaliteit van je input bepaalt de kwaliteit van de output<br />
+                        • <strong>Wees kritisch:</strong> AI-modellen kunnen <a href="../../naslag/begrippen.html#hallucineren">hallucineren</a> en foute informatie geven<br />
+                        • <strong>Gebruik de juiste tool:</strong> Verschillende chatbots hebben verschillende sterke punten<br />
+                        • <strong>Privacy overwegingen:</strong> Weet waar je data wordt opgeslagen en verwerkt<br /><br />
+                        
+                        <strong>De toekomst</strong><br />
+                        Chatbots en AI-assistenten worden steeds krachtiger en toegankelijker. Door de basisconcepten te begrijpen die we in dit artikel hebben besproken, ben je beter voorbereid om deze technologie effectief en verantwoord te gebruiken in je dagelijks leven en werk.<br /><br />
+                        
+                        <strong>Wat wil je nu verder ontdekken?</strong><br />
+                        Je hebt nu een solide basis in chatbots. Afhankelijk van je interesses kun je verschillende richtingen op:<br /><br />
+                        
+                        <div style="display: flex; flex-direction: column; gap: 15px; margin: 20px 0;">
+                            <div style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #007bff; border-radius: 4px;">
+                                <strong>Prompt Engineering</strong><br />
+                                Wil je weten hoe je effectieve prompts kunt schrijven?<br />
+                                <a href="03-prompt-engineering.html" style="color: #007bff; text-decoration: none; font-weight: bold;">→ Ga naar Prompt Engineering</a>
+                            </div>
+                            
+                            <div style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #28a745; border-radius: 4px;">
+                                <strong>AI-assistenten</strong><br />
+                                Wil je meer weten over de moderne AI-chatbots? Wat moderne AI-chatbots anders maakt dan de klassieke chatbots?<br />
+                                <a href="02-ai-assistenten.html" style="color: #28a745; text-decoration: none; font-weight: bold;">→ Ga naar AI-assistenten</a>
+                            </div>
+                            
+                            <div style="padding: 15px; background-color: #f8f9fa; border-left: 4px solid #dc3545; border-radius: 4px;">
+                                <strong>Waarde en impact</strong><br />
+                                Wil je meer weten over de maatschappelijke waarde en impact van chatbots en AI-modellen?<br />
+                                <a href="04-waarde-en-impact.html" style="color: #dc3545; text-decoration: none; font-weight: bold;">→ Ga naar Waarde en impact</a>
+                            </div>
+                        </div>
+
+                        </div>
+                </div>
             
             
