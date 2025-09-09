@@ -1,23 +1,4 @@
-/* Nav omhoog/omlaag knoppen met iconen */
-.nav-up-toggle-btn {
-  background-image: url('../img/icons/naar-boven.png');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 32px 32px;
-}
-.nav-down-toggle-btn {
-  background-image: url('../img/icons/naar-boven.png');
-  background-repeat: no-repeat;
-  background-position: right 10px center;
-  background-size: 32px 32px;
-  transform: rotate(180deg);
-}
-
-/* Verberg inline afbeeldingen binnen de nav-knoppen zodat de background zichtbaar is */
-.nav-up-toggle-btn img,
-.nav-down-toggle-btn img {
-  display: block;
-}
+ 
 /* ========================================
    AI-WEGWIJZER STYLE.CSS
    Alle styling in één bestand met verbeterde kleuren
@@ -116,54 +97,7 @@
   --text-light: #ffffff;
 }
 
-/* Theme Toggle Sidebar */
-.theme-sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  z-index: 1000;
-  transform: translateX(-100%);
-  transition: transform 0.8s ease-in-out;
-}
-
-.theme-sidebar.loaded {
-  transform: translateX(0);
-}
-
-.theme-toggle-btn {
-  position: fixed;
-  left: -24px;
-  top: 84px; /* 16px onder home (16 + 52 + 16 = 84) */
-  transform: translateY(0);
-  transform-origin: right center;
-  width: 52px;
-  height: 52px;
-  background: var(--gray-600);
-  color: var(--text-primary);
-  border-radius: 0 26px 26px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 24px;
-  border: none;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  opacity: 0.7;
-}
-
-.theme-toggle-btn:hover {
-  background-color: #4a5568; /* Alleen kleur verbeteren, icon blijft */
-  transform: translateY(0) scale(1.1) translateX(5px);
-  opacity: 1;
-}
-
-/* Nudge theme icon slightly to the right for visual centering */
-.theme-toggle-btn #theme-icon {
-  display: inline-block;
-  transform: translateX(4px);
-}
+ 
 
 /* ========================================
    BASIS RESET EN TYPOGRAFIE
@@ -224,7 +158,7 @@ h2 {
   color: var(--text-primary);
   font-size: 1.8rem;
   margin: 3rem 0 1.5rem 0;
-  border-left: 4px solid var(--primary-blue);
+  border-left: 6px solid var(--primary-blue);
   padding-left: 20px;
   font-weight: 600;
 }
@@ -266,7 +200,7 @@ h4 {
 
 .metadata-header {
   text-align: left;
-  padding: 0 50px 20px 50px;
+  padding: 0px 50px 20px 50px;
 }
 
 /* Buttons */
@@ -299,9 +233,27 @@ h4 {
   font-size: 14px;
 }
 
+/* Stacked variant: twee rijen onder elkaar */
+.hotkey-panel.stacked {
+  flex-direction: column;
+}
+.hotkey-panel.stacked .hotkey-col.fixed,
+.hotkey-panel.stacked .hotkey-col.flex {
+  flex: 0 0 auto;
+  width: 100%;
+}
+.hotkey-panel.stacked .hotkey-col.fixed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hotkey-panel.stacked .hotkey-notes {
+  margin-left: 0;
+}
+
 /* Hotkey panel details */
 .hotkey-col.fixed {
-  flex: 0 0 190px;
+  flex: 0 0 160px;
 }
 .hotkey-col.flex {
   flex: 1;
@@ -314,14 +266,15 @@ h4 {
 .hotkey-code {
   color: var(--text-primary);
   background: var(--bg-secondary);
-  font-size: 12px;
-  padding: 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 4px;
   border-radius: 3px;
 }
 .hotkey-notes {
   margin-top: 8px;
   color: var(--text-secondary);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /* ========================================
@@ -541,27 +494,7 @@ h4 {
   color: var(--primary-blue);
 }
 
-/* ========================================
-   QUIZ OPTION STYLING
-   ======================================== */
-.quiz-option {
-  cursor: pointer; /* Hand cursor voor quiz opties */
-  padding: 12px;
-  border-radius: 8px;
-  transition: var(--transition-fast);
-  margin: 8px 0;
-  background: var(--gray-50);
-  border: 1px solid var(--border-light);
-  user-select: none; /* Voorkom tekst selectie */
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-}
-
-.quiz-option:hover {
-  background: var(--gray-100);
-  border-color: var(--border-medium);
-}
+ 
 
 /* ========================================
    ONGEBRUIKTE CSS STYLING - UITGECOMMENTARIEERD
@@ -972,7 +905,7 @@ body:not([data-theme='dark']) code *[style*='color'] {
    BLOCKQUOTE STYLING
    ======================================== */
 blockquote {
-  border-left: 4px solid var(--primary-blue);
+  border-left: 6px solid var(--primary-blue);
   padding-left: 20px;
   margin: 20px 0;
   font-style: italic;
@@ -990,6 +923,22 @@ img {
   height: auto;
   border-radius: 8px;
   box-shadow: var(--shadow-sm);
+}
+
+/* OS logo's: zwart in light mode, wit in dark mode */
+img[src*='windows'],
+img[src*='apple-logo'],
+img[src*='/apple'],
+img[src$='apple.png'],
+img[src$='apple.svg'] {
+  filter: brightness(0) saturate(100%);
+}
+[data-theme='dark'] img[src*='windows'],
+[data-theme='dark'] img[src*='apple-logo'],
+[data-theme='dark'] img[src*='/apple'],
+[data-theme='dark'] img[src$='apple.png'],
+[data-theme='dark'] img[src$='apple.svg'] {
+  filter: brightness(0) saturate(100%) invert(1);
 }
 
 /* ========================================
@@ -1028,7 +977,7 @@ img {
 .important {
   background: #d9c7a0;
   border: 1px solid #fde68a;
-  border-left: 4px solid var(--primary-orange);
+  border-left: 6px solid var(--primary-orange);
   padding: 20px;
   margin: 25px 0;
   border-radius: 8px;
@@ -1259,12 +1208,113 @@ a:focus {
   background-color: var(--bg-secondary);
   background-image: none;
   color: var(--text-primary);
-  border-left: 4px solid var(--accent-quiz); /* Accentlijn links */
+  /* Accentlijn via ::after i.p.v. border voor betere layering met banner */
 }
 /* Overlay voor quiz */
 .content-block:has(.icon img[src*='quizvraag']) .content-text::before,
 .content-block[data-type='quiz'] .content-text::before,
 .content-block.quiz .content-text::before { background: none; }
+
+/* ========================================
+   BLOK-TITELS ALS VOLLEDIGE BANNER (TASK/QUIZ)
+   ======================================== */
+/* Gebruik het eerste strong-element als titel en geef het een volledige banner
+   met dezelfde kleur als de linkerkolom. De banner strekt zich horizontaal uit
+   over het hele blok (inclusief de icon-kolom). */
+.content-block.task .content-text > strong:first-child,
+.content-block.quiz .content-text > strong:first-child {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  line-height: 1.35;
+  font-weight: 700;
+  /* trek naar boven en zijkanten zodat de banner gelijk valt met de inhoudsranden */
+  margin: -30px -30px 12px;
+  padding: 0 16px 0 20px;
+  height: 80px; /* hoogte banner gelijk aan breedte linkerkolom (desktop 80px) */
+  color: var(--text-primary);
+}
+
+.content-block.task .content-text > strong:first-child::before,
+.content-block.quiz .content-text > strong:first-child::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0; /* tot aan rechterrand content-text (incl. negatieve margin) */
+  /* schuif de banner naar links over de icon-kolom heen */
+  left: calc(-80px - 30px); /* 80px icon + 30px content padding */
+  z-index: -1;
+}
+
+/* Kleur per bloktype: match met icon-kolom (donkerder naar lichter) */
+.content-block.task .content-text > strong:first-child::before {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-task) 60%, #ffffff) 0%,
+    color-mix(in srgb, var(--accent-task) 20%, #ffffff) 100%
+  );
+}
+.content-block.quiz .content-text > strong:first-child::before {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-quiz) 60%, #ffffff) 0%,
+    color-mix(in srgb, var(--accent-quiz) 20%, #ffffff) 100%
+  );
+}
+
+/* Dark mode: gebruik achtergrondkleuren die aansluiten bij dark palette */
+[data-theme='dark'] .content-block.task .content-text > strong:first-child::before {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-task) 45%, var(--bg-secondary)) 0%,
+    color-mix(in srgb, var(--accent-task) 20%, var(--bg-secondary)) 100%
+  );
+}
+[data-theme='dark'] .content-block.quiz .content-text > strong:first-child::before {
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent-quiz) 45%, var(--bg-secondary)) 0%,
+    color-mix(in srgb, var(--accent-quiz) 20%, var(--bg-secondary)) 100%
+  );
+}
+
+/* Accentlijn altijd boven de banner tekenen (zichtbaar houden) */
+.content-block.task .content-text::after,
+.content-block.quiz .content-text::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  z-index: 2; /* boven de titelbanner */
+}
+.content-block.task .content-text::after { background: var(--accent-task); }
+.content-block.quiz .content-text::after { background: var(--accent-quiz); }
+
+/* Mobiel: icon is 60px breed, corrigeer linker uitstulping */
+@media (max-width: 768px) {
+  .content-block.task .content-text > strong:first-child::before,
+  .content-block.quiz .content-text > strong:first-child::before {
+    left: calc(-60px - 18px); /* 60px icon + 18px content padding op mobiel */
+  }
+  .content-block.task .content-text > strong:first-child,
+  .content-block.quiz .content-text > strong:first-child {
+    margin: -18px -18px 10px;
+    padding: 0 14px;
+    height: 60px; /* hoogte banner gelijk aan linkerkolom op mobiel (60px) */
+  }
+}
+
+/* Zorg dat de icon-kolom altijd boven de titelbanner ligt (volledig zichtbaar) */
+.content-block.task .icon,
+.content-block.quiz .icon {
+  position: relative;
+  z-index: 2;
+}
 
 /* Uniform accent stijl voor andere blokken (zelfde als quiz) */
 /* Opdracht/Task - groen accent */
@@ -1275,7 +1325,7 @@ a:focus {
   background-color: var(--bg-secondary);
   background-image: none;
   color: var(--text-primary) !important;
-  border-left: 4px solid var(--accent-task);
+  /* Accentlijn via ::after i.p.v. border voor betere layering met banner */
 }
 /* Overlay voor opdracht/task */
 .content-block:has(.icon img[src*='opdracht']) .content-text::before,
@@ -1296,7 +1346,7 @@ a:focus {
   background-color: var(--bg-secondary);
   background-image: none;
   color: var(--text-primary);
-  border-left: 4px solid var(--accent-trivia);
+  border-left: 6px solid var(--accent-trivia);
 }
 /* Overlay voor trivia */
 .content-block:has(.icon img[src*='boekenwurm']) .content-text::before,
@@ -1310,7 +1360,7 @@ a:focus {
   background-color: var(--bg-secondary);
   background-image: none;
   color: var(--text-primary);
-  border-left: 4px solid var(--accent-info);
+  border-left: 6px solid var(--accent-info);
 }
 /* Overlay voor info */
 .content-block:has(.icon img[src*='informatie']) .content-text::before,
@@ -1324,7 +1374,7 @@ a:focus {
   background-color: var(--bg-secondary);
   background-image: none;
   color: var(--text-primary);
-  border-left: 4px solid var(--accent-important);
+  border-left: 6px solid var(--accent-important);
 }
 /* Overlay voor important */
 .content-block:has(.icon img[src*='uitroepteken']) .content-text::before,
@@ -1338,7 +1388,7 @@ a:focus {
   background-color: var(--bg-secondary);
   background-image: none;
   color: var(--text-primary);
-  border-left: 4px solid var(--accent-conclusion);
+  border-left: 6px solid var(--accent-conclusion);
 }
 /* Overlay voor conclusion */
 .content-block:has(.icon img[src*='conclusie']) .content-text::before,
@@ -1427,32 +1477,7 @@ a:focus {
   color: var(--link-external-hover-color) !important;
 }
 
-/* Ook algemene link styling toevoegen */
-a {
-  color: var(--link-color) !important;
-  font-weight: inherit; /* zelfde als body-tekst */
-}
-
-a:hover {
-  color: var(--link-hover-color) !important;
-}
-
-a:visited {
-  color: var(--link-color) !important;
-}
-
-/* Externe links globale override (na algemene regels) */
-a[href^="http://"],
-a[href^="https://"]
-{
-  color: var(--link-external-color) !important;
-}
-
-a[href^="http://"]:hover,
-a[href^="https://"]:hover
-{
-  color: var(--link-external-hover-color) !important;
-}
+ 
 
 /* Geen border-color meer nodig - rustigere layout */
 
@@ -1600,6 +1625,7 @@ a[href^="https://"]:hover
   gap: 15px;
   font-size: 0.95rem;
   color: var(--text-secondary);
+  padding: 0px 20px 10px 20px;
 }
 
 .metadata-item {
@@ -1825,17 +1851,35 @@ a[href^="https://"]:hover
   z-index: 1000;
   /* Start off-screen */
   transform: translateX(-100%);
-  transition: transform 0.8s ease-in-out;
+  opacity: 0;
+  transition: transform 0.8s ease-in-out, opacity 0.25s ease;
 }
 
 /* Animate sidebar in on page load */
 .simple-sidebar.loaded {
+  transform: translateX(-100%);
+}
+
+/* Onzichtbare hoverzone aan de linkerkant om sidebar te tonen */
+.simple-sidebar::before {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100vh;
+  background: transparent;
+  z-index: 1002;
+}
+
+.simple-sidebar:hover {
   transform: translateX(0);
+  opacity: 1;
 }
 
 .sidebar-toggle-btn {
   position: fixed;
-  left: -24px; /* Op de linkerkant van het scherm */
+  left: -46px; /* volledig uit beeld op 52px knopbreedte (6px marge) */
   top: 152px; /* 16px onder theme (84 + 52 + 16 = 152) */
   transform: translateY(0);
   transform-origin: right center;
@@ -1860,7 +1904,7 @@ a[href^="https://"]:hover
 }
 
 /* Inline img voor legenda-knop tonen */
-.sidebar-toggle-btn img { display: block; }
+ 
 
 .sidebar-toggle-btn:hover {
   background-color: var(--gray-800); /* Alleen kleur, geen reset bg-image */
@@ -1904,17 +1948,30 @@ a[href^="https://"]:hover
   z-index: 1000;
   /* Start off-screen */
   transform: translateX(-100%);
-  transition: transform 0.8s ease-in-out;
+  opacity: 0;
+  transition: transform 0.8s ease-in-out, opacity 0.25s ease;
 }
 
 /* Animate top sidebar in on page load */
 .top-sidebar.loaded {
-  transform: translateX(0);
+  transform: translateX(-100%);
 }
+
+.top-sidebar::before {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100vh;
+  background: transparent;
+  z-index: 1002;
+}
+.top-sidebar:hover { transform: translateX(0); opacity: 1; }
 
 .top-toggle-btn {
   position: fixed;
-  left: -24px; /* Op de linkerkant van het scherm */
+  left: -46px; /* volledig uit beeld */
   top: 220px; /* Onder legenda met 16px ritme */
   transform: translateY(0);
   transform-origin: right center;
@@ -1945,7 +2002,7 @@ a[href^="https://"]:hover
 }
 
 /* Verberg inline img zodat background-icoon zichtbaar is */
-.top-toggle-btn img { display: block; }
+ 
 
 /* Derde sidebar - naar home knop */
 .home-sidebar {
@@ -1956,17 +2013,30 @@ a[href^="https://"]:hover
   z-index: 1000;
   /* Start off-screen */
   transform: translateX(-100%);
-  transition: transform 0.8s ease-in-out;
+  opacity: 0;
+  transition: transform 0.8s ease-in-out, opacity 0.25s ease;
 }
 
 /* Animate home sidebar in on page load */
 .home-sidebar.loaded {
-  transform: translateX(0);
+  transform: translateX(-100%);
 }
+
+.home-sidebar::before {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100vh;
+  background: transparent;
+  z-index: 1002;
+}
+.home-sidebar:hover { transform: translateX(0); opacity: 1; }
 
 .home-toggle-btn {
   position: fixed;
-  left: -24px; /* Op de linkerkant van het scherm */
+  left: -46px; /* volledig uit beeld */
   top: 16px; /* Uitgelijnd met ritme */
   transform: translateY(0);
   transform-origin: right center;
@@ -1994,6 +2064,68 @@ a[href^="https://"]:hover
   background: #654321; /* Donkerder bruin voor home sidebar */
   transform: translateY(0) scale(1.08);
   opacity: 1;
+}
+
+/* Theme Toggle Sidebar */
+.theme-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  z-index: 1000;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform 0.8s ease-in-out, opacity 0.25s ease;
+}
+
+.theme-sidebar.loaded {
+  transform: translateX(-100%);
+}
+
+.theme-sidebar::before {
+  content: '';
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 100vh;
+  background: transparent;
+  z-index: 1002;
+}
+.theme-sidebar:hover { transform: translateX(0); opacity: 1; }
+
+.theme-toggle-btn {
+  position: fixed;
+  left: -46px; /* volledig uit beeld */
+  top: 84px; /* 16px onder home (16 + 52 + 16 = 84) */
+  transform: translateY(0);
+  transform-origin: right center;
+  width: 52px;
+  height: 52px;
+  background: var(--gray-600);
+  color: var(--text-primary);
+  border-radius: 0 26px 26px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 24px;
+  border: none;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #4a5568; /* Alleen kleur verbeteren, icon blijft */
+  transform: translateY(0) scale(1.1) translateX(5px);
+  opacity: 1;
+}
+
+/* Nudge theme icon slightly to the right for visual centering */
+.theme-toggle-btn #theme-icon {
+  display: inline-block;
+  transform: translateX(4px);
 }
 
 .sidebar-header {
@@ -2494,7 +2626,7 @@ a[href^="https://"]:hover
 [data-theme='dark'] .quiz .content-text blockquote {
   background: var(--bg-accent);
   color: var(--text-secondary);
-  border-left: 4px solid var(--gray-600);
+  border-left: 6px solid var(--gray-600);
 }
 
 /* Dark mode voor details/summary in trivia blokken */
@@ -2790,19 +2922,14 @@ a[href^="https://"]:hover
   bottom: 0;
   height: 100vh;
   z-index: 1000;
-  transform: translateX(-100%); /* Start off-screen links */
-  transition: transform 0.8s ease-in-out;
-}
-
-.nav-up-sidebar.loaded,
-.nav-down-sidebar.loaded {
-  transform: translateX(0);
+  opacity: 0;
+  transition: transform 0.8s ease-in-out, opacity 0.25s ease;
 }
 
 .nav-up-toggle-btn,
 .nav-down-toggle-btn {
   position: fixed;
-  left: -24px; /* Op de linkerkant van het scherm */
+  left: -46px; /* volledig uit beeld */
   transform: translateY(0);
   transform-origin: right center;
   width: 52px;
@@ -2821,9 +2948,35 @@ a[href^="https://"]:hover
   opacity: 0.7;
 }
 
+/* Forceer nav-down links uitlijning en vaste positie */
+/* Hover-to-reveal behavior */
+.simple-sidebar:hover { transform: translateX(0); }
+.top-sidebar:hover { transform: translateX(0); }
+.home-sidebar:hover { transform: translateX(0); }
+.theme-sidebar:hover { transform: translateX(0); }
+.nav-up-sidebar:hover { transform: translateX(0); opacity: 1; }
+.nav-down-sidebar:hover { transform: translateX(0); opacity: 1; }
+
+.simple-sidebar:hover .sidebar-toggle-btn,
+.sidebar-toggle-btn:hover { left: -24px; }
+.top-sidebar:hover .top-toggle-btn,
+.top-toggle-btn:hover { left: -24px; }
+.home-sidebar:hover .home-toggle-btn,
+.home-toggle-btn:hover { left: -24px; }
+.theme-sidebar:hover .theme-toggle-btn,
+.theme-toggle-btn:hover { left: -24px; }
+.nav-up-sidebar:hover .nav-up-toggle-btn,
+.nav-up-toggle-btn:hover { left: -24px; }
+.nav-down-sidebar:hover .nav-down-toggle-btn,
+.nav-down-toggle-btn:hover { left: -24px; }
+
+/* Nav omhoog/omlaag knoppen (gebruik inline img, geen background) */
+.nav-up-toggle-btn { background-image: none; }
+.nav-down-toggle-btn { background-image: none; transform: none; }
+
 /* Positionering onderaan het scherm */
-.nav-up-toggle-btn { top: 288px; }
-.nav-down-toggle-btn { top: 356px; } /* 52px knop + 16px spacing vanaf nav-up */
+.nav-down-toggle-btn { bottom: 16px; top: auto; }
+.nav-up-toggle-btn { bottom: 84px; top: auto; } /* 52px knop + 16px spacing boven nav-down */
 
 .nav-up-toggle-btn:hover,
 .nav-down-toggle-btn:hover {
@@ -2832,12 +2985,8 @@ a[href^="https://"]:hover
   opacity: 1;
 }
 
-/* Iconen wit maken indien nodig (optioneel, afhankelijk van asset) */
-.nav-up-toggle-btn img,
-.nav-down-toggle-btn img { filter: none !important; }
-
 /* Home knop icoon zichtbaar - inline img weer aan */
-.home-toggle-btn img { display: block; }
+ 
 
 /* Skip link for accessibility */
 .skip-link {
@@ -2894,9 +3043,6 @@ a[href^="https://"]:hover
 .rotate-180 {
   transform: rotate(180deg);
 }
-.text-center {
-  text-align: center;
-}
 .diagram-img {
   max-width: 70%;
   height: auto;
@@ -2912,14 +3058,7 @@ a[href^="https://"]:hover
    ======================================== */
 /* Verwijderd: laat background-image werken */
 
-.home-toggle-btn img,
-.sidebar-toggle-btn img,
-.top-toggle-btn img {
-  display: block !important;
-  width: 28px;
-  height: 28px;
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.35));
-}
+ 
 
 .nav-up-toggle-btn img,
 .nav-down-toggle-btn img {
@@ -2944,8 +3083,8 @@ a[href^="https://"]:hover
 .sidebar-toggle-btn img,
 .top-toggle-btn img {
   display: block !important;
-  width: 30px !important;
-  height: 30px !important;
+  width: 28px !important;
+  height: 28px !important;
 }
 
 /* ========================================
@@ -2981,7 +3120,7 @@ a[href^="https://"]:hover
   padding: 15px;
   background-color: #f8f9fa;
   border-radius: 4px;
-  border-left: 4px solid transparent;
+  border-left: 6px solid transparent;
 }
 .callout-blue {
   border-left-color: #007bff;
@@ -3002,17 +3141,7 @@ a[href^="https://"]:hover
   text-decoration: underline;
 }
 
-/* Fellere, leesbare link kleuren */
-.content-text a {
-  color: var(--link-color) !important;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.content-text a:hover {
-  text-decoration: underline;
-  color: var(--link-hover-color) !important;
-}
+ 
 
 /* Geen border-color meer nodig - rustigere layout */
 
