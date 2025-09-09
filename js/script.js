@@ -274,11 +274,11 @@ document.addEventListener('DOMContentLoaded', function () {
   animateSidebars();
   updateLastModifiedDate();
 
-  // Sidebar legenda toggle
-  const legendToggleBtn = document.querySelector('.sidebar-toggle-btn');
-  if (legendToggleBtn) {
-    legendToggleBtn.addEventListener('click', toggleSimpleSidebar);
-  }
+  // Sidebar legenda toggle (meerdere knoppen ondersteunen)
+  const legendToggleBtns = document.querySelectorAll('.sidebar-toggle-btn');
+  legendToggleBtns.forEach((btn) => {
+    btn.addEventListener('click', toggleSimpleSidebar);
+  });
 
   const legendCloseBtn = document.querySelector('.close-sidebar-btn');
   if (legendCloseBtn) {

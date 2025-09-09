@@ -40,20 +40,6 @@
     <a class="skip-link" href="#main">Direct naar inhoud</a>
     <!-- sidebar legenda -->
     <div class="simple-sidebar" id="simpleSidebar">
-      <button
-        type="button"
-        class="sidebar-toggle-btn"
-        aria-label="Toon of verberg legenda"
-      >
-        <img
-          src="../../img/icons/legende.png"
-          alt="Legenda"
-          width="40"
-          height="40"
-          loading="lazy"
-          decoding="async"
-        />
-      </button>
       <div class="sidebar-content">
         <div class="sidebar-header">
           <h3>Legenda van tekstblokken</h3>
@@ -122,91 +108,34 @@
         </div>
       </div>
 
-      
+      <!-- Gecombineerde actie-knoppen -->
+      <div class="sidebar-actions" aria-label="Snelle acties">
+        <button type="button" class="sidebar-toggle-btn" aria-label="Toon of verberg legenda">
+          <img src="../../img/icons/legende.png" alt="Legenda" width="40" height="40" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="home-toggle-btn" aria-label="Ga naar home">
+          <img src="../../img/icons/home.png" alt="" aria-hidden="true" width="40" height="40" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="top-toggle-btn" aria-label="Ga naar boven">
+          <img src="../../img/icons/naar-boven.png" alt="" aria-hidden="true" width="40" height="40" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="theme-toggle-btn" aria-label="Wissel thema" aria-pressed="false">
+          <span id="theme-icon">🌙</span>
+        </button>
+        <button type="button" class="nav-up-toggle-btn" aria-label="Ga naar vorige blok">
+          <img src="../../img/icons/naar-boven.png" alt="" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="nav-down-toggle-btn" aria-label="Ga naar volgende blok">
+          <img src="../../img/icons/naar-boven.png" class="rotate-180" alt="" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+        </button>
+      </div>
 
       
+
+      
     </div>
 
-    <!-- sidebar - naar begin van pagina -->
-    <div class="top-sidebar" id="topSidebar">
-      <button type="button" class="top-toggle-btn" aria-label="Ga naar boven">
-        <img
-          src="../../img/icons/naar-boven.png"
-          alt=""
-          aria-hidden="true"
-          width="40"
-          height="40"
-          loading="lazy"
-          decoding="async"
-        />
-      </button>
-    </div>
-
-    <!-- sidebar - naar index.html -->
-    <div class="home-sidebar loaded" id="homeSidebar">
-      <button type="button" class="home-toggle-btn" aria-label="Ga naar home">
-        <img
-          src="../../img/icons/home.png"
-          alt=""
-          aria-hidden="true"
-          width="40"
-          height="40"
-          loading="lazy"
-          decoding="async"
-        />
-      </button>
-    </div>
-
-    <!-- Theme Toggle Sidebar -->
-    <div class="theme-sidebar" id="themeSidebar">
-      <button
-        type="button"
-        class="theme-toggle-btn"
-        aria-label="Wissel thema"
-        aria-pressed="false"
-      >
-        <span id="theme-icon">🌙</span>
-      </button>
-    </div>
-
-    <!-- sidebar - nav omhoog -->
-    <div class="nav-up-sidebar" id="navUpSidebar">
-      <button
-        type="button"
-        class="nav-up-toggle-btn"
-        aria-label="Ga naar vorige blok"
-      >
-        <img
-          src="../../img/icons/naar-boven.png"
-          alt=""
-          aria-hidden="true"
-          width="40"
-          height="40"
-          loading="lazy"
-          decoding="async"
-        />
-      </button>
-    </div>
-
-    <!-- sidebar - nav omlaag -->
-    <div class="nav-down-sidebar" id="navDownSidebar">
-      <button
-        type="button"
-        class="nav-down-toggle-btn"
-        aria-label="Ga naar volgende blok"
-      >
-        <img
-          src="../../img/icons/naar-boven.png"
-          alt=""
-          aria-hidden="true"
-          width="32"
-          height="32"
-          class="rotate-180"
-          loading="lazy"
-          decoding="async"
-        />
-      </button>
-    </div>
+    <!-- oude losse sidebars verwijderd in voordeel van gecombineerde actions -->
 
     <!-- inhoud -->
     <main id="main" class="container">
@@ -254,16 +183,16 @@
           />
         </div>
         <div class="content-text">
-          <strong>Opdracht 1: Venster verplaatsen</strong><br />
+          <strong>Opdracht 1: Venster verplaatsen</strong><br/>
           Klik op de knop om het venster naar de linkerkant van het scherm te
-          verplaatsen. <br />
+          verplaatsen. <br/>
           <div class="text-center mt-4">
             <button id="btn-move-left" class="btn btn-primary">
               <span>Venster naar links verplaatsen</span>
             </button>
           </div>
-          <br />
-          Mocht dit niet lukken, gebruik dan de volgende sneltoetsen:<br /><br />
+          <br/>
+          Mocht dit niet lukken, gebruik dan de volgende sneltoetsen:<br/><br/>
           <div class="hotkey-panel stacked">
             <div class="hotkey-col fixed">
               <!-- Eerste kolom: vaste breedte van 200px -->
@@ -279,7 +208,7 @@
               <code class="hotkey-code">Windows-toets + ←</code>
             </div>
             <div class="hotkey-col flex">
-              <br />
+              <br/>
               <!-- Tweede kolom: neemt resterende ruimte -->
               <img
                 src="../../img/apple-logo.png"
@@ -297,10 +226,10 @@
                   Hierna kun je het venster verkleinen en aan de linkerkant van
                   het scherm zetten.
                 </li>
-              </ul><br />
+              </ul><br/>
             </div>
           </div>
-          <br />
+          <br/>
         </div>
       </div>
 
@@ -316,8 +245,8 @@
           />
         </div>
         <div class="content-text">
-          <strong>Opdracht 2: chatbot openen</strong><br />
-          Klik op de knop om de chatbot <em>Lumo</em> te openen.<br />
+          <strong>Opdracht 2: chatbot openen</strong><br/>
+          Klik op de knop om de chatbot <em>Lumo</em> te openen.<br/>
 
           <div class="text-center mt-4">
             <button id="btn-open-lumo" class="btn btn-primary">
@@ -333,7 +262,7 @@
               <span><em>Lumo</em> openen</span>
             </button>
           </div>
-          <br />
+          <br/>
         </div>
       </div>
 
@@ -359,23 +288,23 @@
           <a href="../../naslag/begrippen.html#chatgpt">ChatGPT</a>, van
           <a href="../../naslag/begrippen.html#openai">OpenAI</a>, was een van
           de eerste moderne AI-chatbots die ook in staat was om volledig nieuwe teksten en antwoorden te bedenken en formuleren.
-          <br /><br />
+          <br/><br/>
           <h3>De populariteit van ChatGPT</h3>
           ChatGPT werd sinds de release van het GPT-3.5-model op 30 november 2022 steeds bekender en heeft de populariteit van moderne AI-chatbots enorm vergroot. 
-          In januari 2023 was ChatGPT uitgegroeid tot de snelst groeiende consumentensoftware-applicatie in de geschiedenis, met meer dan 100 miljoen gebruikers in slechts twee maanden. <br />
+          In januari 2023 was ChatGPT uitgegroeid tot de snelst groeiende consumentensoftware-applicatie in de geschiedenis, met meer dan 100 miljoen gebruikers in slechts twee maanden. <br/>
           Sindsdien hebben meerdere toonaangevende modellen de
-          mogelijkheden verder uitgebreid.<br /><br />
+          mogelijkheden verder uitgebreid.<br/><br/>
 
           <h3>Een veelvoorkomende verwarring</h3>
           Door de populariteit van ChatGPT denken veel mensen bij AI meteen aan deze chatbot. Maar er zijn veel meer AI-chatbots dan alleen ChatGPT. En achter deze chatbots schuilt een wereld van verschillende wetenschappelijke vakgebieden en technologieën, die samenkomen onder de noemer AI.
-          <br /><br />
+          <br/><br/>
           <img
             src="../../img/meer-tussen-ai-en-chatgpt.jpg"
             alt="Meer tussen AI en ChatGPT"
           />
-          <br />
+          <br/>
           <em>"Meer tussen AI en ChatGPT" gegenereerd met Stable Diffusion.</em>
-          <br /><br />
+          <br/><br/>
         </div>
       </div>
 
@@ -396,10 +325,10 @@
           <h2 id="geschiedenis">
             De geschiedenis van chatbots bekeken vanuit AI
           </h2>
-          <br />
-          Chatbots zijn in de loop der tijd sterk veranderd, vooral door de vooruitgang in AI.<br />
+          <br/>
+          Chatbots zijn in de loop der tijd sterk veranderd, vooral door de vooruitgang in AI.<br/>
           Door te kijken naar de belangrijkste AI-ontwikkelingen zie je hoe verschillende typen chatbots zijn ontstaan. In onderstaande tabel vind je een overzicht van deze ontwikkeling.
-          <br /><br />
+          <br/><br/>
           <div class="table-container">
             <table>
               <caption>
@@ -427,10 +356,10 @@
               </tbody>
             </table>
           </div>
-          <br />
-            Bij de eerste chatbots was nog geen sprake van AI als je dit bekijkt vanuit de huidige AI-standaarden. Deze chatbots konden alleen met vooraf geprogrameerde regels en vaste patronen antwoorden. <br />
+          <br/>
+            Bij de eerste chatbots was nog geen sprake van AI als je dit bekijkt vanuit de huidige AI-standaarden. Deze chatbots konden alleen met vooraf geprogrameerde regels en vaste patronen antwoorden. <br/>
             Door nieuwe ontwikkelingen in AI werden deze chatbots steeds beter in staat om antwoorden te geven op vragen die niet vooraf zijn geprogrammeerd. Dit was de opkomst van de klassieke AI-chatbots.   
-            <br /><br />
+            <br/><br/>
           </p>
         </div>
       </div>
@@ -447,8 +376,8 @@
           />
         </div>
         <div class="content-text">
-          <strong>Quizvraag</strong><br />
-          Welk type chatbot denk je dat <em>Lumo</em> is?<br /><br />
+          <strong>Quizvraag</strong><br/>
+          Welk type chatbot denk je dat <em>Lumo</em> is?<br/><br/>
 
           <em>Klik op een antwoord om de uitleg te zien.</em>
           <div class="quiz-options" role="group" aria-label="Antwoordopties">
@@ -469,7 +398,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet helemaal!</strong><br />
+                <strong>Nog niet helemaal!</strong><br/>
                 Regelgebaseerde chatbots werken met vooraf geprogrammeerde regels en vaste patronen. Lumo doet meer dan dat.
               </div>
             </div>
@@ -491,7 +420,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet helemaal!</strong><br />
+                <strong>Nog niet helemaal!</strong><br/>
                 Klassieke AI-chatbots herkennen vooral patronen uit data maar zijn nog niet zo goed om nieuwe antwoorden te geven. Lumo kan dit wel.
               </div>
             </div>
@@ -513,12 +442,12 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">✅</span>
-                <strong>Goed beredeneerd!</strong><br />
+                <strong>Goed beredeneerd!</strong><br/>
                 Lumo is inderdaad een moderne AI‑chatbot die nieuwe antwoorden kan geven op vragen die nog niet vooraf zijn geprogrammeerd.
               </div>
             </div>
             </div>
-            <br />
+            <br/>
           </div>
         </div>
       </div>
@@ -539,7 +468,7 @@
           We hebben het beestje bij zijn verschillende typen genoemd. Maar dan
           is nog niet duidelijk wat het verschil maakt tussen bijvoorbeeld
           ChatGPT en andere chatbots. Om dat helder te krijgen, gaan we een
-          aantal vragen beantwoorden:<br />
+          aantal vragen beantwoorden:<br/>
           <ol>
             <li>Wat is een chatbot?</li>
             <li>Hoe werkt een chatbot in het algemeen?</li>
@@ -547,7 +476,7 @@
             <li>Waar vindt het "denkwerk" plaats?</li>
           </ol>
           Zo wordt duidelijker wat je met welke chatbot kunt doen en waarmee je
-          rekening moet houden.<br /><br />
+          rekening moet houden.<br/><br/>
         </div>
       </div>
 
@@ -573,11 +502,11 @@
             target="_blank"
             rel="noopener noreferrer"
             >(IBM)</a
-          >.<br />
+          >.<br/>
           Deze gesprekken worden meestal via tekst gevoerd maar spraak is vaak
-          ook mogelijk.<br /><br />
+          ook mogelijk.<br/><br/>
 
-          <strong>Conversational user interface</strong><br />
+          <strong>Conversational user interface</strong><br/>
           De plek waar de communicatie tussen mens en machine plaatsvindt wordt
           de
           <a href="../../naslag/begrippen.html#user-interface"
@@ -608,9 +537,9 @@
           <a href="../../naslag/begrippen.html#conversational-user-interface"
             ><em>conversational user interface (CUI)</em></a
           >
-          genoemd.<br />
+          genoemd.<br/>
           De communicatie tussen mens en machine wordt hierdoor toegankelijker
-          voor meer mensen. <br /><br />
+          voor meer mensen. <br/><br/>
           <div class="text-center">
             <img
               src="../../img/user-interface.png"
@@ -618,7 +547,7 @@
               class="img-350"
             />  
           </div>
-          <br />
+          <br/>
         </div>
       </div>
 
@@ -644,7 +573,7 @@
             De ontwikkeling van user interfaces gaat onverminderd door. Denk aan
             immersive interfaces als virtual reality, augmented reality en mixed
             reality, maar ook aan brain-computer interfaces die een directe
-            verbinding tussen ons brein en de computer mogelijk maken.<br />
+            verbinding tussen ons brein en de computer mogelijk maken.<br/>
             In het artikel
             <a
               href="https://www.vox.com/future-perfect/400146/meta-brain-reading-neurotech-privacy"
@@ -654,14 +583,14 @@
             >
             wordt uitgelegd hoe snel deze technologie zich ontwikkelt. Tegelijk
             waarschuwt het artikel voor grote ethische vragen en pleit het voor
-            duidelijke regels om onze cognitieve vrijheid te beschermen.<br />
+            duidelijke regels om onze cognitieve vrijheid te beschermen.<br/>
             Het laat zien hoe de grens tussen mens en machine steeds verder
             vervaagt. Het is niet alleen de mens die meer toegang kan krijgen
             tot de machine, maar ook de machine (en zijn ontwikkelaars) die meer
             toegang kan krijgen tot de mens.
           </details>
         </div>  
-        <br />
+        <br/>
       </div>
 
       <div class="content-block info">
@@ -677,7 +606,7 @@
         </div>
         <div class="content-text">
           <h3 id="vraag-2">Vraag 2. Hoe werkt een chatbot in het algemeen?</h3>
-          Chatbots werken in de basis volgens het volgende proces:<br />
+          Chatbots werken in de basis volgens het volgende proces:<br/>
 
           <div class="text-center mt-4">
             <img
@@ -685,27 +614,27 @@
               alt="Input-Processing-Output diagram"
               class="diagram-img img-elevated"
             />
-            <br />
+            <br/>
           </div>
 
           <ul>
             <li>
               <strong>Input:</strong> Jij stelt een vraag of geeft een opdracht.
-              Dit kan via tekst of spraak.<br />
+              Dit kan via tekst of spraak.<br/>
             </li>
 
             <li>
               <strong>Processing:</strong> De input wordt vervolgens verwerkt.
               Er zijn verschillende methoden waarop de input kan worden
-              verwerkt.<br />
+              verwerkt.<br/>
             </li>
 
             <li>
               <strong>Output:</strong> De chatbot geeft een antwoord terug in de
-              vorm van tekst of spraak.<br />
+              vorm van tekst of spraak.<br/>
             </li>
           </ul>
-          <br />
+          <br/>
         </div>
       </div>
 
@@ -721,8 +650,8 @@
           />
         </div>
         <div class="content-text">
-          <strong>Quizvraag</strong><br />
-          Hoe wordt de interface van een moderne chatbot genoemd?<br /><br />
+          <strong>Quizvraag</strong><br/>
+          Hoe wordt de interface van een moderne chatbot genoemd?<br/><br/>
 
           <em>Klik op een antwoord om te zien of het correct is!</em>
           <div class="quiz-options" role="group" aria-label="Antwoordopties">
@@ -743,7 +672,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">✅</span>
-                <strong>Correct!</strong><br />
+                <strong>Correct!</strong><br/>
                 De interface van chatbots wordt inderdaad een conversational
                 user interface genoemd, omdat je via natuurlijke taal
                 communiceert.
@@ -767,7 +696,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 Er is inderdaad wel een grafische interface, maar om de chatbot
                 te gebruiken communiceer je via natuurlijke taal, niet via
                 knoppen en vensters.
@@ -791,13 +720,13 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 Een command line interface gebruikt commando's, niet natuurlijke
                 taal zoals bij chatbots.
               </div>
             </div>
           </div>
-          <br />
+          <br/>
         </div>
       </div>
 
@@ -813,14 +742,14 @@
           />
         </div>
         <div class="content-text">
-          <strong>Opdracht 3: Stel jezelf voor</strong><br />
+          <strong>Opdracht 3: Stel jezelf voor</strong><br/>
           Geef de chatbot input door onder in het tekstvenster jezelf voor te
           stellen met de naam van een bekende persoon.
-          <br />
+          <br/>
           <ul>
             <li>Grote kans dat de chatbot vriendelijk reageert.</li>
           </ul>
-          <br />
+          <br/>
         </div>
       </div>
 
@@ -836,13 +765,13 @@
           />
         </div>
         <div class="content-text">
-          <strong>Prompt</strong><br />
+          <strong>Prompt</strong><br/>
           De input die je aan de chatbot geeft, heet een
           <em><a href="../../naslag/begrippen.html#prompt">prompt</a></em
           >. Zo'n prompt kan bijvoorbeeld een vraag, opdracht of instructie
-          zijn.<br />
-          <br />
-          Wanneer iemand vindt dat het antwoord van de chatbot niet klopt, kan dat ook komen doordat de prompt niet duidelijk of specifiek genoeg was. Het is daarom belangrijk om te leren hoe je een goede prompt formuleert. Dit noem je prompt-engineering.<br /><br />
+          zijn.<br/>
+          <br/>
+          Wanneer iemand vindt dat het antwoord van de chatbot niet klopt, kan dat ook komen doordat de prompt niet duidelijk of specifiek genoeg was. Het is daarom belangrijk om te leren hoe je een goede prompt formuleert. Dit noem je prompt-engineering.<br/><br/>
           <a href="../../naslag/begrippen.html#prompt-engineering"
             >Prompt-engineering</a
           >
@@ -853,9 +782,9 @@
             target="_blank"
             rel="noopener noreferrer"
             >(McKinsey)</a
-          >.<br /><br />
+          >.<br/><br/>
           In een ander artikel zal verder worden ingegaan op prompt-engineering.  
-          <br /><br />
+          <br/><br/>
         </div>  
       </div>
 
@@ -875,13 +804,13 @@
             Vraag 3. Hoe is een chatbot in staat om antwoorden te geven?
           </h2>
           Chatbots zijn door verschillende methoden in staat om antwoorden te
-          geven. In grote lijnen kunnen we twee methoden onderscheiden:<br /><br />
+          geven. In grote lijnen kunnen we twee methoden onderscheiden:<br/><br/>
 
           <table style="width: 100%; border-collapse: collapse; margin: 20px 0">
             <tbody>
               <tr>
                 <td style="padding: 15px; vertical-align: top">
-                  <strong>Regel-gebaseerd:</strong><br />
+                  <strong>Regel-gebaseerd:</strong><br/>
                   De antwoorden zijn vooraf vastgelegd in regels.
                 </td>
                 <td style="padding: 15px; vertical-align: top; width: 100px">
@@ -897,12 +826,12 @@
           </table>
           <ul>
             <li>
-              <strong>Voorbeeld weersituatie:</strong><br />
+              <strong>Voorbeeld weersituatie:</strong><br/>
               Vooraf is het volgende geprogrammeerd: "Als de lucht 90 tot 100
               procent is bedekt met donkere wolken en de luchtdruk daalt naar
               1005 hPa en de luchtvochtigheid stijgt tot 80 à 95 procent, geef
               dan aan dat er 80% kans op regen is."
-              <br /><br />
+              <br/><br/>
               De chatbot volgt deze regels stap voor stap. Alles staat vast:
               dezelfde input levert altijd hetzelfde antwoord op. Dit wordt
               <em
@@ -910,7 +839,7 @@
                   >deterministisch</a
                 ></em
               >
-              genoemd. <br /><br />
+              genoemd. <br/><br/>
               Bij de eerste chatbots werd alleen gebruik gemaakt van deze
               methode.
             </li>
@@ -919,7 +848,7 @@
             <tbody>
               <tr>
                 <td style="padding: 15px; vertical-align: top">
-                  <strong>Data-gedreven:</strong><br />
+                  <strong>Data-gedreven:</strong><br/>
                   In plaats van vooraf bedachte regels leert het systeem van
                   data.
                 </td>
@@ -937,27 +866,27 @@
 
           <ul>
             <li>
-              <strong>Voorbeeld weersituatie:</strong><br />
+              <strong>Voorbeeld weersituatie:</strong><br/>
               Uit de data blijkt: in 4 van de 5 gevallen regent het wanneer de
               lucht 90 tot 100 procent is bedekt met donkere wolken, de
               luchtdruk daalt naar rond de 995 tot 1005 hPa en de
-              luchtvochtigheid stijgt tot 80 à 95 procent.<br />
+              luchtvochtigheid stijgt tot 80 à 95 procent.<br/>
               Op basis van dit patroon wordt "voorspeld" dat er 80% kans is op
-              regen.<br />
+              regen.<br/>
               <em style="color: #666; font-size: 0.95em">
                 Noot: Het woord "voorspeld" is hier wat misleidend. Het AI-model
                 doet geen echte voorspelling van de toekomst, maar berekent op
                 basis van patronen in de data hoe groot de kans is dat iets
                 gebeurt.
               </em>
-              <br /><br />
+              <br/><br/>
               Door het herkennen van patronen kan worden aangegeven hoe groot de
               kans is. Dit noemt men
               <em
                 ><a href="../../naslag/begrippen.html#probabilistisch"
                   >probabilistisch</a
                 ></em
-              >. <br /><br />Omdat de ouput afhankelijk is van de data, is deze niet altijd hetzelfde. De chatbot kan dus verschillende antwoorden geven op dezelfde vraag. <br /><br />
+              >. <br/><br/>Omdat de ouput afhankelijk is van de data, is deze niet altijd hetzelfde. De chatbot kan dus verschillende antwoorden geven op dezelfde vraag. <br/><br/>
               De toepassing van deze methode luidde de opkomst van de
               (klassieke) AI-chatbots in.
             </li>
@@ -965,8 +894,8 @@
 
           Er zijn nog allerlei andere methoden, maar om het helder te houden,
           laten we het voorlopig bij deze twee.
-          <br />
-          <br />
+          <br/>
+          <br/>
         </div>
       </div>
 
@@ -982,9 +911,9 @@
           />
         </div>
         <div class="content-text">
-          <strong>Voorbeelden van data-gedreven toepassingen</strong><br />
+          <strong>Voorbeelden van data-gedreven toepassingen</strong><br/>
           Hieronder enkele concrete voorbeelden van data-gedreven systemen die
-          je dagelijks tegenkomt:<br /><br />
+          je dagelijks tegenkomt:<br/><br/>
 
           <details>
             <summary>
@@ -1041,10 +970,10 @@
           />
         </div>
         <div class="content-text">
-          <strong>Quizvraag</strong><br />
+          <strong>Quizvraag</strong><br/>
           Welke van de volgende chatbots lijken een
           <strong>data-gedreven</strong> methode te gebruiken? Selecteer de
-          juiste 2 voorbeelden:<br /><br />
+          juiste 2 voorbeelden:<br/><br/>
 
           <em>Twee antwoorden zijn correct.</em>
           <div class="quiz-options" role="group" aria-label="Antwoordopties">
@@ -1066,7 +995,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">✅</span>
-                <strong>Correct!</strong><br />
+                <strong>Correct!</strong><br/>
                 Variatie in output wijst op een data-gedreven aanpak. De chatbot
                 leert van patronen in grote hoeveelheden data en kan daardoor
                 verschillende formuleringen gebruiken. Deze variatie ontstaat
@@ -1092,7 +1021,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 Altijd hetzelfde antwoord wijst op regel-gebaseerde aanpak. 
               </div>
             </div>
@@ -1115,7 +1044,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">✅</span>
-                <strong>Correct!</strong><br />
+                <strong>Correct!</strong><br/>
                 Output met variatie is kenmerkend voor data-gedreven systemen
                 die patronen herkennen. Deze variatie ontstaat doordat het
                 AI-model bij elke vraag opnieuw een inschatting maakt op basis
@@ -1141,7 +1070,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 Een chatbot die geen patronen kan herkennen en altijd dezelfde
                 foutmelding geeft, werkt met vooraf geprogrammeerde regels. Dit
                 is regel-gebaseerd gedrag.
@@ -1168,7 +1097,7 @@
           geval van de eerste chatbots. We hebben besproken dat deze chatbots
           vooraf geprogrammeerd zijn en alleen antwoorden kunnen geven op de
           vragen die in het programma staan. Dit is dus geen "denkwerk". 
-          We laten de eerste chatbots even voor wat ze zijn.<br /><br />
+          We laten de eerste chatbots even voor wat ze zijn.<br/><br/>
 
           Bij de klassieke AI-chatbots is de term "denkwerk" al meer van
           toepassing, maar nog steeds niet helemaal correct. Deze chatbots
@@ -1179,7 +1108,7 @@
           maken over welke uitkomst het meest waarschijnlijk is. De techniek die het mogelijk maakt om zo'n model te bouwen heet
           <a href="../../naslag/begrippen.html#machine-learning"
             >machine learning</a
-          >.<br /><br />
+          >.<br/><br/>
           Hieronder zie je de verschillende locaties waar deze AI-modellen
           kunnen draaien:
           <table style="width: 100%; border-collapse: collapse; margin: 20px 0">
@@ -1198,7 +1127,7 @@
                     >Online (in de
                     <a href="../../naslag/begrippen.html#cloud">cloud</a
                     >)</strong
-                  ><br />
+                  ><br/>
                   De chatbot draait op je apparaat, maar is gekoppeld aan een
                   AI-model dat op servers van een bedrijf draait. Je stuurt je
                   vraag naar hun servers waar het AI-model de input verwerkt, en
@@ -1213,7 +1142,7 @@
                       via een
                       <a href="../../naslag/begrippen.html#api">API</a>: dit is
                       een soort van "brug" waarmee je het AI-model kunt
-                      gebruiken in andere programma's. <br />
+                      gebruiken in andere programma's. <br/>
                       Dit is vooral interessant voor ontwikkelaars die het
                       AI-model in andere programma's willen integreren.
                     </li>
@@ -1265,7 +1194,7 @@
                   />
                 </td>
                 <td style="padding: 15px; vertical-align: top">
-                  <strong>Lokaal (op je eigen computer)</strong><br />
+                  <strong>Lokaal (op je eigen computer)</strong><br/>
                   De chatbot draait op je eigen computer (of lokale server) en
                   het AI-model is erin geïntegreerd. Je data blijft binnen je
                   eigen netwerk en gaat niet naar externe partijen. Dit wordt
@@ -1273,7 +1202,7 @@
                     >on-premises</a
                   >" of "local
                   <a href="../../naslag/begrippen.html#inference">inference</a>"
-                  genoemd.<br /><br />
+                  genoemd.<br/><br/>
 
                   <details>
                     <summary>
@@ -1321,13 +1250,13 @@
                   />
                 </td>
                 <td style="padding: 15px; vertical-align: top">
-                  <strong>Op het apparaat zelf (edge deployment):</strong><br />
+                  <strong>Op het apparaat zelf (edge deployment):</strong><br/>
                   De chatbot draait direct op het apparaat zelf (telefoon,
                   tablet, slimme speaker) en het AI-model is erin geïntegreerd.
                   Dit wordt "<a href="../../naslag/begrippen.html#edge"
                     >edge deployment</a
                   >" genoemd omdat de verwerking gebeurt aan de "rand" van het
-                  netwerk, dicht bij de gebruiker.<br /><br />
+                  netwerk, dicht bij de gebruiker.<br/><br/>
 
                   <details>
                     <summary>
@@ -1393,17 +1322,17 @@
                 >GPU's (Graphics Processing Units)</a
               ></strong
             >
-            worden genoemd.<br /><br />
+            worden genoemd.<br/><br/>
 
-            <strong>Van games naar AI</strong><br />
+            <strong>Van games naar AI</strong><br/>
             Interessant genoeg begon <strong>Nvidia</strong>, een van de
             grootste GPU-fabrikanten, oorspronkelijk met het maken van grafische
             kaarten voor de game-wereld. Gamers hadden krachtige GPU's nodig
             voor realistische graphics in hun favoriete spellen. Maar het bleek
             dat deze GPU's ook perfect geschikt waren voor de complexe
-            berekeningen die AI-modellen nodig hebben.<br /><br />
+            berekeningen die AI-modellen nodig hebben.<br/><br/>
 
-            <strong>De nieuwste generatie</strong><br />
+            <strong>De nieuwste generatie</strong><br/>
             Nvidia's nieuwste GPU, de
             <strong>Blackwell AI GPU</strong>, is speciaal ontworpen voor
             AI-toepassingen. Deze chip kan miljarden berekeningen per seconde
@@ -1415,7 +1344,7 @@
               target="_blank"
               rel="noopener noreferrer"
               >(NVIDIA Blackwell)</a
-            ><br /><br />
+            ><br/><br/>
 
             <div class="text-center mt-4">
               <img
@@ -1423,7 +1352,7 @@
                 alt="Nvidia Blackwell AI GPU"
                 class="img-responsive img-elevated"
               />
-              <br />
+              <br/>
               <em style="color: #666; font-size: 0.9rem"
                 >Nvidia Blackwell AI GPU - generatie van AI-processors van 2025.
                 Meerdere van deze borden worden gebruikt in één serverrack
@@ -1431,14 +1360,14 @@
               >
               <small style="color: #666">Bron: Wikimedia Commons</small>
             </div>
-            <br />
+            <br/>
 
-            <strong>Waarom GPU's zo belangrijk zijn</strong><br />
+            <strong>Waarom GPU's zo belangrijk zijn</strong><br/>
             AI-modellen moeten duizenden of zelfs miljoenen berekeningen
             tegelijk uitvoeren. Een gewone computerprocessor (CPU) kan dit niet
             efficiënt, maar een GPU kan duizenden kleine berekeningen parallel
             uitvoeren. Dit maakt GPU's ideaal voor het trainen en uitvoeren van
-            AI-modellen.<br><br>  
+            AI-modellen.<br/><br/>  
           </details>
         </class>
         </div>
@@ -1456,9 +1385,9 @@
           />
         </div>
         <div class="content-text">
-          <strong>Quizvraag</strong><br />
+          <strong>Quizvraag</strong><br/>
           Waar denk je dat op dit moment het "denkwerk" van de chatbot <em>Lumo</em>
-          plaatsvindt?<br /><br />
+          plaatsvindt?<br/><br/>
 
           <em>Klik op een antwoord om te zien of het correct is!</em>
           <div class="quiz-options" role="group" aria-label="Antwoordopties">
@@ -1479,7 +1408,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">✅</span>
-                <strong>Correct!</strong><br />
+                <strong>Correct!</strong><br/>
                 Het "denkwerk" vindt plaats op servers van het bedrijf en je gebruikt de browser
                 als interface om met het AI-model te communiceren.
               </div>
@@ -1502,7 +1431,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 In dit geval draait het AI‑model wel in de cloud, maar je
                 gebruikt geen aparte software die via een API is verbonden met het model. 
               </div>
@@ -1525,7 +1454,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 On-premises betekent dat het AI-model op je eigen computer of lokale
                 server draait.
               </div>
@@ -1548,12 +1477,12 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 Lokaal betekent dat het AI-model op je eigen computer of lokale
                 server draait.
               </div>
             </div>
-            <br>
+            <br/>
           </div>
         </div>
       </div>
@@ -1570,11 +1499,11 @@
           />
         </div>
         <div class="content-text">
-          <strong>Opdracht 4:  <em>&nbsp;Ghost&nbsp;mode&nbsp; </em> inschakelen</strong><br />
+          <strong>Opdracht 4:  <em>&nbsp;Ghost&nbsp;mode&nbsp; </em> inschakelen</strong><br/>
           Schakel <em>ghost mode</em> in door rechtsboven op het icoon van de kat met de zonnebril te klikken.
-        <br><br>
+        <br/><br/>
         </div>
-        <br>
+        <br/>
       </div>
 
       <div class="content-block info">
@@ -1593,13 +1522,13 @@
             ><a href="../../naslag/begrippen.html#ghost-mode"
               >Ghost mode</a
             ></strong
-          ><br />
+          ><br/>
           Ghost mode zorgt ervoor dat je gesprek niet wordt opgeslagen en dat
           het gesprek verdwijnt zodra je het venster sluit. Dit is vooral handig
           als je niet wilt dat je vragen of opdrachten worden bewaard. Ook als
           je gewoon iets wilt testen of experimenteren zonder dat er een
           gespreksgeschiedenis achterblijft, is ghost mode een goede keuze.
-          <br><br>
+          <br/><br/>
         </div>
       </div>
 
@@ -1615,9 +1544,9 @@
           />
         </div>
         <div class="content-text">
-          <strong>Quizvraag</strong><br /><br />
+          <strong>Quizvraag</strong><br/><br/>
           <strong>Vraag:</strong> Waarom geven data-gedreven chatbots vaak
-          verschillende antwoorden op dezelfde vraag?<br /><br />
+          verschillende antwoorden op dezelfde vraag?<br/><br/>
 
           <em>Klik op een antwoord om te zien of het correct is!</em>
           <div class="quiz-options" role="group" aria-label="Antwoordopties">
@@ -1638,7 +1567,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 <em>Hint:</em> De antwoorden zijn niet willekeurig. Ze werken
                 met patronen en waarschijnlijkheden die ze hebben geleerd van
                 grote hoeveelheden data.
@@ -1663,7 +1592,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">✅</span>
-                <strong>Correct!</strong><br />
+                <strong>Correct!</strong><br/>
                 AI-modellen voorspellen welk antwoord het beste past bij de
                 vraag, en die voorspelling kan elke keer net iets anders zijn.
                 Ook kan de context (gespreksgeschiedenis, tijdstip, etc.)
@@ -1688,7 +1617,7 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 <em>Hint:</em> Snelheid is niet het belangrijkste verschil. Denk
                 aan wat Generatieve AI kan
               </div>
@@ -1712,18 +1641,18 @@
             >
               <div class="feedback-content">
                 <span class="feedback-icon">❌</span>
-                <strong>Nog niet goed!</strong><br />
+                <strong>Nog niet goed!</strong><br/>
                 <em>Hint:</em> Het is niet een kwestie van slechte training. Het
                 is juist een kenmerk van hoe machine learning werkt - het werkt
                 met waarschijnlijkheden in plaats van vaste regels.
-                <br><br>
+                <br/><br/>
                   </div>
-                  <br>  
+                  <br/>  
                 </div>
           </div>
-          <br>
+          <br/>
         </div>
-        <br><br>
+        <br/><br/>
       </div>
 
       <div class="content-block info">
@@ -1740,40 +1669,14 @@
         <div class="content-text">
           <h2 id="klassiek-modern">Klassieke en moderne AI-chatbots</h2>
           <span style="color: #666; font-size: 0.95em"
-            >Let op: dit is geen harde scheidslijn. Moderne systemen zijn bijna
-            altijd <em>hybride</em>: ze combineren generatieve modellen met
-            discriminatieve componenten (zoals intentdetectie, veiligheid en
-            kwaliteitscontrole) en soms ook eenvoudige regels en tools. Zie het
-            als een <em>spectrum</em> waarbij de accenten per toepassing
-            verschillen.</span
-          ><br /><br />
-          De eerste chatbots werkten puur met regels en vaste patronen. Ze leken
-          op beslisbomen: als je X vraagt, krijg je altijd Y terug. Dat is nog
-          geen AI. Later kwamen AI‑chatbots erbij. Klassieke AI‑chatbots waren
-          vooral discriminatief (herkennen en indelen), terwijl moderne
-          AI‑chatbots dankzij innovaties ook generatieve functies hebben (nieuwe
-          content maken). Hieronder zie je kort het verschil:
-
-          <p>
-            De eerste chatbots waren eenvoudig en regelgebaseerd: voorspelbaar
-            en nuttig voor duidelijke vragen. Daarna kwamen de klassieke
-            AI‑chatbots. Die konden vooral goed herkennen wat je bedoelde en
-            input indelen in categorieën. Handig voor afgebakende taken.
-          </p>
-          <p>
-            Moderne AI‑chatbots bouwen daarop voort. Ze herkennen niet alleen,
-            maar kunnen ook formuleren en nieuwe tekst maken. Daardoor voelen
-            gesprekken natuurlijker en flexibeler aan.
-          </p>
-          <p>
-            In de praktijk is het meestal een mix. Veel moderne chatbots
-            combineren vaste regels (veiligheid en grenzen), herkenning (begrip
-            van intentie), het raadplegen van bronnen en het genereren van een
-            helder antwoord.
-          </p>
-          <br>
+          ><br/>
+          Het verschil tussen klassieke en moderne AI-chatbots is dat klassieke chatbots goed waren in het herkennen van partronen in data. Dit wordt discriminatieve AI genoemd.
+          Maar ze waren nauwelijks in staat om nieuwe content te genereren. 
+          Door nieuwe ontwikkelingen in AI werden chatbots steeds beter in staat om nieuwe content te genereren. Dit wordt generatieve AI genoemd en dit is wat kenmerkend is voor moderne AI-chatbots.<br/> 
+        </span>
+          <br/>
         </div>
-        <br><br>
+        <br/><br/>
       </div>
 
       <div class="content-block task">
@@ -1788,11 +1691,10 @@
           />
         </div>
         <div class="content-text">
-          <strong
-            >Opdracht 5. Kopieer de volgende prompt en plak (windows:
-            <code> ctrl + v</code> mac: <code> cmd + v</code> ) in het
-            prompt-venster:</strong
-          ><br /><br />
+          <strong>Opdracht 5.</strong><br/>
+          Kopieer de volgende prompt en plak (windows: <code> ctrl + v</code>
+          mac: <code> cmd + v</code> ) in het prompt-venster:
+          <br/><br/>
           <div class="prompt-box">
             <button
               class="copy-btn"
@@ -1815,8 +1717,8 @@
               dezelfde antwoorden geeft op dezelfde vraag.
             </div>
           </div>
-          <br />
-          <em>- Stel nog eens dezelfde vraag.</em><br /><br />
+          <br/>
+          <em>- Stel nog eens dezelfde vraag.</em><br/><br/>
           <span
             >Als het goed is, is de inhoud van het antwoord bijna hetzelfde maar
             de vorm anders. En de reden kun je nog eens lezen in het
@@ -1850,17 +1752,17 @@
           - dit zijn AI-modellen die getraind zijn op enorme hoeveelheden
           tekstdata om menselijke taal te begrijpen en te genereren. Ze kunnen
           teksten schrijven, vragen beantwoorden, code genereren en complexe
-          redeneringen uitvoeren.<br /><br />
+          redeneringen uitvoeren.<br/><br/>
 
           <strong
             ><a href="../../naslag/begrippen.html#direct-integration"
               >Direct gekoppelde chatbots</a
             ></strong
-          ><br />
+          ><br/>
           Sommige chatbots zijn rechtstreeks gekoppeld aan een specifiek LLM.
           Deze chatbots bieden directe toegang tot de kracht van het
           onderliggende model, vaak met geoptimaliseerde interfaces en functies.
-          Voorbeelden hiervan zijn:<br />
+          Voorbeelden hiervan zijn:<br/>
           •
           <strong
             ><a
@@ -1878,7 +1780,7 @@
             >OpenAI</a
           >
           ) - gekoppeld aan
-          <a href="../../naslag/begrippen.html#gpt">GPT-modellen</a><br />
+          <a href="../../naslag/begrippen.html#gpt">GPT-modellen</a><br/>
           •
           <strong
             ><a
@@ -1896,7 +1798,7 @@
             >Anthropic</a
           >
           ) - gekoppeld aan
-          <a href="../../naslag/begrippen.html#claude">Claude-modellen</a><br />
+          <a href="../../naslag/begrippen.html#claude">Claude-modellen</a><br/>
           •
           <strong
             ><a
@@ -1915,7 +1817,7 @@
           >
           ) - gekoppeld aan
           <a href="../../naslag/begrippen.html#mistral">Mistral-modellen</a
-          ><br />
+          ><br/>
           •
           <strong
             ><a
@@ -1931,21 +1833,21 @@
           >
           ) - gekoppeld aan
           <a href="../../naslag/begrippen.html#gemini">Gemini-modellen</a
-          ><br /><br />
+          ><br/><br/>
 
           <strong
             ><a href="../../naslag/begrippen.html#api-integration"
               >API-gekoppelde chatbots</a
             ></strong
-          ><br />
+          ><br/>
           Andere chatbots gebruiken LLM's via een
           <a href="../../naslag/begrippen.html#api">API</a> en kunnen daardoor
           meerdere modellen aanbieden of gespecialiseerde functies bieden. Deze
           <a href="../../naslag/begrippen.html#multi-model-platform"
             >multi-model platforms</a
           >
-          bieden vaak:<br />
-          • Toegang tot verschillende LLM's in één interface<br />
+          bieden vaak:<br/>
+          • Toegang tot verschillende LLM's in één interface<br/>
           • Gespecialiseerde functies zoals
           <a href="../../naslag/begrippen.html#web-search">webzoeken</a>,
           <a href="../../naslag/begrippen.html#file-analysis"
@@ -1954,16 +1856,16 @@
           of
           <a href="../../naslag/begrippen.html#code-execution"
             >code-uitvoering</a
-          ><br />
+          ><br/>
           •
           <a href="../../naslag/begrippen.html#customization"
             >Aanpassingsmogelijkheden</a
           >
-          voor specifieke use cases<br />
-          • Soms hogere kosten door de extra laag van functionaliteit<br /><br />
+          voor specifieke use cases<br/>
+          • Soms hogere kosten door de extra laag van functionaliteit<br/><br/>
 
           <strong>Concrete voorbeelden van API-gekoppelde chatbots:</strong
-          ><br />
+          ><br/>
           •
           <strong
             ><a
@@ -1978,7 +1880,7 @@
           met LLM's voor
           <a href="../../naslag/begrippen.html#real-time-info"
             >real-time informatie</a
-          ><br />
+          ><br/>
           •
           <strong
             ><a
@@ -1994,7 +1896,7 @@
             target="_blank"
             rel="noopener noreferrer"
             >Microsoft's ecosysteem</a
-          ><br />
+          ><br/>
           •
           <strong
             ><a
@@ -2009,7 +1911,7 @@
           gecombineerd met
           <a href="../../naslag/begrippen.html#llm-capabilities"
             >LLM-capaciteiten</a
-          ><br />
+          ><br/>
           •
           <strong
             ><a
@@ -2025,7 +1927,7 @@
           >
           dat toegang biedt tot
           <a href="../../naslag/begrippen.html#multiple-llms">meerdere LLM's</a
-          ><br />
+          ><br/>
           •
           <strong
             ><a
@@ -2042,9 +1944,9 @@
           met verschillende
           <a href="../../naslag/begrippen.html#open-source-models"
             >open-source modellen</a
-          ><br /><br />
+          ><br/><br/>
 
-          <strong>Waarom deze verschillen belangrijk zijn</strong><br />
+          <strong>Waarom deze verschillen belangrijk zijn</strong><br/>
           De keuze tussen
           <a href="../../naslag/begrippen.html#direct-integration"
             >direct gekoppelde</a
@@ -2082,14 +1984,14 @@
         <div class="content-text">
           <strong
             >Opdracht 6. Webzoeken</strong
-          ><br />
+          ><br/>
           <span>
           Schakel webzoeken in en vraag naar
-          het nieuws van vandaag.<br><br>
+          het nieuws van vandaag.<br/><br/>
 
           Je ziet doorgaans links naar gebruikte websites als bronvermelding.
             De exacte weergave (zoals datum) verschilt per chatbot.</span
-          ><br><br>
+          ><br/><br/>
         </div>
       </div>
 
@@ -2111,7 +2013,7 @@
           toevoegen, zodat de AI de inhoud van dat bestand kan analyseren,
           samenvatten of er vragen over kan beantwoorden. Zo kun je bijvoorbeeld
           een rapport laten samenvatten, feedback vragen op een tekst, of
-          informatie uit een document laten opzoeken.<br />
+          informatie uit een document laten opzoeken.<br/>
           De mogelijkheid om een AI-model te combineren met informatie uit
           databases, externe bestanden en toegang tot het web heet
           <em
@@ -2125,7 +2027,7 @@
             rel="noopener noreferrer"
             >(Lewis et al., NeurIPS 2020)</a
           >
-          <br><br>
+          <br/><br/>
         </div>
       </div>
 
@@ -2153,7 +2055,7 @@
             VPN. Onlangs is Proton ook begonnen met het ontwikkelen van een chatbot: Lumo.
           </details>
         </div>
-        <br><br>
+        <br/><br/>
       </div>
 
       <div class="content-block task">
@@ -2168,12 +2070,12 @@
           />
         </div>
         <div class="content-text">
-          <strong>Opdracht 7: We gaan een andere chatbot openen.</strong><br />
+          <strong>Opdracht 7: We gaan een andere chatbot openen.</strong><br/>
           Als je nog eens gebruik wilt maken van de vorige chatbot, > bookmark
           de pagina door het venster te selecteren en de sneltoets
-          <code>ctrl + d</code>/<code>cmd + d</code> te gebruiken.<br /><br />
+          <code>ctrl + d</code>/<code>cmd + d</code> te gebruiken.<br/><br/>
           Sluit het venster en klik op de onderstaande knop om
-          <em>Perplexity AI</em> te openen.<br />
+          <em>Perplexity AI</em> te openen.<br/>
 
           <div class="text-center mt-4">
             <button id="btn-open-perplexity" class="btn btn-primary">
@@ -2189,7 +2091,7 @@
               <span class="text-black">openen</span>
             </button>
           </div>
-          <br><br>
+          <br/><br/>
         </div>
       </div>
 
@@ -2208,8 +2110,8 @@
           <strong
             >Opdracht 8: Stel Perplexity AI vragen en maak het niet te
             makkelijk.</strong
-          ><br />
-          Je kunt bijvoorbeeld de volgende strikvragen gebruiken:<br />
+          ><br/>
+          Je kunt bijvoorbeeld de volgende strikvragen gebruiken:<br/>
 
           <div class="prompt-box">
             <button
@@ -2344,9 +2246,9 @@
           <a href="../../naslag/begrippen.html#ai-model">AI-modellen</a>
           zijn de laatste jaren aanzienlijk verbeterd door betere training. Ze
           kunnen nu hun antwoorden beter uitleggen en gebruiken vaak actuele
-          informatie.<br /><br />
+          informatie.<br/><br/>
           Maar let op: AI-modellen kunnen nog steeds fouten maken. Ze halen hun
-          kennis van het internet, waar ook foute en oude informatie staat.<br /><br />
+          kennis van het internet, waar ook foute en oude informatie staat.<br/><br/>
           Soms verzinnen ze zelfs dingen maar komen toch zelfverzekerd over –
           dit heet
           <em
@@ -2381,32 +2283,32 @@
             <strong>Perplexity AI</strong> is een chatbot die zich richt op het
             geven van antwoorden met bronvermelding. In tegenstelling tot veel
             andere chatbots die alleen hun trainingsdata gebruiken, kan
-            Perplexity real-time informatie opzoeken op het internet.<br /><br />
+            Perplexity real-time informatie opzoeken op het internet.<br/><br/>
 
-            <strong>Hoe werkt het technisch?</strong><br />
+            <strong>Hoe werkt het technisch?</strong><br/>
             Perplexity gebruikt een techniek die
             <strong>RAG (Retrieval-Augmented Generation)</strong>
             wordt genoemd. Dit betekent dat het systeem eerst relevante
             informatie ophaalt (retrieval) en deze vervolgens combineert met
             zijn eigen kennis om een antwoord te genereren (augmented
-            generation).<br /><br />
+            generation).<br/><br/>
 
-            <strong>AI-modellen</strong><br />
+            <strong>AI-modellen</strong><br/>
             Perplexity gebruikt verschillende AI-modellen, zowel eigen
             ontwikkelde model als externe modellen van andere bedrijven. Het kan
             bijvoorbeeld gebruikmaken van modellen van OpenAI, Anthropic, of
             Google, afhankelijk van het type vraag en de beschikbaarheid. Dit
             maakt het systeem flexibel en kan het de sterke punten van
-            verschillende modellen combineren.<br /><br />
+            verschillende modellen combineren.<br/><br/>
 
-            <strong>De oprichters</strong><br />
+            <strong>De oprichters</strong><br/>
             Perplexity werd opgericht in 2022 door een team van voormalige
             Google en OpenAI medewerkers, waaronder Aravind Srinivas (CEO) en
             Denis Yarats. Het bedrijf richt zich op het maken van een "answer
             engine" - een zoekmachine die direct antwoorden geeft in plaats van
-            alleen links naar websites.<br /><br />
+            alleen links naar websites.<br/><br/>
 
-            <strong>Mogelijke voordelen</strong><br />
+            <strong>Mogelijke voordelen</strong><br/>
             Perplexity's RAG-aanpak kan helpen om het probleem van
             AI-hallucinaties te verminderen door bronnen te vermelden en actuele
             informatie te gebruiken. Dit kan het een nuttig hulpmiddel maken
@@ -2431,72 +2333,72 @@
           <h2 id="samenvatting">Samenvatting en conclusie</h2>
           In dit artikel hebben we de wereld van chatbots verkend en de
           belangrijkste concepten besproken die je moet begrijpen om effectief
-          met deze technologie te werken.<br /><br />
+          met deze technologie te werken.<br/><br/>
 
-          <strong>Wat hebben we geleerd?</strong><br />
+          <strong>Wat hebben we geleerd?</strong><br/>
           • <strong>Chatbots zijn computerprogramma's</strong> die menselijke
           gesprekken kunnen simuleren via een
           <a href="../../naslag/begrippen.html#conversational-user-interface"
             >conversational user interface</a
-          ><br />
+          ><br/>
           • <strong>Er zijn verschillende generaties:</strong> van
-          regelgebaseerde chatbots (1.0) tot moderne AI-chatbots (3.0)<br />
+          regelgebaseerde chatbots (1.0) tot moderne AI-chatbots (3.0)<br/>
           • <strong>Twee hoofdmethoden:</strong>
           <a href="../../naslag/begrippen.html#regelgebaseerd"
             >regelgebaseerd</a
           >
           (deterministisch) en
           <a href="../../naslag/begrippen.html#data-gedreven">data-gedreven</a>
-          (probabilistisch)<br />
+          (probabilistisch)<br/>
           •
           <strong>AI-modellen draaien op verschillende locaties:</strong>
-          in de cloud, lokaal, of op het apparaat zelf<br />
+          in de cloud, lokaal, of op het apparaat zelf<br/>
           • <strong>Steeds meer moderne chatbots ondersteunen RAG</strong> om
-          actuele informatie te combineren met hun kennis<br /><br />
+          actuele informatie te combineren met hun kennis<br/><br/>
 
-          <strong>Praktische inzichten</strong><br />
+          <strong>Praktische inzichten</strong><br/>
           • <strong>Prompt-engineering is cruciaal:</strong> De kwaliteit van je
-          input bepaalt de kwaliteit van de output<br />
+          input bepaalt de kwaliteit van de output<br/>
           • <strong>Wees kritisch:</strong> AI-modellen kunnen
           <a href="../../naslag/begrippen.html#hallucineren">hallucineren</a>
-          en foute informatie geven<br />
+          en foute informatie geven<br/>
           • <strong>Gebruik de juiste tool:</strong> Verschillende chatbots
-          hebben verschillende sterke punten<br />
+          hebben verschillende sterke punten<br/>
           • <strong>Privacy overwegingen:</strong> Weet waar je data wordt
-          opgeslagen en verwerkt<br /><br />
+          opgeslagen en verwerkt<br/><br/>
 
-          <strong>De toekomst</strong><br />
+          <strong>De toekomst</strong><br/>
           Chatbots en AI-assistenten worden steeds krachtiger en toegankelijker.
           Door de basisconcepten te begrijpen die we in dit artikel hebben
           besproken, ben je beter voorbereid om deze technologie effectief en
-          verantwoord te gebruiken in je dagelijks leven en werk.<br /><br />
+          verantwoord te gebruiken in je dagelijks leven en werk.<br/><br/>
 
-          <strong>Wat wil je nu verder ontdekken?</strong><br />
+          <strong>Wat wil je nu verder ontdekken?</strong><br/>
           Je hebt nu een solide basis in chatbots. Afhankelijk van je interesses
-          kun je verschillende richtingen op:<br /><br />
+          kun je verschillende richtingen op:<br/><br/>
 
           <div class="callouts">
             <div class="callout callout-blue">
-              <strong>Prompt Engineering</strong><br />
-              Wil je weten hoe je effectieve prompts kunt schrijven?<br />
+              <strong>Prompt Engineering</strong><br/>
+              Wil je weten hoe je effectieve prompts kunt schrijven?<br/>
               <a href="03-prompt-engineering.html" class="callout-link"
                 >→ Ga naar Prompt Engineering</a
               >
             </div>
 
             <div class="callout callout-green">
-              <strong>AI-assistenten</strong><br />
+              <strong>AI-assistenten</strong><br/>
               Wil je meer weten over de moderne AI-chatbots? Wat moderne
-              AI-chatbots anders maakt dan de klassieke chatbots?<br />
+              AI-chatbots anders maakt dan de klassieke chatbots?<br/>
               <a href="02-ai-assistenten.html" class="callout-link"
                 >→ Ga naar AI-assistenten</a
               >
             </div>
 
             <div class="callout callout-red">
-              <strong>Waarde en impact</strong><br />
+              <strong>Waarde en impact</strong><br/>
               Wil je meer weten over de maatschappelijke waarde en impact van
-              chatbots en AI-modellen?<br />
+              chatbots en AI-modellen?<br/>
               <a href="04-waarde-en-impact.html" class="callout-link"
                 >→ Ga naar Waarde en impact</a
               >
