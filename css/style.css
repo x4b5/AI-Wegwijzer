@@ -226,11 +226,13 @@ h4 {
   gap: 20px;
   align-items: flex-start;
   background-color: var(--bg-accent);
-  padding: 15px;
+  padding: 16px 18px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: var(--text-primary);
   font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid var(--border-light);
 }
 
 /* Stacked variant: twee rijen onder elkaar */
@@ -246,9 +248,16 @@ h4 {
   display: flex;
   align-items: center;
   gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--border-light);
 }
 .hotkey-panel.stacked .hotkey-notes {
   margin-left: 0;
+}
+
+/* Verberg losse BR's binnen het hotkey-panel voor strakker geheel */
+.hotkey-panel br {
+  display: none;
 }
 
 /* Hotkey panel details */
@@ -257,24 +266,36 @@ h4 {
 }
 .hotkey-col.flex {
   flex: 1;
+  padding-top: 10px;
 }
 .hotkey-icon {
   vertical-align: middle;
   margin-right: 6px;
   filter: brightness(0) saturate(100%) invert(100%);
+  width: 32px;
+  height: 32px;
 }
 .hotkey-code {
   color: var(--text-primary);
   background: var(--bg-secondary);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
-  padding: 4px 4px;
-  border-radius: 3px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.08);
 }
 .hotkey-notes {
-  margin-top: 8px;
+  margin-top: 10px;
   color: var(--text-secondary);
   font-size: 14px;
+  padding-left: 18px;
+}
+.hotkey-notes li {
+  margin: 4px 0;
 }
 
 /* ========================================
@@ -1867,15 +1888,15 @@ a:focus {
   top: 0;
   height: 100vh;
   z-index: 1000;
-  /* Start off-screen */
-  transform: translateX(-100%);
-  opacity: 0;
-  transition: transform 0.8s ease-in-out, opacity 0.25s ease;
+  /* Container altijd zichtbaar; inhoud wordt apart getoggled */
+  transform: none;
+  opacity: 1;
+  transition: opacity 0.25s ease;
 }
 
 /* Animate sidebar in on page load */
 .simple-sidebar.loaded {
-  transform: translateX(-100%);
+  transform: none;
 }
 
 /* Onzichtbare hoverzone aan de linkerkant om sidebar te tonen */
@@ -1884,14 +1905,15 @@ a:focus {
   position: fixed;
   left: 0;
   top: 0;
-  width: 12px;
+  width: 0; /* geen hoverzone meer */
   height: 100vh;
   background: transparent;
   z-index: 1002;
+  pointer-events: none; /* niet klikbaar */
 }
 
 .simple-sidebar:hover {
-  transform: translateX(0);
+  /* Hover-reveal uitgeschakeld voor rustiger gedrag */
   opacity: 1;
 }
 
@@ -1935,13 +1957,13 @@ a:focus {
   left: -380px; /* Volledig verborgen met nieuwe breedte */
   top: 20px; /* Hoger geplaatst, niet meer gecentreerd */
   width: 380px; /* Nog breder gemaakt voor betere leesbaarheid */
-  max-height: 400px; /* Hoger gemaakt om alles te passen */
+  max-height: calc(100vh - 40px); /* Past zich aan aan vensterhoogte */
   background: white;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.6s ease; /* Langzamere transitie voor alle eigenschappen */
   z-index: 1000;
   border-radius: 0 20px 20px 0; /* Afgeronde rechter hoeken */
-  overflow-y: hidden; /* Geen scrollbar meer */
+  overflow-y: auto; /* Scroll wanneer nodig */
   pointer-events: none; /* Laat scrollen door wanneer gesloten */
   transform: scale(1); /* Start grootte */
 }
@@ -1951,29 +1973,26 @@ a:focus {
   pointer-events: auto; /* Herstel interactie wanneer open */
 }
 
-/* Hover effect - schuif sidebar naar rechts */
+/* Hover effect gedeactiveerd om jitter te voorkomen */
 .simple-sidebar.open .sidebar-content:hover {
-  transform: translateX(10px); /* Schuif 10px naar rechts */
-  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15); /* Iets sterkere schaduw */
+  transform: none;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Nieuwe gecombineerde actiereeks onder de legenda */
 .sidebar-actions {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   position: fixed;
-  left: -60px; /* uit beeld */
+  left: 4px; /* altijd in beeld */
   top: 120px; /* hoger geplaatst op de pagina */
-  z-index: 1001;
+  z-index: 1100; /* boven pseudo-elementen */
   transition: left 0.3s ease, opacity 0.25s ease;
-  opacity: 0;
-}
-
-.simple-sidebar:hover .sidebar-actions {
-  left: 4px; /* in beeld naast de uitgeklapte sidebar, iets meer links */
   opacity: 1;
 }
+
+.simple-sidebar:hover .sidebar-actions { left: 4px; opacity: 1; }
 
 .sidebar-actions .sidebar-toggle-btn,
 .sidebar-actions .home-toggle-btn,
@@ -1988,6 +2007,164 @@ a:focus {
 /* Gebruik inline img voor legenda-knop in de acties, geen background */
 .sidebar-actions .sidebar-toggle-btn {
   background-image: none;
+}
+
+/* Gestandaardiseerde minimal UI voor alle actieknoppen */
+.sidebar-actions button {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border-radius: 24px;
+  background: #1f2937; /* veel donkerder (gray-800) */
+  color: #ffffff;
+  border: 1px solid #111827; /* gray-900 */
+  box-shadow: var(--shadow-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 1; /* geen transparantie */
+  transition: var(--transition-normal);
+}
+
+[data-theme='dark'] .sidebar-actions button {
+  background: #0f172a; /* slate-900 voor nog meer contrast */
+  color: #ffffff;
+  border: 1px solid #0b1220;
+}
+
+.sidebar-actions button:hover {
+  background: #374151; /* gray-700 */
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.sidebar-actions button:active {
+  transform: scale(0.98);
+}
+
+.sidebar-actions button:focus-visible {
+  outline: 2px solid var(--primary-blue, #2563eb);
+  outline-offset: 2px;
+}
+
+.sidebar-actions button img {
+  display: block;
+  width: 32px;
+  height: 32px;
+  filter: none; /* behoud originele icoonkleur */
+}
+
+/* Vergroot specifieke iconen: Legenda, Home, Naar boven */
+.sidebar-actions .sidebar-toggle-btn img,
+.sidebar-actions .home-toggle-btn img,
+.sidebar-actions .top-toggle-btn img {
+  width: 38px;
+  height: 38px;
+}
+
+[data-theme='dark'] .sidebar-actions button img { filter: none; }
+
+.sidebar-actions button #theme-icon {
+  display: inline-block;
+  font-size: 28px;
+  line-height: 1;
+  color: inherit;
+}
+[data-theme='dark'] .sidebar-actions button #theme-icon { color: inherit; }
+
+.sidebar-actions .sidebar-toggle-btn,
+.sidebar-actions .home-toggle-btn,
+.sidebar-actions .top-toggle-btn,
+.sidebar-actions .theme-toggle-btn,
+.sidebar-actions .nav-up-toggle-btn,
+.sidebar-actions .nav-down-toggle-btn {
+  background-image: none;
+  left: auto;
+  top: auto;
+  position: static;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+  box-shadow: var(--shadow-md);
+  opacity: 1 !important; /* forceer geen transparantie */
+}
+
+/* Touch-vriendelijk: grotere hittargets op touch devices */
+@media (pointer: coarse) {
+  .sidebar-actions { gap: 12px; }
+  .sidebar-actions button {
+    width: 56px;
+    height: 56px;
+    border-radius: 28px;
+  }
+  .sidebar-actions button img { width: 36px; height: 36px; }
+  .sidebar-actions button #theme-icon { font-size: 32px; }
+  /* Touch: nog iets groter voor Legenda, Home, Naar boven */
+  .sidebar-actions .sidebar-toggle-btn img,
+  .sidebar-actions .home-toggle-btn img,
+  .sidebar-actions .top-toggle-btn img {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Maak nav up/down iconen bewust kleiner dan de rest */
+.sidebar-actions .nav-up-toggle-btn img,
+.sidebar-actions .nav-down-toggle-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+@media (pointer: coarse) {
+  .sidebar-actions .nav-up-toggle-btn img,
+  .sidebar-actions .nav-down-toggle-btn img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Dock visibility toggle - apart knopje dat altijd beschikbaar blijft */
+.dock-visibility-toggle-btn {
+  position: fixed;
+  left: 4px;
+  top: 72px; /* boven de dock-knoppen */
+  z-index: 1102;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #1f2937; /* gray-800 */
+  color: #ffffff;
+  border: 1px solid #111827; /* gray-900 */
+  box-shadow: var(--shadow-md);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+[data-theme='dark'] .dock-visibility-toggle-btn {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0b1220;
+}
+
+.dock-visibility-toggle-btn:hover {
+  background: #374151; /* gray-700 */
+  box-shadow: var(--shadow-lg);
+}
+
+[data-theme='dark'] .dock-visibility-toggle-btn:hover {
+  background: var(--bg-accent);
+}
+
+/* Wanneer de dock verborgen is */
+html.dock-hidden .sidebar-actions {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* Tweede sidebar - naar boven knop */
@@ -2176,7 +2353,7 @@ a:focus {
 /* Nudge theme icon slightly to the right for visual centering */
 .theme-toggle-btn #theme-icon {
   display: inline-block;
-  transform: translateX(4px);
+  transform: none; /* gecentreerd houden */
 }
 
 .sidebar-header {
@@ -3134,9 +3311,7 @@ a:focus {
 .home-toggle-btn img,
 .sidebar-toggle-btn img,
 .top-toggle-btn img {
-  display: block !important;
-  width: 28px !important;
-  height: 28px !important;
+  display: block !important; /* laat weergave overeind, geen vaste maat */
 }
 
 /* ========================================
@@ -3322,3 +3497,81 @@ body:not([data-theme='dark']) .content-block.quiz .content-text .btn:not(.copy-b
 .theme-sidebar { transition-delay: 0.6s; }
 .theme-sidebar:hover,
 .theme-sidebar.open { transition-delay: 0s; }
+
+/* ========================================
+   HOVER EFFECTS DISABLED (ICON COLUMN & BLOCKS)
+   ======================================== */
+/* Houd content-blokken stabiel bij hover */
+.content-block:hover { box-shadow: var(--shadow-md) !important; }
+.content-block:hover .content-text { transform: none !important; }
+
+/* Geen hover-animatie op icon-kolom */
+.content-block .icon:hover,
+.task .icon:hover,
+.quiz .icon:hover,
+.trivia .icon:hover,
+.info .icon:hover,
+.important .icon:hover,
+.conclusion .icon:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+
+/* Fixeer achtergrond van icon-kolom per bloktype tijdens hover */
+/* Opdracht/Task */
+.content-block:has(.icon img[src*='opdracht']) .icon:hover,
+.content-block[data-type='task'] .icon:hover,
+.content-block.opdracht .icon:hover,
+.task .icon:hover {
+  background: color-mix(in srgb, var(--accent-task) 60%, #ffffff) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Quiz */
+.content-block:has(.icon img[src*='quizvraag']) .icon:hover,
+.content-block[data-type='quiz'] .icon:hover,
+.content-block.quiz .icon:hover {
+  background: color-mix(in srgb, var(--accent-quiz) 60%, #ffffff) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Trivia */
+.content-block:has(.icon img[src*='boekenwurm']) .icon:hover,
+.content-block[data-type='trivia'] .icon:hover,
+.content-block.trivia .icon:hover {
+  background: color-mix(in srgb, var(--accent-trivia) 60%, #ffffff) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Info */
+.content-block:has(.icon img[src*='informatie']) .icon:hover,
+.content-block[data-type='info'] .icon:hover,
+.content-block.info .icon:hover {
+  background: color-mix(in srgb, var(--accent-info) 60%, #ffffff) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Important */
+.content-block:has(.icon img[src*='uitroepteken']) .icon:hover,
+.content-block[data-type='important'] .icon:hover,
+.content-block.important .icon:hover {
+  background: color-mix(in srgb, var(--accent-important) 60%, #ffffff) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Conclusion: behoud basisachtergrond, alleen animatie uit, gedaan hierboven */
+
+/* Extra: volledig uitschakelen van icon-animatie en -beweging (ook op img) */
+.content-block .icon,
+.content-block .icon:hover,
+.content-block .icon img,
+.content-block .icon img:hover {
+  transform: none !important;
+  transition: none !important;
+}

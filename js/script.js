@@ -1,40 +1,18 @@
 function openLumoPopup() {
-  const screenWidth = window.screen.width;
-  const screenHeight = window.screen.height;
-  const popupWidth = Math.min(1200, screenWidth * 0.5);
-  const popupHeight = Math.min(900, screenHeight * 0.9);
-  const left = screenWidth - popupWidth - 20;
+  const screenWidth = window.screen.availWidth || window.screen.width;
+  const screenHeight = window.screen.availHeight || window.screen.height;
+  const popupWidth = Math.min(1200, Math.round(screenWidth * 0.5));
+  const popupHeight = Math.min(900, Math.round(screenHeight * 0.9));
+  const left = Math.max(0, screenWidth - popupWidth - 20);
   const top = 20;
 
-  // Probeer eerst met specifieke positie
-  let popup = window.open(
-    'https://lumo.proton.me',
-    'lumoChatbot',
-    `width=${popupWidth},height=${popupHeight},left=${left},top=${top},scrollbars=yes,resizable=yes,status=yes,toolbar=no,menubar=no,location=yes`
-  );
-
-  // Als popup niet correct wordt geopend, probeer opnieuw zonder positie
-  if (!popup || popup.closed || typeof popup.closed == 'undefined') {
-    popup = window.open(
-      'https://lumo.proton.me',
-      'lumoChatbot',
-      `width=${popupWidth},height=${popupHeight},scrollbars=yes,resizable=yes,status=yes,toolbar=no,menubar=no,location=yes`
-    );
-  }
-
-  if (popup) {
-    popup.focus();
-    // Probeer de positie te verplaatsen na het openen
-    try {
-      popup.moveTo(left, top);
-    } catch (e) {
-      // Als moveTo niet werkt, probeer dan de gebruiker te informeren
-      console.log('Popup geopend, maar positie kon niet worden ingesteld');
-    }
+  // Open direct de doel-URL met positionering (betere compatibiliteit)
+  const features = `width=${popupWidth},height=${popupHeight},left=${left},top=${top},scrollbars=yes,resizable=yes,status=yes,toolbar=no,menubar=no,location=yes,noopener`;
+  const win = window.open('https://lumo.proton.me', 'lumoChatbot', features);
+  if (win) {
+    try { win.focus(); } catch (e) {}
   } else {
-    alert(
-      'Popup werd geblokkeerd. Sta popups toe voor deze website en probeer opnieuw.'
-    );
+    alert('Popup werd geblokkeerd. Sta popups toe voor deze website en probeer opnieuw.');
   }
 }
 
@@ -173,11 +151,30 @@ function enhanceQuizAccessibility() {
 }
 
 // Eenvoudige sidebar functionaliteit
+let lastSidebarToggleButton = null;
+
 function toggleSimpleSidebar() {
   const sidebar = document.getElementById('simpleSidebar');
-  if (sidebar) {
-    sidebar.classList.toggle('open');
-  }
+  if (!sidebar) return;
+
+  const isOpen = sidebar.classList.toggle('open');
+  // Update ARIA states
+  try {
+    const content = sidebar.querySelector('.sidebar-content');
+    const toggleBtns = document.querySelectorAll('.sidebar-toggle-btn');
+    toggleBtns.forEach((btn) => btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false'));
+    if (content) content.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
+  } catch (e) {}
+
+  // Manage focus
+  try {
+    if (isOpen) {
+      const closeBtn = sidebar.querySelector('.close-sidebar-btn');
+      if (closeBtn) closeBtn.focus({ preventScroll: false });
+    } else if (lastSidebarToggleButton) {
+      lastSidebarToggleButton.focus({ preventScroll: false });
+    }
+  } catch (e) {}
 }
 
 // Naar boven knop functionaliteit
@@ -274,10 +271,46 @@ document.addEventListener('DOMContentLoaded', function () {
   animateSidebars();
   updateLastModifiedDate();
 
+  // Dock visibility toggle (persist in localStorage)
+  (function initDockVisibilityToggle() {
+    try {
+      const STORAGE_KEY = 'aiwegwijzer.dock.hidden.v1';
+      const savedHidden = localStorage.getItem(STORAGE_KEY) === '1';
+      document.documentElement.classList.toggle('dock-hidden', !!savedHidden);
+
+      let btn = document.querySelector('.dock-visibility-toggle-btn');
+      if (!btn) {
+        btn = document.createElement('button');
+        btn.className = 'dock-visibility-toggle-btn';
+        btn.type = 'button';
+        btn.setAttribute('aria-label', savedHidden ? 'Dock tonen' : 'Dock verbergen');
+        btn.setAttribute('title', savedHidden ? 'Dock tonen' : 'Dock verbergen');
+        btn.textContent = savedHidden ? '›' : '‹';
+        document.body.appendChild(btn);
+      }
+
+      btn.addEventListener('click', function () {
+        const hidden = document.documentElement.classList.toggle('dock-hidden');
+        localStorage.setItem(STORAGE_KEY, hidden ? '1' : '0');
+        btn.setAttribute('aria-label', hidden ? 'Dock tonen' : 'Dock verbergen');
+        btn.setAttribute('title', hidden ? 'Dock tonen' : 'Dock verbergen');
+        btn.textContent = hidden ? '›' : '‹';
+      });
+    } catch (e) {}
+  })();
+
   // Sidebar legenda toggle (meerdere knoppen ondersteunen)
   const legendToggleBtns = document.querySelectorAll('.sidebar-toggle-btn');
   legendToggleBtns.forEach((btn) => {
-    btn.addEventListener('click', toggleSimpleSidebar);
+    // Tooltip vanuit aria-label
+    const label = btn.getAttribute('aria-label');
+    if (label && !btn.getAttribute('title')) btn.setAttribute('title', label);
+    btn.addEventListener('click', function () {
+      lastSidebarToggleButton = btn;
+      toggleSimpleSidebar();
+    });
+    // Init ARIA
+    btn.setAttribute('aria-expanded', 'false');
   });
 
   const legendCloseBtn = document.querySelector('.close-sidebar-btn');
@@ -285,19 +318,25 @@ document.addEventListener('DOMContentLoaded', function () {
     legendCloseBtn.addEventListener('click', toggleSimpleSidebar);
   }
 
-  // Sluit sidebar bij klik buiten de inhoud
+  // Sluit sidebar bij klik buiten de sidebar (maar niet bij klikken op elementen binnen de sidebar)
   document.addEventListener('click', function (ev) {
     try {
       const sidebar = document.getElementById('simpleSidebar');
       if (!sidebar) return;
       const isOpen = sidebar.classList.contains('open');
       if (!isOpen) return;
-      const content = sidebar.querySelector('.sidebar-content');
-      const toggle = document.querySelector('.sidebar-toggle-btn');
-      const clickedInsideSidebar = content && content.contains(ev.target);
-      const clickedToggle = toggle && toggle.contains(ev.target);
-      if (!clickedInsideSidebar && !clickedToggle) {
+
+      const clickedInsideSidebar = sidebar.contains(ev.target);
+      const toggles = Array.from(document.querySelectorAll('.sidebar-toggle-btn'));
+      const clickedAnyToggle = toggles.some((t) => t.contains(ev.target));
+
+      if (!clickedInsideSidebar && !clickedAnyToggle) {
         sidebar.classList.remove('open');
+        try {
+          const content = sidebar.querySelector('.sidebar-content');
+          if (content) content.setAttribute('aria-hidden', 'true');
+          toggles.forEach((btn) => btn.setAttribute('aria-expanded', 'false'));
+        } catch (e) {}
       }
     } catch (e) {}
   }, true);
@@ -308,6 +347,15 @@ document.addEventListener('DOMContentLoaded', function () {
       const sidebar = document.getElementById('simpleSidebar');
       if (sidebar && sidebar.classList.contains('open')) {
         sidebar.classList.remove('open');
+        try {
+          const content = sidebar.querySelector('.sidebar-content');
+          if (content) content.setAttribute('aria-hidden', 'true');
+          const toggles = document.querySelectorAll('.sidebar-toggle-btn');
+          toggles.forEach((btn) => btn.setAttribute('aria-expanded', 'false'));
+        } catch (e) {}
+        if (lastSidebarToggleButton) {
+          lastSidebarToggleButton.focus({ preventScroll: false });
+        }
       }
     }
   });
@@ -315,28 +363,60 @@ document.addEventListener('DOMContentLoaded', function () {
   // Top: naar boven
   const topToggleBtn = document.querySelector('.top-toggle-btn');
   if (topToggleBtn) {
+    if (!topToggleBtn.getAttribute('title')) {
+      const label = topToggleBtn.getAttribute('aria-label') || 'Naar boven';
+      topToggleBtn.setAttribute('title', label);
+    }
     topToggleBtn.addEventListener('click', goToTop);
   }
 
   // Home: naar home
   const homeToggleBtn = document.querySelector('.home-toggle-btn');
   if (homeToggleBtn) {
+    if (!homeToggleBtn.getAttribute('title')) {
+      const label = homeToggleBtn.getAttribute('aria-label') || 'Naar home';
+      homeToggleBtn.setAttribute('title', label);
+    }
     homeToggleBtn.addEventListener('click', goToHome);
+  }
+
+  // Reset voortgang knop
+  const resetBtn = document.getElementById('reset-progress');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', function () {
+      try {
+        localStorage.removeItem('aiwegwijzer.progress.v1');
+      } catch (e) {}
+      // Herlaad om UI en badges te verversen
+      window.location.reload();
+    });
   }
 
   // Theme toggle
   const themeToggleBtn = document.querySelector('.theme-toggle-btn');
   if (themeToggleBtn) {
+    if (!themeToggleBtn.getAttribute('title')) {
+      const label = themeToggleBtn.getAttribute('aria-label') || 'Wissel thema';
+      themeToggleBtn.setAttribute('title', label);
+    }
     themeToggleBtn.addEventListener('click', toggleTheme);
   }
 
   // Navigatie omhoog/omlaag
   const navUpBtn = document.querySelector('.nav-up-toggle-btn');
   if (navUpBtn) {
+    if (!navUpBtn.getAttribute('title')) {
+      const label = navUpBtn.getAttribute('aria-label') || 'Vorige blok';
+      navUpBtn.setAttribute('title', label);
+    }
     navUpBtn.addEventListener('click', scrollToPreviousBlock);
   }
   const navDownBtn = document.querySelector('.nav-down-toggle-btn');
   if (navDownBtn) {
+    if (!navDownBtn.getAttribute('title')) {
+      const label = navDownBtn.getAttribute('aria-label') || 'Volgende blok';
+      navDownBtn.setAttribute('title', label);
+    }
     navDownBtn.addEventListener('click', scrollToNextBlock);
   }
 
@@ -627,10 +707,58 @@ const LearningProgress = (function () {
       inner.style.alignItems = 'center';
       inner.style.justifyContent = 'center';
       inner.style.position = 'relative';
+      inner.style.flexDirection = 'column';
+      inner.style.gap = '6px';
 
       const text = document.createElement('span');
       text.id = 'learning-progress-text';
       text.textContent = '';
+
+      // Horizontale voortgangsbalk
+      const bar = document.createElement('div');
+      bar.id = 'learning-progress-bar';
+      bar.setAttribute('role', 'progressbar');
+      bar.setAttribute('aria-valuemin', '0');
+      bar.setAttribute('aria-valuemax', '100');
+      bar.setAttribute('aria-valuenow', '0');
+      bar.style.width = '100%';
+      bar.style.maxWidth = '720px';
+      bar.style.height = '8px';
+      bar.style.margin = '2px auto 0';
+      bar.style.borderRadius = '9999px';
+      bar.style.overflow = 'hidden';
+
+      const barFill = document.createElement('div');
+      barFill.id = 'learning-progress-bar-fill';
+      barFill.style.width = '0%';
+      barFill.style.height = '100%';
+      barFill.style.transition = 'width 300ms ease';
+
+      bar.appendChild(barFill);
+
+      const reset = document.createElement('button');
+      reset.id = 'learning-progress-reset';
+      reset.type = 'button';
+      reset.setAttribute('aria-label', 'Reset voortgang');
+      reset.style.position = 'absolute';
+      reset.style.right = '48px';
+      reset.style.top = '50%';
+      reset.style.transform = 'translateY(-50%)';
+      reset.style.background = 'transparent';
+      reset.style.border = '1px solid #c4c9d1';
+      reset.style.borderRadius = '6px';
+      reset.style.padding = '2px 8px';
+      reset.style.cursor = 'pointer';
+      reset.style.fontSize = '12px';
+      reset.textContent = 'Reset';
+      reset.addEventListener('click', function () {
+        const ok = window.confirm('Weet je zeker dat je alle quiz- en taakvoortgang wilt wissen?');
+        if (!ok) return;
+        try {
+          localStorage.removeItem(STORAGE_KEY);
+        } catch (e) {}
+        window.location.reload();
+      });
 
       const toggle = document.createElement('button');
       toggle.id = 'learning-progress-toggle';
@@ -654,6 +782,8 @@ const LearningProgress = (function () {
       });
 
       inner.appendChild(text);
+      inner.appendChild(bar);
+      inner.appendChild(reset);
       inner.appendChild(toggle);
       el.appendChild(inner);
 
@@ -700,6 +830,9 @@ const LearningProgress = (function () {
       const isDark = (html.getAttribute('data-theme') || '').toLowerCase() === 'dark';
       const text = el.querySelector('#learning-progress-text');
       const toggle = el.querySelector('#learning-progress-toggle');
+      const reset = el.querySelector('#learning-progress-reset');
+      const bar = el.querySelector('#learning-progress-bar');
+      const barFill = el.querySelector('#learning-progress-bar-fill');
 
       // Gebruik CSS-variabelen zodat kleuren consistent blijven met het thema
       el.style.background = 'var(--bg-secondary)';
@@ -711,6 +844,17 @@ const LearningProgress = (function () {
         toggle.style.border = isDark ? '1px solid var(--gray-600)' : '1px solid var(--border-light)';
         toggle.style.color = 'var(--text-primary)';
         toggle.style.background = 'transparent';
+      }
+      if (reset) {
+        reset.style.border = isDark ? '1px solid var(--gray-600)' : '1px solid var(--border-light)';
+        reset.style.color = 'var(--text-primary)';
+        reset.style.background = 'transparent';
+      }
+      if (bar) {
+        bar.style.background = isDark ? 'var(--gray-700)' : 'var(--border-light)';
+      }
+      if (barFill) {
+        barFill.style.background = 'var(--primary-green)';
       }
     } catch (e) {}
   }
@@ -754,6 +898,11 @@ const LearningProgress = (function () {
     } else {
       badge.textContent = `Quiz-voortgang: ${pct}% (${done}/${total})`;
     }
+    // Update voortgangsbalk
+    const bar = badge.querySelector('#learning-progress-bar');
+    const barFill = badge.querySelector('#learning-progress-bar-fill');
+    if (bar) bar.setAttribute('aria-valuenow', String(pct));
+    if (barFill) barFill.style.width = pct + '%';
     applyThemeStyles(badge);
     applyCollapsed(badge);
   }
