@@ -530,9 +530,10 @@ h4 {
 }
 
 .copy-btn {
-  background: var(--primary-blue);
-  color: white;
-  border: none;
+  background: #d1d5da; /* fallback: gray-100 */
+  background: var(--gray-100) !important;
+  color: var(--text-primary);
+  border: 1px solid var(--gray-200) !important;
   padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
@@ -541,7 +542,8 @@ h4 {
 }
 
 .copy-btn:hover {
-  background: var(--primary-indigo);
+  background: #b8bec8; /* fallback: gray-200 */
+  background: var(--gray-200) !important;
   transform: scale(1.05) !important;
 }
 
@@ -1249,35 +1251,45 @@ a:focus {
   z-index: -1;
 }
 
+/* Titelbanner voor opdrachtblokken: laat niet over de icon-kolom lopen,
+   zodat de fade van transparant (links) naar zichtbaar goed uitkomt */
+.content-block.task .content-text > strong:first-child::before { left: 0; }
+/* Idem voor quizblokken */
+.content-block.quiz .content-text > strong:first-child::before { left: 0; }
+
 /* Kleur per bloktype: match met icon-kolom (donkerder naar lichter) */
 .content-block.task .content-text > strong:first-child::before {
   background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent-task) 60%, #ffffff) 0%,
-    color-mix(in srgb, var(--accent-task) 20%, #ffffff) 100%
+    90deg,
+    rgba(var(--accent-task-rgb), 0) 0%,
+    rgba(var(--accent-task-rgb), 0.6) 60%,
+    rgba(var(--accent-task-rgb), 0.95) 100%
   );
 }
 .content-block.quiz .content-text > strong:first-child::before {
   background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent-quiz) 60%, #ffffff) 0%,
-    color-mix(in srgb, var(--accent-quiz) 20%, #ffffff) 100%
+    90deg,
+    rgba(var(--accent-quiz-rgb), 0) 0%,
+    rgba(var(--accent-quiz-rgb), 0.6) 60%,
+    rgba(var(--accent-quiz-rgb), 0.95) 100%
   );
 }
 
 /* Dark mode: gebruik achtergrondkleuren die aansluiten bij dark palette */
 [data-theme='dark'] .content-block.task .content-text > strong:first-child::before {
   background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent-task) 45%, var(--bg-secondary)) 0%,
-    color-mix(in srgb, var(--accent-task) 20%, var(--bg-secondary)) 100%
+    90deg,
+    rgba(var(--accent-task-rgb), 0) 0%,
+    rgba(var(--accent-task-rgb), 0.55) 60%,
+    rgba(var(--accent-task-rgb), 0.85) 100%
   );
 }
 [data-theme='dark'] .content-block.quiz .content-text > strong:first-child::before {
   background: linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--accent-quiz) 45%, var(--bg-secondary)) 0%,
-    color-mix(in srgb, var(--accent-quiz) 20%, var(--bg-secondary)) 100%
+    90deg,
+    rgba(var(--accent-quiz-rgb), 0) 0%,
+    rgba(var(--accent-quiz-rgb), 0.55) 60%,
+    rgba(var(--accent-quiz-rgb), 0.85) 100%
   );
 }
 
@@ -1307,6 +1319,11 @@ a:focus {
     padding: 0 14px;
     height: 60px; /* hoogte banner gelijk aan linkerkolom op mobiel (60px) */
   }
+
+  /* Mobiel: ook bij opdrachten niet over de icon-kolom lopen */
+  .content-block.task .content-text > strong:first-child::before { left: 0; }
+  /* Mobiel: idem voor quiz */
+  .content-block.quiz .content-text > strong:first-child::before { left: 0; }
 }
 
 /* Zorg dat de icon-kolom altijd boven de titelbanner ligt (volledig zichtbaar) */
@@ -1947,7 +1964,7 @@ a:focus {
   gap: 10px;
   position: fixed;
   left: -60px; /* uit beeld */
-  top: 440px; /* onder de legenda */
+  top: 120px; /* hoger geplaatst op de pagina */
   z-index: 1001;
   transition: left 0.3s ease, opacity 0.25s ease;
   opacity: 0;
@@ -2413,12 +2430,13 @@ a:focus {
 }
 
 [data-theme='dark'] .copy-btn {
-  background: var(--primary-blue);
+  background: var(--gray-600) !important;
   color: var(--text-light) !important;
+  border: 1px solid var(--gray-500) !important;
 }
 
 [data-theme='dark'] .copy-btn:hover {
-  background: var(--primary-indigo);
+  background: var(--gray-500) !important;
   color: var(--text-light) !important;
 }
 
@@ -3240,3 +3258,67 @@ body:not([data-theme='dark']) .content-block.quiz .content-text .btn:not(.copy-b
 [data-theme='dark'] .quiz-option * {
   color: var(--text-light) !important;
 }
+
+/* ========================================
+   UNIFIED SIDEBAR BEHAVIOR (GROUPED RULES)
+   ======================================== */
+/* Eén plek om animatie/hoverzone voor sidebars te beheren */
+.simple-sidebar,
+.top-sidebar,
+.home-sidebar,
+.theme-sidebar {
+  transition: transform 0.4s ease-out, opacity 0.2s ease;
+}
+
+.simple-sidebar:hover,
+.top-sidebar:hover,
+.home-sidebar:hover,
+.theme-sidebar:hover {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Open state via klik (pin open) */
+.simple-sidebar.open {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+
+/* Open state: zorg dat inhoud en acties zichtbaar blijven zonder hover */
+.simple-sidebar.open .sidebar-content {
+  left: 50px;
+  pointer-events: auto;
+}
+.simple-sidebar.open .sidebar-actions {
+  left: 4px;
+  opacity: 1;
+}
+.simple-sidebar.open .sidebar-toggle-btn {
+  left: -32px;
+}
+
+/* Verbreding onzichtbare hoverzone voor eerdere activatie */
+.simple-sidebar::before,
+.top-sidebar::before,
+.home-sidebar::before,
+.theme-sidebar::before {
+  width: 36px; /* was 12px per sidebar */
+}
+
+/* Kleine sluitvertraging (hysterese) bij weghoveren, niet bij pinned-open */
+.simple-sidebar { transition-delay: 0.6s; }
+.simple-sidebar:hover,
+.simple-sidebar.open { transition-delay: 0s; }
+
+/* Zelfde sluitvertraging voor overige sidebars */
+.top-sidebar { transition-delay: 0.6s; }
+.top-sidebar:hover,
+.top-sidebar.open { transition-delay: 0s; }
+
+.home-sidebar { transition-delay: 0.6s; }
+.home-sidebar:hover,
+.home-sidebar.open { transition-delay: 0s; }
+
+.theme-sidebar { transition-delay: 0.6s; }
+.theme-sidebar:hover,
+.theme-sidebar.open { transition-delay: 0s; }

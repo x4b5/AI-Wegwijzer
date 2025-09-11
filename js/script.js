@@ -285,6 +285,33 @@ document.addEventListener('DOMContentLoaded', function () {
     legendCloseBtn.addEventListener('click', toggleSimpleSidebar);
   }
 
+  // Sluit sidebar bij klik buiten de inhoud
+  document.addEventListener('click', function (ev) {
+    try {
+      const sidebar = document.getElementById('simpleSidebar');
+      if (!sidebar) return;
+      const isOpen = sidebar.classList.contains('open');
+      if (!isOpen) return;
+      const content = sidebar.querySelector('.sidebar-content');
+      const toggle = document.querySelector('.sidebar-toggle-btn');
+      const clickedInsideSidebar = content && content.contains(ev.target);
+      const clickedToggle = toggle && toggle.contains(ev.target);
+      if (!clickedInsideSidebar && !clickedToggle) {
+        sidebar.classList.remove('open');
+      }
+    } catch (e) {}
+  }, true);
+
+  // Sluit sidebar met Escape
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key === 'Escape') {
+      const sidebar = document.getElementById('simpleSidebar');
+      if (sidebar && sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+      }
+    }
+  });
+
   // Top: naar boven
   const topToggleBtn = document.querySelector('.top-toggle-btn');
   if (topToggleBtn) {
