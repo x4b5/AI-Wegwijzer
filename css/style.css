@@ -235,47 +235,6 @@ h4 {
   border: 1px solid var(--border-light);
 }
 
-/* Stacked variant: twee rijen onder elkaar */
-.hotkey-panel.stacked {
-  flex-direction: column;
-}
-.hotkey-panel.stacked .hotkey-col.fixed,
-.hotkey-panel.stacked .hotkey-col.flex {
-  flex: 0 0 auto;
-  width: 100%;
-  min-height: 80px;
-  padding: 15px 0;
-}
-.hotkey-panel.stacked .hotkey-col.fixed {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border-bottom: 1px dashed var(--border-light);
-  padding-bottom: 15px;
-}
-.hotkey-panel.stacked .hotkey-col.flex {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.hotkey-panel.stacked .hotkey-col.flex .hotkey-icon-code {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.hotkey-panel.stacked .hotkey-col.flex .hotkey-code {
-  width: fit-content;
-  max-width: 200px;
-}
-.hotkey-panel.stacked .hotkey-notes {
-  margin-left: 0;
-}
-
-/* Verberg losse BR's binnen het hotkey-panel voor strakker geheel */
-.hotkey-panel br {
-  display: none;
-}
-
 /* Hotkey panel details */
 .hotkey-col.fixed {
   flex: 0 0 160px;
@@ -311,6 +270,47 @@ h4 {
 }
 .hotkey-notes li {
   margin: 4px 0;
+}
+
+/* Stacked variant: twee rijen onder elkaar */
+.hotkey-panel.stacked {
+  flex-direction: column;
+}
+.hotkey-panel.stacked .hotkey-col.fixed,
+.hotkey-panel.stacked .hotkey-col.flex {
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: 80px;
+  padding: 15px 0;
+}
+.hotkey-panel.stacked .hotkey-col.fixed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px dashed var(--border-light);
+  padding-bottom: 15px;
+}
+.hotkey-panel.stacked .hotkey-col.flex {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.hotkey-panel.stacked .hotkey-col.flex .hotkey-icon-code {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.hotkey-panel.stacked .hotkey-col.flex .hotkey-code {
+  width: fit-content;
+  max-width: 250px;
+}
+.hotkey-panel.stacked .hotkey-notes {
+  margin-left: 0;
+}
+
+/* Verberg losse BR's binnen het hotkey-panel voor strakker geheel */
+.hotkey-panel br {
+  display: none;
 }
 
 /* ========================================
@@ -537,6 +537,175 @@ h4 {
    (Niet gebruikt in D-01-chatbot bestand)
    ======================================== */
 /* ========================================
+   PROMPT TABLE STYLING
+   ======================================== */
+.prompt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-table thead {
+  background: linear-gradient(135deg, #4a9a4a, #5ba85b);
+  color: white;
+}
+
+.prompt-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prompt-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.prompt-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.prompt-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.prompt-table tbody tr:nth-child(even):hover {
+  background-color: #f1f5f9;
+}
+
+/* Graduele kleuren per kolom - van donker naar licht */
+.prompt-table tbody tr:nth-child(1) td:nth-child(1) { background: #4a9a4a; }
+.prompt-table tbody tr:nth-child(2) td:nth-child(1) { background: #c0e8c0; }
+.prompt-table tbody tr:nth-child(3) td:nth-child(1) { background: #d4f4d4; }
+.prompt-table tbody tr:nth-child(4) td:nth-child(1) { background: #e8f5e8; }
+.prompt-table tbody tr:nth-child(5) td:nth-child(1) { background: #f0f9f0; }
+.prompt-table tbody tr:nth-child(6) td:nth-child(1) { background: #f8fdf8; }
+
+.prompt-table tbody tr:nth-child(1) td:nth-child(2) { background: #4a9a4a; }
+.prompt-table tbody tr:nth-child(2) td:nth-child(2) { background: #c0e8c0; }
+.prompt-table tbody tr:nth-child(3) td:nth-child(2) { background: #d4f4d4; }
+.prompt-table tbody tr:nth-child(4) td:nth-child(2) { background: #e8f5e8; }
+.prompt-table tbody tr:nth-child(5) td:nth-child(2) { background: #f0f9f0; }
+.prompt-table tbody tr:nth-child(6) td:nth-child(2) { background: #f8fdf8; }
+
+.prompt-table tbody tr:nth-child(1) td:nth-child(3) { background: #4a9a4a; }
+.prompt-table tbody tr:nth-child(3) td:nth-child(3) { background: #d4f4d4; }
+.prompt-table tbody tr:nth-child(4) td:nth-child(3) { background: #e8f5e8; }
+.prompt-table tbody tr:nth-child(5) td:nth-child(3) { background: #f0f9f0; }
+.prompt-table tbody tr:nth-child(6) td:nth-child(3) { background: #f8fdf8; }
+
+.prompt-table tbody tr:nth-child(1) td:nth-child(4) { background: #4a9a4a; }
+.prompt-table tbody tr:nth-child(2) td:nth-child(4) { background: #c0e8c0; }
+.prompt-table tbody tr:nth-child(3) td:nth-child(4) { background: #d4f4d4; }
+.prompt-table tbody tr:nth-child(4) td:nth-child(4) { background: #e8f5e8; }
+.prompt-table tbody tr:nth-child(5) td:nth-child(4) { background: #f0f9f0; }
+.prompt-table tbody tr:nth-child(6) td:nth-child(4) { background: #f8fdf8; }
+
+.prompt-table td {
+  padding: 12px 15px;
+  vertical-align: top;
+}
+
+.letter-cell {
+  background: linear-gradient(135deg, #4a9a4a, #5ba85b);
+  color: #000000;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  width: 50px;
+  border-radius: 4px;
+}
+
+.element-cell {
+  font-weight: 600;
+  color: #374151;
+  min-width: 150px;
+  background: linear-gradient(135deg, #e8f5e8, #d4f4d4);
+  border-radius: 4px;
+}
+
+.example-cell {
+  font-style: italic;
+  color: #6b7280;
+  background: linear-gradient(135deg, #f0f9f0, #e8f5e8);
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+}
+
+/* Dark mode voor prompt table */
+[data-theme='dark'] .prompt-table {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .prompt-table thead {
+  background: linear-gradient(135deg, #4a9a4a, #5ba85b);
+}
+
+[data-theme='dark'] .prompt-table tbody tr {
+  border-bottom: 1px solid var(--gray-600);
+}
+
+[data-theme='dark'] .prompt-table tbody tr:hover {
+  background-color: var(--bg-accent);
+}
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(even) {
+  background-color: var(--bg-accent);
+}
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(even):hover {
+  background-color: var(--gray-700);
+}
+
+[data-theme='dark'] .element-cell {
+  color: var(--text-primary);
+  background: linear-gradient(135deg, #2d4a2d, #3a5a3a);
+}
+
+[data-theme='dark'] .example-cell {
+  color: var(--text-secondary);
+  background: linear-gradient(135deg, #1a3a1a, #2d4a2d);
+}
+
+/* Dark mode graduele kleuren per kolom - van donker naar licht */
+[data-theme='dark'] .prompt-table tbody tr:nth-child(1) td:nth-child(1) { background: #4a9a4a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(2) td:nth-child(1) { background: #3a5a3a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(3) td:nth-child(1) { background: #2d4a2d; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(4) td:nth-child(1) { background: #1a3a1a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(5) td:nth-child(1) { background: #0f2a0f; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(6) td:nth-child(1) { background: #0a1a0a; }
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(1) td:nth-child(2) { background: #4a9a4a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(2) td:nth-child(2) { background: #3a5a3a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(3) td:nth-child(2) { background: #2d4a2d; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(4) td:nth-child(2) { background: #1a3a1a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(5) td:nth-child(2) { background: #0f2a0f; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(6) td:nth-child(2) { background: #0a1a0a; }
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(1) td:nth-child(3) { background: #4a9a4a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(2) td:nth-child(3) { background: #3a5a3a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(3) td:nth-child(3) { background: #2d4a2d; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(4) td:nth-child(3) { background: #1a3a1a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(5) td:nth-child(3) { background: #0f2a0f; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(6) td:nth-child(3) { background: #0a1a0a; }
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(1) td:nth-child(4) { background: #4a9a4a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(2) td:nth-child(4) { background: #3a5a3a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(3) td:nth-child(4) { background: #2d4a2d; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(4) td:nth-child(4) { background: #1a3a1a; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(5) td:nth-child(4) { background: #0f2a0f; }
+[data-theme='dark'] .prompt-table tbody tr:nth-child(6) td:nth-child(4) { background: #0a1a0a; }
+
+/* ========================================
    PROMPT BOX STYLING
    ======================================== */
 .prompt-box {
@@ -548,6 +717,10 @@ h4 {
   border: 1px solid var(--border-light);
   box-shadow: var(--shadow-sm);
   font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
 }
 
 .prompt-header {
@@ -575,6 +748,8 @@ h4 {
   cursor: pointer;
   font-size: 16px;
   transition: all 0.2s ease;
+  flex-shrink: 0;
+  align-self: flex-start;
 }
 
 .copy-btn:hover {
@@ -590,6 +765,7 @@ h4 {
 .prompt-content {
   line-height: 1.6;
   color: var(--text-primary) !important;
+  flex: 1;
 }
 
 /* Zorg dat alle tekst in prompt-box elementen zwart is, ook binnen opdracht blokken */
@@ -1294,7 +1470,8 @@ a:focus {
 .content-block.quiz .content-text > strong:first-child::before { left: 0; }
 
 /* Kleur per bloktype: match met icon-kolom (donkerder naar lichter) */
-.content-block.task .content-text > strong:first-child::before {
+.content-block.task .content-text > strong:first-child::before,
+.content-block.opdracht .content-text > strong:first-child::before {
   background: linear-gradient(
     90deg,
     rgba(var(--accent-task-rgb), 0) 0%,
@@ -1312,7 +1489,8 @@ a:focus {
 }
 
 /* Dark mode: gebruik achtergrondkleuren die aansluiten bij dark palette */
-[data-theme='dark'] .content-block.task .content-text > strong:first-child::before {
+[data-theme='dark'] .content-block.task .content-text > strong:first-child::before,
+[data-theme='dark'] .content-block.opdracht .content-text > strong:first-child::before {
   background: linear-gradient(
     90deg,
     rgba(var(--accent-task-rgb), 0) 0%,
@@ -1331,6 +1509,7 @@ a:focus {
 
 /* Accentlijn altijd boven de banner tekenen (zichtbaar houden) */
 .content-block.task .content-text::after,
+.content-block.opdracht .content-text::after,
 .content-block.quiz .content-text::after {
   content: '';
   position: absolute;
@@ -1341,15 +1520,18 @@ a:focus {
   z-index: 2; /* boven de titelbanner */
 }
 .content-block.task .content-text::after { background: var(--accent-task); }
+.content-block.opdracht .content-text::after { background: var(--accent-task); }
 .content-block.quiz .content-text::after { background: var(--accent-quiz); }
 
 /* Mobiel: icon is 60px breed, corrigeer linker uitstulping */
 @media (max-width: 768px) {
   .content-block.task .content-text > strong:first-child::before,
+  .content-block.opdracht .content-text > strong:first-child::before,
   .content-block.quiz .content-text > strong:first-child::before {
     left: calc(-60px - 18px); /* 60px icon + 18px content padding op mobiel */
   }
   .content-block.task .content-text > strong:first-child,
+  .content-block.opdracht .content-text > strong:first-child,
   .content-block.quiz .content-text > strong:first-child {
     margin: -18px -18px 10px;
     padding: 0 14px;
@@ -3590,3 +3772,33 @@ body:not([data-theme='dark']) .content-block.quiz .content-text .btn:not(.copy-b
   transform: none !important;
   transition: none !important;
 }
+
+/* Bronnen lijst styling */
+.bronnen-lijst {
+  list-style: none;
+  padding-left: 0;
+}
+
+.bronnen-lijst li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.bronnen-lijst li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--link-color);
+  font-weight: bold;
+}
+
+.bronnen-lijst li a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.bronnen-lijst li a:hover {
+  text-decoration: underline;
+}
+

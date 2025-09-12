@@ -1,0 +1,3 @@
+- bronnen toevoegen
+- artikel verder uitwerken
+- bias/ AGI
