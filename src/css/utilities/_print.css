@@ -1,0 +1,47 @@
+/* ========================================
+   FOCUS STATES
+   ======================================== */
+button:focus,
+.btn:focus,
+.demo-button:focus {
+  outline: none;
+  outline-offset: 2px;
+}
+
+a:focus {
+  outline: none;
+  outline-offset: 2px;
+}
+
+/* Toegankelijke focus zichtbaar maken */
+:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 3px;
+}
+.quiz-option:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 4px;
+}
+
+/* ========================================
+   PRINT STYLING
+   ======================================== */
+@media print {
+  body {
+    background: white;
+    color: #000; /* expliciet print-contrast */
+    padding: 0;
+    margin: 0;
+  }
+
+  .container {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  .icon {
+    background: var(--gray-100) !important;
+    color: var(--text-primary) !important;
+  }
+}
+

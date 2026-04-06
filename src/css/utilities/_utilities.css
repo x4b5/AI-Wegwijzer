@@ -1,0 +1,61 @@
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.text-center {
+  text-align: center;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+/* ========================================
+   SPECIALE ELEMENTEN
+   ======================================== */
+.important {
+  background: #d9c7a0;
+  border: 1px solid #fde68a;
+  border-left: 4px solid var(--primary-orange);
+  padding: 20px;
+  margin: 25px 0;
+  border-radius: 8px;
+  color: #92400e;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container caption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+

@@ -1,0 +1,168 @@
+/* ========================================
+   HOME NAV GRID (RESPONSIVE)
+   ======================================== */
+.nav-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 knop per rij op smal */
+  gap: 15px;
+  justify-items: center; /* centreer knoppen in kolom */
+}
+
+.nav-grid .nav-button {
+  width: 100%; /* vul kolombreedte */
+  max-width: 360px; /* limiet voor grote schermen bij 1 kolom */
+  text-align: center; /* tekst centreren */
+}
+
+/* Breedste schermen: 3 knoppen naast elkaar */
+@media (min-width: 1200px) {
+  .nav-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .nav-grid .nav-button {
+    max-width: none; /* laat knop de kolom vullen */
+  }
+}
+
+/* ========================================
+   SITE TITLE
+   ======================================== */
+.site-title {
+  margin: 14px auto 0;
+  padding: 0;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: var(--text-primary);
+  line-height: 1.15;
+  text-align: center;
+  position: relative;
+  width: fit-content;
+}
+
+.site-title::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 66%;
+  margin: 10px auto 0;
+  background: linear-gradient(
+    90deg,
+    var(--primary-blue),
+    var(--primary-purple)
+  );
+  border-radius: 999px;
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .site-title::after {
+    transition: width 180ms ease, opacity 180ms ease;
+  }
+  .site-title:hover::after {
+    width: 80%;
+    opacity: 1;
+  }
+}
+
+/* ========================================
+   ZOEKBALK STYLING
+   ======================================== */
+#searchInput:focus {
+  border-color: var(--primary-blue) !important;
+  box-shadow: 0 0 0 3px rgba(55, 116, 230, 0.1) !important;
+}
+
+#searchInput::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.search-container {
+  position: relative;
+}
+
+#searchResults {
+  font-style: italic;
+  min-height: 20px;
+}
+
+/* Highlight zoekresultaten */
+.content-block.info[style*="display: flex"] {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================================
+   A-Z INDEX EN CATEGORIEËN STYLING
+   ======================================== */
+.az-index {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.az-index button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.az-index button.active {
+  background: var(--primary-blue) !important;
+  color: white !important;
+  border-color: var(--primary-blue) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(55, 116, 230, 0.3);
+}
+
+.category-filter {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.category-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-color: var(--primary-blue) !important;
+}
+
+.category-btn.active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(55, 116, 230, 0.3);
+}
+
+/* ========================================
+   TAG FILTER STYLING
+   ======================================== */
+.tag-filter {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tag-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  border-color: var(--primary-blue) !important;
+}
+
+.tag-btn.active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(55, 116, 230, 0.3);
+}
+
+/* Responsive design voor knoppen */
+@media (max-width: 768px) {
+  .az-index button,
+  .category-btn,
+  .tag-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+    min-width: 35px;
+  }
+  
+  #azButtons,
+  #categoryButtons,
+  #tagButtons {
+    gap: 6px;
+  }
+}

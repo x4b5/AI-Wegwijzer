@@ -1,0 +1,217 @@
+/* ========================================
+   CONTENT BLOCKS - BASIS STYLING
+   ======================================== */
+.content-block {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  background: var(--bg-secondary);
+  border-radius: 16px; /* Harmoniseerde hoeken */
+  margin: 40px 0; /* Compacte scheiding tussen blokken */
+  box-shadow: var(--shadow-md); /* Consistente schaduw */
+  overflow: hidden;
+  transition: all 0.3s ease; /* Smooth transitions */
+  border: none;
+  min-height: fit-content;
+}
+
+.content-block:hover {
+  box-shadow: var(--shadow-lg); /* Consistente hover schaduw */
+}
+
+/* Voorkom dat iconen meebewegen met content-block hover */
+.content-block:hover .icon {
+  transform: none;
+}
+
+/* Zorg dat iconen hun eigen hover effect behouden */
+.content-block .icon:hover {
+  transform: scale(1.03) !important;
+}
+
+/* Alleen de content-text beweegt omhoog bij hover */
+.content-block:hover .content-text {
+  transform: translateY(-3px);
+}
+
+/* ========================================
+   ICON STYLING
+   ======================================== */
+.icon {
+  font-size: 1.5em;
+  color: var(--text-light);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80px;
+  min-height: 100%;
+  margin-right: 0;
+  flex-shrink: 0;
+  transition: all 0.3s ease; /* Smooth transitions */
+  padding: 10px 8px;
+  border-radius: 0; /* Geen binnenronding, zodat onderhoek vol kleur is */
+  align-self: stretch;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Zeer subtiele binnen schaduw */
+  user-select: none; /* Voorkom tekst selectie */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.icon img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  object-position: start;
+}
+
+.icon:hover {
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.08); /* Subtiele hover schaduw */
+}
+
+/* ========================================
+   CONTENT TEXT STYLING
+   ======================================== */
+.content-text {
+  flex: 1;
+  line-height: 1.8; /* Consistente, comfortabele regelafstand */
+  background: var(--bg-secondary); /* Terug naar originele achtergrond */
+  padding: 30px;
+  border-radius: 0 16px 16px 0; /* Harmoniseerde hoeken */
+  border: none; /* Geen randen */
+  width: 100%;
+  color: var(--text-primary);
+  min-height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Zeer subtiele schaduw */
+  transition: all 0.3s ease; /* Smooth transitions */
+  letter-spacing: 0.01em; /* Subtiele letter-spacing voor betere leesbaarheid */
+  position: relative; /* Voor overlay (::before) */
+  z-index: 0;
+}
+
+/* Organische, verticale tint-overlay voor contentkolom */
+.content-block .content-text::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  z-index: 0; /* achter de content */
+  background: none; /* per type ingesteld */
+}
+
+/* Typografie ritme binnen content-blokken */
+.content-text p {
+  margin: 0 0 0.9rem; /* Consistente paragraafafstand */
+}
+
+.content-text h2,
+.content-text h3,
+.content-text h4 {
+  line-height: 1.3; /* Compacte kopregelafstand */
+  margin-top: 1.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.content-text > *:last-child {
+  margin-bottom: 0; /* Geen extra ruimte onderaan blok */
+}
+
+/* ========================================
+   SPECIFIEKE BLOK TYPES MET DONKERDERE KLEUREN EN MAXIMAAL VERLOOP NAAR WIT
+   ======================================== */
+.task .icon {
+  background: color-mix(in srgb, var(--accent-task) 60%, #ffffff);
+  color: var(--text-primary);
+}
+
+.task .icon:hover {
+  color: #2c3339;
+}
+
+.quiz .icon {
+  background: color-mix(in srgb, var(--accent-quiz) 60%, #ffffff);
+  color: var(--text-primary);
+}
+
+.quiz .icon:hover {
+  color: #2c3339;
+  transform: scale(1.05) !important;
+}
+
+.trivia .icon {
+  background: color-mix(in srgb, var(--accent-trivia) 60%, #ffffff);
+  color: var(--text-primary);
+}
+
+.trivia .icon:hover {
+  color: #2c3339;
+  transform: scale(1.05) !important;
+}
+
+.important .icon {
+  background: color-mix(in srgb, var(--accent-important) 60%, #ffffff);
+  color: var(--text-primary);
+}
+
+.important .icon:hover {
+  color: #2c3339;
+  transform: scale(1.05) !important;
+}
+
+.info .icon {
+  background: color-mix(in srgb, var(--accent-info) 60%, #ffffff);
+  color: var(--text-primary);
+}
+
+.info .icon:hover {
+  color: #2c3339;
+  transform: scale(1.05) !important;
+}
+
+/* Geen border-color meer nodig - rustigere layout */
+
+/* ========================================
+   TRIVIA TOGGLE STYLING - MINIMAAL
+   ======================================== */
+.content-block.trivia .content-text details {
+  width: 100%;
+}
+
+.content-block .content-text summary {
+  cursor: pointer; /* Hand cursor voor summary elementen */
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--primary-yellow-light);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  transition: var(--transition-fast);
+  list-style: none;
+  position: relative;
+  user-select: none; /* Voorkom tekst selectie */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.content-block .content-text summary:hover {
+  background: var(--gray-100);
+  border-color: var(--border-medium);
+}
+
+.content-block .content-text summary::after {
+  content: '▶';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  transition: var(--transition-normal);
+}
+
+.content-block .content-text details[open] summary::after {
+  transform: translateY(-50%) rotate(90deg);
+  color: var(--primary-blue);
+}
+

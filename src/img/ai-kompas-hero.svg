@@ -1,0 +1,282 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3774e6;stop-opacity:0.8" />
+      <stop offset="50%" style="stop-color:#7f52e6;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#5d5ae1;stop-opacity:0.8" />
+    </linearGradient>
+    
+    <radialGradient id="centerGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#7f52e6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3774e6;stop-opacity:1" />
+    </radialGradient>
+    
+    <radialGradient id="needleGradient" cx="50%" cy="0%" r="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e88f0a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e13d3d;stop-opacity:0.8" />
+    </radialGradient>
+
+    <!-- Glow filter -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="strongGlow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <!-- CSS Animations -->
+    <style type="text/css">
+      /* Pulsing ring animation */
+      @keyframes pulse-ring {
+        0%, 100% {
+          r: 180px;
+          opacity: 0.4;
+          stroke-width: 2;
+        }
+        50% {
+          r: 185px;
+          opacity: 0.7;
+          stroke-width: 3;
+        }
+      }
+      
+      .pulse-ring {
+        animation: pulse-ring 3s ease-in-out infinite;
+      }
+      
+      /* Rotating orbit animations */
+      @keyframes rotate-cw {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      
+      @keyframes rotate-ccw {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(-360deg); }
+      }
+      
+      .orbit-layer-1 {
+        transform-origin: 200px 200px;
+        animation: rotate-cw 20s linear infinite;
+      }
+      
+      .orbit-layer-2 {
+        transform-origin: 200px 200px;
+        animation: rotate-ccw 15s linear infinite;
+      }
+      
+      .binary-ring {
+        transform-origin: 200px 200px;
+        animation: rotate-cw 40s linear infinite;
+      }
+      
+      /* Main ring pulse */
+      @keyframes pulse-glow {
+        0%, 100% {
+          opacity: 0.6;
+          stroke-width: 3;
+        }
+        50% {
+          opacity: 0.9;
+          stroke-width: 4;
+        }
+      }
+      
+      .main-ring {
+        animation: pulse-glow 2s ease-in-out infinite;
+      }
+      
+      /* AI center breathing */
+      @keyframes breathe {
+        0%, 100% {
+          transform: scale(1);
+          opacity: 0.3;
+        }
+        50% {
+          transform: scale(1.05);
+          opacity: 0.5;
+        }
+      }
+      
+      .ai-center-glow {
+        transform-origin: 200px 200px;
+        animation: breathe 3s ease-in-out infinite;
+      }
+      
+      /* Floating particles */
+      @keyframes float {
+        0%, 100% {
+          transform: translate(0, 0);
+          opacity: 0.6;
+        }
+        25% {
+          transform: translate(5px, -10px);
+          opacity: 0.8;
+        }
+        75% {
+          transform: translate(-5px, 10px);
+          opacity: 0.4;
+        }
+      }
+      
+      .particle {
+        animation: float 4s ease-in-out infinite;
+      }
+      
+      .particle:nth-child(2) {
+        animation-delay: 0.5s;
+        animation-duration: 5s;
+      }
+      
+      .particle:nth-child(3) {
+        animation-delay: 1s;
+        animation-duration: 4.5s;
+      }
+      
+      .particle:nth-child(4) {
+        animation-delay: 1.5s;
+        animation-duration: 5.5s;
+      }
+      
+      .particle:nth-child(5) {
+        animation-delay: 2s;
+        animation-duration: 6s;
+      }
+      
+      /* Hover state - speeds up animations */
+      svg:hover .pulse-ring {
+        animation-duration: 1.5s;
+      }
+      
+      svg:hover .orbit-layer-1 {
+        animation-duration: 10s;
+      }
+      
+      svg:hover .orbit-layer-2 {
+        animation-duration: 7s;
+      }
+      
+      svg:hover .main-ring {
+        stroke-width: 5;
+        opacity: 1;
+        filter: drop-shadow(0 0 10px rgba(55, 116, 230, 0.8));
+      }
+    </style>
+  </defs>
+
+  <!-- Outer pulsing ring -->
+  <circle class="pulse-ring" cx="200" cy="200" r="180" 
+          fill="none" stroke="url(#glowGradient)" stroke-width="2" opacity="0.4"/>
+  
+  <!-- Rotating data orbit 1 -->
+  <g class="orbit-layer-1">
+    <circle cx="200" cy="200" r="150" fill="none" stroke="#5d5ae1" 
+            stroke-width="1" opacity="0.3" stroke-dasharray="5,10"/>
+    <!-- Data points on orbit 1 -->
+    <circle cx="350" cy="200" r="3" fill="#3774e6" filter="url(#glow)"/>
+    <circle cx="200" cy="50" r="3" fill="#7f52e6" filter="url(#glow)"/>
+    <circle cx="50" cy="200" r="3" fill="#5d5ae1" filter="url(#glow)"/>
+    <circle cx="200" cy="350" r="3" fill="#3774e6" filter="url(#glow)"/>
+  </g>
+
+  <!-- Rotating data orbit 2 (counter-clockwise) -->
+  <g class="orbit-layer-2">
+    <circle cx="200" cy="200" r="120" fill="none" stroke="#7f52e6" 
+            stroke-width="1" opacity="0.3" stroke-dasharray="3,8"/>
+    <!-- Data points on orbit 2 -->
+    <circle cx="320" cy="200" r="2.5" fill="#e88f0a" filter="url(#glow)"/>
+    <circle cx="280" cy="120" r="2.5" fill="#0fa870" filter="url(#glow)"/>
+    <circle cx="120" cy="280" r="2.5" fill="#e88f0a" filter="url(#glow)"/>
+  </g>
+
+  <!-- Binary code ring (rotating slowly) -->
+  <g class="binary-ring">
+    <path d="M 200 90 Q 290 110 310 200 Q 290 290 200 310 Q 110 290 90 200 Q 110 110 200 90" 
+          fill="none" stroke="#636b77" stroke-width="0.5" opacity="0.2"/>
+    <text font-family="monospace" font-size="8" fill="#5d5ae1" opacity="0.5">
+      <textPath href="#binaryPath" startOffset="0%">
+        01001001 01000001
+      </textPath>
+    </text>
+  </g>
+
+  <!-- Main compass circle -->
+  <circle cx="200" cy="200" r="90" fill="none" stroke="#3774e6" 
+          stroke-width="3" opacity="0.6" class="main-ring"/>
+  
+  <!-- Cardinal directions base -->
+  <circle cx="200" cy="200" r="100" fill="none" stroke="#636b77" 
+          stroke-width="1" opacity="0.3"/>
+
+  <!-- Cardinal direction markers -->
+  <g class="cardinal-markers">
+    <!-- N -->
+    <line x1="200" y1="92" x2="200" y2="108" stroke="#3774e6" stroke-width="5" stroke-linecap="round"/>
+    <text x="200" y="85" text-anchor="middle" font-size="24" font-weight="bold" fill="#3774e6">N</text>
+    
+    <!-- E -->
+    <line x1="292" y1="200" x2="308" y2="200" stroke="#7f52e6" stroke-width="4" stroke-linecap="round"/>
+    <text x="318" y="207" text-anchor="middle" font-size="20" font-weight="bold" fill="#7f52e6">E</text>
+    
+    <!-- S -->
+    <line x1="200" y1="292" x2="200" y2="308" stroke="#5d5ae1" stroke-width="4" stroke-linecap="round"/>
+    <text x="200" y="330" text-anchor="middle" font-size="20" font-weight="bold" fill="#5d5ae1">S</text>
+    
+    <!-- W -->
+    <line x1="92" y1="200" x2="108" y2="200" stroke="#0fa870" stroke-width="4" stroke-linecap="round"/>
+    <text x="78" y="207" text-anchor="middle" font-size="20" font-weight="bold" fill="#0fa870">W</text>
+  </g>
+
+  <!-- Inner decorative ring -->
+  <circle cx="200" cy="200" r="70" fill="none" stroke="#7f52e6" 
+          stroke-width="1.5" opacity="0.4" stroke-dasharray="2,4"/>
+
+  <!-- AI Symbol center -->
+  <g class="ai-center">
+    <circle class="ai-center-glow" cx="200" cy="200" r="45" fill="url(#centerGradient)" opacity="0.3"/>
+    <circle cx="200" cy="200" r="35" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6"/>
+    
+    <!-- AI text -->
+    <text x="200" y="210" text-anchor="middle" font-size="32" font-weight="bold" 
+          fill="#ffffff" opacity="0.9" font-family="Arial, sans-serif">AI</text>
+  </g>
+
+  <!-- Compass needle (this will rotate on hover) -->
+  <g class="compass-needle">
+    <!-- Shadow -->
+    <path d="M 200 200 L 205 130 L 200 110 L 195 130 Z" 
+          fill="#000000" opacity="0.2" transform="translate(2, 2)"/>
+    
+    <!-- North pointer (red) -->
+    <path d="M 200 200 L 205 130 L 200 110 L 195 130 Z" 
+          fill="url(#needleGradient)" stroke="#ffffff" stroke-width="1" filter="url(#glow)"/>
+    
+    <!-- South pointer (white/gray) -->
+    <path d="M 200 200 L 205 270 L 200 290 L 195 270 Z" 
+          fill="#e0e0e0" stroke="#636b77" stroke-width="1"/>
+    
+    <!-- Center pin -->
+    <circle cx="200" cy="200" r="8" fill="#ffffff" stroke="#3774e6" stroke-width="2"/>
+    <circle cx="200" cy="200" r="3" fill="#3774e6"/>
+  </g>
+
+  <!-- Floating particles (will animate) -->
+  <g class="particles">
+    <circle class="particle" cx="250" cy="150" r="2" fill="#3774e6" opacity="0.6"/>
+    <circle class="particle" cx="320" cy="250" r="1.5" fill="#7f52e6" opacity="0.5"/>
+    <circle class="particle" cx="140" cy="180" r="2" fill="#5d5ae1" opacity="0.6"/>
+    <circle class="particle" cx="170" cy="280" r="1.5" fill="#0fa870" opacity="0.5"/>
+    <circle class="particle" cx="280" cy="320" r="2" fill="#e88f0a" opacity="0.6"/>
+  </g>
+</svg> 

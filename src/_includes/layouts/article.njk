@@ -1,0 +1,12 @@
+---
+layout: layouts/base.njk
+showLegend: true
+ogType: article
+---
+<a class="skip-link" href="#main">Direct naar inhoud</a>
+
+<main id="main" class="container">
+  {% include "components/article-header.njk" %}
+
+  {{ content | safe }}
+</main>

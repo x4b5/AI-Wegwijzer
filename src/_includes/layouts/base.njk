@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    {% include "components/head.njk" %}
+  </head>
+  <body>
+    {% if showLegend %}
+    {% include "components/sidebar-legend.njk" %}
+    {% endif %}
+    {% include "components/sidebar-actions.njk" %}
+
+    {{ content | safe }}
+
+    <script src="/js/script.js" defer></script>
+  </body>
+</html>

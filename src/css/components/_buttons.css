@@ -1,0 +1,154 @@
+/* ========================================
+   INTERACTIEVE ELEMENTEN STYLING
+   ======================================== */
+/* Alle klikbare elementen krijgen hand cursor */
+[onclick],
+[href],
+button,
+.btn,
+.demo-button,
+.nav-button,
+.icon,
+.quiz-option,
+summary {
+  cursor: pointer;
+}
+
+/* Voorkom tekst selectie bij interactieve elementen */
+[onclick],
+[href],
+button,
+.btn,
+.demo-button,
+.nav-button,
+.icon,
+.quiz-option,
+summary {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+/* Hover effecten voor alle interactieve elementen */
+[onclick]:hover,
+[href]:hover,
+button:hover,
+.btn:hover,
+.demo-button:hover,
+.nav-button:hover,
+.icon:hover,
+.quiz-option:hover,
+summary:hover {
+  cursor: pointer;
+}
+
+/* ========================================
+   BUTTON STYLING
+   ======================================== */
+.btn, /* .demo-button, .nav-button, */ button {
+  display: inline-block;
+  background: var(--white);
+  color: var(--gray-700);
+  padding: 18px 35px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition-normal);
+  border: 1px solid var(--gray-700);
+  box-shadow: var(--shadow-md);
+  cursor: pointer; /* Hand cursor voor alle buttons */
+  font-family: inherit;
+  user-select: none; /* Voorkom tekst selectie bij dubbelklikken */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.btn:hover, /* .demo-button:hover, .nav-button:hover, */ button:hover {
+  background: var(--primary-gray-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer; /* Zorg ervoor dat hand cursor blijft bij hover */
+}
+
+/* ========================================
+   ONGEBRUIKTE BUTTON STYLING - UITGECOMMENTARIEERD
+   ======================================== */
+/* Specifieke styling voor nav-button */
+/*
+.nav-button {
+    background: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+}
+
+.nav-button:hover {
+    background: var(--primary-indigo);
+    transform: scale(1.05) !important;
+    cursor: pointer;
+}
+*/
+
+/* Voorkom dat buttons meerdere keren worden geklikt */
+.btn:active, /* .demo-button:active, .nav-button:active, */ button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+/* Focus states voor toegankelijkheid */
+.btn:focus, /* .demo-button:focus, .nav-button:focus, */ button:focus {
+  outline: none;
+  outline-offset: 2px;
+  cursor: pointer;
+}
+
+/* Disabled state voor buttons */
+.btn:disabled, /* .demo-button:disabled, .nav-button:disabled, */ button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ========================================
+   ONGEBRUIKTE BACK-FLOATING STYLING - UITGECOMMENTARIEERD
+   ======================================== */
+/*
+.back-floating {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.back-floating:hover {
+    transform: translateY(-50%) scale(1.02);
+}
+
+.back-floating:active {
+    transform: translateY(-50%);
+}
+*/
+
+@media (max-width: 768px) {
+  .back-floating {
+    left: 16px;
+    bottom: 16px;
+    top: auto;
+    transform: none;
+  }
+  .back-floating:hover,
+  .back-floating:active {
+    transform: none;
+  }
+}
+
+@media print {
+  .back-floating {
+    display: none;
+  }
+}

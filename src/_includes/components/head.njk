@@ -1,0 +1,26 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ title }}{% if title != site.title %} - {{ site.title }}{% endif %}</title>
+{% if description %}
+<meta name="description" content="{{ description }}" />
+{% endif %}
+{% if ogTitle or title %}
+<meta property="og:title" content="{{ ogTitle or title }}" />
+{% endif %}
+{% if ogDescription or description %}
+<meta property="og:description" content="{{ ogDescription or description }}" />
+{% endif %}
+<meta property="og:type" content="{{ ogType or 'website' }}" />
+{% if heroImage %}
+<meta property="og:image" content="{{ heroImage }}" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ ogTitle or title }}" />
+<meta name="twitter:description" content="{{ ogDescription or description }}" />
+<meta name="twitter:image" content="{{ heroImage }}" />
+{% endif %}
+{% if jsonLd %}
+<script type="application/ld+json">
+{{ jsonLd | dump | safe }}
+</script>
+{% endif %}
+<link rel="stylesheet" href="/css/style.css" />

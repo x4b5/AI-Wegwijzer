@@ -1,0 +1,26 @@
+<div class="simple-sidebar" id="simpleSidebar">
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <h3>Legenda van tekstblokken</h3>
+      <button class="close-sidebar-btn">&times;</button>
+    </div>
+    <div class="sidebar-body">
+      {% for item in legend %}
+      <div class="legend-item">
+        <img
+          src="/img/icons/{{ item.icon }}.png"
+          alt="{{ item.alt }}"
+          width="66"
+          height="66"
+          loading="lazy"
+          decoding="async"
+        />
+        <div class="legend-text">
+          <span class="legend-title">{{ item.title }}</span>
+          <small>{{ item.description }}</small>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

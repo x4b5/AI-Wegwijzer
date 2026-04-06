@@ -1,0 +1,340 @@
+/* ========================================
+   PROMPT TABLE STYLING
+   ======================================== */
+.prompt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.prompt-table thead {
+  background: linear-gradient(135deg, #4a9a4a, #5ba85b);
+  color: white;
+}
+
+.prompt-table th {
+  padding: 12px 15px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prompt-table tbody tr {
+  border-bottom: 1px solid #e5e7eb;
+  transition: background-color 0.2s ease;
+}
+
+.prompt-table tbody tr:hover {
+  background-color: #f8fafc;
+}
+
+.prompt-table tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+.prompt-table tbody tr:nth-child(even):hover {
+  background-color: #f1f5f9;
+}
+
+/* Graduele kleuren per kolom - van donker naar licht */
+.prompt-table tbody tr:nth-child(1) td:nth-child(1) {
+  background: #4a9a4a;
+}
+.prompt-table tbody tr:nth-child(2) td:nth-child(1) {
+  background: #c0e8c0;
+}
+.prompt-table tbody tr:nth-child(3) td:nth-child(1) {
+  background: #d4f4d4;
+}
+.prompt-table tbody tr:nth-child(4) td:nth-child(1) {
+  background: #e8f5e8;
+}
+.prompt-table tbody tr:nth-child(5) td:nth-child(1) {
+  background: #f0f9f0;
+}
+.prompt-table tbody tr:nth-child(6) td:nth-child(1) {
+  background: #f8fdf8;
+}
+
+.prompt-table tbody tr:nth-child(1) td:nth-child(2) {
+  background: #4a9a4a;
+}
+.prompt-table tbody tr:nth-child(2) td:nth-child(2) {
+  background: #c0e8c0;
+}
+.prompt-table tbody tr:nth-child(3) td:nth-child(2) {
+  background: #d4f4d4;
+}
+.prompt-table tbody tr:nth-child(4) td:nth-child(2) {
+  background: #e8f5e8;
+}
+.prompt-table tbody tr:nth-child(5) td:nth-child(2) {
+  background: #f0f9f0;
+}
+.prompt-table tbody tr:nth-child(6) td:nth-child(2) {
+  background: #f8fdf8;
+}
+
+.prompt-table tbody tr:nth-child(1) td:nth-child(3) {
+  background: #4a9a4a;
+}
+.prompt-table tbody tr:nth-child(3) td:nth-child(3) {
+  background: #d4f4d4;
+}
+.prompt-table tbody tr:nth-child(4) td:nth-child(3) {
+  background: #e8f5e8;
+}
+.prompt-table tbody tr:nth-child(5) td:nth-child(3) {
+  background: #f0f9f0;
+}
+.prompt-table tbody tr:nth-child(6) td:nth-child(3) {
+  background: #f8fdf8;
+}
+
+.prompt-table tbody tr:nth-child(1) td:nth-child(4) {
+  background: #4a9a4a;
+}
+.prompt-table tbody tr:nth-child(2) td:nth-child(4) {
+  background: #c0e8c0;
+}
+.prompt-table tbody tr:nth-child(3) td:nth-child(4) {
+  background: #d4f4d4;
+}
+.prompt-table tbody tr:nth-child(4) td:nth-child(4) {
+  background: #e8f5e8;
+}
+.prompt-table tbody tr:nth-child(5) td:nth-child(4) {
+  background: #f0f9f0;
+}
+.prompt-table tbody tr:nth-child(6) td:nth-child(4) {
+  background: #f8fdf8;
+}
+
+.prompt-table td {
+  padding: 12px 15px;
+  vertical-align: top;
+}
+
+.letter-cell {
+  background: linear-gradient(135deg, #4a9a4a, #5ba85b);
+  color: #000000;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  width: 50px;
+  border-radius: 4px;
+}
+
+.element-cell {
+  font-weight: 600;
+  color: #374151;
+  min-width: 150px;
+  background: linear-gradient(135deg, #e8f5e8, #d4f4d4);
+  border-radius: 4px;
+}
+
+.example-cell {
+  font-style: italic;
+  color: #6b7280;
+  background: linear-gradient(135deg, #f0f9f0, #e8f5e8);
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+}
+
+/* Dark mode voor prompt table */
+[data-theme='dark'] .prompt-table {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+[data-theme='dark'] .prompt-table thead {
+  background: linear-gradient(135deg, #4a9a4a, #5ba85b);
+}
+
+[data-theme='dark'] .prompt-table tbody tr {
+  border-bottom: 1px solid var(--gray-600);
+}
+
+[data-theme='dark'] .prompt-table tbody tr:hover {
+  background-color: var(--bg-accent);
+}
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(even) {
+  background-color: var(--bg-accent);
+}
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(even):hover {
+  background-color: var(--gray-700);
+}
+
+[data-theme='dark'] .element-cell {
+  color: var(--text-primary);
+  background: linear-gradient(135deg, #2d4a2d, #3a5a3a);
+}
+
+[data-theme='dark'] .example-cell {
+  color: var(--text-secondary);
+  background: linear-gradient(135deg, #1a3a1a, #2d4a2d);
+}
+
+/* Dark mode graduele kleuren per kolom - van donker naar licht */
+[data-theme='dark'] .prompt-table tbody tr:nth-child(1) td:nth-child(1) {
+  background: #4a9a4a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(2) td:nth-child(1) {
+  background: #3a5a3a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(3) td:nth-child(1) {
+  background: #2d4a2d;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(4) td:nth-child(1) {
+  background: #1a3a1a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(5) td:nth-child(1) {
+  background: #0f2a0f;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(6) td:nth-child(1) {
+  background: #0a1a0a;
+}
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(1) td:nth-child(2) {
+  background: #4a9a4a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(2) td:nth-child(2) {
+  background: #3a5a3a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(3) td:nth-child(2) {
+  background: #2d4a2d;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(4) td:nth-child(2) {
+  background: #1a3a1a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(5) td:nth-child(2) {
+  background: #0f2a0f;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(6) td:nth-child(2) {
+  background: #0a1a0a;
+}
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(1) td:nth-child(3) {
+  background: #4a9a4a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(2) td:nth-child(3) {
+  background: #3a5a3a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(3) td:nth-child(3) {
+  background: #2d4a2d;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(4) td:nth-child(3) {
+  background: #1a3a1a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(5) td:nth-child(3) {
+  background: #0f2a0f;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(6) td:nth-child(3) {
+  background: #0a1a0a;
+}
+
+[data-theme='dark'] .prompt-table tbody tr:nth-child(1) td:nth-child(4) {
+  background: #4a9a4a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(2) td:nth-child(4) {
+  background: #3a5a3a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(3) td:nth-child(4) {
+  background: #2d4a2d;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(4) td:nth-child(4) {
+  background: #1a3a1a;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(5) td:nth-child(4) {
+  background: #0f2a0f;
+}
+[data-theme='dark'] .prompt-table tbody tr:nth-child(6) td:nth-child(4) {
+  background: #0a1a0a;
+}
+
+/* ========================================
+   PROMPT BOX STYLING
+   ======================================== */
+.prompt-box {
+  background: var(--gray-50);
+  color: var(--text-primary);
+  padding: 25px;
+  border-radius: 12px;
+  margin: 25px 0;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  font-family: 'Courier New', Courier, monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.prompt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border-light);
+}
+
+.prompt-header span {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--text-primary);
+}
+
+.copy-btn {
+  background: #d1d5da; /* fallback: gray-100 */
+  background: var(--gray-100) !important;
+  color: var(--text-primary);
+  border: 1px solid var(--gray-200) !important;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+.copy-btn:hover {
+  background: #b8bec8; /* fallback: gray-200 */
+  background: var(--gray-200) !important;
+  transform: scale(1.05) !important;
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+
+.prompt-content {
+  line-height: 1.6;
+  color: var(--text-primary) !important;
+  flex: 1;
+}
+
+/* Zorg dat alle tekst in prompt-box elementen zwart is, ook binnen opdracht blokken */
+.prompt-box {
+  color: var(--text-primary) !important;
+}
+
+.prompt-box * {
+  color: var(--text-primary) !important;
+}
+
+.prompt-box a {
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+

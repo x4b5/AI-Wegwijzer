@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 128 128">
+  <g fill="none" stroke="#1F3B59" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <!-- paper -->
+    <path d="M20 24h56l16 16v48a10 10 0 0 1-10 10H30a10 10 0 0 1-10-10V24z" fill="#E6F3F6"/>
+    <path d="M76 24v16a8 8 0 0 0 8 8h16" />
+    <line x1="30" y1="56" x2="78" y2="56" />
+    <line x1="30" y1="70" x2="72" y2="70" />
+    <!-- pencil -->
+    <path d="M22 92l26-26 14 14-26 26-14 4z" fill="#F7C948" />
+    <path d="M62 80l-14-14" />
+    <path d="M22 92l-4 14 14-4" />
+    <!-- arrow to robot -->
+    <line x1="64" y1="88" x2="106" y2="88" />
+    <polyline points="96,80 108,88 96,96" />
+    <!-- small robot head -->
+    <rect x="88" y="96" width="24" height="18" rx="4" fill="#F7C948" />
+    <rect x="84" y="100" width="6" height="10" rx="3" fill="#4FB3BF" />
+    <rect x="112" y="100" width="6" height="10" rx="3" fill="#4FB3BF" />
+    <circle cx="96" cy="105" r="2.5" fill="#1F3B59" stroke="none" />
+    <circle cx="104" cy="105" r="2.5" fill="#1F3B59" stroke="none" />
+    <line x1="98" y1="112" x2="102" y2="112" />
+  </g>
+</svg>

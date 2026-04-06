@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "informatie",
+    "alt": "Informatie",
+    "title": "Informatie",
+    "description": "Uitleg en achtergrondinformatie"
+  },
+  {
+    "icon": "boekenwurm",
+    "alt": "Verder lezen",
+    "title": "Verder lezen",
+    "description": "Interessante feiten en verdiepende informatie"
+  },
+  {
+    "icon": "quizvraag",
+    "alt": "Quiz",
+    "title": "Quiz",
+    "description": "Test je kennis met interactieve vragen"
+  },
+  {
+    "icon": "opdracht",
+    "alt": "Opdracht",
+    "title": "Opdracht",
+    "description": "Praktische opdrachten om te oefenen"
+  },
+  {
+    "icon": "conclusie",
+    "alt": "Conclusie",
+    "title": "Conclusie",
+    "description": "Samenvatting en conclusie"
+  }
+]

@@ -1,0 +1,23 @@
+  <div class="sidebar-actions" aria-label="Snelle acties">
+    {% if showLegend %}
+    <button type="button" class="sidebar-toggle-btn" aria-label="Toon of verberg legenda">
+      <img src="/img/icons/legende.png" alt="Legenda" width="40" height="40" loading="lazy" decoding="async" />
+    </button>
+    <button type="button" class="home-toggle-btn" aria-label="Ga naar home">
+      <img src="/img/icons/home.png" alt="" aria-hidden="true" width="40" height="40" loading="lazy" decoding="async" />
+    </button>
+    {% endif %}
+    <button type="button" class="top-toggle-btn" aria-label="Ga naar boven">
+      <img src="/img/icons/naar-boven.png" alt="" aria-hidden="true" width="40" height="40" loading="lazy" decoding="async" />
+    </button>
+    <button type="button" class="theme-toggle-btn" aria-label="Wissel thema" aria-pressed="false">
+      <span id="theme-icon">&#x1F319;</span>
+    </button>
+    <button type="button" class="nav-up-toggle-btn" aria-label="Ga naar vorige blok">
+      <img src="/img/icons/naar-boven.png" alt="" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+    </button>
+    <button type="button" class="nav-down-toggle-btn" aria-label="Ga naar volgende blok">
+      <img src="/img/icons/naar-boven.png" class="rotate-180" alt="" aria-hidden="true" width="32" height="32" loading="lazy" decoding="async" />
+    </button>
+  </div>
+{% if showLegend %}</div>{% endif %}

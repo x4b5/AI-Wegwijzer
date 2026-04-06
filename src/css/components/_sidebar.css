@@ -1,0 +1,455 @@
+/* ========================================
+   SIDEBAR ICON CLARITY - INLINE IMG, NO BG
+   ======================================== */
+/* Verwijderd: laat background-image werken */
+
+.nav-up-toggle-btn img,
+.nav-down-toggle-btn img {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  filter: none;
+}
+
+/* Tijdelijke visuele hulplijn om knoppen/icoontjes te verifiëren */
+.home-toggle-btn,
+.sidebar-toggle-btn,
+.top-toggle-btn,
+.nav-up-toggle-btn,
+.nav-down-toggle-btn {
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+/* Final hard overrides to ensure sidebar icons render */
+.home-toggle-btn img,
+.sidebar-toggle-btn img,
+.top-toggle-btn img {
+  display: block !important; /* laat weergave overeind, geen vaste maat */
+}
+
+/* ========================================
+   DARK MODE: QUIZ-OPTIES LICHTE ACHTERGROND (ROBUUST)
+   ======================================== */
+[data-theme='dark']
+  .content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  .quiz-option,
+[data-theme='dark'] .content-block[data-type='quiz'] .content-text .quiz-option,
+[data-theme='dark'] .content-block.quiz .content-text .quiz-option {
+  background: var(--gray-50) !important; /* Lichte grijs ondergrond */
+  border-color: var(--gray-600) !important;
+  color: #000000 !important; /* Zwarte tekst op lichtgrijs */
+}
+[data-theme='dark']
+  .content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  .quiz-option
+  *,
+[data-theme='dark']
+  .content-block[data-type='quiz']
+  .content-text
+  .quiz-option
+  *,
+[data-theme='dark'] .content-block.quiz .content-text .quiz-option * {
+  color: #000000 !important;
+}
+[data-theme='dark'] .content-block.quiz .content-text .quiz-option:hover,
+[data-theme='dark']
+  .content-block[data-type='quiz']
+  .content-text
+  .quiz-option:hover,
+[data-theme='dark']
+  .content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  .quiz-option:hover {
+  background: var(--gray-100) !important;
+  border-color: var(--gray-500) !important;
+}
+
+/* Callouts */
+.callouts {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+.callout {
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  border-left: 4px solid transparent;
+}
+.callout-blue {
+  border-left-color: #007bff;
+}
+.callout-green {
+  border-left-color: #28a745;
+}
+.callout-red {
+  border-left-color: #dc3545;
+}
+.callout-link {
+  color: var(--link-color);
+  font-weight: inherit;
+  text-decoration: none;
+}
+.callout-link:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Geen border-color meer nodig - rustigere layout */
+
+/* Zorg voor leesbare knop-tekst (alleen light mode) binnen content-blokken */
+body:not([data-theme='dark'])
+  .content-block
+  .content-text
+  button:not(.copy-btn),
+body:not([data-theme='dark']) .content-block .content-text .btn:not(.copy-btn) {
+  color: #000000 !important;
+}
+body:not([data-theme='dark'])
+  .content-block
+  .content-text
+  button:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block
+  .content-text
+  .btn:not(.copy-btn)
+  * {
+  color: #000000 !important;
+}
+
+/* Extra specifieke overrides voor task/opdracht varianten (alleen light mode) */
+body:not([data-theme='dark'])
+  .content-block:has(.icon img[src*='opdracht'])
+  .content-text
+  button:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block:has(.icon img[src*='opdracht'])
+  .content-text
+  .btn:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block[data-type='task']
+  .content-text
+  button:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block[data-type='task']
+  .content-text
+  .btn:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block.opdracht
+  .content-text
+  button:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block.opdracht
+  .content-text
+  .btn:not(.copy-btn),
+body:not([data-theme='dark']) .task .content-text button:not(.copy-btn),
+body:not([data-theme='dark']) .task .content-text .btn:not(.copy-btn) {
+  color: #000000 !important;
+}
+body:not([data-theme='dark'])
+  .content-block:has(.icon img[src*='opdracht'])
+  .content-text
+  button:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block:has(.icon img[src*='opdracht'])
+  .content-text
+  .btn:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block[data-type='task']
+  .content-text
+  button:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block[data-type='task']
+  .content-text
+  .btn:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block.opdracht
+  .content-text
+  button:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block.opdracht
+  .content-text
+  .btn:not(.copy-btn)
+  *,
+body:not([data-theme='dark']) .task .content-text button:not(.copy-btn) *,
+body:not([data-theme='dark']) .task .content-text .btn:not(.copy-btn) * {
+  color: #000000 !important;
+}
+
+/* Extra specifieke overrides voor quiz varianten (alleen light mode) */
+body:not([data-theme='dark'])
+  .content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  button:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  .btn:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block[data-type='quiz']
+  .content-text
+  button:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block[data-type='quiz']
+  .content-text
+  .btn:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block.quiz
+  .content-text
+  button:not(.copy-btn),
+body:not([data-theme='dark'])
+  .content-block.quiz
+  .content-text
+  .btn:not(.copy-btn) {
+  color: #000000 !important;
+}
+body:not([data-theme='dark'])
+  .content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  button:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block:has(.icon img[src*='quizvraag'])
+  .content-text
+  .btn:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block[data-type='quiz']
+  .content-text
+  button:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block[data-type='quiz']
+  .content-text
+  .btn:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block.quiz
+  .content-text
+  button:not(.copy-btn)
+  *,
+body:not([data-theme='dark'])
+  .content-block.quiz
+  .content-text
+  .btn:not(.copy-btn)
+  * {
+  color: #000000 !important;
+}
+
+/* ========================================
+   DARK MODE FINAL OVERRIDES (QUIZ OPTIONS)
+   ======================================== */
+[data-theme='dark'] .content-block .content-text button.quiz-option,
+[data-theme='dark'] .content-block .content-text button.quiz-option * {
+  color: var(--text-light) !important;
+}
+[data-theme='dark'] .quiz-option,
+[data-theme='dark'] .quiz-option * {
+  color: var(--text-light) !important;
+}
+
+/* ========================================
+   UNIFIED SIDEBAR BEHAVIOR (GROUPED RULES)
+   ======================================== */
+/* Eén plek om animatie/hoverzone voor sidebars te beheren */
+.simple-sidebar,
+.top-sidebar,
+.home-sidebar,
+.theme-sidebar {
+  transition: transform 0.4s ease-out, opacity 0.2s ease;
+}
+
+.simple-sidebar:hover,
+.top-sidebar:hover,
+.home-sidebar:hover,
+.theme-sidebar:hover {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Open state via klik (pin open) */
+.simple-sidebar.open {
+  transform: translateX(0) !important;
+  opacity: 1 !important;
+}
+
+/* Open state: zorg dat inhoud en acties zichtbaar blijven zonder hover */
+.simple-sidebar.open .sidebar-content {
+  left: 50px;
+  pointer-events: auto;
+}
+.simple-sidebar.open .sidebar-actions {
+  left: 4px;
+  opacity: 1;
+}
+.simple-sidebar.open .sidebar-toggle-btn {
+  left: -32px;
+}
+
+/* Verbreding onzichtbare hoverzone voor eerdere activatie */
+.simple-sidebar::before,
+.top-sidebar::before,
+.home-sidebar::before,
+.theme-sidebar::before {
+  width: 36px; /* was 12px per sidebar */
+}
+
+/* Kleine sluitvertraging (hysterese) bij weghoveren, niet bij pinned-open */
+.simple-sidebar {
+  transition-delay: 0.6s;
+}
+.simple-sidebar:hover,
+.simple-sidebar.open {
+  transition-delay: 0s;
+}
+
+/* Zelfde sluitvertraging voor overige sidebars */
+.top-sidebar {
+  transition-delay: 0.6s;
+}
+.top-sidebar:hover,
+.top-sidebar.open {
+  transition-delay: 0s;
+}
+
+.home-sidebar {
+  transition-delay: 0.6s;
+}
+.home-sidebar:hover,
+.home-sidebar.open {
+  transition-delay: 0s;
+}
+
+.theme-sidebar {
+  transition-delay: 0.6s;
+}
+.theme-sidebar:hover,
+.theme-sidebar.open {
+  transition-delay: 0s;
+}
+
+/* ========================================
+   HOVER EFFECTS DISABLED (ICON COLUMN & BLOCKS)
+   ======================================== */
+/* Houd content-blokken stabiel bij hover */
+.content-block:hover {
+  box-shadow: var(--shadow-md) !important;
+}
+.content-block:hover .content-text {
+  transform: none !important;
+}
+
+/* Geen hover-animatie op icon-kolom */
+.content-block .icon:hover,
+.task .icon:hover,
+.quiz .icon:hover,
+.trivia .icon:hover,
+.info .icon:hover,
+.important .icon:hover,
+.conclusion .icon:hover {
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+
+/* Fixeer achtergrond van icon-kolom per bloktype tijdens hover */
+/* Opdracht/Task */
+.content-block:has(.icon img[src*='opdracht']) .icon:hover,
+.content-block[data-type='task'] .icon:hover,
+.content-block.opdracht .icon:hover,
+.task .icon:hover {
+  background: color-mix(in srgb, var(--accent-task) 60%, #ffffff) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Quiz */
+.content-block:has(.icon img[src*='quizvraag']) .icon:hover,
+.content-block[data-type='quiz'] .icon:hover,
+.content-block.quiz .icon:hover {
+  background: color-mix(in srgb, var(--accent-quiz) 60%, #ffffff) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Trivia */
+.content-block:has(.icon img[src*='boekenwurm']) .icon:hover,
+.content-block[data-type='trivia'] .icon:hover,
+.content-block.trivia .icon:hover {
+  background: color-mix(in srgb, var(--accent-trivia) 60%, #ffffff) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Info */
+.content-block:has(.icon img[src*='informatie']) .icon:hover,
+.content-block[data-type='info'] .icon:hover,
+.content-block.info .icon:hover {
+  background: color-mix(in srgb, var(--accent-info) 60%, #ffffff) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Important */
+.content-block:has(.icon img[src*='uitroepteken']) .icon:hover,
+.content-block[data-type='important'] .icon:hover,
+.content-block.important .icon:hover {
+  background: color-mix(
+    in srgb,
+    var(--accent-important) 60%,
+    #ffffff
+  ) !important;
+  transform: none !important;
+  box-shadow: none !important;
+  color: var(--text-primary) !important;
+}
+/* Conclusion: behoud basisachtergrond, alleen animatie uit, gedaan hierboven */
+
+/* Extra: volledig uitschakelen van icon-animatie en -beweging (ook op img) */
+.content-block .icon,
+.content-block .icon:hover,
+.content-block .icon img,
+.content-block .icon img:hover {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Bronnen lijst styling */
+.bronnen-lijst {
+  list-style: none;
+  padding-left: 0;
+}
+
+.bronnen-lijst li {
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.bronnen-lijst li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--link-color);
+  font-weight: bold;
+}
+
+.bronnen-lijst li a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.bronnen-lijst li a:hover {
+  text-decoration: underline;
+}
+

@@ -1,0 +1,98 @@
+/* ========================================
+   AI-WEGWIJZER STYLE.CSS
+   Alle styling in één bestand met verbeterde kleuren
+   ======================================== */
+
+/* ========================================
+   KLEUREN VARIABELEN
+   ======================================== */
+:root {
+  /* Primaire kleuren */
+  --primary-blue: #3774e6;
+  --primary-blue-dark: #1e3a8a;
+  --primary-green: #0fa870;
+  --primary-purple: #7f52e6;
+  --primary-orange: #e88f0a;
+  --primary-red: #e13d3d;
+  --primary-indigo: #5d5ae1;
+  --primary-yellow: #d9c7a0;
+  --primary-yellow-light: #e6e4c7;
+  --primary-gray: #636b77;
+  --primary-gray-light: #c4c8ce;
+
+  /* Neutrale kleuren */
+  --white: #ffffff;
+  --gray-50: #f0f1f2;
+  --gray-100: #d1d5da;
+  --gray-200: #b8bec8;
+  --gray-300: #a6a9ad;
+  --gray-400: #7a828c;
+  --gray-500: #636b77;
+  --gray-600: #3a4249;
+  --gray-700: #2c3339;
+  --gray-800: #171d24;
+  --gray-900: #0d1116;
+
+  /* Achtergrond kleuren */
+  --bg-primary: #c4c8ce;
+  --bg-secondary: #ffffff;
+  --bg-accent: #d6dbe2;
+
+  /* Tekst kleuren */
+  --text-primary: #17202a;
+  --text-secondary: #38424f;
+  --text-muted: #4f5a6b;
+  --text-light: #ffffff;
+
+  /* Schaduw kleuren */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  /* Border kleuren */
+  --border-light: #c4c9d1;
+  --border-medium: #a8b0bd;
+  --border-dark: #76828f;
+
+  /* Overgangen */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+
+  /* Link kleuren - uniform */
+  --link-color: #3a6bbd; /* zachter blauw */
+  --link-hover-color: #2a4f8a; /* minder fel hover */
+  /* Externe link kleuren (donkergroen) */
+  --link-external-color: #0b6b50;
+  --link-external-hover-color: #08533e;
+
+  /* Accent kleuren */
+  --accent-quiz: #b85454;
+  --accent-quiz-rgb: 184, 84, 84;
+  --accent-task: #4a9a4a;
+  --accent-task-rgb: 74, 154, 74;
+  --accent-trivia: #b89454;
+  --accent-trivia-rgb: 184, 148, 84;
+  --accent-info: #4a6fa5;
+  --accent-info-rgb: 74, 111, 165;
+  --accent-important: #b85454;
+  --accent-important-rgb: 184, 84, 84;
+  --accent-conclusion: #8a6fa5;
+  --accent-conclusion-rgb: 138, 111, 165;
+}
+
+/* Dark Mode variabelen */
+[data-theme='dark'] {
+  /* Dark Mode - Achtergrond kleuren */
+  --bg-primary: #0d1116;
+  --bg-secondary: #161b22;
+  --bg-accent: #21262d;
+
+  /* Dark Mode - Tekst kleuren */
+  --text-primary: #f0f6fc;
+  --text-secondary: #c9d1d9;
+  --text-muted: #8b949e;
+  --text-light: #ffffff;
+}
+

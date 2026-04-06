@@ -1,0 +1,26 @@
+{
+  "name": "ai-wegwijzer-v2",
+  "version": "2.0.0",
+  "description": "AI-Wegwijzer v2 - Nederlandstalige educatieve website over AI-geletterdheid",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "agents": "node agents/orchestrator.mjs",
+    "agents:audit": "node agents/orchestrator.mjs --mode audit",
+    "agents:research": "node agents/orchestrator.mjs --mode research",
+    "agents:write": "node agents/orchestrator.mjs --mode write",
+    "agents:build": "node agents/orchestrator.mjs --mode build",
+    "agents:full": "node agents/orchestrator.mjs --mode full"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x4b5/AI-Wegwijzer.git"
+  },
+  "keywords": ["ai", "education", "dutch", "eleventy"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

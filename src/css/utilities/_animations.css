@@ -1,0 +1,35 @@
+/* ========================================
+   SCROLLBAR VERBERGEN
+   ======================================== */
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   ANIMATIES EN TRANSITIES
+   ======================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-block {
+  animation: fadeIn 0.5s ease-out;
+  min-height: fit-content;
+}
+

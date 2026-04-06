@@ -1,0 +1,17 @@
+{% if heroImage %}
+<div class="header-section header-compact">
+  <img
+    src="{{ heroImage }}"
+    alt="{{ heroImageAlt or title }}"
+    class="hero-image"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+  <h1 class="main-title page-title">{{ title }}</h1>
+</div>
+{% else %}
+<div class="header-section header-compact">
+  <h1 class="main-title page-title">{{ title }}</h1>
+</div>
+{% endif %}

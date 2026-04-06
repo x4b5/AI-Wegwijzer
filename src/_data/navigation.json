@@ -1,0 +1,34 @@
+{
+  "main": [
+    { "title": "Home", "url": "/" },
+    { "title": "Welkom", "url": "/content/artikelen/welkom/" },
+    { "title": "Kennisbank", "url": "/content/artikelen/kennisbank/" },
+    { "title": "Begrippenlijst", "url": "/content/artikelen/begrippen/" }
+  ],
+  "artikelen": [
+    { "title": "Chatbots: een introductie", "url": "/content/artikelen/01-chatbots-introductie/" },
+    { "title": "AI-Assistenten", "url": "/content/artikelen/02-ai-assistenten/" },
+    { "title": "Prompt-engineering", "url": "/content/artikelen/03-prompt-engineering/" },
+    { "title": "Waarde en impact", "url": "/content/artikelen/04-waarde-en-impact/" }
+  ],
+  "perspectieven": {
+    "basis": [
+      { "title": "AI beschrijven", "url": "/content/perspectieven/basis/B-01-ai-beschrijven/" },
+      { "title": "Basisbegrippen van AI", "url": "/content/perspectieven/basis/B-02-basisbegrippen-van-ai/" }
+    ],
+    "werking": [
+      { "title": "Machine Learning", "url": "/content/perspectieven/werking/D-01-machine-learning/" },
+      { "title": "Deep Learning", "url": "/content/perspectieven/werking/D-02-deep-learning/" }
+    ],
+    "toepassen": [
+      { "title": "Inleiding", "url": "/content/perspectieven/toepassen/D-00-inleiding/" },
+      { "title": "Chatbots", "url": "/content/perspectieven/toepassen/D-01-chatbots/" },
+      { "title": "Chatbots (vervolg)", "url": "/content/perspectieven/toepassen/D-01-vervolg/" },
+      { "title": "AI Agents", "url": "/content/perspectieven/toepassen/D-02-ai-agents/" },
+      { "title": "Prompt Engineering", "url": "/content/perspectieven/toepassen/D-03-prompt-engineering/" }
+    ],
+    "impact": [
+      { "title": "Toekomst van AI", "url": "/content/perspectieven/impact/D-01-toekomst-van-ai/" }
+    ]
+  }
+}

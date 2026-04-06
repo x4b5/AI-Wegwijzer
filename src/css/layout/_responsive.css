@@ -1,0 +1,60 @@
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 30px;
+  }
+
+  .content-block {
+    margin: 40px 0;
+    flex-direction: row; /* Blijf in rij-layout */
+  }
+
+  .icon {
+    width: 60px; /* Iets smaller op mobiel */
+    min-height: 100%;
+    margin-right: 0;
+    align-self: stretch;
+    border-radius: 0; /* Geen ronding zodat onderhoek vol kleur is */
+    flex-shrink: 0;
+  }
+
+  .icon img {
+    width: 80px; /* Iets kleiner icoon op mobiel */
+    height: 80px;
+  }
+
+  .content-text {
+    border-radius: 0 16px 16px 0;
+    border-top: none;
+    border-left: none;
+    padding: 18px; /* Iets compacter op mobiel */
+    flex: 1; /* Neem beschikbare ruimte in */
+  }
+
+  h1 {
+    font-size: 2.2rem;
+    padding: 20px 25px;
+    margin: 1.5rem 0 1.5rem 0;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Mobiel: quizopties iets compacter */
+  .quiz-option {
+    padding: 10px 14px 10px 40px;
+    font-size: 0.95rem;
+  }
+  .quiz-options .quiz-option::before {
+    left: 12px;
+    font-size: 1.35rem;
+  }
+}
+
