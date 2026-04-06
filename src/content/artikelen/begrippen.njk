@@ -1,0 +1,3144 @@
+---
+title: "Begrippen"
+description: "Overzicht van belangrijke begrippen en termen op het gebied van AI en chatbots."
+---
+    <style>
+    .trivia-toggle {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        background: var(--bg-accent);
+        border-radius: 8px;
+        margin-bottom: 10px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .trivia-toggle:hover {
+        background: var(--gray-100);
+    }
+    
+    .trivia-toggle-icon {
+        transition: transform 0.3s ease;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+    }
+    
+    .trivia-toggle-icon.expanded {
+        transform: rotate(90deg);
+    }
+    
+    .trivia-content {
+        display: none;
+        padding: 15px;
+        background: var(--bg-secondary);
+        border-radius: 8px;
+        border-left: 4px solid var(--accent-trivia);
+    }
+    
+    .trivia-content.expanded {
+        display: block;
+    }
+    
+    /* Zorg dat trivia blokken onder elkaar staan */
+    .content-block.trivia {
+        display: flex !important;
+        width: 100%;
+        margin-bottom: 20px;
+        gap: 15px;
+    }
+    
+    .content-block.trivia .icon {
+        flex-shrink: 0;
+    }
+    
+    .content-block.trivia .content-text {
+        flex: 1;
+        display: block;
+    }
+    
+    /* Zoek functionaliteit */
+    .content-block.trivia.hidden {
+        display: none !important;
+    }
+    
+    .content-block.trivia.visible {
+        display: flex !important;
+    }
+    </style>
+
+      <h1>📚 Begrippen</h1>
+
+      <!-- Zoekbalk -->
+      <div class="search-container" style="margin: 20px 0; text-align: center;">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Zoek begrippen..." 
+          style="
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid var(--gray-300);
+            border-radius: 25px;
+            outline: none;
+            transition: border-color 0.3s ease;
+            background-color: var(--white);
+          "
+          onkeyup="searchBegrippen()"
+        />
+        <div id="searchResults" style="margin-top: 10px; font-size: 14px; color: var(--text-secondary);"></div>
+      </div>
+
+      <!-- Sticky zoekresultaten teller -->
+      <div id="stickySearchResults" style="
+        position: sticky;
+        top: 20px;
+        background: var(--white);
+        border: 1px solid var(--gray-300);
+        border-radius: 10px;
+        padding: 10px 20px;
+        margin: 20px 0;
+        text-align: center;
+        font-size: 14px;
+        color: var(--text-secondary);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 100;
+        display: none;
+      "></div>
+
+      <!-- A-Z Index -->
+      <div class="az-index" style="
+        background: var(--gray-100);
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+      ">
+        <h2 style="margin-bottom: 15px; color: var(--text-primary);">Snelle navigatie</h3>
+        <div id="azButtons" style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8px;
+        ">
+          <!-- A-Z knoppen worden dynamisch gegenereerd -->
+        </div>
+      </div>
+
+      <!-- Niveau filter -->
+      <div class="category-filter" style="
+        background: var(--white);
+        border: 1px solid var(--gray-300);
+        border-radius: 15px;
+        padding: 20px;
+        margin: 20px 0;
+        text-align: center;
+      ">
+        <h2 style="margin-bottom: 15px; color: var(--text-primary);">Filter op niveau</h3>
+        <div id="categoryButtons" style="
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+        ">
+          <button class="category-btn active" data-category="all" style="
+            padding: 8px 16px;
+            border: 2px solid var(--primary-blue);
+            background: var(--primary-blue);
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+          ">Alle begrippen</button>
+          <button class="category-btn" data-category="basis" style="
+            padding: 8px 16px;
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            color: var(--text-primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+          ">Basis</button>
+          <button class="category-btn" data-category="gemiddeld" style="
+            padding: 8px 16px;
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            color: var(--text-primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+          ">Gemiddeld</button>
+          <button class="category-btn" data-category="gevorderd" style="
+            padding: 8px 16px;
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            color: var(--text-primary);
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+          ">Gevorderd</button>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="agi">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Artificiele Generatieve Intelligentie (AGI)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <strong>Artificiele Generatieve Intelligentie (AGI)</strong> is een
+            tak van kunstmatige intelligentie die zich richt op het creëren van
+            nieuwe content in plaats van alleen bestaande data te analyseren.
+            AGI-systemen kunnen verschillende soorten content genereren zoals
+            tekst, afbeeldingen, muziek, video's en zelfs programmeercode. Ze
+            leren van enorme hoeveelheden bestaande data en gebruiken complexe
+            wiskundige modellen om nieuwe, originele content te creëren door
+            patronen te herkennen en te gebruiken voor realistische output.
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ai-agent">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>AI-Agent</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een AI-agent is een intelligent systeem dat autonoom kan handelen in
+          een omgeving om specifieke doelen te bereiken. In tegenstelling tot
+          traditionele chatbots die alleen reageren op vragen, kunnen AI-agents
+          zelfstandig plannen maken, acties uitvoeren, en hun gedrag aanpassen
+          op basis van feedback.<br /><br />
+          <strong>Belangrijke kenmerken:</strong><br />
+          • <strong>Autonomie:</strong> Kan handelen zonder constante menselijke
+          tussenkomst<br />
+          • <strong>Doelgerichtheid:</strong> Heeft specifieke taken en werkt
+          ernaar toe<br />
+          • <strong>Planning:</strong> Kan complexe stappenplannen
+          ontwikkelen<br />
+          • <strong>Leren:</strong> Verbetert prestaties door ervaring<br />
+          • <strong>Interactie:</strong> Kan tools gebruiken en acties uitvoeren
+          in zijn omgeving<br /><br />
+          <strong>Voorbeelden:</strong><br />
+          AI-agents worden gebruikt in persoonlijke assistenten (Siri, Alexa),
+          navigatiesystemen, e-commerce aanbevelingen, customer service, en veel
+          andere toepassingen waar autonome intelligentie nodig is.
+          
+          <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+            <div style="margin-bottom: 10px;">
+              <strong>🔗 Meer informatie:</strong><br />
+              <a href="https://en.wikipedia.org/wiki/Intelligent_agent" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+              <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+            </div>
+          </div>
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Intelligent_agent" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ai-assistent">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>AI-Assistent</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>AI-Assistent</strong> is een moderne term voor
+          geavanceerde AI-systemen die veel meer kunnen dan traditionele
+          chatbots. Terwijl chatbots beperkt zijn tot tekst en gesproken taal,
+          kunnen AI-assistenten werken met meerdere modaliteiten zoals
+          afbeeldingen, video's, audio, en programmeercode. Ze zijn gebouwd op
+          foundation models en kunnen complexe taken uitvoeren zoals het
+          analyseren van documenten, het genereren van code, het maken van
+          afbeeldingen, en het beantwoorden van vragen over verschillende
+          soorten content.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Virtual_assistant" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ai-bias">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>AI-bias</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          AI-bias (ook wel algoritmische bias genoemd) verwijst naar
+          systematische en oneerlijke vooroordelen in AI-systemen die leiden tot
+          discriminerende of onjuiste resultaten voor bepaalde groepen
+          mensen.<br /><br />
+          Deze bias kan ontstaan door:<br />
+          • <strong>Bias in trainingsdata:</strong> Als de data waarop het
+          AI-model is getraind niet representatief is voor de werkelijkheid<br />
+          • <strong>Bias in algoritmes:</strong> Als de wiskundige modellen
+          inherent vooroordelen bevatten<br />
+          • <strong>Bias in toepassing:</strong> Als AI-systemen worden gebruikt
+          in contexten waarvoor ze niet zijn ontworpen<br /><br />
+          AI-bias is een belangrijk ethisch probleem omdat het kan leiden tot
+          oneerlijke behandeling van mensen op basis van geslacht, ras, leeftijd
+          of andere kenmerken. Het is daarom cruciaal om AI-systemen te testen
+          op bias en maatregelen te nemen om dit te voorkomen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Algorithmic_bias" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ai-boom">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>AI boom</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          De <strong>AI boom</strong> verwijst naar de periode van explosieve
+          groei en ontwikkeling in kunstmatige intelligentie die begon in de
+          late jaren 2010. Deze periode wordt gekenmerkt door doorbraken in
+          machine learning, de introductie van krachtige taalmodellen zoals GPT,
+          en de wijdverspreide adoptie van AI-technologie in het dagelijks
+          leven.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ai-effect">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>AI effect</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Het <strong>AI effect</strong> verwijst naar het verschijnsel dat mensen AI-technologieën die ze dagelijks gebruiken niet meer als "echte AI" beschouwen. Zodra een AI-toepassing gemeengoed wordt en goed werkt, wordt het vaak gezien als gewone technologie in plaats van kunstmatige intelligentie. Voorbeelden hiervan zijn Netflix-aanbevelingen, spamfilters, gezichtsherkenning op smartphones, of de routeplanner van Google Maps. Het effect toont aan hoe snel mensen wennen aan AI-technologieën en ze als vanzelfsprekend gaan beschouwen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/AI_effect" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ai-geletterdheid">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>AI-geletterdheid</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>AI-geletterdheid</strong> verwijst naar het vermogen om AI-systemen te begrijpen, ermee om te gaan en kritisch na te denken over hun impact op jou en de samenleving. Volgens Ng, Yuan en Harvard's AI Literacy project betekent AI-geletterdheid: "het begrijpen van de basisprincipes van kunstmatige intelligentie, het herkennen van de mogelijkheden en beperkingen ervan, en het kunnen beoordelen van de ethische, maatschappelijke en persoonlijke gevolgen van AI-toepassingen". AI-geletterdheid helpt je begrijpen wat AI wel en niet kan en hoe AI beslissingen beïnvloedt.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Digital_literacy" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ai-productiviteitsparadox">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>AI-productiviteitsparadox</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          De <strong>AI-productiviteitsparadox</strong> verwijst naar het verschijnsel dat ondanks snelle technologische vooruitgang in kunstmatige intelligentie, de productiviteitswinsten aanvankelijk uitblijven. Dit komt omdat organisaties tijd nodig hebben om zich aan te passen aan nieuwe technologieën, processen te herstructureren en werknemers te trainen. De paradox suggereert dat de werkelijke impact van AI op productiviteit pas na verloop van tijd zichtbaar wordt, wanneer bedrijven hun werkwijzen hebben aangepast aan de nieuwe mogelijkheden.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Productivity_paradox" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ai-model">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>AI-model</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>AI-model</strong> is een computerprogramma dat is getraind
+          om specifieke taken uit te voeren door het herkennen van patronen in
+          grote hoeveelheden data. Het is als het ware het "brein" van een
+          AI-systeem dat kan denken, redeneren en antwoorden genereren.
+          AI-modellen kunnen verschillende vormen aannemen, zoals taalmodellen
+          (GPT, Claude), beeldmodellen (DALL-E, Midjourney), of multimodale
+          modellen die zowel tekst als afbeeldingen kunnen verwerken.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="api">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>API (Application Programming Interface)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>API</strong> is een gestandaardiseerde manier waarop
+          software met andere software praat. Via een API kun je AI-modellen
+          aanroepen vanuit eigen applicaties.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Application_programming_interface" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer-programming" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="api-integration">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>API‑integratie</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>API‑integratie</strong> is het gebruiken van externe
+          AI‑diensten via een API, vaak om meerdere modellen en functies te
+          combineren.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Application_programming_interface" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer-programming" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="artificiele-intelligentie">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Artificiele Intelligentie (AI)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Artificiele Intelligentie (AI)</strong> is een breed vakgebied
+          binnen de computerwetenschap dat zich richt op het creëren van
+          machines en systemen die taken kunnen uitvoeren die normaal gesproken
+          menselijke intelligentie vereisen. Dit omvat taken zoals leren,
+          redeneren, probleemoplossing, waarneming, en taalbegrip. AI kan worden
+          onderverdeeld in verschillende categorieën, van eenvoudige
+          regelgebaseerde systemen tot complexe machine learning modellen en
+          generatieve AI-systemen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Artificial_intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="augmented-reality">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Augmented reality (AR)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>AR</strong> legt een digitale laag over de fysieke wereld
+          heen, zichtbaar via bijvoorbeeld een smartphone of bril.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Augmented_reality" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/augmented-reality" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="brain-computer-interface">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Brain-computer interface (BCI)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>BCI</strong> is een directe koppeling tussen het
+          zenuwstelsel (vaak via hersensignalen) en een computersysteem, voor
+          bediening of informatie-uitwisseling zonder traditionele invoer.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Brain%E2%80%93computer_interface" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/brain-computer-interface" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="chatbot">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Chatbot</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>chatbot</strong> is een softwaretoepassing of webinterface
+          die is ontworpen om gesprekken in de vorm van <em>tekst</em> en/of
+          <em>gesproken taal</em> te voeren.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Chatbot" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/chatbot" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="chatgpt">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>ChatGPT</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>ChatGPT</strong> is een AI-chatbot ontwikkeld door OpenAI,
+          gebaseerd op de GPT (Generative Pre-trained Transformer) architectuur.
+          Het werd gelanceerd in november 2022 en werd snel een van de meest
+          populaire AI-tools ter wereld, bekend om zijn vermogen om mensachtige
+          gesprekken te voeren en complexe taken uit te voeren.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/ChatGPT" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="claude">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Claude</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Claude</strong> is een LLM‑familie ontwikkeld door Anthropic,
+          gericht op behulpzaamheid, eerlijkheid en veiligheid.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Claude_(AI)" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="cloud">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Cloud</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          De <strong>cloud</strong> verwijst naar servers en diensten die via
+          internet worden aangeboden. AI-modellen kunnen in de cloud draaien
+          zodat je geen eigen krachtige hardware nodig hebt.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Cloud_computing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/cloud-computing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="code-execution">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Code‑uitvoering</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Code‑uitvoering</strong> is het kunnen draaien van code (bijv.
+          Python) door een AI‑assistent om berekeningen of analyses uit te
+          voeren.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Code_execution" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer-programming" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="conversational-user-interface">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Conversational User Interface (CUI)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>conversational user interface</strong> is een interface
+          waarbij je met natuurlijke taal (tekst of spraak) met systemen
+          communiceert, zoals bij chatbots en AI‑assistenten.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Conversational_user_interface" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/user-interface" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="cost-effective">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Kosteneffectief</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Kosteneffectief</strong> betekent een goede
+          prijs‑prestatieverhouding: zoveel mogelijk waarde voor zo min mogelijk
+          kosten.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Cost-effectiveness" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/topic/economics" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="customization">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Aanpassingsmogelijkheden</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Customization</strong> omvat het aanpassen van een
+          AI‑assistent of model (personalisatie, systeeminstructies, tools,
+          context) voor specifieke use‑cases.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Customization" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer-programming" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="data">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Data</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Data</strong> zijn ruwe feiten, cijfers, teksten,
+          afbeeldingen, geluiden of andere informatie die door computers kunnen
+          worden verwerkt. In de context van AI zijn data cruciaal omdat
+          AI-modellen leren van grote hoeveelheden data om patronen te herkennen
+          en verbanden te leggen. Hoe meer en betere data een AI-model heeft om
+          van te leren, hoe beter het kan presteren. Data kunnen gestructureerd
+          zijn (zoals databases) of ongestructureerd (zoals teksten,
+          afbeeldingen, video's).
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Data" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/science/data" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="data-gedreven">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Data-gedreven</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Data-gedreven</strong> verwijst naar AI-systemen die leren van
+          grote hoeveelheden data door middel van machine learning. In plaats
+          van vooraf geprogrammeerde regels te volgen, analyseren deze systemen
+          data om patronen te herkennen en verbanden te leggen. Ze kunnen zich
+          aanpassen aan nieuwe situaties en worden steeds beter door ervaring.
+          Moderne AI-chatbots zoals ChatGPT zijn data-gedreven en kunnen
+          flexibeler reageren op verschillende soorten vragen en opdrachten.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Data-driven" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="deep-learning">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Deep Learning</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Deep learning is een subset van machine learning die gebruik maakt van
+          neurale netwerken met meerdere lagen (meer dan 3). Het is geïnspireerd
+          op hoe het menselijk brein werkt, maar dan veel eenvoudiger.<br /><br />
+          <strong>Waarom "diep"?</strong><br />
+          Het woord "diep" verwijst naar het aantal lagen in het neuraal
+          netwerk. Traditionele neurale netwerken hadden slechts 1-2 lagen, maar
+          deep learning netwerken kunnen tientallen of zelfs honderden lagen
+          hebben. Elke laag leert verschillende aspecten van de data.<br /><br />
+          <strong>Belangrijke kenmerken:</strong><br />
+          • <strong>Automatische feature learning:</strong> Het systeem leert
+          zelf welke kenmerken belangrijk zijn<br />
+          • <strong>Hiërarchische representatie:</strong> Eenvoudige patronen
+          worden gecombineerd tot complexe concepten<br />
+          • <strong>Schalbaarheid:</strong> Meer data en meer lagen leiden tot
+          betere prestaties<br />
+          • <strong>Universele toepasbaarheid:</strong> Kan gebruikt worden voor
+          allerlei soorten data<br /><br />
+          <strong>Toepassingen:</strong><br />
+          Deep learning wordt gebruikt in gezichtsherkenning, spraakherkenning,
+          machine translation, medische beeldanalyse, zelfrijdende auto's, en
+          veel andere gebieden waar complexe patroonherkenning nodig is.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Deep_learning" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/deep-learning" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="deterministisch">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Deterministisch</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Deterministisch</strong> betekent dat een systeem altijd
+          hetzelfde resultaat geeft voor dezelfde input. Er is geen variatie of
+          onzekerheid - dezelfde vraag levert altijd exact hetzelfde antwoord
+          op. Regelgebaseerde chatbots werken deterministisch: ze volgen vooraf
+          geprogrammeerde regels en geven voorspelbare antwoorden. Dit is het
+          tegenovergestelde van probabilistisch, waarbij systemen werken met
+          waarschijnlijkheden en variatie kunnen vertonen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Deterministic_system" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/science/determinism" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="direct-integration">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Directe koppeling</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Direct integration</strong> betekent dat een chatbot
+          rechtstreeks met één specifiek model is verbonden zonder extra
+          tussenlaag.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/System_integration" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer-programming" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="discriminatieve-ai">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Discriminatieve AI</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Discriminatieve AI</strong> verwijst naar modellen en
+          technieken die leren om onderscheid te maken tussen klassen of
+          categorieën. Ze schatten direct de kans op een label gegeven de input
+          (bijv. spam of niet‑spam), en zijn daarmee zeer geschikt voor
+          classificatie en detectie.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Discriminative_model" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="edge">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Edge deployment</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Edge</strong> betekent dat AI-modellen direct op het apparaat
+          van de gebruiker draaien (telefoon, laptop, slimme speaker), dichtbij
+          de bron van de data.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Edge_computing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/edge-computing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="eliza">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>ELIZA</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>ELIZA</strong> was de allereerste chatbot die breed werd
+          erkend. Deze chatbot werd in 1966 ontwikkeld door MIT-professor Joseph
+          Weizenbaum. ELIZA gebruikte relatief simpele technieken maar was
+          revolutionair voor zijn tijd en toonde aan dat computers mensachtige
+          gesprekken konden voeren.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/ELIZA" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="eliza-effect">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Eliza-effect</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Het <strong>Eliza-effect</strong> is het fenomeen waarbij mensen
+          menselijke eigenschappen en intelligentie toedichten aan
+          computerprogramma's, zelfs wanneer deze relatief eenvoudig zijn. Het
+          effect is genoemd naar de chatbot ELIZA, waarvan gebruikers dachten
+          dat deze echte emoties en begrip had, terwijl het slechts eenvoudige
+          tekstpatronen volgde. Dit effect toont aan hoe gemakkelijk mensen
+          kunnen worden misleid door de schijn van intelligentie en hoe
+          belangrijk het is om kritisch te blijven over wat AI-systemen
+          werkelijk kunnen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/ELIZA_effect" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="encryptie">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Encryptie</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Encryptie</strong> is een beveiligingstechniek waarbij
+          informatie wordt omgezet in een gecodeerde vorm die alleen kan worden
+          gelezen door iemand die de juiste sleutel heeft. Het is als het ware
+          een "digitale kluis" voor je gegevens. Wanneer je gegevens versleuteld
+          worden opgeslagen, worden ze omgezet in een onleesbare code. Alleen
+          met de juiste toegangssleutel (zoals een wachtwoord) kunnen de
+          gegevens weer worden omgezet naar de originele, leesbare vorm. Dit
+          beschermt je privacy en zorgt ervoor dat anderen, inclusief de
+          aanbieder van de dienst, niet bij je gegevens kunnen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Encryption" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/encryption" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="experimental-platform">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Experimenteel platform</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>experimenteel platform</strong> is een omgeving om nieuwe
+          (vaak open) AI‑modellen en functies uit te proberen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Software_platform" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer-programming" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="file-analysis">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Bestandsanalyse</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Bestandsanalyse</strong> houdt in dat een AI geüploade
+          bestanden (PDF, Word, afbeelding) kan lezen, samenvatten of er vragen
+          over kan beantwoorden.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/File_analysis" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer-programming" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="flexibility">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Flexibiliteit</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Flexibiliteit</strong> is het vermogen om een AI‑systeem aan
+          te passen aan verschillende taken, modellen of workflows.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Flexibility_(engineering)" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/engineering" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="foundation-model">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Foundation Model</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>Foundation Model</strong> is een groot, veelzijdig
+          AI-model dat getraind is op enorme hoeveelheden data en daardoor in
+          staat is om veel verschillende taken uit te voeren. Deze modellen
+          vormen als het ware het fundament waarop allerlei AI-toepassingen
+          gebouwd kunnen worden. Ze zijn getraind op diverse soorten data
+          (tekst, afbeeldingen, code) en kunnen worden aangepast voor specifieke
+          taken zonder volledig opnieuw getraind te hoeven worden. Voorbeelden
+          zijn GPT, Claude, en Gemini.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Foundation_model" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="gemini">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Gemini</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Gemini</strong> is een familie van multimodale AI‑modellen van
+          Google die tekst, beeld en andere modaliteiten kan verwerken.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Gemini_(AI)" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="generatieve-ai">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Generatieve AI</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Generatieve AI</strong> omvat modellen die nieuwe content
+          kunnen creëren (zoals tekst, afbeeldingen, audio of code). Moderne
+          taalmodellen (LLM's) genereren woord voor woord plausibele tekst op
+          basis van aangeleerde patronen in grote hoeveelheden data.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Generative_artificial_intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ghost-mode">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Ghost mode</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Ghost mode</strong> is een instelling waarbij gesprekken niet
+          persistent worden opgeslagen en verdwijnen zodra je het venster sluit.
+          Dit is handig voor snelle, tijdelijke interacties en kan de privacy
+          verhogen doordat er geen blijvende chatgeschiedenis wordt bijgehouden
+          (let op: server‑side logging kan per dienst verschillen).
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Privacy_mode" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/privacy" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="gpt">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>GPT (Generative Pre-trained Transformer)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>GPT</strong> is een familie van generatieve taalmodellen
+          gebaseerd op de Transformer‑architectuur, voorgetraind op grote
+          tekstcorpora en vervolgens inzetbaar voor vele taken.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Generative_pre-trained_transformer" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="gpu">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>GPU (Graphics Processing Unit)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>GPU</strong> is een processor die ontworpen is voor
+          massaal parallelle berekeningen. GPU's versnellen het trainen en
+          gebruiken (inference) van AI‑modellen aanzienlijk, vergeleken met
+          traditionele CPU's.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/graphics-processing-unit" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="hallucineren">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Hallucineren</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Hallucineren</strong> is een term die wordt gebruikt om te
+          beschrijven hoe AI-modellen soms onjuiste of verzonnen informatie
+          genereren die plausibel klinkt maar niet waar is. Dit gebeurt omdat
+          AI-modellen werken als "woordvoorspellers" die op basis van
+          waarschijnlijkheid het volgende woord kiezen, zonder altijd te
+          controleren of de informatie feitelijk correct is. AI-modellen kunnen
+          hallucineren door verouderde kennis, tegenstrijdige informatie in hun
+          trainingsdata, of door het ontbreken van specifieke feiten over een
+          onderwerp.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence)" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="higher-costs">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Hogere kosten</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Hogere kosten</strong> verwijst naar meer uitgaven door
+          gebruik van extra diensten of meerdere (betaalde) modellen via een
+          platformlaag.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Cost" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/topic/economics" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="immersive-interfaces">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Immersive interfaces</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Immersive interfaces</strong> zijn gebruiksinterfaces die de
+          gebruiker onderdompelen in een digitale of verrijkte werkelijkheid.
+          Voorbeelden zijn <em>virtual reality (VR)</em>,
+          <em>augmented reality (AR)</em> en <em>mixed reality (MR)</em>,
+          waarbij je respectievelijk volledig, deels of contextueel overlapt met
+          de fysieke wereld. Het doel is een natuurlijkere en meeslepende
+          interactie met digitale informatie.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Immersive_technology" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/virtual-reality" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="inference">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Inference</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Inference</strong> is het uitvoeren van een getraind AI‑model
+          op nieuwe input om een voorspelling of antwoord te genereren (in
+          tegenstelling tot trainen).
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Inference" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/science/inference" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="input">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Input</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Input</strong> is de gegevens of instructies die je invoert in
+          een systeem (bijv. tekst of spraak voor een chatbot).
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Input_(computer_science)" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="joseph-weizenbaum">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Joseph Weizenbaum</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Joseph Weizenbaum</strong> (1923-2008) was een
+          Duits-Amerikaanse computerwetenschapper en MIT-professor die bekend
+          werd door zijn werk aan kunstmatige intelligentie. In 1966 ontwikkelde
+          hij ELIZA, de eerste chatbot die breed werd erkend. Weizenbaum werd
+          later een belangrijke criticus van AI, waarschuwend voor de ethische
+          en sociale implicaties van het toekennen van menselijke eigenschappen
+          aan computersystemen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Joseph_Weizenbaum" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/biography/Joseph-Weizenbaum" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="llm">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>LLM (Large Language Model)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>LLM</strong> is een groot taalmodel dat op enorme
+          hoeveelheden tekst is getraind en mensachtige tekst kan begrijpen en
+          genereren.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="llm-capabilities">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>LLM‑capaciteiten</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>LLM‑capaciteiten</strong> zijn de mogelijkheden van
+          taalmodellen, zoals tekst genereren, samenvatten, redeneren, vertalen
+          en code schrijven.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="machine-learning">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Machine learning</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Machine learning</strong> is een tak van kunstmatige
+          intelligentie waarbij computersystemen automatisch leren en verbeteren
+          door ervaring, zonder dat ze expliciet geprogrammeerd worden voor elke
+          specifieke taak. Het systeem analyseert grote hoeveelheden data, vindt
+          daarin verborgen patronen en gebruikt deze kennis om betere
+          voorspellingen of beslissingen te maken. Bij chatbots betekent dit dat
+          ze steeds beter worden in het begrijpen van taal en het geven van
+          relevante antwoorden door te leren van interacties met gebruikers.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Machine_learning" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/machine-learning" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="mistral">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Mistral</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Mistral</strong> verwijst naar LLM‑modellen ontwikkeld door
+          het Franse bedrijf Mistral AI, bekend om efficiënte, open en compacte
+          modellen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Mistral_AI" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="mixed-reality">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Mixed reality (MR)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>MR</strong> laat digitale objecten en de fysieke wereld
+          overtuigend met elkaar interacteren, vaak met ruimtelijke mapping.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Mixed_reality" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/mixed-reality" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="modaliteit">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Modaliteit</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>Modaliteit</strong> is een specifieke vorm van input of
+          output die een AI-systeem kan verwerken of genereren. Voorbeelden van
+          modaliteiten zijn geschreven tekst, gesproken taal, foto's, muziek,
+          video's, en programmeercode. Moderne AI-systemen kunnen vaak meerdere
+          modaliteiten tegelijk verwerken, wat ze "multimodaal" maakt. Dit
+          betekent dat ze bijvoorbeeld een afbeelding kunnen analyseren en er
+          een tekstbeschrijving van kunnen maken, of een tekst kunnen omzetten
+          naar een afbeelding.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Modality_(human%E2%80%93computer_interaction)" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/human-computer-interaction" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="multi-model-platform">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Multi‑model platform</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>multi‑model platform</strong> biedt toegang tot meerdere
+          LLM's en tools binnen één interface (bijv. webzoeken, bestandsanalyse)
+          vaak via één account.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Software_platform" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer-programming" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="multimodal">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Multimodal</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Multimodal</strong> verwijst naar AI-systemen die meerdere
+          soorten input en output kunnen verwerken en genereren. In plaats van
+          alleen tekst te verwerken, kunnen multimodale systemen ook werken met
+          afbeeldingen, audio, video, en andere vormen van data. Een multimodaal
+          foundation model kan bijvoorbeeld een afbeelding analyseren en er een
+          beschrijving van maken, of een tekst omzetten naar een afbeelding. Dit
+          maakt AI-systemen veel flexibeler en krachtiger voor complexe taken.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Multimodal_learning" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="multiple-llms">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Meerdere LLM's</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Meerdere LLM's</strong> betekent dat een platform
+          verschillende taalmodellen aanbiedt waar je per taak uit kunt kiezen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Large_language_model" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="neuraal-netwerk">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Neuraal Netwerk</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een neuraal netwerk is een computerprogramma dat geïnspireerd is op
+          hoe het menselijk brein werkt. Het bestaat uit lagen van "neuronen"
+          (kleine verwerkingseenheden) die met elkaar verbonden zijn.<br /><br />
+          <strong>Hoe werkt het?</strong><br />
+          Elke neuron ontvangt informatie van andere neuronen, verwerkt deze met
+          behulp van wiskundige functies, en stuurt het resultaat door naar de
+          volgende laag. Tijdens het leerproces worden de verbindingen tussen
+          neuronen sterker of zwakker, net zoals synapsen in het brein.<br /><br />
+          <strong>Waarom is het zo krachtig?</strong><br />
+          Neurale netwerken kunnen automatisch complexe patronen leren uit data,
+          zonder dat mensen handmatig hoeven te programmeren welke kenmerken
+          belangrijk zijn. Ze kunnen ook niet-lineaire relaties ontdekken die
+          voor mensen moeilijk te zien zijn.<br /><br />
+          <strong>Deep Learning</strong><br />
+          Wanneer een neuraal netwerk veel lagen heeft (meer dan 3), noemen we
+          het "deep learning". Deze diepe netwerken zijn verantwoordelijk voor
+          veel recente doorbraken in AI, zoals spraakherkenning, beeldherkenning
+          en natuurlijke taalverwerking.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Artificial_neural_network" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-neural-network" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="on-premises">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>On‑premise</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>On‑premise</strong> betekent dat software en AI‑modellen
+          draaien op eigen hardware of een lokale server binnen het eigen
+          netwerk, in plaats van in de cloud. Dit kan voordelen bieden voor
+          privacy, controle en compliance.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/On-premises_software" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/cloud-computing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="open-source-models">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Open‑source modellen</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Open‑source modellen</strong> zijn AI‑modellen waarvan de
+          modelcode of gewichten vrij beschikbaar zijn om te gebruiken,
+          bestuderen en aan te passen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Open-source_software" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/open-source-software" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="openai">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>OpenAI</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>OpenAI</strong> is een Amerikaanse AI-onderzoeksorganisatie
+          opgericht in 2015, bekend van het ontwikkelen van geavanceerde
+          AI-systemen zoals GPT-modellen, DALL-E, en ChatGPT. Het bedrijf richt
+          zich op het creëren van kunstmatige algemene intelligentie (AGI) die
+          veilig en nuttig is voor de mensheid.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/OpenAI" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="output">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Output</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Output</strong> is het resultaat dat een systeem teruggeeft
+          (bijv. tekst, spraak of beeld als antwoord van een chatbot).
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Output_(computer_science)" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="ponskaarten">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Ponskaarten</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #e8f4fd; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">E - Impact</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Ponskaarten</strong> waren vroege dragers voor gegevens en
+          programma's. In papieren kaarten werden gaatjes geponst om data te
+          coderen. Computers lazen die patronen met kaartlezers. Ponskaarten
+          werden veel gebruikt tot in de jaren 1970–1980 en vormen een voorloper
+          van latere invoermethoden zoals de command line interface (CLI) en
+          grafische interfaces (GUI).
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Punched_card" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/punched-card" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="probabilistisch">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Probabilistisch</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Probabilistisch</strong> betekent dat een systeem werkt met
+          waarschijnlijkheden en onzekerheid. In plaats van altijd hetzelfde
+          antwoord te geven, kan het systeem verschillende resultaten produceren
+          voor dezelfde input, waarbij elk resultaat een bepaalde
+          waarschijnlijkheid heeft. Data-gedreven AI-systemen werken
+          probabilistisch: ze voorspellen het meest waarschijnlijke antwoord op
+          basis van patronen in hun trainingsdata, maar kunnen variatie
+          vertonen. Dit is het tegenovergestelde van deterministisch, waarbij
+          systemen altijd hetzelfde resultaat geven.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Probability" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/science/probability" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="processing">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Processing</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Processing</strong> is de verwerking van input door een
+          (AI-)systeem om tot een resultaat of beslissing te komen.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Data_processing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/data-processing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="prompt">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Prompt</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Een <strong>prompt</strong> is de tekst, vraag, opdracht of instructie
+          die je aan een AI-systeem geeft om een specifieke taak uit te voeren.
+          Het is de input die bepaalt wat de AI moet doen, zoals het
+          beantwoorden van een vraag, het schrijven van een tekst, het maken van
+          een samenvatting, of het oplossen van een probleem. De kwaliteit en
+          specificiteit van de prompt heeft grote invloed op de kwaliteit van
+          het AI-antwoord.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Prompt_engineering" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="prompt-engineering">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Prompt Engineering</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          Prompt engineering is de kunst en wetenschap van het schrijven van
+          effectieve prompts om AI-systemen optimaal te laten presteren. Het is
+          als het leren van een nieuwe taal - de taal die AI begrijpt.<br /><br />
+          <strong>Waarom is dit belangrijk?</strong><br />
+          Dezelfde AI kan totaal verschillende resultaten geven afhankelijk van
+          hoe je je vraag stelt. Een slechte prompt kan leiden tot vage,
+          onbruikbare antwoorden, terwijl een goede prompt precies geeft wat je
+          nodig hebt.<br /><br />
+          <strong>Basis principes:</strong><br />
+          • <strong>Duidelijkheid:</strong> De AI weet precies wat je wilt<br />
+          • <strong>Context:</strong> Geef genoeg achtergrondinformatie<br />
+          • <strong>Specificiteit:</strong> Vraag om concrete details<br />
+          • <strong>Structuur:</strong> Organiseer je vraag logisch<br />
+          • <strong>Voorbeelden:</strong> Toon wat je bedoelt<br /><br />
+          <strong>Technieken:</strong><br />
+          Prompt engineering omvat technieken zoals few-shot learning
+          (voorbeelden geven), prompt chaining (taken opdelen in stappen), en
+          verschillende prompt structuren voor verschillende soorten taken.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Prompt_engineering" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="rag">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>RAG (Retrieval-Augmented Generation)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>RAG</strong> is een techniek die AI-modellen combineert met
+          externe kennisbronnen om betere en actuelere antwoorden te geven. Het
+          werkt in twee stappen:<br /><br />
+          <strong>1. Retrieval (Ophalen):</strong> Het systeem zoekt relevante
+          informatie uit een database, documenten, of het internet op basis van
+          de vraag van de gebruiker.<br /><br />
+          <strong>2. Augmented Generation (Uitgebreide Generatie):</strong> De
+          AI gebruikt deze opgehaalde informatie samen met zijn eigen kennis om
+          een compleet en accuraat antwoord te genereren.<br /><br />
+          <strong>Voordelen van RAG:</strong><br />
+          • <strong>Actuele informatie:</strong> Kan recente data gebruiken in
+          plaats van alleen trainingsdata<br />
+          • <strong>Bronvermelding:</strong> Kan aangeven waar informatie
+          vandaan komt<br />
+          • <strong>Minder hallucinaties:</strong> Gebruikt concrete bronnen in
+          plaats van alleen te gissen<br />
+          • <strong>Flexibiliteit:</strong> Kan werken met verschillende soorten
+          documenten en databases<br /><br />
+          <strong>Voorbeelden:</strong> Chatbots zoals Perplexity AI gebruiken
+          RAG om real-time informatie op te zoeken en te combineren met hun
+          AI-kennis voor betrouwbare antwoorden.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Retrieval-augmented_generation" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="real-time-info">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Real‑time informatie</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Real‑time info</strong> is actuele, recent opgehaalde
+          informatie (bijv. nieuws, weer) in plaats van alleen kennis uit
+          trainingsdata.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Real-time_computing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/real-time-computing" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="regelgebaseerd">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Regelgebaseerd</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Regelgebaseerd</strong> verwijst naar AI-systemen die werken
+          volgens vooraf gedefinieerde regels en patronen. Deze systemen volgen
+          strikte logische regels die door programmeurs zijn opgesteld. Ze zijn
+          voorspelbaar en betrouwbaar voor specifieke taken, maar beperkt in hun
+          flexibiliteit en vermogen om te leren van nieuwe situaties. Een
+          klassiek voorbeeld is ELIZA, een van de eerste chatbots die werkte met
+          patroonherkenning en vooraf geschreven antwoorden.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Rule-based_system" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="simplicity">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Eenvoud</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Eenvoud</strong> verwijst naar gebruiksgemak: weinig
+          instellingen nodig, snel te begrijpen en direct te gebruiken.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Simplicity" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/topic/simplicity" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="specialized-features">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Gespecialiseerde functies</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Gespecialiseerde functies</strong> zijn extra mogelijkheden
+          zoals webzoeken, bestandsanalyse, of code‑uitvoering die verder gaan
+          dan standaard chatten.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Feature_(software)" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/computer-programming" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="transformer-architectuur">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Transformer‑architectuur</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #d1fae5; color: #065f46; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">C - Werking</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          De <strong>Transformer</strong> is een modelarchitectuur (2017) die
+          gebruikmaakt van <em>attention</em> om relaties in de input te leren.
+          Dankzij parallelle verwerking en schaalbaarheid vormt het de basis van
+          veel moderne LLM's (zoals GPT).
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Transformer_(machine_learning_model)" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/artificial-intelligence" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="user-interface">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>User Interface (UI)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">B - Basis</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          De <strong>user interface</strong> is de plek waar mens en computer
+          met elkaar communiceren. Voorbeelden zijn een command line interface
+          (CLI), grafische interface (GUI) en conversational user interface
+          (CUI).
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/User_interface" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/user-interface" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="virtual-reality">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Virtual reality (VR)</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>VR</strong> dompelt je volledig onder in een digitale wereld,
+          meestal via een headset die je zicht op de fysieke wereld afsluit.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Virtual_reality" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/virtual-reality" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block trivia" id="web-search">
+        <div class="icon">
+          <img
+            src="/img/icons/boekenwurm.png"
+            alt="Trivia"
+            width="80"
+            height="80"
+          />
+        </div>
+        <div class="content-text">
+          <div class="trivia-toggle" onclick="toggleTrivia(this)">
+            <strong>Webzoeken</strong> <span style="color: #666; font-size: 0.9rem;">(klik om te lezen)</span>
+            <span class="thema-label" style="background: #f0f9ff; color: #0369a1; padding: 2px 8px; border-radius: 12px; font-size: 0.75rem; margin-left: 8px; font-weight: 500;">D - Toepassen</span>
+            <span class="trivia-toggle-icon">▶</span>
+          </div>
+          <div class="trivia-content">
+            <br /><br />
+          <strong>Webzoeken</strong> is het opvragen van actuele informatie van
+          internet door een AI‑assistent, vaak met bronvermelding.
+        
+          
+            
+            <div style="margin-top: 15px; padding: 15px; background: var(--gray-50); border-radius: 8px; border-left: 4px solid var(--primary-blue);">
+              <div style="margin-bottom: 10px;">
+                <strong>🔗 Meer informatie:</strong><br />
+                <a href="https://en.wikipedia.org/wiki/Web_search_engine" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">🇬🇧 Wikipedia (EN)</a> |
+                <a href="https://www.britannica.com/technology/search-engine" target="_blank" rel="noopener noreferrer" style="color: var(--primary-blue); text-decoration: none;">📚 Britannica</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="text-center mt-4">
+        <a
+          href="#"
+          class="btn back-floating"
+          onclick="if (window.history.length > 1) { window.history.back(); } else if (document.referrer) { window.location.href = document.referrer; } else { window.location.href = '../index.html'; } return false;"
+          >← Terug naar vorige pagina</a
+        >
+      </div>
+
+    <script>
+      function searchBegrippen() {
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const stickySearchResults = document.getElementById('stickySearchResults');
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        
+        // Verzamel alle begrippen blokken
+        const begrippenBlokken = document.querySelectorAll('.content-block.trivia[id]');
+        let visibleCount = 0;
+        let totalCount = begrippenBlokken.length;
+        
+        begrippenBlokken.forEach(blok => {
+          const begripId = blok.id;
+          const begripTitel = blok.querySelector('.trivia-toggle strong')?.textContent || '';
+          const begripInhoud = blok.textContent || '';
+          const verborgenInhoud = blok.querySelector('.trivia-content')?.textContent || '';
+          
+          // Zoek in ID, titel en inhoud (inclusief verborgen content)
+          const matchesId = begripId.toLowerCase().includes(searchTerm);
+          const matchesTitel = begripTitel.toLowerCase().includes(searchTerm);
+          const matchesInhoud = begripInhoud.toLowerCase().includes(searchTerm);
+          const matchesVerborgen = verborgenInhoud.toLowerCase().includes(searchTerm);
+          
+          if (searchTerm === '' || matchesId || matchesTitel || matchesInhoud || matchesVerborgen) {
+            blok.classList.remove('hidden');
+            blok.classList.add('visible');
+            visibleCount++;
+          } else {
+            blok.classList.remove('visible');
+            blok.classList.add('hidden');
+          }
+        });
+        
+        // Update beide zoekresultaten tellers
+        if (searchTerm === '') {
+          searchResults.textContent = '';
+          stickySearchResults.style.display = 'none';
+        } else {
+          const resultText = `${visibleCount} van ${totalCount} begrippen gevonden`;
+          searchResults.textContent = resultText;
+          stickySearchResults.textContent = resultText;
+          stickySearchResults.style.display = 'block';
+        }
+      }
+      
+      // Niveau mapping
+      const categoryMapping = {
+        'basis': ['artificiele-intelligentie', 'ai-model', 'chatbot', 'chatgpt', 'prompt', 'user-interface', 'machine-learning', 'ai-geletterdheid', 'ai-boom', 'ai-effect'],
+        'gemiddeld': ['ai-agent', 'ai-assistent', 'ai-bias', 'generatieve-ai', 'discriminatieve-ai', 'deep-learning', 'neuraal-netwerk', 'rag', 'prompt-engineering', 'data-gedreven', 'regelgebaseerd', 'gpt', 'llm', 'foundation-model'],
+        'gevorderd': ['agi', 'ai-productiviteitsparadox', 'transformer-architectuur', 'deterministisch', 'probabilistisch', 'immersive-interfaces', 'virtual-reality', 'augmented-reality', 'mixed-reality', 'brain-computer-interface', 'conversational-user-interface', 'openai', 'claude', 'mistral', 'gemini', 'multi-model-platform', 'open-source-models']
+      };
+
+      // A-Z index genereren
+      function generateAZIndex() {
+        const azButtons = document.getElementById('azButtons');
+        const begrippenBlokken = document.querySelectorAll('.content-block.trivia[id]');
+        const firstLetters = new Set();
+        
+        begrippenBlokken.forEach(blok => {
+          const firstLetter = blok.id.charAt(0).toUpperCase();
+          firstLetters.add(firstLetter);
+        });
+        
+        const sortedLetters = Array.from(firstLetters).sort();
+        
+        sortedLetters.forEach(letter => {
+          const button = document.createElement('button');
+          button.textContent = letter;
+          button.style.cssText = `
+            padding: 8px 12px;
+            border: 2px solid var(--gray-300);
+            background: var(--white);
+            color: var(--text-primary);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            min-width: 40px;
+          `;
+          
+          button.addEventListener('click', () => scrollToLetter(letter));
+          button.addEventListener('mouseenter', () => {
+            button.style.borderColor = 'var(--primary-blue)';
+            button.style.backgroundColor = 'var(--primary-blue)';
+            button.style.color = 'white';
+          });
+          button.addEventListener('mouseleave', () => {
+            if (!button.classList.contains('active')) {
+              button.style.borderColor = 'var(--gray-300)';
+              button.style.backgroundColor = 'var(--white)';
+              button.style.color = 'var(--text-primary)';
+            }
+          });
+          
+          azButtons.appendChild(button);
+        });
+      }
+
+      // Scroll naar letter
+      function scrollToLetter(letter) {
+        const begrippenBlokken = document.querySelectorAll('.content-block.trivia[id]');
+        const targetBlok = Array.from(begrippenBlokken).find(blok => 
+          blok.id.charAt(0).toUpperCase() === letter
+        );
+        
+        if (targetBlok) {
+          targetBlok.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          // Highlight de knop
+          document.querySelectorAll('#azButtons button').forEach(btn => {
+            btn.classList.remove('active');
+            btn.style.borderColor = 'var(--gray-300)';
+            btn.style.backgroundColor = 'var(--white)';
+            btn.style.color = 'var(--text-primary)';
+          });
+          
+          const activeButton = Array.from(document.querySelectorAll('#azButtons button')).find(btn => 
+            btn.textContent === letter
+          );
+          if (activeButton) {
+            activeButton.classList.add('active');
+            activeButton.style.borderColor = 'var(--primary-blue)';
+            activeButton.style.backgroundColor = 'var(--primary-blue)';
+            activeButton.style.color = 'white';
+          }
+        }
+      }
+
+      // Niveau filtering
+      function filterByCategory(category) {
+        const begrippenBlokken = document.querySelectorAll('.content-block.trivia[id]');
+        const searchInput = document.getElementById('searchInput');
+        
+        // Reset zoekbalk
+        searchInput.value = '';
+        
+        begrippenBlokken.forEach(blok => {
+          const begripId = blok.id;
+          let shouldShow = false;
+          
+          if (category === 'all') {
+            shouldShow = true;
+          } else {
+            const categoryBegrippen = categoryMapping[category] || [];
+            shouldShow = categoryBegrippen.includes(begripId);
+          }
+          
+          if (shouldShow) {
+            blok.classList.remove('hidden');
+            blok.classList.add('visible');
+          } else {
+            blok.classList.remove('visible');
+            blok.classList.add('hidden');
+          }
+        });
+        
+        // Update tellers
+        const visibleCount = document.querySelectorAll('.content-block.trivia.visible').length;
+        const totalCount = begrippenBlokken.length;
+        const resultText = category === 'all' ? '' : `${visibleCount} begrippen op niveau "${category}"`;
+        
+        document.getElementById('searchResults').textContent = resultText;
+        document.getElementById('stickySearchResults').textContent = resultText;
+        document.getElementById('stickySearchResults').style.display = resultText ? 'block' : 'none';
+      }
+
+      // Focus op zoekbalk bij laden van pagina
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+          searchInput.focus();
+        }
+        
+        // Genereer A-Z index
+        generateAZIndex();
+        
+        // Voeg event listeners toe voor niveau knoppen
+        document.querySelectorAll('.category-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            // Update actieve knop
+            document.querySelectorAll('.category-btn').forEach(b => {
+              b.classList.remove('active');
+              b.style.borderColor = 'var(--gray-300)';
+              b.style.backgroundColor = 'var(--white)';
+              b.style.color = 'var(--text-primary)';
+            });
+            
+            btn.classList.add('active');
+            btn.style.borderColor = 'var(--primary-blue)';
+            btn.style.backgroundColor = 'var(--primary-blue)';
+            btn.style.color = 'white';
+            
+            // Filter begrippen
+            const category = btn.getAttribute('data-category');
+            filterByCategory(category);
+          });
+        });
+      });
+    </script>
+
+    <script>
+    function toggleTrivia(element) {
+        const content = element.nextElementSibling;
+        const icon = element.querySelector('.trivia-toggle-icon');
+        
+        if (content.classList.contains('expanded')) {
+            content.classList.remove('expanded');
+            icon.classList.remove('expanded');
+        } else {
+            content.classList.add('expanded');
+            icon.classList.add('expanded');
+        }
+    }
+    </script>
