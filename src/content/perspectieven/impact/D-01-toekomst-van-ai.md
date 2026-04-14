@@ -151,7 +151,7 @@ Experts zijn verdeeld over de impact van AI op werk. Het World Economic Forum vo
 
 **AGI - Wanneer en hoe waarschijnlijk?**
 
-Experts zijn diep verdeeld over [Artificiele Generatieve Intelligentie (AGI)](/artikelen/begrippen/#agi). Sommige onderzoekers voorspellen AGI binnen 10-20 jaar, anderen denken dat het decennia of zelfs eeuwen kan duren, of misschien nooit zal gebeuren.
+Experts zijn diep verdeeld over [Artificial General Intelligence (AGI)](/artikelen/begrippen/#agi). Sommige onderzoekers voorspellen AGI binnen 10-20 jaar, anderen denken dat het decennia of zelfs eeuwen kan duren, of misschien nooit zal gebeuren.
 
 **Optimistische visie (o.a. Ray Kurzweil, OpenAI):**
 
@@ -235,7 +235,7 @@ Sommige experts geloven dat dit zal leiden tot een utopie van overvloed en vooru
 
 {% endtrivia %}
 
-{% quiz "Wat zeggen experts over de risico's van AGI (Artificiele Generatieve Intelligentie)?" %}
+{% quiz "Wat zeggen experts over de risico's van AGI (Artificial General Intelligence)?" %}
 
 *Klik op een antwoord om te zien wat experts zeggen!*
 

@@ -328,7 +328,7 @@ De AI-revolutie is nog maar net begonnen. Wat kunnen we verwachten in de komende
 - Betere regulering en ethische richtlijnen
 
 **Lange termijn (10+ jaar)**
-- Mogelijk [Artificiele Generatieve Intelligentie (AGI)](/artikelen/begrippen/#agi)
+- Mogelijk [Artificial General Intelligence (AGI)](/artikelen/begrippen/#agi)
 - Fundamentele veranderingen in hoe we werken en leven
 - Nieuwe uitdagingen en kansen die we nu nog niet kennen
 

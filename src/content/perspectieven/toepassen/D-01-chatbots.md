@@ -406,7 +406,7 @@ Dit laat de kracht van een tool zien die draait op zo'n foundation model.
 
 Nu je hebt ervaren hoe chatbots werken en hun beperkingen kent, is het tijd om te kijken naar een andere kant van [AI](/artikelen/begrippen/#artificiele-intelligentie): het cre&euml;ren van nieuwe content. Dit wordt **Generatieve Artificiele Intelligentie (GenAI)** genoemd.
 
-[GenAI](/artikelen/begrippen/#agi) is een tak van [kunstmatige intelligentie](/artikelen/begrippen/#artificiele-intelligentie) die zich richt op het cre&euml;ren van nieuwe content in plaats van alleen bestaande [data](/artikelen/begrippen/#data) te analyseren. Deze technologie kan verschillende soorten content genereren zoals tekst, afbeeldingen, muziek, video's en zelfs programmeercode.
+[GenAI](/artikelen/begrippen/#generatieve-ai) is een tak van [kunstmatige intelligentie](/artikelen/begrippen/#artificiele-intelligentie) die zich richt op het cre&euml;ren van nieuwe content in plaats van alleen bestaande [data](/artikelen/begrippen/#data) te analyseren. Deze technologie kan verschillende soorten content genereren zoals tekst, afbeeldingen, muziek, video's en zelfs programmeercode.
 
 **Hoe werkt het?**
 GenAI-systemen zijn getraind op enorme hoeveelheden bestaande data en gebruiken complexe wiskundige modellen om nieuwe content te genereren. Ze herkennen patronen en kunnen deze gebruiken om nieuwe, realistische output te genereren.
@@ -430,9 +430,9 @@ Generatieve AI-systemen kunnen *creativiteit nabootsen* - ze kunnen nieuwe combi
 <strong>A)</strong> Generatieve AI is sneller dan gewone chatbots
 <div class="answer-feedback" id="answer-A2">
 <div class="feedback-content">
-<span class="feedback-icon">&#9989;</span>
-<strong>Correct!</strong><br>
-Generatieve AI is sneller dan gewone chatbots.
+<span class="feedback-icon">&#10060;</span>
+<strong>Nog niet goed!</strong><br>
+<em>Hint:</em> Snelheid is niet het belangrijkste verschil. Denk aan wat Generatieve AI fundamenteel anders doet dan gewone chatbots.
 </div>
 </div>
 </div>
