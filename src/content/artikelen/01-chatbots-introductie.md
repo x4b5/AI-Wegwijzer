@@ -928,7 +928,7 @@ Je hebt nu een solide basis in chatbots. Afhankelijk van je interesses kun je ve
 
 - **[Prompt Engineering](/artikelen/03-prompt-engineering/)** -- Wil je weten hoe je effectieve prompts kunt schrijven?
 - **[AI-assistenten](/artikelen/02-ai-assistenten/)** -- Wil je meer weten over de moderne AI-chatbots?
-- **[Waarde en impact](/artikelen/04-waarde-en-impact/)** -- Wil je meer weten over de maatschappelijke waarde en impact van chatbots en AI-modellen?
+- **[Waarde en impact](/artikelen/05-waarde-en-impact/)** -- Wil je meer weten over de maatschappelijke waarde en impact van chatbots en AI-modellen?
 {% endconclusion %}
 
 {% info %}

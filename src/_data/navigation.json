@@ -9,7 +9,8 @@
     { "title": "Chatbots: een introductie", "url": "/content/artikelen/01-chatbots-introductie/" },
     { "title": "AI-Assistenten", "url": "/content/artikelen/02-ai-assistenten/" },
     { "title": "Prompt-engineering", "url": "/content/artikelen/03-prompt-engineering/" },
-    { "title": "Waarde en impact", "url": "/content/artikelen/04-waarde-en-impact/" }
+    { "title": "Van Vibe-Coding naar Agentic Orchestration", "url": "/content/artikelen/04-vibe-coding-agentic-orchestration/" },
+    { "title": "Waarde en impact", "url": "/content/artikelen/05-waarde-en-impact/" }
   ],
   "perspectieven": {
     "basis": [

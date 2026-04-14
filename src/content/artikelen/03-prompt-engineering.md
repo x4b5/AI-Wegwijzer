@@ -382,6 +382,6 @@ Prompt engineering zal blijven evolueren naarmate AI-systemen slimmer worden. De
 Je hebt nu de vaardigheden om effectief met AI te communiceren. Afhankelijk van je interesses kun je verschillende richtingen op:
 
 - **[AI-assistenten](/artikelen/02-ai-assistenten/)** -- Wil je meer weten over geavanceerde AI-toepassingen?
-- **[Waarde en impact](/artikelen/04-waarde-en-impact/)** -- Wil je meer weten over de maatschappelijke impact van AI?
+- **[Waarde en impact](/artikelen/05-waarde-en-impact/)** -- Wil je meer weten over de maatschappelijke impact van AI?
 - **[Chatbots](/artikelen/01-chatbots-introductie/)** -- Wil je terug naar de basis van chatbots?
 {% endconclusion %}
