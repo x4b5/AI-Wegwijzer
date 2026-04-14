@@ -1,6 +1,6 @@
 ---
 title: "AI-Assistenten"
-description: "Leer over AI-assistenten, generatieve AI en foundation models."
+description: "Ontdek het verschil tussen chatbots en AI-assistenten, leer wat generatieve AI is en hoe foundation models zoals GPT en Claude werken."
 ---
 
 {% metadata "Leerdoel: Begrijpen wat AI-assistenten en generatieve AI zijn en hoe ze zich onderscheiden van gewone chatbots.", "Leestijd: 10-12 minuten" %}

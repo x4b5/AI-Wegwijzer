@@ -1,6 +1,6 @@
 ---
 title: "Basisbegrippen van AI - De ontwikkeling van AI en de drijvende krachten"
-description: "Leren van de basisbegrippen van AI en de ontwikkeling die heeft geleid tot de AI van vandaag"
+description: "Leer de basisbegrippen van AI: van de beginjaren en machine learning tot de doorbraak van deep learning en de drijvende krachten erachter."
 heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---

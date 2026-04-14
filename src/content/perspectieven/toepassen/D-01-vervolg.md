@@ -1,6 +1,6 @@
 ---
 title: "Chatbots en AI-Assistenten - Vervolg"
-description: "Vervolg over AI-tools, betrouwbaarheid en praktische toepassingen"
+description: "Vergelijk AI-tools op betrouwbaarheid, privacy en geschiktheid. Leer hoe je de juiste AI-assistent kiest voor jouw doel en situatie."
 heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---

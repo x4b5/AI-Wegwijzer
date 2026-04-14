@@ -1,6 +1,6 @@
 ---
 title: "Deep Learning - De kracht van diepe neurale netwerken"
-description: "Begrijpen hoe deep learning werkt en waarom het zo revolutionair is"
+description: "Leer hoe deep learning en neurale netwerken werken, waarom ze zo krachtig zijn en welke doorbraken ze mogelijk hebben gemaakt in AI."
 heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---

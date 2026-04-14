@@ -1,6 +1,6 @@
 ---
 title: "AI Beschrijven: Wat is AI... en wat is het vooral niet?"
-description: "Vertrouwd raken met het begrip AI en begrijpen wat AI wel en niet is"
+description: "Wat is AI eigenlijk, en wat is het niet? Verken de definitie, veelvoorkomende misverstanden en waarom het begrip zo lastig te vatten is."
 heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---

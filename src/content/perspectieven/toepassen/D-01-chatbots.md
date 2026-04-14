@@ -1,6 +1,6 @@
 ---
 title: "Chatbots en AI-Assistenten"
-description: "Begrijpen wat chatbots en AI-assistenten zijn en hoe je ze kunt gebruiken"
+description: "Leer wat chatbots en AI-assistenten zijn, hoe ze werken en hoe je ze effectief kunt inzetten. Met vergelijking van populaire AI-tools."
 heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---

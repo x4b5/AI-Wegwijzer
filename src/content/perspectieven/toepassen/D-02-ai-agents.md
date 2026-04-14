@@ -1,6 +1,6 @@
 ---
 title: "AI-Agents - Intelligente Assistenten"
-description: "Begrijpen wat AI-agents zijn en hoe ze autonoom kunnen werken"
+description: "Ontdek wat AI-agents zijn, hoe ze zelfstandig taken uitvoeren en waarin ze verschillen van gewone chatbots. Met praktische toepassingen."
 heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---

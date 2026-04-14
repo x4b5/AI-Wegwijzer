@@ -1,6 +1,6 @@
 ---
 title: "Chatbots: een introductie"
-description: "Leer wat chatbots zijn, hoe ze werken (regel-gebaseerd en data-gedreven), waar het 'denkwerk' plaatsvindt en hoe je ze effectief inzet. Inclusief praktische opdrachten en quizzen."
+description: "Leer wat chatbots zijn, hoe ze werken (regel-gebaseerd vs data-gedreven), waar het denkwerk plaatsvindt en hoe je ze effectief inzet."
 heroImage: /img/chatbot.png
 heroImageAlt: Chatbot
 ---

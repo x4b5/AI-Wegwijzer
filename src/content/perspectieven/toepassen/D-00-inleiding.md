@@ -1,6 +1,6 @@
 ---
 title: "Toepassen - AI in de Praktijk"
-description: "Leren hoe je AI effectief kunt gebruiken in werk en studie"
+description: "Inleiding op AI in de praktijk: waarom AI soms foute antwoorden geeft (hallucinaties), hoe je dat herkent en wat je eraan kunt doen."
 heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---

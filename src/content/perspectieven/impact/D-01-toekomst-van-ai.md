@@ -1,6 +1,6 @@
 ---
 title: "Toekomst van AI - Wat staat ons te wachten?"
-description: "Begrijpen welke ontwikkelingen er aan komen in AI en wat de impact kan zijn"
+description: "Wat brengt de toekomst van AI? Van AGI en superintelligentie tot ethische vraagstukken en de impact op werk, onderwijs en samenleving."
 heroImage: /img/icons/informatie.png
 ---
 

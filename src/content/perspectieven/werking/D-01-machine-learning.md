@@ -1,6 +1,6 @@
 ---
 title: "Machine Learning - Hoe AI leert"
-description: "Begrijpen hoe machine learning werkt en waarom het zo krachtig is"
+description: "Ontdek hoe machine learning werkt: van supervised en unsupervised learning tot reinforcement learning. Met praktische voorbeelden uitgelegd."
 heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---

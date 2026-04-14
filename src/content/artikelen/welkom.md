@@ -1,6 +1,6 @@
 ---
 title: Start hier
-description: Welkom bij de AI-Wegwijzer
+description: "Welkom bij de AI-Wegwijzer. Ontdek wat AI is, hoe het werkt en hoe je het effectief kunt inzetten in je werk en studie."
 heroImage: false
 ---
 

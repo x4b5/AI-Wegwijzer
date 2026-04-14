@@ -1,6 +1,6 @@
 ---
 title: Kennisbank
-description: Overzicht van thematische kennisartikelen, begrippen en links.
+description: "Overzicht van alle kennisartikelen, begrippen en verdiepende perspectieven over AI. Van basisbegrippen tot praktische toepassingen."
 heroImage: /img/chatbot.png
 heroImageAlt: Kennisbank
 ---

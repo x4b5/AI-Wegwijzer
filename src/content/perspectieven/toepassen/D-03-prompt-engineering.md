@@ -1,6 +1,6 @@
 ---
 title: "Prompt Engineering - De kunst van AI aansturen"
-description: "Leren hoe je AI-systemen effectief kunt aansturen met goede prompts"
+description: "Leer de kunst van prompt engineering: hoe je AI-systemen effectief aanstuurt met duidelijke instructies, context en praktische technieken."
 heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Prompt Engineering"
-description: "Leer hoe je effectieve prompts schrijft om het beste uit AI-chatbots en AI-assistenten te halen."
+description: "Leer hoe je effectieve prompts schrijft voor AI-chatbots en assistenten. Met praktische technieken, voorbeelden en veelgemaakte fouten."
 ---
 
 {% metadata "Leerdoel: Leren hoe je effectieve prompts schrijft om het beste uit AI-chatbots en AI-assistenten te halen.", "Leestijd: 18-22 minuten" %}

@@ -1,6 +1,6 @@
 ---
 title: "Waarde en Impact van AI"
-description: "Begrijpen wat de waarde en impact van AI is op onze samenleving, economie en dagelijks leven."
+description: "Ontdek de waarde en impact van AI op samenleving, economie en dagelijks leven. Van kansen en risico's tot ethische vraagstukken."
 ---
 
 {% metadata "Leerdoel: Begrijpen wat de waarde en impact van AI is op onze samenleving, economie en dagelijks leven.", "Leestijd: 20-25 minuten" %}
