@@ -5,6 +5,8 @@ heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---
 
+{% metadata "AI-tools kunnen vergelijken op betrouwbaarheid, privacy en geschiktheid voor jouw doel", "8-10 minuten" %}
+
 {% conclusion %}
 Er zijn tegenwoordig ontzettend veel AI-tools beschikbaar, maar ze zijn niet allemaal even betrouwbaar. De ene tool is beter in het genereren van creatieve content, de andere in het geven van accurate informatie, en weer een andere in het beschermen van je privacy.
 

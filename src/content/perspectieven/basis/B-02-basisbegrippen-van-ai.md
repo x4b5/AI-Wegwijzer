@@ -5,6 +5,8 @@ heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---
 
+{% metadata "De basisbegrippen van AI kennen en begrijpen welke ontwikkelingen hebben geleid tot de AI van vandaag", "8-10 minuten" %}
+
 ## Inleiding
 
 {% info %}

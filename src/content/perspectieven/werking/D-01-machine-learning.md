@@ -5,6 +5,8 @@ heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---
 
+{% metadata "Begrijpen hoe machine learning werkt en de verschillende manieren waarop AI kan leren", "12-15 minuten" %}
+
 ## Wat is Machine Learning?
 
 {% info %}

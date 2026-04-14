@@ -5,6 +5,8 @@ heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---
 
+{% metadata "Begrijpen hoe deep learning en neurale netwerken werken en waarom ze zo krachtig zijn", "12-15 minuten" %}
+
 ## Wat is Deep Learning?
 
 {% info %}

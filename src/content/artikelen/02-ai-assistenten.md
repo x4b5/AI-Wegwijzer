@@ -3,7 +3,7 @@ title: "AI-Assistenten"
 description: "Leer over AI-assistenten, generatieve AI en foundation models."
 ---
 
-{% metadata "Leerdoel: Begrijpen wat chatbots zijn, hoe je ze kunt gebruiken en waar je rekening mee moet houden.", "Leestijd: nader te bepalen" %}
+{% metadata "Leerdoel: Begrijpen wat AI-assistenten en generatieve AI zijn en hoe ze zich onderscheiden van gewone chatbots.", "Leestijd: 10-12 minuten" %}
 
 ## Generatieve AI
 

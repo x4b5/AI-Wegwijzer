@@ -5,6 +5,8 @@ heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---
 
+{% metadata "Begrijpen wat AI wel en niet is en waarom een eenduidige definitie zo lastig is", "12-15 minuten" %}
+
 ## Inleiding
 
 {% info %}

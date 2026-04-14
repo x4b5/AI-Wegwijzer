@@ -5,6 +5,8 @@ heroImage: /img/icons/informatie.png
 heroImageAlt: "Informatie icoon"
 ---
 
+{% metadata "Begrijpen waarom AI soms foute antwoorden geeft en wat je eraan kunt doen", "3-5 minuten" %}
+
 {% info %}
 **ChatGPT geeft steeds foute antwoorden.**
 
