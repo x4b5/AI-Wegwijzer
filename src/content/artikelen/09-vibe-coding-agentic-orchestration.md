@@ -309,5 +309,5 @@ De manier waarop we software maken verandert fundamenteel. Van het handmatig typ
 
 - **[Prompt Engineering](/artikelen/03-prompt-engineering/)** -- Leer betere instructies geven aan AI-tools
 - **[Chatbots](/artikelen/01-chatbots-introductie/)** -- Terug naar de basis: wat zijn chatbots en hoe werken ze?
-- **[Waarde en Impact](/artikelen/05-waarde-en-impact/)** -- Verdiep je in de maatschappelijke impact van AI
+- **[Waarde en Impact](/artikelen/10-waarde-en-impact/)** -- Verdiep je in de maatschappelijke impact van AI
 {% endconclusion %}
